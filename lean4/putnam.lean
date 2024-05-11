@@ -98,7 +98,7 @@ sorry
 end putnam_2020
 
 section putnam_2019
-
+open Matrix
 theorem putnam_2019_b3
 (n : ℕ)
 (hn : n > 0)
@@ -162,7 +162,7 @@ sorry
 end putnam_2017
 
 section putnam_2016
-
+open Polynomial
 -- TODO: Does this formalderivative evaluation work?
 abbrev putnam_2016_a1_solution : ℕ := sorry
 -- 8
