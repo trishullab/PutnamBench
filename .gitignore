@@ -1,0 +1,4 @@
+# Ignore the lake file
+.lake/
+*.olean
+*.olean.*
