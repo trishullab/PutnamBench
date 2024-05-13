@@ -2,3 +2,5 @@
 .lake/
 *.olean
 *.olean.*
+
+putnam_*
