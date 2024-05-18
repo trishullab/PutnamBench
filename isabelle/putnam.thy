@@ -8,9 +8,9 @@ theorem putnam_2018_B3:
     n dvd 2^n \<and> (n-1) dvd (2^n - 1) \<and> (n-2) dvd (2^n - 2)}"
   sorry
 
-theorem putnam_2017_B3:
+theorem putnam_2017_b3:
   fixes f :: "real \<Rightarrow> real" and c :: "nat \<Rightarrow> real"
-  defines hf: "f \<equiv> \<lambda>x. \<Sum>i\<in>\<nat>.  c (i) * x^i"
+  defines hf: "f \<equiv> \<lambda>x. \<Sum>i::nat.  c (i) * x^i"
   assumes hc: "\<forall>n. c n = 0 \<or> c n = 1"
     and "f (2/3) = 3/2"
   shows "f (1/2) \<notin> \<rat>"
