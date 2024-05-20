@@ -1,0 +1,64 @@
+[
+    {
+        "problem_name" : "putnam_2006_b4",
+        "informal_statement" : "Let $Z$ denote the set of points in $\\mathbb{R}^n$ whose coordinates are $0$ or $1$. (Thus $Z$ has $2^n$ elements, which are the vertices of a unit hypercube in $\\mathbb{R}^n$.) Given a vector subspace $V$ of $\\mathbb{R}^n$, let $Z(V)$ denote the number of members of $Z$ that lie in $V$. Let $k$ be given, $0 \\leq k \\leq n$. Find the maximum, over all vector subspaces $V \\subseteq \\mathbb{R}^n$ of dimension $k$, of the number of points in $V \\cap Z$.",
+        "informal_solution" : "Prove that the maximum is $2^k$.",
+        "tags" : ["linear-algebra"]
+    },
+    {
+        "problem_name" : "putnam_1992_a1",
+        "informal_statement" : "Prove that $f(n) = 1-n$ is the only integer-valued function defined on the integers that satisfies the following conditions.\n\\begin{itemize}\n\\item[(i)] $f(f(n)) = n$, for all integers $n$;\n\\item[(ii)] $f(f(n+2)+2) = n$ for all integers $n$;\n\\item[(iii)] $f(0) = 1$.\n\\end{itemize}",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1992_a2",
+        "informal_statement" : "Define $C(\\alpha)$ to be the coefficient of $x^{1992}$ in the power series about $x=0$ of $(1 + x)^\\alpha$. Evaluate\n\\[\n\\int_0^1 \\left( C(-y-1) \\sum_{k=1}^{1992} \\frac{1}{y+k} \\right)\\,dy.\n\\]",
+        "informal_solution" : "Prove that the integral evaluates to $1992$.",
+        "tags" : ["analysis", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_1992_a3",
+        "informal_statement" : "For a given positive integer $m$, find all triples $(n, x, y)$ of positive integers, with $n$ relatively prime to $m$, which satisfy\n\\[\n(x^2 + y^2)^m = (xy)^n.\n\\]",
+        "informal_solution" : "Prove that if $m$ is odd, there are no solutions, and if $m$ is even, the only solution is\n$(n, x, y) = (m + 1, 2 ^ {m/2}, 2 ^{m/2})$.",
+        "tags" : ["algebra", "number-theory"]
+    },
+    {
+        "problem_name" : "putnam_1992_a4",
+        "informal_statement" : "Let $f$ be an infinitely differentiable real-valued function defined on the real numbers. If\n\\[\nf\\left( \\frac{1}{n} \\right) = \\frac{n^2}{n^2 + 1}, \\qquad n = 1, 2, 3, \\dots,\n\\]\ncompute the values of the derivatives $f^{(k)}(0), k = 1, 2, 3, \\dots$.",
+        "informal_solution" : "Prove that \n\\[\nf^{(k)}(0) = \n\\begin{cases} \n(-1)^{k/2}k! & \\text{if $k$ is even;} \\\\\n0 & \\text{if $k$ is odd.} \\\\\n\\end{cases}\n\\]",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1992_a5",
+        "informal_statement" : "For each positive integer $n$, let $a_n = 0$ (or $1$) if the number of $1$'s in the binary representation of $n$ is even (or odd), respectively. Show that there do not exist positive integers $k$ and $m$ such that\n\\[\na_{k+j} = a_{k+m+j} = a_{k+2m+j},\n\\]\nfor $0 \\leq j \\leq m-1$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1992_b1",
+        "informal_statement" : "Let $S$ be a set of $n$ distinct real numbers. Let $A_S$ be the set of numbers that occur as averages of two distinct elements of $S$. For a given $n \\geq 2$, what is the smallest possible number of elements in $A_S$?",
+        "informal_solution" : "Show that the answer is $2n - 3$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1992_b2",
+        "informal_statement" : "For nonnegative integers $n$ and $k$, define $Q(n, k)$ to be the coefficient of $x^k$ in the expansion of $(1 + x + x^2 + x^3)^n$. Prove that\n\\[\nQ(n, k) = \\sum_{j=0}^k \\binom{n}{j} \\binom{n}{k-2j},\n\\]\nwhere $\\binom{a}{b}$ is the standard binomial coefficient. (Reminder: For integers $a$ and $b$ with $a \\geq 0$, $\\binom{a}{b} = \\frac{a!}{b!(a-b)!}$ for $0 \\leq b \\leq a$, with $\\binom{a}{b} = 0$ otherwise.)",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1992_b4",
+        "informal_statement" : "Let $p(x)$ be a nonzero polynomial of degree less than $1992$ having no nonconstant factor in common with $x^3 - x$. Let\n\\[\n\\frac{d^{1992}}{dx^{1992}} \\left( \\frac{p(x)}{x^3 - x} \\right) = \\frac{f(x)}{g(x)}\n\\]\nfor polynomials $f(x)$ and $g(x)$. Find the smallest possible degree of $f(x)$.",
+        "informal_solution" : "Show that the minimum degree is $3984$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1992_b5",
+        "informal_statement" : "Let $D_n$ denote the value of the $(n-1) \\times (n-1)$ determinant\n\\[\n\\left[\n\\begin{array}{cccccc}\n3 & 1 & 1 & 1 & \\cdots & 1 \\\\\n1 & 4 & 1 & 1 & \\cdots & 1 \\\\\n1 & 1 & 5 & 1 & \\cdots & 1 \\\\\n1 & 1 & 1 & 6 & \\cdots & 1 \\\\\n\\vdots & \\vdots & \\vdots & \\vdots & \\ddots & \\vdots \\\\\n1 & 1 & 1 & 1 & \\cdots & n+1\n\\end{array}\n\\right].\n\\]\nIs the set $\\left\\{ \\frac{D_n}{n!} \\right\\}_{n \\geq 2}$ bounded?",
+        "informal_solution" : "Prove that the set is not bounded.",
+        "tags" : ["linear-algebra", "analysis"]
+    },
+    {
+        "problem_name" : "putnam_1992_b6",
+        "informal_statement" : "Let $M$ be a set of real $n \\times n$ matrices such that\n\\begin{itemize}\n\\item[(i)] $I \\in M$, where $I$ is the $n \\times n$ identity matrix;\n\\item[(ii)] if $A \\in M$ and $B \\in M$, then either $AB \\in M$ or $-AB \\in M$, but not both;\n\\item[(iii)] if $A \\in M$ and $B \\in M$, then either $AB = BA$ or $AB = -BA$;\n\\item[(iv)] if $A \\in M$ and $A \\neq I$, there is at least one $B \\in M$ such that $AB = -BA$.\n\\end{itemize}\nProve that $M$ contains at most $n^2$ matrices.",
+        "tags" : ["linear-algebra"]
+    }
+]

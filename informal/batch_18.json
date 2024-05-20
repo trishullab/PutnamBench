@@ -1,0 +1,44 @@
+[
+    {
+        "problem_name" : "putnam_2002_a1",
+        "informal_statement" : "Let $k$ be a fixed positive integer. The $n$-th derivative of $\\frac{1}{x^k-1}$ has the form $\\frac{P_n(x)}{(x^k-1)^{n+1}}$ where $P_n(x)$ is a polynomial. Find $P_n(1)$.",
+        "informal_solution" : "Show that $P_n(1)=(-k)^nn!$ for all $n \\geq 0$.",
+        "tags" : ["analysis", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_2003_a2",
+        "informal_statement" : "Let $a_1,a_2,\\dots,a_n$ and $b_1,b_2,\\dots,b_n$ be nonnegative real numbers. Show that $(a_1a_2 \\cdots a_n)^{1/n}+(b_1b_2 \\cdots b_n)^{1/n} \\leq [(a_1+b_1)(a_2+b_2) \\cdots (a_n+b_n)]^{1/n}$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2003_a3",
+        "informal_statement" : "Find the minimum value of $|\\sin x+\\cos x+\\tan x+\\cot x+\\sec x+\\csc x|$ for real numbers $x$.",
+        "informal_solution" : "Show that the minimum is $2\\sqrt{2}-1$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2003_a4",
+        "informal_statement" : "Suppose that $a,b,c,A,B,C$ are real numbers, $a \\ne 0$ and $A \\ne 0$, such that $|ax^2+bx+c| \\leq |Ax^2+Bx+C|$ for all real numbers $x$. Show that $|b^2-4ac| \\leq |B^2-4AC|$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2003_a6",
+        "informal_statement" : "For a set $S$ of nonnegative integers, let $r_S(n)$ denote the number of ordered pairs $(s_1,s_2)$ such that $s_1 \\in S$, $s_2 \\in S$, $s_1 \\ne s_2$, and $s_1+s_2=n$. Is it possible to partition the nonnegative integers into two sets $A$ and $B$ in such a way that $r_A(n)=r_B(n)$ for all $n$?",
+        "informal_solution" : "Show that such a partition is possible.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2003_b3",
+        "informal_statement" : "Show that for each positive integer $n$, $n!=\\prod_{i=1}^n \\text{lcm}\\{1,2,\\dots,\\lfloor n/i \\rfloor\\}$. (Here lcm denotes the least common multiple, and $\\lfloor x \\rfloor$ denotes the greatest integer $\\leq x$.)",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2003_b4",
+        "informal_statement" : "Let $f(z)=az^4+bz^3+cz^2+dz+e=a(z-r_1)(z-r_2)(z-r_3)(z-r_4)$ where $a,b,c,d,e$ are integers, $a \\neq 0$. Show that if $r_1+r_2$ is a rational number and $r_1+r_2 \\neq r_3+r_4$, then $r_1r_2$ is a rational number.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory", "algebra"]
+    }
+]

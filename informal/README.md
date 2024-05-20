@@ -1,0 +1,1 @@
+Current, the files are in .json's split according to the batch - we will join them together later.

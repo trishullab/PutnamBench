@@ -1,0 +1,44 @@
+[
+    {
+        "problem_name" : "putnam_2008_a1",
+        "informal_statement" : "Let $f:\\mathbb{R}^2 \\to \\mathbb{R}$ be a function such that $f(x,y)+f(y,z)+f(z,x)=0$ for all real numbers $x$, $y$, and $z$. Prove that there exists a function $g:\\mathbb{R} \\to \\mathbb{R}$ such that $f(x,y)=g(x)-g(y)$ for all real numbers $x$ and $y$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2008_b2",
+        "informal_statement" : "Let $F_0(x)=\\ln x$. For $n \\geq 0$ and $x>0$, let $F_{n+1}(x)=\\int_0^x F_n(t)\\,dt$. Evaluate $\\lim_{n \\to \\infty} \\frac{n!F_n(1)}{\\ln n}$.",
+        "informal_solution" : "Show that the desired limit is $-1$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2010_a1",
+        "informal_statement" : "Given a positive integer $n$, what is the largest $k$ such that the numbers $1,2,\\dots,n$ can be put into $k$ boxes so that the sum of the numbers in each box is the same? [When $n=8$, the example $\\{1,2,3,6\\},\\{4,8\\},\\{5,7\\}$ shows that the largest $k$ is \\emph{at least} $3$.]",
+        "informal_solution" : "Show that the largest such $k$ is $\\lceil \\frac{n}{2} \\rceil$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2010_b4",
+        "informal_statement" : "Find all pairs of polynomials $p(x)$ and $q(x)$ with real coefficients for which $p(x)q(x+1)-p(x+1)q(x)=1$.",
+        "informal_solution" : "Show that the pairs $(p,q)$ satisfying the given equation are those of the form $p(x)=ax+b,q(x)=cx+d$ for $a,b,c,d \\in \\mathbb{R}$ such that $bc-ad=1$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2010_b6",
+        "informal_statement" : "Let $A$ be an $n \\times n$ matrix of real numbers for some $n \\geq 1$. For each positive integer $k$, let $A^{[k]}$ be the matrix obtained by raising each entry to the $k$th power. Show that if $A^k=A^{[k]}$ for $k=1,2,\\dots,n+1$, then $A^k=A^{[k]}$ for all $k \\geq 1$.",
+        "informal_solution" : "None.",
+        "tags" : ["linear_algebra"]
+    },
+    {
+        "problem_name" : "putnam_2012_a4",
+        "informal_statement" : "Let $q$ and $r$ be integers with $q>0$, and let $A$ and $B$ be intervals on the real line. Let $T$ be the set of all $b+mq$ where $b$ and $m$ are integers with $b$ in $B$, and let $S$ be the set of all integers $a$ in $A$ such that $ra$ is in $T$. Show that if the product of the lengths of $A$ and $B$ is less than $q$, then $S$ is the intersection of $A$ with some arithmetic progression.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2013_a4",
+        "informal_statement" : "A finite collection of digits $0$ and $1$ is written around a circle. An \\emph{arc} of length $L \\geq 0$ consists of $L$ consecutive digits around the circle. For each arc $w$, let $Z(w)$ and $N(w)$ denote the number of $0$'s in $w$ and the number of $1$'s in $w$, respectively. Assume that $|Z(w)-Z(w')| \\leq 1$ for any two arcs $w,w'$ of the same length. Suppose that some arcs $w_1,\\dots,w_k$ have the property that $Z=\\frac{1}{k}\\sum_{j=1}^k Z(w_j)$ and $N=\\frac{1}{k}\\sum_{j=1}^k N(w_j)$ are both integers. Prove that there exists an arc $w$ with $Z(w)=Z$ and $N(w)=N$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    }
+]

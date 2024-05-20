@@ -64,7 +64,7 @@ theorem putnam_2015_b1:
   shows "nzeros (\<lambda>x::real. f x + (6*deriv f x) + (12*(deriv^^2) f x) + (8*(deriv^^3) f x)) 2"
   sorry
 
-(* uses ((real \<Rightarrow> real) set) instead of ((Set.Ioi (1::real) \<Rightarrow> Set.Ioi (1::real)) set) *)
+(* uses ((real \<Rightarrow> real) set) instead of (({1<..} \<Rightarrow> {1<..}) set) *)
 definition putnam_2016_b5_solution :: "(real \<Rightarrow> real) set" where "putnam_2016_b5_solution \<equiv> undefined"
 (* {f::real\<Rightarrow>real. (\<exists>c::real. c > 0 \<and> (\<forall>x::real>1. f x = x powr c))} *)
 theorem putnam_2016_b5:

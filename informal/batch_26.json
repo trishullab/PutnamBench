@@ -1,0 +1,56 @@
+[
+    {
+        "problem_name" : "putnam_1995_a1",
+        "informal_statement" : "Let $S$ be a set of real numbers which is closed under multiplication (that is, if $a$ and $b$ are in $S$, then so is $ab$). Let $T$ and $U$ be disjoint subsets of $S$ whose union is $S$. Given that the product of any {\\em three} (not necessarily distinct) elements of $T$ is in $T$ and that the product of any three elements of $U$ is in $U$, show that at least one of the two subsets $T,U$ is closed under multiplication.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1995_a2",
+        "informal_statement" : "For what pairs $(a,b)$ of positive real numbers does the improper integral \\[ \\int_{b}^{\\infty} \\left( \\sqrt{\\sqrt{x+a}-\\sqrt{x}} - \\sqrt{\\sqrt{x}-\\sqrt{x-b}} \\right)\\,dx \\] converge?",
+        "informal_solution" : "Show that the solution is those pairs $(a,b)$ where $a = b$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1995_a3",
+        "informal_statement" : "The number $d_{1}d_{2}\\dots d_{9}$ has nine (not necessarily distinct) decimal digits. The number $e_{1}e_{2}\\dots e_{9}$ is such that each of the nine 9-digit numbers formed by replacing just one of the digits $d_{i}$ is $d_{1}d_{2}\\dots d_{9}$ by the corresponding digit $e_{i}$ ($1 \\leq i \\leq 9$) is divisible by 7. The number $f_{1}f_{2}\\dots f_{9}$ is related to $e_{1}e_{2}\\dots e_{9}$ is the same way: that is, each of the nine numbers formed by replacing one of the $e_{i}$ by the corresponding $f_{i}$ is divisible by 7. Show that, for each $i$, $d_{i}-f_{i}$ is divisible by 7. [For example, if $d_{1}d_{2}\\dots d_{9} = 199501996$, then $e_{6}$ may be 2 or 9, since $199502996$ and $199509996$ are multiples of 7.]",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1995_a4",
+        "informal_statement" : "Suppose we have a necklace of $n$ beads. Each bead is labeled with an integer and the sum of all these labels is $n-1$. Prove that we can cut the necklace to form a string whose consecutive labels $x_{1},x\\_{2},\\dots,x_{n}$ satisfy \\[\\sum_{i=1}^{k} x_{i} \\leq k-1 \\qquad \\mbox{for} \\quad k=1,2,\\dots,n.\\]",
+        "informal_solution" : "None.",
+        "tags" : ["combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_1995_a5",
+        "informal_statement" : "Let $x_{1},x_{2},\\dots,x_{n}$ be differentiable (real-valued) functions of a single variable $f$ which satisfy \\begin{align*} \\frac{dx_{1}}{dt} &= a_{11}x_{1} + a_{12}x_{2} + \\cdots + a_{1n}x_{n} \\ \\frac{dx_{2}}{dt} &= a_{21}x_{1} + a_{22}x_{2} + \\cdots + a_{2n}x_{n} \\ \\vdots && \\vdots \\ \\frac{dx_{n}}{dt} &= a_{n1}x_{1} + a_{n2}x_{2} + \\cdots + a_{nn}x_{n} \\end{align*} for some constants $a_{ij}>0$. Suppose that for all $i$, $x_{i}(t) \\to 0$ as $t \\to \\infty$. Are the functions $x_{1},x_{2},\\dots,x_{n}$ necessarily linearly dependent?",
+        "informal_solution" : "Show that the answer is false, the functions $x_1, \\dots, x_n$ are not necessarily linearly dependent.",
+        "tags" : ["linear_algebra", "analysis"]
+    },
+    {
+        "problem_name" : "putnam_1995_b1",
+        "informal_statement" : "For a partition $\\pi$ of $\\{1, 2, 3, 4, 5, 6, 7, 8, 9\\}$, let $\\pi(x)$ be the number of elements in the part containing $x$. Prove that for any two partitions $\\pi$ and $\\pi'$, there are two distinct numbers $x$ and $y$ in $\\{1, 2, 3, 4, 5, 6, 7, 8, 9\\}$ such that $\\pi(x) = \\pi(y)$ and $\\pi'(x) = \\pi'(y)$. [A {\\em partition} of a set $S$ is a collection of disjoint subsets (parts) whose union is $S$.]",
+        "informal_solution" : "None.",
+        "tags" : ["combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_1995_b3",
+        "informal_statement" : "To each positive integer with $n^{2}$ decimal digits, we associate the determinant of the matrix obtained by writing the digits in order across the rows. For example, for $n=2$, to the integer 8617 we associate $\\det \\left( \\begin{array}{cc} 8 & 6 \\ 1 & 7 \\end{array} \\right) = 50$. Find, as a function of $n$, the sum of all the determinants associated with $n^{2}$-digit integers. (Leading digits are assumed to be nonzero; for example, for $n=2$, there are 9000 determinants.)",
+        "informal_solution" : "Show that the solution is $45$ if $n = 1$, $45^2*10$ if $n = 2$, and $0$ if $n$ is greater than 3.",
+        "tags" : ["linear_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1995_b4",
+        "informal_statement" : "Evaluate \\[ \\sqrt[8]{2207 - \\frac{1}{2207-\\frac{1}{2207-\\dots}}}. \\] Express your answer in the form $\\frac{a+b\\sqrt{c}}{d}$, where $a,b,c,d$ are integers.",
+        "informal_solution" : "Show that the solution is $(3 + 1*\\sqrt{5})/2.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1995_b6",
+        "informal_statement" : "For a positive real number $\\alpha$, define \\[ S(\\alpha) = \\{ \\lfloor n\\alpha \\rfloor : n = 1,2,3,\\dots \\}. \\] Prove that $\\{1,2,3,\\dots\\}$ cannot be expressed as the disjoint union of three sets $S(\\alpha), S(\\beta)$ and $S(\\gamma)$. [As usual, $\\lfloor x \\rfloor$ is the greatest integer $\\leq x$.]",
+        "informal_solution" : "None.",
+        "tags" : ["algebra", "number_theory"]
+    }
+]

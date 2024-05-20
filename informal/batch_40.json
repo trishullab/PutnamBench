@@ -1,0 +1,56 @@
+[
+    {
+        "problem_name" : "putnam_1980_a2",
+        "informal_statement" : "Let $r$ and $s$ be positive integers. Derive a formula for the number of ordered quadruples $(a,b,c,d)$ of positive integers such that $3^r \\cdot 7^s=\\text{lcm}[a,b,c]=\\text{lcm}[a,b,d]=\\text{lcm}[a,c,d]=\\text{lcm}[b,c,d]$. The answer should be a function of $r$ and $s$. (Note that $\\text{lcm}[x,y,z]$ denotes the least common multiple of $x,y,z$.)",
+        "informal_solution" : "Show that the number is $(1+4r+6r^2)(1+4s+6s^2)$.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1980_a3",
+        "informal_statement" : "Evaluate $\\int_0^{\\pi/2}\\frac{dx}{1+(\\tan x)^{\\sqrt{2}}}$.",
+        "informal_solution" : "Show that the integral is $\\pi/4$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1980_a4",
+        "informal_statement" : "\\begin{enumerate}\n\\item[(a)] Prove that there exist integers $a,b,c$, not all zero and each of absolute value less than one million, such that $|a+b\\sqrt{2}+c\\sqrt{3}|<10^{-11}$.\n\\item[(b)] Let $a,b,c$ be integers, not all zero and each of absolute value less than one million. Prove that $|a+b\\sqrt{2}+c\\sqrt{3}|>10^{-21}$.\n\\end{enumerate}",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1980_a5",
+        "informal_statement" : "Let $P(t)$ be a nonconstant polynomial with real coefficients. Prove that the system of simultaneous equations $0=\\int_0^xP(t)\\sin t\\,dt=\\int_0^xP(t)\\cos t\\,dt$ has only finitely many real solutions $x$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1980_a6",
+        "informal_statement" : "Let $C$ be the class of all real valued continuously differentiable functions $f$ on the interval $0 \\leq x \\leq 1$ with $f(0)=0$ and $f(1)=1$. Determine the largest real number $u$ such that $u \\leq \\int_0^1|f'(x)-f(x)|\\,dx$ for all $f$ in $C$.",
+        "informal_solution" : "Show that $u=1/e$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1980_b1",
+        "informal_statement" : "For which real numbers $c$ is $(e^x+e^{-x})/2 \\leq e^{cx^2}$ for all real $x$?",
+        "informal_solution" : "Show that the inequality holds if and only if $c \\geq 1/2$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1980_b3",
+        "informal_statement" : "For which real numbers $a$ does the sequence defined by the initial condition $u_0=a$ and the recursion $u_{n+1}=2u_n-n^2$ have $u_n>0$ for all $n \\geq 0$? (Express the answer in the simplest form.)",
+        "informal_solution" : "Show that $u_n>0$ for all $n \\geq 0$ if and only if $a \\geq 3$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1981_b4",
+        "informal_statement" : "Let $V$ be a set of $5$ by $7$ matrices, with real entries and with the property that $rA+sB \\in V$ whenever $A,B \\in V$ and $r$ and $s$ are scalars (i.e., real numbers). \\emph{Prove or disprove} the following assertion: If $V$ contains matrices of ranks $0$, $1$, $2$, $4$, and $5$, then it also contains a matrix of rank $3$. [The rank of a nonzero matrix $M$ is the largest $k$ such that the entries of some $k$ rows and some $k$ columns form a $k$ by $k$ matrix with a nonzero determinant.]",
+        "informal_solution" : "Show that the assertion is false.",
+        "tags" : ["linear_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1981_b5",
+        "informal_statement" : "Let $B(n)$ be the number of ones in the base two expression for the positive integer $n$. For example, $B(6)=B(110_2)=2$ and $B(15)=B(1111_2)=4$. Determine whether or not $\\exp \\left(\\sum_{n=1}^\\infty \\frac{B(n)}{n(n+1)}\\right)$ is a rational number. Here $\\exp(x)$ denotes $e^x$.",
+        "informal_solution" : "Show that the expression is a rational number.",
+        "tags" : ["analysis", "algebra"]
+    }
+]

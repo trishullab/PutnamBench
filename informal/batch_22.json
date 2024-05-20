@@ -1,0 +1,44 @@
+[
+    {
+        "problem_name" : "putnam_1999_a1",
+        "informal_statement" : "Find polynomials $f(x)$,$g(x)$, and $h(x)$, if they exist, such that for all $x$, \\[|f(x)|-|g(x)|+h(x) = \\begin{cases} -1 & \\mbox{if $x<-1$} \\\\3x+2 & \\mbox{if $-1 \\leq x \\leq 0$} \\\\-2x+2 & \\mbox{if $x>0$.}\\end{cases}\\]?",
+        "informal_solution" : "Show that the answer is such functions do exist.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1999_a3",
+        "informal_statement" : "Consider the power series expansion \\[\\frac{1}{1-2x-x^2} = \\sum_{n=0}^\\infty a_n x^n.\\] Prove that, for each integer $n\\geq 0$, there is an integer $m$ such that \\[a_n^2 + a_{n+1}^2 = a_m .\\]",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1999_a4",
+        "informal_statement" : "Sum the series \\[\\sum_{m=1}^\\infty \\sum_{n=1}^\\infty \\frac{m^2 n}{3^m(n3^m+m3^n)}.\\]",
+        "informal_solution" : "Show that the solution is 9/32.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1999_a6",
+        "informal_statement" : "The sequence $(a_n)_{n\\geq 1}$ is defined by $a_1=1, a_2=2, a_3=24,$ and, for $n\\geq 4$, \\[a_n = \\frac{6a_{n-1}^2a_{n-3} - 8a_{n-1}a_{n-2}^2}{a_{n-2}a_{n-3}}.\\] Show that, for all n, $a_n$ is an integer multiple of $n$.",
+        "informal_solution" : "None.",
+        "tags" : []
+    },
+    {
+        "problem_name" : "putnam_1999_b2",
+        "informal_statement" : "Let $P(x)$ be a polynomial of degree $n$ such that $P(x)=Q(x)P''(x)$, where $Q(x)$ is a quadratic polynomial and $P''(x)$ is the second derivative of $P(x)$.  Show that if $P(x)$ has at least two distinct roots then it must have $n$ distinct roots.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1999_b3",
+        "informal_statement" : "Let $A=\\{(x,y):0\\leq x,y<1\\}$.  For $(x,y)\\in A$, let \\[S(x,y) = \\sum_{\\frac{1}{2}\\leq \\frac{m}{n}\\leq 2} x^m y^n,\\] where the sum ranges over all pairs $(m,n)$ of positive integers satisfying the indicated inequalities.  Evaluate \\[\\lim_{(x,y)\\rightarrow (1,1), (x,y)\\in A} (1-xy^2)(1-x^2y)S(x,y).\\]",
+        "informal_solution" : "Show that the answer is 3.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1999_b5",
+        "informal_statement" : "For an integer $n\\geq 3$, let $\\theta=2\\pi/n$.  Evaluate the determinant of the $n\\times n$ matrix $I+A$, where $I$ is the $n\\times n$ identity matrix and $A=(a_{jk})$ has entries $a_{jk}=\\cos(j\\theta+k\\theta)$ for all $j,k$.",
+        "informal_solution" : "Show that the answer is $(1 - n^2)/4$.",
+        "tags" : ["linear_algebra"]
+    }
+]

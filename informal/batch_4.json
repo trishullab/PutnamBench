@@ -1,0 +1,44 @@
+[
+    {
+        "problem_name" : "putnam_2021_b4",
+        "informal_statement" : "Let $F_0, F_1, \\ldots$ be the sequence of Fibonacci numbers, with $F_0 = 0$, $F_1 = 1$, and $F_n = F_{n-1} + F_{n-2}$ for $n \\geq 2$. For $m > 2$, let $R_m$ be the remainder when the product $\\prod_{k=1}^{F_{m-1}} k^k$ is divided by $F_m$. Prove that $R_m$ is also a Fibonacci number.",
+        "informal_solution" : "None.",
+        "tags" : ["number\\_theory"]
+    },
+    {
+        "problem_name" : "putnam_2020_a1",
+        "informal_statement" : "Find the number of positive integers $N$ satisfying: (i) $N$ is divisible by $2020$, (ii) $N$ has at most $2020$ decimal digits, (iii) The decimal digits of $N$ are a string of consecutive ones followed by a string of consecutive zeros.",
+        "informal_solution" : "Show that the solution is $508536$.",
+        "tags" : ["number_theory", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_2019_b5",
+        "informal_statement" : "Let $F_m$ be the $m$th Fibonacci number, defined by $F_1 = F_2 = 1$ and $F_m = F_{m-1} + F_{m-2}$ for all $m \\geq 3$. Let $p(x)$ be the polynomial of degree $1008$ such that $p(2n + 1) = F_{2n+1}$ for $n = 0,1,2,\\ldots,1008$. Find integers $j$ and $k$ such that $p(2019) = F_j - F_k$.",
+        "informal_solution" : "Show that the solution takes the form of $(j, k) = (2019, 1010)$.",
+        "tags" : ["number_theory", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_2018_a1",
+        "informal_statement" : "Find all ordered pairs $(a,b)$ of positive integers for which $\\frac{1}{a} + \\frac{1}{b} = \\frac{3}{2018}$.",
+        "informal_solution" : "Show that all solutions are in the set of ${(673,1358114), (674,340033), (1009,2018), (2018,1009), (340033,674), (1358114,673)}$.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2018_a3",
+        "informal_statement" : "Determine the greatest possible value of $\\sum_{i=1}^{10} \\cos(3x_i)$ for real numbers $x_1, x_2, \\ldots, x_{10}$ satisfying $\\sum_{i=1}^{10} \\cos(x_i) = 0$.",
+        "informal_solution" : "Show that the solution is $\\frac{480}{49}$",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2018_b2",
+        "informal_statement" : "Let $n$ be a positive integer, and let $f_n(z) = n + (n-1)z + (n-2)z^2 + \\cdots + z^{n-1}$. Prove that $f_n$ has no roots in the closed unit disk $\\{z \\in \\mathbb{C}: |z| \\leq 1\\}$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2017_a1",
+        "informal_statement" : "Let $S$ be the smallest set of positive integers such that (a) $2$ is in $S$, (b) $n$ is in $S$ whenever $n^2$ is in $S$, and (c) $(n+5)^2$ is in $S$ whenever $n$ is in $S$. Which positive integers are not in $S$?.",
+        "informal_solution" : "Show that all solutions are in the set $\\{x \\in \\mathbb{Z}\\, |\\, x > 0 \\land (x = 1 \\lor 5 \\mid x)\\}",
+        "tags" : ["number_theory"]
+    }
+]

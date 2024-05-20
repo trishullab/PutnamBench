@@ -1,0 +1,62 @@
+[
+    {
+        "problem_name" : "putnam_1983_a1",
+        "informal_statement" : "How many positive integers $n$ are there such that $n$ is an exact divisor of at least one of the numbers $10^{40},20^{30}$?",
+        "informal_solution" : "Show that the desired count is $2301$.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1983_a3",
+        "informal_statement" : "Let $p$ be in the set $\\{3,5,7,11,\\dots\\}$ of odd primes and let $F(n)=1+2n+3n^2+\\dots+(p-1)n^{p-2}$. Prove that if $a$ and $b$ are distinct integers in $\\{0,1,2,\\dots,p-1\\}$ then $F(a)$ and $F(b)$ are not congruent modulo $p$, that is, $F(a)-F(b)$ is not exactly divisible by $p$.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_1984_a2",
+        "informal_statement" : "Express $\\sum_{k=1}^\\infty (6^k/(3^{k+1}-2^{k+1})(3^k-2^k))$ as a rational number.",
+        "informal_solution" : "Show that the sum converges to $2$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1984_a3",
+        "informal_statement" : "Let $n$ be a positive integer. Let $a,b,x$ be real numbers, with $a \\neq b$, and let $M_n$ denote the $2n \\times 2n$ matrix whose $(i,j)$ entry $m_{ij}$ is given by\n\\[\nm_{ij}=\\begin{cases}\nx & \\text{if }i=j, \\\\\na & \\text{if }i \\neq j\\text{ and }i+j\\text{ is even}, \\\\\nb & \\text{if }i \\neq j\\text{ and }i+j\\text{ is odd}.\n\\end{cases}\n\\]\nThus, for example, $M_2=\\begin{pmatrix} x & b & a & b \\\\ b & x & b & a \\\\ a & b & x & b \\\\ b & a & b & x \\end{pmatrix}$. Express $\\lim_{x \\to a} \\det M_n/(x-a)^{2n-2}$ as a polynomial in $a$, $b$, and $n$, where $\\det M_n$ denotes the determinant of $M_n$.",
+        "informal_solution" : "Show that $\\lim_{x \\to a} \\frac{\\det M_n}{(x-a)^{2n-2}}=n^2(a^2-b^2)$.",
+        "tags" : ["linear_algebra", "analysis"]
+    },
+    {
+        "problem_name" : "putnam_1984_a5",
+        "informal_statement" : "Let $R$ be the region consisting of all triples $(x,y,z)$ of nonnegative real numbers satisfying $x+y+z \\leq 1$. Let $w=1-x-y-z$. Express the value of the triple integral $\\iiint_R x^1y^9z^8w^4\\,dx\\,dy\\,dz$ in the form $a!b!c!d!/n!$, where $a$, $b$, $c$, $d$, and $n$ are positive integers.",
+        "informal_solution" : "Show that the integral we desire is $1!9!8!4!/25!$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1984_a6",
+        "informal_statement" : "Let $n$ be a positive integer, and let $f(n)$ denote the last nonzero digit in the decimal expansion of $n!$. For instance, $f(5)=2$.\n\\begin{enumerate}\n\\item[(a)] Show that if $a_1,a_2,\\dots,a_k$ are \\emph{distinct} nonnegative integers, then $f(5^{a_1}+5^{a_2}+\\dots+5^{a_k})$ depends only on the sum $a_1+a_2+\\dots+a_k$.\n\\item[(b)] Assuming part (a), we can define $g(s)=f(5^{a_1}+5^{a_2}+\\dots+5^{a_k})$, where $s=a_1+a_2+\\dots+a_k$. Find the least positive integer $p$ for which $g(s)=g(s + p)$, for all $s \\geq 1$, or else show that no such $p$ exists.\n\\end{enumerate}",
+        "informal_solution" : "Show that the least such $p$ is $p=4$.",
+        "tags" : ["algebra", "number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1984_b1",
+        "informal_statement" : "Let $n$ be a positive integer, and define $f(n)=1!+2!+\\dots+n!$. Find polynomials $P(x)$ and $Q(x)$ such that $f(n+2)=P(n)f(n+1)+Q(n)f(n)$ for all $n \\geq 1$.",
+        "informal_solution" : "Show that we can take $P(x)=x+3$ and $Q(x)=-x-2$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1984_b2",
+        "informal_statement" : "Find the minimum value of $(u-v)^2+(\\sqrt{2-u^2}-\\frac{9}{v})^2$ for $0<u<\\sqrt{2}$ and $v>0$.",
+        "informal_solution" : "Show that the minimum value is $8$.",
+        "tags" : ["geometry", "analysis"]
+    },
+    {
+        "problem_name" : "putnam_1984_b3",
+        "informal_statement" : "Prove or disprove the following statement: If $F$ is a finite set with two or more elements, then there exists a binary operation $*$ on F such that for all $x,y,z$ in $F$,\n\\begin{enumerate}\n\\item[(i)] $x*z=y*z$ implies $x=y$ (right cancellation holds), and\n\\item[(ii)] $x*(y*z) \\neq (x*y)*z$ (\\emph{no} case of associativity holds).\n\\end{enumerate}",
+        "informal_solution" : "Show that the statement is true.",
+        "tags" : ["abstract_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1984_b5",
+        "informal_statement" : "For each nonnegative integer $k$, let $d(k)$ denote the number of $1$'s in the binary expansion of $k$ (for example, $d(0)=0$ and $d(5)=2$). Let $m$ be a positive integer. Express $\\sum_{k=0}^{2^m-1} (-1)^{d(k)}k^m$ in the form $(-1)^ma^{f(m)}(g(m))!$, where $a$ is an integer and $f$ and $g$ are polynomials.",
+        "informal_solution" : "Show that $\\sum_{k=0}^{2^m-1} (-1)^{d(k)}k^m=(-1)^m2^{m(m-1)/2}m!$.",
+        "tags" : ["algebra", "analysis"]
+    }
+]

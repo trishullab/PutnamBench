@@ -1,0 +1,50 @@
+[
+    {
+        "problem_name" : "putnam_2011_a3",
+        "informal_statement" : "Find a real number $c$ and a positive number $L$ for which $\\lim_{r \\to \\infty} \\frac{r^c \\int_0^{\\pi/2} x^r\\sin x\\,dx}{\\int_0^{\\pi/2} x^r\\cos x\\,dx}=L$.",
+        "informal_solution" : "Show that $(c,L)=(-1,2/\\pi)$ works.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2011_a4",
+        "informal_statement" : "For which positive integers $n$ is there an $n \\times n$ matrix with integer entries such that every dot product of a row with itself is even, while every dot product of two different rows is odd?",
+        "informal_solution" : "Show that the answer is $n$ odd.",
+        "tags" : ["linear_algebra"]
+    },
+    {
+        "problem_name" : "putnam_2011_b1",
+        "informal_statement" : "Let $h$ and $k$ be positive integers. Prove that for every $\\epsilon>0$, there are positive integers $m$ and $n$ such that $\\epsilon<|h\\sqrt{m}-k\\sqrt{n}|<2\\epsilon$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2011_b2",
+        "informal_statement" : "Let $S$ be the set of all ordered triples $(p,q,r)$ of prime numbers for which at least one rational number $x$ satisfies $px^2+qx+r=0$. Which primes appear in seven or more elements of $S$?",
+        "informal_solution" : "Show that only the primes $2$ and $5$ appear seven or more times.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2014_b3",
+        "informal_statement" : "Let $A$ be an $m \\times n$ matrix with rational entries. Suppose that there are at least $m+n$ distinct prime numbers among the absolute values of the entries of $A$. Show that the rank of $A$ is at least 2.",
+        "informal_solution" : "None.",
+        "tags" : ["linear_algebra", "number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2015_b3",
+        "informal_statement" : "Let $S$ be the set of all $2 \\times 2$ real matrices $M=\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$ whose entries $a,b,c,d$ (in that order) form an arithmetic progression. Find all matrices $M$ in $S$ for which there is some integer $k>1$ such that $M^k$ is also in $S$.",
+        "informal_solution" : "Show that matrices of the form $\\alpha A$ or $\\beta B$, where $A=\\left(\\begin{smallmatrix} 1 & 1 \\\\ 1 & 1 \\end{smallmatrix}\\right)$, $B=\\left(\\begin{smallmatrix} -3 & -1 \\\\ 1 & 3 \\end{smallmatrix}\\right)$, and $\\alpha,\\beta \\in \\mathbb{R}$, are the only matrices in $S$ that satisfy the given condition.",
+        "tags" : ["linear_algebra"]
+    },
+    {
+        "problem_name" : "putnam_2015_b6",
+        "informal_statement" : "For each positive integer $k$, let $A(k)$ be the number of odd divisors of $k$ in the interval $[1,\\sqrt{2k})$. Evaluate $\\sum_{k=1}^\\infty (-1)^{k-1}\\frac{A(k)}{k}$.",
+        "informal_solution" : "Show that the sum converges to $\\pi^2/16$.",
+        "tags" : ["analysis", "number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2019_a5",
+        "informal_statement" : "Let $p$ be an odd prime number, and let $\\mathbb{F}_p$ denote the field of integers modulo $p$. Let $\\mathbb{F}_p[x]$ be the ring of polynomials over $\\mathbb{F}_p$, and let $q(x) \\in \\mathbb{F}_p[x]$ be given by $q(x)=\\sum_{k=1}^{p-1} a_kx^k$, where $a_k=k^{(p-1)/2}\\mod{p}$. Find the greatest nonnegative integer $n$ such that $(x-1)^n$ divides $q(x)$ in $\\mathbb{F}_p[x]$.",
+        "informal_solution" : "Show that the answer is $\\frac{p-1}{2}$.",
+        "tags" : ["abstract_algebra", "number_theory", "algebra"]
+    }
+]

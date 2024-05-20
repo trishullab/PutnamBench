@@ -1,0 +1,56 @@
+[
+    {
+        "problem_name" : "putnam_1987_a1",
+        "informal_statement" : "Curves $A$, $B$, $C$, and $D$ are defined in the plane as follows:\n\\begin{align*}\nA&=\\left\\{ (x,y):x^2-y^2=\\frac{x}{x^2+y^2} \\right\\}, \\\\\nB&=\\left\\{ (x,y):2xy+\\frac{y}{x^2+y^2}=3 \\right\\}, \\\\\nC&=\\left\\{ (x,y):x^3-3xy^2+3y=1 \\right\\}, \\\\\nD&=\\left\\{ (x,y):3x^2y-3x-y^3=0 \\right\\}.\n\\end{align*}\nProve that $A \\cap B=C \\cap D$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1987_a2",
+        "informal_statement" : "The sequence of digits $123456789101112131415161718192021 \\dots$ is obtained by writing the positive integers in order. If the $10^n$-th digit in this sequence occurs in the part of the sequence in which the $m$-digit numbers are placed, define $f(n)$ to be $m$. For example, $f(2)=2$ because the $100$th digit enters the sequence in the placement of the two-digit integer $55$. Find, with proof, $f(1987)$.",
+        "informal_solution" : "Show that the value of $f(1987)$ is $1984$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1988_a6",
+        "informal_statement" : "If a linear transformation $A$ on an $n$-dimensional vector space has $n+1$ eigenvectors such that any $n$ of them are linearly independent, does it follow that $A$ is a scalar multiple of the identity? Prove your answer.",
+        "informal_solution" : "Show that the answer is yes, $A$ must be a scalar multiple of the identity.",
+        "tags" : ["linear_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1988_b1",
+        "informal_statement" : "A \\emph{composite} (positive integer) is a product $ab$ with $a$ and $b$ not necessarily distinct integers in $\\{2,3,4,\\dots\\}$. Show that every composite is expressible as $xy+xz+yz+1$, with $x,y,z$ positive integers.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_1988_b2",
+        "informal_statement" : "Prove or disprove: If $x$ and $y$ are real numbers with $y \\geq 0$ and $y(y+1) \\leq (x+1)^2$, then $y(y-1) \\leq x^2$.",
+        "informal_solution" : "Show that this is true.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1988_b3",
+        "informal_statement" : "For every $n$ in the set $N=\\{1,2,\\dots\\}$ of positive integers, let $r_n$ be the minimum value of $|c-d \\sqrt{3}|$ for all nonnegative integers $c$ and $d$ with $c+d=n$. Find, with proof, the smallest positive real number $g$ with $r_n \\leq g$ for all $n \\in N$.",
+        "informal_solution" : "Show that the smallest such $g$ is $(1+\\sqrt{3})/2$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1988_b4",
+        "informal_statement" : "Prove that if $\\sum_{n=1}^\\infty a_n$ is a convergent series of positive real numbers, then so is $\\sum_{n=1}^\\infty (a_n)^{n/(n+1)}$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1988_b5",
+        "informal_statement" : "For positive integers $n$, let $M_n$ be the $2n+1$ by $2n+1$ skew-symmetric matrix for which each entry in the first $n$ subdiagonals below the main diagonal is $1$ and each of the remaining entries below the main diagonal is $-1$. Find, with proof, the rank of $M_n$. (According to one definition, the rank of a matrix is the largest $k$ such that there is a $k \\times k$ submatrix with nonzero determinant.) One may note that\n\\begin{align*}\nM_1&=\\begin{pmatrix} 0 & -1 & 1 \\\\ 1 & 0 & -1 \\\\ -1 & 1 & 0 \\end{pmatrix} \\\\\nM_2&=\\begin{pmatrix} 0 & -1 & -1 & 1 & 1 \\\\ 1 & 0 & -1 & -1 & 1 \\\\ 1 & 1 & 0 & -1 & -1 \\\\ -1 & 1 & 1 & 0 & -1 \\\\ -1 & -1 & 1 & 1 & 0 \\end{pmatrix}.\n\\end{align*}",
+        "informal_solution" : "Show that the rank of $M_n$ equals $2n$.",
+        "tags" : ["linear_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1988_b6",
+        "informal_statement" : "Prove that there exist an infinite number of ordered pairs $(a,b)$ of integers such that for every positive integer $t$, the number $at+b$ is a triangular number if and only if $t$ is a triangular number. (The triangular numbers are the $t_n=n(n+1)/2$ with $n$ in $\\{0,1,2,\\dots\\}$.)",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory", "algebra"]
+    }
+]
