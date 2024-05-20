@@ -1,0 +1,56 @@
+[
+    {
+        "problem_name" : "putnam_2008_a6",
+        "informal_statement" : "Prove that there exists a constant $c>0$ such that in every nontrivial finite group $G$ there exists a sequence of length at most $c \\log |G|$ with the property that each element of $G$ equals the product of some subsequence. (The elements of $G$ in the sequence are not required to be distinct. A \\emph{subsequence} of a sequence is obtained by selecting some of the terms, not necessarily consecutive, without reordering them; for example, $4, 4, 2$ is a subsequence of $2, 4, 6, 4, 2$, but $2, 2, 4$ is not.)",
+        "tags" : ["abstract-algebra"]
+    },
+    {
+        "problem_name" : "putnam_2008_b4",
+        "informal_statement" : "Let $p$ be a prime number. Let $h(x)$ be a polynomial with integer coefficients such that $h(0), h(1), \\dots, h(p^2-1)$ are distinct modulo $p^2$. Show that $h(0), h(1), \\dots, h(p^3-1)$ are distinct modulo $p^3$.",
+        "tags" : ["algebra", "number-theory"]
+    },
+    {
+        "problem_name" : "putnam_2007_a4",
+        "informal_statement" : "A \\emph{repunit} is a positive integer whose digits in base 10 are all ones. Find all polynomials $f$ with real coefficients such that if $n$ is a repunit, then so is $f(n)$.",
+        "informal_solution" : "Show that the desired polynomials $f$ are those of the form\n\\[\nf(n) = \\frac{1}{9}(10^c (9n+1)^d - 1)\n\\]\nfor integers $d \\geq 0$ and $c \\geq 1-d$.",
+        "tags" : ["analysis", "algebra", "number-theory"]
+    },
+    {
+        "problem_name" : "putnam_2007_b2",
+        "informal_statement" : "Suppose that $f: [0,1] \\to \\mathbb{R}$ has a continuous derivative and that $\\int_0^1 f(x)\\,dx = 0$. Prove that for every $\\alpha \\in (0,1)$,\n\\[\n\\left| \\int_0^\\alpha f(x)\\,dx \\right| \\leq \\frac{1}{8} \\max_{0 \\leq x\n\\leq 1} |f'(x)|.\n\\]",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2007_b3",
+        "informal_statement" : "Let $x_0 = 1$ and for $n \\geq 0$, let $x_{n+1} = 3x_n + \\lfloor x_n \\sqrt{5} \\rfloor$. In particular, $x_1 = 5$, $x_2 = 26$, $x_3 = 136$, $x_4 = 712$. Find a closed-form expression for $x_{2007}$. ($\\lfloor a \\rfloor$ means the largest integer $\\leq a$.)",
+        "informal_solution" : "Prove that $x_{2007} = \\frac{2^{2006}}{\\sqrt{5}}(\\alpha^{3997}-\\alpha^{-3997})$, where $\\alpha = \\frac{1+\\sqrt{5}}{2}$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2007_b4",
+        "informal_statement" : "Let $n$ be a positive integer. Find the number of pairs $P, Q$ of polynomials with real coefficients such that\n\\[\n(P(X))^2 + (Q(X))^2 = X^{2n} + 1\n\\]\nand $\\deg P > \\deg Q$.",
+        "informal_solution" : "Show that the number of pairs is $2^{n+1}$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2007_b5",
+        "informal_statement" : "Let $k$ be a positive integer. Prove that there exist polynomials $P_0(n), P_1(n), \\dots, P_{k-1}(n)$ (which may depend on $k$) such that for any integer $n$,\n\\[\n\\left\\lfloor \\frac{n}{k} \\right\\rfloor^k = P_0(n) + P_1(n) \\left\\lfloor\n\\frac{n}{k} \\right\\rfloor + \\cdots + P_{k-1}(n) \\left\\lfloor \\frac{n}{k}\n\\right\\rfloor^{k-1}.\n\\]\n($\\lfloor a \\rfloor$ means the largest integer $\\leq a$.)",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2006_a3",
+        "informal_statement" : "Let $1, 2, 3, \\dots, 2005, 2006, 2007, 2009, 2012, 2016, \\dots$ be a sequence defined by $x_k = k$ for $k=1, 2, \\dots, 2006$ and $x_{k+1} = x_k + x_{k-2005}$ for $k \\geq 2006$. Show that the sequence has $2005$ consecutive terms each divisible by $2006$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2006_b2",
+        "informal_statement" : "Prove that, for every set $X = \\{x_1, x_2, \\dots, x_n\\}$ of $n$ real numbers, there exists a non-empty subset $S$ of $X$ and an integer $m$ such that\n\\[\n\\left| m + \\sum_{s \\in S} s \\right| \\leq \\frac{1}{n+1}.\n\\]",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2006_b5",
+        "informal_statement" : "For each continuous function $f: [0,1] \\to \\mathbb{R}$, let $I(f) = \\int_0^1 x^2 f(x)\\,dx$ and $J(x) = \\int_0^1 x \\left(f(x)\\right)^2\\,dx$. Find the maximum value of $I(f) - J(f)$ over all such functions $f$.",
+        "informal_solution" : "Show that the answer is \\frac{1}{16}.",
+        "tags" : ["analysis", "algebra"]
+    }
+]

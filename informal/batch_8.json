@@ -1,0 +1,62 @@
+[
+    {
+        "problem_name" : "putnam_2012_a2",
+        "informal_statement" : "Let $*$ be a commutative and associative binary operation on a set $S$. Assume that for every $x$ and $y$ in $S$, there exists $z$ in $S$ such that $x*z=y$. (This $z$ may depend on $x$ and $y$.) Show that if $a,b,c$ are in $S$ and $a*c=b*c$, then $a=b$.",
+        "informal_solution" : "None.",
+        "tags" : ["abstract_algebra"]
+    },
+    {
+        "problem_name" : "putnam_2013_a6",
+        "informal_statement" : "Define a function $w:\\mathbb{Z} \\times \\mathbb{Z} \\to \\mathbb{Z}$ as follows. For $|a|,|b| \\leq 2$, let $w(a,b)$ be as in the table shown; otherwise, let $w(a,b)=0$.\n\\begin{center}\n\\begin{tabular}{|cc|r|r|r|r|r|}\n\\hline\n\\multicolumn{2}{|c|}{\\multirow{2}{*}{$w(a,b)$}} & \\multicolumn{5}{|c|}{$b$} \\\\\n& & -2 & -1 & 0 & 1 & 2 \\\\\n\\hline\n& -2 & -1 & -2 & 2 & -2 & -1 \\\\\n& -1 & -2 & 4 & -4 & 4 & -2 \\\\\n$a$ & 0 & 2 & -4 & 12 & -4 & 2 \\\\\n& 1 & -2 & 4 & -4 & 4 & -2 \\\\\n& 2 & -1 & -2 & 2 & -2 & -1 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\nFor every finite subset $S$ of $\\mathbb{Z} \\times \\mathbb{Z}$, define $A(S)=\\sum_{(\\mathbf{s},\\mathbf{s}') \\in S \\times S} w(\\mathbf{s}-\\mathbf{s}')$. Prove that if $S$ is any finite nonempty subset of $\\mathbb{Z} \\times \\mathbb{Z}$, then $A(S)>0$. (For example, if $S=\\{(0,1),(0,2),(2,0),(3,1)\\}$, then the terms in $A(S)$ are $12,12,12,12,4,4,0,0,0,0,-1,-1,-2,-2,-4,-4$.)",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2013_b1",
+        "informal_statement" : "For positive integers $n$, let the numbers $c(n)$ be determined by the rules $c(1)=1$, $c(2n)=c(n)$, and $c(2n+1)=(-1)^nc(n)$. Find the value of $\\sum_{n=1}^{2013} c(n)c(n+2)$.",
+        "informal_solution" : "Show that the desired sum is $-1$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2013_b4",
+        "informal_statement" : "For any continuous real-valued function $f$ defined on the interval $[0,1]$, let $\\mu(f)=\\int_0^1 f(x)\\,dx,\\text{Var}(f)=\\int_0^1 (f(x)-\\mu(f))^2\\,dx,M(f)=\\max_{0 \\leq x \\leq 1} |f(x)|$. Show that if $f$ and $g$ are continuous real-valued functions defined on the interval $[0,1]$, then $\\text{Var}(fg) \\leq 2\\text{Var}(f)M(g)^2+2\\text{Var}(g)M(f)^2$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2013_b5",
+        "informal_statement" : "Let $X=\\{1,2,\\dots,n\\}$, and let $k \\in X$. Show that there are exactly $k \\cdot n^{n-1}$ functions $f:X \\to X$ such that for every $x \\in X$ there is a $j \\geq 0$ such that $f^{(j)}(x) \\leq k$. [Here $f^{(j)}$ denotes the $j$\\textsuperscript{th} iterate of $f$, so that $f^{(0)}(x)=x$ and $f^{(j+1)}(x)=f(f^{(j)}(x))$.]",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2017_a2",
+        "informal_statement" : "Let $Q_0(x)=1$, $Q_1(x)=x$, and $Q_n(x)=\\frac{(Q_{n-1}(x))^2-1}{Q_{n-2}(x)}$ for all $n \\geq 2$. Show that, whenever $n$ is a positive integer, $Q_n(x)$ is equal to a polynomial with integer coefficients.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2017_a3",
+        "informal_statement" : "Let $a$ and $b$ be real numbers with $a<b$, and let $f$ and $g$ be continuous functions from $[a,b]$ to $(0,\\infty)$ such that $\\int_a^b f(x)\\,dx=\\int_a^b g(x)\\,dx$ but $f \\neq g$. For every positive integer $n$, define $I_n=\\int_a^b \\frac{(f(x))^{n+1}}{(g(x))^n}\\,dx$. Show that $I_1,I_2,I_3,\\dots$ is an increasing sequence with $\\lim_{n \\to \\infty} I_n=\\infty$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2018_a4",
+        "informal_statement" : "Let $m$ and $n$ be positive integers with $\\gcd(m,n)=1$, and let $a_k=\\left\\lfloor \\frac{mk}{n} \\right\\rfloor - \\left\\lfloor \\frac{m(k-1)}{n} \\right\\rfloor$ for $k=1,2,\\dots,n$. Suppose that $g$ and $h$ are elements in a group $G$ and that $gh^{a_1}gh^{a_2} \\cdots gh^{a_n}=e$, where $e$ is the identity element. Show that $gh=hg$. (As usual, $\\lfloor x \\rfloor$ denotes the greatest integer less than or equal to $x$.)",
+        "informal_solution" : "None.",
+        "tags" : ["abstract_algebra", "number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2018_b1",
+        "informal_statement" : "Let $\\mathcal{P}$ be the set of vectors defined by $\\mathcal{P}=\\left\\{\\left.\\begin{pmatrix} a \\\\ b \\end{pmatrix}\\right| 0 \\leq a \\leq 2, 0 \\leq b \\leq 100,\\text{ and }a,b \\in \\mathbb{Z}\\right\\}$. Find all $\\mathbf{v} \\in \\mathcal{P}$ such that the set $\\mathcal{P} \\setminus \\{\\mathbf{v}\\}$ obtained by omitting vector $\\mathbf{v}$ from $\\mathcal{P}$ can be partitioned into two sets of equal size and equal sum.",
+        "informal_solution" : "Show that the answer is the collection of vectors $\\begin{pmatrix} 1 \\\\ b \\end{pmatrix}$ where $0 \\leq b \\leq 100$ and $b$ is even.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2018_b6",
+        "informal_statement" : "Let $S$ be the set of sequences of length $2018$ whose terms are in the set $\\{1,2,3,4,5,6,10\\}$ and sum to $3860$. Prove that the cardinality of $S$ is at most $2^{3860} \\cdot \\left(\\frac{2018}{2048}\\right)^{2018}$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    }
+]

@@ -98,7 +98,7 @@ theorem putnam_2022_b4:
   shows "(n \<ge> 4 \<and> (\<exists>x::nat\<Rightarrow>real. xprog x)) \<longleftrightarrow> n \<in> putnam_2022_b4_solution"
   sorry
 
-(* uses (real \<Rightarrow> real) instead of (Set.Ioi (0::real) \<Rightarrow> Set.Ioi (0::real)) *)
+(* uses (real \<Rightarrow> real) instead of ({0<..} \<Rightarrow> {0<..}) *)
 definition putnam_2022_b6_solution :: "(real \<Rightarrow> real) set" where "putnam_2022_b6_solution \<equiv> undefined"
 (* {f::real\<Rightarrow>real. (\<exists>c::real. c \<ge> 0 \<and> (\<forall>x::real>0. f x = 1/(1+c*x)))} *)
 theorem putnam_2022_b6:
@@ -108,7 +108,7 @@ theorem putnam_2022_b6:
   shows "(continuous_on {0<..} f \<and> eq) \<longleftrightarrow> f \<in> putnam_2022_b6_solution"
   sorry
 
-(* uses (nat \<Rightarrow> real) instead of (Fin (n+1) \<Rightarrow> real) and (real \<Rightarrow> real) instead of (Set.Ici (ts 0) \<Rightarrow> real) *)
+(* uses (nat \<Rightarrow> real) instead of (Fin (n+1) \<Rightarrow> real) and (real \<Rightarrow> real) instead of ({(ts 0)..} \<Rightarrow> real) *)
 definition putnam_2023_b4_solution :: real where "putnam_2023_b4_solution \<equiv> undefined"
 (* 29 *)
 theorem putnam_2023_b4:

@@ -1,0 +1,59 @@
+[
+    {
+        "problem_name" : "putnam_1978_b4",
+        "informal_statement" : "Show that we can find integers $a, b, c, d$ such that $a^2 + b^2 + c^2 + d^2 = abc + abd + acd + bcd$, and the smallest of $a, b, c, d$ is arbitrarily large.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1978_b5",
+        "informal_statement" : "Find the real polynomial $p(x)$ of degree $4$ with largest possible coefficient of $x^4$ such that $p([-1, 1]) \\subseteq [0, 1]$.",
+        "informal_solution" : "Prove that $p(x) = 4x^4 - 4x^2 + 1$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1978_b6",
+        "informal_statement" : "Let $a_{ij}$ be real numbers in $[0, 1]$. Show that\n\\[\n\\left( \\sum_{i=1}^n  \\sum_{j=1}^{mi} \\frac{a_{ij}}{i} \\right) ^2 \\leq 2m \\sum_{i=1}^n \\sum_{j=1}^{mi} a_{ij}.\n\\]",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1977_a1",
+        "informal_statement" : "Show that if four distinct points of the curve $y = 2x^4 + 7x^3 + 3x - 5$ are collinear, then their average $x$-coordinate is some constant $k$. Find $k$.",
+        "informal_solution" : "Prove that $k = -\\frac{7}{8}$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1977_a2",
+        "informal_statement" : "Find all real solutions $(a, b, c, d)$ to the equations $a + b + c = d$, $\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c} = \\frac{1}{d}$.",
+        "informal_solution" : "Prove that the solutions are $d = a$ and $b = -c$, $d = b$ and $a = -c$, or $d = c$ and $a = -b$, with $a, b, c, d$ nonzero.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1977_a3",
+        "informal_statement" : "Let $f, g, h$ be functions $\\mathbb{R} \\to \\mathbb{R}$. Find an expression for $h(x)$ in terms of $f$ and $g$ such that $f(x) = \\frac{h(x + 1) + h(x - 1)}{2}$ and $g(x) = \\frac{h(x + 4) + h(x - 4)}{2}$.",
+        "informal_solution" : "Prove that $h(x) = g(x) - f(x - 3) + f(x - 1) + f(x + 1) - f(x + 3)$ suffices.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1977_a4",
+        "informal_statement" : "Find $\\sum_{n=0}^{\\infty} \\frac{x^{2^n}}{1 - x^{2^{n+1}}}$ as a rational function of $x$ for $x \\in (0, 1)$.",
+        "informal_solution" : "Prove that the sum equals $\\frac{x}{1 - x}$.",
+        "tags" : ["algebra", "analysis"]
+    },
+    {
+        "problem_name" : "putnam_1977_a5",
+        "informal_statement" : "Let $p$ be a prime and $m \\geq n$ be non-negative integers. Show that $\\binom{pm}{pn} = \\binom{m}{n} \\pmod p$, where $\\binom{m}{n}$ is the binomial coefficient.",
+        "tags" : ["algebra", "number-theory"]
+    },
+    {
+        "problem_name" : "putnam_1977_a6",
+        "informal_statement" : "Let $X$ be the square $[0, 1] \\times [0, 1]$, and let $f : X \\to \\mathbb{R}$ be continuous. If $\\int_Y f(x, y) \\, dx \\, dy = 0$ for all squares $Y$ such that\n\\begin{itemize}\n\\item[(1)] $Y \\subseteq X$, \n\\item[(2)] $Y$ has sides parallel to those of $X$, \n\\item[(3)] at least one of $Y$'s sides is contained in the boundary of $X$, \n\\end{itemize}\nis it true that $f(x, y) = 0$ for all $x, y$?",
+        "informal_solution" : "Prove that $f(x,y)$ must be identically zero.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1977_b1",
+        "informal_statement" : "Find $\\prod_{n=2}^{\\infty} \\frac{(n^3 - 1)}{(n^3 + 1)}$.",
+        "informal_solution" : "Prove that the product equals $\\frac{2}{3}$.",
+        "tags" : ["algebra", "analysis"]
+    }
+]

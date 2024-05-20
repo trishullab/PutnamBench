@@ -1,0 +1,56 @@
+[
+    {
+        "problem_name" : "putnam_2021_a1",
+        "informal_statement" : "A grasshopper starts at the origin in the coordinate plane and makes a sequence of hops.\nEach hop has length $5$, and after each hop the grasshopper is at a point whose coordinates are both integers; thus, there are $12$ possible locations for the grasshopper after the first hop.\nWhat is the smallest number of hops needed for the grasshopper to reach the point $(2021, 2021)$?",
+        "informal_solution" : "The answer is $578$.",
+        "tags" : ["geometry"]
+    },
+    {
+        "problem_name" : "putnam_2021_a4",
+        "informal_statement" : "Let\n\\[\nI(R) = \\iint_{x^2+y^2 \\leq R^2} \\left( \\frac{1+2x^2}{1+x^4+6x^2y^2+y^4} - \\frac{1+y^2}{2+x^4+y^4} \\right)\\,dx\\,dy.\n\\]\nFind\n\\[\n\\lim_{R \\to \\infty} I(R),\n\\]\nor show that this limit does not exist.",
+        "informal_solution" : "The limit exists and equals $\\frac{\\sqrt{2}}{2} \\pi \\log 2$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2020_a3",
+        "informal_statement" : "Let $a_0 = \\pi/2$, and let $a_n = \\sin(a_{n-1})$ for $n \\geq 1$. Determine whether\n\\[\n\\sum_{n=1}^\\infty a_n^2\n\\]\nconverges.",
+        "informal_solution" : "The series diverges.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2020_a5",
+        "informal_statement" : "Let $a_n$ be the number of sets $S$ of positive integers for which\n\\[\n\\sum_{k \\in S} F_k = n,\n\\]\nwhere the Fibonacci sequence $(F_k)_{k \\geq 1}$ satisfies $F_{k+2} = F_{k+1} + F_k$ and begins $F_1 = 1, F_2 = 1, F_3 = 2, F_4 = 3$. Find the largest integer $n$ such that $a_n = 2020$.",
+        "informal_solution" : "The answer is $n=F_{4040}-1$.",
+        "tags" : ["number_theory", "combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_2020_a6",
+        "informal_statement" : "For a positive integer $N$, let $f_N$ be the function defined by \n\\[\nf_N(x) = \\sum_{n=0}^N \\frac{N+1/2-n}{(N+1)(2n+1)} \\sin((2n+1)x).\n\\]\nDetermine the smallest constant $M$ such that $f_N(x) \\leq M$ for all $N$ and all real $x$.",
+        "informal_solution" : "The smallest constant $M$ is $\\pi/4$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2020_b1",
+        "informal_statement" : "For a positive integer $n$, define $d(n)$ to be the sum of the digits of $n$ when written in binary (for example, $d(13) = 1+1+0+1=3)$. Let\n\\[\nS = \\sum_{k=1}^{2020} (-1)^{d(k)} k^3.\n\\]\nDetermine $S$ modulo 2020.",
+        "informal_solution" : "The answer is $1990$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2019_a1",
+        "informal_statement" : "Determine all possible values of the expression\n\\[\nA^3+B^3+C^3-3ABC\n\\]\nwhere $A, B$, and $C$ are nonnegative integers.",
+        "informal_solution" : "The answer is all nonnegative integers not congruent to $3$ or $6 \\pmod{9}$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2019_a3",
+        "informal_statement" : "Given real numbers $b_0, b_1, \\dots, b_{2019}$ with $b_{2019} \\neq 0$, let $z_1,z_2,\\dots,z_{2019}$ be \nthe roots in the complex plane of the polynomial \n\\[\nP(z) = \\sum_{k=0}^{2019} b_k z^k.\n\\]\nLet $\\mu = (|z_1| + \\cdots + |z_{2019}|)/2019$ be the average of the distances from $z_1,z_2,\\dots,z_{2019}$ to the origin. Determine the largest constant $M$ such that $\\mu \\geq M$ for all choices of $b_0,b_1,\\dots, b_{2019}$ that satisfy\n\\[\n1 \\leq b_0 < b_1 < b_2 < \\cdots < b_{2019} \\leq 2019.\n\\]",
+        "informal_solution" : "The answer is $M = 2019^{-1/2019}$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2019_b2",
+        "informal_statement" : "For all $n \\geq 1$, let\n\\[\na_n = \\sum_{k=1}^{n-1} \\frac{\\sin \\left( \\frac{(2k-1)\\pi}{2n} \\right)}{\\cos^2 \\left( \\frac{(k-1)\\pi}{2n} \\right) \\cos^2 \\left( \\frac{k\\pi}{2n} \\right)}.\n\\]\nDetermine\n\\[\n\\lim_{n \\to \\infty} \\frac{a_n}{n^3}.\n\\]",
+        "informal_solution" : "The answer is $\\frac{8}{\\pi^3}$.",
+        "tags" : ["analysis"]
+    }
+]

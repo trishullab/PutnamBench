@@ -1,0 +1,56 @@
+[
+    {
+        "problem_name" : "putnam_1998_a4",
+        "informal_statement" : "Let $A_1=0$ and $A_2=1$. For $n>2$, the number $A_n$ is defined by concatenating the decimal expansions of $A_{n-1}$ and $A_{n-2}$ from left to right.  For example $A_3=A_2 A_1=10$, $A_4=A_3 A_2 = 101$, $A_5=A_4 A_3 = 10110$, and so forth.  Determine all $n$ such that $11$ divides $A_n$.",
+        "informal_solution" : "Show that the solution is those n for which n can be written as 6k+1 for some integer k.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1998_a5",
+        "informal_statement" : "Let $\\mathcal F$ be a finite collection of open discs in $\\mathbb R^2$ whose union contains a set $E\\subseteq \\mathbb R^2$.  Show that there is a pairwise disjoint subcollection $D_1,\\ldots, D_n$ in $\\mathcal F$ such that \\[E\\subseteq \\cup_{j=1}^n 3D_j.\\] Here, if $D$ is the disc of radius $r$ and center $P$, then $3D$ is the disc of radius $3r$ and center $P$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1998_b1",
+        "informal_statement" : "Find the minimum value of \\[\\frac{(x+1/x)^6-(x^6+1/x^6)-2}{(x+1/x)^3+(x^3+1/x^3)}\\] for $x>0$.",
+        "informal_solution" : "Show that the minimum value is 6.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1998_b2",
+        "informal_statement" : "Given a point $(a,b)$ with $0<b<a$, determine the minimum perimeter of a triangle with one vertex at $(a,b)$, one on the $x$-axis, and one on the line $y=x$.  You may assume that a triangle of minimum perimeter exists.",
+        "informal_solution" : "Show that the solution is $\\sqrt{2a^2 + 2b^2}.",
+        "tags" : ["geometry", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_1998_b4",
+        "informal_statement" : "Find necessary and sufficient conditions on positive integers $m$ and $n$ so that \\[\\sum_{i=0}^{mn-1} (-1)^{\\lfloor i/m \\rfloor +\\lfloor i/n\\rfloor}=0.\\]",
+        "informal_solution" : "Show that the sum is 0 if and only if the largest powers of $2$ dividing $m$ and $n$ are different.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1998_b5",
+        "informal_statement" : "Let $N$ be the positive integer with 1998 decimal digits, all of them 1; that is, \\[N=1111\\cdots 11.\\] Find the thousandth digit after the decimal point of $\\sqrt N$.",
+        "informal_solution" : "Show that the thousandth digit is 1.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1997_a3",
+        "informal_statement" : "Evaluate \\begin{gather*} \\int_0^\\infty \\left(x-\\frac{x^3}{2}+\\frac{x^5}{2\\cdot 4}-\\frac{x^7}{2\\cdot 4\\cdot 6}+\\cdots\\right) \\\\ \\left(1+\\frac{x^2}{2^2}+\\frac{x^4}{2^2\\cdot 4^2}+\\frac{x^6}{2^2\\cdot 4^2 \\cdot 6^2}+\\cdots\\right)\\,dx. \\end{gather*}",
+        "informal_solution" : "Show that the solution is $\\sqrt{e}$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1997_a4",
+        "informal_statement" : "Let $G$ be a group with identity $e$ and $\\phi:G\\rightarrow G$ a function such that \\[\\phi(g_1)\\phi(g_2)\\phi(g_3)=\\phi(h_1)\\phi(h_2)\\phi(h_3)\\] whenever $g_1g_2g_3=e=h_1h_2h_3$. Prove that there exists an element $a\\in G$ such that $\\psi(x)=a\\phi(x)$ is a homomorphism (i.e. $\\psi(xy)=\\psi(x)\\psi(y)$ for all $x,y\\in G$).",
+        "informal_solution" : "None.",
+        "tags" : ["abstract_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1997_a5",
+        "informal_statement" : "Let $N_n$ denote the number of ordered $n$-tuples of positive integers $(a_1,a_2,\\ldots,a_n)$ such that $1/a_1 + 1/a_2 +\\ldots + 1/a_n=1$.  Determine whether $N_{10}$ is even or odd.",
+        "informal_solution" : "Show that $N_{10}$ is odd.",
+        "tags" : ["number_theory"]
+    }
+]

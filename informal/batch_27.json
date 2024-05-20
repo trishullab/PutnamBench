@@ -1,0 +1,74 @@
+[
+    {
+        "problem_name" : "putnam_1994_a1",
+        "informal_statement" : "Suppose that a sequence $a_1,a_2,a_3,\\dots$ satisfies $0<a_n \\leq a_{2n}+a_{2n+1}$ for all $n \\geq 1$. Prove that the series $\\sum_{n=1}^\\infty a_n$ diverges.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1994_a4",
+        "informal_statement" : "Let $A$ and $B$ be $2 \\times 2$ matrices with integer entries such that $A$, $A+B$, $A+2B$, $A+3B$, and $A+4B$ are all invertible matrices whose inverses have integer entries. Show that $A+5B$ is invertible and that its inverse has integer entries.",
+        "informal_solution" : "None.",
+        "tags" : ["linear_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1994_a5",
+        "informal_statement" : "Let $(r_n)_{n \\geq 0}$ be a sequence of positive real numbers such that $\\lim_{n \\to \\infty} r_n=0$. Let $S$ be the set of numbers representable as a sum $r_{i_1}+r_{i_2}+\\cdots+r_{i_{1994}}$, with $i_1<i_2<\\cdots<i_{1994}$. Show that every nonempty interval $(a,b)$ contains a nonempty subinterval $(c,d)$ that does not intersect $S$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1994_a6",
+        "informal_statement" : "Let $f_1,\\dots,f_{10}$ be bijections of the set of integers such that for each integer $n$, there is some composition $f_{i_1} \\circ f_{i_2} \\circ \\cdots \\circ f_{i_m}$ of these functions (allowing repetitions) which maps 0 to $n$. Consider the set of $1024$ functions $\\mathcal{F}=\\{f_1^{e_1} \\circ f_2^{e_2} \\circ \\cdots \\circ f_{10}^{e_{10}}\\}$, $e_i=0$ or $1$ for $1 \\leq i \\leq 10$. ($f_i^0$ is the identity function and $f_i^1=f_i$.) Show that if $A$ is any nonempty finite set of integers, then at most $512$ of the functions in $\\mathcal{F}$ map $A$ to itself.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1994_b1",
+        "informal_statement" : "Find all positive integers $n$ that are within $250$ of exactly $15$ perfect squares.",
+        "informal_solution" : "Show that an integer $n$ is within $250$ of exactly $15$ perfect squares if and only if either $315 \\leq n \\leq 325$ or $332 \\leq n \\leq 350$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1994_b2",
+        "informal_statement" : "For which real numbers $c$ is there a straight line that intersects the curve $x^4+9x^3+cx^2+9x+4$ in four distinct points?",
+        "informal_solution" : "Show that there exists such a line if and only if $c<243/8$.",
+        "tags" : ["geometry", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_1994_b3",
+        "informal_statement" : "Find the set of all real numbers $k$ with the following property: For any positive, differentiable function $f$ that satisfies $f'(x)>f(x)$ for all $x$, there is some number $N$ such that $f(x)>e^{kx}$ for all $x>N$.",
+        "informal_solution" : "Show that the desired set is $(-\\infty,1)$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1994_b4",
+        "informal_statement" : "For $n \\geq 1$, let $d_n$ be the greatest common divisor of the entries of $A^n-I$, where $A=\\begin{pmatrix} 3 & 2 \\\\ 4 & 3 \\end{pmatrix}$ and $I=\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}$. Show that $\\lim_{n \\to \\infty} d_n=\\infty$.",
+        "informal_solution" : "None.",
+        "tags" : ["linear_algebra", "number_theory", "analysis"]
+    },
+    {
+        "problem_name" : "putnam_1994_b5",
+        "informal_statement" : "For any real number $\\alpha$, define the function $f_\\alpha(x)=\\lfloor \\alpha x \\rfloor$. Let $n$ be a positive integer. Show that there exists an $\\alpha$ such that for $1 \\leq k \\leq n$, $f_\\alpha^k(n^2)=n^2-k=f_{\\alpha^k}(n^2)$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1994_b6",
+        "informal_statement" : "For any integer $a$, set $n_a=101a-100 \\cdot 2^a$. Show that for $0 \\leq a,b,c,d \\leq 99$, $n_a+n_b \\equiv n_c+n_d \\pmod{10100}$ implies $\\{a,b\\}=\\{c,d\\}$.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2004_a1",
+        "informal_statement" : "Basketball star Shanille O'Keal's team statistician keeps track of the number, $S(N)$, of successful free throws she has made in her first $N$ attempts of the season. Early in the season, $S(N)$ was less than $80\\%$ of $N$, but by the end of the season, $S(N)$ was more than $80\\%$ of $N$. Was there necessarily a moment in between when $S(N)$ was exactly $80\\%$ of $N$?",
+        "informal_solution" : "Show that the answer is yes.",
+        "tags" : ["probability"]
+    },
+    {
+        "problem_name" : "putnam_2013_a5",
+        "informal_statement" : "For $m \\geq 3$, a list of $\\binom{m}{3}$ real numbers $a_{ijk}$ ($1 \\leq i<j<k \\leq m$) is said to be \\emph{area definite} for $\\mathbb{R}^n$ if the inequality $\\sum_{1 \\leq i<j<k \\leq m} a_{ijk} \\cdot \\text{Area}(\\Delta A_iA_jA_k) \\geq 0$ holds for every choice of $m$ points $A_1,\\dots,A_m$ in $\\mathbb{R}^n$. For example, the list of four numbers $a_{123}=a_{124}=a_{134}=1$, $a_{234}=-1$ is area definite for $\\mathbb{R}^2$. Prove that if a list of $\\binom{m}{3}$ numbers is area definite for $\\mathbb{R}^2$, then it is area definite for $\\mathbb{R}^3$.",
+        "informal_solution" : "None.",
+        "tags" : ["geometry", "linear_algebra"]
+    }
+]

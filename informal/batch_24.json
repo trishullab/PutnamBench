@@ -1,0 +1,56 @@
+[
+    {
+        "problem_name" : "problem_1997_a6",
+        "informal_statement" : "For a positive integer $n$ and any real number $c$, define $x_k$ recursively by $x_0=0$, $x_1=1$, and for $k\\geq 0$, \\[x_{k+2}=\frac{cx_{k+1}-(n-k)x_k}{k+1}.\\] Fix $n$ and then take $c$ to be the largest value for which $x_{n+1}=0$. Find $x_k$ in terms of $n$ and $k$, $1\\leq k\\leq n$.",
+        "informal_solution" : "Show that the solution is that $x_k = {n - 1 \\choose k - 1}$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "problem_1997_b1",
+        "informal_statement" : "Let $\\{x\\}$ denote the distance between the real number $x$ and the nearest integer.  For each positive integer $n$, evaluate \\[F_n=\\sum_{m=1}^{6n-1} \\min(\\{\\frac{m}{6n}\\},\\{\\frac{m}{3n}\\}).\\] (Here $\\min(a,b)$ denotes the minimum of $a$ and $b$.)",
+        "informal_solution" : "Show that the solution is $n$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "problem_1997_b2",
+        "informal_statement" : "Let $f$ be a twice-differentiable real-valued function satisfying \\[f(x)+f''(x)=-xg(x)f'(x),\\] where $g(x)\\geq 0$ for all real $x$.  Prove that $|f(x)|$ is bounded.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "problem_1997_b3",
+        "informal_statement" : "For each positive integer $n$, write the sum $\\sum_{m=1}^n 1/m$ in the form $p_n/q_n$, where $p_n$ and $q_n$ are relatively prime positive integers.  Determine all $n$ such that 5 does not divide $q_n$.",
+        "informal_solution" : "Show that the solution is the set of natural numbers which are between $1$ and $4$, or between $20$ and $24$, or between $100$ and $104$, or between $120$ and $124$.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "problem_1997_b4",
+        "informal_statement" : "Let $a_{m,n}$ denote the coefficient of $x^n$ in the expansion of $(1+x+x^2)^m$.  Prove that for all [integers] $k\\geq 0$, \\[0\\leq \\sum_{i=0}^{\\lfloor \\frac{2k}{3}\\rfloor} (-1)^i a_{k-i,i}\\leq 1.\\]",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "problem_1997_b5",
+        "informal_statement" : "Prove that for $n\\geq 2$, \\[\\overbrace{2^{2^{\\cdots^{2}}}}^{\\mbox{$n$ terms}} \\equiv \\overbrace{2^{2^{\\cdots^{2}}}}^{\\mbox{$n-1$ terms}} \\quad \\pmod{n}.\\]",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "problem_1996_a3",
+        "informal_statement" : "Suppose that each of 20 students has made a choice of anywhere from 0 to 6 courses from a total of 6 courses offered. Prove or disprove: there are 5 students and 2 courses such that all 5 have chosen both courses or all 5 have chosen neither course.",
+        "informal_solution" : "Show that the solution is that the statement is false.",
+        "tags" : ["combinatorics"]
+    },
+    {
+        "problem_name" : "problem_1996_a4",
+        "informal_statement" : "Let $S$ be the set of ordered triples $(a, b, c)$ of distinct elements of a finite set $A$. Suppose that \\begin{enumerate} \\item $(a,b,c) \\in S$ if and only if $(b,c,a) \\in S$; \\item $(a,b,c) \\in S$ if and only if $(c,b,a) \\notin S$; \\item $(a,b,c)$ and $(c,d,a)$ are both in $S$ if and only if $(b,c,d)$ and $(d,a,b)$ are both in $S$. \\end{enumerate} Prove that there exists a one-to-one function $g$ from $A$ to $\\R$ such that $g(a) < g(b) < g(c)$ implies $(a,b,c) \\in S$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "problem_1996_a5",
+        "informal_statement" : "If $p$ is a prime number greater than 3 and $k = \\lfloor 2p/3 \\rfloor$, prove that the sum \\[\\binom p1 + \\binom p2 + \\cdots + \\binom pk \\] of binomial coefficients is divisible by $p^2$.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    }
+]

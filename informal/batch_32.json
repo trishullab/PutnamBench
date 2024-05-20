@@ -1,0 +1,53 @@
+[
+    {
+        "problem_name" : "putnam_1989_a3",
+        "informal_statement" : "Prove that if\n\\[\n11z^{10}+10iz^9+10iz-11=0,\n\\]\nthen $|z|=1.$ (Here $z$ is a complex number and $i^2=-1$.)",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1989_a6",
+        "informal_statement" : "Let $\\alpha=1+a_1x+a_2x^2+\\cdots$ be a formal power series with coefficients in the field of two elements. Let\n\\[\na_n =\n\\begin{cases}\n1 & \\parbox{2in}{if every block of zeros in the binary expansion of $n$ has an even number of zeros in the block} \\\\[.3in]\n0 & \\text{otherwise.}\n\\end{cases}\n\\]\n(For example, $a_{36}=1$ because $36=100100_2$ and $a_{20}=0$ because $20=10100_2.$) Prove that $\\alpha^3+x\\alpha+1=0.$",
+        "tags" : ["algebra", "abstract-algebra"]
+    },
+    {
+        "problem_name" : "putnam_1989_b2",
+        "informal_statement" : "Let $S$ be a non-empty set with an associative operation that is left and right cancellative ($xy=xz$ implies $y=z$, and $yx=zx$ implies $y=z$). Assume that for every $a$ in $S$ the set $\\{a^n:\\,n=1, 2, 3, \\ldots\\}$ is finite. Must $S$ be a group?",
+        "informal_solution" : "Prove that $S$ must be a group.",
+        "tags" : ["abstract-algebra"]
+    },
+    {
+        "problem_name" : "putnam_1989_b3",
+        "informal_statement" : "Let $f$ be a function on $[0,\\infty)$, differentiable and satisfying\n\\[\nf'(x)=-3f(x)+6f(2x)\n\\]\nfor $x>0$. Assume that $|f(x)|\\le e^{-\\sqrt{x}}$ for $x\\ge 0$ (so that $f(x)$ tends rapidly to $0$ as $x$ increases). For $n$ a non-negative integer, define\n\\[\n\\mu_n=\\int_0^\\infty x^n f(x)\\,dx\n\\]\n(sometimes called the $n$th moment of $f$).\n\\begin{enumerate}\n\\item[a)] Express $\\mu_n$ in terms of $\\mu_0$.\n\\item[b)] Prove that the sequence $\\{\\mu_n \\frac{3^n}{n!}\\}$ always converges, and that the limit is $0$ only if $\\mu_0=0$.\n\\end{enumerate}",
+        "informal_solution" : "Show that for each $n \\geq 0$, $\\mu_n = \\frac{n!}{3^n} \\left( \\prod_{m=1}^{n}(1 - 2^{-m}) \\right)^{-1} \\mu_0$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1989_b4",
+        "informal_statement" : "Can a countably infinite set have an uncountable collection of non-empty subsets such that the intersection of any two of them is finite?",
+        "informal_solution" : "Prove that such a collection exists.",
+        "tags" : ["set-theory"]
+    },
+    {
+        "problem_name" : "putnam_1988_a2",
+        "informal_statement" : "A not uncommon calculus mistake is to believe that the product rule for derivatives says that $(fg)' = f'g'$. If $f(x)=e^{x^2}$, determine, with proof, whether there exists an open interval $(a,b)$ and a nonzero function $g$ defined on $(a,b)$ such that this wrong product rule is true for $x$ in $(a,b)$.",
+        "informal_solution" : "Show that such $(a,b)$ and $g$ exist.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1988_a3",
+        "informal_statement" : "Determine, with proof, the set of real numbers $x$ for which\n\\[\n\\sum_{n=1}^\\infty \\left( \\frac{1}{n} \\csc \\frac{1}{n} - 1 \\right)^x\n\\]\nconverges.",
+        "informal_solution" : "Show that the series converges if and only if $x > \\frac{1}{2}$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1988_a4",
+        "informal_statement" : "\\begin{enumerate}\n\\item[(a)] If every point of the plane is painted one of three colors, do there necessarily exist two points of the same color exactly one inch apart?\n\\item[(b)] What if ``three'' is replaced by ``nine''?\n\\end{enumerate}",
+        "informal_solution" : "Prove that the points must exist with three colors, but not necessarily with nine.",
+        "tags" : ["geometry", "combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_1988_a5",
+        "informal_statement" : "Prove that there exists a \\emph{unique} function $f$ from the set $\\mathrm{R}^+$ of positive real numbers to $\\mathrm{R}^+$ such that\n\\[\nf(f(x)) = 6x-f(x)\n\\]\nand\n\\[\nf(x)>0\n\\]\nfor all $x>0$.",
+        "tags" : ["analysis"]
+    }
+]

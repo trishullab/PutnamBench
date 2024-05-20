@@ -1,0 +1,51 @@
+[
+    {
+        "problem_name" : "putnam_2019_a6",
+        "informal_statement" : "Let \\( g \\) be a real-valued function that is continuous on the closed interval \\([0,1]\\) and twice differentiable on the open interval \\((0,1)\\). Suppose that for some real number $\\( r > 1 \\),\\lim_{{x \\to 0^+}} \\frac{g(x)}{x^r} = 0.$ Prove that either $\\lim_{{x \\to 0^+}} g'(x) = 0$ or $\\limsup_{{x \\to 0^+}} x^r |g''(x)| = \\infty.$",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2019_b6",
+        "informal_statement" : "Let \\( \\mathbb{Z}^n \\) be the integer lattice in \\( \\mathbb{R}^n \\). Two points in \\( \\mathbb{Z}^n \\) are called neighbors if they differ by exactly 1 in one coordinate and are equal in all other coordinates. For which integers \\( n \\geq 1 \\) does there exist a set of points \\( S \\subset \\mathbb{Z}^n \\) satisfying the following two conditions? \\begin{enumerate} \\item If \\( p \\) is in \\( S \\), then none of the neighbors of \\( p \\) is in \\( S \\). \\item If \\( p \\in \\mathbb{Z}^n \\) is not in \\( S \\), then exactly one of the neighbors of \\( p \\) is in \\( S \\). \\end{enumerate}",
+        "informal_solution" : "None.",
+        "tags" : ["abstract_algebra"]
+    },
+    {
+        "problem_name" : "putnam_2018_a2",
+        "informal_statement" : "Let \\( S_1, S_2, \\ldots, S_{2^n-1} \\) be the nonempty subsets of \\( \\{1, 2, \\ldots, n\\} \\) in some order, and let \\( M \\) be the \\( (2^n - 1) \\times (2^n - 1) \\) matrix whose \\((i, j)\\) entry is $m_{ij} = \\begin{cases} 0 & \\text{if } S_i \\\\cap S_j = \\\\emptyset; \\\\ 1 & \\text{otherwise}. \\\\end{cases} $ Calculate the determinant of \\( M \\).",
+        "informal_solution" : "Show that the solution is 1 if n = 1, and otherwise -1.",
+        "tags" : ["linear_algebra", "number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2014_a3",
+        "informal_statement" : "Let \\( a_0 = \\frac{5}{2} \\) and \\( a_k = a_{k-1}^2 - 2 \\) for \\( k \\geq 1 \\). Compute \\( \\prod_{k=0}^{\\infty} \\left(1 - \frac{1}{a_k}\\right) \\) in closed form.",
+        "informal_solution" : "Show that the solution is 3/7.",
+        "tags" : ["number_theory"]
+    },
+
+    {
+        "problem_name" : "putnam_2014_a6",
+        "informal_statement" : "Let \\( n \\) be a positive integer. What is the largest \\( k \\) for which there exist \\( n \\times n \\) matrices \\( M_1, \\ldots, M_k \\) and \\( N_1, \\ldots, N_k \\) with real entries such that for all \\( i \\) and \\( j \\), the matrix product \\( M_i N_j \\) has a zero entry somewhere on its diagonal if and only if \\( i \\neq j \\)?",
+        "informal_solution" : "Show that the solution has the form k \\<= n ^ n.",
+        "tags" : ["linear_algebra"]
+    },
+    {
+        "problem_name" : "putnam_2014_b2",
+        "informal_statement" : "Suppose that \\( f \\) is a function on the interval \\([1,3]\\) such that \\(-1 \\leq f(x) \\leq 1\\) for all \\( x \\) and \\( \\int_{1}^{3} f(x) \\, dx = 0 \\). How large can \\(\\int_{1}^{3} \\frac{f(x)}{x} \\, dx \\) be?",
+        "informal_solution" : "Show that the solution is log (4 / 3).",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2014_b4",
+        "informal_statement" : "Show that for each positive integer \\( n \\), all the roots of the polynomial $ \\sum_{k=0}^{n} 2^k(n-k)x^k $ are real numbers.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2013_a3",
+        "informal_statement" : "Suppose that the real numbers \\( a_0, a_1, \\ldots, a_n \\) and \\( x \\), with \\( 0 < x < 1 \\), satisfy $ \\frac{a_0}{1-x} + \\frac{a_1}{(1-x)^2} + \\cdots + \\frac{a_n}{(1-x)^{n+1}} = 0. $ Prove that there exists a real number \\( y \\) with \\( 0 < y < 1 \\) such that $ a_0 + a_1y + \\cdots + a_ny^n = 0. $.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    }
+]
