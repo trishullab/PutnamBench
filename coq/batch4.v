@@ -79,9 +79,9 @@ End putnam_2018_a3.
 Section putnam_2017_a1. 
 From mathcomp Require Import div.
 Definition putnam_2017_a1_solution (A: nat -> Prop) (x: nat) := x > 0 /\ (x = 1 \/ 5 %| x = true) -> ~ A x.
-Definition valid_set (A: nat -> Prop): Prop := forall (n: nat), A 2 /\ A (n*n) -> A n /\ A n -> A ((n+5)*(n+5)).
 Theorem putnam_2017_a1: 
     exists (A: nat -> Prop), forall (B: nat -> Prop),
+    let valid_set (A: nat -> Prop): Prop := forall (n: nat), A 2 /\ A (n*n) -> A n /\ A n -> A ((n+5)*(n+5)) in
     valid_set A /\ valid_set B /\ forall (n: nat), A n -> B n -> putnam_2017_a1_solution A n.
 Proof. Abort.
 End putnam_2017_a1.
