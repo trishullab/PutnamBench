@@ -7,7 +7,7 @@
     },
     {
         "problem_name" : "putnam_1974_a3",
-        "informal_statement" : "A well-known theore masserts that a prime $p > 2$ can be written as the sum of two perfect squres if and only if $p \\equiv 1 \\bmod 4$. Find which primes $p > 2$ can be written in each of the following forms, using (not necessarily positive) integers $x$ and $y$: (a) $x^2 + 16y^2$, (b) $4x^2 + 4xy + 5y^2$.",
+        "informal_statement" : "A well-known theorem asserts that a prime $p > 2$ can be written as the sum of two perfect squres if and only if $p \\equiv 1 \\bmod 4$. Find which primes $p > 2$ can be written in each of the following forms, using (not necessarily positive) integers $x$ and $y$: (a) $x^2 + 16y^2$, (b) $4x^2 + 4xy + 5y^2$.",
         "informal_solution" : "Show that that the answer to (a) is the set of primes which are $1 \\bmod 8$, and the solution to (b) is the set of primes which are $5 \\bmod 8$.",
         "tags" : ["number_theory"]
     },
@@ -223,8 +223,8 @@
     },
     {
         "problem_name" : "putnam_1969_b2",
-        "informal_statement" : "Show that a finite group can not be the union of two of its proper subgroups. Is the statement true if 'two' is replaced by 'three'?",
-        "informal_solution" : "Show that the statement is true when replacing 'two' by 'three'.",
+        "informal_statement" : "Show that a finite group can not be the union of two of its proper subgroups. Does the statement remain true if 'two' is replaced by 'three'?",
+        "informal_solution" : "Show that the statement is no longer true if 'two' is replaced by 'three'.",
         "tags" : ["abstract_algebra"]
     },
     {
