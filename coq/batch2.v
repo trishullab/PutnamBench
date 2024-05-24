@@ -170,7 +170,7 @@ End putnam_2021_b2.
 
 Section putnam_2020_b6.
 Require Import Reals. From Coquelicot Require Import Coquelicot Hierarchy Rcomplements. 
-Open Scope R.
+Local Open Scope R.
 Theorem putnam_2020_b6: 
     let A (k: nat) := (-1)^(Z.to_nat (floor (INR k * (sqrt 2 - 1)))) in
     let B (n: nat) := sum_n A n in

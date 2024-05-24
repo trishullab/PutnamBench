@@ -564,12 +564,11 @@ theorem putnam_2017_a4
 sorry
 
 theorem putnam_2017_b1
-(lines : Set (Set (Fin 2 → ℝ)))
+(lines : Set (Set (Fin 2 → ℝ)) := {L : Set (Fin 2 → ℝ) | ∃ v w : Fin 2 → ℝ, w ≠ 0 ∧ L = {p : Fin 2 → ℝ | ∃ t : ℝ, p = v + t • w}})
 (L1 L2 : Set (Fin 2 → ℝ))
-(hlines : lines = {L : Set (Fin 2 → ℝ) | (∃ m b : ℝ, L = {p : Fin 2 → ℝ | p 1 = m * p 0 + b}) ∨ (∃ c : ℝ, L = {p : Fin 2 → ℝ | p 0 = c})})
 (L1L2lines : L1 ∈ lines ∧ L2 ∈ lines)
 (L1L2distinct : L1 ≠ L2)
-: L1 ∩ L2 ≠ ∅ ↔ (∀ lambda ≠ 0, ∀ P : Fin 2 → ℝ, (P ∉ L1 ∧ P ∉ L2) → ∃ A1 A2 : Fin 2 → ℝ, A1 ∈ L1 ∧ A2 ∈ L2 ∧ (Euclidean.dist P A2 = lambda * Euclidean.dist P A1)) :=
+: L1 ∩ L2 ≠ ∅ ↔ (∀ lambda : ℝ, lambda ≠ 0 → ∀ P : Fin 2 → ℝ, (P ∉ L1 ∧ P ∉ L2) → ∃ A1 A2 : Fin 2 → ℝ, A1 ∈ L1 ∧ A2 ∈ L2 ∧ (A2 - P = lambda • (A1 - P))) :=
 sorry
 
 abbrev putnam_2017_b2_solution : ℕ := sorry
@@ -884,19 +883,18 @@ sorry
 -- uses (Fin m → Fin m → Fin m → ℝ) instead of ensuring inputs are strictly increasing
 theorem putnam_2013_a5
 (m : ℕ)
-(herons : ℝ → ℝ → ℝ → ℝ)
 (area2 : (Fin 2 → ℝ) → (Fin 2 → ℝ) → (Fin 2 → ℝ) → ℝ)
 (area3 : (Fin 3 → ℝ) → (Fin 3 → ℝ) → (Fin 3 → ℝ) → ℝ)
 (areadef2 : (Fin m → Fin m → Fin m → ℝ) → Prop)
 (areadef3 : (Fin m → Fin m → Fin m → ℝ) → Prop)
 (mge3 : m ≥ 3)
-(hherons : ∀ a ≥ 0, ∀ b ≥ 0, ∀ c ≥ 0, herons a b c = Real.sqrt (((a + b + c) / 2) * ((a + b + c) / 2 - a) * ((a + b + c) / 2 - b) * ((a + b + c) / 2 - c)))
-(harea2 : ∀ a b c : Fin 2 → ℝ, area2 a b c = herons (dist a b) (dist b c) (dist c a))
-(harea3 : ∀ a b c : Fin 3 → ℝ, area3 a b c = herons (dist a b) (dist b c) (dist c a))
+(harea2 : ∀ a b c : Fin 2 → ℝ, area2 a b c = (MeasureTheory.volume (convexHull ℝ {a, b, c})).toReal)
+(harea3 : ∀ a b c : Fin 3 → ℝ, area3 a b c = (MeasureTheory.volume (convexHull ℝ {a, b, c})).toReal)
 (hareadef2 : ∀ a : Fin m → Fin m → Fin m → ℝ, areadef2 a = ∀ A : Fin m → (Fin 2 → ℝ), (∑ i : Fin m, ∑ j : Fin m, ∑ k : Fin m, if (i < j ∧ j < k) then (a i j k * area2 (A i) (A j) (A k)) else 0) ≥ 0)
 (hareadef3 : ∀ a : Fin m → Fin m → Fin m → ℝ, areadef3 a = ∀ A : Fin m → (Fin 3 → ℝ), (∑ i : Fin m, ∑ j : Fin m, ∑ k : Fin m, if (i < j ∧ j < k) then (a i j k * area3 (A i) (A j) (A k)) else 0) ≥ 0)
 : ∀ a : Fin m → Fin m → Fin m → ℝ, areadef2 a → areadef3 a :=
 sorry
+
 
 theorem putnam_2013_a6
 (w : ℤ → ℤ → ℤ)
@@ -1198,9 +1196,9 @@ theorem putnam_2010_b2
 (ABCintdists : (Fin 2 → ℝ) → (Fin 2 → ℝ) → (Fin 2 → ℝ) → Prop)
 (ABCall : (Fin 2 → ℝ) → (Fin 2 → ℝ) → (Fin 2 → ℝ) → Prop)
 (hABCintcoords : ∀ A B C : Fin 2 → ℝ, ABCintcoords A B C = (∀ i : Fin 2, A i = round (A i) ∧ B i = round (B i) ∧ C i = round (C i)))
-(hABCintdists : ∀ A B C : Fin 2 → ℝ, ABCintdists A B C = (dist A B = round (dist A B) ∧ dist A C = round (dist A C) ∧ dist B C = round (dist B C)))
+(hABCintdists : ∀ A B C : Fin 2 → ℝ, ABCintdists A B C = (Euclidean.dist A B = round (Euclidean.dist A B) ∧ Euclidean.dist A C = round (Euclidean.dist A C) ∧ Euclidean.dist B C = round (Euclidean.dist B C)))
 (hABCall : ∀ A B C : Fin 2 → ℝ, ABCall A B C = (¬Collinear ℝ {A, B, C} ∧ ABCintcoords A B C ∧ ABCintdists A B C))
-: (∃ A B C : Fin 2 → ℝ, ABCall A B C ∧ dist A B = putnam_2010_b2_solution) ∧ (∀ A B C : Fin 2 → ℝ, ABCall A B C → dist A B ≥ putnam_2010_b2_solution) :=
+: (∃ A B C : Fin 2 → ℝ, ABCall A B C ∧ Euclidean.dist A B = putnam_2010_b2_solution) ∧ (∀ A B C : Fin 2 → ℝ, ABCall A B C → Euclidean.dist A B ≥ putnam_2010_b2_solution) :=
 sorry
 
 abbrev putnam_2010_b4_solution : Set (Polynomial ℝ × Polynomial ℝ) := sorry
@@ -1641,8 +1639,9 @@ abbrev putnam_2004_a1_solution : Prop := sorry
 theorem putnam_2004_a1
 (S : (ℕ → Fin 2) → ℕ → ℝ)
 (hS : ∀ attempts : ℕ → Fin 2, ∀ N ≥ 1, S attempts N = (∑ i : Fin N, (attempts i).1) / N)
-: (∀ (attempts : ℕ → Fin 2) (a b : ℕ), (a < b ∧ S attempts a < 0.8 ∧ S attempts b > 0.8) → (∃ c : ℕ, a < c ∧ c < b ∧ S attempts c = 0.8)) ↔ putnam_2004_a1_solution :=
+: (∀ (attempts : ℕ → Fin 2) (a b : ℕ), (1 ≤ a ∧ a < b ∧ S attempts a < 0.8 ∧ S attempts b > 0.8) → (∃ c : ℕ, a < c ∧ c < b ∧ S attempts c = 0.8)) ↔ putnam_2004_a1_solution :=
 sorry
+
 
 theorem putnam_2004_a3
 (u : ℕ → ℝ)
@@ -2024,7 +2023,7 @@ section putnam_1999
 abbrev putnam_1999_a1_solution : Prop := sorry
 -- True
 theorem putnam_1999_a1
-: putnam_1999_a1_solution ↔ ∃ f g h : Polynomial ℝ, ∀ x : ℝ, |f.eval x| - |g.eval x| + |h.eval x| = if x < -1 then -1 else (if (-1 ≤ x ∧ x ≤ 0) then 3 * x + 2 else -2*x+2) :=
+: putnam_1999_a1_solution ↔ ∃ f g h : Polynomial ℝ, ∀ x : ℝ, |f.eval x| - |g.eval x| + h.eval x = if x < -1 then -1 else (if (x ≤ 0) then 3 * x + 2 else -2 * x + 2) :=
 sorry
 
 
@@ -2035,13 +2034,13 @@ theorem putnam_1999_a2
 ∀ x : ℝ, p.eval x = ∑ j : Fin k, ((f j).eval x) ^ 2 :=
 sorry
 
--- Note: The power series does not converge outside a certain radius
-open Filter Topology
+open Filter Topology Metric
+
 theorem putnam_1999_a3
 (f : ℝ → ℝ := fun x => 1/(1 - 2 * x - x^2))
 (a : ℕ → ℝ)
-(hf : ∀ x : ℝ, Tendsto (λ n => ∑ i in Finset.range n, (a n) * x^n) atTop (𝓝 (f x)))
-: ∀ n : ℕ, n > 0 → ∃ m : ℕ, (a n)^2 + (a (n + 1))^2 = a m :=
+(hf : ∃ ε > 0, ∀ x ∈ ball 0 ε, Tendsto (λ n => ∑ i in Finset.range n, (a n) * x^n) atTop (𝓝 (f x)))
+: ∀ n : ℕ, ∃ m : ℕ, (a n)^2 + (a (n + 1))^2 = a m :=
 sorry
 
 -- Note: This is done assuming that the series converges, otherwise it is unclear in which order to sum. The problem statement assumes convergence
@@ -2052,7 +2051,7 @@ theorem putnam_1999_a4
 sorry
 
 theorem putnam_1999_a5
-: ∃ C : ℝ, ∀ p : Polynomial ℝ, p.natDegree = 1999 → ‖p.eval 0‖ ≤ C * ∫ x in (-1)..1, ‖p.eval x‖ :=
+: ∃ C : ℝ, ∀ p : Polynomial ℝ, p.degree = 1999 → ‖p.eval 0‖ ≤ C * ∫ x in (-1)..1, ‖p.eval x‖ :=
 sorry
 
 theorem putnam_1999_a6
@@ -2065,16 +2064,16 @@ theorem putnam_1999_a6
 sorry
 
 theorem putnam_1999_b2
-(P Q : Polynomial ℝ)
+(P Q : Polynomial ℂ)
 (hQ : Q.natDegree = 2)
-(hP : ∀ x, P.eval x = (Q.eval x) * (Polynomial.derivative^[2] P).eval x)
-: (∃ x1 x2 : ℝ, x1 ≠ x2 ∧ P.eval x1 = 0 ∧ P.eval x2 = 0) → (∃ f : Fin (P.natDegree) → ℝ, (∀ i j : Fin (P.natDegree), i ≠ j → f i ≠ f j) ∧ (∀ i : Fin (P.natDegree), P.eval (f i) = 0)) :=
+(hP : ∀ x : ℂ, P.eval x = (Q.eval x) * (Polynomial.derivative^[2] P).eval x)
+: (∃ x1 x2 : ℂ, x1 ≠ x2 ∧ P.eval x1 = 0 ∧ P.eval x2 = 0) → (∃ f : Fin (P.natDegree) → ℂ, (∀ i j : Fin (P.natDegree), i ≠ j → f i ≠ f j) ∧ (∀ i : Fin (P.natDegree), P.eval (f i) = 0)) :=
 sorry
 
 abbrev putnam_1999_b3_solution : ℝ := sorry
 -- 3
 theorem putnam_1999_b3
-(A : Set (ℝ × ℝ) := {xy : ℝ × ℝ | 0 ≤ xy.1 ∧ xy.1 ≤ 1 ∧ 0 ≤ xy.2 ∧ xy.2 ≤ 1})
+(A : Set (ℝ × ℝ) := {xy : ℝ × ℝ | 0 ≤ xy.1 ∧ xy.1 < 1 ∧ 0 ≤ xy.2 ∧ xy.2 < 1})
 (S : ℝ → ℝ → ℝ := fun x y => ∑' m : ℕ, ∑' n : ℕ, if (m > 0 ∧ n > 0 ∧ 1/2 ≤ m/n ∧ m/n ≤ 2) then x^m * y^n else 0)
 : Tendsto (fun xy : (ℝ × ℝ) => (1 - xy.1 * xy.2^2) * (1 - xy.1^2 * xy.2) * (S xy.1 xy.2)) (𝓝[A] ⟨1,1⟩) (𝓝 putnam_1999_b3_solution) :=
 sorry
@@ -2093,11 +2092,10 @@ theorem putnam_1999_b5
 (n : ℕ)
 (hn : n ≥ 3)
 (theta : ℝ := 2 * Real.pi / n)
-(IpA : Matrix (Fin n) (Fin n) ℝ := fun j k => 1 + Real.cos (j.1 * theta + k.1 * theta ) )
-: IpA.det = putnam_1999_b5_solution n :=
+(A : Matrix (Fin n) (Fin n) ℝ := fun j k => Real.cos ((j.1 + 1) * theta + (k.1 + 1) * theta))
+: ((1 : Matrix (Fin n) (Fin n) ℝ) + A).det = putnam_1999_b5_solution n :=
 sorry
 
--- TODO: Good example about following problem statement
 theorem putnam_1999_b6
 (S : Finset ℤ)
 (hSgt : ∀ s : ℤ, s ∈ S → s > 1)
@@ -2120,9 +2118,9 @@ abbrev putnam_1998_a4_solution : Set ℕ := sorry
 -- {n | n ≡ 1 [MOD 6]}
 theorem putnam_1998_a4
 (A : ℕ → ℕ)
-(hA0 : A 0 = 0)
-(hA1 : A 1 = 1)
-(hA : ∀ n : ℕ, n > 1 → A n = Nat.ofDigits 10 (Nat.digits 10 (A (n - 2)) ++ Nat.digits 10 (A (n-1))))
+(hA1 : A 1 = 0)
+(hA2 : A 2 = 1)
+(hA : ∀ n : ℕ, n > 2 → A n = Nat.ofDigits 10 (Nat.digits 10 (A (n - 2)) ++ Nat.digits 10 (A (n - 1))))
 : putnam_1998_a4_solution = {n | 11 ∣ A n} :=
 sorry
 
@@ -2133,8 +2131,8 @@ theorem putnam_1998_a5
 (r : Fin k → ℝ)
 (hr : ∀ i : Fin k, r i > 0)
 (E : Set (ℝ × ℝ))
-(hE : E ⊆ ⋃ i : Fin k, closedBall (c i) (r i))
-: ∃ (n : ℕ) (t : Fin n → Fin k), (∀ i j : Fin n, i ≠ j → (closedBall (c (t i)) (r (t i)) ∩ closedBall (c (t j)) (r (t i)) = ∅)) ∧ E ⊆ ⋃ i : Fin n, closedBall (c (t i)) (3 * (r (t i))) :=
+(hE : E ⊆ ⋃ i : Fin k, ball (c i) (r i))
+: ∃ (n : ℕ) (t : Fin n → Fin k), (∀ i j : Fin n, i ≠ j → (ball (c (t i)) (r (t i)) ∩ ball (c (t j)) (r (t j)) = ∅)) ∧ E ⊆ ⋃ i : Fin n, ball (c (t i)) (3 * (r (t i))) :=
 sorry
 
 abbrev putnam_1998_b1_solution : ℝ := sorry
@@ -2143,28 +2141,33 @@ theorem putnam_1998_b1
 : sInf {((x + 1/x)^6 - (x^6 + 1/x^6) - 2)/((x + 1/x)^3 + (x^3 + 1/x^3)) | x > (0 : ℝ)} = putnam_1998_b1_solution :=
 sorry
 
+-- TODO: This currently errors, might need to update Lean4 version
 noncomputable abbrev putnam_1998_b2_solution : ℝ → ℝ → ℝ := sorry
 -- fun a b => if a > b then Real.sqrt (2*a^2 + 2*b^2) else 0
 theorem putnam_1998_b2
 (a b : ℝ)
 (hab : 0 < b ∧ b < a)
-: sInf {Real.sqrt ((a - c)^2 + b^2) + Real.sqrt ((c - x)^2 + (-x)^2) + Real.sqrt ((a-x)^2 + (b-x)^2) | (c : ℝ) (x : ℝ)} = putnam_1998_b2_solution a b :=
+: sInf {Euclidean.dist (a, b) (c, 0) + Euclidean.dist (c, 0) (x, x) + Euclidean.dist (a, b) (x, x) | (c : ℝ) (x : ℝ)
+  Euclidean.dist (a, b) (c, 0) + Euclidean.dist (c, 0) (x, x) > Euclidean.dist (a, b) (x, x) ∧
+  Euclidean.dist (a, b) (c, 0) + Euclidean.dist (a, b) (x, x) > Euclidean.dist (c, 0) (x, x) ∧
+  Euclidean.dist (c, 0) (x, x) + Euclidean.dist (a, b) (x, x) > Euclidean.dist (a, b) (c, 0) }
+ = putnam_1998_b2_solution a b :=
 sorry
 
 abbrev putnam_1998_b4_solution : Set (ℕ × ℕ) := sorry
--- {nm | let ⟨n,m⟩ := nm; n > 0 ∧ m > 0 ∧ multiplicity 2 n ≠ multiplicity 2 m}
+-- {nm | let ⟨n,m⟩ := nm; multiplicity 2 n ≠ multiplicity 2 m}
 theorem putnam_1998_b4
 (hsum : ℕ → ℕ → ℤ := fun n m => ∑ i in Finset.range (m * n), (-1)^(i/m + i/n))
-: ∀ n m : ℕ, n > 0 ∧ m > 0 → (hsum = 0 ↔ ⟨n, m⟩ ∈ putnam_1998_b4_solution) :=
+: ∀ n m : ℕ, n > 0 ∧ m > 0 → ((hsum n m) = 0 ↔ ⟨n, m⟩ ∈ putnam_1998_b4_solution) :=
 sorry
 
--- Was not able to find a mathlib definition for the nth decimal digit of a real number
 abbrev putnam_1998_b5_solution : ℕ := sorry
 -- 1
 theorem putnam_1998_b5
 (N : ℕ := ∑ i in Finset.range 1998, 10^i)
-: putnam_1998_b5_solution = (10^1000 * Real.sqrt N) % 10 :=
+: putnam_1998_b5_solution = (Nat.floor (10^1000 * Real.sqrt N)) % 10 :=
 sorry
+
 
 theorem putnam_1998_b6
 : ∀ a b c : ℤ, ∃ n : ℤ, n > 0 ∧ ¬(∃ k : ℤ, k = Real.sqrt (n^3 + a * n^2 + b * n + c)) :=
@@ -2194,7 +2197,7 @@ sorry
 abbrev putnam_1997_a5_solution : Prop := sorry
 -- True
 theorem putnam_1997_a5
-(N := fun (n : ℕ+) => {t : Fin n → ℕ+ | (∀ i j : Fin n, i < j → t i < t j) ∧ (∑ i : Fin n, (1 : ℝ)/(t i) = 1) })
+(N := fun (n : ℕ+) => {t : Fin n → ℕ+ | (∀ i j : Fin n, i < j → t i <= t j) ∧ (∑ i : Fin n, (1 : ℝ)/(t i) = 1) })
 : Odd (N 10).ncard ↔ putnam_1997_a5_solution :=
 sorry
 
@@ -2586,7 +2589,7 @@ sorry
 
 theorem putnam_1993_b5
 (pdists : (Fin 4 → (Fin 2 → ℝ)) → Prop)
-(hpdists: ∀ p : Fin 4 → (Fin 2 → ℝ), pdists p = ∀ i j : Fin 4, i ≠ j → (dist (p i) (p j) = round (dist (p i) (p j)) ∧ Odd (round (dist (p i) (p j)))))
+(hpdists: ∀ p : Fin 4 → (Fin 2 → ℝ), pdists p = ∀ i j : Fin 4, i ≠ j → (Euclidean.dist (p i) (p j) = round (Euclidean.dist (p i) (p j)) ∧ Odd (round (Euclidean.dist (p i) (p j)))))
 : ¬∃ p : Fin 4 → (Fin 2 → ℝ), pdists p :=
 sorry
 
@@ -2594,9 +2597,9 @@ sorry
 theorem putnam_1993_b6
 (S : Fin 3 → ℕ)
 (f : Fin 3 → Fin 3 → (Fin 3 → ℕ) → (Fin 3 → ℕ))
-(Spos : S > 0)
+(Spos : ∀ i : Fin 3, S i > 0)
 (hf : ∀ i j k : Fin 3, (i ≠ j ∧ i ≠ k ∧ j ≠ k) → ∀ S' : Fin 3 → ℕ, if S' i ≤ S' j then ((f i j S') i = 2 * S' i ∧ (f i j S') j = S' j - S' i ∧ (f i j S') k = S' k) else (f i j S' = S'))
-: ∃ (Ss : ℕ → (Fin 3 → ℕ)) (N : ℕ), Ss 0 = S ∧ Ss N = 0 ∧ (∀ n : Fin N, ∃ i j : Fin 3, i ≠ j ∧ f i j (Ss n) = Ss ((n : ℕ) + 1)) :=
+: ∃ (Ss : ℕ → (Fin 3 → ℕ)) (N : ℕ), Ss 0 = S ∧ (∃ i : Fin 3, Ss N i = 0) ∧ (∀ n : Fin N, ∃ i j : Fin 3, i ≠ j ∧ f i j (Ss n) = Ss ((n : ℕ) + 1)) :=
 sorry
 
 end putnam_1993
@@ -3706,9 +3709,93 @@ theorem putnam_1980_b3
 : (∀ n : ℕ, u n > 0) ↔ a ∈ putnam_1980_b3_solution :=
 sorry
 
+theorem putnam_1980_b4
+{T : Type}
+(X : Finset T)
+(A : Fin 1066 → Finset T)
+(hX : X.card ≥ 10)
+(hA : ∀ i : Fin 1066, A i ⊆ X ∧ (A i).card > ((1 : ℚ)/2) * X.card)
+: ∃ Y : Finset T, Y ⊆ X ∧ Y.card = 10 ∧ ∀ i : Fin 1066, ∃ y ∈ Y, y ∈ A i :=
+sorry
+
+open Set
+
+abbrev putnam_1980_b5_solution : ℝ → Prop := sorry
+-- fun t : ℝ => 1 ≥ t
+theorem putnam_1980_b5
+(T : Set ℝ := Icc 0 1)
+(P : ℝ → (ℝ → ℝ) → Prop := fun t : ℝ => fun f : ℝ → ℝ => f 1 - 2*f (2/3) + f (1/3) ≥ t*(f (2/3) - 2*f (1/3) + f 0))
+(Convex : (ℝ → ℝ) → Prop := fun f : ℝ → ℝ => ∀ u ∈ T, ∀ v ∈ T, ∀ s ∈ T, f (s*u + (1 - s)*v) ≤ s*(f u) + (1 - s)*(f v))
+(S : ℝ → Set (ℝ → ℝ) := fun t : ℝ => {f : ℝ → ℝ | (∀ x ∈ T, f x ≥ 0) ∧ StrictMonoOn f T ∧ Convex f ∧ ContinuousOn f T ∧ P t f})
+: ∀ t : ℝ, t ≥ 0 → ((∀ f ∈ S t, ∀ g ∈ S t, f * g ∈ S t) ↔ putnam_1980_b5_solution t) :=
+sorry
+
+open BigOperators
+
+theorem putnam_1980_b6
+(G : ℕ × ℕ → ℚ)
+(hG : ∀ d n : ℕ, d ≤ n → (d = 1 → G (d, n) = (1 : ℝ)/n) ∧ (d > 1 → G (d, n) = ((d : ℝ)/n)*∑ i in Finset.Icc d n, G (d - 1, i - 1)))
+: ∀ d p : ℕ, 1 < d ∧ d ≤ p ∧ Prime p → ¬p ∣ (G (d, p)).den :=
+sorry
+
 end putnam_1980
 
 section putnam_1979
+
+abbrev putnam_1979_a1_solution : ℕ × Multiset ℕ := sorry
+-- (660, Multiset.replicate 659 3 + {2})
+theorem putnam_1979_a1
+(P : (ℕ × Multiset ℕ) → Prop := fun (n, a) => n > 0 ∧ (∀ i ∈ a, i > 0) ∧ a.sizeOf = n ∧ a.sum = 1979)
+: P putnam_1979_a1_solution ∧ ∀ n : ℕ, ∀ a : Multiset ℕ, P (n, a) → putnam_1979_a1_solution.2.prod ≥ a.prod :=
+sorry
+
+abbrev putnam_1979_a2_solution : ℝ → Prop := sorry
+-- fun k : ℝ => k ≥ 0
+theorem putnam_1979_a2
+: ∀ k : ℝ, (∃ f : ℝ → ℝ, Continuous f ∧ ∀ x : ℝ, f (f x) = k*x^9) ↔ putnam_1979_a2_solution k :=
+sorry
+
+abbrev putnam_1979_a3_solution : (ℝ × ℝ) → Prop := sorry
+-- fun (a, b) => ∃ m : ℤ, a = m ∧ b = m
+theorem putnam_1979_a3
+(x : ℕ → ℝ)
+(hx : ∀ n : ℕ, x n ≠ 0 ∧ (n ≥ 3 → x n = (x (n - 2))*(x (n - 1))/(2*(x (n - 2)) - (x (n - 1)))))
+: (∀ m : ℕ, ∃ n : ℕ, n > m ∧ ∃ a : ℤ, a = x n) ↔ putnam_1979_a3_solution (x 1, x 2) :=
+sorry
+
+abbrev putnam_1979_a4_solution : Prop := sorry
+-- True
+theorem putnam_1979_a4
+(A : Finset (Fin 2 → ℝ) × Finset (Fin 2 → ℝ) → Prop := fun (R, B) => R.card = B.card ∧ R ∩ B = ∅ ∧
+∀ u : Finset (Fin 2 → ℝ), u ⊆ R ∪ B ∧ u.card = 3 → ¬Collinear ℝ (u : Set (Fin 2 → ℝ)))
+(w : (Fin 2 → ℝ) × (Fin 2 → ℝ) → ℝ → (Fin 2 → ℝ) := fun (P, Q) => fun x : ℝ => fun i : Fin 2 => x * P i + (1 - x) * Q i)
+: (∀ R : Finset (Fin 2 → ℝ), ∀ B : Finset (Fin 2 → ℝ), A (R, B) → ∃ v : Finset ((Fin 2 → ℝ) × (Fin 2 → ℝ)),
+(∀ L ∈ v, ∀ M ∈ v, L ≠ M → ∀ x ∈ Icc 0 1, ∀ y ∈ Icc 0 1,
+Euclidean.dist (w (L.1, L.2) x) (w (M.1, M.2) y) ≠ 0) ∧
+v.card = R.card ∧ ∀ L ∈ v, L.1 ∈ R ∧ L.2 ∈ B) ↔ putnam_1979_a4_solution :=
+sorry
+
+theorem putnam_1979_a5
+(S : ℝ → ℕ → ℤ := fun x : ℝ => fun n : ℕ => Int.floor (n*x))
+(P : ℝ → Prop := fun x : ℝ => x^3 - 10*x^2 + 29*x - 25 = 0)
+: ∃ α β : ℝ, α ≠ β ∧ P α ∧ P β ∧ ∀ n : ℕ, ∃ m : ℤ, m > n ∧ ∃ c d : ℕ, S α c = m ∧ S β d = m :=
+sorry
+
+theorem putnam_1979_a6
+(n : ℕ)
+(p : ℕ → ℝ)
+(hp : ∀ i ∈ Finset.range n, p i ∈ Icc 0 1)
+: ∃ x ∈ Icc 0 1, ∑ i in Finset.range n, 1/|x - p i| ≤ 8*n*∑ i in Finset.range n, (1 : ℝ)/(2*i + 1) :=
+sorry
+
+open Topology
+open Filter
+
+noncomputable abbrev putnam_1979_b2_solution : ℝ × ℝ → ℝ := sorry
+-- fun (a, b) => (Real.exp (-1))*(b^b/a^a)^(1/(b-a))
+theorem putnam_1979_b2
+: ∀ a b : ℝ, 0 < a ∧ a < b → Tendsto (fun t : ℝ => (∫ x in Icc 0 1, (b*x + a*(1 - x))^t)^(1/t)) (𝓝[≠] 0) (𝓝 (putnam_1979_b2_solution (a, b))) :=
+sorry
 
 open Polynomial
 
@@ -3891,9 +3978,112 @@ theorem putnam_1977_b1
 : (Tendsto (fun N ↦ ∏ n in Finset.Icc (2 : ℕ) N, ((n : ℝ) ^ 3 - 1) / (n ^ 3 + 1)) ⊤ (𝓝 putnam_1977_b1_solution)) :=
 sorry
 
+abbrev putnam_1977_b3_solution : Prop := sorry
+-- False
+theorem putnam_1977_b3
+(P : ℝ × ℝ × ℝ → Prop := fun (a, b, c) => Irrational a ∧ Irrational b ∧ Irrational c ∧ a > 0 ∧ b > 0 ∧ c > 0 ∧ a + b + c = 1)
+(balanced : ℝ × ℝ × ℝ → Prop := fun (a, b, c) => a < 1/2 ∧ b < 1/2 ∧ c < 1/2)
+(B : ℝ × ℝ × ℝ → ℝ × ℝ × ℝ := fun (a, b, c) => (ite (a > 1/2) (2*a - 1) (2*a), ite (b > 1/2) (2*b - 1) (2*b), ite (c > 1/2) (2*c - 1) (2*c)))
+: (∀ t : ℝ × ℝ × ℝ, P t → ∃ n : ℕ, balanced (B^[n] t)) ↔ putnam_1977_b3_solution :=
+sorry
+
+open BigOperators
+
+theorem putnam_1977_b5
+(n : ℕ)
+(hn : n > 0)
+(a : Fin n → ℝ)
+(A : ℝ)
+(hA : A + ∑ i : Fin n, (a i)^2 < (1/(n - 1))*(∑ i : Fin n, a i)^2)
+: ∀ i j : Fin n, i < j → A < 2*(a i)*(a j) :=
+sorry
+
+open Set
+
+theorem putnam_1977_b6
+[Group G]
+(H : Subgroup G)
+(h : ℕ := Nat.card H)
+(a : G)
+(ha : ∀ x : H, (x*a)^3 = 1)
+(P : Set G := {g : G | ∃ xs : List H, (xs.length ≥ 1) ∧ g = (List.map (fun h : H => h*a) xs).prod})
+: (Finite P) ∧ (P.ncard ≤ 3*h^2) :=
+sorry
+
 end putnam_1977
 
 section putnam_1976
+
+section putnam_1976_a2 -- TODO: This needs to be account for in the script
+open MvPolynomial
+
+theorem putnam_1976_a2
+(P : MvPolynomial (Fin 2) ℤ := (X 0)^2*(X 1) + (X 0)*(X 1)^2)
+(Q : MvPolynomial (Fin 2) ℤ := (X 0)^2 + (X 0)*(X 1) + (X 2)^2)
+(F : ℕ → MvPolynomial (Fin 2) ℤ := fun n : ℕ => ((X 0) + (X 1))^n - (X 0)^n - (X 1)^n)
+(G : ℕ → MvPolynomial (Fin 2) ℤ := fun n : ℕ => ((X 0) + (X 1))^n + (X 0)^n + (X 1)^n)
+(i : Fin 2 → MvPolynomial (Fin 2) ℤ := fun j : Fin 2 => ite (j = 0) P Q)
+: ∀ n : ℕ, n > 0 → ∃ A : MvPolynomial (Fin 2) ℤ, F n = aeval i A ∨ G n = aeval i A :=
+sorry
+
+end putnam_1976_a2
+
+abbrev putnam_1976_a3_solution : Set (ℕ × ℕ × ℕ × ℕ) := sorry
+-- {(3, 2, 2, 3), (2, 3, 3, 2)}
+theorem putnam_1976_a3
+: {(p, r, q, s) : ℕ × ℕ × ℕ × ℕ | Nat.Prime p ∧ Nat.Prime q ∧ r > 1 ∧ s > 1 ∧ |(p^r : ℤ) - q^s| = 1} = putnam_1976_a3_solution :=
+sorry
+
+open Polynomial
+
+noncomputable abbrev putnam_1976_a4_solution : (ℝ → ℝ) × (ℝ → ℝ) := sorry
+-- (fun r : ℝ => -1/(r + 1), fun r : ℝ => -(r + 1)/r)
+theorem putnam_1976_a4
+(a b c d : ℤ)
+(r : ℝ)
+(P : Polynomial ℚ := X^3 + (C (a : ℚ))*X^2 + (C (b : ℚ))*X - (C 1))
+(Q : Polynomial ℚ := X^3 + (C (c : ℚ))*X^2 + (C (d : ℚ))*X + (C 1))
+(hP : aeval r P = 0 ∧ Irreducible P)
+(hQ : aeval (r + 1) Q = 0)
+: ∃ s : ℝ, aeval s P = 0 ∧ (s = putnam_1976_a4_solution.1 r ∨ s = putnam_1976_a4_solution.2 r) :=
+sorry
+
+theorem putnam_1976_a6
+(f : ℝ → ℝ)
+(hf : ContDiff ℝ 2 f ∧ (∀ x : ℝ, |f x| ≤ 1) ∧ (f 0)^2 + (deriv f 0)^2 = 4)
+: ∃ y : ℝ, (f y) + (iteratedDeriv 2 f y) = 0 :=
+sorry
+
+open Topology
+open Filter
+
+abbrev putnam_1976_b1_solution : ℕ × ℕ := sorry
+-- (4, 1)
+theorem putnam_1976_b1
+: Tendsto (fun n : ℕ => ((1 : ℝ)/n)*∑ k in Finset.Icc 1 n, (Nat.floor ((2*n)/k) - 2*Nat.floor (n/k))) ⊤
+(𝓝 (Real.log putnam_1976_b1_solution.1 - putnam_1976_b1_solution.2)) :=
+sorry
+
+abbrev putnam_1976_b2_solution : ℕ × Set (List (ℤ × ℤ)) := sorry
+-- (8, {[(0, 0)], [(2, 0)], [(0, 1)], [(0, 2)], [(0, 3)], [(0, 4)], [(0, 5)], [(0, 6)]})
+theorem putnam_1976_b2
+[Group G]
+(A B : G)
+(word : List (ℤ × ℤ) → G := fun w : List (ℤ × ℤ) => (List.map (fun t : ℤ × ℤ => A^(t.1)*B^(t.2)) w).prod)
+(hG : ∀ g : G, ∃ w : List (ℤ × ℤ), g = word w)
+(hA : A^4 = 1 ∧ A^2 ≠ 1)
+(hB : B^7 = 1 ∧ B ≠ 1)
+(h1 : A*B*A^(-(1 : ℤ))*B = 1)
+(S : Set G := {g : G | ∃ C : G, C^2 = g})
+: S.ncard = putnam_1976_b2_solution.1 ∧ S = {word w | w ∈ putnam_1976_b2_solution.2} :=
+sorry
+
+theorem putnam_1976_b6
+(σ : ℕ → ℕ := fun N : ℕ => ∑ d in Nat.divisors N, d)
+(q : ℕ → Prop := fun N : ℕ => σ N = 2*N + 1)
+: ∀ N : ℕ, q N → ∃ m : ℤ, Odd m ∧ m^2 = N :=
+sorry
+
 
 end putnam_1976
 
@@ -3902,5 +4092,312 @@ section putnam_1975
 end putnam_1975
 
 section putnam_1974
+open Set
+
+abbrev putnam_1974_a1_solution : ℕ := sorry
+-- 11
+theorem putnam_1974_a1
+(conspiratorial : Set ℕ → Prop := fun S => ∀ a ∈ S, ∀ b ∈ S, ∀ c ∈ S, (a ≠ 0) ∧ ((a ≠ b ∧ b ≠ c ∧ a ≠ c) → (gcd (a : ℕ) b > 1 ∨ gcd (b : ℕ) c > 1 ∨ gcd (a : ℕ) c > 1)))
+: (∀ S : Set ℕ, S ⊆ Icc 1 16 → conspiratorial S → S.encard ≤ putnam_1974_a1_solution) ∧ (∃ S : Set ℕ, S ⊆ Icc 1 16 ∧ conspiratorial S ∧ S.encard = putnam_1974_a1_solution) := sorry
+
+abbrev putnam_1974_a3_solution : (Set ℕ) × (Set ℕ) := sorry
+-- ({p : ℕ | Prime p ∧ p ≡ 1 [MOD 8]}, {p : ℕ | Prime p ∧  p ≡ 5 [MOD 8]})
+theorem putnam_1974_a3
+(assmption : ∀ p : ℕ, Prime p ∧ p > 2 → (∃ m n : ℕ, p = m^2 + n^2 ↔ p ≡ 1 [MOD 4]))
+: ∀ p : ℕ, Prime p ∧ p > 2 → ((∃ x y : ℤ, p = x^2 + 16*y^2 ↔ p ∈ putnam_1974_a3_solution.1) ∧ (∃ x y : ℤ, p = 4*x^2 + 4*x*y + 5*y^2 ↔ p ∈ putnam_1974_a3_solution.2)) :=
+sorry
+
+open Nat
+noncomputable abbrev putnam_1974_a4_solution : ℕ → ℝ := fun n => (n / 2^(n-1)) * (n-1).choose (n/2)
+theorem putnam_1974_a4
+(n : ℕ)
+(hn : n > 0)
+: 1/(2^(n-1)) * ∑ k in Finset.Icc 0 ((ceil n/2) - 1), (n - 2*k)*(n.choose k) = putnam_1974_a4_solution n :=
+sorry
+
+open Polynomial
+abbrev putnam_1974_a6_solution : ℕ := sorry
+-- 25
+theorem putnam_1974_a6
+(n : ℕ := 10^6)
+(hdivnallx : Polynomial ℤ → Prop := fun f => Monic f ∧ (∀ x : ℤ, (n : ℤ) ∣ f.eval x))
+: sInf {d : ℕ | ∃ f : Polynomial ℤ, hdivnallx f ∧ d = f.natDegree} = putnam_1974_a6_solution :=
+sorry
+
+theorem putnam_1974_b3
+(α : ℝ)
+(ha : Real.cos (Real.pi * α) = (1 : ℝ)/3)
+: Irrational α :=
+sorry
+
+open Topology Filter
+theorem putnam_1974_b4
+(f : ℝ × ℝ → ℝ)
+(hfcontx : ∀ y : ℝ, Continuous (fun x => f ⟨x, y⟩))
+(hfconty : ∀ x : ℝ, Continuous (fun y => f ⟨x, y⟩))
+: ∃ g : ℕ → (ℝ × ℝ → ℝ), ∀ n : ℕ, Continuous (g n) ∧ ∀ x y : ℝ, Tendsto (fun n => g n ⟨x, y⟩) atTop (𝓝 (f ⟨x, y⟩)) :=
+sorry
+
+theorem putnam_1974_b5
+: ∀ n ≥ 0, ∑ i in Finset.Icc (0 : ℕ) n, (n^i : ℝ)/(Nat.factorial i) > (Real.exp n)/2 :=
+sorry
+
+abbrev putnam_1974_b6_solution : (ℕ × ℕ × ℕ) := sorry
+-- ((2^1000 - 1)/3, (2^1000 - 1)/3, 1 + (2^1000 - 1)/3)
+theorem putnam_1974_b6
+(n : ℕ := 1000)
+(count0 : ℕ → ℕ := {S | S ⊆ Finset.Icc 1 n ∧ S.card ≡ 0 [MOD 3]}.ncard)
+(count1 : ℕ → ℕ := {S | S ⊆ Finset.Icc 1 n ∧ S.card ≡ 1 [MOD 3]}.ncard)
+(count2 : ℕ → ℕ := {S | S ⊆ Finset.Icc 1 n ∧ S.card ≡ 2 [MOD 3]}.ncard)
+: (count0 n, count1 n, count2 n) = putnam_1974_b6_solution :=
+sorry
 
 end putnam_1974
+
+section putnam_1973
+
+theorem putnam_1973_a3
+(b : ℕ → ℝ := fun n => sInf {(k : ℕ) + n/k | k > 0})
+: ∀ n : ℕ, n > 0 → floor (b n) = floor (Real.sqrt (4 * n + 1)) :=
+sorry
+
+abbrev putnam_1973_a4_solution : ℕ := sorry
+-- 3
+theorem putnam_1973_a4
+(f : ℝ → ℝ := fun x => 2^x - 1 - x^2)
+: putnam_1973_a4_solution = {x : ℝ | f x = 0}.ncard :=
+sorry
+
+-- Note: Uses the slope/intercept formulation of line in the plane
+theorem putnam_1973_a6
+(h_nint : ℕ → (Fin 7 → (ℝ × ℝ)) → ℕ := fun n lines => {p : ℝ × ℝ | ∃! S : Set (Fin 7), S.ncard = n ∧ p ∈ ⋂ i ∈ S, {pts | pts.2 = (lines i).1 * pts.1 + (lines i).2}}.ncard)
+: ¬ ∃ lines : Fin 7 → (ℝ × ℝ), (∀ i j : Fin 7, i ≠ j → lines i ≠ lines j) ∧ h_nint 3 lines ≥ 6 ∧ h_nint 2 lines ≥ 4 :=
+sorry
+
+theorem putnam_1973_b1
+(n : ℕ)
+(a : Finset.Icc 1 (2 * n + 1) → ℤ)
+(h_remove : ∀ S : Finset (Finset.Icc 1 (2 * n + 1)), S.card = 2*n → ∃ T, T ⊆ S ∧ T.card = n ∧ ∑ i in T, a i = ∑ i in (S \ T), a i)
+: ∀ i j : Finset.Icc 1 (2 * n + 1), a i = a j :=
+sorry
+
+theorem putnam_1973_b2
+(z : ℂ)
+(hzrat : ∃ q1 q2 : ℚ, z.re = q1 ∧ z.im = q2)
+(hznorm : ‖z‖ = 1 )
+: ∀ n : ℤ, ∃ q : ℚ, ‖z^(2*n) - 1‖ = q :=
+sorry
+
+theorem putnam_1973_b3
+(p : ℕ)
+(hprime : ∀ x ∈ Set.Ico 1 p, Nat.Prime (x^2 - x + p))
+: ∃! triple : ℤ × ℤ × ℤ, let (a,b,c) := triple; b^2 - 4*a*c = 1 - 4*p ∧ 0 < a ∧ a ≤ c ∧ -a ≤ b ∧ b < a :=
+sorry
+
+-- Note: Boosted domain to ℝ, which is fine because you can extend any such function f from [0,1] to ℝ satisfying the same properties.
+abbrev putnam_1973_b4_solution : ℝ → ℝ := sorry
+-- (fun x => x)
+theorem putnam_1973_b4
+(f : ℝ → ℝ)
+(hprop : (ℝ → ℝ) → Prop := fun g => ContDiff ℝ 1 g ∧ (∀ x : ℝ, 0 < deriv f x ∧ deriv f x ≤ 1) ∧ f 0 = 0)
+(hf : hprop f)
+: (∫ x in Icc 0 1, f x)^2 ≥ ∫ x in Icc 0 1, (f x)^3 ∧ (hprop putnam_1973_b4_solution ∧ (∫ x in Icc 0 1, putnam_1973_b4_solution x)^2 ≥ ∫ x in Icc 0 1, (putnam_1973_b4_solution x)^3):=
+sorry
+
+end putnam_1973
+
+section putnam_1972
+
+theorem putnam_1972_a1
+(n : ℕ)
+(hn : n > 0)
+(fourAP : ℕ → ℕ → ℕ → ℕ → Prop := fun n1 n2 n3 n4 => ∃ o1 o2 o3 o4 : ℕ, {n1, n2, n3, n4} = ({o1, o2, o3, o4} : Set ℕ) ∧ o1 ≤ o2 ∧ o2 ≤ o3 ∧ o3 ≤ o4 ∧ o4-o3 = o3-o2 ∧ o3-o2 = o2-o1)
+: ¬ ∃ r : ℕ, r > 0 ∧ r + 3 ≤ n ∧ fourAP (n.choose r) (n.choose (r+1)) (n.choose (r+2)) (n.choose (r+3)) :=
+sorry
+
+theorem putnam_1972_a2
+: (∀ (S : Type*) (_ : Mul S), (∀ x y : S, x * (x * y) = y ∧ ((y * x) * x) = y) → (∀ x y : S, x * y = y * x)) ∧ ∃ (S : Type*) (_ : Mul S), (∀ x y : S, x * (x * y) = y ∧ ((y * x) * x) = y) ∧ ¬(∀ x y z : ℤ, x * (y * z) = (x * y) * z) :=
+sorry
+
+abbrev putnam_1972_a3_solution : Set (ℝ → ℝ) := sorry
+-- {f | ∃ A B : ℝ, ∀ x : ℝ, f x = A * x + B}
+theorem putnam_1972_a3
+(x : ℕ → ℝ)
+(climit_exists : (ℕ → ℝ) → Prop := fun x => ∃ C : ℝ, Tendsto (fun n => (∑ i in Finset.range n, (x i))/(n : ℝ)) atTop (𝓝 C))
+(supercontinuous : (ℝ → ℝ) → Prop := fun f => ∀ (x : ℕ → ℝ), (∀ i : ℕ, x i ∈ Icc 0 1) → climit_exists x → climit_exists (fun i => f (x i)))
+: {f | supercontinuous f} = putnam_1972_a3_solution :=
+sorry
+
+theorem putnam_1972_a5
+(n : ℕ)
+(hn : n > 1)
+: ¬(n ∣ 2^n - 1) :=
+sorry
+
+
+open MeasureTheory
+theorem putnam_1972_a6
+(f : ℝ → ℝ)
+(n : ℕ)
+(hfintegrable: IntegrableOn f (Icc 0 1))
+(hfint : ∀ i ∈ Icc 0 (n-1), ∫ x in Icc 0 1, x^i*(f x) = 0)
+(hfintlast : ∫ x in Icc 0 1, x^n*(f x) = 1)
+: ∃ S, S ⊆ Icc (0 : ℝ) 1 ∧ MeasurableSet S ∧ volume S > 0 ∧ ∀ x ∈ S, |f x| ≥ 2^n * (n + 1) :=
+sorry
+
+theorem putnam_1972_b3
+(G : Type*) [Group G]
+(A B : G)
+(hab : A * B * A = B * A^2 * B ∧ A^3 = 1 ∧ (∃ n : ℕ, n > 0 ∧ B^(2*n -1) = 1))
+: B = 1 :=
+sorry
+
+theorem putnam_1972_b4
+(n : ℕ)
+(hn : n > 1)
+(vars : ℝ → ℝ → ℝ → (Fin 3 → ℝ) := fun a b c ↦ fun i ↦ ite (i = 0) a (ite (i = 1) b c))
+: ∃ P : MvPolynomial (Fin 3) ℝ, ∀ x : ℝ, x = MvPolynomial.eval (vars (x^n) (x^(n+1)) (x + x^(n+2))) P :=
+sorry
+
+open Metric
+theorem putnam_1972_b6
+(n : ℕ)
+(hn : n > 1)
+(S : Fin n → ℕ)
+(hS : ∀ i : Fin n, S i > 0)
+(hS' : ∀ i j : Fin n, i < j → S i < S j)
+(poly : ℂ → ℂ := fun z => 1 + ∑ i : Fin n, z^(S i))
+: ∀ z : ℂ, z ∈ ball 0 ((Real.sqrt 5 - 1)/2) → poly z ≠ 0 :=
+sorry
+
+end putnam_1972
+
+section putnam_1971
+
+abbrev putnam_1971_a2_solution : Set (Polynomial ℝ) := sorry
+-- {Polynomial.X}
+theorem putnam_1971_a2
+: ∀ P : Polynomial ℝ, (P.eval 0 = 0 ∧ ∀ x : ℝ, P.eval (x^2 + 1) = (P.eval x)^2 + 1) ↔ P ∈ putnam_1971_a2_solution :=
+sorry
+
+theorem putnam_1971_a3
+(a b c : ℤ × ℤ)
+(R : ℝ)
+(oncircle : (ℝ × ℝ) → ℝ → (ℝ × ℝ) → Prop := fun C r p => (p.1 - C.1)^2 + (p.2 - C.2)^2 = r^2)
+(hcircle : ∃ C : ℝ × ℝ, oncircle C R ⟨(a.1 : ℝ), (a.2 : ℝ)⟩ ∧ oncircle C R ⟨(b.1 : ℝ), (b.2 : ℝ)⟩ ∧ oncircle C R ⟨(c.1 : ℝ), (c.2 : ℝ)⟩)
+: (Real.sqrt ((a.1 - b.1)^2 + (a.2 - b.2)^2)) * (Real.sqrt ((a.1 - c.1)^2 + (a.2 - c.2)^2)) * (Real.sqrt ((c.1 - b.1)^2 + (c.2 - b.2)^2)) ≥ 2 * R :=
+sorry
+
+open MvPolynomial
+theorem putnam_1971_a4
+(ε : ℝ)
+(hε : 0 < ε ∧ ε < 1)
+(P : ℕ → ℝ → MvPolynomial (Fin 2) ℝ := fun n δ => (MvPolynomial.X 0 + MvPolynomial.X 1)^n * ((MvPolynomial.X 0)^2 - (MvPolynomial.C (2 - δ))*(MvPolynomial.X 0)*(MvPolynomial.X 1) + (MvPolynomial.X 1)^2))
+: ∃ N : ℕ, ∀ n ≥ N, ∀ i : Fin 2 →₀ ℕ, MvPolynomial.coeff i (P n ε) > 0 :=
+sorry
+
+theorem putnam_1971_a6
+(c : ℝ)
+(hc : ∀ n : ℕ, n > 0 → ∃ m : ℤ, n^c = m)
+: ∃ m : ℤ, c = m :=
+sorry
+
+theorem putnam_1971_b1
+(S : Type*) [Mul S]
+(hself : ∀ x : S, x * x = x)
+(h2 : ∀ x y z : S, (x * y) * z = (y * z) * x)
+: ∀ x y z : S, (x * y) * z = x * (y * z) ∧ x * y = y * x :=
+sorry
+
+theorem putnam_1971_b6
+(δ : ℕ → ℕ := fun n => sSup {t | Odd t ∧ t ∣ n})
+: ∀ x : ℕ, x > 0 → |∑ i in Finset.Icc 1 x, (δ i)/(i : ℚ) - 2*x/3| < 1 :=
+sorry
+
+end putnam_1971
+
+section putnam_1970
+
+open Filter Topology
+theorem putnam_1970_a4
+(x : ℕ → ℝ)
+(hxlim : Tendsto (fun n => x n - x (n-2)) atTop (𝓝 0))
+: Tendsto (fun n => (x n - x (n-1))/n) atTop (𝓝 0) :=
+sorry
+
+noncomputable abbrev putnam_1970_b1_solution : ℝ := sorry
+-- Real.exp (2 * Real.log 5  - 4 + 2 * Real.arctan 2)
+theorem putnam_1970_b1
+: Tendsto (fun n => 1/(n^4) * ∏ i in Finset.range (2*n), (n^2 + (i + 1)^2)^((1 : ℝ)/n)) atTop (𝓝 putnam_1970_b1_solution) :=
+sorry
+
+theorem putnam_1970_b3
+(S : Set (ℝ × ℝ))
+(a b : ℝ)
+(hab : a < b)
+(hS : ∀ s ∈ S, s.1 ∈ Ioo a b)
+(hSclosed : IsClosed S)
+: IsClosed {y | ∃ x : ℝ, ⟨x,y⟩ ∈ S} :=
+sorry
+
+theorem putnam_1970_b5
+(ramp : ℤ → (ℝ → ℝ) := fun n => (fun x => if x ≤ -n then -n else (if -n < x ∧ x ≤ n then x else n)))
+(F : ℝ → ℝ)
+: Continuous F ↔ (∀ n : ℕ, Continuous ((ramp n) ∘ F)) :=
+sorry
+
+
+end putnam_1970
+
+section putnam_1969
+open Matrix
+
+theorem putnam_1969_a2
+(D : (n : ℕ) → Matrix (Fin n) (Fin n) ℝ := fun n => λ i j => |i.1 - j.1| )
+: ∀ n, n > 0 → (D n).det = (-1)^(n-1) * (n-1) * 2^(n-2) :=
+sorry
+
+theorem putnam_1969_a4
+: Tendsto (fun n => ∑ i in Finset.Icc (1 : ℤ) n, (-1)^(i+1)*(i : ℝ)^(-i)) atTop (𝓝 (∫ x in Icc (0 : ℝ) 1, x^x)) :=
+sorry
+
+theorem putnam_1969_a6
+(x : ℕ → ℝ)
+(y : ℕ → ℝ)
+(hy : ∀ n ≥ 2, y n = x (n-1) + 2 * (x n))
+(hy : ∃ c : ℝ, Tendsto y atTop (𝓝 c))
+: ∃ C : ℝ, Tendsto x atTop (𝓝 C) :=
+sorry
+
+theorem putnam_1969_b1
+(n : ℕ)
+(hnpos : n > 0)
+(hn : 24 ∣ (n + 1))
+: 24 ∣ ∑ d in divisors n, d :=
+sorry
+
+abbrev putnam_1969_b2_solution : Prop := sorry
+-- True
+theorem putnam_1969_b2
+(G : Type*)
+[Group G] [Finite G]
+(h : ℕ → Prop := fun n => ∃ H : Fin n → Subgroup G, (∀ i : Fin n, (H i) < ⊤) ∧ ((⊤ : Set G) = ⋃ i : Fin n, (H i)))
+: ¬(h 2) ∧ (h 3 ↔ putnam_1969_b2_solution) :=
+sorry
+
+theorem putnam_1969_b3
+(T : ℕ → ℝ)
+(hT1 : ∀ n : ℕ, n ≥ 1 → (T n) * (T (n + 1)) = n)
+(hT2 : Tendsto (fun n => (T n)/(T (n + 1))) atTop (𝓝 1))
+: Real.pi * (T 1)^2 = 2 :=
+sorry
+
+theorem putnam_1969_b5
+(a : ℕ → ℝ)
+(ha : StrictMono a)
+(hinvasum : ∃ C : ℝ, Tendsto (fun n => ∑ i in Finset.Icc 1 n, 1/(a n)) atTop (𝓝 C))
+(k : ℝ → ℕ := fun x => {n | a n ≤ x}.ncard)
+: ∀ x : ℝ, Tendsto (fun t => (k t)/t) atTop (𝓝 0) :=
+sorry
+
+end putnam_1969
