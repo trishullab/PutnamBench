@@ -43,9 +43,7 @@ Proof. Abort.
 End putnam_2016_b2. 
 
 Section putnam_2015_a4. 
-Require Import List Reals Coquelicot.Hierarchy Coquelicot.Series. 
-Require Import Nat Reals Arith Znumtheory Ensembles Finite_sets.
-Require Import Reals. From Coquelicot Require Import Coquelicot Hierarchy Rcomplements. 
+Require Import Nat List Reals. From Coquelicot Require Import Coquelicot Hierarchy Rcomplements. 
 Definition putnam_2015_a4_solution : R := 4/7.
 Theorem putnam_2015_a4: 
     let f (x: R) := Series (fun n => if even (Z.to_nat (floor ((INR n)*x))) then 1/(2^n) else R0) in 
