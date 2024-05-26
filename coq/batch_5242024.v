@@ -1,4 +1,4 @@
-(* Section putnam_2023_b2. 
+Section putnam_2023_b2. 
 Require Import BinNums Nat NArith.
 Definition putnam_2023_b2_solution := 3.
 Theorem putnam_2023_b2: 
@@ -490,7 +490,7 @@ Theorem putnam_1983_b5:
     let mindist (x: R) := Rmin (Rabs (x - IZR (floor x))) (Rabs (x - IZR (floor (x+1)))) in
     Lim_seq (fun n => 1/(INR n) * (RInt (fun x => mindist (INR n/x)) 1 (INR n))) = putnam_1983_b5_solution.
 Proof. Abort.
-End putnam_1983_b5. *)
+End putnam_1983_b5.
 
 Section putnam_1984_a2.
 Require Import Reals Coquelicot.Coquelicot.
