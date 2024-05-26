@@ -1,0 +1,38 @@
+[
+    {
+        "problem_name" : "putnam_1972_b1",
+        "informal_statement" : "Prove that no three consecutive coefficients of the power series of $$\\sum_{n = 0}^{\\infty} \\frac{x^n(x - 1)^{2n}}{n!}$$ all equal $0$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1971_a1",
+        "informal_statement" : "Let $S$ be a set of $9$ lattice points (points with integer coordinates) in $3$-dimensional Euclidean space. Prove that there exists a lattice point along the interior of some line segment that joins two distinct points in $S$.",
+        "informal_solution" : "None.",
+        "tags" : ["geometry", "combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_1971_b2",
+        "informal_statement" : "Find all functions $F : \\mathbb{R} \\setminus \\{0, 1\\} \\to \\mathbb{R}$ that satisfy $F(x) + F\\left(\\frac{x - 1}{x}\\right) = 1 + x$ for all $x \\in \\mathbb{R} \\setminus \\{0, 1\\}$.",
+        "informal_solution" : "The only such function is $F(x) = \\frac{x^3 - x^2 - 1}{2x(x - 1)}$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1970_a1",
+        "informal_statement" : "Prove that, for all $a > 0$ and $b > 0$, the power series of $e^{ax} \\cos (bx)$ with respect to $x$ has either zero or infinitely many zero coefficients.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1970_a3",
+        "informal_statement" : "Find the length of the longest possible sequence of equal nonzero digits (in base 10) in which a perfect square can terminate. Also, find the smallest square that attains this length.",
+        "informal_solution" : "The maximum attainable length is $3$; the smallest such square is $38^2 = 1444$.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1969_b6",
+        "informal_statement" : "Let $A$ be a $3 \\times 2$ matrix and $B$ be a $2 \\times 3$ matrix such that $$AB = \n\\begin{pmatrix}\n8 & 2 & -2 \\\\\n2 & 5 & 4 \\\\\n-2 & 4 & 5\n\\end{pmatrix}.\n$$ Prove that $$BA = \n\\begin{pmatrix}\n9 & 0 \\\\\n0 & 9\n\\end{pmatrix}.$$",
+        "informal_solution" : "None.",
+        "tags" : ["linear_algebra"]
+    }
+]
