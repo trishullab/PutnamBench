@@ -3313,7 +3313,7 @@ theorem putnam_1985_b2
 (f : ℕ → ℝ → ℝ)
 (hf0x : ∀ x : ℝ, f 0 x = 1)
 (hfn0 : ∀ n ≥ 1, f n 0 = 0)
-(hfderiv : ∀ x : ℝ, deriv (f (n + 1)) x = (n + 1) * f n (x + 1))
+(hfderiv : ∀ x : ℝ, ∀ n, deriv (f (n + 1)) x = (n + 1) * f n (x + 1))
 : (∃ a : ℕ, a = f 100 1 ∧ Nat.factorization a = putnam_1985_b2_solution) :=
 sorry
 
@@ -3468,7 +3468,7 @@ open Filter Topology Real
 noncomputable abbrev putnam_1983_a6_solution : ℝ := sorry
 -- 2 / 9
 theorem putnam_1983_a6
-(F : ℝ → ℝ := fun a ↦ a ^ 4 * exp (-a ^ 3) * ∫ x in (0)..a, ∫ y in (0)..(a - x), exp (x ^ 3 + y ^ 3))
+(F : ℝ → ℝ := fun a ↦ (a ^ 4 / exp (a ^ 3)) * ∫ x in (0)..a, ∫ y in (0)..(a - x), exp (x ^ 3 + y ^ 3))
 : (Tendsto F ⊤ (𝓝 putnam_1983_a6_solution)) :=
 sorry
 
@@ -3515,13 +3515,13 @@ abbrev putnam_1982_a2_solution : Prop := sorry
 theorem putnam_1982_a2
 (B : ℕ → ℝ → ℝ := fun n x ↦ ∑ k in Finset.Icc 1 n, k ^ x)
 (f : ℕ → ℝ := fun n ↦ B n (logb n 2) / (n * logb 2 n) ^ 2)
-: ((∃ L : ℝ, Tendsto (fun N ↦ ∑ j in Finset.Icc 2 N, f j) ⊤ (𝓝 L)) ↔ putnam_1982_a2_solution) :=
+: (∃ L : ℝ, Tendsto (fun N ↦ ∑ j in Finset.Icc 2 N, f j) ⊤ (𝓝 L)) ↔ putnam_1982_a2_solution :=
 sorry
 
 noncomputable abbrev putnam_1982_a3_solution : ℝ := sorry
 -- (Real.pi / 2) * log Real.pi
 theorem putnam_1982_a3
-: (Tendsto (fun T ↦ ∫ x in (0)..T, (arctan (Real.pi * x) - arctan x) / x) ⊤ (𝓝 putnam_1982_a3_solution)) :=
+: (Tendsto (fun t ↦ ∫ x in (0)..t, (arctan (Real.pi * x) - arctan x) / x) ⊤ (𝓝 putnam_1982_a3_solution)) :=
 sorry
 
 theorem putnam_1982_a5
