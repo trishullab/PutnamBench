@@ -211,8 +211,6 @@ Theorem putnam_1979_a5:
 Proof. Abort.
 End putnam_1979_a5.
 
-(* 20 *)
-
 Section putnam_1979_a6.
 Require Import Reals Coquelicot.Coquelicot.
 Open Scope R.
@@ -224,26 +222,26 @@ Theorem putnam_1979_a6:
 Proof. Abort.
 End putnam_1979_a6.
 
-Section putnam_1979_a6.
+Section putnam_1979_b2.
 Require Import Reals Coquelicot.Coquelicot.
-Definition putnam_1979_a6_solution (a b: R):= (Rpower b (b/(b-a))) / ((exp 1) * Rpower a (a/(b-a))).
-Theorem putnam_1979_a6:
+Definition putnam_1979_b2_solution (a b: R):= (Rpower b (b/(b-a))) / ((exp 1) * Rpower a (a/(b-a))).
+Theorem putnam_1979_b2:
     forall (a b: R), 0 < a < b ->
     Lim_seq (fun lam => Rpower (RInt (fun x => Rpower (b*x + a*(1-x)) (INR lam)) 0 1) 1/INR lam) 
-    = putnam_1979_a6_solution a b.
+    = putnam_1979_b2_solution a b.
 Proof. Abort.
-End putnam_1979_a6.
+End putnam_1979_b2.
 
-Section putnam_1979_a6.
+Section putnam_1979_b6.
 Require Import Reals List Coquelicot.Coquelicot.
 Open Scope R.
-Theorem putnam_1979_a6:
+Theorem putnam_1979_b6:
     forall (n: nat) (l: list C), length l = n ->
     let sum1 := fold_left (fun acc x => Cplus acc (Cmult x x)) l 0 in
     let sum2 := fold_left (fun acc x => Re x) l 0 in
     sqrt (Re sum1) <= sum2.
 Proof. Abort.
-End putnam_1979_a6.
+End putnam_1979_b6.
 
 Section putnam_1980_a2.
 Require Import Nat Ensembles Finite_sets.
@@ -502,14 +500,14 @@ Theorem putnam_1984_a2:
 Proof. Abort.
 End putnam_1984_a2.
 
-Section putnam_1984_a3.
+Section putnam_1984_a5.
 Require Import Reals Factorial Coquelicot.Coquelicot.
 Open Scope R.
 Definition putnam_1984_a5_solution := INR (fact 9 * fact 8 * fact 4 / fact 25).
 Theorem putnam_1984_a5:
     RInt (fun z => RInt (fun y => RInt (fun x => x * pow y 9 * pow z 8 * pow (1 - x - y - z) 4) 0 (1 - y - z)) 0 (1 - z)) 0 1 = putnam_1984_a5_solution.
 Proof. Abort.
-End putnam_1984_a3.
+End putnam_1984_a5.
 
 Section putnam_1984_b2.
 Require Import Reals Coquelicot.Coquelicot.
