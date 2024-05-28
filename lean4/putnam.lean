@@ -2986,11 +2986,10 @@ theorem putnam_1988_a5
 : (∃ f : ℝ → ℝ, (∀ x > 0, f (f x) = 6 * x - f x ∧ f x > 0) ∧ (∀ g : ℝ → ℝ, (∀ x > 0, g (g x) = 6 * x - g x ∧ g x > 0) → (∀ x > 0, f x = g x))) :=
 sorry
 
-
 abbrev putnam_1988_a6_solution : Prop := sorry
 -- True
 theorem putnam_1988_a6
-: (∀ (F V : Type*) (_ : Field F) (_ : AddCommGroup V) (_ : Module F V) (_ : FiniteDimensional F V) (n : ℕ) (A : Module.End F V) (evecs : Set V), (n = FiniteDimensional.finrank F V ∧ evecs = {v : V | ∃ f : F, A.HasEigenvector f v} ∧ evecs.encard = n + 1 ∧ (∀ sevecs : Fin n → V, Set.range sevecs ⊆ evecs → LinearIndependent F sevecs)) → (∃ c : F, A = c • LinearMap.id)) ↔ putnam_1988_a6_solution :=
+: (∀ (F V : Type*) (_ : Field F) (_ : AddCommGroup V) (_ : Module F V) (_ : FiniteDimensional F V) (n : ℕ) (A : Module.End F V) (evecs : Set V), (n = FiniteDimensional.finrank F V ∧ evecs ⊆ {v : V | ∃ f : F, A.HasEigenvector f v} ∧ evecs.encard = n + 1 ∧ (∀ sevecs : Fin n → V, (Set.range sevecs ⊆ evecs ∧ (Set.range sevecs).encard = n) → LinearIndependent F sevecs)) → (∃ c : F, A = c • LinearMap.id)) ↔ putnam_1988_a6_solution :=
 sorry
 
 theorem putnam_1988_b1
@@ -3825,7 +3824,7 @@ section putnam_1978
 theorem putnam_1978_a1
 (S : Set ℕ := {k | ∃ j ≤ 33, k = 3 * j + 1})
 (T : Set ℕ)
-(hT : T.ncard = 20 ∧ T ⊆ S)
+(hT : T ⊆ S ∧ T.ncard = 20)
 : (∃ m ∈ T, ∃ n ∈ T, m ≠ n ∧ m + n = 104) :=
 sorry
 
@@ -3854,8 +3853,10 @@ sorry
 -- Also, the original problem asks for a witness to the existentially quantified statement in the goal.
 theorem putnam_1978_a4
 (bypass : (S : Type) → [inst : Mul S] → Prop := fun S [Mul S] ↦ ∀ a b c d : S, (a * b) * (c * d) = a * d)
-: ((∀ (S : Type) (_ : Mul S), bypass S → ∀ a b c : S, a * b = c → (c * c = c ∧ ∀ d : S, a * d = c * d)) ∧ (∃ (S : Type) (_ : Mul S), bypass S ∧ (∀ a : S, a * a = a) ∧ (∃ a b : S, a * b = a ∧ a ≠ b) ∧ (∃ a b : S, a * b ≠ a))) :=
+: ((∀ (S : Type) (_ : Mul S), bypass S → ∀ a b c : S, a * b = c → (c * c = c ∧ ∀ d : S, a * d = c * d))
+  ∧ (∃ (S : Type) (_ : Mul S) (_ : Fintype S), bypass S ∧ (∀ a : S, a * a = a) ∧ (∃ a b : S, a * b = a ∧ a ≠ b) ∧ (∃ a b : S, a * b ≠ a))) :=
 sorry
+
 
 open Real
 
@@ -3893,9 +3894,8 @@ theorem putnam_1978_b3
 (a : ℕ+ → ℝ)
 (haroot : ∀ n, (P n).eval (a n) = 0)
 (haub : ∀ n, ∀ x, (P n).eval x = 0 → x ≤ a n)
-: ((∀ i j, i < j → a i < a j) ∧ Tendsto a ⊤ (𝓝 0)) :=
+: (StrictMono a ∧ Tendsto a ⊤ (𝓝 0)) :=
 sorry
-
 
 theorem putnam_1978_b4
 : (∀ N : ℝ, ∃ a b c d : ℤ, a > N ∧ b > N ∧ c > N ∧ d > N ∧ a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2 = a * b * c + a * b * d + a * c * d + b * c * d) :=
@@ -4166,22 +4166,23 @@ open Set
 abbrev putnam_1974_a1_solution : ℕ := sorry
 -- 11
 theorem putnam_1974_a1
-(conspiratorial : Set ℕ → Prop := fun S => ∀ a ∈ S, ∀ b ∈ S, ∀ c ∈ S, (a ≠ 0) ∧ ((a ≠ b ∧ b ≠ c ∧ a ≠ c) → (gcd (a : ℕ) b > 1 ∨ gcd (b : ℕ) c > 1 ∨ gcd (a : ℕ) c > 1)))
+(conspiratorial : Set ℕ → Prop := fun S => ∀ a ∈ S, ∀ b ∈ S, ∀ c ∈ S, (a ≠ 0) ∧ ((a ≠ b ∧ b ≠ c ∧ a ≠ c) → (Nat.gcd a b > 1 ∨ Nat.gcd b c > 1 ∨ Nat.gcd a c > 1)))
 : (∀ S : Set ℕ, S ⊆ Icc 1 16 → conspiratorial S → S.encard ≤ putnam_1974_a1_solution) ∧ (∃ S : Set ℕ, S ⊆ Icc 1 16 ∧ conspiratorial S ∧ S.encard = putnam_1974_a1_solution) := sorry
 
 abbrev putnam_1974_a3_solution : (Set ℕ) × (Set ℕ) := sorry
--- ({p : ℕ | Prime p ∧ p ≡ 1 [MOD 8]}, {p : ℕ | Prime p ∧  p ≡ 5 [MOD 8]})
+-- ({p : ℕ | p.Prime ∧ p ≡ 1 [MOD 8]}, {p : ℕ | p.Prime ∧ p ≡ 5 [MOD 8]})
 theorem putnam_1974_a3
-(assmption : ∀ p : ℕ, Prime p ∧ p > 2 → (∃ m n : ℕ, p = m^2 + n^2 ↔ p ≡ 1 [MOD 4]))
-: ∀ p : ℕ, Prime p ∧ p > 2 → ((∃ x y : ℤ, p = x^2 + 16*y^2 ↔ p ∈ putnam_1974_a3_solution.1) ∧ (∃ x y : ℤ, p = 4*x^2 + 4*x*y + 5*y^2 ↔ p ∈ putnam_1974_a3_solution.2)) :=
+(assmption : ∀ p : ℕ, p.Prime ∧ p > 2 → ((∃ m n : ℕ, p = m^2 + n^2) ↔ p ≡ 1 [MOD 4]))
+: ∀ p : ℕ, ((p.Prime ∧ p > 2 ∧ (∃ x y : ℤ, p = x^2 + 16*y^2)) ↔ p ∈ putnam_1974_a3_solution.1) ∧ ((p.Prime ∧ p > 2 ∧ (∃ x y : ℤ, p = 4*x^2 + 4*x*y + 5*y^2)) ↔ p ∈ putnam_1974_a3_solution.2) :=
 sorry
 
 open Nat
-noncomputable abbrev putnam_1974_a4_solution : ℕ → ℝ := fun n => (n / 2^(n-1)) * (n-1).choose (n/2)
+noncomputable abbrev putnam_1974_a4_solution : ℕ → ℝ := sorry
+-- (fun n => (n / 2^(n-1)) * (n-1).choose (floor ((n-1)/2)))
 theorem putnam_1974_a4
 (n : ℕ)
 (hn : n > 0)
-: 1/(2^(n-1)) * ∑ k in Finset.Icc 0 ((ceil n/2) - 1), (n - 2*k)*(n.choose k) = putnam_1974_a4_solution n :=
+: 1/(2^(n-1)) * ∑ k in Finset.Icc 0 ((ceil (n/2)) - 1), (n - 2*k)*(n.choose k) = putnam_1974_a4_solution n :=
 sorry
 
 open Polynomial
@@ -4204,7 +4205,7 @@ theorem putnam_1974_b4
 (f : ℝ × ℝ → ℝ)
 (hfcontx : ∀ y : ℝ, Continuous (fun x => f ⟨x, y⟩))
 (hfconty : ∀ x : ℝ, Continuous (fun y => f ⟨x, y⟩))
-: ∃ g : ℕ → (ℝ × ℝ → ℝ), ∀ n : ℕ, Continuous (g n) ∧ ∀ x y : ℝ, Tendsto (fun n => g n ⟨x, y⟩) atTop (𝓝 (f ⟨x, y⟩)) :=
+: ∃ g : ℕ → (ℝ × ℝ → ℝ), (∀ n : ℕ, Continuous (g n)) ∧ (∀ x y : ℝ, Tendsto (fun n => g n ⟨x, y⟩) atTop (𝓝 (f ⟨x, y⟩))) :=
 sorry
 
 theorem putnam_1974_b5
@@ -4215,10 +4216,10 @@ abbrev putnam_1974_b6_solution : (ℕ × ℕ × ℕ) := sorry
 -- ((2^1000 - 1)/3, (2^1000 - 1)/3, 1 + (2^1000 - 1)/3)
 theorem putnam_1974_b6
 (n : ℕ := 1000)
-(count0 : ℕ → ℕ := {S | S ⊆ Finset.Icc 1 n ∧ S.card ≡ 0 [MOD 3]}.ncard)
-(count1 : ℕ → ℕ := {S | S ⊆ Finset.Icc 1 n ∧ S.card ≡ 1 [MOD 3]}.ncard)
-(count2 : ℕ → ℕ := {S | S ⊆ Finset.Icc 1 n ∧ S.card ≡ 2 [MOD 3]}.ncard)
-: (count0 n, count1 n, count2 n) = putnam_1974_b6_solution :=
+(count0 : ℕ := {S | S ⊆ Finset.Icc 1 n ∧ S.card ≡ 0 [MOD 3]}.ncard)
+(count1 : ℕ := {S | S ⊆ Finset.Icc 1 n ∧ S.card ≡ 1 [MOD 3]}.ncard)
+(count2 : ℕ := {S | S ⊆ Finset.Icc 1 n ∧ S.card ≡ 2 [MOD 3]}.ncard)
+: (count0, count1, count2) = putnam_1974_b6_solution :=
 sorry
 
 end putnam_1974
@@ -4259,18 +4260,20 @@ sorry
 
 theorem putnam_1973_b3
 (p : ℕ)
-(hprime : ∀ x ∈ Set.Ico 1 p, Nat.Prime (x^2 - x + p))
+(pgt1 : p > 1)
+(hprime : ∀ x ∈ Set.Ico 0 p, Nat.Prime (x^2 - x + p))
 : ∃! triple : ℤ × ℤ × ℤ, let (a,b,c) := triple; b^2 - 4*a*c = 1 - 4*p ∧ 0 < a ∧ a ≤ c ∧ -a ≤ b ∧ b < a :=
 sorry
 
 -- Note: Boosted domain to ℝ, which is fine because you can extend any such function f from [0,1] to ℝ satisfying the same properties.
+-- Note: There may be multiple correct answers.
 abbrev putnam_1973_b4_solution : ℝ → ℝ := sorry
 -- (fun x => x)
 theorem putnam_1973_b4
 (f : ℝ → ℝ)
-(hprop : (ℝ → ℝ) → Prop := fun g => ContDiff ℝ 1 g ∧ (∀ x : ℝ, 0 < deriv f x ∧ deriv f x ≤ 1) ∧ f 0 = 0)
+(hprop : (ℝ → ℝ) → Prop := fun g => ContDiff ℝ 1 g ∧ (∀ x : ℝ, 0 < deriv g x ∧ deriv g x ≤ 1) ∧ g 0 = 0)
 (hf : hprop f)
-: (∫ x in Icc 0 1, f x)^2 ≥ ∫ x in Icc 0 1, (f x)^3 ∧ (hprop putnam_1973_b4_solution ∧ (∫ x in Icc 0 1, putnam_1973_b4_solution x)^2 ≥ ∫ x in Icc 0 1, (putnam_1973_b4_solution x)^3):=
+: (∫ x in Icc 0 1, f x)^2 ≥ ∫ x in Icc 0 1, (f x)^3 ∧ (hprop putnam_1973_b4_solution ∧ (∫ x in Icc 0 1, putnam_1973_b4_solution x)^2 = ∫ x in Icc 0 1, (putnam_1973_b4_solution x)^3) :=
 sorry
 
 end putnam_1973
@@ -4285,11 +4288,12 @@ theorem putnam_1972_a1
 sorry
 
 theorem putnam_1972_a2
-: (∀ (S : Type*) (_ : Mul S), (∀ x y : S, x * (x * y) = y ∧ ((y * x) * x) = y) → (∀ x y : S, x * y = y * x)) ∧ ∃ (S : Type*) (_ : Mul S), (∀ x y : S, x * (x * y) = y ∧ ((y * x) * x) = y) ∧ ¬(∀ x y z : ℤ, x * (y * z) = (x * y) * z) :=
+: (∀ (S : Type*) (_ : Mul S), (∀ x y : S, x * (x * y) = y ∧ ((y * x) * x) = y) → (∀ x y : S, x * y = y * x)) ∧ ∃ (S : Type*) (_ : Mul S), (∀ x y : S, x * (x * y) = y ∧ ((y * x) * x) = y) ∧ ¬(∀ x y z : S, x * (y * z) = (x * y) * z) :=
 sorry
 
+-- uses (ℝ → ℝ) instead of (Set.Icc 0 1 → ℝ)
 abbrev putnam_1972_a3_solution : Set (ℝ → ℝ) := sorry
--- {f | ∃ A B : ℝ, ∀ x : ℝ, f x = A * x + B}
+-- {f | ∃ A B : ℝ, ∀ x ∈ Set.Icc 0 1, f x = A * x + B}
 theorem putnam_1972_a3
 (x : ℕ → ℝ)
 (climit_exists : (ℕ → ℝ) → Prop := fun x => ∃ C : ℝ, Tendsto (fun n => (∑ i in Finset.range n, (x i))/(n : ℝ)) atTop (𝓝 C))
@@ -4339,13 +4343,13 @@ sorry
 
 open Metric
 theorem putnam_1972_b6
-(n : ℕ)
-(hn : n > 1)
-(S : Fin n → ℕ)
-(hS : ∀ i : Fin n, S i > 0)
-(hS' : ∀ i j : Fin n, i < j → S i < S j)
-(poly : ℂ → ℂ := fun z => 1 + ∑ i : Fin n, z^(S i))
-: ∀ z : ℂ, z ∈ ball 0 ((Real.sqrt 5 - 1)/2) → poly z ≠ 0 :=
+(k : ℕ)
+(hk : k ≥ 1)
+(n : Fin k → ℕ)
+(hn : ∀ i : Fin k, n i > 0)
+(hn' : ∀ i j : Fin k, i < j → n i < n j)
+(zpoly : ℂ → ℂ := fun z => 1 + ∑ i : Fin k, z^(n i))
+: ∀ z : ℂ, z ∈ ball 0 ((Real.sqrt 5 - 1)/2) → zpoly z ≠ 0 :=
 sorry
 
 end putnam_1972
@@ -4369,11 +4373,13 @@ theorem putnam_1971_a2
 sorry
 
 theorem putnam_1971_a3
-(a b c : ℤ × ℤ)
+(a b c : ℝ × ℝ)
 (R : ℝ)
-(oncircle : (ℝ × ℝ) → ℝ → (ℝ × ℝ) → Prop := fun C r p => (p.1 - C.1)^2 + (p.2 - C.2)^2 = r^2)
-(hcircle : ∃ C : ℝ × ℝ, oncircle C R ⟨(a.1 : ℝ), (a.2 : ℝ)⟩ ∧ oncircle C R ⟨(b.1 : ℝ), (b.2 : ℝ)⟩ ∧ oncircle C R ⟨(c.1 : ℝ), (c.2 : ℝ)⟩)
-: (Real.sqrt ((a.1 - b.1)^2 + (a.2 - b.2)^2)) * (Real.sqrt ((a.1 - c.1)^2 + (a.2 - c.2)^2)) * (Real.sqrt ((c.1 - b.1)^2 + (c.2 - b.2)^2)) ≥ 2 * R :=
+(habclattice : a.1 = round a.1 ∧ a.2 = round a.2 ∧ b.1 = round b.1 ∧ b.2 = round b.2 ∧ c.1 = round c.1 ∧ c.2 = round c.2)
+(habcneq : a ≠ b ∧ a ≠ c ∧ b ≠ c)
+(oncircle : (ℝ × ℝ) → ℝ → (ℝ × ℝ) → Prop := fun C r p => Euclidean.dist p C = r)
+(hcircle : ∃ C : ℝ × ℝ, oncircle C R a ∧ oncircle C R b ∧ oncircle C R c)
+: (Euclidean.dist a b) * (Euclidean.dist a c) * (Euclidean.dist b c) ≥ 2 * R :=
 sorry
 
 open MvPolynomial
@@ -4386,8 +4392,8 @@ sorry
 
 theorem putnam_1971_a6
 (c : ℝ)
-(hc : ∀ n : ℕ, n > 0 → ∃ m : ℤ, n^c = m)
-: ∃ m : ℤ, c = m :=
+(hc : ∀ n : ℕ, n > 0 → ∃ m : ℤ, (n : ℝ)^c = m)
+: ∃ m : ℕ, c = m :=
 sorry
 
 theorem putnam_1971_b1
@@ -4449,9 +4455,9 @@ theorem putnam_1970_a4
 sorry
 
 noncomputable abbrev putnam_1970_b1_solution : ℝ := sorry
--- Real.exp (2 * Real.log 5  - 4 + 2 * Real.arctan 2)
+-- Real.exp (2 * Real.log 5 - 4 + 2 * Real.arctan 2)
 theorem putnam_1970_b1
-: Tendsto (fun n => 1/(n^4) * ∏ i in Finset.range (2*n), (n^2 + (i + 1)^2)^((1 : ℝ)/n)) atTop (𝓝 putnam_1970_b1_solution) :=
+: Tendsto (fun n => 1/(n^4) * ∏ i in Finset.range (2*n), ((n^2 + (i + 1)^2) : ℝ)^((1 : ℝ)/n)) atTop (𝓝 putnam_1970_b1_solution) :=
 sorry
 
 theorem putnam_1970_b3
@@ -4481,16 +4487,17 @@ theorem putnam_1969_a2
 sorry
 
 theorem putnam_1969_a4
-: Tendsto (fun n => ∑ i in Finset.Icc (1 : ℤ) n, (-1)^(i+1)*(i : ℝ)^(-i)) atTop (𝓝 (∫ x in Icc (0 : ℝ) 1, x^x)) :=
+: Tendsto (fun n => ∑ i in Finset.Icc (1 : ℤ) n, (-1)^(i+1)*(i : ℝ)^(-i)) atTop (𝓝 (∫ x in Ioo (0 : ℝ) 1, x^x)) :=
 sorry
 
 theorem putnam_1969_a6
 (x : ℕ → ℝ)
 (y : ℕ → ℝ)
-(hy : ∀ n ≥ 2, y n = x (n-1) + 2 * (x n))
-(hy : ∃ c : ℝ, Tendsto y atTop (𝓝 c))
+(hy1 : ∀ n ≥ 2, y n = x (n-1) + 2 * (x n))
+(hy2 : ∃ c : ℝ, Tendsto y atTop (𝓝 c))
 : ∃ C : ℝ, Tendsto x atTop (𝓝 C) :=
 sorry
+
 
 theorem putnam_1969_b1
 (n : ℕ)
@@ -4500,12 +4507,12 @@ theorem putnam_1969_b1
 sorry
 
 abbrev putnam_1969_b2_solution : Prop := sorry
--- True
+-- False
 theorem putnam_1969_b2
 (G : Type*)
 [Group G] [Finite G]
 (h : ℕ → Prop := fun n => ∃ H : Fin n → Subgroup G, (∀ i : Fin n, (H i) < ⊤) ∧ ((⊤ : Set G) = ⋃ i : Fin n, (H i)))
-: ¬(h 2) ∧ (h 3 ↔ putnam_1969_b2_solution) :=
+: ¬(h 2) ∧ ((¬(h 3)) ↔ putnam_1969_b2_solution) :=
 sorry
 
 theorem putnam_1969_b3
@@ -4517,10 +4524,10 @@ sorry
 
 theorem putnam_1969_b5
 (a : ℕ → ℝ)
-(ha : StrictMono a)
-(hinvasum : ∃ C : ℝ, Tendsto (fun n => ∑ i in Finset.Icc 1 n, 1/(a n)) atTop (𝓝 C))
+(ha : StrictMono a ∧ a > 0)
+(hinvasum : ∃ C : ℝ, Tendsto (fun n => ∑ i : Fin n, 1/(a i)) atTop (𝓝 C))
 (k : ℝ → ℕ := fun x => {n | a n ≤ x}.ncard)
-: ∀ x : ℝ, Tendsto (fun t => (k t)/t) atTop (𝓝 0) :=
+: Tendsto (fun t => (k t)/t) atTop (𝓝 0) :=
 sorry
 
 theorem putnam_1969_b6
