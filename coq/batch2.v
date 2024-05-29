@@ -29,7 +29,7 @@ Proof. Abort.
 End putnam_2023_b5.
 
 (* TODO: missing determinant refinement in coqeal *) 
-Section putnam_2023_b6. 
+(* Section putnam_2023_b6. 
 Require Import Nat Finite_sets.
 From mathcomp Require Import matrix ssrbool ssralg fintype.
 Variable putnam_2023_b6_solution : nat -> nat.
@@ -40,7 +40,7 @@ Theorem putnam_2023_b6:
         (\matrix_(i < n, j < n) s i j)
         = (\matrix_(i < n, j < n) s i j).
 Proof. Admitted. 
-End putnam_2023_b6.
+End putnam_2023_b6. *)
 
 Section putnam_2022_a6. 
 Require Import Nat Reals Coquelicot.Hierarchy. From mathcomp Require Import div fintype seq ssralg ssrbool ssrnat ssrnum .
@@ -170,7 +170,7 @@ End putnam_2021_b2.
 
 Section putnam_2020_b6.
 Require Import Reals. From Coquelicot Require Import Coquelicot Hierarchy Rcomplements. 
-Open Scope R.
+Local Open Scope R.
 Theorem putnam_2020_b6: 
     let A (k: nat) := (-1)^(Z.to_nat (floor (INR k * (sqrt 2 - 1)))) in
     let B (n: nat) := sum_n A n in

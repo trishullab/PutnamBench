@@ -16,11 +16,6 @@ theorem putnam_1999_A2:
   shows "\<exists>S :: real poly set . \<forall>x. finite S \<and> poly p x = (\<Sum>s \<in> S. (poly s x)^2)"
   sorry
 
-theorem putnam_1999_A5:
-  fixes p :: "real poly"
-  assumes pdeg : "degree p = 1999"
-  shows "\<exists>C::real. abs (poly p 0) \<le> C * set_lebesgue_integral lebesgue {-1..1} (\<lambda>x. abs(poly p x))"
-  sorry
 
 definition putnam_2001_B4_solution::bool where "putnam_2001_B4_solution \<equiv> undefined"
 theorem putnam_2001_B4:

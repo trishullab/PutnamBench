@@ -33,7 +33,7 @@
         "problem_name" : "putnam_2007_a1",
         "informal_statement" : "Find all values of $\\alpha$ for which the curves $y = \\alpha*x^2 + \\alpha*x + 1/24$ and $x = \\alpha*y^2 + \\alpha*y + 1/24$ are tangent to each other.",
         "informal_solution" : "Show that the solution is the set \\{2/3, 3/2, (13 + \\sqrt{601})/12, (13 - \\sqrt{601})/12}.",
-        "tags" : ["algebra"]
+        "tags" : ["algebra", "geometry"]
     },
     {
         "problem_name" : "putnam_2007_b1",

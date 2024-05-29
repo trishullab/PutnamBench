@@ -1,0 +1,242 @@
+[
+    {
+        "problem_name" : "putnam_1974_a1",
+        "informal_statement" : "Call a set of positive integers 'conspiratorial' if no three of them are pairwise relatively prime. What is the largest number of elements in any conspiratorial subset of the integers 1 through 16?",
+        "informal_solution" : "Show that the answer is 11.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1974_a3",
+        "informal_statement" : "A well-known theorem asserts that a prime $p > 2$ can be written as the sum of two perfect squres if and only if $p \\equiv 1 \\bmod 4$. Find which primes $p > 2$ can be written in each of the following forms, using (not necessarily positive) integers $x$ and $y$: (a) $x^2 + 16y^2$, (b) $4x^2 + 4xy + 5y^2$.",
+        "informal_solution" : "Show that that the answer to (a) is the set of primes which are $1 \\bmod 8$, and the solution to (b) is the set of primes which are $5 \\bmod 8$.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1974_a4",
+        "informal_statement" : "Evaluate in closed form: $\\frac{1}{2^{n-1}} \\sum_{k < n/2} (n-2k)*{n \\choose k}$.",
+        "informal_solution" : "Show that the solution is $\\frac{n}{2^{n-1}} * {(n-1) \\choose \\left[ (n-1)/2 \\right]}$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1974_a6",
+        "informal_statement" : "Given $n$, let $k(n)$ be the minimal degree of any monic integral polynomial $f$ such that the value of $f(x)$ is divisible by $n$ for every integer $x$. Find the value of $k(1000000)$.",
+        "informal_solution" : "Show that the answer is 25.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1974_b3",
+        "informal_statement" : "Prove that if $\\alpha$ is a real number such that $\\cos (\\pi \\alpha) = 1/3$, the $\\alpha$ is irrational.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1974_b4",
+        "informal_statement" : "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous in each variable seperately. Show that there exists a sequence of continuous functions $g_n : \\mathbb{R}^2 \\to \\mathbb{R}$ such that $f(x,y) = \\lim_{n \\to \\infty} g_n(x,y)$ for all $(x,y) \\in \\mathbb{R}^2$." ,
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1974_b5",
+        "informal_statement" : "Show that $1 + (n/1!) + (n^2/2!) + \\dots + (n^n/n!) > e^n/2$ for every integer $n \\geq 0$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1974_b6",
+        "informal_statement" : "For a set with $1000$ elements, how many subsets are there whose candinality is respectively $\\equiv 0 \\bmod 3, \\equiv 1 \\bmod 3, \\equiv 2 \\bmod 3$?",
+        "informal_solution" : "Show that there answer is that there are $(2^1000-1)/3$ subsets of cardinality $\\equiv 0 \\bmod 3$ and $\\equiv 1 \\bmod 3$, and $1 + (2^1000-1)/3$ subsets of cardinality $\\equiv 2 \\bmod 3$.",
+        "tags" : ["set_theory"]
+    },
+    {
+        "problem_name" : "putnam_1973_a3",
+        "informal_statement" : "Let $n$ be a fixed positive integer and let $b(n)$ be the minimum value of $k + \\frac{n}{k}$ as $k$ is allowed to range through all positive integers. Prove that $b(n)$ and $\\sqrt{4n + 1}$ have the same integer part.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1973_a4",
+        "informal_statement" : "How many zeros does the function $f(x) = 2^x - 1 - x^2$ have on the real line?",
+        "informal_solution" : "Show that the solution is 3.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1973_a6",
+        "informal_statement" : "Prove that it is impossible for seven distinct straight lines to be situated in the Euclidean plane so as to have at least six points where exactly three of these lines intersect and at least four points where exactly two of these lines interest.",
+        "informal_solution" : "None.",
+        "tags" : ["geometry"]
+    },
+    {
+        "problem_name" : "putnam_1973_b1",
+        "informal_statement" : "Let $a_1, \\dots, a_{2n + 1}$ be a set of integers such that, if any one of them is removed, the remaining ones can be divided into two sets of $n$ integers with equal sums. Prove $a_1 = a_2 = \\dots = a_{2n+1}$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1973_b2",
+        "informal_statement" : "Let $z = x+iy$ be a complex number with $x$ and $y$ rational and with $\\| z \\| = 1$. Show thaat the number $\\| z^{2n} - 1 \\|$ is rational for every integer $n$.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1973_b3",
+        "informal_statement" : "Let $p > 1$ be an integer with the property that $x^2 - x + p$ is prime for all $x$ in the range $0 < x < p$. Show there exists exactly one triple of integers $a,b,c$ satisfying $b^2 - 4ac = 1 - 4p$, $0 < a \\leq c$, and $-a \\leq b < a$.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_1973_b4",
+        "informal_statement" : "Suppose $f$ is a function on $[0,1]$ with continuous derivative satisfying $0 < f'(x) \\leq 1$ and $f 0 = 0$. Prove that $\\left[\\int_0^1 f(x) dx\\right]]^2 \\geq \\int_0^1 (f(x))^3 dx$, and find an example where equality holds.",
+        "informal_solution" : "Show that one such example where equality holds is the identity function.",
+        "tags" : []
+    },
+    {
+        "problem_name" : "putnam_1972_a1",
+        "informal_statement" : "Show that there are no four consecutive binomial coefficients ${n \\choose r}, {n \\choose (r+1)}, {n \\choose (r+2)}, {n \\choose (r+3)}$ where $n,r$ are positive integers and $r+3 \\leq n$, which are in arithmetic progression.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1972_a2",
+        "informal_statement" : "Let $S$ be a set and $\\cdot$ be a binary operation on $S$ satisfying: (1) for all $x,y$ in $S$, $x \\cdot (x \\cdot y) = y$ (2) for all $x,y$ in $S$, $(y \\cdot x) \\cdot x = y$. Show that $\\cdot$ is commutative but not necessarily associative.",
+        "informal_solution" : "None.",
+        "tags" : ["abstract_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1972_a3",
+        "informal_statement" : "We call a function $f$ from $[0,1]$ to the reals to be supercontinuous on $[0,1]$ if the Cesaro-limit exists for the sequence $f(x_1), f(x_2), f(x_3), \\dots$ whenever it does for the sequence $x_1, x_2, x_3 \\dots$. Find all supercontinuous functions on $[0,1]$.",
+        "informal_solution" : "Show that the solution is the set of affine functions.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1972_a5",
+        "informal_statement" : "Show that if $n$ is an integer greater than $1$, then $n$ does not divide $2^n - 1$.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1972_a6",
+        "informal_statement" : "Let $f$ be an integrable function in $0 \\leq x \\leq 1$ and suppose for all $0 \\leq i \\leq n-1, \\int_0^1 x^i f(x) dx = 0$. Further suppose that $\\int_0^1 x^n f(x) dx = 1$. Show that $|f(x)| \\geq 2^n(n+1)$ on a set of positive measure.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1972_b3",
+        "informal_statement" : "Let $A$ and $B$ be two elements in a group such that $ABA = BA^2B$, $A^3 = 1$, and $B^{2n-1} = 1$ for some positive integer $n$. Prove that $B = 1$.",
+        "informal_solution" : "None.",
+        "tags" : ["abstract_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1972_b4",
+        "informal_statement" : "Let $n \\geq 2$ be an integer. Show that there exists a polynomial $P(x,y,z)$ with integral coefficients such that $x \\equiv P(x^n, x^{n+1}, x + x^{n+2})$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1972_b6",
+        "informal_statement" : "Let $n_1 < n_2 < \\dots < n_k$ be a set of positive integers. Prove that the polynomail $1 + z^{n_1} + z^{n_2} + \\dots + z^{n_k}$ has not roots inside the circle $|z| < (\\frac{\\sqrt{5}-1}{2}$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1971_a2",
+        "informal_statement" : "Determine all polynomials $P(x)$ such that $P(x^2 + 1) = (P(x))^2 + 1$ and $P(0) = 0$.",
+        "informal_solution" : "Show that the only such polynomial is the identity function.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1971_a3",
+        "informal_statement" : "The three vertices of a triangle of sides $a,b,c$ are lattice points and lie on a circle of radius $R$. Show that $abc \\geq 2R$.",
+        "informal_solution" : "None.",
+        "tags" : ["geometry"]
+    },
+    {
+        "problem_name" : "putnam_1971_a4",
+        "informal_statement" : "Show that for $\\epsilon \\in (0,1)$, the expression $(x + y)^n (x^2 - 2-\\epsilon)xy + y^2)$ is a polynomial with positive coefficients for $n$ sufficiently large, where $n$ is an integer. ",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1971_a6",
+        "informal_statement" : "Let $c$ be a real number such that $n^c$ is an integer for every positive integer $n$. Show that $c$ is a non-negative integer.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1971_b1",
+        "informal_statement" : "Let $S$ be a set and let $\\cdot$ be a binary operation on $S$ satisfying the two following laws: (1) for all $x$ in $S$, $x = x \\cdot x$, (2) for all $x,y,z$ in $S$, $(x \\cdot y) \\cdot z) = (y \\cdot z) \\cdot x$. Show that $\\cdot$ is associative and commutative. ",
+        "informal_solution" : "None.",
+        "tags" : ["abstract_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1971_b6",
+        "informal_statement" : "Let $\\delta(x) be the greatest odd divisor of the positive integer $x$. Show that $|\\sum_{n = 1}^x \\delta(n)/n - 2x/3| < 1$ for all positive integers $x$." ,
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1970_a4",
+        "informal_statement" : "Suppose $(x_n)$ is a sequence such that $\\lim_{n \\to \\infty} (x_n - x_{n-2} = 0$. Prove that $\\lim_{n \\to \\infty} \\frac{x_n - x_{n-1}}{n} = 0$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1970_b1",
+        "informal_statement" : "Evaluate the infinite product $\\lim_{n \\to \\infty} \\frac{1}{n^4} \\prod_{i = 1}^{2n} (n^2 + i^2)^{1/n}$.",
+        "informal_solution" : "Show that the solution is $e^{2 \\log(5) - 4 + 2 arctan(2)}$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1970_b3",
+        "informal_statement" : "A closed subset $S$ of $\\mathbb{R}^2$ lies in $a < x < b$. Show that its projection on the y-axis is closed.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1970_b5",
+        "informal_statement" : "Let $u_n$ denote the function $u_n(x) = -n$ if $x \\leq -n$, $x$ if $-n < x \\leq n$, and $n$ otherwise. Let $F$ be a function on the reals. Show that $F$ is continuous if and only if $u_n \\circ F$ is continuous for all natural numbers $n$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1969_a2",
+        "informal_statement" : "Let $D_n$ be the determinant of the $n$ by $n$ matrix whose value in the $i$th row and $j$th column is $|i-j|$. Show that $D_n = (-1)^{n-1} * (n-1) * (2^{n-2}).$",
+        "informal_solution" : "None.",
+        "tags" : ["linear_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1969_a4",
+        "informal_statement" : "Show that $\\int_0^1 x^x dx = \\sum_{n=1}^{\\infty} (-1)^{n+1}n^{-n}$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1969_a6",
+        "informal_statement" : "Let $(x_n)$ be a sequence, and let $y_n = x_{n-1} + 2*x_n$ for $n \\geq 2$. Suppose that $(y_n)$ converges, then prove that $(x_n)$ converges.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1969_b1",
+        "informal_statement" : "Let $n$ be a positive integer such that $n+1$ is divisible by $24$. Prove that the sum of all the divisors of $n$ is divisible by $24$.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1969_b2",
+        "informal_statement" : "Show that a finite group can not be the union of two of its proper subgroups. Does the statement remain true if 'two' is replaced by 'three'?",
+        "informal_solution" : "Show that the statement is no longer true if 'two' is replaced by 'three'.",
+        "tags" : ["abstract_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1969_b3",
+        "informal_statement" : "Suppose $T$ is a sequence which satisfies $T_n * T_{n+1} = n$ whenever $n \\geq 1$, and also $\\lim_{n \\to \\infty} \\frac{T_n}{T_{n+1}} = 1. Show that $\\pi * T_1^2 = 2$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1969_b5",
+        "informal_statement" : "Let $a_1 < a_2 < a_3 < \\dots$ be an increasing sequence of positive integers. Assume that the sequences $\\sum_{i = 1}^{\\infty} 1/(a n)$ is convergent. For any number $x$, let $k(x)$ be the number of $a_n$'s which do not exceed $x$. Show that $\\lim_{x \\to \\infty} k(x)/x = 0$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    }
+]

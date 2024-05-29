@@ -70,7 +70,7 @@ definition putnam_2015_b6_solution :: real where "putnam_2015_b6_solution \<equi
 theorem putnam_2015_b6:
   fixes A :: "nat \<Rightarrow> nat"
   assumes hA: "\<forall>k::nat>0. A k = card {j::nat. odd j \<and> j dvd k \<and> j < sqrt (2*k)}"
-  shows "(\<Sum>k::nat\<in>{1..}. (-1)^(k-1) * (A k / k)) = putnam_2015_b6_solution"
+  shows "(\<Sum>\<^sub>\<infinity>k::nat\<in>{1..}. (-1)^(k-1) * (A k / k)) = putnam_2015_b6_solution"
   sorry
 
 (* uses (nat \<Rightarrow> 'p) instead of (Fin p \<Rightarrow> 'p) and ('p \<Rightarrow> nat) instead of ('p \<Rightarrow> Fin p) *)

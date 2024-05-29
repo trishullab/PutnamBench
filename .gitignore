@@ -3,4 +3,4 @@
 *.olean
 *.olean.*
 
-putnam_*
+lean4/putnam_*
