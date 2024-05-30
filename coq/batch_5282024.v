@@ -336,11 +336,12 @@ Theorem putnam_1998_b5:
 Proof. Abort.
 End putnam_1998_b5.
 
-Section putnam_1998_b6.
-Require Import ZArith Reals Coquelicot.Coquelicot.
-Definition putnam_1998_b6_solution := 1.
-Theorem putnam_1998_b6: 
-    forall (a b c: Z), exists (n: Z), Z.gt n 0 ->
-    ~exists (c: Z), sqrt (IZR (n ^ 3 + a * n ^ 2 + b * n + c)) <> IZR (floor (IZR c)).
+Section putnam_1999_a4.
+Require Import Reals Coquelicot.Coquelicot.
+Definition putnam_1999_a4_solution := 1.
+Theorem putnam_1999_a4: 
+    let f (m n: nat) := INR ((m + 1) ^ 2 * n) / INR (3 ^ m * (n * 3 ^ m + m * 3 ^ n)) in
+    let fn (n: nat) := Lim_seq (fun mInc => sum_n (fun m => f m n) mInc) in
+    Lim_seq (fun nInc => sum_n (fun n => (real (fn n))) nInc) = putnam_1999_a4_solution.
 Proof. Abort.
-End putnam_1998_b6.
+End putnam_1999_a4.
