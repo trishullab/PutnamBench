@@ -768,10 +768,12 @@ theorem putnam_2015_b3
 : MinS ↔ M ∈ putnam_2015_b3_solution :=
 sorry
 
-abbrev putnam_2015_b4_solution : ℚ := sorry
--- 17/21
+abbrev putnam_2015_b4_solution : ℤ × ℕ := sorry
+-- (17, 21)
 theorem putnam_2015_b4
-: (∑' t : (Fin 3 → ℕ), if (∀ n : Fin 3, t n > 0) ∧ t 0 < t 1 + t 2 ∧ t 1 < t 2 + t 0 ∧ t 2 < t 0 + t 1
+(quotientof : ℚ → (ℤ × ℕ))
+(hquotientof : ∀ q : ℚ, quotientof q = (q.num, q.den))
+: quotientof (∑' t : (Fin 3 → ℕ), if (∀ n : Fin 3, t n > 0) ∧ t 0 < t 1 + t 2 ∧ t 1 < t 2 + t 0 ∧ t 2 < t 0 + t 1
 then 2^(t 0)/(3^(t 1)*5^(t 2)) else 0) = putnam_2015_b4_solution :=
 sorry
 
@@ -823,10 +825,11 @@ theorem putnam_2014_a5
 sorry
 
 open Nat
+
 abbrev putnam_2014_b1_solution : Set ℕ := sorry
 -- {n : ℕ | n > 0 ∧ ¬∃ a ∈ digits 10 n, a = 0}
 theorem putnam_2014_b1
-(overexpansion : ℕ → List ℕ → Prop := fun N d ↦ N = ∑ i : Fin d.length, (d.get i) * 10 ^ k ∧ d.getLastI ≠ 0 ∧ ∀ a ∈ d, a ∈ Finset.range 11)
+(overexpansion : ℕ → List ℕ → Prop := fun N d ↦ N = ∑ i : Fin d.length, (d.get i) * 10 ^ i.1 ∧ d.getLastI ≠ 0 ∧ ∀ a ∈ d, a ∈ Finset.range 11)
 (S : Set ℕ)
 (hS : ∀ N : ℕ, N ∈ S ↔ N > 0 ∧ ∃! d : List ℕ, overexpansion N d)
 : (S = putnam_2014_b1_solution) :=
@@ -856,7 +859,7 @@ open Function Set
 theorem putnam_2013_a2
 (S : Set ℕ := {n : ℕ | n > 0 ∧ ¬∃ m : ℤ, m ^ 2 = n})
 (P : ℕ → List ℤ → Prop := fun n : ℕ => fun a : List ℤ => a.length > 0 ∧ n < a[0]! ∧
-∃ m : ℤ, m ^ 2 = n * a.prod ∧ ∀ i : Fin (a.length - 1), a[i] < a[i+(1:ℕ)])
+(∃ m : ℤ, m ^ 2 = n * a.prod) ∧ (∀ i : Fin (a.length - 1), a[i] < a[i+(1:ℕ)]))
 (T : ℕ → Set ℤ := fun n : ℕ => {m : ℤ | ∃ a : List ℤ, P n a ∧ a[a.length - 1]! = m})
 (f : ℕ → ℤ)
 (hf : ∀ n ∈ S, ((∃ r ∈ T n, f n = r) ∧ ∀ r ∈ T n, f n ≤ r))
@@ -978,15 +981,17 @@ sorry
 
 open Function
 
+-- uses (ℝ → ℝ) instead of (Set.Icc (-1 : ℝ) 1 → ℝ)
 noncomputable abbrev putnam_2012_a3_solution : ℝ → ℝ := sorry
 -- fun x : ℝ => Real.sqrt (1 - x^2)
 theorem putnam_2012_a3
 (S : Set ℝ := Set.Icc (-1 : ℝ) 1)
 (hf : (ℝ → ℝ) → Prop := fun f : ℝ → ℝ => ContinuousOn f S ∧
-∀ x ∈ S, f x = ((2 - x^2)/2)*f (x^2/(2 - x^2)) ∧ f 0 = 1 ∧
-∃ y : ℝ, leftLim (fun x : ℝ => (f x)/Real.sqrt (1 - x)) 1 = y)
+(∀ x ∈ S, f x = ((2 - x^2)/2)*f (x^2/(2 - x^2))) ∧ f 0 = 1 ∧
+(∃ y : ℝ, leftLim (fun x : ℝ => (f x)/Real.sqrt (1 - x)) 1 = y))
 : hf putnam_2012_a3_solution ∧ ∀ f : ℝ → ℝ, hf f → ∀ x ∈ S, f x = putnam_2012_a3_solution x :=
 sorry
+
 
 theorem putnam_2012_a4
 (q r : ℤ)
@@ -1177,6 +1182,7 @@ sorry
 
 open Filter Topology Set
 
+-- uses (ℝ → ℝ) instead of (Ici 0 → ℝ)
 theorem putnam_2010_a6
 (f : ℝ → ℝ)
 (hf : (StrictAntiOn f (Ici 0) ∧ ContinuousOn f (Ici 0) ∧ Tendsto f atTop (𝓝 0)))
@@ -1975,8 +1981,9 @@ sorry
 theorem putnam_2000_b1
 (N : ℕ)
 (a b c : Fin N → ℤ)
+(Nge1 : N ≥ 1)
 (hodd : ∀ j : Fin N, Odd (a j) ∨ Odd (b j) ∨ Odd (c j))
-: (∃ r s t : ℤ, {j : Fin N | Odd (r * a j + s * b j + t * c j)}.ncard ≥ 4 * N / 7) :=
+: (∃ r s t : ℤ, {j : Fin N | Odd (r * a j + s * b j + t * c j)}.ncard ≥ (4 * N : ℝ) / 7) :=
 sorry
 
 open Nat
@@ -3905,7 +3912,7 @@ open Polynomial Set
 
 noncomputable abbrev putnam_1978_b5_solution : Polynomial ℝ := sorry
 -- 4 * X ^ 4 - 4 * X ^ 2 + 1
-theorem putnam_1978_
+theorem putnam_1978_b5
 (S : Set (Polynomial ℝ) := {p : Polynomial ℝ | p.degree = 4 ∧ ∀ x ∈ Icc (-1) 1, p.eval x ∈ Icc 0 1})
 : (putnam_1978_b5_solution ∈ S ∧ (∀ p ∈ S, p.coeff 4 ≤ putnam_1978_b5_solution.coeff 4)) :=
 sorry
@@ -3930,7 +3937,7 @@ theorem putnam_1977_a1
 (y : ℝ → ℝ := fun x ↦ 2 * x ^ 4 + 7 * x ^ 3 + 3 * x - 5)
 (S : Finset ℝ)
 (hS : S.card = 4)
-: (Collinear ℝ {P : Fin 2 → ℝ | P 0 ∈ S ∧ P 1 = y (P 0)} → (∑ x in S, x) / 4 = k) :=
+: (Collinear ℝ {P : Fin 2 → ℝ | P 0 ∈ S ∧ P 1 = y (P 0)} → (∑ x in S, x) / 4 = putnam_1977_a1_solution) :=
 sorry
 
 abbrev putnam_1977_a2_solution : ℝ → ℝ → ℝ → ℝ → Prop := sorry
@@ -4118,7 +4125,7 @@ theorem putnam_1975_a3
 (a b c : ℝ)
 (hi : 0 < a ∧ a < b ∧ b < c)
 (P : (ℝ × ℝ × ℝ) → Prop := fun (x, y, z) => x ≥ 0 ∧ y ≥ 0 ∧ z ≥ 0 ∧ x^b + y^b + z^b = 1)
-(f : (ℝ × ℝ × ℝ) → ℝ := fun (x, y, z) => x^a + y^b + c^z)
+(f : (ℝ × ℝ × ℝ) → ℝ := fun (x, y, z) => x^a + y^b + z^c)
 : (P (putnam_1975_a3_solution.1 (a, b, c)) ∧ ∀ x y z : ℝ, P (x, y, z) →
 f (x, y, z) ≤ f (putnam_1975_a3_solution.1 (a, b, c))) ∧
 (P (putnam_1975_a3_solution.2 (a, b, c)) ∧ ∀ x y z : ℝ, P (x, y, z) →
