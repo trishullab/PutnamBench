@@ -2666,7 +2666,7 @@ theorem putnam_1992_b1
 (hminlb : ∀ S : Finset ℝ, S.card = n → min ≤ (A S).ncard)
 : (min = putnam_1992_b1_solution n) :=
 sorry
--- Batch 29: Putnam 2006 B4, Putnam 1992 A1 A2 A3 A4 A5 B1 B2 B4 B5 B6
+
 open Polynomial
 
 theorem putnam_1992_b2
@@ -3749,11 +3749,11 @@ end putnam_1980
 
 section putnam_1979
 
-abbrev putnam_1979_a1_solution : ℕ × Multiset ℕ := sorry
--- (660, Multiset.replicate 659 3 + {2})
+abbrev putnam_1979_a1_solution : Multiset ℕ := sorry
+-- Multiset.replicate 659 3 + {2}
 theorem putnam_1979_a1
-(P : (ℕ × Multiset ℕ) → Prop := fun (n, a) => n > 0 ∧ (∀ i ∈ a, i > 0) ∧ a.sizeOf = n ∧ a.sum = 1979)
-: P putnam_1979_a1_solution ∧ ∀ n : ℕ, ∀ a : Multiset ℕ, P (n, a) → putnam_1979_a1_solution.2.prod ≥ a.prod :=
+(P : Multiset ℕ → Prop := fun a => Multiset.card a > 0 ∧ (∀ i ∈ a, i > 0) ∧ a.sum = 1979)
+: P putnam_1979_a1_solution ∧ ∀ a : Multiset ℕ, P a → putnam_1979_a1_solution.prod ≥ a.prod :=
 sorry
 
 abbrev putnam_1979_a2_solution : ℝ → Prop := sorry
@@ -3792,8 +3792,9 @@ theorem putnam_1979_a6
 (n : ℕ)
 (p : ℕ → ℝ)
 (hp : ∀ i ∈ Finset.range n, p i ∈ Icc 0 1)
-: ∃ x ∈ Icc 0 1, ∑ i in Finset.range n, 1/|x - p i| ≤ 8*n*∑ i in Finset.range n, (1 : ℝ)/(2*i + 1) :=
+: ∃ x ∈ Icc 0 1, (∀ i ∈ Finset.range n, x ≠ p i) ∧ ∑ i in Finset.range n, 1/|x - p i| ≤ 8*n*∑ i in Finset.range n, (1 : ℝ)/(2*i + 1) :=
 sorry
+
 
 open Topology
 open Filter
@@ -3876,7 +3877,6 @@ theorem putnam_1978_a5
 : (∏ i : Fin n, sin (a i) / (a i) ≤ (sin μ / μ) ^ n) :=
 sorry
 
--- Batch 42: Putnam 1979 B3 B6, 1978 A1 A2 A3 A4 A5 A6 B2 B3
 theorem putnam_1978_a6
 (S : Finset (Fin 2 → ℝ))
 (n : ℕ := S.card)
@@ -3969,7 +3969,7 @@ theorem putnam_1977_a5
 (hmgen : m ≥ n)
 : (choose (p * m) (p * n) ≡ choose m n [MOD p]) :=
 sorry
--- Batch 43: Putnam 1978 B4 B5 B6, Putnam 1977 A1 A2 A3 A4 A5 A6 B1
+
 abbrev putnam_1977_a6_solution : Prop := sorry
 -- True
 theorem putnam_1977_a6
@@ -3995,14 +3995,12 @@ theorem putnam_1977_b3
 : (∀ t : ℝ × ℝ × ℝ, P t → ∃ n : ℕ, balanced (B^[n] t)) ↔ putnam_1977_b3_solution :=
 sorry
 
-open BigOperators
-
 theorem putnam_1977_b5
 (n : ℕ)
-(hn : n > 0)
+(hn : n > 1)
 (a : Fin n → ℝ)
 (A : ℝ)
-(hA : A + ∑ i : Fin n, (a i)^2 < (1/(n - 1))*(∑ i : Fin n, a i)^2)
+(hA : A + ∑ i : Fin n, (a i)^2 < (1/((n : ℝ) - 1))*(∑ i : Fin n, a i)^2)
 : ∀ i j : Fin n, i < j → A < 2*(a i)*(a j) :=
 sorry
 
@@ -4058,12 +4056,13 @@ sorry
 
 theorem putnam_1976_a6
 (f : ℝ → ℝ)
-(hf : ContDiff ℝ 2 f ∧ (∀ x : ℝ, |f x| ≤ 1) ∧ (f 0)^2 + (deriv f 0)^2 = 4)
+(hfdiff : ContDiff ℝ 2 f)
+(hfbd : ∀ x : ℝ, |f x| ≤ 1)
+(hf0 : (f 0)^2 + (deriv f 0)^2 = 4)
 : ∃ y : ℝ, (f y) + (iteratedDeriv 2 f y) = 0 :=
 sorry
 
-open Topology
-open Filter
+open Filter Topology
 
 abbrev putnam_1976_b1_solution : ℕ × ℕ := sorry
 -- (4, 1)
@@ -4075,7 +4074,7 @@ sorry
 abbrev putnam_1976_b2_solution : ℕ × Set (List (ℤ × ℤ)) := sorry
 -- (8, {[(0, 0)], [(2, 0)], [(0, 1)], [(0, 2)], [(0, 3)], [(0, 4)], [(0, 5)], [(0, 6)]})
 theorem putnam_1976_b2
-[Group G]
+(G : Type*) [Group G]
 (A B : G)
 (word : List (ℤ × ℤ) → G := fun w : List (ℤ × ℤ) => (List.map (fun t : ℤ × ℤ => A^(t.1)*B^(t.2)) w).prod)
 (hG : ∀ g : G, ∃ w : List (ℤ × ℤ), g = word w)
@@ -4094,10 +4093,9 @@ sorry
 
 theorem putnam_1976_b6
 (σ : ℕ → ℕ := fun N : ℕ => ∑ d in Nat.divisors N, d)
-(q : ℕ → Prop := fun N : ℕ => σ N = 2*N + 1)
-: ∀ N : ℕ, q N → ∃ m : ℤ, Odd m ∧ m^2 = N :=
+(quasiperfect : ℕ → Prop := fun N : ℕ => σ N = 2*N + 1)
+: ∀ N : ℕ, quasiperfect N → ∃ m : ℤ, Odd m ∧ m^2 = N :=
 sorry
-
 
 end putnam_1976
 
