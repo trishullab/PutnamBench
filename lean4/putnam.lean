@@ -2387,7 +2387,7 @@ sorry
 theorem putnam_1995_a3
 (relation : (Fin 9 → ℤ) → (Fin 9 → ℤ) → Prop)
 (digits_to_num : (Fin 9 → ℤ) → ℤ := fun dig => ∑ i : Fin 9, (dig i) * 10^i.1)
-(hrelation : ∀ d e : (Fin 9 → ℤ), relation d e ↔ ( ∀ i : Fin 9, (d i < 10 ∧ d i ≥ 0 ∧ e i < 10 ∧ e i > 0) ∧  ∃! i : Fin 9, d i ≠ e i ∧ 7 ∣ (digits_to_num e)))
+(hrelation : ∀ d e : (Fin 9 → ℤ), relation d e ↔ (∀ i : Fin 9, d i < 10 ∧ d i ≥ 0 ∧ e i < 10 ∧ e i ≥ 0) ∧ (∀ i : Fin 9, 7 ∣ (digits_to_num (fun j : Fin 9 => if j = i then e j else d j))))
 : ∀ d e f : (Fin 9 → ℤ), ((relation d e) ∧ (relation e f)) → (∀ i : Fin 9, 7 ∣ d i - f i) :=
 sorry
 
@@ -2400,17 +2400,13 @@ theorem putnam_1995_a4
 sorry
 
 abbrev putnam_1995_a5_solution : Prop := sorry
--- False
+-- True
 theorem putnam_1995_a5
-(n : ℕ)
-(hn : n > 0)
-(x : (Fin n) → (ℝ → ℝ))
-(hdiffx : ∀ i : Fin n, Differentiable ℝ (x i))
-(a : Fin n → Fin n → ℝ)
-(ha : ∀ i j : Fin n, a i j > 0)
-(hcomb : ∀ t : ℝ, ∀ i : Fin n, (deriv (x i)) t = ∑ j : Fin n, (a i j) * ((x j) t))
-(hxlim : ∀ i : Fin n, Tendsto (x i) atTop (𝓝 0))
-: putnam_1995_a5_solution ↔ ∀ b : Fin n → ℝ, (∀ t : ℝ, ∑ i : Fin n, (b i) * ((x i) t) = 0) → ∀ i : Fin n, b i = 0 :=
+(hdiffx : (n : ℕ) → (Fin n → (ℝ → ℝ)) → Prop := (fun (n : ℕ) (x : Fin n → (ℝ → ℝ)) => ∀ i : Fin n, Differentiable ℝ (x i)))
+(ha : (n : ℕ) → (Fin n → Fin n → ℝ) → Prop := (fun (n : ℕ) (a : Fin n → Fin n → ℝ) => ∀ i j : Fin n, a i j > 0))
+(hcomb : (n : ℕ) → (Fin n → (ℝ → ℝ)) → (Fin n → Fin n → ℝ) → Prop := (fun (n : ℕ) (x : Fin n → (ℝ → ℝ)) (a : Fin n → Fin n → ℝ) => ∀ t : ℝ, ∀ i : Fin n, (deriv (x i)) t = ∑ j : Fin n, (a i j) * ((x j) t)))
+(hxlim : (n : ℕ) → (Fin n → (ℝ → ℝ)) → Prop := (fun (n : ℕ) (x : Fin n → (ℝ → ℝ)) => ∀ i : Fin n, Tendsto (x i) atTop (𝓝 0)))
+: putnam_1995_a5_solution ↔ (∀ (n : ℕ) (x : Fin n → (ℝ → ℝ)) (a : Fin n → Fin n → ℝ), (n > 0 ∧ hdiffx n x ∧ ha n a ∧ hcomb n x a ∧ hxlim n x) → ¬(∀ b : Fin n → ℝ, (∀ t : ℝ, ∑ i : Fin n, (b i) * ((x i) t) = 0) → (∀ i : Fin n, b i = 0))) :=
 sorry
 
 -- Note: Problem remains the same for Fin 9 vs {1,2,..,9}
@@ -2422,28 +2418,26 @@ theorem putnam_1995_b1
 sorry
 
 -- Boosted the domain/range of digits_set to ℕ because of membership problems in Finset.range 10
--- And maybe this formalution makes the problem a bit easier?
 abbrev putnam_1995_b3_solution : ℕ → ℤ := sorry
--- fun n => if n = 1 then 45 else (if n = 2 then 10 * 45^2 else 0)
-theorem putnam_1995_b3'
+-- fun n => if n = 1 then 45 else if n = 2 then 10 * 45^2 else 0
+theorem putnam_1995_b3
 (n : ℕ)
 (hn : n > 0)
-(digits_set := {f : ℕ → ℕ | f 0 ≠ 0 ∧ ∀ i : ℕ, f i ≤ 9})
-(digits_to_matrix : (ℕ → ℕ ) → Matrix (Fin n) (Fin n) ℤ := fun f => (fun i j => f (i.1 * n + j.1)))
-: ∑' f : digits_set, (digits_to_matrix f).det = putnam_1995_b3_solution :=
+(digits_set := {f : ℕ → ℕ | f 0 ≠ 0 ∧ (∀ i : Fin (n ^ 2), f i ≤ 9) ∧ (∀ i ≥ n ^ 2, f i = 0)})
+(digits_to_matrix : (ℕ → ℕ) → Matrix (Fin n) (Fin n) ℤ := fun f => (fun i j => f (i.1 * n + j.1)))
+: ∑' f : digits_set, (digits_to_matrix f).det = putnam_1995_b3_solution n :=
 sorry
 
--- Note: One may also be able to formalize with continued fractions via GeneralizedContinuedFraction or SimpleContinuedFraction but it is more abstruse...
 abbrev putnam_1995_b4_solution : ℤ × ℤ × ℤ × ℤ := sorry
 -- ⟨3,1,5,2⟩
 theorem putnam_1995_b4
 (contfrac : ℝ)
 (hcontfrac : contfrac = 2207 - 1/contfrac)
-: let ⟨a,b,c,d⟩ := putnam_1995_b4_solution; contfrac^(1/8) = (a + b * sqrt c)/d :=
+: let ⟨a,b,c,d⟩ := putnam_1995_b4_solution; contfrac^((1 : ℝ)/8) = (a + b * sqrt c)/d :=
 sorry
 
 theorem putnam_1995_b6
-(S : ℝ → Set ℕ := fun α => {floor (n * α) | n ≥ 1})
+(S : ℝ → Set ℕ := fun α => {x : ℕ | ∃ n : ℕ, n ≥ 1 ∧ x = floor (n * α)})
 : ¬ ∃ α β γ : ℝ, α > 0 ∧ β > 0 ∧ γ > 0 ∧ (S α) ∩ (S β) = ∅ ∧ (S β) ∩ (S γ) = ∅ ∧ (S α) ∩ (S γ) = ∅ ∧ ℕ+ = (S α) ∪ (S β) ∪ (S γ) :=
 sorry
 
@@ -3000,7 +2994,7 @@ theorem putnam_1988_a6
 sorry
 
 theorem putnam_1988_b1
-: ∀ a ≥ 2, ∀ b ≥ 2, ∃ x > 0, ∃ y > 0, ∃ z > 0, a * b = x * y + x * z + y * z + 1 :=
+: ∀ a ≥ 2, ∀ b ≥ 2, ∃ x y z: ℤ, x > 0 ∧ y > 0 ∧ z > 0 ∧ a * b = x * y + x * z + y * z + 1 :=
 sorry
 
 abbrev putnam_1988_b2_solution : Prop := sorry
@@ -3685,8 +3679,8 @@ theorem putnam_1980_a5
 (P : Polynomial ℝ)
 (xeqs : ℝ → Prop)
 (Pnonconst : P.degree > 0)
-(hxeqs : ∀ x : ℝ, xeqs x = (0 = (∫ t in Set.Ioo 0 x, P.eval t * Real.sin t) ∧ 0 = (∫ t in Set.Ioo 0 x, P.eval t * Real.cos t)))
-: {x : ℝ | xeqs x}.encard < ⊤ :=
+(hxeqs : ∀ x : ℝ, xeqs x = (0 = (∫ t in (0)..x, P.eval t * Real.sin t) ∧ 0 = (∫ t in (0)..x, P.eval t * Real.cos t)))
+: {x : ℝ | xeqs x}.Finite :=
 sorry
 
 -- uses (ℝ → ℝ) instead of (Set.Icc (0 : ℝ) 1 → ℝ)
