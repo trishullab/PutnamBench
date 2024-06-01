@@ -6,7 +6,7 @@ open Topology Filter Set Polynomial Function
 noncomputable abbrev putnam_1981_a1_solution : ℝ := sorry
 -- 1/8
 theorem putnam_1981_a1
-(P : ℕ → ℕ → Prop := fun n : ℕ => fun k : ℕ => 5^k ∣ ∏ m ∈ Finset.Icc 1 n, m^m)
+(P : ℕ → ℕ → Prop := fun n k : ℕ => 5^k ∣ ∏ m in Finset.Icc 1 n, (m^m : ℤ))
 (E : ℕ → ℕ)
 (hE : ∀ n ∈ Ici 1, P n (E n) ∧ ∀ k : ℕ, P n k → k ≤ E n)
 : Tendsto (fun n : ℕ => ((E n) : ℝ)/n^2) atTop (𝓝 putnam_1981_a1_solution) :=
@@ -30,7 +30,7 @@ sorry
 abbrev putnam_1981_b1_solution : ℝ := sorry
 -- -1
 theorem putnam_1981_b1
-(f : ℕ → ℝ := fun n : ℕ => (1/n^5) * ∑ h in Finset.Icc 1 n, ∑ k in Finset.Icc 1 n, 5*(h : ℝ)^4 - 18*h^2*k^2 + 5*k^4)
+(f : ℕ → ℝ := fun n : ℕ => (1/n^5) * ∑ h in Finset.Icc 1 n, ∑ k in Finset.Icc 1 n, (5*(h : ℝ)^4 - 18*h^2*k^2 + 5*k^4))
 : Tendsto f atTop (𝓝 putnam_1981_b1_solution) :=
 sorry
 
@@ -44,8 +44,8 @@ theorem putnam_1981_b2
 sorry
 
 theorem putnam_1981_b3
-(P : ℕ → Prop := fun n : ℕ => ∀ p : ℕ, (Nat.Prime p ∧ p ∣ n^2 + 3) → ∃ k : ℕ, p ∣ k^2 + 3 ∧ k^2 < n)
-: ∀ n : ℕ, ∃ m : ℕ, m > n ∧ P m :=
+(P : ℕ → Prop := fun n : ℕ => ∀ p : ℕ, (Nat.Prime p ∧ p ∣ n^2 + 3) → ∃ k : ℕ, (p : ℤ) ∣ (k : ℤ)^2 + 3 ∧ k^2 < n)
+: ∀ n : ℕ, ∃ m : ℕ, (m : ℤ) > n ∧ P m :=
 sorry
 
 abbrev putnam_1981_b4_solution : Prop := sorry
@@ -61,10 +61,9 @@ sorry
 abbrev putnam_1981_b5_solution : Prop := sorry
 -- True
 theorem putnam_1981_b5
-(sumbits : List ℕ → ℕ)
-(B : ℕ → ℕ)
-(hsumbits : ∀ bits : List ℕ, sumbits bits = ∑ i : Fin bits.length, bits[i])
+(sumbits : List ℕ → ℤ)
+(B : ℕ → ℤ)
+(hsumbits : ∀ bits : List ℕ, sumbits bits = ∑ i : Fin bits.length, (bits[i] : ℤ))
 (hB : ∀ n > 0, B n = sumbits (Nat.digits 2 n))
 : (∃ q : ℚ, Real.exp (∑' n : Set.Ici 1, B n / ((n : ℝ) * ((n : ℝ) + 1))) = q) ↔ putnam_1981_b5_solution :=
 sorry
-

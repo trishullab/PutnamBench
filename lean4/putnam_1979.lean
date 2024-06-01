@@ -23,6 +23,7 @@ theorem putnam_1979_a3
 : (∀ m : ℕ, ∃ n : ℕ, n > m ∧ ∃ a : ℤ, a = x n) ↔ putnam_1979_a3_solution (x 1, x 2) :=
 sorry
 
+open Set
 abbrev putnam_1979_a4_solution : Prop := sorry
 -- True
 theorem putnam_1979_a4
@@ -60,7 +61,7 @@ sorry
 
 open Polynomial
 
-abbrev putnam_1979_b3_solution : ℕ → ℕ := sorry
+abbrev putnam_1979_b3_solution : ℕ → ℤ := sorry
 -- fun n ↦ (n - 1) / 2
 theorem putnam_1979_b3
 (F : Type*) [Field F] [Fintype F]
@@ -77,4 +78,3 @@ theorem putnam_1979_b6
 (z : Fin n → ℂ)
 : (|((∑ i : Fin n, (z i) ^ 2) ^ ((1 : ℂ) / 2)).re| ≤ ∑ i : Fin n, |(z i).re|) :=
 sorry
-

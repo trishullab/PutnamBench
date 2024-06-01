@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
 
-
+open Metric Set
 
 theorem putnam_1970_a1
 (a b : ℝ)
@@ -9,7 +9,7 @@ theorem putnam_1970_a1
 (hb : b > 0)
 (f : ℝ → ℝ := fun x : ℝ => Real.exp (a*x) * Real.cos (b*x))
 (p : ℕ → ℝ)
-(hp : ∃ a : ℝ, a > 0 ∧ ∀ x ∈ ball 0 a, ∑' n : ℕ, (p n)*x^n = f x)
+(hp : ∃ c : ℝ, c > 0 ∧ ∀ x ∈ ball 0 c, ∑' n : ℕ, (p n)*x^n = f x)
 (S : Set ℕ := {n : ℕ | p n = 0})
 : S = ∅ ∨ ¬Finite S :=
 sorry
@@ -39,7 +39,7 @@ sorry
 noncomputable abbrev putnam_1970_b1_solution : ℝ := sorry
 -- Real.exp (2 * Real.log 5 - 4 + 2 * Real.arctan 2)
 theorem putnam_1970_b1
-: Tendsto (fun n => 1/(n^4) * ∏ i in Finset.range (2*n), ((n^2 + (i + 1)^2) : ℝ)^((1 : ℝ)/n)) atTop (𝓝 putnam_1970_b1_solution) :=
+: Tendsto (fun n => 1/(n^4) * ∏ i in Finset.Icc (1 : ℤ) (2*n), ((n^2 + i^2) : ℝ)^((1 : ℝ)/n)) atTop (𝓝 putnam_1970_b1_solution) :=
 sorry
 
 theorem putnam_1970_b3
@@ -56,5 +56,3 @@ theorem putnam_1970_b5
 (F : ℝ → ℝ)
 : Continuous F ↔ (∀ n : ℕ, Continuous ((ramp n) ∘ F)) :=
 sorry
-
-

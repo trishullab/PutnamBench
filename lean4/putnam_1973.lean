@@ -1,10 +1,11 @@
 import Mathlib
 open BigOperators
 
+open Nat Set
 
 theorem putnam_1973_a3
-(b : ℕ → ℝ := fun n => sInf {(k : ℕ) + n/k | k > 0})
-: ∀ n : ℕ, n > 0 → floor (b n) = floor (Real.sqrt (4 * n + 1)) :=
+(b : ℤ → ℝ := fun n => sInf {k + n/k | k > 0})
+: ∀ n : ℤ, n > 0 → floor (b n) = floor (Real.sqrt (4 * n + 1)) :=
 sorry
 
 abbrev putnam_1973_a4_solution : ℕ := sorry
@@ -30,7 +31,7 @@ sorry
 theorem putnam_1973_b2
 (z : ℂ)
 (hzrat : ∃ q1 q2 : ℚ, z.re = q1 ∧ z.im = q2)
-(hznorm : ‖z‖ = 1 )
+(hznorm : ‖z‖ = 1)
 : ∀ n : ℤ, ∃ q : ℚ, ‖z^(2*n) - 1‖ = q :=
 sorry
 
@@ -50,4 +51,3 @@ theorem putnam_1973_b4
 (hf : hprop f)
 : (∫ x in Icc 0 1, f x)^2 ≥ ∫ x in Icc 0 1, (f x)^3 ∧ (hprop putnam_1973_b4_solution ∧ (∫ x in Icc 0 1, putnam_1973_b4_solution x)^2 = ∫ x in Icc 0 1, (putnam_1973_b4_solution x)^3) :=
 sorry
-

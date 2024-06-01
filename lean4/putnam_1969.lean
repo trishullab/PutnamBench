@@ -1,11 +1,11 @@
 import Mathlib
 open BigOperators
 
-open Matrix
+open Matrix Filter Topology Set Nat
 
 theorem putnam_1969_a2
 (D : (n : ℕ) → Matrix (Fin n) (Fin n) ℝ := fun n => λ i j => |i.1 - j.1| )
-: ∀ n, n > 0 → (D n).det = (-1)^(n-1) * (n-1) * 2^(n-2) :=
+: ∀ n, n ≥ 2 → (D n).det = (-1)^((n : ℤ)-1) * ((n : ℤ)-1) * 2^((n : ℤ)-2) :=
 sorry
 
 theorem putnam_1969_a4
@@ -20,12 +20,11 @@ theorem putnam_1969_a6
 : ∃ C : ℝ, Tendsto x atTop (𝓝 C) :=
 sorry
 
-
 theorem putnam_1969_b1
 (n : ℕ)
 (hnpos : n > 0)
-(hn : 24 ∣ (n + 1))
-: 24 ∣ ∑ d in divisors n, d :=
+(hn : 24 ∣ (n + 1 : ℤ))
+: 24 ∣ ∑ d in divisors n, (d : ℤ) :=
 sorry
 
 abbrev putnam_1969_b2_solution : Prop := sorry
@@ -46,11 +45,10 @@ sorry
 
 theorem putnam_1969_b5
 (a : ℕ → ℝ)
-(ha : StrictMono a ∧ a > 0)
+(ha : StrictMono a ∧ (∀ x : ℕ, a > 0))
 (hinvasum : ∃ C : ℝ, Tendsto (fun n => ∑ i : Fin n, 1/(a i)) atTop (𝓝 C))
 (k : ℝ → ℕ := fun x => {n | a n ≤ x}.ncard)
-: Tendsto (fun t => (k t)/t) atTop (𝓝 0) :=
-sorry
+: Tendsto (fun t => (k t)/t) atTop (𝓝 0) := sorry
 
 theorem putnam_1969_b6
 (A : Matrix (Fin 3) (Fin 2) ℝ)
@@ -62,4 +60,3 @@ p 2 0 = -2 ∧ p 2 1 = 4 ∧ p 2 2 = 5)
 (hAB : A * B = Matrix.of p)
 : B * A = 9 * (1 : Matrix (Fin 2) (Fin 2) ℝ) :=
 sorry
-

@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
 
-open Set Function Filter Topology Polynomial
+open Set Function Filter Topology Polynomial Real
 
 abbrev putnam_1982_a2_solution : Prop := sorry
 -- True
@@ -18,7 +18,7 @@ theorem putnam_1982_a3
 sorry
 
 theorem putnam_1982_a5
-(a b c d : ℕ)
+(a b c d : ℤ)
 (hpos : a > 0 ∧ b > 0 ∧ c > 0 ∧ d > 0)
 (hac : a + c ≤ 1982)
 (hfrac : (a : ℝ) / b + (c : ℝ) / d < 1)
@@ -51,14 +51,14 @@ sorry
 noncomputable abbrev putnam_1982_b3_solution : ℝ := sorry
 -- 4/3 * (Real.sqrt 2 - 1)
 theorem putnam_1982_b3
-(p : ℕ → ℝ := fun n : ℕ => {(c, d) : Finset.Icc 1 n × Finset.Icc 1 n | ∃ m : ℕ, m^2 = c + d}.card / n^2)
+(p : ℕ → ℝ := fun n : ℕ => {(c, d) : Finset.Icc 1 n × Finset.Icc 1 n | ∃ m : ℕ, m^2 = c + d}.ncard / n^2)
 : Tendsto (fun n : ℕ => p n * Real.sqrt n) atTop (𝓝 putnam_1982_b3_solution) :=
 sorry
 
 abbrev putnam_1982_b4_solution : Prop × Prop := sorry
 -- (True, True)
 theorem putnam_1982_b4
-(hn : Finset ℤ → Prop := fun n : Finset ℤ => ∀ k : ℤ, ∏ i ∈ n, i ∣ ∏ i ∈ n, (i + k))
+(hn : Finset ℤ → Prop := fun n : Finset ℤ => ∀ k : ℤ, ∏ i in n, i ∣ ∏ i in n, (i + k))
 : ((∀ n : Finset ℤ, hn n → (∃ i ∈ n, |i| = 1)) ↔ putnam_1982_b4_solution.1) ∧
 ((∀ n : Finset ℤ, (hn n ∧ ∀ i ∈ n, i > 0) → n = Finset.Icc (1 : ℤ) (n.card)) ↔ putnam_1982_b4_solution.2) :=
 sorry
@@ -71,4 +71,3 @@ theorem putnam_1982_b5
 : ∀ x ∈ T, (∃ L : ℝ, Tendsto (S x) atTop (𝓝 L)) ∧
 (∀ x ∈ T, Tendsto (S x) atTop (𝓝 (g x))) → ContinuousOn g T :=
 sorry
-
