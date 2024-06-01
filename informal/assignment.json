@@ -18,12 +18,6 @@
         "tags" : ["analysis"]
     },
     {
-        "problem_name" : "putnam_2018_b2",
-        "informal_statement" : "Let $n$ be a positive integer, and let $f_n(z) = n + (n-1) z + (n-2)z^2 + \\cdots + z^{n-1}$. Prove that $f_n$ has no roots in the closed unit disk $\\{z \\in \\mathbb{C}\\colon |z| \\leq 1 \\}$.",
-        "informal_solution" : "None.",
-        "tags" : ["algebra"]
-    },
-    {
         "problem_name" : "putnam_2018_b3",
         "informal_statement" : "Find all positive integers $n < 10^{100}$ for which simultaneously $n$ divides $2^n$, $n-1$ divides $2^n-1$, and $n-2$ divides $2^n - 2$.",
         "informal_solution" : "Show that the solution is the set $\\{2^2, 2^4, 2^8, 2^16\\}$.",
@@ -124,5 +118,5 @@
         "informal_statement" : "Prove that, for any integers $a, b, c$, there exists a positive integer $n$ such that $\\sqrt{n^3+an^2+bn+c}$ is not an integer.",
         "informal_solution" : "None.",
         "tags" : ["number_theory"]
-    },
+    }
 ]
