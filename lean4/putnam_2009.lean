@@ -14,7 +14,7 @@ noncomputable def cos_matrix (n : ℕ) :  Matrix (Fin n) (Fin n) ℝ := λ i j =
 abbrev putnam_2009_a3_solution : ℝ := sorry
 -- 0
 theorem putnam_2009_a3
-(hM : ∀ n : ℕ, ∀ i j : Fin n, (cos_matrix n) i j = Real.cos ((1 : ℕ) + n * i + j))
+(hM : ∀ n : ℕ, ∀ i j : Fin n, (cos_matrix n) i j = Real.cos (1 + n * i + j))
 : Tendsto (fun n => (cos_matrix n).det) atTop (𝓝 (putnam_2009_a3_solution)) :=
 sorry
 
@@ -40,12 +40,12 @@ fun q => (∃ (k m : ℕ) (a : Fin k → ℕ) (b : Fin m → ℕ),
 sorry
 
 open Set
-abbrev putnam_2009_b3_solution : Set ℕ := sorry
--- {n : ℕ | ∃ k ≥ 1, n = 2 ^ k - 1}
+abbrev putnam_2009_b3_solution : Set ℤ := sorry
+-- {n : ℤ | ∃ k ≥ 1, n = 2 ^ k - 1}
 theorem putnam_2009_b3
-(mediocre : ℕ → Set ℕ → Prop := fun n S ↦ (S ⊆ Icc 1 n) ∧ ∀ a ∈ S, ∀ b ∈ S, 2 ∣ a + b → (a + b) / 2 ∈ S)
-(A : ℕ → ℤ := fun n ↦ {S : Set ℕ | mediocre n S}.ncard)
-: ({n : ℕ | n > 0 ∧ A (n + 2) - 2 * A (n + 1) + A n = 1} = putnam_2009_b3_solution) :=
+(mediocre : ℤ → Set ℤ → Prop := fun n S ↦ (S ⊆ Icc 1 n) ∧ ∀ a ∈ S, ∀ b ∈ S, 2 ∣ a + b → (a + b) / 2 ∈ S)
+(A : ℤ → ℤ := fun n ↦ {S : Set ℤ | mediocre n S}.ncard)
+: ({n : ℤ | n > 0 ∧ A (n + 2) - 2 * A (n + 1) + A n = 1} = putnam_2009_b3_solution) :=
 sorry
 
 open MvPolynomial Metric
@@ -69,6 +69,5 @@ sorry
 theorem putnam_2009_b6
 (n : ℕ)
 (npos : n > 0)
-: (∃ a : ℕ → ℤ, a 0 = 0 ∧ a 2009 = n ∧ ∀ i : Icc 1 2009, ((∃ j < i, ∃ k : ℕ, a i = a j + 2 ^ k) ∨ ∃ b < i, ∃ c < i, a b > 0 ∧ a c > 0 ∧ a i = (a b) % (a c))) :=
+: (∃ a : ℕ → ℤ, a 0 = 0 ∧ a 2009 = n ∧ ∀ i : Icc 1 2009, ((∃ j k : ℕ, j < i ∧ a i = a j + 2 ^ k) ∨ ∃ b c : ℕ, b < i ∧ c < i ∧ a b > 0 ∧ a c > 0 ∧ a i = (a b) % (a c))) :=
 sorry
-

@@ -4,11 +4,11 @@ open BigOperators
 open Function Set
 
 theorem putnam_2013_a2
-(S : Set ℕ := {n : ℕ | n > 0 ∧ ¬∃ m : ℤ, m ^ 2 = n})
-(P : ℕ → List ℤ → Prop := fun n : ℕ => fun a : List ℤ => a.length > 0 ∧ n < a[0]! ∧
+(S : Set ℤ := {n : ℤ | n > 0 ∧ ¬∃ m : ℤ, m ^ 2 = n})
+(P : ℤ → List ℤ → Prop := fun n : ℤ => fun a : List ℤ => a.length > 0 ∧ n < a[0]! ∧
 (∃ m : ℤ, m ^ 2 = n * a.prod) ∧ (∀ i : Fin (a.length - 1), a[i] < a[i+(1:ℕ)]))
-(T : ℕ → Set ℤ := fun n : ℕ => {m : ℤ | ∃ a : List ℤ, P n a ∧ a[a.length - 1]! = m})
-(f : ℕ → ℤ)
+(T : ℤ → Set ℤ := fun n : ℤ => {m : ℤ | ∃ a : List ℤ, P n a ∧ a[a.length - 1]! = m})
+(f : ℤ → ℤ)
 (hf : ∀ n ∈ S, ((∃ r ∈ T n, f n = r) ∧ ∀ r ∈ T n, f n ≤ r))
 : InjOn f S :=
 sorry
@@ -16,10 +16,10 @@ sorry
 theorem putnam_2013_a4
 (n : ℕ)
 (circle : Fin n → Fin 2)
-(Z N : Fin n × Fin (n + 1) → ℕ)
+(Z N : Fin n × Fin (n + 1) → ℤ)
 (k : ℕ)
 (ws : Fin k → Fin n × Fin (n + 1))
-(Zsum Nsum : ℕ)
+(Zsum Nsum : ℤ)
 (npos : n ≥ 1)
 (hZ : ∀ w : Fin n × Fin (n + 1), Z w = ∑ l : {x : Fin n | x < w.2}, if (circle (w.1 + l) = 0) then 1 else 0)
 (hN : ∀ w : Fin n × Fin (n + 1), N w = ∑ l : {x : Fin n | x < w.2}, if (circle (w.1 + l) = 1) then 1 else 0)
@@ -67,7 +67,7 @@ theorem putnam_2013_b1
 (hc1 : c 1 = 1)
 (hceven : ∀ n : ℕ, n > 0 → c (2 * n) = c n)
 (hcodd : ∀ n : ℕ, n > 0 → c (2 * n + 1) = (-1) ^ n * c n)
-: (∑ n : Set.Icc 1 2013, c n.1 * c (n.1 + 2)) = putnam_2013_b1_solution :=
+: (∑ n : Set.Icc 1 2013, c n * c (n.1 + 2)) = putnam_2013_b1_solution :=
 sorry
 
 abbrev putnam_2013_b2_solution : ℝ := sorry
@@ -111,5 +111,3 @@ theorem putnam_2013_b5
 (npos : n ≥ 1)
 (hfiter : ∀ f : Set.Icc 1 n → Set.Icc 1 n, fiter f = ∀ x : Set.Icc 1 n, ∃ j : ℕ, f^[j] x ≤ k)
 : {f : Set.Icc 1 n → Set.Icc 1 n | fiter f}.encard = k * n ^ (n - 1) := sorry
-
-
