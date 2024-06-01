@@ -145,12 +145,12 @@ Require Import Reals Coquelicot.Coquelicot.
 Open Scope R.
 Definition putnam_2006_b5_solution := 1 / 16.
 Theorem putnam_2006_b5: 
-    exists (maxval: R),
-    forall (f: R -> R) (x: R), 0 <= x <= 1 /\ continuity_pt f x /\
     let I (f: R -> R) := RInt (fun x => x ^ 2 * f x) 0 1 in
     let J (f: R -> R) := RInt (fun x => x * (f x) ^ 2) 0 1 in
-    maxval >= I f - J f ->
-    maxval =putnam_2006_b5_solution.
+    exists (maxval: R),
+    (forall (f: R -> R) (x: R), 0 <= x <= 1 /\ continuity_pt f x /\ maxval >= I f - J f) /\
+    (exists (f: R -> R) (x: R), 0 <= x <= 1 /\ continuity_pt f x /\ maxval = I f - J f) ->
+    maxval = putnam_2006_b5_solution.
 Proof. Abort.
 End putnam_2006_b5.
 
@@ -267,7 +267,7 @@ Require Import Ensembles Finite_sets Reals. From mathcomp Require Import div fin
 Theorem putnam_2008_b6: 
     forall (n k: nat), n > 0 /\ k > 0 ->
     let klimited (sigma: {perm 'I_n}) : Prop := forall (i: 'I_n), Rle (Rabs (INR (nat_of_ord (sigma i)) - INR i)) (INR k) in
-    forall (E: Ensemble {perm 'I_n}) (p: {perm 'I_n}),( E p <-> klimited p) ->
+    forall (E: Ensemble {perm 'I_n}) (p: {perm 'I_n}), (E p <-> klimited p) ->
     exists (sz: nat), cardinal {perm 'I_n} E sz /\ Nat.odd sz <-> n mod (2 * k + 1) = 0 \/ n mod (2 * k + 1) = 1.
 Proof. Abort.
 End putnam_2008_b6.
