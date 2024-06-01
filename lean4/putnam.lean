@@ -46,7 +46,6 @@ sorry
 def num_ones : List ℕ → ℕ
 | [] => (0 : ℕ)
 | (h :: t) => if h = 1 then num_ones t + 1 else num_ones t
-
 abbrev putnam_2023_a5_solution : Set ℂ := sorry
 -- {-(3^1010 - 1)/2, -(3^1010 - 1)/2 + sqrt (9^1010 - 1) * Complex.I/4, -(3^1010 - 1)/2 - sqrt (9^1010 - 1) * Complex.I/4}
 theorem putnam_2023_a5
@@ -1443,8 +1442,6 @@ theorem putnam_2007_b4
 : ({(P, Q) : (Polynomial ℝ) × (Polynomial ℝ) | P ^ 2 + Q ^ 2 = Polynomial.X ^ (2 * n) + 1 ∧ P.degree > Q.degree}.ncard = putnam_2007_b4_solution n) :=
 sorry
 
-open BigOperators
-
 theorem putnam_2007_b5
 (k : ℕ)
 (kpos : k > 0)
@@ -2609,8 +2606,6 @@ theorem putnam_1992_a1
 : ((f = fun n ↦ 1 - n) ↔ (∀ n : ℤ, f (f n) = n) ∧ (∀ n : ℤ, f (f (n + 2) + 2) = n) ∧ (f 0 = 1)) :=
 sorry
 
-open BigOperators
-
 abbrev putnam_1992_a2_solution : ℝ := sorry
 -- 1992
 theorem putnam_1992_a2
@@ -2919,8 +2914,6 @@ theorem putnam_1989_a6
 : (α ^ 3 + PowerSeries.X * α + 1 = 0) :=
 sorry
 
-open BigOperators
-
 -- This formalization uses "Type" rather than "Type*" as the underlying structure for a semigroup.
 abbrev putnam_1989_b2_solution : Prop := sorry
 -- True
@@ -3096,7 +3089,7 @@ theorem putnam_1987_b1
 : (∫ x in (2)..4, sqrt (log (9 - x)) / (sqrt (log (9 - x)) + sqrt (log (x + 3))) = putnam_1987_b1_solution) :=
 sorry
 
-open Nat BigOperators
+open Nat
 
 theorem putnam_1987_b2
 (r s t : ℕ)
@@ -3157,7 +3150,7 @@ theorem putnam_1986_a2
 : (Nat.floor ((10 ^ 20000 : ℝ) / (10 ^ 100 + 3)) % 10 = putnam_1986_a2_solution) :=
 sorry
 
-open BigOperators Real
+open  Real
 noncomputable abbrev putnam_1986_a3_solution : ℝ := sorry
 -- Real.pi / 2
 theorem putnam_1986_a3
@@ -3276,7 +3269,7 @@ theorem putnam_1985_a4
 : ({k : Fin 100 | ∀ N : ℕ, ∃ i ≥ N, a i % 100 = k} = putnam_1985_a4_solution) :=
 sorry
 
-open BigOperators Real
+open Real
 
 abbrev putnam_1985_a5_solution : Set ℕ := sorry
 -- {3, 4, 7, 8}
@@ -3729,8 +3722,6 @@ theorem putnam_1980_b5
 : ∀ t : ℝ, t ≥ 0 → ((∀ f ∈ S t, ∀ g ∈ S t, f * g ∈ S t) ↔ putnam_1980_b5_solution t) :=
 sorry
 
-open BigOperators
-
 theorem putnam_1980_b6
 (G : ℕ × ℕ → ℚ)
 (hG : ∀ d n : ℕ, d ≤ n → (d = 1 → G (d, n) = (1 : ℝ)/n) ∧ (d > 1 → G (d, n) = ((d : ℝ)/n)*∑ i in Finset.Icc d n, G (d - 1, i - 1)))
@@ -3907,8 +3898,6 @@ theorem putnam_1978_b5
 (S : Set (Polynomial ℝ) := {p : Polynomial ℝ | p.degree = 4 ∧ ∀ x ∈ Icc (-1) 1, p.eval x ∈ Icc 0 1})
 : (putnam_1978_b5_solution ∈ S ∧ (∀ p ∈ S, p.coeff 4 ≤ putnam_1978_b5_solution.coeff 4)) :=
 sorry
-
-open BigOperators
 
 theorem putnam_1978_b6
 (a : ℕ → ℕ → ℝ)
