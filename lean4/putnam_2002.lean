@@ -13,11 +13,11 @@ theorem putnam_2002_a1
 sorry
 
 theorem putnam_2002_a3
-(n : ℕ)
+(n : ℤ)
 (hn : n ≥ 2)
-(T : ℕ → ℝ)
-(hT : ∀ n ≥ 2, T n = Set.ncard {S | S ⊆ Finset.range n ∧ ∃ k : ℤ, k = (∑ s in S, s + 1)})
-: (∀ n ≥ 2, Even (T n - n)) :=
+(Tn : ℤ)
+(hTn : Tn = Set.ncard {S : Set ℤ | S ⊆ Set.Icc 1 n ∧ Nonempty S ∧ ∃ k : ℤ, k = ((1 : ℝ) / S.ncard) * (∑' s : S, s.1)})
+: Even (Tn - n) :=
 sorry
 
 open Set
@@ -58,5 +58,3 @@ theorem putnam_2002_b6
 (cong : ℕ → MvPolynomial (Fin 3) ℤ × MvPolynomial (Fin 3) ℤ → Prop := fun p : ℕ => fun (f, g) => ∀ n : Fin 3 →₀ ℕ, Int.ModEq p (f.coeff n) (g.coeff n))
 : ∃ S : Finset (MvPolynomial (Fin 3) ℤ), cong p ((det M), (∏ s in S, s)) ∧ ∀ s ∈ S, (∃ a b c : ℤ, s = (C a)*(X 0) + (C b)*(X 1) + (C c)*(X 2)) :=
 sorry
-
-

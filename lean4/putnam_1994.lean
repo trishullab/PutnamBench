@@ -34,12 +34,12 @@ theorem putnam_1994_a6
 : ∀ A : Finset ℤ, A.Nonempty → {g ∈ F | g '' A = A}.encard ≤ 512 :=
 sorry
 
-abbrev putnam_1994_b1_solution : Set ℕ := sorry
--- {n : ℕ | (315 ≤ n ∧ n ≤ 325) ∨ (332 ≤ n ∧ n ≤ 350)}
+abbrev putnam_1994_b1_solution : Set ℤ := sorry
+-- {n : ℤ | (315 ≤ n ∧ n ≤ 325) ∨ (332 ≤ n ∧ n ≤ 350)}
 theorem putnam_1994_b1
-(n : ℕ)
+(n : ℤ)
 (nwithin : Prop)
-(hnwithin : nwithin = ({m : ℕ | |(n : ℤ) - m ^ 2| ≤ 250}.encard = 15))
+(hnwithin : nwithin = ({m : ℕ | |n - m ^ 2| ≤ 250}.encard = 15))
 : (n > 0 ∧ nwithin) ↔ n ∈ putnam_1994_b1_solution :=
 sorry
 
@@ -62,9 +62,9 @@ theorem putnam_1994_b3
 sorry
 
 theorem putnam_1994_b4
-(matgcd : Matrix (Fin 2) (Fin 2) ℤ → ℕ)
+(matgcd : Matrix (Fin 2) (Fin 2) ℤ → ℤ)
 (A : Matrix (Fin 2) (Fin 2) ℤ)
-(d : ℕ → ℕ)
+(d : ℕ → ℤ)
 (hmatgcd : ∀ M : Matrix (Fin 2) (Fin 2) ℤ, matgcd M = Int.gcd (Int.gcd (Int.gcd (M 0 0) (M 0 1)) (M 1 0)) (M 1 1))
 (hA : A 0 0 = 3 ∧ A 0 1 = 2 ∧ A 1 0 = 4 ∧ A 1 1 = 3)
 (hd : ∀ n ≥ 1, d n = matgcd (A ^ n - 1))

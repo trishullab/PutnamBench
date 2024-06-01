@@ -22,13 +22,13 @@ sorry
 
 
 theorem putnam_2001_a5
-: ∃! a n : ℕ, a^(n+1) - (a+1)^n = 2001 :=
+: ∃! (a : ℤ) (n : ℕ), a ≥ 0 ∧ a^(n+1) - (a+1)^n = 2001 :=
 sorry
 
 
 theorem putnam_2001_b1
 (n : ℕ)
-(nums : Fin n → Fin n → ℕ)
+(nums : Fin n → Fin n → ℤ)
 (colors : Fin n → Fin n → Fin 2)
 (npos : n > 0)
 (neven : Even n)
@@ -75,14 +75,13 @@ theorem putnam_2001_b5
 : ∃ c : ℝ, ∀ x : ℝ, g x = c * x :=
 sorry
 
--- Note: uses (ℕ → ℝ) instead of (Set.Ici 1 → ℝ)
+-- Note: uses (ℤ → ℝ) instead of (Set.Ici 1 → ℝ)
 abbrev putnam_2001_b6_solution : Prop := sorry
 -- True
 theorem putnam_2001_b6
-(aposinc : (ℕ → ℝ) → Prop)
-(alim : (ℕ → ℝ) → Prop)
-(haposinc : ∀ a : ℕ → ℝ, aposinc a = ∀ n ≥ 1, a n > 0 ∧ a n < a (n + 1))
-(halim : ∀ a : ℕ → ℝ, alim a = Tendsto (fun n : ℕ => a (n + 1) / (n + 1)) atTop (𝓝 0))
-: (∀ a : ℕ → ℝ, (aposinc a ∧ alim a) → {n : ℕ | n > 0 ∧ (∀ i : Fin (n - 1), a (n - (i + 1)) + a (n + (i + 1)) < 2 * a n)}.Infinite) ↔ putnam_2001_b6_solution :=
+(aposinc : (ℤ → ℝ) → Prop)
+(alim : (ℤ → ℝ) → Prop)
+(haposinc : ∀ a : ℤ → ℝ, aposinc a = ∀ n ≥ 1, a n > 0 ∧ a n < a (n + 1))
+(halim : ∀ a : ℤ → ℝ, alim a = Tendsto (fun n : ℤ => a (n + 1) / (n + 1)) atTop (𝓝 0))
+: (∀ a : ℤ → ℝ, (aposinc a ∧ alim a) → {n : ℤ | n > 0 ∧ (∀ i ∈ Set.Icc 1 (n - 1), a (n - i) + a (n + i) < 2 * a n)}.Infinite) ↔ putnam_2001_b6_solution :=
 sorry
-
