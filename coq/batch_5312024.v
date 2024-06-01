@@ -169,3 +169,134 @@ Theorem putnam_2011_b3:
     ex_derive f (g 0) /\ ex_derive (fun x => f x / g x) 0) -> ex_derive f 0 <-> putnam_2011_b3_solution.
 Proof. Abort.
 End putnam_2011_b3.
+
+Section putnam_2011_b5.
+Require Import Reals Coquelicot.Coquelicot.
+Theorem putnam_2011_b5: 
+    forall (a: nat -> R), 
+    (exists (A: R), forall (n: nat), 
+    Lim_seq (fun nInc => (RInt (fun x => (sum_n (fun i => 1 / (1 + (x - a i) ^ 2)) n)) (-1 * INR nInc) (INR nInc)) ^ 2) <= A * INR n) ->
+    exists (B: R), B > 0 /\ forall (n: nat),
+    sum_n (fun i => (sum_n (fun j => 1 + (a i - a j) ^ 2)) n) n >= B * INR n ^ 3.
+Proof. Abort.
+End putnam_2011_b5.
+
+Section putnam_2011_b6.
+Require Import Nat List Factorial Ensembles Finite_sets Reals Znumtheory ZArith Coquelicot.Coquelicot.
+Open Scope nat_scope.
+Theorem putnam_2011_b6: 
+    forall (p: nat), prime (Z.of_nat p) /\ odd p = true ->
+    let l := seq 0 p in
+    exists (E: Ensemble nat), (forall (n: nat), E n -> and (le 0 n) (lt n p)) /\ cardinal nat E ((p + 1) / 2) /\
+    forall (n: nat), E n -> Z.to_nat (floor (sum_n (fun k => INR (fact k * n ^ k)) p)) mod p <> 0.
+Proof. Abort.
+End putnam_2011_b6.
+
+Section putnam_2012_a3.
+Require Import Reals Coquelicot.Coquelicot.
+Definition putnam_2012_a3_solution (x: R) := sqrt (1 - x ^ 2).
+Theorem putnam_2012_a3: 
+    forall (f: R -> R) (x: R), (-1 <= x <= 1 /\ continuity_pt f x /\
+    f x = (2 - x ^ 2) / 2 * f ((x ^ 2) / (2 - x ^ 2)) /\
+    f 0 = 1 /\
+    exists (c: R), filterlim (fun x => f x / sqrt (1 - x)) (at_left 1) (locally c)) <->
+    f x = putnam_2012_a3_solution x.
+Proof. Abort.
+End putnam_2012_a3.
+
+Section putnam_2013_a3.
+Require Import Reals Coquelicot.Coquelicot.
+Theorem putnam_2013_a3: 
+    forall (a: nat -> R) (x: R) (n: nat), 0 < x < 1 /\ sum_n (fun i => a i / (1 - x ^ (i + 1))) (n + 1) = 0 ->
+    exists (y: R), 0 < y < 1 /\ sum_n (fun i => a i * y ^ i) (n + 1) = 0.
+Proof. Abort.
+End putnam_2013_a3.
+
+Section putnam_2013_b1.
+Require Import Nat ZArith Reals Coquelicot.Coquelicot.
+Open Scope Z.
+Definition putnam_2013_b1_solution := IZR (-1).
+Theorem putnam_2013_b1: 
+    forall (n: Z), n > 0 -> exists (c: nat -> Z), 
+    (forall (i: nat), c 1%nat = 1 /\ 
+    c i = if (even i) then c (div i 2) else (-1) ^ (Z.of_nat ((i - 1) / 2)) * c (div (pred i) 2)) /\ 
+    sum_n (fun i => IZR (c i * c (add i 2))) 2013 = putnam_2013_b1_solution.
+Proof. Abort.
+End putnam_2013_b1.
+
+Section putnam_2013_b2.
+Require Import Ensembles Finite_sets Reals Coquelicot.Coquelicot.
+Definition putnam_2013_b2_solution := 3.
+Theorem putnam_2013_b2: 
+    forall (E: Ensemble (R -> R)) (f: R -> R), 
+    (E f <-> 
+    (forall (x: R), exists (a: nat -> R) (N: nat), f x = 1 + sum_n (fun n => a n * cos (2 * PI * INR n * x)) N /\ f x >= 0 /\ 
+    forall (n: nat), n mod 3 = 0%nat -> a n = 0)) ->
+    exists (maxval: R), E f -> f 0 <= maxval /\ exists (f: R -> R), E f -> f 0 = maxval <->
+    maxval = putnam_2013_b2_solution.
+Proof. Abort.
+End putnam_2013_b2.
+
+Section putnam_2014_a3.
+Require Import Reals Coquelicot.Coquelicot.
+Definition putnam_2014_a3_solution := 3 / 7.
+Theorem putnam_2014_a3: 
+    let fix prod_n (m: nat -> R) (n : nat) : R :=
+        match n with
+        | O => m 0%nat
+        | S n' => m n' * prod_n m n'
+    end in 
+    let fix a (n: nat) :=
+        match n with
+        | O => 5 / 2
+        | S n' => (a n') ^ 2 - 2
+    end in 
+    Lim_seq (fun n => prod_n (fun k => 1 - 1 / a k) n) = putnam_2014_a3_solution.
+Proof. Abort.
+End putnam_2014_a3.
+
+Section putnam_2014_b2.
+Require Import Reals Coquelicot.Coquelicot.
+Definition putnam_2014_b2_solution := ln (4 / 3) / ln 10.
+Theorem putnam_2014_b2: 
+    exists (m: R), 
+    ((forall (f: R -> R) (x: R), 1 <= x <= 3 /\ -1 <= f x <= 1 /\ RInt f 0 3 = 0 ->
+    RInt (fun x => f x / x) 1 3 <= m) /\
+    (exists (f: R -> R) (x: R), 1 <= x <= 3 /\ -1 <= f x <= 1 /\ RInt f 0 3 = 0 ->
+    RInt (fun x => f x / x) 1 3 = m)) <->
+    m = putnam_2014_b2_solution.
+Proof. Abort.
+End putnam_2014_b2.
+
+Section putnam_2014_b4.
+Require Import Reals Coquelicot.Coquelicot.
+Open Scope C.
+Theorem putnam_2014_b4: 
+    let fix sum_n_C (m: nat -> C) (n : nat) : C :=
+        match n with
+        | O => m 0%nat
+        | S n' => m n' + sum_n_C m n'
+    end in 
+    forall (n: nat) (r: C), sum_n_C (fun k => (2 * ((INR k) * (INR n - INR k)) * r ^ k)) n = 0 <-> exists (q: R), r = RtoC q. 
+Proof. Abort.
+End putnam_2014_b4.
+
+Section putnam_2015_b4.
+Require Import Nat List Reals Coquelicot.Coquelicot. From mathcomp Require Import div.
+Open Scope nat_scope.
+Definition putnam_2015_b4_solution := (17, 21). 
+Theorem putnam_2015_b4: 
+    let fix exprl2 (l : list nat) : R :=
+    match l with
+    | a :: b :: c :: _ => Rdiv (2 ^ a) (3 ^ b * 5 ^ c)
+    | _ => R0 
+    end in 
+    let fix exprl (l : list (list nat)) : list R :=
+    match l with
+    | nil => nil
+    | h :: t => exprl2 h :: exprl t
+    end in
+    forall (E: list (list nat)) (l: list nat), (In l E <-> (length l = 3 /\ let a := nth 0 l 0 in let b := nth 1 l 0 in let c := nth 2 l 0 in a > 0 /\ b > 0 /\ c > 0 /\ a < c + b /\ b < a + c /\ c < a + b)) ->
+    exists (p q: nat), coprime p q = true /\ fold_left Rplus (exprl E) R0  = Rdiv (INR p) (INR q) /\  (p, q) = putnam_2015_b4_solution.
+Proof. Abort.
+End putnam_2015_b4.
