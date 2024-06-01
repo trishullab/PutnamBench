@@ -38,7 +38,7 @@ theorem putnam_1988_a6
 sorry
 
 theorem putnam_1988_b1
-: ∀ a ≥ 2, ∀ b ≥ 2, ∃ x y z: ℤ, x > 0 ∧ y > 0 ∧ z > 0 ∧ a * b = x * y + x * z + y * z + 1 :=
+: ∀ a ≥ 2, ∀ b ≥ 2, ∃ x y z : ℤ, x > 0 ∧ y > 0 ∧ z > 0 ∧ a * b = x * y + x * z + y * z + 1 :=
 sorry
 
 abbrev putnam_1988_b2_solution : Prop := sorry
@@ -50,9 +50,9 @@ sorry
 noncomputable abbrev putnam_1988_b3_solution : ℝ := sorry
 -- (1 + Real.sqrt 3) / 2
 theorem putnam_1988_b3
-(r : ℕ → ℝ)
-(hr : ∀ n ≥ 1, (∃ c d : ℕ, c + d = n ∧ r n = |c - d * Real.sqrt 3|) ∧ (∀ c d : ℕ, c + d = n → |c - d * Real.sqrt 3| ≥ r n))
-: putnam_1988_b3_solution > 0 ∧ (∀ n ≥ 1, r n ≤ putnam_1988_b3_solution) ∧ (∀ g > 0, (∀ n ≥ 1, r n ≤ g) → g ≥ putnam_1988_b3_solution) :=
+(r : ℤ → ℝ)
+(hr : ∀ n ≥ 1, (∃ c d : ℤ, (c ≥ 0 ∧ d ≥ 0) ∧ c + d = n ∧ r n = |c - d * Real.sqrt 3|) ∧ (∀ c d : ℤ, (c ≥ 0 ∧ d ≥ 0 ∧ c + d = n) → |c - d * Real.sqrt 3| ≥ r n))
+: putnam_1988_b3_solution > 0 ∧ (∀ n : ℤ, n ≥ 1 → r n ≤ putnam_1988_b3_solution) ∧ (∀ g > 0, (∀ n ≥ 1, r n ≤ g) → g ≥ putnam_1988_b3_solution) :=
 sorry
 
 open Topology Filter
@@ -74,14 +74,13 @@ theorem putnam_1988_b5
 (Mn : Matrix (Fin (2 * n + 1)) (Fin (2 * n + 1)) ℝ)
 (npos : n > 0)
 (Mnskewsymm : ∀ i j : Fin (2 * n + 1), Mn i j = -(Mn j i))
-(hMn1 : ∀ i j : Fin (2 * n + 1), (1 ≤ i - j ∧ i - j ≤ n) → Mn i j = 1)
-(hMnn1 : ∀ i j : Fin (2 * n + 1), i - j > n → Mn i j = -1)
+(hMn1 : ∀ i j : Fin (2 * n + 1), (1 ≤ (i.1 : ℤ) - j.1 ∧ (i.1 : ℤ) - j.1 ≤ n) → Mn i j = 1)
+(hMnn1 : ∀ i j : Fin (2 * n + 1), (i.1 : ℤ) - j.1 > n → Mn i j = -1)
 : Mn.rank = putnam_1988_b5_solution n :=
 sorry
 
 theorem putnam_1988_b6
 (trinums : Set ℤ)
-(htrinums : trinums = {t : ℤ | ∃ n : ℕ, t = (n * (n + 1)) / 2})
+(htrinums : trinums = {t : ℤ | ∃ n : ℤ, t ≥ 0 ∧ t = (n * (n + 1)) / 2})
 : {(a, b) : ℤ × ℤ | ∀ t > 0, (a * t + b) ∈ trinums ↔ t ∈ trinums}.encard = ⊤ :=
 sorry
-

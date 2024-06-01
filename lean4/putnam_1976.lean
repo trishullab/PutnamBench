@@ -49,7 +49,7 @@ open Filter Topology
 abbrev putnam_1976_b1_solution : ℕ × ℕ := sorry
 -- (4, 1)
 theorem putnam_1976_b1
-: Tendsto (fun n : ℕ => ((1 : ℝ)/n)*∑ k in Finset.Icc 1 n, (Nat.floor ((2*n)/k) - 2*Nat.floor (n/k))) ⊤
+: Tendsto (fun n : ℕ => ((1 : ℝ)/n)*∑ k in Finset.Icc (1 : ℤ) n, (Int.floor ((2*n)/k) - 2*Int.floor (n/k))) ⊤
 (𝓝 (Real.log putnam_1976_b1_solution.1 - putnam_1976_b1_solution.2)) :=
 sorry
 
@@ -74,8 +74,7 @@ theorem putnam_1976_b5
 sorry
 
 theorem putnam_1976_b6
-(σ : ℕ → ℕ := fun N : ℕ => ∑ d in Nat.divisors N, d)
+(σ : ℕ → ℤ := fun N : ℕ => ∑ d in Nat.divisors N, (d : ℤ))
 (quasiperfect : ℕ → Prop := fun N : ℕ => σ N = 2*N + 1)
 : ∀ N : ℕ, quasiperfect N → ∃ m : ℤ, Odd m ∧ m^2 = N :=
 sorry
-

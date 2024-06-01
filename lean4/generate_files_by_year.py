@@ -78,5 +78,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if args.start_format == "all" and args.end_format == "years":
         all_to_years(args.min_year, args.max_year)
+    elif args.start_format == "years" and args.end_format == "all":
+        years_to_all(args.min_year, args.max_year)
     else:
         raise ValueError("Invalid conversion format")

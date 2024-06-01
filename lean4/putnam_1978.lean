@@ -3,8 +3,8 @@ open BigOperators
 
 
 theorem putnam_1978_a1
-(S : Set ℕ := {k | ∃ j ≤ 33, k = 3 * j + 1})
-(T : Set ℕ)
+(S : Set ℤ := {k | ∃ j : ℤ, 0 ≤ j ∧ j ≤ 33 ∧ k = 3 * j + 1})
+(T : Set ℤ)
 (hT : T ⊆ S ∧ T.ncard = 20)
 : (∃ m ∈ T, ∃ n ∈ T, m ≠ n ∧ m + n = 104) :=
 sorry
@@ -62,7 +62,7 @@ theorem putnam_1978_b2
 : (∑' i : ℕ+, ∑' j : ℕ+, (1 : ℚ) / (i ^ 2 * j + 2 * i * j + i * j ^ 2) = putnam_1978_b2_solution) :=
 sorry
 
-open Filter Topology
+open Filter Topology Polynomial
 
 theorem putnam_1978_b3
 (P : ℕ+ → Polynomial ℝ)
@@ -96,4 +96,3 @@ theorem putnam_1978_b6
 (mnpos : m > 0 ∧ n > 0)
 : ((∑ i in Finset.Icc 1 n, ∑ j in Finset.Icc 1 (m * i), a i j / i) ^ 2 ≤ 2 * m * ∑ i in Finset.Icc 1 n, ∑ j in Finset.Icc 1 (m * i), a i j) :=
 sorry
-

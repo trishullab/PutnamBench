@@ -63,4 +63,3 @@ theorem putnam_1975_b5
 (hf : ∀ n : ℕ, ∀ x : ℝ, f (n + 1) x = x * (deriv (f n) x))
 : ∑' n : ℕ, (f n 1)/(Nat.factorial n) = e^e :=
 sorry
-

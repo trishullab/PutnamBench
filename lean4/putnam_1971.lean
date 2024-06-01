@@ -9,13 +9,13 @@ theorem putnam_1971_a1
 (hS : S.ncard = 9)
 (L : (ℤ × ℤ × ℤ) × (ℤ × ℤ × ℤ) → Set (ℝ × ℝ × ℝ) := fun ((a, b, c), (d, e, f)) =>
 {(t*a + (1-t)*d, t*b + (1-t)*e, t*c + (1-t)*f) | t ∈ Ioo (0 : ℝ) 1})
-: ∃ x y z : ℤ, ∃ P ∈ S, ∃ Q ∈ S, P ≠ Q ∧ ((x : ℝ), (y : ℝ), (z : ℝ)) ∈ L (P, Q) :=
+: ∃ x y z : ℤ, ∃ P Q : ℤ × ℤ × ℤ, P ∈ S ∧ Q ∈ S ∧ P ≠ Q ∧ ((x : ℝ), (y : ℝ), (z : ℝ)) ∈ L (P, Q) :=
 sorry
 
 abbrev putnam_1971_a2_solution : Set (Polynomial ℝ) := sorry
 -- {Polynomial.X}
 theorem putnam_1971_a2
-: ∀ P : Polynomial ℝ, (P.eval 0 = 0 ∧ ∀ x : ℝ, P.eval (x^2 + 1) = (P.eval x)^2 + 1) ↔ P ∈ putnam_1971_a2_solution :=
+: ∀ P : Polynomial ℝ, (P.eval 0 = 0 ∧ (∀ x : ℝ, P.eval (x^2 + 1) = (P.eval x)^2 + 1)) ↔ P ∈ putnam_1971_a2_solution :=
 sorry
 
 theorem putnam_1971_a3
@@ -38,7 +38,7 @@ sorry
 
 theorem putnam_1971_a6
 (c : ℝ)
-(hc : ∀ n : ℕ, n > 0 → ∃ m : ℤ, (n : ℝ)^c = m)
+(hc : ∀ n : ℤ, n > 0 → ∃ m : ℤ, (n : ℝ)^c = m)
 : ∃ m : ℕ, c = m :=
 sorry
 
@@ -54,11 +54,10 @@ abbrev putnam_1971_b2_solution : Set (ℝ → ℝ) := sorry
 theorem putnam_1971_b2
 (S : Set ℝ := univ \ {0, 1})
 (P : (ℝ → ℝ) → Prop := fun (F : ℝ → ℝ) => ∀ x ∈ S, F x + F ((x - 1)/x) = 1 + x)
-: (∀ F ∈ putnam_1971_b2_solution, P F) ∧ ∀ f : ℝ → ℝ, P f → ∃ F ∈ putnam_1971_b2_solution, ∀ x ∈ S, f x = F x :=
+: (∀ F ∈ putnam_1971_b2_solution, P F) ∧ ∀ f : ℝ → ℝ, P f → ∃ F ∈ putnam_1971_b2_solution, (∀ x ∈ S, f x = F x) :=
 sorry
 
 theorem putnam_1971_b6
-(δ : ℕ → ℕ := fun n => sSup {t | Odd t ∧ t ∣ n})
-: ∀ x : ℕ, x > 0 → |∑ i in Finset.Icc 1 x, (δ i)/(i : ℚ) - 2*x/3| < 1 :=
+(δ : ℤ → ℤ := fun n => sSup {t | Odd t ∧ t ∣ n})
+: ∀ x : ℤ, x > 0 → |∑ i in Finset.Icc 1 x, (δ i)/(i : ℚ) - 2*x/3| < 1 :=
 sorry
-

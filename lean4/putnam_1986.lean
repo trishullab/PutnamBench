@@ -102,4 +102,3 @@ theorem putnam_1986_b6
 (hid : A * Dᵀ - B * Cᵀ = 1)
 : (Aᵀ * D - Cᵀ * B = 1) :=
 sorry
-

@@ -6,13 +6,13 @@ open Set
 abbrev putnam_1974_a1_solution : ℕ := sorry
 -- 11
 theorem putnam_1974_a1
-(conspiratorial : Set ℕ → Prop := fun S => ∀ a ∈ S, ∀ b ∈ S, ∀ c ∈ S, (a ≠ 0) ∧ ((a ≠ b ∧ b ≠ c ∧ a ≠ c) → (Nat.gcd a b > 1 ∨ Nat.gcd b c > 1 ∨ Nat.gcd a c > 1)))
-: (∀ S : Set ℕ, S ⊆ Icc 1 16 → conspiratorial S → S.encard ≤ putnam_1974_a1_solution) ∧ (∃ S : Set ℕ, S ⊆ Icc 1 16 ∧ conspiratorial S ∧ S.encard = putnam_1974_a1_solution) := sorry
+(conspiratorial : Set ℤ → Prop := fun S => ∀ a ∈ S, ∀ b ∈ S, ∀ c ∈ S, (a > 0 ∧ b > 0 ∧ c > 0) ∧ ((a ≠ b ∧ b ≠ c ∧ a ≠ c) → (Int.gcd a b > 1 ∨ Int.gcd b c > 1 ∨ Int.gcd a c > 1)))
+: (∀ S : Set ℤ, S ⊆ Icc 1 16 → conspiratorial S → S.encard ≤ putnam_1974_a1_solution) ∧ (∃ S : Set ℤ, S ⊆ Icc 1 16 ∧ conspiratorial S ∧ S.encard = putnam_1974_a1_solution) := sorry
 
 abbrev putnam_1974_a3_solution : (Set ℕ) × (Set ℕ) := sorry
 -- ({p : ℕ | p.Prime ∧ p ≡ 1 [MOD 8]}, {p : ℕ | p.Prime ∧ p ≡ 5 [MOD 8]})
 theorem putnam_1974_a3
-(assmption : ∀ p : ℕ, p.Prime ∧ p > 2 → ((∃ m n : ℕ, p = m^2 + n^2) ↔ p ≡ 1 [MOD 4]))
+(assmption : ∀ p : ℕ, p.Prime ∧ p > 2 → ((∃ m n : ℤ, p = m^2 + n^2) ↔ p ≡ 1 [MOD 4]))
 : ∀ p : ℕ, ((p.Prime ∧ p > 2 ∧ (∃ x y : ℤ, p = x^2 + 16*y^2)) ↔ p ∈ putnam_1974_a3_solution.1) ∧ ((p.Prime ∧ p > 2 ∧ (∃ x y : ℤ, p = 4*x^2 + 4*x*y + 5*y^2)) ↔ p ∈ putnam_1974_a3_solution.2) :=
 sorry
 
@@ -22,14 +22,14 @@ noncomputable abbrev putnam_1974_a4_solution : ℕ → ℝ := sorry
 theorem putnam_1974_a4
 (n : ℕ)
 (hn : n > 0)
-: 1/(2^(n-1)) * ∑ k in Finset.Icc 0 ((ceil (n/2)) - 1), (n - 2*k)*(n.choose k) = putnam_1974_a4_solution n :=
+: (1 : ℝ)/(2^(n-1)) * ∑ k in Finset.Icc 0 ((ceil (n/2)) - 1), (n - 2*k)*(n.choose k) = putnam_1974_a4_solution n :=
 sorry
 
 open Polynomial
 abbrev putnam_1974_a6_solution : ℕ := sorry
 -- 25
 theorem putnam_1974_a6
-(n : ℕ := 10^6)
+(n : ℤ := 10^6)
 (hdivnallx : Polynomial ℤ → Prop := fun f => Monic f ∧ (∀ x : ℤ, (n : ℤ) ∣ f.eval x))
 : sInf {d : ℕ | ∃ f : Polynomial ℤ, hdivnallx f ∧ d = f.natDegree} = putnam_1974_a6_solution :=
 sorry
@@ -55,10 +55,9 @@ sorry
 abbrev putnam_1974_b6_solution : (ℕ × ℕ × ℕ) := sorry
 -- ((2^1000 - 1)/3, (2^1000 - 1)/3, 1 + (2^1000 - 1)/3)
 theorem putnam_1974_b6
-(n : ℕ := 1000)
+(n : ℤ := 1000)
 (count0 : ℕ := {S | S ⊆ Finset.Icc 1 n ∧ S.card ≡ 0 [MOD 3]}.ncard)
 (count1 : ℕ := {S | S ⊆ Finset.Icc 1 n ∧ S.card ≡ 1 [MOD 3]}.ncard)
 (count2 : ℕ := {S | S ⊆ Finset.Icc 1 n ∧ S.card ≡ 2 [MOD 3]}.ncard)
 : (count0, count1, count2) = putnam_1974_b6_solution :=
 sorry
-
