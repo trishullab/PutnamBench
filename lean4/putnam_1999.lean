@@ -14,7 +14,7 @@ sorry
 theorem putnam_1999_a2
 (p : Polynomial ℝ)
 (hp : ∀ x : ℝ, p.eval x ≥ 0)
-: ∃ k : ℕ, k > 0 ∧ ∃ f : Fin k → Polynomial ℝ,
+: ∃ k : ℕ, ∃ f : Fin k → Polynomial ℝ, k > 0 ∧
 ∀ x : ℝ, p.eval x = ∑ j : Fin k, ((f j).eval x) ^ 2 :=
 sorry
 
@@ -86,4 +86,3 @@ theorem putnam_1999_b6
 (hSgcd : ∀ n : ℤ, ∃ s : S, Int.gcd s n = 1 ∨ Int.gcd s n = (s : ℤ))
 : ∃ s t : S, Prime (Int.gcd s t) :=
 sorry
-

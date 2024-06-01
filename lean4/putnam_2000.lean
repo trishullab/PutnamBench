@@ -12,7 +12,7 @@ theorem putnam_2000_a1
 sorry
 
 theorem putnam_2000_a2
-: ∀ n : ℕ, ∃ N > n, ∃ i : Fin 6 → ℕ, N = (i 0)^2 + (i 1)^2 ∧ N + 1 = (i 2)^2 + (i 3)^2 ∧ N + 2 = (i 4)^2 + (i 5)^2 :=
+: ∀ n : ℕ, ∃ N : ℕ, ∃ i : Fin 6 → ℕ, N > n ∧ N = (i 0)^2 + (i 1)^2 ∧ N + 1 = (i 2)^2 + (i 3)^2 ∧ N + 2 = (i 4)^2 + (i 5)^2 :=
 sorry
 
 theorem putnam_2000_a4
@@ -82,4 +82,3 @@ theorem putnam_2000_b5
 (hSdef : ∀ n : ℕ, ∀ a : ℤ, a ∈ S (n + 1) ↔ Xor' (a - 1 ∈ S n) (a ∈ S n))
 : (∀ n : ℕ, ∃ N ≥ n, S N = S 0 ∪ {M : ℤ | M - N ∈ S 0}) :=
 sorry
-

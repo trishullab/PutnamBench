@@ -34,7 +34,7 @@ theorem putnam_2012_a4
 (ABlt : A 0 < A 1 ∧ B 0 < B 1)
 (hT : T = {x : ℝ | ∃ b m : ℤ, ((b : ℝ) ∈ Set.Icc (B 0) (B 1)) ∧ (x = b + m * q)})
 (hS : S = {a : ℤ | ((a : ℝ) ∈ Set.Icc (A 0) (A 1)) ∧ (∃ t ∈ T, r * a = t)})
-: ((A 1 - A 0) * (B 1 - B 0) < q) → (∃ n > 2, ∃ a1 d : ℝ, {s : ℝ | s = round s ∧ round s ∈ S} = (Set.Icc (A 0) (A 1)) ∩ {x : ℝ | ∃ i : Fin n, x = a1 + i * d}) :=
+: ((A 1 - A 0) * (B 1 - B 0) < q) → (∃ n : ℕ, ∃ a1 d : ℝ, n > 2 ∧ {s : ℝ | s = round s ∧ round s ∈ S} = (Set.Icc (A 0) (A 1)) ∩ {x : ℝ | ∃ i : Fin n, x = a1 + i * d}) :=
 sorry
 
 abbrev putnam_2012_a5_solution : Set (ℕ × ℕ) := sorry
@@ -102,4 +102,3 @@ theorem putnam_2012_b6
 (hP : ∀ i : Fin p, P i = (i * i * i))
 : Equiv.Perm.signAux P = 1 ↔ (p ≡ 3 [MOD 4]) :=
 sorry
-
