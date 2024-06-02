@@ -64,15 +64,15 @@ theorem putnam_1991_a6
 : ∀ n ≥ 1, A n = B n :=
 sorry
 
-abbrev putnam_1991_b1_solution : Set ℕ := sorry
--- {A : ℕ | ∃ x > 0, A = x ^ 2}
+abbrev putnam_1991_b1_solution : Set ℤ := sorry
+-- {A : ℤ | ∃ x > 0, A = x ^ 2}
 theorem putnam_1991_b1
-(m : ℕ → ℕ)
-(S : ℕ → ℕ)
-(A : ℕ)
-(a : ℕ → ℕ)
-(hm : ∀ n : ℕ, (m n) ^ 2 ≤ n ∧ (∀ m' : ℕ, m' ^ 2 ≤ n → m' ≤ m n))
-(hS : ∀ n : ℕ, S n = n - (m n) ^ 2)
+(m : ℤ → ℤ)
+(S : ℤ → ℤ)
+(A : ℤ)
+(a : ℕ → ℤ)
+(hm : ∀ n : ℤ, n ≥ 0 → (m n) ^ 2 ≤ n ∧ (∀ m' : ℤ, m' ^ 2 ≤ n → m' ≤ m n))
+(hS : ∀ n : ℤ, n ≥ 0 → S n = n - (m n) ^ 2)
 (ha : a 0 = A ∧ (∀ k : ℕ, a (k + 1) = a k + S (a k)))
 : (A > 0 ∧ (∃ (K : ℕ) (c : ℕ), ∀ k ≥ K, a k = c)) ↔ A ∈ putnam_1991_b1_solution :=
 sorry
@@ -111,4 +111,3 @@ theorem putnam_1991_b6
 (hcle : ∀ c : ℝ, cle c = ∀ u : ℝ, (0 < |u| ∧ |u| ≤ c) → (∀ x ∈ Set.Ioo 0 1, a ^ x * b ^ (1 - x) ≤ a * (Real.sinh (u * x) / Real.sinh u) + b * (Real.sinh (u * (1 - x)) / Real.sinh u)))
 : cle (putnam_1991_b6_solution a b) ∧ (∀ c : ℝ, cle c → c ≤ putnam_1991_b6_solution a b) :=
 sorry
-

@@ -18,12 +18,12 @@ sorry
 theorem putnam_1993_a3
 (c : ℕ → ℕ → ℕ)
 (hc : ∀ n ≥ 1, ∀ m ≥ 1, c n m = {f : Finset (Fin n) → Fin m | ∀ A B : Finset (Fin n), f (A ∩ B) = min (f A) (f B)}.encard)
-: ∀ n ≥ 1, ∀ m ≥ 1, c n m = ∑' j : Set.Icc 1 m, (j : ℕ) ^ n :=
+: ∀ n ≥ 1, ∀ m ≥ 1, c n m = ∑' j : Set.Icc 1 m, (j : ℤ) ^ n :=
 sorry
 
 theorem putnam_1993_a4
-(x : Fin 19 → ℕ)
-(y : Fin 93 → ℕ)
+(x : Fin 19 → ℤ)
+(y : Fin 93 → ℤ)
 (hx : ∀ i : Fin 19, x i > 0 ∧ x i ≤ 93)
 (hy : ∀ j : Fin 93, y j > 0 ∧ y j ≤ 19)
 : ∃ (is : Finset (Fin 19)) (js : Finset (Fin 93)), is ≠ ∅ ∧ (∑ i : is, x i) = (∑ j : js, y j) :=
@@ -73,4 +73,3 @@ theorem putnam_1993_b6
 (hf : ∀ i j k : Fin 3, (i ≠ j ∧ i ≠ k ∧ j ≠ k) → ∀ S' : Fin 3 → ℕ, if S' i ≤ S' j then ((f i j S') i = 2 * S' i ∧ (f i j S') j = S' j - S' i ∧ (f i j S') k = S' k) else (f i j S' = S'))
 : ∃ (Ss : ℕ → (Fin 3 → ℕ)) (N : ℕ), Ss 0 = S ∧ (∃ i : Fin 3, Ss N i = 0) ∧ (∀ n : Fin N, ∃ i j : Fin 3, i ≠ j ∧ f i j (Ss n) = Ss ((n : ℕ) + 1)) :=
 sorry
-
