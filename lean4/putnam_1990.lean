@@ -53,7 +53,7 @@ sorry
 
 theorem putnam_1990_b3
 (S : Set (Matrix (Fin 2) (Fin 2) ℕ))
-(hS : ∀ A ∈ S, ∀ i j : Fin 2, (∃ x : ℕ, A i j = x ^ 2) ∧ A i j ≤ 200)
+(hS : ∀ A ∈ S, ∀ i j : Fin 2, (∃ x : ℤ, A i j = x ^ 2) ∧ A i j ≤ 200)
 : (S.encard > 50387) → (∃ A ∈ S, ∃ B ∈ S, A ≠ B ∧ A * B = B * A) :=
 sorry
 
@@ -72,4 +72,3 @@ theorem putnam_1990_b5
 (hanpoly : ∀ (a : ℕ → ℝ) (n : ℕ), (anpoly a n).degree = n ∧ (∀ i : Fin (n + 1), (anpoly a n).coeff i = a i))
 : (∃ a : ℕ → ℝ, (∀ i : ℕ, a i ≠ 0) ∧ (∀ n ≥ 1, {r : ℝ | (anpoly a n).eval r = 0}.encard = n)) ↔ putnam_1990_b5_solution :=
 sorry
-
