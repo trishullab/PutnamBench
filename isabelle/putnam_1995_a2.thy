@@ -1,6 +1,5 @@
 theory putnam_1995_a2 imports Complex_Main
 "HOL-Analysis.Interval_Integral"
-"HOL-Analysis.Lebesgue_Measure"
 begin
 
 definition putnam_1995_a2_solution :: "(real \<times> real) set" where "putnam_1995_a2_solution \<equiv> undefined"

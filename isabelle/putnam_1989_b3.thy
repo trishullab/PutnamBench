@@ -1,8 +1,6 @@
 theory putnam_1989_b3 imports
 Complex_Main
 "HOL-Analysis.Interval_Integral"
-"HOL-Analysis.Lebesgue_Measure"
-"HOL-Analysis.Derivative"
 begin
 
 definition putnam_1989_b3_solution :: "nat \<Rightarrow> real \<Rightarrow> real" where "putnam_1989_b3_solution \<equiv> undefined"

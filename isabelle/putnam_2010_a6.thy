@@ -1,6 +1,5 @@
 theory putnam_2010_a6 imports Complex_Main
 "HOL-Analysis.Interval_Integral"
-"HOL-Analysis.Lebesgue_Measure"
 begin
 
 (* uses (real \<Rightarrow> real) instead of ({0..} \<Rightarrow> real) *)

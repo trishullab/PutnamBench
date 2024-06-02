@@ -1,6 +1,5 @@
 theory putnam_1973_b4 imports Complex_Main
 "HOL-Analysis.Interval_Integral"
-"HOL-Analysis.Lebesgue_Measure"
 begin
 
 (* Note: Boosted domain to real, which is fine because you can extend any such function f from [0,1] to real satisfying the same properties. *)

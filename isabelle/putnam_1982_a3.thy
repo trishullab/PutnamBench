@@ -1,5 +1,4 @@
 theory putnam_1982_a3 imports Complex_Main
-"HOL-Analysis.Lebesgue_Measure"
 "HOL-Analysis.Interval_Integral"
 
 begin
