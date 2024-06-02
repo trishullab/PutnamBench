@@ -16,7 +16,7 @@ Theorem putnam_2023_b4:
                 (forall m: 'I_n, t > s (nth i0 (enum 'I_n) m) -> (Derive_n f 2) = (fun _ => INR m+1))
             ) ->
         forall (T: R), f(t0+T) = 2023 <-> T >= putnam_2023_b4_solution /\ f(t0 + putnam_2023_b4_solution) = 2023.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2023_b4.
 
 Section putnam_2023_b5. 
@@ -25,7 +25,7 @@ Theorem putnam_2023_b5:
     forall (m n: nat), coprime m n -> 
     exists (π: {perm 'I_n}), 
     forall (k: 'I_n), (π (π k))%%n mod n = m*k%%n.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2023_b5.
 
 (* TODO: missing determinant refinement in coqeal *) 
@@ -54,7 +54,7 @@ Theorem putnam_2022_a6:
                              ((s (nth i0 (enum 'I_n)     i)))^(2*k-1))) (n-1) 
             = 1 in
         valid M <-> le M (putnam_2022_a6_solution n) /\ valid (putnam_2022_a6_solution n).
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2022_a6.
 
 Section putnam_2022_b1.
@@ -67,7 +67,7 @@ Theorem putnam_2022_b1:
         (if (0 <? (a i))%Z then ((Z.to_nat (a i))%:R *: 'X^i) else((Z.to_nat (a i))%:R *: -'X^i)) in 
             exists (b : {poly R}), \sum_(i < n) (iter n (comp_poly p) 1) / (fact n)%:R = b ->
             forall (i: nat), p`_i >= 0 = true.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2022_b1.
 
 Section putnam_2022_b2. 
@@ -89,7 +89,7 @@ Theorem putnam_2022_b2: forall (n: nat),
     cardinal vect3 A n 
     ->
     n \in putnam_2022_b2_solution.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2022_b2.
 
 Section putnam_2022_b4. 
@@ -106,7 +106,7 @@ Theorem putnam_2022_b4:
         \/
         (2 * (s (nth i0 (enum 'I_n) ((i+1) mod n))) = s (nth i0 (enum 'I_n) ((i-1) mod n)) + s (nth i0 (enum 'I_n) (i mod n)))
     <-> putnam_2022_b4_solution n.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2022_b4.
 
 Section putnam_2022_b6. 
@@ -118,7 +118,7 @@ Theorem putnam_2022_b6:
     forall (f: R -> R) (x y: R), x > 0 /\ y > 0 /\ f x > 0 /\ f y > 0 ->
     f (x * f y) + f (y * f x) = 1 + f (x + y)
     <-> putnam_2022_b6_solution f.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2022_b6.
 
 Section putnam_2021_a2.
@@ -130,7 +130,7 @@ Theorem putnam_2021_a2:
     let f (r x: R) := Rpower (Rpower(x+1)(r+1) - Rpower x (r+1)) 1/r in
     let g (x : R) : R := Lim_seq (fun n => f (sequence_r_to_0 n) x) in
     Lim_seq (fun n => (g (INR n))/INR n) = putnam_2021_a2_solution.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2021_a2.
 
 Section putnam_2021_a5.
@@ -142,7 +142,7 @@ Theorem putnam_2021_a5:
     let A : pred 'I_2021 := fun n => let m := nat_of_ord n in ((1 <= m <= 2021) && (gcd  m 2021 == 1)) in
     let B (j: nat) := \sum_(n | A n) (nat_of_ord n)^j in
     B j mod 2021 = 0 <-> putnam_2021_a5_solution j. 
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2021_a5.
 
 Section putnam_2021_a6. 
@@ -153,7 +153,7 @@ Theorem putnam_2021_a6:
     forall (R: numDomainType) (p: {poly R}) (i: nat), p`_i = 0 /\ p`_i = 1 ->
     exists (q r: {poly R}), size p <> 0%nat /\ size q <> 0%nat -> 
     p = q * r <-> putnam_2021_a6_solution .
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2021_a6.
 
 Section putnam_2021_b2. 
@@ -165,7 +165,7 @@ Theorem putnam_2021_b2:
         (forall (a : nat -> R), (forall (i: nat), a i >= 0) /\ Series a = 1 -> putnam_2021_b2_solution >= B a)
         /\ 
         (exists (a : nat -> R), (forall (i: nat), a i >= 0) /\ Series a = 1 -> putnam_2021_b2_solution =  B a).
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2021_b2.
 
 Section putnam_2020_b6.
@@ -175,5 +175,5 @@ Theorem putnam_2020_b6:
     let A (k: nat) := (-1)^(Z.to_nat (floor (INR k * (sqrt 2 - 1)))) in
     let B (n: nat) := sum_n A n in
     forall (n: nat), B n >= 0.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2020_b6.

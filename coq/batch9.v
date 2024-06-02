@@ -13,7 +13,7 @@ Theorem putnam_2017_b6:
         end in 
     Hweighted_sum l 0 %| 2017 = true)
     <-> cardinal (list nat) A putnam_2017_b6_solution.
-Proof. Abort.
+Proof. Admitted.
 
 Section putnam_2016_a3. 
 Require Import Reals Coquelicot.RInt Coquelicot.Hierarchy.
@@ -23,13 +23,13 @@ Theorem putnam_2016_a3:
     let g (x: R) := (f x) + f (1 - 1/x) in
     forall(x: R), x <> 0 -> g x = atan x ->
     RInt f 0 1 = putnam_2016_a3_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2016_a3. 
 
 (* Skipped due to inability to use groups in mathcomp *)
 (* Section putnam_2016_a5. 
 Theorem putnam_2016_a5: True.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2016_a5.  *)
 
 Section putnam_2016_b2. 
@@ -39,7 +39,7 @@ Theorem putnam_2016_b2:
     let squarish_set (n : nat) : list nat := filter (fun x => squarish x) (seq 1 n) in
     exists (a b: nat),
     Lim_seq (fun N => INR (length (squarish_set N)) / INR (N^a)) = Finite (INR b).
-Proof. Abort.
+Proof. Admitted.
 End putnam_2016_b2. 
 
 Section putnam_2015_a4. 
@@ -49,7 +49,7 @@ Theorem putnam_2015_a4:
     let f (x: R) := Series (fun n => if even (Z.to_nat (floor ((INR n)*x))) then 1/(2^n) else R0) in 
     exists (L: R), forall (x: R), 0 <= x < 1 -> ((f x >= L) /\ forall (M: R), f x >= M -> L >= M) 
     <-> L = putnam_2015_a4_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2015_a4. 
 
 Section putnam_2015_b5. 
@@ -71,7 +71,7 @@ Theorem putnam_2015_b5:
         length valid_perms in
     forall (n: nat), n >= 2 ->
     P (n+5) - P (n+4) - P (n+3) + P n = putnam_2015_b5_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2015_b5. 
 
 Section putnam_2012_a6. 
@@ -83,7 +83,7 @@ Theorem putnam_2012_a6:
     forall (a b c d : R), a > b /\ c > d /\ (a - b) * (c - d) = 1 ->
     RInt (fun y => RInt (fun x => f (x, y)) a b) c d = 0 
     -> (f = fun _ => 0) <-> putnam_2012_a6_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2012_a6. 
 
 (* -- NOTE: this formalization differs from the original problem by assigning a default value of zero to all values outside the specified domain/range. *)
@@ -104,7 +104,7 @@ Theorem putnam_2012_b1:
     (forall (f g: R -> R), In f A /\ In g A /\ forall (x: R), f x >= g x -> In (fMinus f g) A)
     <-> 
     (forall (f g: R -> R), In f A /\ In g A -> In (fMult f g) A).
-Proof. Abort.
+Proof. Admitted.
 End putnam_2012_b1. 
 
 Section putnam_2012_b4. 
@@ -120,5 +120,5 @@ Theorem putnam_2012_b4:
         end in
     let B (n: nat) : R := A n - ln (INR n) in
     ex_lim_seq B <-> putnam_2012_b4_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2012_b4. 

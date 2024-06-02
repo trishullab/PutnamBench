@@ -13,7 +13,7 @@ Theorem putnam_2009_a1:
     f A + f B + f C + f D = 0) ->
     forall (P: R * R), f P = 0 <->
     putnam_2009_a1_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2009_a1.
 
 Section putnam_2009_a2.
@@ -28,7 +28,7 @@ Theorem putnam_2009_a2:
     Derive g x = 2 * f (g (g (h x))) + 4 / f (h x) /\ g 0 = 1 /\
     Derive h x = 3 * f (g (h (h x))) + 1 / f (g x) /\ h 0 = 1) ->
     f = putnam_2009_a2_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2009_a2.
 
 Section putnam_2009_a4.
@@ -41,7 +41,7 @@ Theorem putnam_2009_a4:
     E q -> E (q + 1) /\ E (q - 1) /\
     E q /\ q <> 0 /\ q <> 1 -> E (1 / (q * (q - 1)))) ->
     forall (q: Q), E q <-> putnam_2009_a4_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2009_a4.
 
 Section putnam_2009_b1.
@@ -56,7 +56,7 @@ Theorem putnam_2009_b1:
     forall (q: Q), q > 0 ->
     exists (n d: list nat), (forall x, (In x n \/ In x d)-> prime (Z.of_nat x)) /\ 
     inject_Z (Z.of_nat (fold_left Nat.mul (factl n) 1%nat)) / inject_Z (Z.of_nat (fold_left Nat.mul (factl d) 1%nat)) = q.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2009_b1.
 
 Section putnam_2009_b5.
@@ -65,7 +65,7 @@ Theorem putnam_2009_b5:
     forall (f: R -> R) (x: R), (1 < x /\ ex_derive f x /\
     Derive f x = (x ^ 2 - (f x) ^ 2) / (x ^ 2  * ((f x) ^ 2 + 1))) ->
     ~ ex_lim_seq (fun n => f (INR n)).
-Proof. Abort.
+Proof. Admitted.
 End putnam_2009_b5.
 
 Section putnam_2009_b6.
@@ -75,7 +75,7 @@ Theorem putnam_2009_b6:
     forall (n: Z), n > 0 ->
     exists (a: list Z), length a = 2009%nat /\ nth 0 a 0 = 0 /\ nth 2008 a 0 = n /\
     forall (i: nat), and (le 1 i) (lt i 2009) -> exists (j: nat), and (le 0 j) (lt j i) /\ ((exists (k: Z), k > 0 /\ nth i a 0 = nth j a 0 + 2 ^ k) \/ exists (b c: Z), b > 0 /\ c > 0 /\ nth i a 0 = b mod c). 
-Proof. Abort.
+Proof. Admitted.
 End putnam_2009_b6.
 
 Section putnam_2010_a2.
@@ -83,7 +83,7 @@ Require Import Reals Coquelicot.Coquelicot.
 Definition putnam_2010_a2_solution (f: R -> R) := exists (c d: R), f = (fun x => c * x + d).
 Theorem putnam_2010_a2: 
     forall (f: R -> R) (x: R) (n: nat), Derive f x = (f (x + (INR n)) - f x) / (INR n) <-> putnam_2010_a2_solution f.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2010_a2.
 
 Section putnam_2010_a6.
@@ -91,7 +91,7 @@ Require Import Reals Coquelicot.Coquelicot.
 Theorem putnam_2010_a6: 
     forall (f: R -> R) (x y: R), (x >= 0 /\ x < y -> f x > f y /\ continuity_pt f x /\ Lim_seq (fun n => f (INR n)) = 0) ->
     ~ ex_lim_seq (fun nInc => RInt (fun x => (f x - f (x + 1)) / f x) 0 (INR nInc)).
-Proof. Abort.
+Proof. Admitted.
 End putnam_2010_a6.
 
 Section putnam_2010_b1.
@@ -100,7 +100,7 @@ Definition putnam_2010_b1_solution := False.
 Theorem putnam_2010_b1: 
     exists (a: nat -> R), forall (m: nat), gt m 0 ->
     Series (fun i => (a i) ^ m) = (INR m) <-> putnam_2010_b1_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2010_b1.
 
 Section putnam_2010_b4.
@@ -111,7 +111,7 @@ Theorem putnam_2010_b4:
     forall (c1 c2: nat -> R) (n m: nat) (x: R), 
     (P c1 n x) * (P c2 m (x + 1)) - (P c1 n (x + 1)) * (P c2 m x) = 1 <->
     putnam_2010_b4_solution c1 c2 n m.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2010_b4.
 
 Section putnam_2010_b5.
@@ -119,7 +119,7 @@ Require Import Reals Coquelicot.Coquelicot.
 Definition putnam_2010_b5_solution := False.
 Theorem putnam_2010_b5: 
     exists (f: R -> R), forall (x y: R), x < y -> f x < f y /\ Derive f x = f (f x) <-> putnam_2010_b5_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2010_b5.
 
 Section putnam_2011_a2.
@@ -140,7 +140,7 @@ Theorem putnam_2011_a2:
     exists (M: nat),
     (forall (n: nat), a n > 0 /\ b n > 0 /\ -1 * INR M <= b n <= INR M) ->
     Series (fun n => prod_n a n) = putnam_2011_a2_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2011_a2.
 
 Section putnam_2011_a3.
@@ -150,7 +150,7 @@ Theorem putnam_2011_a3:
     exists (c L: R), L > 0 ->
     Lim_seq (fun r => (Rpower (INR r) c * RInt (fun x => x ^ r * sin x) 0 PI / 2) / (RInt (fun x => x ^ r * cos x) 0 PI / 2)) = L <->
     (c, L) = putnam_2011_a3_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2011_a3.
 
 Section putnam_2011_b1.
@@ -158,7 +158,7 @@ Require Import Reals ZArith Coquelicot.Coquelicot.
 Theorem putnam_2011_b1: 
     forall (h k: Z), Z.gt h 0 /\ Z.gt k 0 ->
     forall (ep: R), ep > 0 /\ exists (m n: Z), ep < Rabs (IZR h * sqrt (IZR m) - IZR k * sqrt (IZR n)) < 2 * ep.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2011_b1.
 
 Section putnam_2011_b3.
@@ -167,7 +167,7 @@ Definition putnam_2011_b3_solution := True.
 Theorem putnam_2011_b3: 
     forall (f g: R -> R) (a b: R), (a < 0 < b /\ forall (x: R), a < x < b -> g x > 0 /\ continuity_pt g 0 /\
     ex_derive f (g 0) /\ ex_derive (fun x => f x / g x) 0) -> ex_derive f 0 <-> putnam_2011_b3_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2011_b3.
 
 Section putnam_2011_b5.
@@ -178,7 +178,7 @@ Theorem putnam_2011_b5:
     Lim_seq (fun nInc => (RInt (fun x => (sum_n (fun i => 1 / (1 + (x - a i) ^ 2)) n)) (-1 * INR nInc) (INR nInc)) ^ 2) <= A * INR n) ->
     exists (B: R), B > 0 /\ forall (n: nat),
     sum_n (fun i => (sum_n (fun j => 1 + (a i - a j) ^ 2)) n) n >= B * INR n ^ 3.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2011_b5.
 
 Section putnam_2011_b6.
@@ -189,7 +189,7 @@ Theorem putnam_2011_b6:
     let l := seq 0 p in
     exists (E: Ensemble nat), (forall (n: nat), E n -> and (le 0 n) (lt n p)) /\ cardinal nat E ((p + 1) / 2) /\
     forall (n: nat), E n -> Z.to_nat (floor (sum_n (fun k => INR (fact k * n ^ k)) p)) mod p <> 0.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2011_b6.
 
 Section putnam_2012_a3.
@@ -201,7 +201,7 @@ Theorem putnam_2012_a3:
     f 0 = 1 /\
     exists (c: R), filterlim (fun x => f x / sqrt (1 - x)) (at_left 1) (locally c)) <->
     f x = putnam_2012_a3_solution x.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2012_a3.
 
 Section putnam_2013_a3.
@@ -209,7 +209,7 @@ Require Import Reals Coquelicot.Coquelicot.
 Theorem putnam_2013_a3: 
     forall (a: nat -> R) (x: R) (n: nat), 0 < x < 1 /\ sum_n (fun i => a i / (1 - x ^ (i + 1))) (n + 1) = 0 ->
     exists (y: R), 0 < y < 1 /\ sum_n (fun i => a i * y ^ i) (n + 1) = 0.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2013_a3.
 
 Section putnam_2013_b1.
@@ -221,7 +221,7 @@ Theorem putnam_2013_b1:
     (forall (i: nat), c 1%nat = 1 /\ 
     c i = if (even i) then c (div i 2) else (-1) ^ (Z.of_nat ((i - 1) / 2)) * c (div (pred i) 2)) /\ 
     sum_n (fun i => IZR (c i * c (add i 2))) 2013 = putnam_2013_b1_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2013_b1.
 
 Section putnam_2013_b2.
@@ -234,7 +234,7 @@ Theorem putnam_2013_b2:
     forall (n: nat), n mod 3 = 0%nat -> a n = 0)) ->
     exists (maxval: R), E f -> f 0 <= maxval /\ exists (f: R -> R), E f -> f 0 = maxval <->
     maxval = putnam_2013_b2_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2013_b2.
 
 Section putnam_2014_a3.
@@ -252,7 +252,7 @@ Theorem putnam_2014_a3:
         | S n' => (a n') ^ 2 - 2
     end in 
     Lim_seq (fun n => prod_n (fun k => 1 - 1 / a k) n) = putnam_2014_a3_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2014_a3.
 
 Section putnam_2014_b2.
@@ -265,7 +265,7 @@ Theorem putnam_2014_b2:
     (exists (f: R -> R) (x: R), 1 <= x <= 3 /\ -1 <= f x <= 1 /\ RInt f 0 3 = 0 ->
     RInt (fun x => f x / x) 1 3 = m)) <->
     m = putnam_2014_b2_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2014_b2.
 
 Section putnam_2014_b4.
@@ -278,7 +278,7 @@ Theorem putnam_2014_b4:
         | S n' => m n' + sum_n_C m n'
     end in 
     forall (n: nat) (r: C), sum_n_C (fun k => (2 * ((INR k) * (INR n - INR k)) * r ^ k)) n = 0 <-> exists (q: R), r = RtoC q. 
-Proof. Abort.
+Proof. Admitted.
 End putnam_2014_b4.
 
 Section putnam_2015_b4.
@@ -298,5 +298,5 @@ Theorem putnam_2015_b4:
     end in
     forall (E: list (list nat)) (l: list nat), (In l E <-> (length l = 3 /\ let a := nth 0 l 0 in let b := nth 1 l 0 in let c := nth 2 l 0 in a > 0 /\ b > 0 /\ c > 0 /\ a < c + b /\ b < a + c /\ c < a + b)) ->
     exists (p q: nat), coprime p q = true /\ fold_left Rplus (exprl E) R0  = Rdiv (INR p) (INR q) /\  (p, q) = putnam_2015_b4_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2015_b4.
