@@ -4,7 +4,7 @@ open BigOperators
 open Nat
 
 theorem putnam_2005_a1
-: ∀ n : ℕ, n > 0 → (∃ k : ℕ, ∃ a : Fin k → Fin 2 → ℕ, n = ∑ i : Fin k, 2^(a i 0)*3^(a i 1) ∧
+: ∀ n : ℤ, n > 0 → (∃ k : ℕ, ∃ a : Fin k → Fin 2 → ℕ, n = ∑ i : Fin k, 2^(a i 0)*3^(a i 1) ∧
 (∀ i j : Fin k, i ≠ j → ¬(2^(a i 0)*3^(a i 0) ∣ 2^(a j 0)*3^(a j 1)))) :=
 sorry
 
@@ -45,11 +45,11 @@ theorem putnam_2005_b1
 sorry
 
 -- Note: uses ℕ → ℕ instead of Fin n → ℕ
-abbrev putnam_2005_b2_solution : Set (ℕ × (ℕ → ℕ)) := sorry
+abbrev putnam_2005_b2_solution : Set (ℕ × (ℕ → ℤ)) := sorry
 -- {(n, k) : ℕ × (ℕ → ℕ) | (n = 1 ∧ k 0 = 1) ∨ (n = 3 ∧ (k '' {0, 1, 2} = {2, 3, 6})) ∨ (n = 4 ∧ (∀ i : Fin 4, k i = 4))}
 theorem putnam_2005_b2
 (n : ℕ)
-(k : ℕ → ℕ)
+(k : ℕ → ℤ)
 (nkpos : Prop)
 (nkeq1 : Prop)
 (nkeq2 : Prop)
@@ -70,10 +70,10 @@ theorem putnam_2005_b3
 sorry
 
 theorem putnam_2005_b4
-(m n : ℕ)
+(m n : ℤ)
 (mnpos : m > 0 ∧ n > 0)
-(f : ℕ → ℕ → ℕ)
-(hf : ∀ m' > 0, ∀ n' > 0, f m' n' = Set.encard {x : Fin n' → ℤ | ∑ i : Fin n', |x i| ≤ m'})
+(f : ℤ → ℤ → ℕ)
+(hf : ∀ m' > 0, ∀ n' > 0, f m' n' = Set.encard {x : Finset.Icc 1 n' → ℤ | ∑ i : Finset.Icc 1 n', |x i| ≤ m'})
 : f m n = f n m :=
 sorry
 
@@ -82,5 +82,5 @@ theorem putnam_2005_b6
 (v : Equiv.Perm (Fin n) → ℕ)
 (npos : n ≥ 1)
 (hv : ∀ p : Equiv.Perm (Fin n), v p = Set.encard {i : Fin n | p i = i})
-: (∑ p : Equiv.Perm (Fin n), (Equiv.Perm.signAux p : ℤ) / (v p + 1)) = (-1) ^ (n + 1) * (n / (n + 1)) :=
+: (∑ p : Equiv.Perm (Fin n), (Equiv.Perm.signAux p : ℤ) / (v p + 1 : ℝ)) = (-1) ^ (n + 1) * (n / (n + 1 : ℝ)) :=
 sorry

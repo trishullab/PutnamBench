@@ -50,7 +50,7 @@ sorry
 theorem putnam_2004_b2
 (m n : ℕ)
 (mnpos : m > 0 ∧ n > 0)
-: (m + n)! / (m + n) ^ (m + n) < ((m)! / m ^ m) * ((n)! / n ^ n) :=
+: ((m + n)! / (m + n) ^ (m + n) : ℤ) < (((m)! / m ^ m) * ((n)! / n ^ n) : ℤ) :=
 sorry
 
 abbrev putnam_2004_b5_solution : ℝ := sorry
@@ -73,4 +73,3 @@ theorem putnam_2004_b6
 (hbB : Set.range b = B ∧ ∀ i : ℕ, b i < b (i + 1))
 : (∀ r : ℕ, ∃ i : ℕ, (b (i + 1) - b i) ≥ r) → Tendsto (fun x => N x / x) atTop (𝓝 0) :=
 sorry
-
