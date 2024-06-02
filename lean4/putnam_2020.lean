@@ -73,5 +73,3 @@ theorem putnam_2020_b6
 (npos : n > 0)
 : ∑ k : Fin n, ((-1) ^ Int.floor ((k.1 + 1) * (Real.sqrt 2 - 1)) : ℝ) ≥ 0 :=
 sorry
-
-

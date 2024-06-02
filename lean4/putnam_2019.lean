@@ -5,7 +5,7 @@ open BigOperators
 abbrev putnam_2019_a1_solution : Set ℤ := sorry
 -- {n : ℤ | n ≥ 0 ∧ ¬Int.ModEq 9 n 3 ∧ ¬Int.ModEq 9 n 6}
 theorem putnam_2019_a1
-: {n : ℤ | ∃ A ≥ 0, ∃ B ≥ 0, ∃ C ≥ 0, A^3 + B^3 + C^3 - 3*A*B*C = n} = putnam_2019_a1_solution :=
+: {n : ℤ | ∃ A B C : ℤ, A ≥ 0 ∧ B ≥ 0 ∧ C ≥ 0 ∧ A^3 + B^3 + C^3 - 3*A*B*C = n} = putnam_2019_a1_solution :=
 sorry
 
 noncomputable abbrev putnam_2019_a3_solution : ℝ := sorry
@@ -79,15 +79,14 @@ theorem putnam_2019_b3
 : (Q - 1).det ≠ 0 → (P * Q - 1).det = 0 :=
 sorry
 
-abbrev putnam_2019_b5_solution :  ℕ × ℕ := sorry
+abbrev putnam_2019_b5_solution : ℕ × ℕ := sorry
 -- ⟨2019, 1010⟩
 theorem putnam_2019_b5
-(F : ℕ → ℕ)
-(P : Polynomial ℕ)
+(F : ℕ → ℤ)
+(P : Polynomial ℝ)
 (hF : ∀ x, x ≥ 3 → F x = F (x - 1) + F (x - 2))
 (F12 : F 1 = 1 ∧ F 2 = 1)
 (Pdeg: Polynomial.degree P = 1008)
-(hp: ∀ n : ℕ, (n ≤ 1008) → P.eval (2 * n + 1) = F (2 * n + 1))
+(hp: ∀ n : ℕ, (n ≤ 1008) → P.eval (2 * n + 1 : ℝ) = F (2 * n + 1))
 : ∀ j k : ℕ, (P.eval 2019 = F j - F k) ↔ ⟨j, k⟩ = putnam_2019_b5_solution  :=
 sorry
-
