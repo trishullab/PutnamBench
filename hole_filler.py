@@ -31,7 +31,7 @@ def copy_files_in_directory(directory):
 
                         sol_start = conts.find("(*")
                         sol_end = conts.find("*)")
-                        conts = conts.replace(f"{base}_solution", conts[sol_start+2:sol_end])
+                        conts = conts.replace(f"{base}_solution", "(" + conts[sol_start+2:sol_end] + ")")
 
                         thm = conts.find(f"theorem {base}")
                         conts = conts[:defn] + conts[thm:]
