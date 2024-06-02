@@ -15,7 +15,7 @@
         "problem_name" : "putnam_1985_a4",
         "informal_statement" : "Define a sequence $\\{a_i\\}$ by $a_1=3$ and $a_{i+1}=3^{a_i}$ for $i \\geq 1$. Which integers between $00$ and $99$ inclusive occur as the last two digits in the decimal expansion of infinitely many $a_i$?",
         "informal_solution" : "Prove that the only number that occurs infinitely often is $87$.",
-        "tags" : ["number-theory"]
+        "tags" : ["number_theory"]
     },
     {
         "problem_name" : "putnam_1985_a5",
@@ -55,6 +55,6 @@
     {
         "problem_name" : "putnam_1985_b6",
         "informal_statement" : "Let $G$ be a finite set of real $n\\times n$ matrices $\\{M_i\\}$, $1 \\leq i \\leq r$, which form a group under matrix\nmultiplication. Suppose that $\\sum_{i=1}^r \\mathrm{tr}(M_i)=0$, where $\\mathrm{tr}(A)$ denotes the trace of the matrix $A$. Prove that $\\sum_{i=1}^r M_i$ is the $n \\times n$ zero matrix.",
-        "tags" : ["abstract-algebra", "linear-algebra"]
+        "tags" : ["abstract_algebra", "linear_algebra"]
     }
 ]

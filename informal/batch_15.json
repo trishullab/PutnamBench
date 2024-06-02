@@ -2,18 +2,18 @@
     {
         "problem_name" : "putnam_2008_a6",
         "informal_statement" : "Prove that there exists a constant $c>0$ such that in every nontrivial finite group $G$ there exists a sequence of length at most $c \\log |G|$ with the property that each element of $G$ equals the product of some subsequence. (The elements of $G$ in the sequence are not required to be distinct. A \\emph{subsequence} of a sequence is obtained by selecting some of the terms, not necessarily consecutive, without reordering them; for example, $4, 4, 2$ is a subsequence of $2, 4, 6, 4, 2$, but $2, 2, 4$ is not.)",
-        "tags" : ["abstract-algebra"]
+        "tags" : ["abstract_algebra"]
     },
     {
         "problem_name" : "putnam_2008_b4",
         "informal_statement" : "Let $p$ be a prime number. Let $h(x)$ be a polynomial with integer coefficients such that $h(0), h(1), \\dots, h(p^2-1)$ are distinct modulo $p^2$. Show that $h(0), h(1), \\dots, h(p^3-1)$ are distinct modulo $p^3$.",
-        "tags" : ["algebra", "number-theory"]
+        "tags" : ["algebra", "number_theory"]
     },
     {
         "problem_name" : "putnam_2007_a4",
         "informal_statement" : "A \\emph{repunit} is a positive integer whose digits in base 10 are all ones. Find all polynomials $f$ with real coefficients such that if $n$ is a repunit, then so is $f(n)$.",
         "informal_solution" : "Show that the desired polynomials $f$ are those of the form\n\\[\nf(n) = \\frac{1}{9}(10^c (9n+1)^d - 1)\n\\]\nfor integers $d \\geq 0$ and $c \\geq 1-d$.",
-        "tags" : ["analysis", "algebra", "number-theory"]
+        "tags" : ["analysis", "algebra", "number_theory"]
     },
     {
         "problem_name" : "putnam_2007_b2",

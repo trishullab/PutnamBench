@@ -301,7 +301,9 @@
         "problem_name": "putnam_1973_b4",
         "informal_statement": "Suppose $f$ is a function on $[0,1]$ with continuous derivative satisfying $0 < f'(x) \\leq 1$ and $f 0 = 0$. Prove that $\\left[\\int_0^1 f(x) dx\\right]]^2 \\geq \\int_0^1 (f(x))^3 dx$, and find an example where equality holds.",
         "informal_solution": "Show that one such example where equality holds is the identity function.",
-        "tags": []
+        "tags": [
+            "analysis"
+        ]
     },
     {
         "problem_name": "putnam_1974_a1",
@@ -530,7 +532,7 @@
         "informal_statement": "Let $p$ be a prime and $m \\geq n$ be non-negative integers. Show that $\\binom{pm}{pn} = \\binom{m}{n} \\pmod p$, where $\\binom{m}{n}$ is the binomial coefficient.",
         "tags": [
             "algebra",
-            "number-theory"
+            "number_theory"
         ]
     },
     {
@@ -585,7 +587,7 @@
         "problem_name": "putnam_1978_a2",
         "informal_statement": "Let $A$ be the real $n \\times n$ matrix $(a_{ij})$ where $a_{ij} = a$ for $i < j$, $b \\; (\\neq a)$ for $i > j$, and $c_i$ for $i = j$. Show that $\\det A = \\frac{b p(a) - a p(b)}{b - a}$, where $p(x) = \\prod_{i=1}^n (c_i - x)$.",
         "tags": [
-            "linear-algebra"
+            "linear_algebra"
         ]
     },
     {
@@ -601,7 +603,7 @@
         "problem_name": "putnam_1978_a4",
         "informal_statement": "A binary operation (represented by multiplication) on $S$ has the property that $(ab)(cd) = ad$ for all $a, b, c, d$. Show that: \n\\begin{itemize}\n\\item[(1)] if $ab = c$, then $cc = c$; \n\\item[(2)] if $ab = c$, then $ad = cd$ for all $d$. \n\\end{itemize}\nFind a set $S$, and such a binary operation, which also satisfies:\n\\begin{itemize}\n\\item[(A)] $a a = a$ for all $a$; \n\\item[(B)] $ab = a \\neq b$ for some $a, b$; \n\\item[(C)] $ab \\neq a$ for some $a, b$.\n\\end{itemize}",
         "tags": [
-            "abstract-algebra"
+            "abstract_algebra"
         ]
     },
     {
@@ -721,7 +723,7 @@
         "informal_statement": "Let $F$ be a finite field with $n$ elements, and assume $n$ is odd. Suppose $x^2 + bx + c$ is an irreducible polynomial over $F$. For how many elements $d \\in F$ is $x^2 + bx + c + d$ irreducible?",
         "informal_solution": "Show that there are $\\frac{n - 1}{2}$ such elements $d$.",
         "tags": [
-            "abstract-algebra"
+            "abstract_algebra"
         ]
     },
     {
@@ -1104,7 +1106,7 @@
         "informal_statement": "Define a sequence $\\{a_i\\}$ by $a_1=3$ and $a_{i+1}=3^{a_i}$ for $i \\geq 1$. Which integers between $00$ and $99$ inclusive occur as the last two digits in the decimal expansion of infinitely many $a_i$?",
         "informal_solution": "Prove that the only number that occurs infinitely often is $87$.",
         "tags": [
-            "number-theory"
+            "number_theory"
         ]
     },
     {
@@ -1158,8 +1160,8 @@
         "problem_name": "putnam_1985_b6",
         "informal_statement": "Let $G$ be a finite set of real $n\\times n$ matrices $\\{M_i\\}$, $1 \\leq i \\leq r$, which form a group under matrix\nmultiplication. Suppose that $\\sum_{i=1}^r \\mathrm{tr}(M_i)=0$, where $\\mathrm{tr}(A)$ denotes the trace of the matrix $A$. Prove that $\\sum_{i=1}^r M_i$ is the $n \\times n$ zero matrix.",
         "tags": [
-            "abstract-algebra",
-            "linear-algebra"
+            "abstract_algebra",
+            "linear_algebra"
         ]
     },
     {
@@ -1192,7 +1194,7 @@
         "informal_statement": "A \\emph{transversal} of an $n\\times n$ matrix $A$ consists of $n$ entries of $A$, no two in the same row or column. Let $f(n)$ be the number of $n \\times n$ matrices $A$ satisfying the following two conditions:\n\\begin{enumerate}\n\\item[(a)] Each entry $\\alpha_{i,j}$ of $A$ is in the set\n$\\{-1,0,1\\}$.\n\\item[(b)] The sum of the $n$ entries of a transversal is the same for all transversals of $A$.\n\\end{enumerate}\nAn example of such a matrix $A$ is\n\\[\nA = \\left( \\begin{array}{ccc} -1 & 0 & -1 \\\\ 0 & 1 & 0 \\\\ 0 & 1 & 0\n\\end{array}\n\\right).\n\\]\nDetermine with proof a formula for $f(n)$ of the form\n\\[\nf(n) = a_1 b_1^n + a_2 b_2^n + a_3 b_3^n + a_4,\n\\]\nwhere the $a_i$'s and $b_i$'s are rational numbers.",
         "informal_solution": "Prove that $f(n) = 4^n + 2 \\cdot 3^n - 4 \\cdot 2^n + 1$.",
         "tags": [
-            "linear-algebra"
+            "linear_algebra"
         ]
     },
     {
@@ -1215,7 +1217,7 @@
         "problem_name": "putnam_1986_b3",
         "informal_statement": "Let $\\Gamma$ consist of all polynomials in $x$ with integer coefficients. For $f$ and $g$ in $\\Gamma$ and $m$ a positive integer, let $f \\equiv g \\pmod{m}$ mean that every coefficient of $f-g$ is an integral multiple of $m$. Let $n$ and $p$ be positive integers with $p$ prime. Given that $f,g,h,r$ and $s$ are in $\\Gamma$ with $rf+sg\\equiv 1 \\pmod{p}$ and $fg \\equiv h \\pmod{p}$, prove that there exist $F$ and $G$ in $\\Gamma$ with $F \\equiv f \\pmod{p}$, $G \\equiv g \\pmod{p}$, and $FG \\equiv h \\pmod{p^n}$.",
         "tags": [
-            "number-theory",
+            "number_theory",
             "algebra"
         ]
     },
@@ -1239,7 +1241,7 @@
         "problem_name": "putnam_1986_b6",
         "informal_statement": "Suppose $A,B,C,D$ are $n \\times n$ matrices with entries in a field $F$, satisfying the conditions that $AB^T$ and $CD^T$ are symmetric and $AD^T - BC^T = I$. Here $I$ is the $n \\times n$ identity matrix, and if $M$ is an $n \\times n$ matrix, $M^T$ is its transpose. Prove that $A^T D - C^T B = I$.",
         "tags": [
-            "linear-algebra"
+            "linear_algebra"
         ]
     },
     {
@@ -1302,14 +1304,14 @@
         "problem_name": "putnam_1987_b5",
         "informal_statement": "Let $O_n$ be the $n$-dimensional vector $(0,0,\\cdots, 0)$. Let $M$ be a $2n \\times n$ matrix of complex numbers such that whenever $(z_1, z_2, \\dots, z_{2n})M = O_n$, with complex $z_i$, not all zero, then at least one of the $z_i$ is not real. Prove that for arbitrary real numbers $r_1, r_2, \\dots, r_{2n}$, there are complex numbers $w_1, w_2, \\dots, w_n$ such that\n\\[\n\\mathrm{re}\\left[ M \\left( \\begin{array}{c} w_1 \\\\ \\vdots \\\\ w_n \\end{array} \\right) \\right] = \\left( \\begin{array}{c} r_1 \\\\ \\vdots \\\\ r_{2n} \\end{array} \\right).\n\\]\n(Note: if $C$ is a matrix of complex numbers, $\\mathrm{re}(C)$ is the matrix whose entries are the real parts of the entries of $C$.)",
         "tags": [
-            "linear-algebra"
+            "linear_algebra"
         ]
     },
     {
         "problem_name": "putnam_1987_b6",
         "informal_statement": "Let $F$ be the field of $p^2$ elements, where $p$ is an odd prime. Suppose $S$ is a set of $(p^2-1)/2$ distinct nonzero elements of $F$ with the property that for each $a\\neq 0$ in $F$, exactly one of $a$ and $-a$ is in $S$. Let $N$ be the number of elements in the intersection $S \\cap \\{2a: a \\in S\\}$. Prove that $N$ is even.",
         "tags": [
-            "abstract-algebra"
+            "abstract_algebra"
         ]
     },
     {
@@ -1431,7 +1433,7 @@
         "informal_statement": "Let $\\alpha=1+a_1x+a_2x^2+\\cdots$ be a formal power series with coefficients in the field of two elements. Let\n\\[\na_n =\n\\begin{cases}\n1 & \\parbox{2in}{if every block of zeros in the binary expansion of $n$ has an even number of zeros in the block} \\\\[.3in]\n0 & \\text{otherwise.}\n\\end{cases}\n\\]\n(For example, $a_{36}=1$ because $36=100100_2$ and $a_{20}=0$ because $20=10100_2.$) Prove that $\\alpha^3+x\\alpha+1=0.$",
         "tags": [
             "algebra",
-            "abstract-algebra"
+            "abstract_algebra"
         ]
     },
     {
@@ -1439,7 +1441,7 @@
         "informal_statement": "Let $S$ be a non-empty set with an associative operation that is left and right cancellative ($xy=xz$ implies $y=z$, and $yx=zx$ implies $y=z$). Assume that for every $a$ in $S$ the set $\\{a^n:\\,n=1, 2, 3, \\ldots\\}$ is finite. Must $S$ be a group?",
         "informal_solution": "Prove that $S$ must be a group.",
         "tags": [
-            "abstract-algebra"
+            "abstract_algebra"
         ]
     },
     {
@@ -1455,7 +1457,7 @@
         "informal_statement": "Can a countably infinite set have an uncountable collection of non-empty subsets such that the intersection of any two of them is finite?",
         "informal_solution": "Prove that such a collection exists.",
         "tags": [
-            "set-theory"
+            "set_theory"
         ]
     },
     {
@@ -1636,7 +1638,7 @@
         "informal_solution": "Prove that if $m$ is odd, there are no solutions, and if $m$ is even, the only solution is\n$(n, x, y) = (m + 1, 2 ^ {m/2}, 2 ^{m/2})$.",
         "tags": [
             "algebra",
-            "number-theory"
+            "number_theory"
         ]
     },
     {
@@ -1682,7 +1684,7 @@
         "informal_statement": "Let $D_n$ denote the value of the $(n-1) \\times (n-1)$ determinant\n\\[\n\\left[\n\\begin{array}{cccccc}\n3 & 1 & 1 & 1 & \\cdots & 1 \\\\\n1 & 4 & 1 & 1 & \\cdots & 1 \\\\\n1 & 1 & 5 & 1 & \\cdots & 1 \\\\\n1 & 1 & 1 & 6 & \\cdots & 1 \\\\\n\\vdots & \\vdots & \\vdots & \\vdots & \\ddots & \\vdots \\\\\n1 & 1 & 1 & 1 & \\cdots & n+1\n\\end{array}\n\\right].\n\\]\nIs the set $\\left\\{ \\frac{D_n}{n!} \\right\\}_{n \\geq 2}$ bounded?",
         "informal_solution": "Prove that the set is not bounded.",
         "tags": [
-            "linear-algebra",
+            "linear_algebra",
             "analysis"
         ]
     },
@@ -1690,7 +1692,7 @@
         "problem_name": "putnam_1992_b6",
         "informal_statement": "Let $M$ be a set of real $n \\times n$ matrices such that\n\\begin{itemize}\n\\item[(i)] $I \\in M$, where $I$ is the $n \\times n$ identity matrix;\n\\item[(ii)] if $A \\in M$ and $B \\in M$, then either $AB \\in M$ or $-AB \\in M$, but not both;\n\\item[(iii)] if $A \\in M$ and $B \\in M$, then either $AB = BA$ or $AB = -BA$;\n\\item[(iv)] if $A \\in M$ and $A \\neq I$, there is at least one $B \\in M$ such that $AB = -BA$.\n\\end{itemize}\nProve that $M$ contains at most $n^2$ matrices.",
         "tags": [
-            "linear-algebra"
+            "linear_algebra"
         ]
     },
     {
@@ -2187,7 +2189,9 @@
         "problem_name": "putnam_1999_a6",
         "informal_statement": "The sequence $(a_n)_{n\\geq 1}$ is defined by $a_1=1, a_2=2, a_3=24,$ and, for $n\\geq 4$, \\[a_n = \\frac{6a_{n-1}^2a_{n-3} - 8a_{n-1}a_{n-2}^2}{a_{n-2}a_{n-3}}.\\] Show that, for all n, $a_n$ is an integer multiple of $n$.",
         "informal_solution": "None.",
-        "tags": []
+        "tags": [
+            "algebra"
+        ]
     },
     {
         "problem_name": "putnam_1999_b2",
@@ -2279,7 +2283,7 @@
         "problem_name": "putnam_2000_b2",
         "informal_statement": "Prove that the expression\n\\[\n\\frac{gcd(m,n)}{n}\\binom{n}{m}\n\\]\nis an integer for all pairs of integers $n\\geq m\\geq 1$.",
         "tags": [
-            "number-theory",
+            "number_theory",
             "algebra"
         ]
     },
@@ -2676,7 +2680,7 @@
         "informal_statement": "Let $Z$ denote the set of points in $\\mathbb{R}^n$ whose coordinates are $0$ or $1$. (Thus $Z$ has $2^n$ elements, which are the vertices of a unit hypercube in $\\mathbb{R}^n$.) Given a vector subspace $V$ of $\\mathbb{R}^n$, let $Z(V)$ denote the number of members of $Z$ that lie in $V$. Let $k$ be given, $0 \\leq k \\leq n$. Find the maximum, over all vector subspaces $V \\subseteq \\mathbb{R}^n$ of dimension $k$, of the number of points in $V \\cap Z$.",
         "informal_solution": "Prove that the maximum is $2^k$.",
         "tags": [
-            "linear-algebra"
+            "linear_algebra"
         ]
     },
     {
@@ -2720,7 +2724,7 @@
         "tags": [
             "analysis",
             "algebra",
-            "number-theory"
+            "number_theory"
         ]
     },
     {
@@ -2762,9 +2766,6 @@
         ]
     },
     {
-        "problem_name": "putnam_2007_b6"
-    },
-    {
         "problem_name": "putnam_2008_a1",
         "informal_statement": "Let $f:\\mathbb{R}^2 \\to \\mathbb{R}$ be a function such that $f(x,y)+f(y,z)+f(z,x)=0$ for all real numbers $x$, $y$, and $z$. Prove that there exists a function $g:\\mathbb{R} \\to \\mathbb{R}$ such that $f(x,y)=g(x)-g(y)$ for all real numbers $x$ and $y$.",
         "informal_solution": "None.",
@@ -2784,7 +2785,7 @@
         "problem_name": "putnam_2008_a6",
         "informal_statement": "Prove that there exists a constant $c>0$ such that in every nontrivial finite group $G$ there exists a sequence of length at most $c \\log |G|$ with the property that each element of $G$ equals the product of some subsequence. (The elements of $G$ in the sequence are not required to be distinct. A \\emph{subsequence} of a sequence is obtained by selecting some of the terms, not necessarily consecutive, without reordering them; for example, $4, 4, 2$ is a subsequence of $2, 4, 6, 4, 2$, but $2, 2, 4$ is not.)",
         "tags": [
-            "abstract-algebra"
+            "abstract_algebra"
         ]
     },
     {
@@ -2808,7 +2809,7 @@
         "informal_statement": "Let $p$ be a prime number. Let $h(x)$ be a polynomial with integer coefficients such that $h(0), h(1), \\dots, h(p^2-1)$ are distinct modulo $p^2$. Show that $h(0), h(1), \\dots, h(p^3-1)$ are distinct modulo $p^3$.",
         "tags": [
             "algebra",
-            "number-theory"
+            "number_theory"
         ]
     },
     {
@@ -2850,7 +2851,7 @@
         "informal_statement": "Let $S$ be a set of rational numbers such that\n\\begin{enumerate}\n\\item[(a)] $0 \\in S$;\n\\item[(b)] If $x \\in S$ then $x+1\\in S$ and $x-1\\in S$; and\n\\item[(c)] If $x\\in S$ and $x\\not\\in\\{0,1\\}$, then $\\frac{1}{x(x-1)}\\in S$.\n\\end{enumerate}\nMust $S$ contain all rational numbers?",
         "informal_solution": "Prove that $S$ need not contain all rationals.",
         "tags": [
-            "number-theory"
+            "number_theory"
         ]
     },
     {
@@ -2874,7 +2875,7 @@
         "informal_statement": "Call a subset $S$ of $\\{1, 2, \\dots, n\\}$ \\emph{mediocre} if it has the following property: Whenever $a$ and $b$ are elements of $S$ whose average is an integer, that average is also an element of $S$. Let $A(n)$ be the number of mediocre subsets of $\\{1,2,\\dots,n\\}$. [For instance, every subset of $\\{1,2,3\\}$ except $\\{1,3\\}$ is mediocre, so $A(3) = 7$.] Find all positive integers $n$ such that $A(n+2) - 2A(n+1) + A(n) = 1$.",
         "informal_solution": "Show that the answer is $n = 2^k - 1$ for some integer $k$.",
         "tags": [
-            "number-theory"
+            "number_theory"
         ]
     },
     {
@@ -2883,7 +2884,7 @@
         "informal_solution": "Prove that the dimension of $V$ is $2020050$.",
         "tags": [
             "algebra",
-            "linear-algebra"
+            "linear_algebra"
         ]
     },
     {
@@ -2897,7 +2898,7 @@
         "problem_name": "putnam_2009_b6",
         "informal_statement": "Prove that for every positive integer $n$, there is a sequence of integers $a_0, a_1, \\dots, a_{2009}$ with $a_0 = 0$ and $a_{2009} = n$ such that each term after $a_0$ is either an earlier term plus $2^k$ for some nonnegative integer $k$, or of the form $b\\,\\mathrm{mod}\\,c$ for some earlier positive terms $b$ and $c$. [Here $b\\,\\mathrm{mod}\\,c$ denotes the remainder when $b$ is divided by $c$, so $0 \\leq (b\\,\\mathrm{mod}\\,c) < c$.]",
         "tags": [
-            "number-theory"
+            "number_theory"
         ]
     },
     {
@@ -3277,7 +3278,7 @@
         "informal_statement": "Let $f: [0,1] \\to \\mathbb{R}$ be a function for which there exists a constant $K>0$ such that $\\left| f(x) - f(y) \\right| \\leq K \\left| x - y \\right|$ for all $x,y \\in [0,1]$. Suppose also that for each rational number $r \\in [0,1]$, there exist integers $a$ and $b$ such that $f(r) = a + br$. Prove that there exist finitely many intervals $I_1, \\dots, I_n$ such that $f$ is a linear function on each $I_i$ and $[0,1] = \\bigcup_{i=1}^n I_i$.",
         "tags": [
             "analysis",
-            "number-theory"
+            "number_theory"
         ]
     },
     {
@@ -3366,7 +3367,10 @@
         "problem_name": "putnam_2016_a1",
         "informal_statement": "Find the smallest positive integer $j$ such that for every polynomial $p(x)$ with integer coefficients and for every integer $k$, the integer \\[ p^{(j)}(k) = \\left. \\frac{d^j}{dx^j} p(x) \\right|_{x=k} \\] (the $j$-th derivative of $p(x)$ at $k$) is divisible by 2016.",
         "informal_solution": "Show that the solution is $18$.",
-        "tags": []
+        "tags": [
+            "algebra",
+            "number_theory"
+        ]
     },
     {
         "problem_name": "putnam_2016_a2",
@@ -3388,7 +3392,7 @@
         "problem_name": "putnam_2016_a5",
         "informal_statement": "Suppose that $G$ is a finite group generated by the two elements $g$ and $h$, where the order of $g$ is odd. Show that every element of $G$ can be written in the form\n\\[\ng^{m_1} h^{n_1} g^{m_2} h^{n_2} \\cdots g^{m_r} h^{n_r}\n\\]\nwith $1 \\leq r \\leq |G|$ and $m_1, n_1, m_2, n_2, \\ldots, m_r, n_r \\in \\{-1, 1\\}$. \n(Here $|G|$ is the number of elements of $G$.)",
         "tags": [
-            "abstract-algebra"
+            "abstract_algebra"
         ]
     },
     {
@@ -3500,7 +3504,7 @@
         "informal_solution": "Prove that the answer is $\\frac{2016!}{1953!} - 63! \\cdot 2016$",
         "tags": [
             "algebra",
-            "number-theory"
+            "number_theory"
         ]
     },
     {
@@ -3796,7 +3800,7 @@
         "informal_statement": "Let $F_0, F_1, \\ldots$ be the sequence of Fibonacci numbers, with $F_0 = 0$, $F_1 = 1$, and $F_n = F_{n-1} + F_{n-2}$ for $n \\geq 2$. For $m > 2$, let $R_m$ be the remainder when the product $\\prod_{k=1}^{F_{m-1}} k^k$ is divided by $F_m$. Prove that $R_m$ is also a Fibonacci number.",
         "informal_solution": "None.",
         "tags": [
-            "number\\_theory"
+            "number_theory"
         ]
     },
     {
