@@ -96,4 +96,3 @@ theorem putnam_2023_b6
 (hS : ∀ i j : Fin n, S i j = ∑' a : ℕ, ∑' b : ℕ, if a * (i.1 + 1) + b * (j.1 + 1) = n then 1 else 0)
 : S.det = putnam_2023_b6_solution n :=
 sorry
-
