@@ -83,7 +83,8 @@ sorry
 
 open Topology Filter
 
-abbrev putnam_2006_b6_solution : ℕ → ℚ := fun k => ((k+1)/k)^k
+abbrev putnam_2006_b6_solution : ℕ → ℚ := sorry
+-- fun k => ((k+1)/k)^k
 theorem putnam_2006_b6
 (k : ℕ)
 (hk : k > 1)

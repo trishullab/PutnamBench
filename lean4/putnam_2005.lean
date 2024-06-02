@@ -46,7 +46,7 @@ sorry
 
 -- Note: uses ℕ → ℕ instead of Fin n → ℕ
 abbrev putnam_2005_b2_solution : Set (ℕ × (ℕ → ℤ)) := sorry
--- {(n, k) : ℕ × (ℕ → ℕ) | (n = 1 ∧ k 0 = 1) ∨ (n = 3 ∧ (k '' {0, 1, 2} = {2, 3, 6})) ∨ (n = 4 ∧ (∀ i : Fin 4, k i = 4))}
+-- {(n, k) : ℕ × (ℕ → ℤ) | (n = 1 ∧ k 0 = 1) ∨ (n = 3 ∧ (k '' {0, 1, 2} = {2, 3, 6})) ∨ (n = 4 ∧ (∀ i : Fin 4, k i = 4))}
 theorem putnam_2005_b2
 (n : ℕ)
 (k : ℕ → ℤ)

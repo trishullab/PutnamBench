@@ -34,10 +34,10 @@ theorem putnam_1993_a5
 sorry
 
 theorem putnam_1993_a6
-(seq : ℕ → ℕ)
+(seq : ℕ → ℤ)
 (hseq23 : ∀ n : ℕ, seq n = 2 ∨ seq n = 3)
 (hseq2inds : ∀ n : ℕ, seq n = 2 ↔ (∃ N : ℕ, n = ∑ i : Fin N, (seq i + 1)))
-: ∃ r : ℝ, ∀ n : ℕ, seq n = 2 ↔ (∃ m : ℕ, n + 1 = 1 + Int.floor (r * m)) :=
+: ∃ r : ℝ, ∀ n : ℕ, seq n = 2 ↔ (∃ m : ℤ, n + 1 = 1 + Int.floor (r * m)) :=
 sorry
 
 abbrev putnam_1993_b1_solution : ℕ := sorry
