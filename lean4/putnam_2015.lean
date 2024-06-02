@@ -6,10 +6,10 @@ open BigOperators
 abbrev putnam_2015_a2_solution : ℕ := sorry
 -- 181
 theorem putnam_2015_a2
-(a : ℕ → ℕ)
+(a : ℕ → ℤ)
 (abase : a 0 = 1 ∧ a 1 = 2)
 (arec : ∀ n ≥ 2, a n = 4 * a (n - 1) - a (n - 2))
-: Odd putnam_2015_a2_solution ∧ putnam_2015_a2_solution.Prime ∧ (putnam_2015_a2_solution ∣ a 2015) :=
+: Odd putnam_2015_a2_solution ∧ putnam_2015_a2_solution.Prime ∧ ((putnam_2015_a2_solution : ℤ) ∣ a 2015) :=
 sorry
 
 abbrev putnam_2015_a3_solution : ℂ := sorry
@@ -74,7 +74,7 @@ abbrev putnam_2015_b4_solution : ℤ × ℕ := sorry
 theorem putnam_2015_b4
 (quotientof : ℚ → (ℤ × ℕ))
 (hquotientof : ∀ q : ℚ, quotientof q = (q.num, q.den))
-: quotientof (∑' t : (Fin 3 → ℕ), if (∀ n : Fin 3, t n > 0) ∧ t 0 < t 1 + t 2 ∧ t 1 < t 2 + t 0 ∧ t 2 < t 0 + t 1
+: quotientof (∑' t : (Fin 3 → ℤ), if (∀ n : Fin 3, t n > 0) ∧ t 0 < t 1 + t 2 ∧ t 1 < t 2 + t 0 ∧ t 2 < t 0 + t 1
 then 2^(t 0)/(3^(t 1)*5^(t 2)) else 0) = putnam_2015_b4_solution :=
 sorry
 
@@ -85,7 +85,7 @@ abbrev putnam_2015_b5_solution : ℕ := sorry
 -- 4
 theorem putnam_2015_b5
 (P : ℕ → ℕ := fun n ↦ {pi : Finset.Icc 1 n → Finset.Icc 1 n | Bijective pi ∧ ∀ i j : Finset.Icc 1 n, Nat.dist i j = 1 → Nat.dist (pi i) (pi j) ≤ 2}.ncard)
-: (∀ n : ℕ, n ≥ 2 → P (n + 5) - P (n + 4) - P (n + 3) + P n = putnam_2015_b5_solution) :=
+: (∀ n : ℕ, n ≥ 2 →  (P (n + 5) : ℤ) - (P (n + 4) : ℤ) - (P (n + 3) : ℤ) + (P n : ℤ) = putnam_2015_b5_solution) :=
 sorry
 
 noncomputable abbrev putnam_2015_b6_solution : ℝ := sorry
@@ -95,4 +95,3 @@ theorem putnam_2015_b6
 (hA : ∀ k > 0, A k = {j : ℕ | Odd j ∧ j ∣ k ∧ j < Real.sqrt (2 * k)}.encard)
 : ∑' k : Set.Ici 1, (-1 : ℝ) ^ ((k : ℝ) - 1) * (A k / (k : ℝ)) = putnam_2015_b6_solution :=
 sorry
-
