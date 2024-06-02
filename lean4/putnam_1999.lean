@@ -39,7 +39,7 @@ theorem putnam_1999_a5
 sorry
 
 theorem putnam_1999_a6
-(a : ℕ → ℝ)
+(a : ℤ → ℝ)
 (ha1 : a 1 = 1)
 (ha2 : a 2 = 2)
 (ha3 : a 3 = 24)

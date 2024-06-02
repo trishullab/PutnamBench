@@ -62,12 +62,12 @@ abbrev putnam_1996_b3_solution : ℕ → ℕ := sorry
 -- (fun n : ℕ => (2 * n ^ 3 + 3 * n ^ 2 - 11 * n + 18) / 6)
 theorem putnam_1996_b3
 (n : ℕ)
-(xset : (ℕ → ℕ) → Prop)
-(xsum : (ℕ → ℕ) → ℕ)
+(xset : (ℕ → ℤ) → Prop)
+(xsum : (ℕ → ℤ) → ℤ)
 (nge2 : n ≥ 2)
-(hxset : ∀ x : ℕ → ℕ, xset x = (x '' (Finset.range n) = Set.Icc 1 n))
-(hxsum : ∀ x : ℕ → ℕ, xsum x = ∑ i : Fin n, x i * x ((i + 1) % n))
-: (∃ x : ℕ → ℕ, xset x ∧ xsum x = putnam_1996_b3_solution n) ∧ (∀ x : ℕ → ℕ, xset x → xsum x ≤ putnam_1996_b3_solution n) :=
+(hxset : ∀ x : ℕ → ℤ, xset x = (x '' (Finset.range n) = Set.Icc (1 : ℤ) n))
+(hxsum : ∀ x : ℕ → ℤ, xsum x = ∑ i : Fin n, x i * x ((i + 1) % n))
+: (∃ x : ℕ → ℤ, xset x ∧ xsum x = putnam_1996_b3_solution n) ∧ (∀ x : ℕ → ℤ, xset x → xsum x ≤ putnam_1996_b3_solution n) :=
 sorry
 
 open Nat
@@ -91,4 +91,3 @@ theorem putnam_1996_b5
 (hSbalanced : ∀ S : Fin n → Fin 2, Sbalanced S = ∀ T1 T2 : Fin n, T1 ≤ T2 → (-2 ≤ STdelta S T1 T2 ∧ STdelta S T1 T2 ≤ 2))
 : {S : Fin n → Fin 2 | Sbalanced S}.encard = putnam_1996_b5_solution n :=
 sorry
-

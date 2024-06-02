@@ -34,7 +34,7 @@ theorem putnam_1997_a6
 (x : ℝ → (ℤ → ℝ))
 (hx0 : ∀ c : ℝ, x c 0 = 0)
 (hx1 : ∀ c : ℝ, x c 1 = 1)
-(hxk : ∀ c : ℝ, ∀ k : ℕ, x c (k + 2) = (c*(x c (k + 1)) - (n - k)*(x c k))/(k + 1))
+(hxk : ∀ c : ℝ, ∀ k ≥ 0, x c (k + 2) = (c*(x c (k + 1)) - (n - k)*(x c k))/(k + 1))
 (S : Set ℝ := {c : ℝ | x c (n + 1) = 0})
 (hC : C = sSup S)
 : ∀ k : Set.Icc 1 n, x C k = putnam_1997_a6_solution n k :=
@@ -82,4 +82,3 @@ theorem putnam_1997_b5
 (hn : n ≥ 2)
 : tetration 2 n ≡ tetration 2 (n-1) [MOD n] :=
 sorry
-

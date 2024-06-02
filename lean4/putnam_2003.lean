@@ -3,18 +3,19 @@ open BigOperators
 
 open MvPolynomial
 
-abbrev putnam_2003_a1_solution : ℕ → ℕ := fun n => n
+abbrev putnam_2003_a1_solution : ℕ → ℕ := sorry
+-- fun n => n
 theorem putnam_2003_a1
 (n : ℕ)
 (hn : n > 0)
-: Set.ncard {a : ℕ → ℕ | ∃ k : ℕ, (k > 0) ∧ ∑ i in Finset.range k, a i = n ∧ ∀ i : ℕ, a i > 0 ∧ ∀ i : Finset.range (k-1), a i ≤ a (i + 1) ∧ a k ≤ a 1 + 1} = putnam_2003_a1_solution n :=
+: Set.ncard {a : ℕ → ℤ | ∃ k : ℕ, (k > 0) ∧ ∑ i in Finset.range k, a i = n ∧ (∀ i : ℕ, a i > 0) ∧ (∀ i : Finset.range (k-1), a i ≤ a (i + 1)) ∧ a k ≤ a 1 + 1} = putnam_2003_a1_solution n :=
 sorry
 
 theorem putnam_2003_a2
 (n : ℕ)
 (a b : Fin n → ℝ)
 (abnneg : ∀ i : Fin n, a i ≥ 0 ∧ b i ≥ 0)
-: (∏ i : Fin n, a i) ^ (1 / n) + (∏ i : Fin n, b i) ^ (1 / n) ≤ (∏ i : Fin n, (a i + b i)) ^ (1 / n) :=
+: (∏ i : Fin n, a i) ^ ((1 : ℝ) / n) + (∏ i : Fin n, b i) ^ ((1 : ℝ) / n) ≤ (∏ i : Fin n, (a i + b i)) ^ ((1 : ℝ) / n) :=
 sorry
 
 noncomputable abbrev putnam_2003_a3_solution : ℝ := sorry
@@ -53,7 +54,7 @@ theorem putnam_2003_b3
 (lcmicc : ℕ → ℕ)
 (hmulticc : ∀ n mult : ℕ, multicc n mult = ∀ i : Set.Icc 1 n, i.1 ∣ mult)
 (hlcmicc : ∀ n : ℕ, multicc n (lcmicc n) ∧ (∀ n' : ℕ, multicc n n' → n' ≥ (lcmicc n)))
-: ∀ n > 0, (n)! = ∏ i : Set.Icc 1 n, lcmicc (Nat.floor (n / i.1)) :=
+: ∀ n > 0, (n)! = ∏ i : Set.Icc 1 n, lcmicc (n / i.1) :=
 sorry
 
 
@@ -72,4 +73,3 @@ theorem putnam_2003_b6
 (hf : Continuous f)
 : (∫ x in (0 : ℝ)..1, (∫ y in (0 : ℝ)..1, |f x + f y|)) ≥ (∫ x in (0 : ℝ)..1, |f x|) :=
 sorry
-
