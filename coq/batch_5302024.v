@@ -6,7 +6,7 @@ Theorem putnam_2004_a6:
     RInt (compose (fun x => RInt (fun y => f x y) 0 1) (fun x => RInt (fun y => f x y) 0 1)) 0 1 <= 
     (RInt (fun x => RInt (fun y => f x y) 0 1) 0 1) ^ 2 +
     RInt (fun x => RInt (fun y => (f x y) ^ 2) 0 1) 0 1.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2004_a6.
 
 Section putnam_2004_b1.
@@ -16,7 +16,7 @@ Theorem putnam_2004_b1:
     let P (x: R) := sum_n (fun i => IZR (c i) * x ^ i) (n + 1) in
     forall (p q: Z), P (IZR (p / q)) = 0 -> let r := IZR (p / q) in
     forall (i: nat), and (le 1 i) (le i n) -> sum_n (fun j => IZR (c (sub n j)) * r ^ (i - j)) i = IZR (floor (sum_n (fun j => IZR (c (sub n j)) * r ^ (i - j)) i)). 
-Proof. Abort.
+Proof. Admitted.
 End putnam_2004_b1.
 
 Section putnam_2004_b2.
@@ -24,7 +24,7 @@ Require Import Factorial Reals Coquelicot.Coquelicot.
 Theorem putnam_2004_b2: 
     forall (m n: nat), ge m 0 /\ ge n 0 ->
     INR (fact (m + n)) / INR (m + n) ^ (m + n) < INR (fact m) / INR m ^ m * INR (fact n) / INR n ^ n.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2004_b2.
 
 Section putnam_2004_b5.
@@ -37,7 +37,7 @@ Theorem putnam_2004_b5:
         | S n' => m n' * prod_n m n'
     end in
     filterlim (fun x => (Lim_seq (fun nInc => prod_n (fun n => Rpower ((1 + x ^ (n + 1)) / (1 + x ^ n)) (x ^ n) ) nInc))) (at_left 1) (locally 0).
-Proof. Abort.
+Proof. Admitted.
 End putnam_2004_b5.
 
 Section putnam_2005_a1.
@@ -45,7 +45,7 @@ Require Import Nat List Coquelicot.Coquelicot.
 Theorem putnam_2005_a1:     
     forall (n: nat), n > 0 ->
     exists (l: list nat), forall (p q: nat), In p l /\ In q l -> exists (r1 s1 r2 s2: nat), p = 2 ^ r1 * 3 ^ s1 /\ q = 2 ^ r2 * 3 ^ s2 /\ p mod q <> 0 /\ q mod p <> 0.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2005_a1.
 
 Section putnam_2005_a3.
@@ -56,7 +56,7 @@ Theorem putnam_2005_a3:
     forall (r: C), p r = 0 ->  r = RtoC (-1) /\ r = RtoC 1 ->
     let g (z: C) := p z / Cpow z (n / 2) in
     forall (r: C), g r = 0 ->  r = RtoC (-1) /\ r = RtoC 1.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2005_a3.
 
 Section putnam_2005_a5.
@@ -64,7 +64,7 @@ Require Import Reals Coquelicot.Coquelicot.
 Definition putnam_2005_a5_solution := PI * (ln 2 / ln 10) / 8.
 Theorem putnam_2005_a5: 
     RInt (fun x => ln (x + 1) / (x ^ 2 + 1)) 0 1 = putnam_2005_a5_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2005_a5.
 
 Section putnam_2005_b1.
@@ -75,7 +75,7 @@ Theorem putnam_2005_b1:
     let p (x y: R) := sum_n (fun i => (sum_n (fun j => c i j * x ^ i * y ^ j) m)) (n + 1) in
     forall (a: R), p (IZR (floor a)) (IZR (floor (2 * a))) = 0 <->
     putnam_2005_b1_solution c n m.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2005_b1.
 
 Section putnam_2005_b2.
@@ -85,7 +85,7 @@ Definition putnam_2005_b2_solution (n: nat) (k: list nat) := (n, k) = (1%nat, [1
 Theorem putnam_2005_b2: 
     forall (n: nat) (k: list nat), forall (x: nat), fold_left add k 0%nat = sub (mul 5 n) 4 /\ sum_n (fun n => 1 / INR (nth n k 0%nat)) n = 1 <->
     putnam_2005_b2_solution n k.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2005_b2.
 
 Section putnam_2005_b3.
@@ -95,7 +95,7 @@ Theorem putnam_2005_b3:
     forall (f: R -> R) (x: R), x > 0 /\ f x > 0 /\ ex_derive f x ->
     exists (a: R), Derive f (a / x) = x  / f x <->
     putnam_2005_b3_solution f.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2005_b3.
 
 Section putnam_2005_b4.
@@ -112,7 +112,7 @@ Theorem putnam_2005_b4:
     (E1 l1 <-> fold_left Z.add (absl l1) 0 <= Z.of_nat m) /\ (E2 l2 <-> fold_left Z.add (absl l2) 0 <= Z.of_nat n)
     <-> 
     exists (a: nat), cardinal (list Z) E1 a /\ cardinal (list Z) E2 a.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2005_b4.
 
 Section putnam_2006_a5.
@@ -127,17 +127,20 @@ Theorem putnam_2006_a5:
     forall (n: nat) (th: R), odd n = true /\ ~ exists (p q: Z), th / PI = IZR (p / q) /\
     let a (k: nat) := tan (th + INR k * PI / INR n) in
     sum_n a n / prod_n a n = putnam_2006_a5_solution n.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2006_a5.
 
 Section putnam_2006_b2.
 Require Import List Reals Coquelicot.Coquelicot.
-Theorem putnam_2006_b2: 
-    forall (n: nat) (X: list R), length X = n ->
-    exists (presS: R -> Prop) (m: Z) (S: list R),
-    (forall (x: R), In x S <-> (In x X /\ presS x)) /\
-    Rabs (IZR m + (fold_left Rplus S 0)) <= 1 / INR (n + 1).
-Proof. Abort.
+Theorem putnam_2006_b2
+    (n : nat)
+    (npos : gt n 0)
+    (X : list R)
+    (hXcard : length X = n)
+    : exists (presS: R -> Prop) (m: Z) (S: list R), 
+    (neq (length S) 0) /\ (forall (x: R), In x S <-> (In x X /\ presS x)) /\
+    (Rabs (IZR m + (fold_left Rplus S 0)) <= 1 / INR (n + 1)).
+Proof. Admitted.
 End putnam_2006_b2.
 
 Section putnam_2006_b5.
@@ -151,7 +154,7 @@ Theorem putnam_2006_b5:
     (forall (f: R -> R) (x: R), 0 <= x <= 1 /\ continuity_pt f x /\ maxval >= I f - J f) /\
     (exists (f: R -> R) (x: R), 0 <= x <= 1 /\ continuity_pt f x /\ maxval = I f - J f) ->
     maxval = putnam_2006_b5_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2006_b5.
 
 Section putnam_2006_b6.
@@ -165,7 +168,7 @@ Theorem putnam_2006_b6:
         | S n' => a n' + 1 / (a n') ^ (1 / k)
     end in
     Lim_seq (fun n => (a n) ^ (k + 1) / INR n ^ k) = putnam_2006_b6_solution k.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2006_b6.
 
 Section putnam_2007_a4.
@@ -177,7 +180,7 @@ Theorem putnam_2007_a4:
     let f (x: R) := sum_n (fun i => c i * x ^ i) (n + 1) in
     repunit (INR n) -> repunit (f (INR n)) <->
     putnam_2007_a4_solution f.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2007_a4.
 
 Section putnam_2007_b1.
@@ -187,7 +190,7 @@ Theorem putnam_2007_b1:
     gt n 0 /\ forall (x: nat), gt (c x) 0 ->
     let f (x: nat) := sum_n (fun i => INR (mul (c i) (x ^ i))) (n + 1) in
     Z.to_nat (floor (f n)) %| Z.to_nat (floor (f (Z.to_nat (floor (f n + 1))))) = true <-> n = 1%nat.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2007_b1.
 
 Section putnam_2007_b2.
@@ -196,7 +199,7 @@ Theorem putnam_2007_b2:
     forall (f: R -> R), (forall (x: R), 0 <= x <= 1 /\ continuity_pt f x /\ ex_derive f x /\ RInt f 0 1 = 0) ->
     exists (max_f_prime_abs: R), (forall (x: R), 0 <= x <= 1 -> max_f_prime_abs >= Rabs (Derive f x)) /\ (exists (x: R), 0 <= x <= 1 -> max_f_prime_abs = Rabs (Derive f x)) /\
     forall (a: R), 0 < a < 1 -> Rabs (RInt f 0 a) = max_f_prime_abs / 8. 
-Proof. Abort.
+Proof. Admitted.
 End putnam_2007_b2.
 
 Section putnam_2007_b3.
@@ -209,7 +212,7 @@ Theorem putnam_2007_b3:
         | S n' => 3 * x n' + IZR (floor (x n' * sqrt (INR n)))
     end in
     x 2007%nat = putnam_2007_b3_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2007_b3.
 
 Section putnam_2008_a1.
@@ -217,7 +220,7 @@ Require Import Reals Coquelicot.Coquelicot.
 Theorem putnam_2008_a1: 
     forall (f: R -> R -> R) (x y z: R), f x y + f y z + f z x = 0 ->
     exists (g: R -> R), forall (x y: R), f x y = g x  - g y.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2008_a1.
 
 Section putnam_2008_a4.
@@ -226,7 +229,7 @@ Definition putnam_2008_a4_solution := False.
 Theorem putnam_2008_a4: 
     forall (f: R -> R) (x: R), f x = (if (Rle_dec x (exp 1)) then x else x * f (ln x)) ->
     ex_lim_seq (fun nInc => sum_n (fun n => 1 / f (INR n)) nInc) <-> putnam_2008_a4_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2008_a4.
 
 Section putnam_2008_b2.
@@ -239,7 +242,7 @@ Theorem putnam_2008_b2:
         | S n' => RInt (fun t => F n' t) 0 x
     end in
     Lim_seq (fun n => INR (fact n) * F n 1 / ln (INR n)) = putnam_2008_b2_solution. 
-Proof. Abort.
+Proof. Admitted.
 End putnam_2008_b2.
 
 Section putnam_2008_b4.
@@ -250,7 +253,7 @@ Theorem putnam_2008_b4:
     let h (x: nat) := Z.to_nat (floor (sum_n (fun i => IZR (c i) * INR (x ^ i)) (n + 1))) in
     (forall (i j: nat), i <> j /\ and (le 0 i) (le i (p ^ 2 - 1)) /\ and (le 0 j) (le j (p ^ 2 - 1)) -> (h i) mod (p ^ 2) <> h j mod p ^ 2) ->
     (forall (i j: nat), i <> j /\ and (le 0 i) (le i (p ^ 3 - 1)) /\ and (le 0 j) (le j (p ^ 3 - 1)) -> h i mod p ^ 2 <> h j mod p ^ 3).
-Proof. Abort.
+Proof. Admitted.
 End putnam_2008_b4.
 
 Section putnam_2008_b5.
@@ -259,7 +262,7 @@ Definition putnam_2008_b5_solution := 1.
 Theorem putnam_2008_b5: 
     forall (f: R -> R), continuity f /\ (forall (x: R), ex_derive f x) ->
     forall (q: R), exists (n1 n2 d: nat), q = INR (n1 / d) /\ f q = INR (n2 / d) /\ coprime n1 d = true /\ coprime n2 d = true.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2008_b5.
 
 Section putnam_2008_b6.
@@ -269,5 +272,5 @@ Theorem putnam_2008_b6:
     let klimited (sigma: {perm 'I_n}) : Prop := forall (i: 'I_n), Rle (Rabs (INR (nat_of_ord (sigma i)) - INR i)) (INR k) in
     forall (E: Ensemble {perm 'I_n}) (p: {perm 'I_n}), (E p <-> klimited p) ->
     exists (sz: nat), cardinal {perm 'I_n} E sz /\ Nat.odd sz <-> n mod (2 * k + 1) = 0 \/ n mod (2 * k + 1) = 1.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2008_b6.
