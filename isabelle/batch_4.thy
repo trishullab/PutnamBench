@@ -1,4 +1,5 @@
-theory Batch4 imports Complex_Main "HOL-Analysis.Analysis" "HOL-Computational_Algebra.Polynomial"
+theory batch_4 imports Complex_Main
+"HOL-Computational_Algebra.Polynomial"
 begin
 
 theorem putnam_2021_b4:
@@ -20,7 +21,7 @@ theorem putnam_2020_a1:
 definition putnam_2019_b5_solution::"nat \<times> nat" where "putnam_2019_b5_solution \<equiv> undefined"
 (* (2019, 1010) *)
 theorem putnam_2019_b5:
-  fixes f::"nat\<Rightarrow>nat" and p::"nat poly"
+  fixes f::"nat\<Rightarrow>int" and p::"real poly"
   assumes hf : "\<forall>x\<ge>3. f x = f (x-1) + f (x-2)"
     and f12 : "f 1 = 1 \<and> f 2 = 1"
     and pdeg : "degree p = 1008"
