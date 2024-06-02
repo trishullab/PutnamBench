@@ -9,7 +9,7 @@
         "problem_name" : "putnam_2009_b4",
         "informal_statement" : "Say that a polynomial with real coefficients in two variables, $x,y$, is \\emph{balanced} if the average value of the polynomial on each circle centered at the origin is $0$. The balanced polynomials of degree at most $2009$ form a vector space $V$ over $\\mathbb{R}$. Find the dimension of $V$.",
         "informal_solution" : "Prove that the dimension of $V$ is $2020050$.",
-        "tags" : ["algebra", "linear-algebra"]
+        "tags" : ["algebra", "linear_algebra"]
     },
     {
         "problem_name" : "putnam_2000_a6",
@@ -24,7 +24,7 @@
     {
         "problem_name" : "putnam_2000_b2",
         "informal_statement" : "Prove that the expression\n\\[\n\\frac{gcd(m,n)}{n}\\binom{n}{m}\n\\]\nis an integer for all pairs of integers $n\\geq m\\geq 1$.",
-        "tags" : ["number-theory", "algebra"]
+        "tags" : ["number_theory", "algebra"]
     },
     {
         "problem_name" : "putnam_2000_b3",

@@ -45,7 +45,7 @@
         "problem_name" : "putnam_2016_a1",
         "informal_statement" : "Find the smallest positive integer $j$ such that for every polynomial $p(x)$ with integer coefficients and for every integer $k$, the integer \\[ p^{(j)}(k) = \\left. \\frac{d^j}{dx^j} p(x) \\right|_{x=k} \\] (the $j$-th derivative of $p(x)$ at $k$) is divisible by 2016.",
         "informal_solution" : "Show that the solution is $18$.",
-        "tags" : []
+        "tags" : ["algebra", "number_theory"]
     },
     {
         "problem_name" : "putnam_2013_b3",
@@ -99,9 +99,6 @@
         "informal_statement" : "What is the maximum number of rational points that can lie on a circle in $\\mathbb{R}^2$ whose center is not a rational point? (A \\emph{rational point} is a point both of whose coordinates are rational numbers.)",
         "informal_solution" : "Show that the maximum number is $2$.",
         "tags" : ["number_theory"]
-    },
-    {
-        "problem_name" : "putnam_2007_b6"
     },
     {
         "problem_name" : "putnam_2006_b6",
