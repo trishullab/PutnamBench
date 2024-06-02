@@ -1,6 +1,8 @@
 import Mathlib
 open BigOperators
 
+-- This is a deprecated file as of 6/1/24
+
 section putnam_2023
 open Nat
 
