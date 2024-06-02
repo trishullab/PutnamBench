@@ -11,6 +11,8 @@ theorem putnam_2014_a1
 : ∀ k : ℕ, c k ≠ 0 → ∃ q : ℚ, c k = q ∧ (q.num = 1 ∨ Prime q.num.natAbs) :=
 sorry
 
+open Nat
+
 abbrev putnam_2014_a2_solution : ℕ → ℝ := sorry
 -- (fun n : ℕ => (-1) ^ (n - 1) / ((n - 1)! * (n)!))
 theorem putnam_2014_a2

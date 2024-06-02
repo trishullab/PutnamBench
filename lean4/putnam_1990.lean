@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
 
-open Filter Topology
+open Filter Topology Nat
 abbrev putnam_1990_a1_solution : (ℕ → ℤ) × (ℕ → ℤ) := sorry
 -- (fun n : ℕ => (n)!, fun n : ℕ => 2 ^ n)
 theorem putnam_1990_a1

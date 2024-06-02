@@ -47,10 +47,11 @@ theorem putnam_2004_b1
 : ∀ i : Fin n, isint (∑ j : Fin (i + 1), (P.coeff (n - j) * r ^ ((i.1 + 1) - j))) :=
 sorry
 
+open Nat
 theorem putnam_2004_b2
 (m n : ℕ)
 (mnpos : m > 0 ∧ n > 0)
-: ((m + n)! / (m + n) ^ (m + n) : ℤ) < (((m)! / m ^ m) * ((n)! / n ^ n) : ℤ) :=
+: ((m + n)! / ((m + n) ^ (m + n) : ℚ)) < (((m)! / (m ^ m : ℚ)) * ((n)! / (n ^ n : ℚ))) :=
 sorry
 
 abbrev putnam_2004_b5_solution : ℝ := sorry
