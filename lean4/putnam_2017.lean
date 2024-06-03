@@ -9,7 +9,7 @@ theorem putnam_2017_a1
 (Spos : ∀ S ∈ Q, ∀ x ∈ S, x > 0)
 (S2 : ∀ S ∈ Q, 2 ∈ S)
 (Sn : ∀ S ∈ Q, ∀ n, n ^ 2 ∈ S → n ∈ S)
-(Sn5 : ∀ S ∈ Q, ∀ n, n ∈ S → (n+5) ^ 2 ∈ S)
+(Sn5 : ∀ S ∈ Q, ∀ n, n ∈ S → (n + 5) ^ 2 ∈ S)
 : Set.univ \ (⋂ T ∈ Q, T) = putnam_2017_a1_solution :=
 sorry
 
@@ -54,10 +54,11 @@ sorry
 abbrev putnam_2017_b2_solution : ℕ := sorry
 -- 16
 theorem putnam_2017_b2
-(mina : ℕ)
-(S : ℕ → ℕ → ℕ := fun a k ↦ ∑ i : Fin k, a + i)
-(p : ℕ → ℕ → Prop := fun N k ↦ ∃ a > 0, S a k = N)
-(q : ℕ → Prop := fun N ↦ p N 2017 ∧ ∀ k : ℕ, k > 1 → k ≠ 2017 → ¬p N k)
+(mina : ℤ)
+(hmina : mina ≥ 0)
+(S : ℤ → ℕ → ℤ := fun a k ↦ ∑ i : Fin k, a + i)
+(p : ℤ → ℕ → Prop := fun N k ↦ ∃ a > 0, S a k = N)
+(q : ℤ → Prop := fun N ↦ p N 2017 ∧ ∀ k : ℕ, k > 1 → k ≠ 2017 → ¬p N k)
 (hqmina : q (S mina 2017))
 (hminalb : ∀ a > 0, q (S a 2017) → mina ≤ a)
 : (mina = putnam_2017_b2_solution) :=
@@ -78,12 +79,11 @@ theorem putnam_2017_b4
 : (∑' k : ℕ, 3 * log (4 * k + 2) / (4 * k + 2) - log (4 * k + 3) / (4 * k + 3) - log (4 * k + 4) / (4 * k + 4) - log (4 * k + 5) / (4 * k + 5) = putnam_2017_b4_solution) :=
 sorry
 
-open Function
+open Function Nat
 abbrev putnam_2017_b6_solution : ℕ := sorry
 -- 2016! / 1953! - 63! * 2016
 theorem putnam_2017_b6
 (S : Finset (Finset.range 64 → Finset.Icc 1 2017))
-(hs : ∀ x : (Finset.range 64 → Finset.Icc 1 2017), x ∈ S ↔ (Injective x ∧ (2017 ∣ (x 0 + ∑ i : Finset.range 64, i * (x i : ℕ)))))
+(hs : ∀ x : (Finset.range 64 → Finset.Icc 1 2017), x ∈ S ↔ (Injective x ∧ (2017 ∣ (∑ i : Finset.range 64, if i ≤ (⟨1, by norm_num⟩ : Finset.range 64) then (x i : ℤ) else i * (x i : ℤ)))))
 : (S.card = putnam_2017_b6_solution) :=
 sorry
-

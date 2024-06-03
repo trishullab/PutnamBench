@@ -24,11 +24,11 @@ sorry
 
 abbrev putnam_2008_b1_solution : ℕ := sorry
 -- 2
-def is_rational_point (x y : ℝ) : Prop := ∃ (a b : ℚ), a = x ∧ b = y
-def real_circle (a b r : ℝ) : Set (ℝ × ℝ) := {p | (p.1 - a)^2 + (p.2 - b)^2 = r^2}
+def is_rational_point (p : Fin 2 → ℝ) : Prop := ∃ (a b : ℚ), a = p 0 ∧ b = p 1
+def real_circle (c : Fin 2 → ℝ) (r : ℝ) : Set (Fin 2 → ℝ) := {p : Fin 2 → ℝ | Euclidean.dist p c = r}
 theorem putnam_2008_b1 :
-∀ a b r : ℝ, ¬ is_rational_point a b → (Set.ncard {p : ℝ × ℝ | p ∈ real_circle a b r ∧ is_rational_point p.1 p.2} ≥ putnam_2008_b1_solution)
-∧ ∃ a b r : ℝ, ¬ is_rational_point a b → (Set.ncard {p : ℝ × ℝ | p ∈ real_circle a b r ∧ is_rational_point p.1 p.2} = putnam_2008_b1_solution) :=
+∀ (c : Fin 2 → ℝ) (r : ℝ), ¬ is_rational_point c → (Set.ncard {p : Fin 2 → ℝ | p ∈ real_circle c r ∧ is_rational_point p} ≤ putnam_2008_b1_solution)
+∧ ∃ (c : Fin 2 → ℝ) (r : ℝ), ¬ is_rational_point c ∧ (Set.ncard {p : Fin 2 → ℝ | p ∈ real_circle c r ∧ is_rational_point p} = putnam_2008_b1_solution) :=
 sorry
 
 open Nat Filter Topology
@@ -63,4 +63,3 @@ theorem putnam_2008_b6
 (hnk : n > 0 ∧ k > 0)
 : Odd (Set.ncard {s : Equiv.Perm (Fin n) | klimited k n s}) ↔ (n ≡ 0 [MOD 2*k+1] ∨ n ≡ 1 [MOD 2*k+1]) :=
 sorry
-

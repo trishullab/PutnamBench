@@ -87,7 +87,7 @@
         "problem_name" : "putnam_1973_b4",
         "informal_statement" : "Suppose $f$ is a function on $[0,1]$ with continuous derivative satisfying $0 < f'(x) \\leq 1$ and $f 0 = 0$. Prove that $\\left[\\int_0^1 f(x) dx\\right]]^2 \\geq \\int_0^1 (f(x))^3 dx$, and find an example where equality holds.",
         "informal_solution" : "Show that one such example where equality holds is the identity function.",
-        "tags" : []
+        "tags" : ["analysis"]
     },
     {
         "problem_name" : "putnam_1972_a1",

@@ -15,18 +15,22 @@ def rewrite_solutions(year):
                 for j, word in enumerate(split_line):
                     if word == "abbrev":
                         solution_name = split_line[j + 1].strip()
-                # print(lines[i+1].split('--'))
+                print(lines[i+1].split('--'))
                 solution = lines[i + 1].split('--')[1].strip()
-                solution_dictionary[solution_name] = solution.replace("\n", "")
+                # the type comes between the first and second colon in the ith line
+                # the solution comes after the second colon in the ith line
+                # TODO: actually get the thing between the first : and the last := or last :
+                type = lines[i].split(':')[1].strip()
+                solution_dictionary[solution_name] = {'solution' : solution.replace("\n", ""), 'type' : type}
         print(solution_dictionary)
 
-    with open(f"solutions_replaced_putnam_{year}.lean", "w") as f:
+    with open(f"solutions_replaced/putnam_{year}_sol.lean", "w") as f:
         for line in lines:
             for solution_name, solution in solution_dictionary.items():
                 if solution_name in line and 'abbrev' not in line:
-                    if solution[0] == '(' and solution[-1] == ')':
-                        solution = solution[1:-1]
-                    line = line.replace(solution_name, f"({solution})")
+                    if solution['solution'][0] == '(' and solution['solution'][-1] == ')':
+                        solution['solution'] = solution['solution'][1:-1]
+                    line = line.replace(solution_name, f"(({solution['solution']}) : {solution['type']})")
             if 'abbrev' in line: # TODO: Modify this on release
                 continue
             f.write(line)
@@ -37,4 +41,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Rewrite solutions in the problem statement.')
     parser.add_argument('year', type=int, help='The year of the Putnam exam.')
     args = parser.parse_args()
-    rewrite_solutions(args.year)
+    if args.year == -1:
+        for year in range(1969, 2023 + 1):
+            rewrite_solutions(year)
+    else:
+        rewrite_solutions(args.year)

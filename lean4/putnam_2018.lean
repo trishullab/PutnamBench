@@ -2,9 +2,9 @@ import Mathlib
 open BigOperators
 
 
-abbrev putnam_2018_a1_solution : Set (ℕ × ℕ) := sorry
+abbrev putnam_2018_a1_solution : Set (ℤ × ℤ) := sorry
 -- {⟨673, 1358114⟩, ⟨674, 340033⟩, ⟨1009, 2018⟩, ⟨2018, 1009⟩, ⟨340033, 674⟩, ⟨1358114, 673⟩}
-theorem putnam_2018_a1 : ∀ a b : ℕ, (a > 0 ∧ b > 0 ∧ ((1: ℚ) / a + (1: ℚ) / b = (3: ℚ) / 2018)) ↔ (⟨a, b⟩ ∈ putnam_2018_a1_solution) :=
+theorem putnam_2018_a1 : ∀ a b : ℤ, (a > 0 ∧ b > 0 ∧ ((1: ℚ) / a + (1: ℚ) / b = (3: ℚ) / 2018)) ↔ (⟨a, b⟩ ∈ putnam_2018_a1_solution) :=
 sorry
 
 noncomputable abbrev putnam_2018_a3_solution : ℝ := sorry
@@ -19,12 +19,12 @@ sorry
 -- Note: uses (ℕ → ℕ) instead of (Set.Icc 1 n → ℕ)
 theorem putnam_2018_a4
 (m n : ℕ)
-(a : ℕ → ℕ)
+(a : ℕ → ℤ)
 (G : Type*) [Group G]
 (g h : G)
 (mnpos : m > 0 ∧ n > 0)
 (mngcd : Nat.gcd m n = 1)
-(ha : ∀ k : Set.Icc 1 n, a k = Nat.floor (m * k / n) - Nat.floor (m * (k - 1) / n))
+(ha : ∀ k : Set.Icc 1 n, a k = Int.floor (m * k / (n : ℝ)) - Int.floor (m * ((k : ℤ) - 1) / (n : ℝ)))
 (ghprod : ((List.Ico 1 (n + 1)).map (fun k : ℕ => g * h ^ (a k))).prod = 1)
 : g * h = h * g :=
 sorry
@@ -66,7 +66,7 @@ abbrev putnam_2018_b3_solution : Set ℕ := sorry
 theorem putnam_2018_b3
 (n : ℕ)
 (hn : n > 0)
-: ((n < 10^100 ∧ (n ∣ 2^n ∧ (n - 1) ∣ 2^n - 1 ∧ (n - 2) ∣ 2^n - 2)) ↔ n ∈ putnam_2018_b3_solution) :=
+: ((n < 10^100 ∧ ((n : ℤ) ∣ (2^n : ℤ) ∧ (n - 1 : ℤ) ∣ (2^n - 1 : ℤ) ∧ (n - 2 : ℤ) ∣ (2^n - 2 : ℤ))) ↔ n ∈ putnam_2018_b3_solution) :=
 sorry
 
 theorem putnam_2018_b4
@@ -79,8 +79,7 @@ theorem putnam_2018_b4
 sorry
 
 theorem putnam_2018_b6
-(S : Finset (Fin 2018 → ℕ))
-(hS : S = {s : Fin 2018 → ℕ | (∀ i : Fin 2018, s i ∈ ({1, 2, 3, 4, 5, 6, 10} : Set ℕ)) ∧ (∑ i : Fin 2018, s i) = 3860})
+(S : Finset (Fin 2018 → ℤ))
+(hS : S = {s : Fin 2018 → ℤ | (∀ i : Fin 2018, s i ∈ ({1, 2, 3, 4, 5, 6, 10} : Set ℤ)) ∧ (∑ i : Fin 2018, s i) = 3860})
 : S.card ≤ 2 ^ 3860 * ((2018 : ℝ) / 2048) ^ 2018 :=
 sorry
-

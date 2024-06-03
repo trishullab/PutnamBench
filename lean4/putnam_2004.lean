@@ -47,10 +47,11 @@ theorem putnam_2004_b1
 : ∀ i : Fin n, isint (∑ j : Fin (i + 1), (P.coeff (n - j) * r ^ ((i.1 + 1) - j))) :=
 sorry
 
+open Nat
 theorem putnam_2004_b2
 (m n : ℕ)
 (mnpos : m > 0 ∧ n > 0)
-: (m + n)! / (m + n) ^ (m + n) < ((m)! / m ^ m) * ((n)! / n ^ n) :=
+: ((m + n)! / ((m + n) ^ (m + n) : ℚ)) < (((m)! / (m ^ m : ℚ)) * ((n)! / (n ^ n : ℚ))) :=
 sorry
 
 abbrev putnam_2004_b5_solution : ℝ := sorry
@@ -73,4 +74,3 @@ theorem putnam_2004_b6
 (hbB : Set.range b = B ∧ ∀ i : ℕ, b i < b (i + 1))
 : (∀ r : ℕ, ∃ i : ℕ, (b (i + 1) - b i) ≥ r) → Tendsto (fun x => N x / x) atTop (𝓝 0) :=
 sorry
-

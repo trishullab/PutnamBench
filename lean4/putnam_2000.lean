@@ -30,7 +30,6 @@ theorem putnam_2000_a5
 : ∃ n m : Fin 3, (n ≠ m) ∧ (dist (p n) (p m) ≥ r ^ ((1 : ℝ) / 3)) :=
 sorry
 
-
 theorem putnam_2000_a6
 (f : Polynomial ℤ)
 (a : ℕ → ℤ)

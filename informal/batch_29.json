@@ -3,7 +3,7 @@
         "problem_name" : "putnam_2006_b4",
         "informal_statement" : "Let $Z$ denote the set of points in $\\mathbb{R}^n$ whose coordinates are $0$ or $1$. (Thus $Z$ has $2^n$ elements, which are the vertices of a unit hypercube in $\\mathbb{R}^n$.) Given a vector subspace $V$ of $\\mathbb{R}^n$, let $Z(V)$ denote the number of members of $Z$ that lie in $V$. Let $k$ be given, $0 \\leq k \\leq n$. Find the maximum, over all vector subspaces $V \\subseteq \\mathbb{R}^n$ of dimension $k$, of the number of points in $V \\cap Z$.",
         "informal_solution" : "Prove that the maximum is $2^k$.",
-        "tags" : ["linear-algebra"]
+        "tags" : ["linear_algebra"]
     },
     {
         "problem_name" : "putnam_1992_a1",
@@ -20,7 +20,7 @@
         "problem_name" : "putnam_1992_a3",
         "informal_statement" : "For a given positive integer $m$, find all triples $(n, x, y)$ of positive integers, with $n$ relatively prime to $m$, which satisfy\n\\[\n(x^2 + y^2)^m = (xy)^n.\n\\]",
         "informal_solution" : "Prove that if $m$ is odd, there are no solutions, and if $m$ is even, the only solution is\n$(n, x, y) = (m + 1, 2 ^ {m/2}, 2 ^{m/2})$.",
-        "tags" : ["algebra", "number-theory"]
+        "tags" : ["algebra", "number_theory"]
     },
     {
         "problem_name" : "putnam_1992_a4",
@@ -54,11 +54,11 @@
         "problem_name" : "putnam_1992_b5",
         "informal_statement" : "Let $D_n$ denote the value of the $(n-1) \\times (n-1)$ determinant\n\\[\n\\left[\n\\begin{array}{cccccc}\n3 & 1 & 1 & 1 & \\cdots & 1 \\\\\n1 & 4 & 1 & 1 & \\cdots & 1 \\\\\n1 & 1 & 5 & 1 & \\cdots & 1 \\\\\n1 & 1 & 1 & 6 & \\cdots & 1 \\\\\n\\vdots & \\vdots & \\vdots & \\vdots & \\ddots & \\vdots \\\\\n1 & 1 & 1 & 1 & \\cdots & n+1\n\\end{array}\n\\right].\n\\]\nIs the set $\\left\\{ \\frac{D_n}{n!} \\right\\}_{n \\geq 2}$ bounded?",
         "informal_solution" : "Prove that the set is not bounded.",
-        "tags" : ["linear-algebra", "analysis"]
+        "tags" : ["linear_algebra", "analysis"]
     },
     {
         "problem_name" : "putnam_1992_b6",
         "informal_statement" : "Let $M$ be a set of real $n \\times n$ matrices such that\n\\begin{itemize}\n\\item[(i)] $I \\in M$, where $I$ is the $n \\times n$ identity matrix;\n\\item[(ii)] if $A \\in M$ and $B \\in M$, then either $AB \\in M$ or $-AB \\in M$, but not both;\n\\item[(iii)] if $A \\in M$ and $B \\in M$, then either $AB = BA$ or $AB = -BA$;\n\\item[(iv)] if $A \\in M$ and $A \\neq I$, there is at least one $B \\in M$ such that $AB = -BA$.\n\\end{itemize}\nProve that $M$ contains at most $n^2$ matrices.",
-        "tags" : ["linear-algebra"]
+        "tags" : ["linear_algebra"]
     }
 ]

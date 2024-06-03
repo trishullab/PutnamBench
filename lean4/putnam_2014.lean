@@ -8,8 +8,10 @@ theorem putnam_2014_a1
 (hfdiff : ContDiff ℝ ⊤ f)
 (c : ℕ → ℝ)
 (hc : ∀ k : ℕ, c k = taylorCoeffWithin f k Set.univ 0)
-: ∀ k : ℕ, c k ≠ 0 → ∃ q : Rat, c k = q ∧ (q.num = 1 ∨ Prime q.num.natAbs) :=
+: ∀ k : ℕ, c k ≠ 0 → ∃ q : ℚ, c k = q ∧ (q.num = 1 ∨ Prime q.num.natAbs) :=
 sorry
+
+open Nat
 
 abbrev putnam_2014_a2_solution : ℕ → ℝ := sorry
 -- (fun n : ℕ => (-1) ^ (n - 1) / ((n - 1)! * (n)!))
@@ -17,7 +19,7 @@ theorem putnam_2014_a2
 (n : ℕ)
 (A : Matrix (Fin n) (Fin n) ℝ)
 (npos : n > 0)
-(hA : ∀ i j : Fin n, A i j = 1 / min (i.1 + 1) (j.1 + 1))
+(hA : ∀ i j : Fin n, A i j = 1 / min (i.1 + 1 : ℚ) (j.1 + 1))
 : A.det = putnam_2014_a2_solution n :=
 sorry
 
@@ -53,4 +55,3 @@ theorem putnam_2014_b6
 (hrat : ∀ r ∈ Icc (0 : ℚ) 1, ∃ a b : ℤ, f r = a + b * r)
 : (∃ I : Finset (Interval ℝ), (∀ Ii ∈ I, ∃ m c : ℝ, ∀ x ∈ coeHom Ii, f x = c + m * x) ∧ Icc 0 1 = ⋃ Ii ∈ I, coeHom Ii) :=
 sorry
-
