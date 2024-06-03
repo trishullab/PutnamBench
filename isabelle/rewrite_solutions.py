@@ -17,24 +17,21 @@ def copy_files_in_directory(directory):
                 # Construct the new file path
                 base, extension = os.path.splitext(filename)
 
-                if not extension == '.json':
+                if not extension == '.thy':
                     continue
                 new_filename = f"{base}_copy{extension}"
                 new_file_path = os.path.join(directory, new_filename)
                 
                 with open(file_path, 'r') as file:
                     conts = file.read()
-                    
-                    sol_start = conts.find("(*")
-                    sol_end = conts.find("*)")
 
                     defn = conts.find(f"definition {base}_solution")
                     thm = conts.find(f"theorem {base}")
                     if defn > 0:
 
-                        sol_start = conts.find("(*")
-                        sol_end = conts.find("*)")
-                        conts = conts.replace(f"{base}_solution", "(" + conts[sol_start+2:sol_end] + ")")
+                        sol_start = conts[defn:].find("(*")
+                        sol_end = conts[defn:].find("*)")
+                        conts = conts.replace(f"{base}_solution", "(" + conts[defn:][sol_start+2:sol_end] + ")")
 
                         thm = conts.find(f"theorem {base}")
                         conts = conts[:defn] + conts[thm:]
