@@ -6,50 +6,46 @@ open Nat
 abbrev putnam_2023_a1_solution : ℕ := sorry
 -- 18
 theorem putnam_2023_a1
-(N : ℕ)
-(hn : N > 0)
 (f : ℕ → ℝ → ℝ)
-(hf : ∀ n : ℕ, ∀ x : ℝ, f n x = ∏ i : Set.Icc 1 n, Real.cos (i * x))
-: (|iteratedDeriv 2 (f N) 0| > 2023 ∧ ∀ m < N, (|iteratedDeriv 2 (f m) 0| ≤ 2023)) ↔ n = putnam_2023_a1_solution :=
+(hf : ∀ n > 0, f n = fun x : ℝ => ∏ i in Finset.Icc 1 n, Real.cos (i * x))
+: putnam_2023_a1_solution > 0 ∧ |iteratedDeriv 2 (f putnam_2023_a1_solution) 0| > 2023 ∧
+∀ n > 0, n < putnam_2023_a1_solution → (|iteratedDeriv 2 (f n) 0| ≤ 2023) :=
 sorry
 
 abbrev putnam_2023_a2_solution : ℕ → Set ℝ := sorry
--- fun n => {(-1 : ℝ)/(factorial n), (-1 : ℝ)/(factorial n)}
+-- fun n => {(1 : ℝ)/(factorial n), -(1 : ℝ)/(factorial n)}
 theorem putnam_2023_a2
 (n : ℕ)
-(hn0 : n > 0)
-(hnev : Even n)
+(hn : n > 0 ∧ Even n)
 (p : Polynomial ℝ)
-(hp : Polynomial.Monic p)
-(hpinv : ∀ k : ℤ, |k| ≥ 1 ∧ |k| ≤ n → p.eval (1/k : ℝ) = k^2)
-: ∀ x : ℝ, (p.eval (1/x) = x^2 ∧ ¬ ∃ k : ℤ, x = k ∧ |k| < n) ↔ x ∈ putnam_2023_a2_solution n :=
+(hp : Polynomial.Monic p ∧ p.degree = 2*n)
+(S : Set ℝ := {x : ℝ | ∃ k : ℤ, x = k ∧ 1 ≤ |k| ∧ |k| ≤ n})
+(hpinv : ∀ k ∈ S, p.eval (1/k) = k^2)
+: {x : ℝ | p.eval (1/x) = x^2} \ S = putnam_2023_a2_solution n :=
 sorry
+
 
 noncomputable abbrev putnam_2023_a3_solution : ℝ := sorry
 -- Real.pi / 2
 theorem putnam_2023_a3
-(r : ℝ)
-(hr : r > 0)
-(p : ℝ → Prop)
-(h : p = λ t => ∃ g f : ℝ → ℝ, ContDiff ℝ 1 f → ContDiff ℝ 1 g →
-(f 0 > 0 ∧ g 0 = 0 ∧ (∀ x : ℝ, |deriv f x| ≤ |g x| ∧ |deriv g x| ≤ |f x|) ∧ f t = 0))
-: ((p r) ∧ ∀ t : ℝ, t > 0 → t < r → ¬ (p t)) ↔ r = putnam_2023_a3_solution :=
+: sInf {r > 0 | ∃ f g : ℝ → ℝ, Differentiable ℝ f ∧ Differentiable ℝ g ∧
+f 0 > 0 ∧ g 0 = 0 ∧ (∀ x : ℝ, |deriv f x| ≤ |g x| ∧ |deriv g x| ≤ |f x|) ∧ f r = 0} = putnam_2023_a3_solution :=
 sorry
+
 
 abbrev putnam_2023_b2_solution : ℕ := sorry
 -- 3
 theorem putnam_2023_b2
-: sInf {k | ∃ n : ℕ, k = List.sum (digits 2 (2023*n))} = putnam_2023_b2_solution :=
+: sInf {(digits 2 (2023*n)).sum | n > 0} = putnam_2023_b2_solution :=
 sorry
 
 def num_ones : List ℕ → ℕ
 | [] => (0 : ℕ)
 | (h :: t) => if h = 1 then num_ones t + 1 else num_ones t
 abbrev putnam_2023_a5_solution : Set ℂ := sorry
--- {-(3^1010 - 1)/2, -(3^1010 - 1)/2 + sqrt (9^1010 - 1) * Complex.I/4, -(3^1010 - 1)/2 - sqrt (9^1010 - 1) * Complex.I/4}
+-- {-(3^1010 - 1)/2, -(3^1010 - 1)/2 + Real.sqrt (9^1010 - 1) * Complex.I/4, -(3^1010 - 1)/2 - Real.sqrt (9^1010 - 1) * Complex.I/4}
 theorem putnam_2023_a5
-(f : ℂ → ℂ := ∑ k in Finset.range (3^1010), (-2)^( num_ones (digits 3 k)) * (z + k)^2023)
-: ∀ z : ℂ, z ∈ putnam_2023_a5_solution ↔ f z = 0 :=
+: {z : ℂ | ∑ k in Finset.Icc 0 (3^1010 - 1), (-2)^(num_ones (digits 3 k)) * (z + k)^2023 = 0} = putnam_2023_a5_solution :=
 sorry
 
 open Topology Filter
