@@ -31,10 +31,11 @@ def copy_files_in_directory(directory):
 
                         sol_start = conts[defn:].find("(*")
                         sol_end = conts[defn:].find("*)")
-                        conts = conts.replace(f"{base}_solution", "(" + conts[defn:][sol_start+2:sol_end] + ")")
 
-                        thm = conts.find(f"theorem {base}")
-                        conts = conts[:defn] + conts[thm:]
+                        thm = conts[defn:][sol_end+3:]
+                        thm = thm.replace(f"{base}_solution", "(" + conts[defn:][sol_start+2:sol_end] + ")")
+
+                        conts = conts[:defn] + thm
 
 
                     # Copy the file

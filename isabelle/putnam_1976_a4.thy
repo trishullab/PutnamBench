@@ -3,8 +3,9 @@ theory putnam_1976_a4 imports Complex_Main
 begin
 
 definition putnam_1976_a4_solution :: "(real \<Rightarrow> real) \<times> (real \<Rightarrow> real)" where
-"putnam_1976_a4_solution \<equiv> (\<lambda> r :: real. -1/(r + 1), \<lambda> r :: real. -(r+1)/r)"
-theorem putnam_1976_a4_solution:
+"putnam_1976_a4_solution \<equiv> undefined"
+(* (\<lambda> r :: real. -1/(r + 1), \<lambda> r :: real. -(r+1)/r) *)
+theorem putnam_1976_a4:
   fixes a b c d :: "int"
     and r :: "real"
     and P Q :: "rat poly"

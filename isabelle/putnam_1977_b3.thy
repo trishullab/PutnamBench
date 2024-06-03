@@ -2,7 +2,8 @@ theory putnam_1977_b3 imports Complex_Main
 begin
 
 definition putnam_1977_b3_solution :: "bool" where
-"putnam_1977_b3_solution \<equiv> False"
+"putnam_1977_b3_solution \<equiv> undefined"
+(* False *)
 theorem putnam_1977_b3:
   fixes P balanced :: "(real \<times> real \<times> real) \<Rightarrow> bool"
     and B :: "(real \<times> real \<times> real) \<Rightarrow> (real \<times> real \<times> real)"

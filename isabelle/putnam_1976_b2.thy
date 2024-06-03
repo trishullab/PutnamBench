@@ -3,7 +3,8 @@ theory putnam_1976_b2 imports Complex_Main
 begin
 
 definition putnam_1976_b2_solution :: "nat \<times> (((nat \<times> nat) list) set)" where
-"putnam_1976_b2_solution \<equiv> (8, {[(0,0)], [(2, 0)], [(0, 1)], [(0, 2)], [(0, 3)], [(0, 4)], [(0, 5)], [(0, 6)]})"
+"putnam_1976_b2_solution \<equiv> undefined"
+(* (8, {[(0,0)], [(2, 0)], [(0, 1)], [(0, 2)], [(0, 3)], [(0, 4)], [(0, 5)], [(0, 6)]}) *)
 theorem putnam_1976_b2:
   fixes G (structure)
     and A B :: "'a"
