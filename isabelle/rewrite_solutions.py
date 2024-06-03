@@ -16,6 +16,9 @@ def copy_files_in_directory(directory):
             if os.path.isfile(file_path):
                 # Construct the new file path
                 base, extension = os.path.splitext(filename)
+
+                if not extension == '.json':
+                    continue
                 new_filename = f"{base}_copy{extension}"
                 new_file_path = os.path.join(directory, new_filename)
                 
@@ -45,5 +48,5 @@ def copy_files_in_directory(directory):
         print(f"An error occurred: {e}")
 
 # Usage
-directory_path = "isabelle/"
+directory_path = "./"
 copy_files_in_directory(directory_path)
