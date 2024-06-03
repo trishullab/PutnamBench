@@ -5,26 +5,26 @@ open BigOperators
 open Polynomial
 
 abbrev putnam_2022_a1_solution : Set (ℝ × ℝ) := sorry
--- {(0,0)} ∪ {q | let ⟨a,b⟩ := q; |a| ≥ 1} ∪ {q | let ⟨a, b⟩ := q; |a| > 0 ∧ |a| < 1 ∧ (b < (Real.log (1 - Real.sqrt (1-a^2)) /a)^2 - |a| * (1 - Real.sqrt (1-a^2) /a ) ∨ b > (Real.log (1 - Real.sqrt (1+a^2)/a) )^2 - |a| * (1 - Real.sqrt (1+a^2)/a))}
+-- {(a, b) | (a = 0 ∧ b = 0) ∨ (|a| ≥ 1) ∨ (0 < |a| ∧ |a| < 1 ∧ (b < (Real.log (1 - (1 - Real.sqrt (1 - a^2))/a))^2 - |a| * (1 - Real.sqrt (1 - a^2))/a ∨ b > (Real.log (1 - (1 + Real.sqrt (1 - a^2))/a))^2 - |a| * (1 + Real.sqrt (1 - a^2))/a))}
 theorem putnam_2022_a1
-: ∀ a b : ℝ, (∃! x : ℝ, a * x + b = Real.log (1 + x^2)) ↔ (a, b) ∈ putnam_2022_a1_solution :=
+: {(a, b) | ∃! x : ℝ, a * x + b = Real.log (1 + x^2)} = putnam_2022_a1_solution :=
 sorry
 
-noncomputable def num_neg_coeff (n : ℕ) (P : ℝ[X]) : ℕ := ∑ i : Fin (n + 1), (if P.coeff (i : ℕ) < 0 then 1 else 0)
 abbrev putnam_2022_a2_solution : ℕ → ℕ := sorry
--- fun n => 2 * n - 2
+-- fun n => 2*n - 2
 theorem putnam_2022_a2
 (n : ℕ)
 (hn : n ≥ 2)
-: (∀ P : ℝ[X], natDegree P = n → num_neg_coeff n (P * P) ≥ putnam_2022_a2_solution n) ∧ (∃ P : ℝ[X], natDegree P = n ∧ num_neg_coeff n (P * P) = putnam_2022_a2_solution) :=
+(S : Set ℝ[X] := {P : ℝ[X] | natDegree P = n})
+(negs : ℝ[X] → ℕ := fun P : ℝ[X] => ∑ i in Finset.range (P.natDegree + 1), if P.coeff i < 0 then 1 else 0)
+: sSup {negs (P^2) | P ∈ S} = putnam_2022_a2_solution n :=
 sorry
 
 theorem putnam_2022_a3
 (p : ℕ)
-(hp : p ≥ 5 ∧ Nat.Prime p)
-(Sp : Set (ℕ → Finset.Icc 1 (p - 1)))
-(hSp : ∀ a ∈ Sp, ∀ n ≥ 1, (a n * a (n + 2)) ≡ (1 + a (n + 1)) [MOD p])
-: (Set.ncard Sp ≡ 0 [MOD 5]) ∨ (Set.ncard Sp ≡ 2 [MOD 5]) :=
+(hp : Nat.Prime p ∧ p > 5)
+(f : ℕ := {a : ℕ → (ZMod p) | ∀ n : ℕ, a n ≠ 0 ∧ a n * a (n + 2) = 1 + a (n + 1)}.ncard)
+: f ≡ 0 [MOD 5] ∨ f ≡ 2 [MOD 5] :=
 sorry
 
 -- Note: uses (ℕ → ℝ) instead of (Fin (2 * n) → ℝ)
