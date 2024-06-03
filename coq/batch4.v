@@ -10,7 +10,7 @@ Theorem putnam_2021_b4:
         end in
     forall (m: nat), m > 2 = true -> 
     exists (p: nat), (\prod_(k < (F m)) k^k) mod (F m) = F p.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2021_b4.
 
 Section putnam_2020_a1. 
@@ -26,7 +26,7 @@ Theorem putnam_2020_a1:
         <-> A n
     )
     -> cardinal nat A putnam_2020_a1_solution.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2020_a1.
 
 Section putnam_2019_b5. 
@@ -43,7 +43,7 @@ Theorem putnam_2019_b5:
     exists (R: numDomainType) (p: {poly R}), forall (n: nat), 
     and (le 0%nat n) (le n 1008%nat) -> size p = 1008%nat /\ (p.[2*n%:R+1]) = (F (add (mul 2 n) 1%nat))%:R 
     -> exists (j k: nat), p.[2019] = (F j)%:R - (F k)%:R.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2019_b5.
 
 Section putnam_2018_a1.
@@ -54,7 +54,7 @@ Theorem putnam_2018_a1:
     forall (a b: nat), gt a 0 /\ gt b 0 ->
     1/inject_Z (Z.of_nat a) + 1/inject_Z (Z.of_nat b) = 3/2018 
     <-> putnam_2018_a1_solution a b.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2018_a1.
 
 Section putnam_2018_a3. 
@@ -73,7 +73,7 @@ Theorem putnam_2018_a3 :
     let coeffs := map f X in
     let val := fold_right Rmult 1 coeffs in
     putnam_2018_a3_solution = val.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2018_a3.
 
 Section putnam_2017_a1. 
@@ -83,5 +83,5 @@ Theorem putnam_2017_a1:
     exists (A: nat -> Prop), forall (B: nat -> Prop),
     let valid_set (A: nat -> Prop): Prop := forall (n: nat), A 2 /\ A (n*n) -> A n /\ A n -> A ((n+5)*(n+5)) in
     valid_set A /\ valid_set B /\ forall (n: nat), A n -> B n -> putnam_2017_a1_solution A n.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2017_a1.

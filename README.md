@@ -1,12 +1,1 @@
-# PUTNAM
-
-TODO:
-1. Finish Lean formalizations.
-2. Finish informal statement collection.
-3. Finish Isabelle formalizations.
-4. Finish Coq formalizations.
-5. Run evaluations.
-
-Also:
-1. Figure out licensing.
-2. Figure out formatting of formalizations in Isabelle, Coq (by file?).
+We introduce PutnamBench, a benchmark for evaluation of theorem proving algorithms on competition mathematics problems sourced from the William Lowell Putnam Mathematical Competition. Our formalizations currently support three formal languages : Lean 4, Isabelle, and Coq. Every problem has a formalization for Lean and Isabelle, while Coq currently contains a subset due to unique formalization challenges present from accessible Coq mathematical repositories. 

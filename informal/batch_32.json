@@ -7,13 +7,13 @@
     {
         "problem_name" : "putnam_1989_a6",
         "informal_statement" : "Let $\\alpha=1+a_1x+a_2x^2+\\cdots$ be a formal power series with coefficients in the field of two elements. Let\n\\[\na_n =\n\\begin{cases}\n1 & \\parbox{2in}{if every block of zeros in the binary expansion of $n$ has an even number of zeros in the block} \\\\[.3in]\n0 & \\text{otherwise.}\n\\end{cases}\n\\]\n(For example, $a_{36}=1$ because $36=100100_2$ and $a_{20}=0$ because $20=10100_2.$) Prove that $\\alpha^3+x\\alpha+1=0.$",
-        "tags" : ["algebra", "abstract-algebra"]
+        "tags" : ["algebra", "abstract_algebra"]
     },
     {
         "problem_name" : "putnam_1989_b2",
         "informal_statement" : "Let $S$ be a non-empty set with an associative operation that is left and right cancellative ($xy=xz$ implies $y=z$, and $yx=zx$ implies $y=z$). Assume that for every $a$ in $S$ the set $\\{a^n:\\,n=1, 2, 3, \\ldots\\}$ is finite. Must $S$ be a group?",
         "informal_solution" : "Prove that $S$ must be a group.",
-        "tags" : ["abstract-algebra"]
+        "tags" : ["abstract_algebra"]
     },
     {
         "problem_name" : "putnam_1989_b3",
@@ -25,7 +25,7 @@
         "problem_name" : "putnam_1989_b4",
         "informal_statement" : "Can a countably infinite set have an uncountable collection of non-empty subsets such that the intersection of any two of them is finite?",
         "informal_solution" : "Prove that such a collection exists.",
-        "tags" : ["set-theory"]
+        "tags" : ["set_theory"]
     },
     {
         "problem_name" : "putnam_1988_a2",

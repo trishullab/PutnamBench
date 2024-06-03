@@ -1,1 +1,1 @@
-Current, the files are in .json's split according to the batch - we will join them together later.
+The informal statement information is encapsulated in json files indicating batches of problems.

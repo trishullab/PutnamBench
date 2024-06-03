@@ -1,6 +1,5 @@
 theory putnam_1979_b2 imports
 Complex_Main
-"HOL-Analysis.Lebesgue_Measure"
 "HOL-Analysis.Interval_Integral"
 begin
 

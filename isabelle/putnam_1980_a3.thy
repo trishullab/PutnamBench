@@ -1,7 +1,6 @@
 theory putnam_1980_a3 imports
 Complex_Main
 "HOL-Analysis.Interval_Integral"
-"HOL-Analysis.Lebesgue_Measure"
 begin
 
 definition putnam_1980_a3_solution :: real where "putnam_1980_a3_solution \<equiv> undefined"

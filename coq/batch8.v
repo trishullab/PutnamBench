@@ -1,7 +1,7 @@
 (* Skipped due to inability to use groups in mathcomp *)
 (* Section putnam_2018_a4. 
 Theorem putnam_2018_a4: True.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2018_a4.  *)
 
 (* TODO: WIP *)
@@ -12,7 +12,7 @@ Theorem putnam_2018_b1:
     let P := fun (a b : Z) => 0 <= a <= 2 /\ 0 <= b <= 100 in
     forall (a b: Z), P a b ->
     True.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2018_b1. 
 
 Section putnam_2018_b6. 
@@ -26,7 +26,7 @@ Theorem putnam_2018_b6:
         fold_left Nat.add l 0 = 3860
     ) ->
     exists (n: nat), cardinal (list nat) E n /\ Rle (INR n) (Rmult (Rpower 2 3860) (Rpower (Rdiv (INR 2018) (INR 2048)) 2018)).
-Proof. Abort.
+Proof. Admitted.
 End putnam_2018_b6. 
 
 Section putnam_2017_a2. 
@@ -43,7 +43,7 @@ Theorem putnam_2017_a2:
     forall (n: nat), ge n 0 -> 
     exists (R: numDomainType) (p: {poly R}) (i: nat), (exists (z: Z), p`_i = if (Z.ltb z 0) then -(Z.to_nat z)%:R else (Z.to_nat z)%:R) /\
     exists (z: Z), forall (x: RbaseSymbolsImpl.R), Q n x = IZR z /\ (if (Z.ltb z 0) then -(Z.to_nat z)%:R else (Z.to_nat z)%:R) = p.[n%:R].
-Proof. Abort.
+Proof. Admitted.
 End putnam_2017_a2. 
 
 Section putnam_2017_a3. 
@@ -55,7 +55,7 @@ Theorem putnam_2017_a3:
     (RInt f a b = RInt g a b) /\ (exists (x: R), a <= x <= b /\ f x <> g x) ->
     let I_n (n: nat) := RInt (fun x => (f x)^(n+1)/(g x)^n) a b in
     forall (n: nat), I_n n < I_n (Nat.add n 1) /\ ~ ex_lim_seq I_n.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2017_a3. 
 
 Section putnam_2013_a6. 
@@ -78,7 +78,7 @@ Theorem putnam_2013_a6:
         (Z.add (fst acc) (w (fst p - fst q, snd p - snd q)), Z.add (snd acc) (w (fst p - fst q, snd p - snd q)))) l (0, 0)) 
     in
     forall (l : list (Z * Z * (Z * Z))), length l <> Z.to_nat 0 -> A l > 0.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2013_a6. 
 
 (* TODO: WIP *)
@@ -95,7 +95,7 @@ Program Fixpoint Aa (n : nat) {measure n} : Z :=
 Next Obligation. Proof. destruct m. simpl; auto. induction m. simpl; auto. simpl. Admitted.
 Theorem putnam_2013_b1: 
     sum_n (fun n => (Aa n)*(Aa (n+2))) 2013 = 1.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2013_b1.  *)
 
 Section putnam_2013_b4. 
@@ -113,7 +113,7 @@ Theorem putnam_2013_b4:
     exists (Mf: R), forall (x: R), 0 <= x <= 1 -> Mf = Rmax Mf (Rabs (f x)) /\
     exists (Mg: R), forall (x: R), 0 <= x <= 1 -> Mg = Rmax Mg (Rabs (g x)) ->
     Var (fMult f g) <= 2 * Var f * Mg*Mg + 2 * Var g * Mf * Mf. 
-Proof. Abort.
+Proof. Admitted.
 End putnam_2013_b4. 
 
 Section putnam_2013_b5.
@@ -129,7 +129,7 @@ Theorem putnam_2013_b5:
     forall (f: 'I_n -> 'I_n), E f ->
     forall (x: 'I_n), exists (j: nat) (k: 'I_n), (compose_n f j) x <= k ->
     cardinal ('I_n -> 'I_n) E (k * n^(n-1)).
-Proof. Abort.
+Proof. Admitted.
 End putnam_2013_b5. 
 
 Section putnam_2012_a2. 
@@ -140,5 +140,5 @@ Theorem putnam_2012_a2:
     let is_assc (op : S -> S -> S) := forall (x y z: S), op x (op y z) = op (op x y) z in
     forall op, is_comm op /\ is_assc op /\ forall (x y: S), exists (z: S), op x z = y ->
     forall (a b c: S), op a c = op b c -> a = b.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2012_a2. 

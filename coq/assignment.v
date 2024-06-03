@@ -9,7 +9,7 @@ Theorem putnam_2018_b3:
         ((n-1) %| (2^n-1)) /\
         ((n-2) %| (2^n-2)) <->
         n \in solution_01.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2018_b3.
 
 Section putnam_2017_b3.
@@ -22,7 +22,7 @@ Theorem putnam_2017_b3:
         ~ exists a b: Z,
                 b <> 0%Z /\
                 (Series (fun n => c n * (1/2)^n)) = IZR a / IZR b.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2017_b3.
 
 Section putnam_2020_b5.
@@ -36,7 +36,7 @@ Theorem putnam_2020_b5:
         z (nth i0 (enum 'I_4) 2) - z (nth i0 (enum 'I_4) 3) +
         z (nth i0 (enum 'I_4) 0) * z (nth i0 (enum 'I_4) 1) *
         z (nth i0 (enum 'I_4) 2) * z (nth i0 (enum 'I_4) 3) <> RtoC 0.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2020_b5.
 
 Section putnam_1998_a3.
@@ -48,7 +48,7 @@ Theorem putnam_1998_a3:
         exists (a: R),
             (Derive_n f 0) a * (Derive_n f 1) a * (Derive_n f 2) a *
             (Derive_n f 3) a >= 0.
-Proof. Abort.
+Proof. Admitted.
 End putnam_1998_a3.
 
 Section putnam_2018_a5.
@@ -63,7 +63,7 @@ Theorem putnam_2018_a5:
         exists (n: nat) (x: R),
             gt n 0 ->
             ((Derive_n f n) x > 0).
-Proof. Abort.
+Proof. Admitted.
 End putnam_2018_a5.
 
 Section putnam_2018_b4.
@@ -86,7 +86,7 @@ Theorem putnam_2018_b4:
                     forall (i: nat),
                         i >= m ->
                         s (i+n) a = s i a.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2018_b4.
 
 Section putnam_2018_b2.
@@ -102,7 +102,7 @@ Theorem putnam_2018_b2 :
                  | S m' =>
                          (R_R_to_C (INR (n - m')) 0) * (z ^ m) + f n z m'
                  end) n z 0%nat = 0.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2018_b2.
 
 Section putnam_2014_a1.
@@ -115,7 +115,7 @@ Theorem putnam_2014_a1:
             INR (fact n) = IZR a / IZR b /\
             (a = 1%Z /\ prime a) /\
             Zis_gcd a b 1.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2014_a1.
 
 Section putnam_2014_a5.
@@ -127,7 +127,7 @@ Theorem putnam_2014_a5:
         let pj : {poly R}:= \sum_(i < j.+1) ((i%:R + 1) *: 'X^i) in
         let pk : {poly R}:= \sum_(i < k.+1) ((i%:R + 1) *: 'X^i) in
         gcdp_rec pj pk = 1.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2014_a5.
 
 Section putnam_1998_b6.
@@ -139,7 +139,7 @@ Theorem putnam_1998_b6:
             n > 0 ->
             forall (m : Z),
                 n * n * n + a * n * n + b * n + c <> m * m.
-Proof. Abort.
+Proof. Admitted.
 End putnam_1998_b6.
 
 Section putnam_1999_a2.
@@ -150,7 +150,7 @@ Theorem putnam_1999_a2:
         forall x, p.[x] > 0 = true ->
         exists (k : nat) (f : nat -> {poly R}),
             p = \sum_(i < k) (f i)*(f i).
-Proof. Abort.
+Proof. Admitted.
 End putnam_1999_a2.
 
 (* Section putnam_1999_a5.
@@ -160,7 +160,7 @@ Theorem putnam_1999_a5:
     forall (R: numDomainType) (p: {poly R}),
         (size p = 1999%nat) ->
         exists (C: R), Num.norm p.[0] <= GRing.mul C (Num.norm p.[0]).
-Proof. Abort.
+Proof. Admitted.
 End putnam_1999_a5. *)
 
 Section putnam_1999_b4.
@@ -176,7 +176,7 @@ Theorem putnam_1999_b4 :
                 (Derive_n f 3) x <= f x ->
                 forall (x: R),
                     (Derive_n f 1) x < 2 * f x.
-Proof. Abort.
+Proof. Admitted.
 End putnam_1999_b4.
 
 Section putnam_1999_b6.
@@ -193,7 +193,7 @@ Theorem putnam_1999_b6 :
                     exists (s: Z) (t: Z) (p: Z),
                         In s A /\ In t A /\ prime p ->
                         Zis_gcd s t p.
-Proof. Abort.
+Proof. Admitted.
 End putnam_1999_b6.
 
 Section putnam_2000_a2.
@@ -207,7 +207,7 @@ Theorem putnam_2000_a2:
                 n = a1*a1 + a2*a2 /\
                 n+1 = b1*b1 + b2*b2 /\
                 n+2 = c1*c1 + c2*c2.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2000_a2.
 
 Section putnam_2000_b4.
@@ -218,7 +218,7 @@ Theorem putnam_2000_b4:
         continuity f ->
         forall x, f (2*x*x-1) = 2*x*(f x) ->
         forall x, -1 <= x <= 1 -> f x = 0. 
-Proof. Abort.
+Proof. Admitted.
 End putnam_2000_b4.
 
 Section putnam_2001_a1.
@@ -228,7 +228,7 @@ Theorem putnam_2001_a1:
         Ensemble A ->
         forall (a b: A), op (op a b) a = b ->
         forall (a b: A), op a (op b a) = b.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2001_a1.
 
 Section putnam_2001_b4.
@@ -246,7 +246,7 @@ Theorem putnam_2001_b4:
     exists (x: Q),
         ~ In x [:: -1; 0; 1] ->
         forall (n: nat), (image (compose_n f n)) x <-> putnam_2001_b4_solution.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2001_b4.
 
 Section putnam_2010_a4.
@@ -256,7 +256,7 @@ Theorem putnam_2010_a4 :
     forall (n: Z),
         n > 0 ->
         ~ prime (10^(10^(10^n)) + 10^(10^n) + 10^n - 1). 
-Proof. Abort.
+Proof. Admitted.
 End putnam_2010_a4.
 
 (* Section putnam_2010_a5.
@@ -270,7 +270,7 @@ Theorem putnam_2010_a5:
             cross_product a b = a \/ cross_product a b = a ->
             forall (a b: R -> R -> R),
                 cross_product a b = a. 
-Proof. Abort.
+Proof. Admitted.
 End putnam_2010_a5. *)
 
 Section putnam_2023_a1.
@@ -293,6 +293,6 @@ Theorem putnam_2023_a1 :
                     let f_i i := cos (INR i * x) in
                     let coeffs := map f_i (seq 1 min_sol) in
                     fold_right Rmult 1 coeffs) 2) 0) > 2023. 
-Proof. Abort.
+Proof. Admitted.
 End putnam_2023_a1.
 
