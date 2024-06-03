@@ -10,12 +10,12 @@ theorem putnam_2009_a1
 : ((∀ f : (ℝ × ℝ) → ℝ, (∀ O v : ℝ × ℝ, v ≠ (0, 0) → f (O.1, O.2) + f (O.1 + v.1, O.2 + v.2) + f (O.1 + v.1 - v.2, O.2 + v.2 + v.1) + f (O.1 - v.2, O.2 + v.1) = 0) → ∀ P : ℝ × ℝ, f P = 0) ↔ putnam_2009_a1_solution) :=
 sorry
 
-noncomputable def cos_matrix (n : ℕ) :  Matrix (Fin n) (Fin n) ℝ := λ i j => Real.cos ((1 : ℕ) + n * i + j)
 abbrev putnam_2009_a3_solution : ℝ := sorry
 -- 0
 theorem putnam_2009_a3
+(cos_matrix : (n : ℕ) → Matrix (Fin n) (Fin n) ℝ)
 (hM : ∀ n : ℕ, ∀ i j : Fin n, (cos_matrix n) i j = Real.cos (1 + n * i + j))
-: Tendsto (fun n => (cos_matrix n).det) atTop (𝓝 (putnam_2009_a3_solution)) :=
+: Tendsto (fun n => (cos_matrix n).det) atTop (𝓝 putnam_2009_a3_solution) :=
 sorry
 
 abbrev putnam_2009_a4_solution : Prop := sorry
