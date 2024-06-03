@@ -5,7 +5,7 @@ begin
 
 definition putnam_1996_b4_solution :: bool where "putnam_1996_b4_solution \<equiv> undefined"
 (* False *)
-theorem putnam_1996_b4_solution:
+theorem putnam_1996_b4:
   fixes matsin :: "real^2^2 \<Rightarrow> real^2^2"
   and mat1996 :: "real^2^2"
   and matpow :: "real^2^2 \<Rightarrow> nat \<Rightarrow> real^2^2"

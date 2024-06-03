@@ -16,25 +16,26 @@ def copy_files_in_directory(directory):
             if os.path.isfile(file_path):
                 # Construct the new file path
                 base, extension = os.path.splitext(filename)
+
+                if not extension == '.thy':
+                    continue
                 new_filename = f"{base}_copy{extension}"
                 new_file_path = os.path.join(directory, new_filename)
                 
                 with open(file_path, 'r') as file:
                     conts = file.read()
-                    
-                    sol_start = conts.find("(*")
-                    sol_end = conts.find("*)")
 
                     defn = conts.find(f"definition {base}_solution")
                     thm = conts.find(f"theorem {base}")
                     if defn > 0:
 
-                        sol_start = conts.find("(*")
-                        sol_end = conts.find("*)")
-                        conts = conts.replace(f"{base}_solution", "(" + conts[sol_start+2:sol_end] + ")")
+                        sol_start = conts[defn:].find("(*")
+                        sol_end = conts[defn:].find("*)")
 
-                        thm = conts.find(f"theorem {base}")
-                        conts = conts[:defn] + conts[thm:]
+                        thm = conts[defn:][sol_end+3:]
+                        thm = thm.replace(f"{base}_solution", "(" + conts[defn:][sol_start+2:sol_end] + ")")
+
+                        conts = conts[:defn] + thm
 
 
                     # Copy the file
@@ -45,5 +46,5 @@ def copy_files_in_directory(directory):
         print(f"An error occurred: {e}")
 
 # Usage
-directory_path = "isabelle/"
+directory_path = "./"
 copy_files_in_directory(directory_path)
