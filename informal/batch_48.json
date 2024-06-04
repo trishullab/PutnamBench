@@ -1,0 +1,62 @@
+[
+    {
+        "problem_name" : "putnam_1968_a1",
+        "informal_statement" : "Prove that $$\\frac{22}{7} - \\pi = \\int_{0}^{1} \\frac{x^4(1 - x)^4}{1 + x^2} dx$$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1968_a2",
+        "informal_statement" : "For all integers $a$, $b$, $c$, $d$, $e$, and $f$ such that $ad \\neq bc$ and any real number $\\epsilon > 0$, prove that there exist rational numbers $r$ and $s$ such that $$0 < |ra + sb - e| < \\varepsilon$$ and $$0 < |rc + sd - f| < \\varepsilon.$$",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1968_a3",
+        "informal_statement" : "Let $S$ be a finite set. Prove that there exists a list of subsets of $S$ such that\n\\begin{enumerate}\n\\item The first element of the list is the empty set,\n\\item Each subset of $S$ occurs exactly once in the list, and\n\\item Each successive element in the list is formed by adding or removing one element from the previous subset in the list.\n\\end{enumerate}",
+        "informal_solution" : "None.",
+        "tags" : ["combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_1968_a4",
+        "informal_statement" : "Prove that the sum of the squares of the distances between any $n$ points on the unit sphere $\\{(x, y, z) \\mid x^2 + y^2 + z^2 = 1\\}$ is at most $n^2$.",
+        "informal_solution" : "None.",
+        "tags" : ["geometry", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_1968_a5",
+        "informal_statement" : "Let $V$ be the set of all quadratic polynomials with real coefficients such that $|P(x)| \\le 1$ for all $x \\in [0, 1]$. Find the supremum of $|P'(0)|$ across all $P \\in V$.",
+        "informal_solution" : "The supremum is $8$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1968_a6",
+        "informal_statement" : "Find all polynomials of the form $\\sum_{0}^{n} a_{i} x^{n-i}$ with $n \\ge 1$ and $a_i = \\pm 1$ for all $0 \\le i \\le n$ whose roots are all real.",
+        "informal_solution" : "The set of such polynomials is $$\\{\\pm (x - 1), \\pm (x + 1), \\pm (x^2 + x - 1), \\pm (x^2 - x - 1), \\pm (x^3 + x^2 - x - 1), \\pm (x^3 - x^2 - x + 1)\\}.$$",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1968_b2",
+        "informal_statement" : "Let $G$ be a finite group (with a multiplicative operation), and $A$ be a subset of $G$ that contains more than half of $G$'s elements. Prove that every element of $G$ can be expressed as the product of two elements of $A$.",
+        "informal_solution" : "None.",
+        "tags" : ["abstract_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1968_b4",
+        "informal_statement" : "Suppose that $f : \\mathbb{R} \\to \\mathbb{R}$ is continuous on $(-\\infty, \\infty)$ and that $\\int_{-\\infty}^{\\infty} f(x) dx$ exists. Prove that $$\\int_{-\\infty}^{\\infty} f\\left(x - \\frac{1}{x}\\right) dx = \\int_{-\\infty}^{\\infty} f(x) dx.$$",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1968_b5",
+        "informal_statement" : "Let $p$ be a prime number. Find the number of distinct $2 \\times 2$ matrices $$\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$$ such that $a, b, c, d \\in \\{0, 1, ..., p - 1\\}$, $a + d \\equiv 1 \\pmod p$, and $ad - bc \\equiv 0 \\pmod p$.",
+        "informal_solution" : "There are $p^2 + p$ such matrices.",
+        "tags" : ["linear_algebra", "number_theory", "combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_1968_b6",
+        "informal_statement" : "Prove that no sequence $\\{K_n\\}_{n=0}^{\\infty}$ of compact (closed and bounded) sets of rational numbers has the property that every compact set of rational numbers is contained by at least one $K_n$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    }
+]

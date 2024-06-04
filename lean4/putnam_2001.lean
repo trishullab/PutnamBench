@@ -20,11 +20,9 @@ theorem putnam_2001_a3
 (∃ n ∈ Ici 1, a.coeff n ≠ 0) ∧ (∃ n ∈ Ici 1, b.coeff n ≠ 0)} = putnam_2001_a3_solution :=
 sorry
 
-
 theorem putnam_2001_a5
-: ∃! (a : ℤ) (n : ℕ), a ≥ 0 ∧ a^(n+1) - (a+1)^n = 2001 :=
+: ∃! (a : ℤ) (n : ℕ), a > 0 ∧ n > 0 ∧ a^(n+1) - (a+1)^n = 2001 :=
 sorry
-
 
 theorem putnam_2001_b1
 (n : ℕ)
