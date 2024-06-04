@@ -883,6 +883,14 @@
         ]
     },
     {
+        "problem_name": "putnam_1982_a2",
+        "informal_statement": "For positive real $x$, let $B_n(x)=1^x+2^x+3^x+\\dots+n^x$. Prove or disprove the convergence of $\\sum_{n=2}^\\infty \\frac{B_n(\\log_n2)}{(n\\log_2n)^2}$.",
+        "informal_solution": "Show that the given series converges.",
+        "tags": [
+            "analysis"
+        ]
+    },
+    {
         "problem_name": "putnam_1982_a3",
         "informal_statement": "Evaluate $\\int_0^{\\infty} \\frac{\\tan^{-1}(\\pi x) - \\tan^{-1} x}{x} \\, dx$.",
         "informal_solution": "Show that the integral evaluates to $\\frac{\\pi}{2} \\ln \\pi$.",
@@ -3898,6 +3906,14 @@
         "informal_solution": "Show that the solution is the set of complex numbers $\\{- \\frac{3^{1010} - 1}{2} \\pm \\frac{\\sqrt{9^{1010} - 1}}{4} * i \\}$",
         "tags": [
             "algebra"
+        ]
+    },
+    {
+        "problem_name": "putnam_2023_b2",
+        "informal_statement": "For each positive integer $n$, let $k(n)$ be the number of ones in the binary representation of $2023 \\cdot n$. What is the minimum value of $k(n)$?",
+        "informal_solution": "Show that the minimum is $3$.",
+        "tags": [
+            "number_theory"
         ]
     },
     {
