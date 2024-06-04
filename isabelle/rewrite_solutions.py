@@ -19,7 +19,7 @@ def copy_files_in_directory(directory):
 
                 if not extension == '.thy':
                     continue
-                new_filename = f"{base}_copy{extension}"
+                new_filename = f"{base}_filled{extension}"
                 new_file_path = os.path.join(directory, new_filename)
                 
                 with open(file_path, 'r') as file:
