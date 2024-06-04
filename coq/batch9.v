@@ -1,3 +1,5 @@
+Require Import Nat Reals ZArith Lia.
+
 Section putnam_2017_b6. 
 Require Import Ensembles Finite_sets Factorial List. From mathcomp Require Import div.
 Definition putnam_2017_b6_solution := Nat.div (fact 2016) (fact 1953) - fact 63 * 2016.
@@ -14,6 +16,7 @@ Theorem putnam_2017_b6:
     Hweighted_sum l 0 %| 2017 = true)
     <-> cardinal (list nat) A putnam_2017_b6_solution.
 Proof. Admitted.
+End putnam_2017_b6.
 
 Section putnam_2016_a3. 
 Require Import Reals Coquelicot.RInt Coquelicot.Hierarchy.
@@ -24,7 +27,7 @@ Theorem putnam_2016_a3:
     forall(x: R), x <> 0 -> g x = atan x ->
     RInt f 0 1 = putnam_2016_a3_solution.
 Proof. Admitted.
-End putnam_2016_a3. 
+End putnam_2016_a3.
 
 (* Skipped due to inability to use groups in mathcomp *)
 (* Section putnam_2016_a5. 
@@ -32,7 +35,7 @@ Theorem putnam_2016_a5: True.
 Proof. Admitted.
 End putnam_2016_a5.  *)
 
-Section putnam_2016_b2. 
+(* Section putnam_2016_b2. 
 Require Import Bool Reals Coquelicot.Lim_seq Coquelicot.Rbar. 
 Theorem putnam_2016_b2: 
     let squarish (n: nat) := existsb ( fun m => Nat.eqb n (m * m) || (forallb (fun p => leb ((n-m)*(n-m)) ((n-p)*(n-p))) (seq 0 (S n))) ) (seq 0 (S n)) in
@@ -40,7 +43,7 @@ Theorem putnam_2016_b2:
     exists (a b: nat),
     Lim_seq (fun N => INR (length (squarish_set N)) / INR (N^a)) = Finite (INR b).
 Proof. Admitted.
-End putnam_2016_b2. 
+End putnam_2016_b2.  *)
 
 Section putnam_2015_a4. 
 Require Import Nat List Reals. From Coquelicot Require Import Coquelicot Hierarchy Rcomplements. 
@@ -52,7 +55,7 @@ Theorem putnam_2015_a4:
 Proof. Admitted.
 End putnam_2015_a4. 
 
-Section putnam_2015_b5. 
+(* Section putnam_2015_b5. 
 Require Import Reals. From mathcomp Require Import fintype perm ssrbool.
 Open Scope nat_scope.
 Definition putnam_2015_b5_solution := 4.
@@ -72,7 +75,7 @@ Theorem putnam_2015_b5:
     forall (n: nat), n >= 2 ->
     P (n+5) - P (n+4) - P (n+3) + P n = putnam_2015_b5_solution.
 Proof. Admitted.
-End putnam_2015_b5. 
+End putnam_2015_b5.  *)
 
 Section putnam_2012_a6. 
 Require Import Reals. From Coquelicot Require Import Coquelicot Continuity RInt.
@@ -88,7 +91,7 @@ End putnam_2012_a6.
 
 (* -- NOTE: this formalization differs from the original problem by assigning a default value of zero to all values outside the specified domain/range. *)
 (* -- The problem is still solvable given this generalization. *)
-Section putnam_2012_b1. 
+(* Section putnam_2012_b1. 
 Require Import Reals RIneq.
 Open Scope R.
 Theorem putnam_2012_b1: 
@@ -105,7 +108,7 @@ Theorem putnam_2012_b1:
     <-> 
     (forall (f g: R -> R), In f A /\ In g A -> In (fMult f g) A).
 Proof. Admitted.
-End putnam_2012_b1. 
+End putnam_2012_b1.  *)
 
 Section putnam_2012_b4. 
 Require Import Reals Coquelicot.Lim_seq.

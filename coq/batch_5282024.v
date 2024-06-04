@@ -1,3 +1,5 @@
+Require Import Nat Reals ZArith Lia.
+
 Section putnam_1994_b2.
 Require Import List Reals Coquelicot.Coquelicot.
 Open Scope R.

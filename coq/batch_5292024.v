@@ -1,3 +1,5 @@
+Require Import ZArith Lia.
+
 Section putnam_1999_a5.
 Require Import Reals Coquelicot.Coquelicot.
 Theorem putnam_1999_a5: 

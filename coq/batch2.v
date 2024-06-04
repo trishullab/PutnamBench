@@ -1,3 +1,5 @@
+Require Import Nat Reals ZArith Lia.
+
 Section putnam_2023_b4. 
 Require Import Reals Coquelicot.Derive Coquelicot.Hierarchy. From mathcomp Require Import div fintype seq ssrbool.
 Definition putnam_2023_b4_solution := 29.

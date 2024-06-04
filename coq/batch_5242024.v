@@ -1,3 +1,5 @@
+Require Import ZArith Lia.
+
 Section putnam_2023_b2. 
 Require Import BinNums Nat NArith.
 Definition putnam_2023_b2_solution := 3.

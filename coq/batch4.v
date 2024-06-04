@@ -1,3 +1,5 @@
+Require Import Nat Reals ZArith Lia.
+
 Section putnam_2021_b4. 
 Require Import PeanoNat. From mathcomp Require Import bigop fintype ssrnat. 
 Theorem putnam_2021_b4: 

@@ -1,3 +1,5 @@
+Require Import Nat Reals ZArith Lia.
+
 Section putnam_2009_a1.
 Require Import Reals Coquelicot.Coquelicot.
 Definition putnam_2009_a1_solution := True.

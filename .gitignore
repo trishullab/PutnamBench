@@ -8,3 +8,9 @@ lean4/solutions_replaced/*
 
 informal/join_all_jsons*
 coq/ext/*
+
+*.vo
+*.vok
+*.vos
+*.glob
+*.aux

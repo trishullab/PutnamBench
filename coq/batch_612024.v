@@ -1,4 +1,6 @@
 (* NOTE -- Two external functions have been defined for usage in both solution and problem statement. *)
+Require Import ZArith Lia.
+
 Section putnam_2014_b1.
 Require Import Nat Ensembles List. From mathcomp Require Import div fintype seq ssrbool.
 Fixpoint hd (n: nat) (l:list 'I_n) := match l with | nil => 0 | x :: _ => x end.
@@ -221,7 +223,7 @@ Theorem putnam_2022_a2
 Proof. Admitted.
 End putnam_2022_a2.
 
-Section putnam_2014_a4.
+(* Section putnam_2014_a4.
 From mathcomp.analysis Require Import probability.
 From mathcomp Require Import all_ssreflect.
 From mathcomp Require Import ssralg poly ssrnum ssrint interval finmap.
@@ -243,7 +245,7 @@ Theorem putnam_2014_a4
     (de := distribution P X)
     : forall (P : probability T R), (minval <= (pmf X 0) /\ exists (P : probability T R), minval = (pmf X 0)) <-> minval = putnam_2014_a4_solution.
 Proof. Admitted.
-End putnam_2014_a4.
+End putnam_2014_a4. *)
 
 Section putnam_2023_a2.
 Require Import Nat Ensembles Factorial Reals Coquelicot.Coquelicot.

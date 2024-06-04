@@ -1,3 +1,5 @@
+Require Import Nat Reals ZArith Lia.
+
 Section putnam_1975_a2.
 Require Import List Reals Coquelicot.Coquelicot.
 Open Scope C.
@@ -236,7 +238,7 @@ Theorem putnam_1984_b5
 Proof. Admitted.
 End putnam_1984_b5.
 
-Section putnam_1985_a1.
+(* Section putnam_1985_a1.
 Require Import Ensembles List Finite_sets Nat Coquelicot.Coquelicot.
 Import ListNotations.
 Definition putnam_1985_a1_solution := (10, 10, 0, 0).
@@ -250,9 +252,9 @@ Theorem putnam_1985_a1
     exists (a b c d : nat), cardinal (list (Ensemble nat)) E (2 ^ a * 3 ^ b * 5 ^ c * 7 ^ d) <->
     (a, b, c, d) = putnam_1985_a1_solution.
 Proof. Admitted.
-End putnam_1985_a1.
+End putnam_1985_a1. *)
 
-Section putnam_1985_a4.
+(* Section putnam_1985_a4.
 Require Import Ensembles Nat Coquelicot.Coquelicot.
 Definition putnam_1985_a4_solution := fun k => k = 87.
 Theorem putnam_1985_a4
@@ -264,7 +266,7 @@ Theorem putnam_1985_a4
     : let E: Ensemble nat := fun k => k < 100 /\ forall (n: nat), n < 100 -> exists (i: nat), ge i n /\ a i mod 100 = k in
     E = putnam_1985_a4_solution.
 Proof. Admitted.
-End putnam_1985_a4.
+End putnam_1985_a4. *)
 
 Section putnam_1986_b4.
 Require Import Reals Coquelicot.Coquelicot.

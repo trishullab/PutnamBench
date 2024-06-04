@@ -1,3 +1,5 @@
+Require Import Nat Reals ZArith Lia.
+
 Section putnam_1990_a5.
 From mathcomp Require Import matrix ssralg.
 Open Scope ring_scope.

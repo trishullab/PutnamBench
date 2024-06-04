@@ -1,3 +1,5 @@
+Require Import Nat Reals ZArith Lia.
+
 Section putnam_1985_a6.
 From mathcomp Require Import ssralg ssrnum fintype seq poly. 
 Local Open Scope ring_scope.
@@ -279,7 +281,7 @@ Theorem putnam_1989_a3:
 Proof. Admitted.
 End putnam_1989_a3.
 
-Section putnam_1990_a1.
+(* Section putnam_1990_a1.
 Require Import Nat Factorial Coquelicot.Coquelicot.
 Definition putnam_1990_a1_solution := (fun n => fact n, fun n => pow 2 n).
 Theorem putnam_1990_a1:
@@ -294,7 +296,7 @@ Theorem putnam_1990_a1:
     exists (b c: nat -> nat), forall (n: nat), A n = b n + c n <->
     (b,c) = putnam_1990_a1_solution. 
 Proof. Admitted.
-End putnam_1990_a1.
+End putnam_1990_a1. *)
 
 Section putnam_1990_a2.
 Require Import Reals Coquelicot.Coquelicot.

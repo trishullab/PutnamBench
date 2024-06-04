@@ -9,6 +9,7 @@ Theorem putnam_2019_a4:
     True.
 Proof. Admitted. 
 End putnam_2019_a4. *)
+Require Import Nat Reals ZArith Lia.
 
 Section putnam_2016_b5. 
 Require Import Reals Rpower.

@@ -5,6 +5,8 @@ Proof. Admitted.
 End putnam_2018_a4.  *)
 
 (* TODO: WIP *)
+Require Import Nat Reals ZArith Lia.
+
 Section putnam_2018_b1. 
 Require Import ZArith.
 Open Scope Z.
