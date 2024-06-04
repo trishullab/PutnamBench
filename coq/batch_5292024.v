@@ -87,9 +87,8 @@ End putnam_2001_a3.
 
 Section putnam_2001_a5.
 Require Import Nat.
-Theorem putnam_2001_a5: 
-    (exists (a n: nat), a ^ (n + 1) - (a + 1) ^ n = 2001) /\ 
-    (exists (a1 n1 a2 n2: nat), a1 ^ (n1 + 1) - (a1 + 1) ^ n1 = 2001 /\ a2 ^ (n2 + 1) - (a2 + 1) ^ n2 = 2001 -> a1 = a2 /\ n1 = n2).
+Theorem putnam_2001_a5 
+    : exists! (a n: nat), a > 0 /\ n > 0 /\ a ^ (n + 1) - (a + 1) ^ n = 2001.
 Proof. Admitted.
 End putnam_2001_a5.
 
