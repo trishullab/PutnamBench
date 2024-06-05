@@ -13,9 +13,9 @@ TODO
 
 | Language      | Count          |
 | ------------- | -------------- |
-| Lean 4        | 488            |
-| Isabelle      | 460            |
-| Coq           | 302            |
+| Lean 4        | 514            |
+| Isabelle      | 514            |
+| Coq           | 307            |
 
 We also report the number of problems in a certain category. Note that some problems fall under multiple categories.
 
