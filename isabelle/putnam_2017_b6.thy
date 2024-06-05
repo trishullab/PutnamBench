@@ -2,7 +2,7 @@ theory putnam_2017_b6 imports Complex_Main
 begin
 
 definition putnam_2017_b6_solution::nat where "putnam_2017_b6_solution \<equiv> undefined"
-(* 2016! / 1953! - 63! * 2016 *)
+(* (fact 2016) / (fact 1953) - (fact 63) * 2016 *)
 theorem putnam_2017_b6:
   fixes S::"(nat list) set"
   defines "S \<equiv> {x. (size x = 64)
