@@ -6,7 +6,7 @@ open Polynomial Filter Topology Real Set Polynomial
 abbrev putnam_2016_a1_solution : ℕ := sorry
 -- 8
 theorem putnam_2016_a1
-: (∀ P : ℤ[X], ∀ j : ℕ+, ∀ k : ℤ, 2016 ∣ (derivative^[j] P).eval k → j ≥ putnam_2016_a1_solution) ∧ (∃ P : ℤ[X], ∀ k : ℤ, 2016 ∣ (derivative^[putnam_2016_a1_solution] P).eval k) :=
+: (∀ j : ℕ+, (∀ P : ℤ[X], ∀ k : ℤ, 2016 ∣ (derivative^[j] P).eval k) → j ≥ putnam_2016_a1_solution) ∧ (∀ P : ℤ[X], ∀ k : ℤ, 2016 ∣ (derivative^[putnam_2016_a1_solution] P).eval k) :=
 sorry
 
 noncomputable abbrev putnam_2016_a2_solution : ℝ := sorry
@@ -47,7 +47,7 @@ theorem putnam_2016_a6
 (max : Polynomial ℝ → ℝ)
 (hmax : ∀ P : Polynomial ℝ, ∃ x ∈ Icc 0 1, |P.eval x| = max P)
 (hmaxub : ∀ P : Polynomial ℝ, ∀ x ∈ Icc 0 1, |P.eval x| ≤ max P)
-(p : ℝ → Prop := fun c ↦ ∀ P : Polynomial ℝ, P.degree = 3 → (∃ x ∈ Icc 0 1, P.eval x = 0) → ∫ x in (0)..1, |P.eval x| ≤ C * max P)
+(p : ℝ → Prop := fun c ↦ ∀ P : Polynomial ℝ, P.degree = 3 → (∃ x ∈ Icc 0 1, P.eval x = 0) → ∫ x in (0)..1, |P.eval x| ≤ c * max P)
 (hpC : p C)
 (hClb : ∀ c : ℝ, p c → C ≤ c)
 : (C = putnam_2016_a6_solution) :=

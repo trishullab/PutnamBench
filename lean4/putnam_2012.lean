@@ -86,6 +86,7 @@ theorem putnam_2012_b4
 : ((∃ L : ℝ, Tendsto (fun n ↦ a n - Real.log n) ⊤ (𝓝 L)) ↔ putnam_2012_b4_solution) :=
 sorry
 
+-- Comment for putnam_2012_b5: This formalization uses sSup instead of maximum for the right-hand side of the goal.
 theorem putnam_2012_b5
 (g1 g2 : ℝ → ℝ)
 (hgim : ∀ x : ℝ, g1 x ≥ 1 ∧ g2 x ≥ 1)
