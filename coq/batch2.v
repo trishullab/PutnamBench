@@ -71,16 +71,16 @@ Proof. Admitted.
 End putnam_2022_b1.
 
 Section putnam_2022_b2. 
-Require Import Ensembles Finite_sets Reals.
-From mathcomp Require Import div fintype seq ssrbool ssrnat.
+Require Import Ensembles Finite_sets List Reals.
 Require Import GeoCoq.Main.Tarski_dev.Ch16_coordinates_with_functions.
 Context `{T2D:Tarski_2D} `{TE:@Tarski_euclidean Tn TnEQD}.
+Import ListNotations.
 Definition vect3:= (F * F * F)%type.
 Definition cross_prod (v w : vect3) :=  let '(v1, v2, v3) := v in let '(w1, w2, w3) := w in 
    (SubF (MulF v2 w3) (MulF v3 w2),
     SubF (MulF v3 w1) (MulF v1 w3),
     SubF (MulF v1 w2) (MulF v2 w1)).
-Definition putnam_2022_b2_solution := [::1;7].
+Definition putnam_2022_b2_solution := [1; 7].
 Theorem putnam_2022_b2: forall (n: nat),  
     n > 0 
     /\ 
@@ -88,7 +88,7 @@ Theorem putnam_2022_b2: forall (n: nat),
     /\
     cardinal vect3 A n 
     ->
-    n \in putnam_2022_b2_solution.
+    In n putnam_2022_b2_solution.
 Proof. Admitted. 
 End putnam_2022_b2.
 
