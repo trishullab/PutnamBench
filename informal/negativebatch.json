@@ -98,7 +98,7 @@
         "problem_name" : "putnam_2008_b1",
         "informal_statement" : "What is the maximum number of rational points that can lie on a circle in $\\mathbb{R}^2$ whose center is not a rational point? (A \\emph{rational point} is a point both of whose coordinates are rational numbers.)",
         "informal_solution" : "Show that the maximum number is $2$.",
-        "tags" : ["number_theory"]
+        "tags" : ["geometry", "number_theory"]
     },
     {
         "problem_name" : "putnam_2006_b6",
