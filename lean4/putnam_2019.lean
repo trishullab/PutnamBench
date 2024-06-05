@@ -1,5 +1,6 @@
 import Mathlib
 open BigOperators
+open Topology Filter
 
 
 abbrev putnam_2019_a1_solution : Set ℤ := sorry
@@ -42,6 +43,16 @@ theorem putnam_2019_a5
 (hnpoly : ∀ n : ℕ, ∀ x : ZMod p, (npoly n).eval x = (x - 1) ^ n)
 (hndiv : ∀ n : ℕ, ndiv n = (npoly n ∣ q))
 : ndiv (putnam_2019_a5_solution p) ∧ ∀ n, ndiv n → n ≤ (putnam_2019_a5_solution p) :=
+sorry
+
+theorem putnam_2019_a6
+(g : ℝ → ℝ)
+(r : ℝ)
+(hcont : ContinuousOn g (Set.Icc 0 1))
+(hdiff : ContDiffOn ℝ 1 g (Set.Ioo 0 1) ∧ DifferentiableOn ℝ (deriv g) (Set.Ioo 0 1))
+(rgt1 : r > 1)
+(hlim : Tendsto (fun x => g x / x ^ r) (𝓝[>] 0) (𝓝 0))
+: (Tendsto (deriv g) (𝓝[>] 0) (𝓝 0)) ∨ (Tendsto (fun x : ℝ => sSup {x' ^ r * abs (iteratedDeriv 2 g x') | x' ∈ Set.Ioc 0 x}) (𝓝[>] 0) atTop) :=
 sorry
 
 abbrev putnam_2019_b1_solution : ℕ → ℕ := sorry
@@ -89,4 +100,13 @@ theorem putnam_2019_b5
 (Pdeg: Polynomial.degree P = 1008)
 (hp: ∀ n : ℕ, (n ≤ 1008) → P.eval (2 * n + 1 : ℝ) = F (2 * n + 1))
 : ∀ j k : ℕ, (P.eval 2019 = F j - F k) ↔ ⟨j, k⟩ = putnam_2019_b5_solution  :=
+sorry
+
+abbrev putnam_2019_b6_solution : Set ℕ := sorry
+-- Set.Ici 1
+theorem putnam_2019_b6
+(n : ℕ)
+(neighbors : (Fin n → ℤ) → (Fin n → ℤ) → Prop)
+(hneighbors : ∀ p q : Fin n → ℤ, neighbors p q = (∃ i : Fin n, abs (p i - q i) = 1 ∧ ∀ j ≠ i, p j = q j))
+: (n ≥ 1 ∧ ∃ S : Set (Fin n → ℤ), (∀ p ∈ S, ∀ q : Fin n → ℤ, neighbors p q → q ∉ S) ∧ (∀ p ∉ S, {q ∈ S | neighbors p q}.encard = 1)) ↔ n ∈ putnam_2019_b6_solution :=
 sorry
