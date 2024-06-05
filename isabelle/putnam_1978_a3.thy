@@ -1,7 +1,6 @@
 theory putnam_1978_a3 imports Complex_Main
 "HOL-Computational_Algebra.Polynomial"
 "HOL-Analysis.Interval_Integral"
-"HOL-Analysis.Lebesgue_Measure"
 begin
 
 definition putnam_1978_a3_solution :: "nat" where

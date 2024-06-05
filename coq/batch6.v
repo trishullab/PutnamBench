@@ -7,7 +7,7 @@ Theorem putnam_2019_a4:
     continuity f -> 
     forall (x y z: R), x*x + y*y + z*z = 1 ->
     True.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2019_a4. *)
 
 Section putnam_2016_b5. 
@@ -23,7 +23,7 @@ Theorem putnam_2016_b5:
     (f x)*(f x) <= f y <= (f x)*(f x)*(f x)
     <-> 
     putnam_2016_b5_solution f.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2016_b5.
 
 Section putnam_2016_b6. 
@@ -31,7 +31,7 @@ Require Import List Reals Coquelicot.Hierarchy Coquelicot.Series.
 Definition putnam_2016_b6_solution := 1.
 Theorem putnam_2016_b6: 
     Series (fun k => (-1)^k/(INR k+1) * Series (fun n => 1/(INR k*(2^n)+1))) = putnam_2016_b6_solution.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2016_b6.
 
 Section putnam_2015_a2.
@@ -46,7 +46,7 @@ Theorem putnam_2015_a2:
             | S ((S n'') as n') => sub (4*(a n')) (a n'')
         end in
     odd putnam_2015_a2_solution = true /\ prime (Z.of_nat putnam_2015_a2_solution) /\ (putnam_2015_a2_solution %| A 2015%nat) = true.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2015_a2.
 
 Section putnam_2015_a3. 
@@ -70,7 +70,7 @@ Theorem putnam_2015_a3:
         end in
     let f (a b: nat) : C := Clog 2%nat (Re (1 + cos (2*PI*INR(a+1)*INR(b+1)/2015)), sin (2*PI*INR(a+1)*INR(b+1)/2015)) in
     HCprod2 f 2015%nat 2015%nat = putnam_2015_a3_solution.
-Proof. Abort. 
+Proof. Admitted. 
 End putnam_2015_a3.
 
 Section putnam_2015_a5. 
@@ -86,13 +86,13 @@ Theorem putnam_2015_a5:
         <-> Nq a
     )
     -> exists (Nq_size: nat), cardinal nat Nq Nq_size /\ odd Nq_size = true <-> exists (p k: nat), prime (Z.of_nat p) /\ (p mod 8 = 5 \/ p mod 8 = 7) /\ q = p^k.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2015_a5.
 
 (* Skipped due to inability to use det in mathcomp *)
 (* Section putnam_2015_a6. 
 Theorem putnam_2015_a6: True.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2015_a6. *)
 
 Section putnam_2015_b1. 
@@ -104,12 +104,12 @@ Theorem putnam_2015_b1 :
     exists (l: list R), length l = 5%nat /\ NoDup l /\ forall x, In x l -> f x = 0 ->
     let g (x: R):= f x + 6 * (Derive_n f 1) x + 12 * (Derive_n f 2) x + 8 * (Derive_n f 3) x in
     exists (l': list R), length l = 2%nat /\ NoDup l' /\ forall x, In x l' -> g x = 0.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2015_b1.
 
 (* Skipped due to inability to use det in mathcomp *)
 (* Section putnam_2014_a2. 
 From mathcomp Require Import div.
     Theorem putnam_2014_a2: True.
-Proof. Abort.
+Proof. Admitted.
 End putnam_2014_a2. *)

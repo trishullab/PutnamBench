@@ -1,7 +1,6 @@
 theory putnam_2000_a4 imports
 Complex_Main
 "HOL-Analysis.Interval_Integral"
-"HOL-Analysis.Lebesgue_Measure"
 begin
 
 theorem putnam_2000_a4:

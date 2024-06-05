@@ -1,1 +1,1 @@
-TODO: Ensure that problems have right indentation and new lines.
+Here lies the Coq formalizations, currently in the format of batches of formalizations.

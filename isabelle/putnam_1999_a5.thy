@@ -2,7 +2,6 @@ theory putnam_1999_a5 imports
 Complex_Main
 "HOL-Computational_Algebra.Polynomial"
 "HOL-Analysis.Interval_Integral"
-"HOL-Analysis.Lebesgue_Measure"
 begin
 
 theorem putnam_1999_a5:

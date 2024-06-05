@@ -1,1 +1,1 @@
-Herein lies the Isabelle formalizations. TODO: Modify them to be in single problem by file format.
+The Isabelle formalizations largely rely on the HOL Library, and are present in a problem-per-file format by default.

@@ -21,7 +21,7 @@
         "problem_name" : "putnam_1986_a4",
         "informal_statement" : "A \\emph{transversal} of an $n\\times n$ matrix $A$ consists of $n$ entries of $A$, no two in the same row or column. Let $f(n)$ be the number of $n \\times n$ matrices $A$ satisfying the following two conditions:\n\\begin{enumerate}\n\\item[(a)] Each entry $\\alpha_{i,j}$ of $A$ is in the set\n$\\{-1,0,1\\}$.\n\\item[(b)] The sum of the $n$ entries of a transversal is the same for all transversals of $A$.\n\\end{enumerate}\nAn example of such a matrix $A$ is\n\\[\nA = \\left( \\begin{array}{ccc} -1 & 0 & -1 \\\\ 0 & 1 & 0 \\\\ 0 & 1 & 0\n\\end{array}\n\\right).\n\\]\nDetermine with proof a formula for $f(n)$ of the form\n\\[\nf(n) = a_1 b_1^n + a_2 b_2^n + a_3 b_3^n + a_4,\n\\]\nwhere the $a_i$'s and $b_i$'s are rational numbers.",
         "informal_solution" : "Prove that $f(n) = 4^n + 2 \\cdot 3^n - 4 \\cdot 2^n + 1$.",
-        "tags" : ["linear-algebra"]
+        "tags" : ["linear_algebra"]
     },
     {
         "problem_name" : "putnam_1986_a6",
@@ -38,7 +38,7 @@
     {
         "problem_name" : "putnam_1986_b3",
         "informal_statement" : "Let $\\Gamma$ consist of all polynomials in $x$ with integer coefficients. For $f$ and $g$ in $\\Gamma$ and $m$ a positive integer, let $f \\equiv g \\pmod{m}$ mean that every coefficient of $f-g$ is an integral multiple of $m$. Let $n$ and $p$ be positive integers with $p$ prime. Given that $f,g,h,r$ and $s$ are in $\\Gamma$ with $rf+sg\\equiv 1 \\pmod{p}$ and $fg \\equiv h \\pmod{p}$, prove that there exist $F$ and $G$ in $\\Gamma$ with $F \\equiv f \\pmod{p}$, $G \\equiv g \\pmod{p}$, and $FG \\equiv h \\pmod{p^n}$.",
-        "tags" : ["number-theory", "algebra"]
+        "tags" : ["number_theory", "algebra"]
     },
     {
         "problem_name" : "putnam_1986_b4",
@@ -55,6 +55,6 @@
     {
         "problem_name" : "putnam_1986_b6",
         "informal_statement" : "Suppose $A,B,C,D$ are $n \\times n$ matrices with entries in a field $F$, satisfying the conditions that $AB^T$ and $CD^T$ are symmetric and $AD^T - BC^T = I$. Here $I$ is the $n \\times n$ identity matrix, and if $M$ is an $n \\times n$ matrix, $M^T$ is its transpose. Prove that $A^T D - C^T B = I$.",
-        "tags" : ["linear-algebra"]
+        "tags" : ["linear_algebra"]
     }
 ]

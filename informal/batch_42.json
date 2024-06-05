@@ -3,7 +3,7 @@
         "problem_name" : "putnam_1979_b3",
         "informal_statement" : "Let $F$ be a finite field with $n$ elements, and assume $n$ is odd. Suppose $x^2 + bx + c$ is an irreducible polynomial over $F$. For how many elements $d \\in F$ is $x^2 + bx + c + d$ irreducible?",
         "informal_solution" : "Show that there are $\\frac{n - 1}{2}$ such elements $d$.",
-        "tags" : ["abstract-algebra"]
+        "tags" : ["abstract_algebra"]
     },
     {
         "problem_name" : "putnam_1979_b6",
@@ -18,7 +18,7 @@
     {
         "problem_name" : "putnam_1978_a2",
         "informal_statement" : "Let $A$ be the real $n \\times n$ matrix $(a_{ij})$ where $a_{ij} = a$ for $i < j$, $b \\; (\\neq a)$ for $i > j$, and $c_i$ for $i = j$. Show that $\\det A = \\frac{b p(a) - a p(b)}{b - a}$, where $p(x) = \\prod_{i=1}^n (c_i - x)$.",
-        "tags" : ["linear-algebra"]
+        "tags" : ["linear_algebra"]
     },
     {
         "problem_name" : "putnam_1978_a3",
@@ -29,7 +29,7 @@
     {
         "problem_name" : "putnam_1978_a4",
         "informal_statement" : "A binary operation (represented by multiplication) on $S$ has the property that $(ab)(cd) = ad$ for all $a, b, c, d$. Show that: \n\\begin{itemize}\n\\item[(1)] if $ab = c$, then $cc = c$; \n\\item[(2)] if $ab = c$, then $ad = cd$ for all $d$. \n\\end{itemize}\nFind a set $S$, and such a binary operation, which also satisfies:\n\\begin{itemize}\n\\item[(A)] $a a = a$ for all $a$; \n\\item[(B)] $ab = a \\neq b$ for some $a, b$; \n\\item[(C)] $ab \\neq a$ for some $a, b$.\n\\end{itemize}",
-        "tags" : ["abstract-algebra"]
+        "tags" : ["abstract_algebra"]
     },
     {
         "problem_name" : "putnam_1978_a5",
