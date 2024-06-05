@@ -33,10 +33,12 @@ theorem putnam_2007_a4
 sorry
 
 theorem putnam_2007_a5
-(n p : ℕ)
-(hp : Nat.Prime p)
 (G : Type*) [Group G] [Fintype G]
-: (∃! s : Fin n → G, ∀ i : Fin n,  orderOf (s i) = p) → n = 0 ∨ p ∣ (n+1) :=
+(p : ℕ)
+(n : ℕ)
+(hp : Nat.Prime p)
+(hn : n = {g : G | orderOf g = p}.encard)
+: n = 0 ∨ p ∣ (n + 1) :=
 sorry
 
 theorem putnam_2007_b1
@@ -81,4 +83,3 @@ theorem putnam_2007_b5
 (kpos : k > 0)
 : (∃ P : Finset.range k → Polynomial ℝ, ∀ n : ℤ, ⌊(n : ℝ) / k⌋ ^ k = ∑ i : Finset.range k, (P i).eval (n : ℝ) * ⌊(n : ℝ) / k⌋ ^ (i : ℕ)) :=
 sorry
-
