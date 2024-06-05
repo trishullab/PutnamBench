@@ -3,12 +3,13 @@ open BigOperators
 
 open MvPolynomial
 
+-- uses (ℕ → ℤ) instead of (Fin k → ℤ)
 abbrev putnam_2003_a1_solution : ℕ → ℕ := sorry
 -- fun n => n
 theorem putnam_2003_a1
 (n : ℕ)
 (hn : n > 0)
-: Set.ncard {a : ℕ → ℤ | ∃ k : ℕ, (k > 0) ∧ ∑ i in Finset.range k, a i = n ∧ (∀ i : ℕ, a i > 0) ∧ (∀ i : Finset.range (k-1), a i ≤ a (i + 1)) ∧ a k ≤ a 1 + 1} = putnam_2003_a1_solution n :=
+: Set.encard {a : ℕ → ℤ | ∃ k > 0, (∑ i : Fin k, a i = n) ∧ (∀ i : Fin k, a i > 0) ∧ (∀ i : Fin (k - 1), a i ≤ a (i + 1)) ∧ a (k - 1) ≤ a 0 + 1 ∧ (∀ i ≥ k, a i = 0)} = putnam_2003_a1_solution n :=
 sorry
 
 theorem putnam_2003_a2
@@ -44,8 +45,7 @@ sorry
 abbrev putnam_2003_b1_solution : Prop := sorry
 -- False
 theorem putnam_2003_b1
-: (∃ a b c d : MvPolynomial (Fin 2) ℝ, (degreeOf 1 a = 0 ∧ degreeOf 1 b = 0 ∧ degreeOf 0 c = 0 ∧ degreeOf 0 d = 0)
-→  1 + (X 0) * (X 1) + (X 0)^2 * (X 1)^2 = a * b + c * d) ↔ putnam_2003_b1_solution :=
+: (∃ a b c d : Polynomial ℝ, (∀ x y : ℝ, 1 + x * y + x ^ 2 * y ^ 2 = a.eval x * c.eval y + b.eval x * d.eval y)) ↔ putnam_2003_b1_solution :=
 sorry
 
 open Nat
