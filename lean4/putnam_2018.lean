@@ -7,6 +7,18 @@ abbrev putnam_2018_a1_solution : Set (ℤ × ℤ) := sorry
 theorem putnam_2018_a1 : ∀ a b : ℤ, (a > 0 ∧ b > 0 ∧ ((1: ℚ) / a + (1: ℚ) / b = (3: ℚ) / 2018)) ↔ (⟨a, b⟩ ∈ putnam_2018_a1_solution) :=
 sorry
 
+abbrev putnam_2018_a2_solution : ℕ → ℝ := sorry
+-- (fun n : ℕ => if n = 1 then 1 else -1)
+theorem putnam_2018_a2
+(n : ℕ)
+(S : Fin (2 ^ n - 1) → Set ℕ)
+(M : Matrix (Fin (2 ^ n - 1)) (Fin (2 ^ n - 1)) ℝ)
+(npos : n ≥ 1)
+(hS : Set.range S = (Set.Icc 1 n).powerset \ {∅})
+(hM : ∀ i j : Fin (2 ^ n - 1), M i j = if (S i ∩ S j = ∅) = True then 0 else 1)
+: M.det = putnam_2018_a2_solution n :=
+sorry
+
 noncomputable abbrev putnam_2018_a3_solution : ℝ := sorry
 -- 480/49
 theorem putnam_2018_a3
