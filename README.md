@@ -19,13 +19,13 @@ We also report the number of problems in a certain category. Note that some prob
 
 | Category         | Total Quantity | 
 | ---------------- | -------------- | 
-| Algebra          | 211            | 
-| Analysis         | 166            |
+| Algebra          | 218            | 
+| Analysis         | 176            |
 | Number Theory    | 97             | 
-| Linear Algebra   | 42             | 
+| Linear Algebra   | 43             | 
 | Abstract Algebra | 25             | 
-| Geometry         | 20             | 
-| Combinatorics    | 9              | 
+| Geometry         | 22             | 
+| Combinatorics    | 12              | 
 | Set Theory       | 4              | 
 | Probability      | 2              | 
 
