@@ -47,8 +47,7 @@ Theorem putnam_2009_b1:
     let fix factl (l : list nat) : list nat :=
         match l with
         | nil => nil
-        | h :: t => fact h :: t
-    end in 
+        | h :: t => fact h :: t end in 
     forall (q: Q), q > 0 ->
     exists (n d: list nat), (forall x, (In x n \/ In x d)-> prime (Z.of_nat x)) /\ 
     inject_Z (Z.of_nat (fold_left Nat.mul (factl n) 1%nat)) / inject_Z (Z.of_nat (fold_left Nat.mul (factl d) 1%nat)) = q.
