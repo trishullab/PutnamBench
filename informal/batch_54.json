@@ -1,0 +1,44 @@
+[
+    {
+        "problem_name" : "putnam_1963_a2",
+        "informal_statement" : "Let $f(n)$ be a strictly increasing sequence of positive integers such that $f(2) = 2$ and $f(mn) = f(m)f(n)$ for every relatively prime pair of positive integers $m$ and $n$ (the greatest common divisor of $m$ and $n$ is equal to 1). Prove that $f(n) = n$ for every positive integer $n$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra", "number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1963_a4",
+        "informal_statement" : "Let $a_n$ be a sequence of positive real numbers. Show that \\[ \\limsup_{n \\rightarrow \\infty} n \\left( \\frac{1 + a_{n+1}}{a_n} - 1 \\right) \\ge 1. \\] Show that the number 1 on the right-hand side of this inequality cannot be replaced by any larger number.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1963_b1",
+        "informal_statement" : "For what integer $a$ does $x^2 - x + a$ divide $x^{13} + x + 90$?",
+        "informal_solution" : "Show that $a=2$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1963_b2",
+        "informal_statement" : "Let $S$ be the set of all numbers of the form $2^m3^n$, where $m$ and $n$ are integers, and let $P$ be the set of all positive real numbers. Is $S$ dense in $P$?",
+        "informal_solution" : "Show that $S$ is dense in $P$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1963_b3",
+        "informal_statement" : "Find every twice-differentiable real-valued function $f$ with domain the set of all real numbers and satisfying the functional equation \\[ (f(x))^2 - (f(y))^2 = f(x+y)f(x-y) \\] for all real numbers $x$ and $y$.",
+        "informal_solution" : "Show that $f(u) = A \\sinh ku$, $Au$, or $A \\sin ku$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1963_b5",
+        "informal_statement" : "Let $a_n$ be a sequence of real numbers satisfying the inequalities \\[ 0 \\le a_k \\le 100a_n \\text{ for } n \\le k \\le 2n \\text{ and } n = 1,2,\\ldots, \\] and such that the series \\[ \\sum^\\infty_{n=0} a_n \\] converges. Prove that \\[ \\lim_{n \\rightarrow \\infty} na_n = 0. \\]",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1963_b6",
+        "informal_statement" : "Let $E$ be a Euclidean space of at most three dimensions. If $A$ is a nonempty subset of $E$, define $S(A)$ to be the set of all points that lie on closed segments joining pairs of points of $A$. For a given nonempty set $A_0$, define $A_n \\equiv S(A_{n-1})$ for $n=1,2,\\ldots.$ Prove that $A_2 = A_3 = \\cdots.$ (A one-point set should be considered to be a special case of a closed segment.)",
+        "informal_solution" : "None.",
+        "tags" : ["geometry", "analysis"]
+    }
+]
