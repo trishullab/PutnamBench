@@ -4,22 +4,24 @@ open BigOperators
 
 theorem putnam_1963_a2
 (f : ℕ → ℕ)
-(finc : ∀ i > 0, ∀ j > 0, i < j → f i < f j)
-(fpos : ∀ n > 0, f n > 0)
-(f2 : f 2 = 2)
-(fmn : ∀ m > 0, ∀ n > 0, IsRelPrime m n → f (m * n) = f m * f n)
+(hfpos : ∀ n, f n > 0)
+(hfinc : StrictMono f)
+(hf2 : f 2 = 2)
+(hfmn : ∀ m n, m > 0 → n > 0 → IsRelPrime m n → f (m * n) = f m * f n)
 : ∀ n > 0, f n = n :=
 sorry
 
 theorem putnam_1963_a4
-(f : (ℕ → ℝ) → ℕ → ℝ := (fun (a : ℕ → ℝ) (n : ℕ) => n * ((1 + a (n + 1)) / a n - 1)))
-: (∀ a : ℕ → ℝ, a > 0 → limsup (f a) atTop ≥ 1) ∧ (¬∃ C > 1, (∀ a : ℕ → ℝ, a > 0 → limsup (f a) atTop ≥ C)) :=
+(apos : (ℕ → ℝ) → Prop := fun a => ∀ n, a n > 0)
+(f : (ℕ → ℝ) → ℕ → ℝ := fun a n => n * (((1 + a (n+1)) / (a n)) - 1))
+: (∀ a, apos a → limsup (f a) ⊤ ≥ 1) ∧ (∃ a, apos a ∧ limsup (f a) ⊤ = 1) :=
 sorry
 
+open Polynomial
 abbrev putnam_1963_b1_solution : ℤ := sorry
 -- 2
 theorem putnam_1963_b1
-: (Polynomial.X ^ 2 - Polynomial.X + (putnam_1963_b1_solution : Polynomial ℤ)) ∣ (Polynomial.X ^ 13 + Polynomial.X + 90) :=
+: ∀ a : ℤ, (X^2 - X + (C a)) ∣ (X ^ 13 + X + (C 90)) ↔ a = putnam_1963_b1_solution :=
 sorry
 
 abbrev putnam_1963_b2_solution : Prop := sorry
