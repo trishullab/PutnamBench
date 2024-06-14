@@ -1,0 +1,62 @@
+[
+    {
+        "problem_name" : "putnam_1965_a2",
+        "informal_statement" : "Prove that $$\\sum_{r=0}^{\\lfloor\\frac{n-1}{2}\\rfloor} \\left(\\frac{n - 2r}{n} {n \\choose r}\\right)^2 = \\frac{1}{n} {{2n - 2} \\choose {n - 1}}$$ for every positive integer $n$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1965_a3",
+        "informal_statement" : "Prove that, for any sequence of real numbers $a_1, a_2, \\dots$, $$\\lim_{n \\to \\infty} \\frac{\\sum_{k = 1}^{n} e^{ia_k}}{n} = \\alpha$$ if and only if $$\\lim_{n \\to \\infty} \\frac{\\sum_{k = 1}^{n} e^{ia_{k^2}}}{n^2} = \\alpha.$$",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1965_a4",
+        "informal_statement" : "At a party, no boy dances with every girl, but each girl dances with at least one boy. Prove that there exist girls $g$ and $h$ and boys $b$ and $c$ such that $g$ dances with $b$ and $h$ dances with $c$, but $h$ does not dance with $b$ and $g$ does not dance with $c$.",
+        "informal_solution" : "None.",
+        "tags" : ["combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_1965_a5",
+        "informal_statement" : "How many orderings of the integers from $1$ to $n$ satisfy the condition that, for every integer $i$ except the first, there exists some earlier integer in the ordering which differs from $i$ by $1$?",
+        "informal_solution" : "There are $2^{n-1}$ such orderings.",
+        "tags" : ["combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_1965_a6",
+        "informal_statement" : "Prove that the line $ux + vy = 1$ (where $u \\ge 0$ and $v \\ge 0$) will lie tangent to the curve $x^m + y^m = 1$ (where $m > 1$) if and only if $u^n + v^n = 1$ for some $n$ such that $m^{-1} + n^{-1} = 1$.",
+        "informal_solution" : "None.",
+        "tags" : ["geometry"]
+    },
+    {
+        "problem_name" : "putnam_1965_b2",
+        "informal_statement" : "A round-robin tournament has $n > 1$ players $P_1, P_2, \\dots, P_n$, who each play one game with each other player. Each game results in a win for one player and a loss for the other. If $w_r$ and $l_r$ denote the number of games won and lost, respectively, by $P_r$, prove that $$\\sum_{r=1}^{n} w_r^2 = \\sum_{r=1}^{n} l_r^2.$$",
+        "informal_solution" : "None.",
+        "tags" : ["combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_1965_b3",
+        "informal_statement" : "Prove that there are exactly three right triangles (up to orientation and translation) with integer side lengths and area equal to twice their perimeter.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra", "geometry"]
+    },
+    {
+        "problem_name" : "putnam_1965_b4",
+        "informal_statement" : "Let $$f(x, n) = \\frac{{n \\choose 0} + {n \\choose 2}x + {n \\choose 4}x^2 + \\cdots}{{n \\choose 1} + {n \\choose 3}x + {n \\choose 5}x^2 + \\cdots}$$ for all real numbers $x$ and positive integers $n$. Express $f(x, n+1)$ as a rational function involving $f(x, n)$ and $x$, and find $\\lim_{n \\to \\infty} f(x, n)$ for all $x$ for which this limit converges.",
+        "informal_solution" : "We have $$f(x, n+1) = \\frac{f(x, n) + x}{f(x, n) + 1};$$ $\\lim_{n \\to \\infty} f(x, n) = \\sqrt{x}$ for all $x \\ge 0$ and diverges otherwise.",
+        "tags" : ["algebra", "analysis"]
+    },
+    {
+        "problem_name" : "putnam_1965_b5",
+        "informal_statement" : "Prove that, if $4E \\le V^2$, there exists a graph with $E$ edges and $V$ vertices with no triangles (cycles of length $3$).",
+        "informal_solution" : "None.",
+        "tags" : ["combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_1965_b6",
+        "informal_statement" : "Let $A$, $B$, $C$, and $D$ be four distinct points for which every circle through $A$ and $B$ intersects every circle through $C$ and $D$. Prove that $A$, $B$, $C$ and $D$ are either collinear (all lying on the same line) or cocyclic (all lying on the same circle).",
+        "informal_solution" : "None.",
+        "tags" : ["geometry"]
+    }
+]
