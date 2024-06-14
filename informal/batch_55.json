@@ -1,0 +1,50 @@
+[
+    {
+        "problem_name" : "putnam_1962_a1",
+        "informal_statement" : "Given five points in a plane, no three of which lie on a straight line, show that some four of these points form the vertices of a convex quadrilateral.",
+        "informal_solution" : "None.",
+        "tags" : ["geometry"]
+    },
+    {
+        "problem_name" : "putnam_1962_a2",
+        "informal_statement" : "Find every real-valued function $f$ whose domain is an interval $I$ (finite or infinite) having 0 as a left-hand endpoint, such that for every positive member $x$ of $I$ the average of $f$ over the closed interval $[0, x]$ is equal to the geometric mean of the numbers $f(0)$ and $f(x)$.",
+        "informal_solution" : "Show that \\[ f(x) = \\frac{a}{(1 - cx)^2} \\begin{cases} \\text{for } 0 \\le x < \\frac{1}{c}, & \\text{if } c > 0\\\\ \\text{for } 0 \\le x < \\infty, & \\text{if } c \\le 0, \\end{cases} \\] where $a > 0$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1962_a4",
+        "informal_statement" : "Assume that $\\lvert f(x) \\rvert \\le 1$ and $\\lvert f''(x) \\rvert \\le 1$ for all $x$ on an interval of length at least 2. Show that $\\lvert f'(x) \\rvert \\le 2$ on the interval.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1962_a5",
+        "informal_statement" : "Evaluate in closed form \\[ \\sum_{k=1}^n {n \\choose k} k^2. \\]",
+        "informal_solution" : "Show that the expression equals $n(n+1)2^{n-2}$.",
+        "tags" : ["algebra", "combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_1962_a6",
+        "informal_statement" : "Let $S$ be a set of rational numbers such that whenever $a$ and $b$ are members of $S$, so are $a+b$ and $ab$, and having the property that for every rational number $r$ exactly one of the following three statements is true: \\[ r \\in S, -r \\in S, r = 0. \\] Prove that $S$ is the set of all positive rational numbers.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1962_b1",
+        "informal_statement" : "Let $x^{(n)} = x(x-1)\\cdots(x-n+1)$ for $n$ a positive integer and let $x^{(0)} = 1.$ Prove that \\[ (x+y)^{(n)} = \\sum_{k=0}^n {n \\choose k} x^{(k)} y^{(n-k)}. \\]",
+        "informal_solution" : "None.",
+        "tags" : ["algebra", "combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_1962_b5",
+        "informal_statement" : "Prove that for every integer $n$ greater than 1: \\[ \\frac{3n+1}{2n+2} < \\left( \\frac{1}{n} \\right)^n + \\left(\\frac{2}{n} \\right)^n + \\cdots + \\left(\\frac{n}{n} \\right)^n < 2. \\]",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1962_b6",
+        "informal_statement" : "Let \\[ f(x) = \\sum_{k=0}^n a_k \\sin kx + b_k \\cos kx, \\] where $a_k$ and $b_k$ are constants. Show that, if $\\lvert f(x) \\rvert \\le 1$ for $0 \\le x \\le 2 \\pi$ and $\\lvert f(x_i) \\rvert = 1$ for $0 \\le x_1 < x_2 < \\cdots < x_{2n} < 2 \\pi$, then $f(x) = \\cos (nx + a)$ for some constant $a$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    }
+]
