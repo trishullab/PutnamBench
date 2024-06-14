@@ -1,17 +1,13 @@
 Section putnam_2009_a1.
-Require Import Reals Coquelicot.Coquelicot.
+Require Import Reals GeoCoq.Main.Tarski_dev.Ch16_coordinates_with_functions.
+Context `{T2D:Tarski_2D} `{TE:@Tarski_euclidean Tn TnEQD}.
+Open Scope R.
 Definition putnam_2009_a1_solution := True.
-Theorem putnam_2009_a1: 
-    forall (A B C D: R * R) (f: (R * R) -> R), 
-    let (Ax, Ay) := A in let (Bx, By) := B in let (Cx, Cy) := C in let (Dx, Dy) := D in
-    ((Ax - Bx) ^ 2 + (Ay - By) ^ 2 = (Bx - Cx) ^ 2 + (By - Cy) ^ 2 /\ 
-    (Bx - Cx) ^ 2 + (By - Cy) ^ 2 = (Cx - Dx) ^ 2 + (Cy - Dy) ^ 2 /\
-    (Cx - Dx) ^ 2 + (Cy - Dy) ^ 2 = (Dx - Ax) ^ 2 + (Dy - Ay) ^ 2 /\
-    (Ay - By) * (By - Cy) = - (Ax - Bx) * (Bx - Cx) /\
-    (By - Cy) * (Cy - Dy) = - (Bx - Cx) * (Cx - Dx) /\
-    (Cy - Dy) * (Dy - Ay) = - (Cx - Dx) * (Dx - Ax) /\
+Theorem putnam_2009_a1
+    (f: Tpoint -> R)
+    : ((forall (A B C D: Tpoint), Square A B C D -> 
     f A + f B + f C + f D = 0) ->
-    forall (P: R * R), f P = 0 <->
+    forall (P : Tpoint), f P = 0) <->
     putnam_2009_a1_solution.
 Proof. Admitted.
 End putnam_2009_a1.
@@ -51,8 +47,7 @@ Theorem putnam_2009_b1:
     let fix factl (l : list nat) : list nat :=
         match l with
         | nil => nil
-        | h :: t => fact h :: t
-    end in 
+        | h :: t => fact h :: t end in 
     forall (q: Q), q > 0 ->
     exists (n d: list nat), (forall x, (In x n \/ In x d)-> prime (Z.of_nat x)) /\ 
     inject_Z (Z.of_nat (fold_left Nat.mul (factl n) 1%nat)) / inject_Z (Z.of_nat (fold_left Nat.mul (factl d) 1%nat)) = q.

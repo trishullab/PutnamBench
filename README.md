@@ -5,38 +5,31 @@ PutnamBench is a benchmark for evaluation of theorem proving algorithms on compe
 PutnamBench aims to support research in automated mathematical reasoning by providing a multilingual benchmark for evaluating theorem-proving algorithms. It is released under permissive licenses (Apache 2.0 for Lean 4 and Isabelle, MIT for Coq), and we encourage community contributions (TODO: After initial release)
 
 ## Citation
-The associated paper {TODO} for PutnamBench is {TODO}. Please consider including the following citation if you find PutnamBench useful.
+The associated paper for PutnamBench is {TODO}. Please consider including the following citation if you find PutnamBench useful.
+{TODO}
 
-TODO
-
-## Statistics {TODO: Modify on release}
-
+## Statistics 
 | Language      | Count          |
 | ------------- | -------------- |
-| Lean 4        | 488            |
-| Isabelle      | 460            |
-| Coq           | 302            |
+| Lean 4        | 514            |
+| Isabelle      | 514            |
+| Coq           | 309            |
 
 We also report the number of problems in a certain category. Note that some problems fall under multiple categories.
 
 | Category         | Total Quantity | 
 | ---------------- | -------------- | 
-| Algebra          | 211            | 
-| Analysis         | 166            |
+| Algebra          | 218            | 
+| Analysis         | 176            |
 | Number Theory    | 97             | 
-| Linear Algebra   | 42             | 
+| Linear Algebra   | 43             | 
 | Abstract Algebra | 25             | 
-| Geometry         | 20             | 
-| Combinatorics    | 9              | 
+| Geometry         | 22             | 
+| Combinatorics    | 12              | 
 | Set Theory       | 4              | 
 | Probability      | 2              | 
 
-## Installation Instructions
-{TODO}
-
-## Rewriting solutions
-{TODO}
 
 ## Versioning
 - Version: `v-1`
-- Not yet released.
+- Not yet officially released. Please refrain from opening issues or making PRs until the initial release.
