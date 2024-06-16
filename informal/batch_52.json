@@ -1,0 +1,58 @@
+[
+    {
+        "problem_name" : "putnam_1964_a1",
+        "informal_statement" : "Let $A_1, A_2, A_3, A_4, A_5, A_6$ be distinct points in the plane. Let $D$ be the longest distance between any pair, and let $d$ the shortest distance. Show that $\\frac{D}{d} \\geq \\sqrt 3$.",
+        "tags" : ["geometry"]
+    },
+    {
+        "problem_name" : "putnam_1964_a2",
+        "informal_statement" : "Let $\\alpha$ be a real number. Find all continuous real-valued functions $f : [0, 1] \\to (0, \\infty)$ such that \n\\begin{align*}\n\\int_0^1 f(x) dx &= 1, \\\\\n\\int_0^1 x f(x) dx &= \\alpha, \\\\\n\\int_0^1 x^2 f(x) dx &= \\alpha^2. \\\\\n\\end{align*}",
+        "informal_solution" : "Prove that there are no such functions.",
+        "tags" : ["analysis", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_1964_a3",
+        "informal_statement" : "The distinct points $x_n$ are dense in the interval $(0, 1)$. For all $n \\geq 1$, $x_1, x_2, \\dots , x_{n-1}$ divide $(0, 1)$ into $n$ sub-intervals, one of which must contain $x_n$. This part is divided by $x_n$ into two sub-intervals, lengths $a_n$ and $b_n$. Prove that $\\sum_{n=1}^{\\infty} a_nb_n(a_n + b_n) = \\frac{1}{3}$.",
+        "tags" : ["analysis", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_1964_a4",
+        "informal_statement" : "The sequence of integers $u_n$ is bounded and satisfies \n\\[\nu_n = \\frac{u_{n-1} + u_{n-2} + u_{n-3}u_{n-4}}{u_{n-1}u_{n-2} + u_{n-3} + u_{n-4}}.\n\\] \nShow that it is periodic for sufficiently large $n$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1964_a5",
+        "informal_statement" : "Prove that there exists a constant $k$ such that for any sequence $a_i$ of positive numbers, \n\\[\n\\sum_{n=1}^{\\infty} \\frac{n}{a_1 + a_2 + \\dots + a_n} \\leq k \\sum_{n=1}^{\\infty}\\frac{1}{a_n}.\n\\]",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1964_a6",
+        "informal_statement" : "Let $S$ be a finite set of collinear points. Let $k$ be the maximum distance between any two points of $S$. Given a pair of points of $S$ a distance $d < k$ apart, we can find another pair of points of $S$ also a distance $d$ apart. Prove that if two pairs of points of $S$ are distances $a$ and $b$ apart, then $\frac{a}{b}$ is rational.",
+        "tags" : ["geometry"]
+    },
+    {
+        "problem_name" : "putnam_1964_b1",
+        "informal_statement" : "Let $a_n$ be a sequence of positive integers such that $\\sum_{n=1}^{\\infty} 1/a_n$ converges. For all $n$, let $b_n$ be the number of $a_n$ which are at most $n$. Prove that $\\lim_{n \\to \\infty} b_n/n = 0$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1964_b2",
+        "informal_statement" : "Let $S$ be a finite set. A set $P$ of subsets of $S$ has the property that any two members of $P$ have at least one element in common and that $P$ cannot be extended (whilst keeping this property). Prove that $P$ contains exactly half of the subsets of $S$.",
+        "tags" : ["set-theory", "combinatorics"]
+    },
+    {
+        "problem_name" : "putnam_1964_b3",
+        "informal_statement" : "Suppose $f : \\mathbb{R} \\to \\mathbb{R}$ is continuous and for every $\\alpha > 0$, $\\lim_{n \\to \\infty} f(n\\alpha) = 0$. Prove that $\\lim_{x \\to \\infty} f(x) = 0$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1964_b5",
+        "informal_statement" : "Let $a_n$ be a strictly monotonic increasing sequence of positive integers. Let $b_n$ be the least common multiple of $a_1, a_2, \\dots , a_n$. Prove that $\\sum_{n=1}^{\\infty} 1/b_n$ converges.",
+        "tags" : ["analysis", "number-theory"]
+    },
+    {
+        "problem_name" : "putnam_1964_b6",
+        "informal_statement" : "Let $D$ be the unit disk in the plane. Show that we cannot find congruent sets $A, B$ with $A \\cap B = \\emptyset$ and $A \\cup B = D$.",
+        "tags" : ["geometry"]
+    }
+]
