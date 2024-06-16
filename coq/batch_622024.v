@@ -317,3 +317,73 @@ Theorem putnam_1991_a3
     putnam_1991_a3_solution coeff n.
 Proof. Admitted.
 End putnam_1991_a3.
+
+Section putnam_2010_b2.
+Require Import Reals Rgeom ZArith GeoCoq.Main.Tarski_dev.Ch16_coordinates_with_functions.
+Context `{T2D:Tarski_2D} `{TE:@Tarski_euclidean Tn TnEQD}.
+Open Scope R.
+Definition putnam_2010_b2_solution := 3.
+Theorem putnam_2010_b2
+    (pt_to_R : Tpoint -> (R * R))
+    (int_val : Tpoint -> Prop := fun P => exists (x y : Z), pt_to_R P = (IZR x, IZR y))
+    (dist : Tpoint -> Tpoint -> R := fun A B => let (a, b) := pt_to_R A in let (c, d) := pt_to_R B in dist_euc a b c d)
+    (p : Tpoint -> Tpoint -> Tpoint -> Prop :=
+        fun A B C => ~ Col A B C /\ int_val A /\ int_val B /\ int_val C /\
+        exists (z: Z), dist A B = IZR z /\ dist A C = IZR z /\ dist B C = IZR z)
+    (m : Z)
+    (hm : exists (A B C: Tpoint), p A B C)
+    (hmlb : forall (A B C: Tpoint), p A B C -> dist A B >= IZR m)
+    : IZR m = putnam_2010_b2_solution.
+Proof. Admitted.
+End putnam_2010_b2.
+
+Section putnam_1997_a1.
+Require Import Reals Rgeom ZArith 
+GeoCoq.Main.Tarski_dev.Ch16_coordinates_with_functions 
+GeoCoq.Main.Annexes.midpoint_theorems
+GeoCoq.Main.Highschool.circumcenter.
+Context `{T2D:Tarski_2D} `{TE:@Tarski_euclidean Tn TnEQD}.
+Open Scope R.
+Definition putnam_1997_a1_solution := 28.
+Theorem putnam_1997_a1
+    (pt_to_R : Tpoint -> (R * R))
+    (dist : Tpoint -> Tpoint -> R := fun A B => let (a, b) := pt_to_R A in let (c, d) := pt_to_R B in dist_euc a b c d)
+    (A B C : Tpoint)
+    (Hp Op Mp Fp : Tpoint)
+    (l1 : dist Hp Op = 11)
+    (l2 : dist Op Mp = 5)
+    (s : Rectangle Hp Op Mp Fp)
+    (hHp : Bet A Fp Hp)                 (* H as the intersection of the altitudes *)
+    (hOp : is_circumcenter Op A B C)    (* O the center of the circumscribed circle *)
+    (hMp : Midpoint B C Mp)             (* M the midpoint of BC *)
+    (hFp : Perp A C B Fp /\ Col A C Fp) (* foot of the altitude *)
+    : dist B C = putnam_1997_a1_solution.
+Proof. Admitted.
+End putnam_1997_a1.
+
+Section putnam_2003_b5.
+Require Import Reals 
+GeoCoq.Main.Tarski_dev.Ch16_coordinates_with_functions
+GeoCoq.Axioms.Definitions
+GeoCoq.Main.Highschool.triangles.
+Context `{T2D:Tarski_2D} `{TE:@Tarski_euclidean Tn TnEQD}.
+Open Scope R.
+Definition putnam_2003_b5_solution (pt_to_R : Tpoint -> (R * R)) (dist : Tpoint -> Tpoint -> R) (P Op : Tpoint) := sqrt 3 * (1 - (dist P Op) ^ 2 - 1).
+Theorem putnam_2003_b5
+    (pt_to_R : Tpoint -> (R * R))
+    (F_to_R : F -> R)
+    (dist : Tpoint -> Tpoint -> R := fun A B => let (a, b) := pt_to_R A in let (c, d) := pt_to_R B in dist_euc a b c d)
+    (Triangle : Tpoint -> Tpoint -> Tpoint -> Prop := fun x y z => ~ Col x y z) (* copied from GeoCoq.Axioms.euclidean_axioms *)
+    (A B C Op Op' P: Tpoint)
+    (fixpoint : dist Op Op' = R1)
+    (hABC : OnCircle A Op Op' /\ OnCircle B Op Op' /\ OnCircle C Op Op')
+    (hABC' : Main.Highschool.triangles.equilateral A B C)
+    (hp : InCircle P Op Op')
+    (a : R := dist P A)
+    (b : R := dist P B)
+    (c : R := dist P C)
+    : exists (A' B' C' : Tpoint) (D: Cs O E A' B' C'),
+    Triangle A' B' C' /\ dist A' B' = a /\ dist B' C' = b /\ dist C' A' = c /\
+    F_to_R (signed_area A' B' C' D A' B' C') = (putnam_2003_b5_solution pt_to_R dist P Op).
+Proof. Admitted.
+End putnam_2003_b5.

@@ -202,10 +202,9 @@ Section putnam_1988_a5.
 Require Import Basics Reals.
 Open Scope R.
 Theorem putnam_1988_a5:
-    exists (f g: R -> R), 
+    exists! (f: R -> R), 
     forall (x: R), (x > 0 -> f x > 0) ->
-    (compose f f) x = 6 * x - f x -> 
-    f = g.
+    (compose f f) x = 6 * x - f x.
 Proof. Admitted.
 End putnam_1988_a5.
 
@@ -213,7 +212,10 @@ Section putnam_1988_b1.
 Require Import ZArith Znumtheory.
 Open Scope Z.
 Theorem putnam_1988_b1:
-    forall (n: Z), n > 3 /\ ~ prime n -> exists (a b c: Z), a > 0 /\ b > 0 /\ c > 0 /\ n = a * b + b * c + c * a + 1.    
+forall (a : Z), a >= 2 -> 
+forall (b : Z), b >= 2 -> 
+exists (x y z: Z), x > 0 /\ y > 0 /\ z > 0 /\ 
+a * b = x * y + y * z + z * x + 1.
 Proof. Admitted.
 End putnam_1988_b1.
 

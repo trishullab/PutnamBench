@@ -34,6 +34,15 @@ theorem putnam_1967_a4
 : ¬∃ u : ℝ → ℝ, ∀ x ∈ Set.Icc 0 1, u x = 1 + lambda * (∫ y in Set.Ioo x 1, u y * u (y - x)) :=
 sorry
 
+abbrev putnam_1967_a6_solution : ℕ := sorry
+-- 8
+theorem putnam_1967_a6
+(abneq0 : (Fin 4 → ℝ) → (Fin 4 → ℝ) → Prop := (fun a b : Fin 4 → ℝ => a 0 * b 1 - a 1 * b 0 ≠ 0))
+(numtuples : (Fin 4 → ℝ) → (Fin 4 → ℝ) → ℕ)
+(hnumtuples : ∀ a b : Fin 4 → ℝ, numtuples a b = {s : Fin 4 → ℝ | ∃ x : Fin 4 → ℝ, (∀ i : Fin 4, x i ≠ 0) ∧ (∑ i : Fin 4, a i * x i) = 0 ∧ (∑ i : Fin 4, b i * x i) = 0 ∧ (∀ i : Fin 4, s i = Real.sign (x i))}.encard)
+: (∃ a b : Fin 4 → ℝ, abneq0 a b ∧ numtuples a b = putnam_1967_a6_solution) ∧ (∀ a b : Fin 4 → ℝ, abneq0 a b → numtuples a b ≤ putnam_1967_a6_solution) :=
+sorry
+
 theorem putnam_1967_b2
 (p r : ℝ)
 (A B C α β γ : ℝ)
@@ -48,4 +57,22 @@ theorem putnam_1967_b3
 (fgcont : Continuous f ∧ Continuous g)
 (fgperiod : Function.Periodic f 1 ∧ Function.Periodic g 1)
 : Tendsto (fun n : ℤ => ∫ x in Set.Ioo 0 1, f x * g (n * x)) atTop (𝓝 ((∫ x in Set.Ioo 0 1, f x) * (∫ x in Set.Ioo 0 1, g x))) :=
+sorry
+
+-- uses (ℕ → Set.Icc 1 n → Bool) instead of (Set.Icc 0 n → Set.Icc 1 n → Bool)
+theorem putnam_1967_b4
+(n : ℕ)
+(lockers : ℕ → Set.Icc 1 n → Bool)
+(npos : n ≥ 1)
+(hlockers0 : ∀ i : Set.Icc 1 n, lockers 0 i = false)
+(hlockersk : ∀ k ∈ Set.Icc 1 n, ∀ i : Set.Icc 1 n, lockers k i = if k ∣ i then !(lockers (k - 1) i) else (lockers (k - 1) i))
+: ∀ i : Set.Icc 1 n, lockers n i ↔ (∃ j : ℕ, j ^ 2 = i) :=
+sorry
+
+-- boosted domain of f to the 2D plane and made it partially differentiable everywhere
+theorem putnam_1967_b6
+(f : ℝ → ℝ → ℝ)
+(fdiff : (∀ y : ℝ, Differentiable ℝ (fun x : ℝ => f x y)) ∧ (∀ x : ℝ, Differentiable ℝ (fun y : ℝ => f x y)))
+(fbound : ∀ x y : ℝ, (x ^ 2 + y ^ 2 ≤ 1) → |f x y| ≤ 1)
+: ∃ x0 y0 : ℝ, (x0 ^ 2 + y0 ^ 2 < 1) ∧ ((deriv (fun x : ℝ => f x y0) x0) ^ 2 + (deriv (fun y : ℝ => f x0 y) y0) ^ 2 ≤ 16) :=
 sorry
