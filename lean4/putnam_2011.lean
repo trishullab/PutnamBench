@@ -1,6 +1,17 @@
 import Mathlib
 open BigOperators
 
+abbrev putnam_2011_a1_solution : ℕ := sorry
+-- 10053
+theorem putnam_2011_a1
+(isspiral : List (Fin 2 → ℤ) → Prop := (fun P : List (Fin 2 → ℤ) => P.length ≥ 2 ∧ P[0]! = 0 ∧
+(∃ l : Fin (P.length - 1) → ℕ, l > 0 ∧ StrictMono l ∧ (∀ i : Fin (P.length - 1),
+(i.1 % 4 = 0 → (P[i] 0 + l i = P[i.1 + 1] 0 ∧ P[i] 1 = P[i.1 + 1] 1)) ∧
+(i.1 % 4 = 1 → (P[i] 0 = P[i.1 + 1] 0 ∧ P[i] 1 + l i = P[i.1 + 1] 1)) ∧
+(i.1 % 4 = 2 → (P[i] 0 - l i = P[i.1 + 1] 0 ∧ P[i] 1 = P[i.1 + 1] 1)) ∧
+(i.1 % 4 = 3 → (P[i] 0 = P[i.1 + 1] 0 ∧ P[i] 1 - l i = P[i.1 + 1] 1))))))
+: {p : Fin 2 → ℤ | ¬∃ spiral : List (Fin 2 → ℤ), isspiral spiral ∧ spiral.getLast! = p}.encard = putnam_2011_a1_solution :=
+sorry
 
 open Topology Filter
 noncomputable abbrev putnam_2011_a2_solution : ℝ := sorry
@@ -33,6 +44,35 @@ theorem putnam_2011_a4
 : nmat ↔ n ∈ putnam_2011_a4_solution :=
 sorry
 
+theorem putnam_2011_a5
+(F : (Fin 2 → ℝ) → ℝ)
+(g : ℝ → ℝ)
+(vec : ℝ → ℝ → (Fin 2 → ℝ))
+(Fgrad : (Fin 2 → ℝ) → (Fin 2 → ℝ))
+(parallel : (Fin 2 → ℝ) → (Fin 2 → ℝ) → Prop := (fun u v : Fin 2 → ℝ => ∃ c : ℝ, u = c • v))
+(Fgdiff : ContDiff ℝ 2 F ∧ ContDiff ℝ 2 g)
+(prop1 : ∀ uu : Fin 2 → ℝ, uu 0 = uu 1 → F uu = 0)
+(prop2 : ∀ x : ℝ, g x > 0 ∧ x ^ 2 * g x ≤ 1)
+(hvec : ∀ x y : ℝ, (vec x y) 0 = x ∧ (vec x y) 1 = y)
+(hFgrad : ∀ uv : Fin 2 → ℝ, Fgrad uv 0 = deriv (fun x : ℝ => F (vec x (uv 1))) (uv 0) ∧ Fgrad uv 1 = deriv (fun y : ℝ => F (vec (uv 0) y)) (uv 1))
+(prop3 : ∀ uv : Fin 2 → ℝ, Fgrad uv = 0 ∨ parallel (Fgrad uv) (vec (g u) (-g v)))
+: ∃ C : ℝ, ∀ n ≥ 2, ∀ x : Fin (n + 1) → ℝ, sInf {Fxx : ℝ | ∃ i j : Fin (n + 1), i ≠ j ∧ Fxx = |F (vec (x i) (x j))|} ≤ C / n :=
+sorry
+
+theorem putnam_2011_a6
+(G : Type*) [CommGroup G] [Fintype G]
+(n : ℕ)
+(gset : Set G)
+(k : ℕ)
+(mgprob : ℕ → G → ℝ := (fun (m : ℕ) (x : G) => {f : Fin m → gset | (∏ i : Fin m, (f i).1) = x}.ncard / k ^ m))
+(hn : n = (Fintype.elems : Finset G).card)
+(hk : gset.encard = k)
+(hgsetprop : k < n)
+(hgset1 : 1 ∈ gset)
+(hgsetgen : Group.closure gset = G)
+: ∃ b ∈ Set.Ioo (0 : ℝ) 1, ∃ C > 0, Tendsto (fun m : ℕ => (1 / b ^ (2 * m)) * (∑ x : G, (mgprob m x - 1 / n) ^ 2)) atTop (𝓝 C) :=
+sorry
+
 theorem putnam_2011_b1
 (h k : ℤ)
 (hkpos : h > 0 ∧ k > 0)
@@ -56,6 +96,13 @@ abbrev putnam_2011_b3_solution : Prop := sorry
 -- True
 theorem putnam_2011_b3
 : ((∀ f g : ℝ → ℝ, g 0 ≠ 0 → ContinuousAt g 0 → DifferentiableAt ℝ (fun x ↦ f x * g x) 0 → DifferentiableAt ℝ (fun x ↦ f x / g x) 0 → (DifferentiableAt ℝ f 0)) ↔ putnam_2011_b3_solution) :=
+sorry
+
+theorem putnam_2011_b4
+(games : Fin 2011 → Fin 2011 → Bool)
+(T : Matrix (Fin 2011) (Fin 2011) ℂ := (fun p1 p2 : Fin 2011 => {g : Fin 2011 | games g p1 = games g p2}.ncard))
+(W : Matrix (Fin 2011) (Fin 2011) ℂ := (fun p1 p2 : Fin 2011 => {g : Fin 2011 | games g p1 ∧ !games g p2}.ncard - {g : Fin 2011 | !games g p1 ∧ games g p2}.ncard))
+: ∃ n : ℕ, (T + Complex.I • W).det = n ∧ (2 ^ 2010) ∣ n :=
 sorry
 
 theorem putnam_2011_b5

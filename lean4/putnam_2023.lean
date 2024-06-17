@@ -32,13 +32,6 @@ theorem putnam_2023_a3
 f 0 > 0 ∧ g 0 = 0 ∧ (∀ x : ℝ, |deriv f x| ≤ |g x| ∧ |deriv g x| ≤ |f x|) ∧ f r = 0} = putnam_2023_a3_solution :=
 sorry
 
-
-abbrev putnam_2023_b2_solution : ℕ := sorry
--- 3
-theorem putnam_2023_b2
-: sInf {(digits 2 (2023*n)).sum | n > 0} = putnam_2023_b2_solution :=
-sorry
-
 def num_ones : List ℕ → ℕ
 | [] => (0 : ℕ)
 | (h :: t) => if h = 1 then num_ones t + 1 else num_ones t
@@ -46,6 +39,26 @@ abbrev putnam_2023_a5_solution : Set ℂ := sorry
 -- {-(3^1010 - 1)/2, -(3^1010 - 1)/2 + Real.sqrt (9^1010 - 1) * Complex.I/4, -(3^1010 - 1)/2 - Real.sqrt (9^1010 - 1) * Complex.I/4}
 theorem putnam_2023_a5
 : {z : ℂ | ∑ k in Finset.Icc 0 (3^1010 - 1), (-2)^(num_ones (digits 3 k)) * (z + k)^2023 = 0} = putnam_2023_a5_solution :=
+sorry
+
+-- uses (ℕ → ℕ → Bool) instead of (Fin m → Fin n → Bool)
+abbrev putnam_2023_b1_solution : ℕ → ℕ → ℕ := sorry
+-- (fun m n : ℕ => Nat.choose (m + n - 2) (m - 1))
+theorem putnam_2023_b1
+(m n : ℕ)
+(initcoins : ℕ → ℕ → Bool := (fun i j : ℕ => i ≤ m - 2 ∧ j ≤ n - 2))
+(legalmove : (ℕ → ℕ → Bool) → (ℕ → ℕ → Bool) → Prop := (fun (coins1 : ℕ → ℕ → Bool) (coins2 : ℕ → ℕ → Bool) => ∃ i j : ℕ, i < m - 1 ∧ j < n - 1 ∧
+coins1 i j ∧ !coins1 (i + 1) j ∧ !coins1 i (j + 1) ∧ !coins1 (i + 1) (j + 1) ∧ !coins2 i j ∧ !coins2 (i + 1) j ∧ !coins2 i (j + 1) ∧ coins2 (i + 1) (j + 1) ∧
+(∀ i' j' : ℕ, ((i', j') ≠ (i, j) ∧ (i', j') ≠ (i + 1, j) ∧ (i', j') ≠ (i, j + 1) ∧ (i', j') ≠ (i + 1, j + 1)) → coins1 i' j' = coins2 i' j')))
+(legalseq : List (ℕ → ℕ → Bool) → Prop := (fun seq : List (ℕ → ℕ → Bool) => seq.length ≥ 1 ∧ seq[0]! = initcoins ∧ (∀ i < seq.length - 1, legalmove seq[i]! seq[i + 1]!)))
+(mnpos : m ≥ 1 ∧ n ≥ 1)
+: {config : ℕ → ℕ → Bool | ∃ seq : List (ℕ → ℕ → Bool), legalseq seq ∧ config = seq.getLast!}.encard = putnam_2023_b1_solution m n :=
+sorry
+
+abbrev putnam_2023_b2_solution : ℕ := sorry
+-- 3
+theorem putnam_2023_b2
+: sInf {(digits 2 (2023*n)).sum | n > 0} = putnam_2023_b2_solution :=
 sorry
 
 open Topology Filter
