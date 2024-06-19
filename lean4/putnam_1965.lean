@@ -12,14 +12,14 @@ open Complex
 
 theorem putnam_1965_a3
 (a : ℕ → ℝ)
-(α : ℝ)
+(α : ℂ)
 : Tendsto (fun n : ℕ => (∑ k in Finset.Icc 1 n, exp (I * a k))/n) ⊤ (𝓝 α) ↔
-Tendsto (fun n : ℕ => (∑ k in Finset.Icc 1 n, exp (I * a (k^2)))/(n^2 : ℂ)) ⊤ (𝓝 α) :=
+Tendsto (fun n : ℕ => (∑ k in Finset.Icc 1 (n^2), exp (I * a k))/n^2) ⊤ (𝓝 α) :=
 sorry
 
 theorem putnam_1965_a4
-[Fintype G]
-[Fintype B]
+[Fintype G] [Nonempty G]
+[Fintype B] [Nonempty B]
 (dances : G → B → Prop)
 (h : (¬∃ b : B, ∀ g : G, dances g b) ∧ ∀ g : G, ∃ b : B, dances g b)
 : ∃ g h : G, ∃ b c : B, dances g b ∧ dances h c ∧ ¬dances h b ∧ ¬dances g c :=
@@ -35,7 +35,7 @@ theorem putnam_1965_a6
 (u v m : ℝ)
 (hm : m > 1)
 (huv : u ≥ 0 ∧ v ≥ 0)
-: (∃! p : ℝ × ℝ, u*p.1 + v*p.2 = 1 ∧ (p.1)^m + (p.2)^m = 1) ↔ ∃ n : ℝ, u^n + v^n = 1 ∧ m^(-(1 : ℤ)) + n^(-(1 : ℤ)) = 1 :=
+: (∃! p : ℝ × ℝ, p.1 ≥ 0 ∧ p.2 ≥ 0 ∧ u*p.1 + v*p.2 = 1 ∧ (p.1)^m + (p.2)^m = 1) ↔ ∃ n : ℝ, u^n + v^n = 1 ∧ m^(-(1 : ℤ)) + n^(-(1 : ℤ)) = 1 :=
 sorry
 
 theorem putnam_1965_b2
@@ -50,7 +50,7 @@ theorem putnam_1965_b2
 sorry
 
 theorem putnam_1965_b3
-: {(a, b, c) : ℕ × ℕ × ℕ | a > 0 ∧ a ≤ b ∧ a^2 + b^2 = c^2 ∧ a*b/(2 : ℚ) = 2*(a + b + c)}.ncard = 3 :=
+: {(a, b, c) : ℤ × ℤ × ℤ | a > 0 ∧ a ≤ b ∧ c > 0 ∧ a^2 + b^2 = c^2 ∧ a*b/(2 : ℚ) = 2*(a + b + c)}.ncard = 3 :=
 sorry
 
 noncomputable abbrev putnam_1965_b4_solution : ((((ℝ → ℝ) → (ℝ → ℝ)) × ((ℝ → ℝ) → (ℝ → ℝ))) × ((Set ℝ) × (ℝ → ℝ))) := sorry
