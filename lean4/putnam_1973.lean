@@ -4,7 +4,7 @@ open BigOperators
 open Nat Set
 
 theorem putnam_1973_a3
-(b : ℤ → ℝ := fun n => sInf {k + n/k | k > 0})
+(b : ℤ → ℝ := fun n => sInf {k + (n : ℝ)/(k : ℝ) | k > (0 : ℤ)})
 : ∀ n : ℤ, n > 0 → floor (b n) = floor (Real.sqrt (4 * n + 1)) :=
 sorry
 
