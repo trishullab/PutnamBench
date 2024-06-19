@@ -50,6 +50,14 @@ theorem putnam_2018_a5
 : ∃ n > 0, ∃ x : ℝ, iteratedDeriv n f x < 0 :=
 sorry
 
+theorem putnam_2018_a6
+(A B C D : Fin 2 → ℝ)
+(PPprops : (Fin 2 → ℝ) → (Fin 2 → ℝ) → Prop := (fun P1 P2 : Fin 2 → ℝ => P1 ≠ P2 ∧ (∃ q : ℚ, (Euclidean.dist P1 P2) ^ 2 = q)))
+(ABCDnoline : ¬Collinear ℝ {A, B, C} ∧ ¬Collinear ℝ {A, B, D} ∧ ¬Collinear ℝ {A, C, D} ∧ ¬Collinear ℝ {B, C, D})
+(ABCDsqrrat : PPprops A B ∧ PPprops A C ∧ PPprops A D ∧ PPprops B C ∧ PPprops B D ∧ PPprops C D)
+: ∃ q : ℚ, (MeasureTheory.volume (convexHull ℝ {A, B, C}) / MeasureTheory.volume (convexHull ℝ {A, B, D})).toReal = q :=
+sorry
+
 abbrev putnam_2018_b1_solution : Set (Vector ℤ 2) := sorry
 -- {v : Vector ℤ 2 | ∃ b : ℤ, 0 ≤ b ∧ b ≤ 100 ∧ Even b ∧ v.toList = [1, b]}
 theorem putnam_2018_b1
@@ -88,6 +96,16 @@ theorem putnam_2018_b4
 (hx12 : x 1 = a ∧ x 2 = a)
 (hxn : ∀ n ≥ 2, x (n + 1) = 2 * (x n) * (x (n - 1)) - x (n - 2))
 : (∃ n, x n = 0) → (∃ c, c > 0 ∧ Function.Periodic x c) :=
+sorry
+
+theorem putnam_2018_b5
+(f : ℝ → ℝ → (Fin 2 → ℝ))
+(fpart1 : Fin 2 → ℝ → (ℝ → ℝ) := (fun (i : Fin 2) (x2 : ℝ) => (fun x1 => (f x1 x2) i)))
+(fpart2 : Fin 2 → ℝ → (ℝ → ℝ) := (fun (i : Fin 2) (x1 : ℝ) => (fun x2 => (f x1 x2) i)))
+(fdiff : ∀ (i : Fin 2) (x : ℝ), ContDiff ℝ 1 (fpart1 i x) ∧ ContDiff ℝ 1 (fpart2 i x))
+(fpos : ∀ (i : Fin 2) (x : ℝ), deriv (fpart1 i x) > 0 ∧ deriv (fpart2 i x) > 0)
+(fexprgt0 : ∀ x1 x2 : ℝ, (deriv (fpart1 0 x1) x2) * (deriv (fpart2 1 x2) x1) - (1 / 4) * ((deriv (fpart2 0 x2) x1) + (deriv (fpart1 1 x1) x2)) ^ 2 > 0)
+: Function.Injective f :=
 sorry
 
 theorem putnam_2018_b6

@@ -65,6 +65,13 @@ theorem putnam_2022_b2
 : (n > 0 ∧ ∃ S : Finset (Fin 3 → ℝ), S.card = n ∧ Scross S) ↔ n ∈ putnam_2022_b2_solution :=
 sorry
 
+-- boosts domain of "isred" to all reals instead of just positive reals
+abbrev putnam_2022_b3_solution : Prop := sorry
+-- True
+theorem putnam_2022_b3
+(recolor : (ℝ → Prop) → (ℝ → Prop) := (fun isred : ℝ → Prop => (fun d : ℝ => ∃ p q : ℝ, p > 0 ∧ q > 0 ∧ p < q ∧ isred p = isred q ∧ q - p = d)))
+: (∀ isred : ℝ → Prop, (∃ k : ℕ, ∀ p > 0, (recolor^[k] isred) p)) ↔ putnam_2022_b3_solution :=
+sorry
 
 -- Note: uses (ℕ → ℝ) instead of (Fin n → ℝ)
 abbrev putnam_2022_b4_solution : Set ℕ := sorry
@@ -78,6 +85,18 @@ theorem putnam_2022_b4
 : (n ≥ 4 ∧ ∃ x : ℕ → ℝ, xprog x) ↔ n ∈ putnam_2022_b4_solution :=
 sorry
 
+abbrev putnam_2022_b5_solution : Set ℝ := sorry
+-- Set.Icc 0 (1 / 4)
+theorem putnam_2022_b5
+(p : ℝ)
+(Xset : (n : ℕ) → Set (Fin n → ℤ))
+(Xprob : (n : ℕ) → (Fin n → ℤ) → ℝ)
+(P : (n : ℕ) → ℤ → (Fin n → ℤ) → ℝ)
+(hXset : ∀ n > 0, Xset n = {X : Fin n → ℤ | ∀ i : Fin n, X i = 1 ∨ X i = -1 ∨ X i = 0})
+(hXprob : ∀ n > 0, ∀ X : Fin n → ℤ, Xprob n X = ∏ i : Fin n, if (X i = 1 ∨ X i = -1) then p else (1 - 2 * p))
+(hP : ∀ n > 0, ∀ (b : ℤ) (a : Fin n → ℤ), P n b a = ∑' X : {X' ∈ Xset n | (∑ i : Fin n, a i * X' i) = b}, Xprob n X)
+: (0 ≤ p ∧ p ≤ 1 / 2 ∧ (∀ n > 0, ∀ (b : ℤ) (a : Fin n → ℤ), P n 0 a ≥ P n b a)) ↔ p ∈ putnam_2022_b5_solution :=
+sorry
 
 -- Note: uses (ℝ → ℝ) instead of (Rpos → Rpos) to check the equality property
 abbrev putnam_2022_b6_solution : Set (Set.Ioi (0 : ℝ) → Set.Ioi (0 : ℝ)) := sorry

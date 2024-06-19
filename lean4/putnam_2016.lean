@@ -73,6 +73,21 @@ theorem putnam_2016_b2
 : ((∀ α β : ℝ, ((α, β) = putnam_2016_b2_solution ↔ p α β)) ∨ ¬∃ α β : ℝ, p α β) :=
 sorry
 
+theorem putnam_2016_b3
+(S : Finset (Fin 2 → ℝ))
+(hS : ∀ A ∈ S, ∀ B ∈ S, ∀ C ∈ S, MeasureTheory.volume (convexHull ℝ {A, B, C}) ≤ 1)
+: ∃ A' B' C' : Fin 2 → ℝ, MeasureTheory.volume (convexHull ℝ {A', B', C'}) = 4 ∧ convexHull ℝ {A', B', C'} ⊇ S :=
+sorry
+
+noncomputable abbrev putnam_2016_b4_solution : ℕ → ℝ := sorry
+-- (fun n : ℕ => (2 * n)! / (4 ^ n * (n)!))
+theorem putnam_2016_b4
+(n : ℕ)
+(mats01 : Set (Matrix (Fin (2 * n)) (Fin (2 * n)) ℝ) := {A : Matrix (Fin (2 * n)) (Fin (2 * n)) ℝ | ∀ i j : Fin (2 * n), A i j = 0 ∨ A i j = 1})
+(npos : n ≥ 1)
+: (∑' A : mats01, (A.1 - (Matrix.transpose A)).det) / mats01.ncard = putnam_2016_b4_solution n :=
+sorry
+
 abbrev putnam_2016_b5_solution : Set (Set.Ioi (1 : ℝ) → Set.Ioi (1 : ℝ)) := sorry
 -- {f : Set.Ioi (1 : ℝ) → Set.Ioi (1 : ℝ) | ∃ c : ℝ, c > 0 ∧ ∀ x : Set.Ioi (1 : ℝ), (f x : ℝ) = x ^ c}
 theorem putnam_2016_b5

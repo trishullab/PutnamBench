@@ -1,6 +1,16 @@
 import Mathlib
 open BigOperators
 
+theorem putnam_2015_a1
+(hyperbola : Set (Fin 2 → ℝ) := {p : Fin 2 → ℝ | p 1 = 1 / p 0 ∧ p 0 > 0})
+(A B : Fin 2 → ℝ)
+(P : Fin 2 → ℝ)
+(PPline : (Fin 2 → ℝ) → (Fin 2 → ℝ) → (ℝ → ℝ))
+(hAB : A ∈ hyperbola ∧ B ∈ hyperbola ∧ A 0 < B 0)
+(hP : P ∈ hyperbola ∧ A 0 < P 0 ∧ P 0 < B 0 ∧ (∀ P' : Fin 2 → ℝ, (P' ∈ hyperbola ∧ A 0 < P' 0 ∧ P' 0 < B 0) → MeasureTheory.volume (convexHull ℝ {A, P', B}) ≤ MeasureTheory.volume (convexHull ℝ {A, P, B})))
+(hPPline : ∀ P1 P2 : Fin 2 → ℝ, P1 0 ≠ P2 0 → PPline P1 P2 = (fun x : ℝ => ((P2 1 - P1 1) / (P2 0 - P1 0)) * (x - P1 0) + P1 1))
+: ∫ x in Set.Ioo (A 0) (P 0), (PPline A P) x - 1 / x = ∫ x in Set.Ioo (P 0) (B 0), (PPline P B) x - 1 / x :=
+sorry
 
 -- there are several possible correct solutions; this is the one shown on the solutions document
 abbrev putnam_2015_a2_solution : ℕ := sorry
@@ -56,6 +66,19 @@ theorem putnam_2015_b1
 (hnzeros : ∀ f' : ℝ → ℝ, ∀ n : ℕ, nzeros f' n = ({x : ℝ | f' x = 0}.encard ≥ n))
 (fzeros : nzeros f 5)
 : nzeros (f + 6 * deriv f + 12 * iteratedDeriv 2 f + 8 * iteratedDeriv 3 f) 2 :=
+sorry
+
+abbrev putnam_2015_b2_solution : Prop := sorry
+-- True
+theorem putnam_2015_b2
+(sets : ℕ → Set ℕ)
+(Smin3 : Set ℕ → (Fin 3 → ℕ))
+(sums : ℕ → ℕ)
+(hsets0 : sets 0 = Set.Ici 1)
+(hmin3 : ∀ S : Set ℕ, S.encard ≥ 3 → ((Smin3 S) 0 = sInf S ∧ (Smin3 S) 1 = sInf (S \ {(Smin3 S) 0}) ∧ (Smin3 S) 2 = sInf (S \ {(Smin3 S) 0, (Smin3 S) 1})))
+(hsums : ∀ n : ℕ, sums n = (Smin3 (sets n)) 0 + (Smin3 (sets n)) 1 + (Smin3 (sets n)) 2)
+(hsetsn : ∀ n : ℕ, sets (n + 1) = sets n \ {(Smin3 (sets n)) 0, (Smin3 (sets n)) 1, (Smin3 (sets n)) 2, sums n})
+: (∃ n : ℕ, List.IsPrefix [5, 1, 0, 2] (Nat.digits 10 (sums n))) ↔ putnam_2015_b2_solution :=
 sorry
 
 abbrev putnam_2015_b3_solution : Set (Matrix (Fin 2) (Fin 2) ℝ) := sorry
