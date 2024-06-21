@@ -1,35 +1,38 @@
 import Mathlib
 
-open MeasureTheory
 open BigOperators
 
 theorem putnam_1962_a1
-(p : Fin 5 → (ℝ × ℝ))
-(hnoncol : ∀ i j k : Fin 5, i ≠ j ∧ j ≠ k ∧ i ≠ k → ¬ Collinear ℝ { p i, p j, p k })
-: ∃ i : Fin 5, Convex ℝ ({p 0, p 1, p 2, p 3, p 4} \ {p i}) :=
+(S : Set (ℝ × ℝ))
+(hS : S.ncard = 5)
+(hnoncol : ∀ s ⊆ S, s.ncard = 3 → ¬Collinear ℝ s)
+: ∃ T ⊆ S, T.ncard = 4 ∧ ¬∃ t ∈ T, t ∈ convexHull ℝ (T \ {t}) :=
 sorry
 
 abbrev putnam_1962_a2_solution : Set (ℝ → ℝ) := sorry
--- { f | ∃ a c : ℝ, a > 0 ∧ f = fun x => a / (1 - c * x)^2 }
+-- {f : ℝ → ℝ | ∃ a c : ℝ, a > 0 ∧ f = fun x => a / (1 - c * x)^2}
 theorem putnam_1962_a2
-(hf : ℝ → (ℝ → ℝ) → Prop := fun e f => ∀ x ∈ Set.Ioc 0 e, (⨍ v in Set.Icc 0 x, f v) = Real.sqrt ((f 0) * (f x)))
-(hfinf : (ℝ → ℝ) → Prop := fun f => ∀ x > 0, (⨍ v in Set.Icc 0 x, f v) = Real.sqrt ((f 0) * (f x)))
-: ∀ f, (hfinf f ∨ (∃ e, hf e f)) ↔ f ∈ putnam_1962_a2_solution :=
+(hf : ℝ → (ℝ → ℝ) → Prop := fun (e : ℝ) (f : ℝ → ℝ) => ∀ x ∈ Set.Ioo 0 e, (⨍ v in Set.Icc 0 x, f v) = Real.sqrt ((f 0) * (f x)))
+(hfinf : (ℝ → ℝ) → Prop := fun (f : ℝ → ℝ) => ∀ x > 0, (⨍ v in Set.Icc 0 x, f v) = Real.sqrt ((f 0) * (f x)))
+: (∀ f : ℝ → ℝ, (hfinf f → ∃ g ∈ putnam_1962_a2_solution, ∀ x ≥ 0, g x = f x) ∧
+∀ e > 0, hf e f → ∃ g ∈ putnam_1962_a2_solution, ∀ x ∈ Set.Ico 0 e, g x = f x) ∧
+∀ f ∈ putnam_1962_a2_solution, hfinf f ∨ (∃ e > 0, hf e f) :=
 sorry
 
 theorem putnam_1962_a4
 (f : ℝ → ℝ)
 (a b : ℝ)
-(hfabs : ∀ x ∈ Set.Icc a b, |f x| <= 1)
-(hfppabs : ∀ x ∈ Set.Icc a b, |(iteratedDeriv 2 f) x| <= 1)
-(hlen2 : b - a >= 2)
-: ∀ x ∈ Set.Icc a b, |(iteratedDeriv 1 f) x| <= 2 :=
+(hdiff : Differentiable ℝ f ∧ (Differentiable ℝ (deriv f)))
+(hfabs : ∀ x ∈ Set.Icc a b, |f x| ≤ 1)
+(hfppabs : ∀ x ∈ Set.Icc a b, |(iteratedDeriv 2 f) x| ≤ 1)
+(hlen2 : b - a ≥ 2)
+: ∀ x ∈ Set.Icc a b, |(iteratedDeriv 1 f) x| ≤ 2 :=
 sorry
 
 abbrev putnam_1962_a5_solution : ℕ → ℕ := sorry
--- fun n => n * (n+1) * (2^(n-2))
+-- fun n : ℕ => n * (n + 1) * 2^(n - 2)
 theorem putnam_1962_a5
-: putnam_1962_a5_solution = (fun n => ∑ k : Finset.Icc 1 n, Nat.choose n k * k^2) :=
+: ∀ n ≥ 2, putnam_1962_a5_solution n = ∑ k in Finset.Icc 1 n, Nat.choose n k * k^2 :=
 sorry
 
 theorem putnam_1962_a6
@@ -41,12 +44,12 @@ theorem putnam_1962_a6
 sorry
 
 theorem putnam_1962_b1
-(p : ℝ → ℕ → ℝ := fun x n => ∏ i : Finset.range n, (x - i))
+(p : ℕ → ℝ → ℝ)
 (x y : ℝ)
 (n : ℕ)
-(npos : n > 0)
-(hx0 : p x 0 = 1)
-: p (x+y) n = ∑ k : Finset.range (n+1), Nat.choose n k * (p x k) * (p y (n - k)) :=
+(h0 : p 0 = fun x : ℝ => 1)
+(hp : ∀ n > 0, p n = fun x : ℝ => ∏ i in Finset.range n, (x - i))
+: p n (x+y) = ∑ k in Finset.range (n+1), Nat.choose n k * (p k x) * (p (n - k) y) :=
 sorry
 
 theorem putnam_1962_b5
@@ -57,13 +60,11 @@ sorry
 
 theorem putnam_1962_b6
 (n : ℕ)
-(a b : Fin n → ℝ)
-(npos : n > 0)
-(f : ℝ → ℝ := fun x => ∑ k : Fin n, ((a k) * Real.sin (k * x) + (b k) * Real.cos (k * x)))
-(hf1 : ∀ x ∈ Set.Icc 0 (2 * π), |f x| <= 1)
-(xs : Fin (2*n) → ℝ)
-(xsrange : ∀ i, xs i >= 0 ∧ xs i < 2 * π)
-(xsord : ∀ i j, i < j → xs i < xs j)
-(xsabs : ∀ i, |f (xs i)| = 1)
-: ∃ a : ℝ, f = fun x => Real.cos (n * x + a) :=
+(a b : ℕ → ℝ)
+(xs : Set ℝ)
+(f : ℝ → ℝ := fun x : ℝ => ∑ k in Finset.Icc 0 n, ((a k) * Real.sin (k * x) + (b k) * Real.cos (k * x)))
+(hf1 : ∀ x ∈ Set.Icc 0 (2 * π), |f x| ≤ 1)
+(hxs : xs.ncard = 2 * n ∧ xs ⊆ Set.Ico 0 (2 * π))
+(hfxs : ∀ x ∈ xs, |f x| = 1)
+: (¬∃ c : ℝ, f = fun x : ℝ => c) → ∃ a : ℝ, f = fun x : ℝ => Real.cos (n * x + a) :=
 sorry
