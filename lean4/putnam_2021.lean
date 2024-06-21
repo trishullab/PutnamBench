@@ -20,6 +20,17 @@ theorem putnam_2021_a2
 : Tendsto (fun x : ℝ => g x / x) atTop (𝓝 putnam_2021_a2_solution) :=
 sorry
 
+abbrev putnam_2021_a3_solution : Set ℕ := sorry
+-- {3 * m ^ 2 | m > 0}
+theorem putnam_2021_a3
+(N : ℕ)
+(Nsphere : Set (Fin 3 → ℝ) := {p : Fin 3 → ℝ | (p 0) ^ 2 + (p 1) ^ 2 + (p 2) ^ 2 = N})
+(intcoords : (Fin 3 → ℝ) → Prop := (fun p : Fin 3 → ℝ => ∀ i : Fin 3, p i = round (p i)))
+(Ntetra : Prop := ∃ A B C D : Fin 3 → ℝ, A ∈ Nsphere ∧ B ∈ Nsphere ∧ C ∈ Nsphere ∧ D ∈ Nsphere ∧ intcoords A ∧ intcoords B ∧ intcoords C ∧ intcoords D ∧
+(∃ s > 0, Euclidean.dist A B = s ∧ Euclidean.dist A C = s ∧ Euclidean.dist A D = s ∧ Euclidean.dist B C = s ∧ Euclidean.dist B D = s ∧ Euclidean.dist C D = s))
+: (N > 0 ∧ Ntetra) ↔ N ∈ putnam_2021_a3_solution :=
+sorry
+
 noncomputable abbrev putnam_2021_a4_solution : ℝ := sorry
 -- ((Real.sqrt 2) / 2) * Real.pi * Real.log 2
 theorem putnam_2021_a4
@@ -61,9 +72,26 @@ theorem putnam_2021_b2
 : (∃ a : ℕ → ℝ, asum a ∧ S a = putnam_2021_b2_solution) ∧ (∀ a : ℕ → ℝ, asum a → S a ≤ putnam_2021_b2_solution) :=
 sorry
 
+abbrev putnam_2021_b3_solution : Prop := sorry
+-- True
+theorem putnam_2021_b3
+(vec : ℝ → ℝ → (Fin 2 → ℝ))
+(rho : ((Fin 2 → ℝ) → ℝ) → (Fin 2 → ℝ) → ℝ := (fun (h : (Fin 2 → ℝ) → ℝ) (p : Fin 2 → ℝ) => (p 1) * deriv (fun x' : ℝ => h (vec x' (p 1))) (p 0) - (p 0) * deriv (fun y' : ℝ => h (vec (p 0) y')) (p 1)))
+(circint : (Fin 2 → ℝ) → ℝ → Set (Fin 2 → ℝ) := (fun (c : Fin 2 → ℝ) (r : ℝ) => {p : Fin 2 → ℝ | Euclidean.dist p c < r}))
+(hvec : ∀ x y : ℝ, (vec x y) 0 = x ∧ (vec x y 1) = y)
+: (∀ h : (Fin 2 → ℝ) → ℝ, ContDiff ℝ 2 h → (∀ d > 0, ∀ r > 0, d > r → (∃ c : Fin 2 → ℝ, Euclidean.dist c 0 = d ∧ (∫ p in (circint c r), rho h p) = 0))) ↔ putnam_2021_b3_solution :=
+sorry
+
 theorem putnam_2021_b4
 (F : ℕ → ℕ)
 (hF : ∀ x, x ≥ 2 → F x = F (x - 1) + F (x - 2))
 (F01 : F 0 = 0 ∧ F 1 = 1)
 : ∀ m, m > 2 → (∃ p,  (∏ k : Set.Icc 1 (F m - 1),  (k.1 ^ k.1))  % F m = F p) :=
+sorry
+
+theorem putnam_2021_b5
+(n : ℕ)
+(veryodd : Matrix (Fin n) (Fin n) ℤ → Prop := (fun A : Matrix (Fin n) (Fin n) ℤ => ∀ m ∈ Set.Icc 1 n, ∀ reind : Fin m → Fin n, Function.Injective reind → Odd (A.submatrix reind reind).det))
+(npos : n ≥ 1)
+: ∀ A : Matrix (Fin n) (Fin n) ℤ, veryodd A → (∀ k ≥ 1, veryodd (A ^ k)) :=
 sorry
