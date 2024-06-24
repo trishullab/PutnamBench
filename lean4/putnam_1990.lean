@@ -19,6 +19,13 @@ theorem putnam_1990_a2
 : (∃ s : ℕ → ℝ, (∀ i : ℕ, numform (s i)) ∧ Tendsto s atTop (𝓝 (Real.sqrt 2))) ↔ putnam_1990_a2_solution :=
 sorry
 
+abbrev putnam_1990_a4_solution : ℕ := sorry
+-- 3
+theorem putnam_1990_a4
+(isseq : List (Set (Fin 2 → ℝ)) → Prop := (fun seq : List (Set (Fin 2 → ℝ)) => seq.length ≥ 1 ∧ seq[0]! = Set.univ ∧ seq.getLast! = ∅ ∧ (∀ i : Fin (seq.length - 1), ∃ c : Fin 2 → ℝ, seq[i.1 + 1] = seq[i] \ {p : Fin 2 → ℝ | Irrational (Euclidean.dist p c)})))
+: sInf {len : ℕ | ∃ seq : List (Set (Fin 2 → ℝ)), isseq seq ∧ len = seq.length} = putnam_1990_a4_solution :=
+sorry
+
 abbrev putnam_1990_a5_solution : Prop := sorry
 -- False
 theorem putnam_1990_a5

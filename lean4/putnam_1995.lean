@@ -48,6 +48,13 @@ theorem putnam_1995_a5
 : putnam_1995_a5_solution ↔ (∀ (n : ℕ) (x : Fin n → (ℝ → ℝ)) (a : Fin n → Fin n → ℝ), (n > 0 ∧ hdiffx n x ∧ ha n a ∧ hcomb n x a ∧ hxlim n x) → ¬(∀ b : Fin n → ℝ, (∀ t : ℝ, ∑ i : Fin n, (b i) * ((x i) t) = 0) → (∀ i : Fin n, b i = 0))) :=
 sorry
 
+theorem putnam_1995_a6
+(SM : (n : ℕ) → Set (Matrix (Fin 3) (Fin n) ℤ) := (fun n : ℕ => {M : Matrix (Fin 3) (Fin n) ℤ | ∀ j : Fin n, {M i j | i : Fin 3} = {1, 2, 3}}))
+(Srowsums : (n : ℕ) → Matrix (Fin 3) (Fin n) ℤ → Set ℤ := (fun (n : ℕ) (M : Matrix (Fin 3) (Fin n) ℤ) => {∑ j : Fin n, M i j | i : Fin 3}))
+(sumsprog : (Set ℤ) → Prop := (fun sums : Set ℤ => sums.encard = 3 ∧ (∃ a b c : ℤ, {a, b, c} = sums ∧ b = a + 1 ∧ c = a + 2)))
+: ∃ n ≥ 1995, {M : (SM n) | sumsprog (Srowsums n M)}.encard ≥ 4 * {M : (SM n) | (Srowsums n M).encard = 1}.encard :=
+sorry
+
 open Nat
 theorem putnam_1995_b1
 (part_ct : Finpartition (Finset.range 9) → (Finset.range 9) → ℕ)
