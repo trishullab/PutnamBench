@@ -11,9 +11,9 @@ The associated paper for PutnamBench is {TODO}. Please consider including the fo
 ## Statistics 
 | Language      | Count          |
 | ------------- | -------------- |
-| Lean 4        | 573            |
+| Lean 4        | 586            |
 | Isabelle      | 550            |
-| Coq           | 309            |
+| Coq           | 348            |
 
 We also report the number of problems in a certain category. Note that some problems fall under multiple categories.
 
