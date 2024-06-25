@@ -34,6 +34,15 @@ theorem putnam_1989_a6
 : (α ^ 3 + PowerSeries.X * α + 1 = 0) :=
 sorry
 
+abbrev putnam_1989_b1_solution : ℤ × ℤ × ℤ × ℤ := sorry
+-- (4, 2, -5, 3)
+theorem putnam_1989_b1
+(edges : Set (Fin 2 → ℝ) := {p : Fin 2 → ℝ | p ≥ 0 ∧ p ≤ 1 ∧ (p 0 = 0 ∨ p 0 = 1 ∨ p 1 = 0 ∨ p 1 = 1)})
+(center : Fin 2 → ℝ := (fun i : Fin 2 => 0.5))
+(Scloser : Set (Fin 2 → ℝ) := {p : Fin 2 → ℝ | p ≥ 0 ∧ p ≤ 1 ∧ (∀ q ∈ edges, Euclidean.dist p center < Euclidean.dist p q)})
+: let (a, b, c, d) := putnam_1989_b1_solution; b > 0 ∧ d > 0 ∧ (MeasureTheory.volume Scloser).toReal / 1 = (a * Real.sqrt b + c) / d :=
+sorry
+
 -- This formalization uses "Type" rather than "Type*" as the underlying structure for a semigroup.
 abbrev putnam_1989_b2_solution : Prop := sorry
 -- True
@@ -65,3 +74,15 @@ theorem putnam_1989_b4
 : ((∃ S : Type, Countable S ∧ Infinite S ∧ ∃ C : Set (Set S), ¬Countable C ∧ (∀ R ∈ C, R ≠ ∅) ∧ (∀ A ∈ C, ∀ B ∈ C, A ≠ B → (A ∩ B).Finite)) ↔ putnam_1989_b4_solution) :=
 sorry
 
+-- uses (ℝ → ℝ) instead of (Set.Icc 0 1 → ℝ)
+theorem putnam_1989_b6
+(n : ℕ)
+(Sx : Set (Fin n → ℝ) := {x : Fin n → ℝ | 0 < x ∧ StrictMono x ∧ x < 1})
+(fprop : (ℝ → ℝ) → Prop := (fun f : ℝ → ℝ => ContinuousOn f (Set.Icc 0 1) ∧ f 1 = 0))
+(xext : (Fin n → ℝ) → (ℕ → ℝ))
+(fxsum : (ℝ → ℝ) → (Fin n → ℝ) → ℝ := (fun (f : ℝ → ℝ) (x : Fin n → ℝ) => ∑ i in Finset.Icc 0 n, ((xext x) (i + 1) - (xext x) i) * f ((xext x) (i + 1))))
+(fEV : (ℝ → ℝ) → ℝ := (fun f : ℝ → ℝ => (∫ x in Sx, fxsum f x) / (∫ x in Sx, 1)))
+(npos : n ≥ 1)
+(hxext : ∀ x : Fin n → ℝ, (xext x) 0 = 0 ∧ (xext x) (n + 1) = 1 ∧ (∀ i : Fin n, (xext x) (i + 1) = x i))
+: ∃ P : Polynomial ℝ, P.degree = n ∧ (∀ t ∈ Set.Icc 0 1, 0 ≤ P.eval t ∧ P.eval t ≤ 1) ∧ (∀ f : ℝ → ℝ, fprop f → fEV f = (∫ t in Set.Ioo 0 1, f t * P.eval t)) :=
+sorry
