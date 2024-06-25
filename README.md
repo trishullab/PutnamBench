@@ -19,7 +19,7 @@ We also report the number of problems in a certain category. Note that some prob
 
 | Category         | Total Quantity | 
 | ---------------- | -------------- | 
-| Algebra          | 218            | 
+| Algebra          | 219            | 
 | Analysis         | 176            |
 | Number Theory    | 97             | 
 | Linear Algebra   | 43             | 
