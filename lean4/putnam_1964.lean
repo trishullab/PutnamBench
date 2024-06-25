@@ -9,6 +9,7 @@ sorry
 
 open Set
 
+-- uses (ℝ → ℝ) instead of (Icc 0 1 → ℝ)
 abbrev putnam_1964_a2_solution : ℝ → Set (ℝ → ℝ) := sorry
 -- fun _ ↦ ∅
 theorem putnam_1964_a2
@@ -20,7 +21,7 @@ open BigOperators Function
 
 theorem putnam_1964_a3
 (x a b : ℕ → ℝ)
-(hxdense : closure (range x) = Ioo 0 1)
+(hxdense : range x ⊆ Ioo 0 1 ∧ closure (range x) ⊇ Ioo 0 1)
 (hxinj : Injective x)
 (a := fun n ↦ x n - sSup ({0} ∪ {p : ℝ | p < x n ∧ ∃ i < n, p = x i}))
 (b := fun n ↦ sInf ({1} ∪ {p : ℝ | p > x n ∧ ∃ i < n, p = x i}) - x n)
@@ -51,16 +52,19 @@ sorry
 
 theorem putnam_1964_b1
 (a : ℕ → ℤ)
+(apos : a > 0)
 (ha : ∃ L : ℝ, Tendsto (fun N ↦ ∑ n in Finset.range N, (1 : ℝ) / a n) ⊤ (𝓝 L))
-(b : ℕ → ℝ := fun n ↦ {k : ℕ | a k ≤ n}.ncard)
+(b : ℕ → ENNReal := fun n ↦ {k : ℕ | a k ≤ n}.encard)
 : (Tendsto (fun n : ℕ ↦ b n / n) ⊤ (𝓝 0)) :=
 sorry
+
 
 theorem putnam_1964_b2
 (S : Type*) [Fintype S] [Nonempty S]
 (P : Finset (Set S))
-(hP : ∀ T ∈ P, ∀ U : Set S, T ∩ U ≠ ∅ ↔ U ∈ P)
-: (2 * P.card = Fintype.card (Set S)) :=
+(hPP : ∀ T ∈ P, ∀ U ∈ P, T ∩ U ≠ ∅)
+(hPS : ¬∃ T : Set S, T ∉ P ∧ (∀ U ∈ P, T ∩ U ≠ ∅))
+: (P.card = 2 ^ (Fintype.card (Set S) - 1)) :=
 sorry
 
 theorem putnam_1964_b3

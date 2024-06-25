@@ -23,6 +23,7 @@ theorem putnam_1971_a3
 (R : ℝ)
 (habclattice : a.1 = round a.1 ∧ a.2 = round a.2 ∧ b.1 = round b.1 ∧ b.2 = round b.2 ∧ c.1 = round c.1 ∧ c.2 = round c.2)
 (habcneq : a ≠ b ∧ a ≠ c ∧ b ≠ c)
+(hR : R > 0)
 (oncircle : (ℝ × ℝ) → ℝ → (ℝ × ℝ) → Prop := fun C r p => Euclidean.dist p C = r)
 (hcircle : ∃ C : ℝ × ℝ, oncircle C R a ∧ oncircle C R b ∧ oncircle C R c)
 : (Euclidean.dist a b) * (Euclidean.dist a c) * (Euclidean.dist b c) ≥ 2 * R :=
@@ -33,20 +34,20 @@ theorem putnam_1971_a4
 (ε : ℝ)
 (hε : 0 < ε ∧ ε < 1)
 (P : ℕ → ℝ → MvPolynomial (Fin 2) ℝ := fun n δ => (MvPolynomial.X 0 + MvPolynomial.X 1)^n * ((MvPolynomial.X 0)^2 - (MvPolynomial.C (2 - δ))*(MvPolynomial.X 0)*(MvPolynomial.X 1) + (MvPolynomial.X 1)^2))
-: ∃ N : ℕ, ∀ n ≥ N, ∀ i : Fin 2 →₀ ℕ, MvPolynomial.coeff i (P n ε) > 0 :=
+: ∃ N : ℕ, ∀ n ≥ N, ∀ i : Fin 2 →₀ ℕ, MvPolynomial.coeff i (P n ε) ≥ 0 :=
 sorry
 
 theorem putnam_1971_a6
 (c : ℝ)
 (hc : ∀ n : ℤ, n > 0 → ∃ m : ℤ, (n : ℝ)^c = m)
-: ∃ m : ℕ, c = m :=
+: ∃ m : ℤ, m ≥ 0 ∧ c = m :=
 sorry
 
 theorem putnam_1971_b1
 (S : Type*) [Mul S]
 (hself : ∀ x : S, x * x = x)
 (h2 : ∀ x y z : S, (x * y) * z = (y * z) * x)
-: ∀ x y z : S, (x * y) * z = x * (y * z) ∧ x * y = y * x :=
+: (∀ x y z : S, (x * y) * z = x * (y * z)) ∧ (∀ x y : S, x * y = y * x) :=
 sorry
 
 abbrev putnam_1971_b2_solution : Set (ℝ → ℝ) := sorry
