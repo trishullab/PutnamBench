@@ -8,6 +8,18 @@ theorem putnam_2005_a1
 (∀ i j : Fin k, i ≠ j → ¬(2^(a i 0)*3^(a i 0) ∣ 2^(a j 0)*3^(a j 1)))) :=
 sorry
 
+open Set
+abbrev putnam_2005_a2_solution : ℕ → ℕ := sorry
+-- fun n ↦ if n = 1 then 0 else 2 ^ (n - 2)
+theorem putnam_2005_a2
+(n : ℕ)
+(npos : n > 0)
+(S : Set (ℤ × ℤ) := Set.prod (Icc 1 n) (Icc 1 3))
+(unit : ℤ × ℤ → ℤ × ℤ → Prop := fun (a, b) (c, d) ↦ a = c ∧ |d - b| = 1 ∨ b = d ∧ |c - a| = 1)
+(rooktour : (ℕ → ℤ × ℤ) → Prop := fun p ↦ (∀ P ∈ S, ∃! i, i ∈ Icc 1 (3 * n) ∧ p i = P) ∧ (∀ i ∈ Icc 1 (3 * n - 1), unit (p i) (p (i + 1))) ∧ p 0 = 0 ∧ ∀ i > 3 * n, p i = 0)
+: ({p : ℕ → ℤ × ℤ | rooktour p ∧ p 1 = (1, 1) ∧ p (3 * n) = ((n : ℤ), 1)}.encard = putnam_2005_a2_solution n) :=
+sorry
+
 theorem putnam_2005_a3
 (p : Polynomial ℂ)
 (n : ℕ)
@@ -75,6 +87,15 @@ theorem putnam_2005_b4
 (f : ℤ → ℤ → ℕ)
 (hf : ∀ m' > 0, ∀ n' > 0, f m' n' = Set.encard {x : Finset.Icc 1 n' → ℤ | ∑ i : Finset.Icc 1 n', |x i| ≤ m'})
 : f m n = f n m :=
+sorry
+
+theorem putnam_2005_b5
+(n : ℕ)
+(npos : n > 0)
+(P : MvPolynomial (Fin n) ℝ)
+(hderiv : ∑ i : Fin n, (MvPolynomial.pderiv i)^[2] P = 0)
+(hsumsq : ∑ i : Fin n, (MvPolynomial.X i) ^ 2 ∣ P)
+: (P = 0) :=
 sorry
 
 theorem putnam_2005_b6
