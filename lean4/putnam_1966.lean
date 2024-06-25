@@ -3,7 +3,7 @@ import Mathlib
 open BigOperators
 
 theorem putnam_1966_a1
-(f : ℤ → ℤ := fun n : ℤ => ∑ m in Finset.Icc 1 n, (if Even m then m / 2 else (m - 1)/2))
+(f : ℤ → ℤ := fun n : ℤ => ∑ m in Finset.Icc 0 n, (if Even m then m / 2 else (m - 1)/2))
 : ∀ x y : ℤ, x > 0 ∧ y > 0 ∧ x > y → x * y = f (x + y) - f (x - y) :=
 sorry
 
@@ -27,6 +27,7 @@ sorry
 theorem putnam_1966_a5
 (C : Set (ℝ → ℝ) := {f : ℝ → ℝ | Continuous f})
 (T : (ℝ → ℝ) → (ℝ → ℝ))
+(imageTC : ∀ f ∈ C, T f ∈ C)
 (linearT : ∀ a b : ℝ, ∀ f ∈ C, ∀ g ∈ C, T ((fun x => a)*f + (fun x => b)*g) = (fun x => a)*(T f) + (fun x => b)*(T g))
 (localT : ∀ r s : ℝ, r ≤ s → ∀ f ∈ C, ∀ g ∈ C, (∀ x ∈ Set.Icc r s, f x = g x) → (∀ x ∈ Set.Icc r s, T f x = T g x))
 : ∃ f ∈ C, ∀ g ∈ C, T g = f * g :=
@@ -40,7 +41,7 @@ sorry
 
 theorem putnam_1966_b2
 (S : ℤ → Set ℤ := fun n : ℤ => {n, n + 1, n + 2, n + 3, n + 4, n + 5, n + 6, n + 7, n + 8, n + 9})
-: ∀ n : ℤ, ∃ k ∈ S n, ∀ m ∈ S n, k ≠ m → IsCoprime m k :=
+: ∀ n : ℤ, n > 0 → (∃ k ∈ S n, ∀ m ∈ S n, k ≠ m → IsCoprime m k) :=
 sorry
 
 theorem putnam_1966_b3
@@ -52,10 +53,9 @@ sorry
 
 theorem putnam_1966_b4
 (m n : ℕ)
-(a : Finset ℕ)
-(hS : (∀ i ∈ a, i > 0) ∧ a.card = m * n + 1)
-: ∃ b ⊆ a, (b.card = m + 1 ∧ ∀ j ∈ b, ∀ i ∈ b, i ≠ j → ¬(j ∣ i)) ∨
-(b.card = n + 1 ∧ ∀ j ∈ b, j ≠ sSup b → j ∣ sInf {i ∈ b | i > j}) :=
+(S : Finset ℕ)
+(hS : (∀ i ∈ S, i > 0) ∧ S.card = m * n + 1)
+: ∃ T ⊆ S, (T.card = m + 1 ∧ ∀ j ∈ T, ∀ i ∈ T, i ≠ j → ¬(j ∣ i)) ∨ (T.card = n + 1 ∧ ∀ i ∈ T, ∀ j ∈ T, j < i → j ∣ i) :=
 sorry
 
 theorem putnam_1966_b6
