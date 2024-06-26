@@ -1,6 +1,11 @@
 import Mathlib
 open BigOperators
 
+noncomputable abbrev putnam_2006_a1_solution : ℝ := sorry
+-- 6 * Real.pi ^ 2
+theorem putnam_2006_a1
+: ((MeasureTheory.volume {(x, y, z) : ℝ × ℝ × ℝ | (x ^ 2 + y ^ 2 + z ^ 2 + 8) ^ 2 ≤ 36 * (x ^ 2 + y ^ 2)}).toReal = putnam_2006_a1_solution) :=
+sorry
 
 theorem putnam_2006_a3
 (x : ℤ → ℤ)
@@ -33,6 +38,14 @@ theorem putnam_2006_a5
 (thetairr : Irrational (theta / Real.pi))
 (ha : ∀ k : Set.Icc 1 n, a k = Real.tan (theta + (k * Real.pi) / n))
 : (∑ k : Set.Icc 1 n, a k) / (∏ k : Set.Icc 1 n, a k) = putnam_2006_a5_solution n :=
+sorry
+
+noncomputable abbrev putnam_2006_b1_solution : ℝ := sorry
+-- 3 * Real.sqrt 3 / 2
+theorem putnam_2006_b1
+(curve : Set (ℝ × ℝ) := {(x, y) | x ^ 3 + 3 * x * y + y ^ 3 = 1})
+(equilateral : Set (ℝ × ℝ) → Prop := fun S ↦ S.encard = 3 ∧ ∃ d : ℝ, ∀ P ∈ S, ∀ Q ∈ S, P ≠ Q → Euclidean.dist P Q = d)
+: ((∃! S : Set (ℝ × ℝ), S ⊆ curve ∧ equilateral S) ∧ (∃ S : Set (ℝ × ℝ), S ⊆ curve ∧ equilateral S ∧ (MeasureTheory.volume (convexHull ℝ S)).toReal = putnam_2006_b1_solution)) :=
 sorry
 
 theorem putnam_2006_b2

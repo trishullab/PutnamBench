@@ -29,6 +29,16 @@ theorem putnam_2004_a4
 : ∃ (N : ℕ) (c : Fin N → ℚ) (a : ℕ → Fin n → ℝ), avals N a ∧ ((∏ i : Fin n, x i) = ∑ i : Fin N, c i * (∑ j : Fin n, a i j * x j) ^ n) :=
 sorry
 
+theorem putnam_2004_a5
+(m n : ℕ)
+(mnpos : Inhabited (Fin m × Fin n))
+(adj : (Fin m × Fin n) → (Fin m × Fin n) → Prop := fun (⟨a, _⟩, ⟨b, _⟩) (⟨c, _⟩, ⟨d, _⟩) ↦ a = c ∧ Nat.dist b d = 1 ∨ b = d ∧ Nat.dist a c = 1)
+(connected : (Fin m × Fin n → Prop) → (Fin m × Fin n) → (Fin m × Fin n) → Prop := fun C P Q ↦ ∃ (S : List (Fin m × Fin n)) (hS : S ≠ []),
+      S.head hS = P ∧ S.getLast hS = Q ∧ (∃ p : Prop, ∀ i ∈ Finset.range S.length, C S[i]! = p) ∧ (∀ i ∈ Finset.range (S.length - 1), adj S[i]! S[i+1]!))
+(cmr : (Fin m × Fin n → Prop) → ℕ := fun C ↦ {R : Set (Fin m × Fin n) | ∃ P ∈ R, ∀ Q, Q ∈ R ↔ connected C P Q}.ncard)
+: (∑ C : Fin m × Fin n → Prop, cmr C > 2 ^ (m * n) * (m * n / (8 : ℚ))) :=
+sorry
+
 theorem putnam_2004_a6
 (f : Set.Icc (0 : ℝ) 1 → Set.Icc (0 : ℝ) 1 → ℝ)
 (fcont : Continuous f)
@@ -52,6 +62,17 @@ theorem putnam_2004_b2
 (m n : ℕ)
 (mnpos : m > 0 ∧ n > 0)
 : ((m + n)! / ((m + n) ^ (m + n) : ℚ)) < (((m)! / (m ^ m : ℚ)) * ((n)! / (n ^ n : ℚ))) :=
+sorry
+
+abbrev putnam_2004_b4_solution : ℕ → ℂ → ℂ := sorry
+-- fun n z ↦ z + n
+theorem putnam_2004_b4
+(n : ℕ)
+(nge2 : n ≥ 2)
+(Rk : ℕ → ℂ → ℂ := fun k Q ↦ k + Complex.exp (Complex.I * 2 * Real.pi / n) * (Q - k))
+(R : ℕ → ℂ → ℂ)
+(hR : R 0 = id ∧ ∀ k : ℕ, R (k + 1) = Rk (k + 1) ∘ R k)
+: (R n = putnam_2004_b4_solution n) :=
 sorry
 
 abbrev putnam_2004_b5_solution : ℝ := sorry

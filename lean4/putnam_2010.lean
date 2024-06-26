@@ -58,6 +58,16 @@ theorem putnam_2010_b2
 : (∃ A B C : Fin 2 → ℝ, ABCall A B C ∧ Euclidean.dist A B = putnam_2010_b2_solution) ∧ (∀ A B C : Fin 2 → ℝ, ABCall A B C → Euclidean.dist A B ≥ putnam_2010_b2_solution) :=
 sorry
 
+abbrev putnam_2010_b3_solution : Set ℕ := sorry
+-- Ici 1005
+theorem putnam_2010_b3
+(n : ℕ)
+(npos : n > 0)
+(trans : (ℕ → Fin 2010 → ℕ) → ℕ → Prop := fun P T ↦ ∀ t : ℕ, t < T →
+      ∃ i j : Fin 2010, i ≠ j ∧ P t i ≥ i.1 + 1 ∧ P (t + 1) i = P t i - (i.1 + 1) ∧ P (t + 1) j = P t j + (i.1 + 1) ∧ ∀ k : Fin 2010, k ≠ i → k ≠ j → P (t + 1) k = P t k)
+: ((∀ B : Fin 2010 → ℕ, ∑ i : Fin 2010, B i = 2010 * n → ∃ (P : ℕ → Fin 2010 → ℕ) (T : ℕ), P 0 = B ∧ trans P T ∧ ∀ i : Fin 2010, P T i = n) ↔ n ∈ putnam_2010_b3_solution) :=
+sorry
+
 abbrev putnam_2010_b4_solution : Set (Polynomial ℝ × Polynomial ℝ) := sorry
 -- {(p, q) : Polynomial ℝ × Polynomial ℝ | p.degree ≤ 1 ∧ q.degree ≤ 1 ∧ p.coeff 0 * q.coeff 1 - p.coeff 1 * q.coeff 0 = 1}
 theorem putnam_2010_b4
