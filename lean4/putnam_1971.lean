@@ -1,7 +1,6 @@
 import Mathlib
+
 open BigOperators
-
-
 open Set
 
 theorem putnam_1971_a1
@@ -37,6 +36,15 @@ theorem putnam_1971_a4
 : ∃ N : ℕ, ∀ n ≥ N, ∀ i : Fin 2 →₀ ℕ, MvPolynomial.coeff i (P n ε) ≥ 0 :=
 sorry
 
+abbrev putnam_1971_a5_solution : ℤ × ℤ := sorry
+-- (11, 8)
+theorem putnam_1971_a5
+(a b : ℤ)
+(hab : a > 0 ∧ b > 0 ∧ a > b)
+(pab : ℤ → ℤ → Prop := fun x y : ℤ ↦ {s : ℕ | ¬∃ m n : ℕ, m*x + n*y = s}.ncard = 35 ∧ ¬∃ m n : ℕ, m*x + n*y = 58)
+: pab a b ↔ a = putnam_1971_a5_solution.1 ∧ b = putnam_1971_a5_solution.2 :=
+sorry
+
 theorem putnam_1971_a6
 (c : ℝ)
 (hc : ∀ n : ℤ, n > 0 → ∃ m : ℤ, (n : ℝ)^c = m)
@@ -56,6 +64,12 @@ theorem putnam_1971_b2
 (S : Set ℝ := univ \ {0, 1})
 (P : (ℝ → ℝ) → Prop := fun (F : ℝ → ℝ) => ∀ x ∈ S, F x + F ((x - 1)/x) = 1 + x)
 : (∀ F ∈ putnam_1971_b2_solution, P F) ∧ ∀ f : ℝ → ℝ, P f → ∃ F ∈ putnam_1971_b2_solution, (∀ x ∈ S, f x = F x) :=
+sorry
+
+theorem putnam_1971_b3
+(T : ℝ)
+(hT : T > 0)
+: MeasureTheory.volume {t : ℝ | t ≥ T ∧ Nat.floor t = 2 * (Nat.floor (t - T))} = 1 :=
 sorry
 
 theorem putnam_1971_b6
