@@ -1,5 +1,6 @@
 import Mathlib
 open BigOperators
+open Topology Filter
 
 theorem putnam_1992_a1
 (f : ℤ → ℤ)
@@ -58,6 +59,14 @@ open Polynomial
 theorem putnam_1992_b2
 (Q : ℕ → ℕ → ℕ := fun n k ↦ coeff ((1 + X + X ^ 2 + X ^ 3) ^ n) k)
 : (∀ n k : ℕ, Q n k = ∑ j : Finset.range (k + 1), choose n j * choose n (k - 2 * j)) :=
+sorry
+
+noncomputable abbrev putnam_1992_b3_solution : ℝ := sorry
+-- 4 + Real.pi
+theorem putnam_1992_b3
+(a : (Fin 2 → ℝ) → (ℕ → ℝ))
+(ha : ∀ p : Fin 2 → ℝ, (a p) 0 = p 0 ∧ (∀ n : ℕ, (a p) (n + 1) = (((a p) n) ^ 2 + (p 1) ^ 2) / 2))
+: (MeasureTheory.volume {p : Fin 2 → ℝ | ∃ L : ℝ, Tendsto (a p) atTop (𝓝 L)}).toReal = putnam_1992_b3_solution :=
 sorry
 
 abbrev putnam_1992_b4_solution : ℕ := sorry

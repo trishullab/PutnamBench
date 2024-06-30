@@ -8,6 +8,18 @@ theorem putnam_2008_a1
 : ∃ g : ℝ → ℝ, ∀ x y : ℝ, f x y = g x - g y :=
 sorry
 
+theorem putnam_2008_a3
+(n : ℕ)
+(npos : n > 0)
+(a : Fin n → ℕ)
+(apos : ∀ i : Fin n, a i > 0)
+(cont : (Fin n → ℕ) → Prop := fun s ↦ ∃ j k : Fin n, j < k ∧ ¬(s j ∣ s k))
+(init : (ℕ → Fin n → ℕ) → Prop := fun P ↦ P 0 = a)
+(trans : (ℕ → Fin n → ℕ) → Prop := fun P ↦ ∀ t : ℕ, cont (P t) →
+      ∃ j k : Fin n, j < k ∧ ¬(P t j ∣ P t k) ∧ P (t + 1) j = Nat.gcd (P t j) (P t k) ∧ P (t + 1) k = Nat.lcm (P t j) (P t k) ∧
+      ∀ i : Fin n, i ≠ j → i ≠ k → P (t + 1) i = P t i)
+: (∃ f : Fin n → ℕ, ∀ P : ℕ → Fin n → ℕ, init P → trans P → ∃ t : ℕ, ¬cont (P t) ∧ P t = f) :=
+sorry
 
 open Filter Topology
 abbrev putnam_2008_a4_solution : Prop := sorry
@@ -16,6 +28,15 @@ theorem putnam_2008_a4
 (f : ℝ → ℝ)
 (hf : f = fun x => if x ≤ Real.exp 1 then x else x * (f (Real.log x)))
 : (∃ r : ℝ, Tendsto (fun N : ℕ => ∑ n in Finset.range N, 1/(f (n + 1))) atTop (𝓝 r)) ↔ putnam_2008_a4_solution :=
+sorry
+
+open Set
+theorem putnam_2008_a5
+(n : ℕ)
+(nge3 : n ≥ 3)
+(f g : Polynomial ℝ)
+(hfg : ∃ O z : ℂ, z ≠ 0 ∧ ∀ k : ℕ, k ∈ Icc 1 n → (f.eval (k : ℝ)) + Complex.I * (g.eval (k : ℝ)) = O + z * Complex.exp (Complex.I * 2 * Real.pi * k / n))
+: (f.natDegree ≥ n - 1 ∨ g.natDegree ≥ n - 1) :=
 sorry
 
 theorem putnam_2008_a6
@@ -39,6 +60,14 @@ theorem putnam_2008_b2
 (hF0 : ∀ x : ℝ, F 0 x = Real.log x)
 (hFn : ∀ n : ℕ, ∀ x > 0, F (n + 1) x = ∫ t in Set.Ioo 0 x, F n t)
 : Tendsto (fun n : ℕ => ((n)! * F n 1) / Real.log n) atTop (𝓝 putnam_2008_b2_solution) :=
+sorry
+
+noncomputable abbrev putnam_2008_b3_solution : ℝ := sorry
+-- Real.sqrt 2 / 2
+theorem putnam_2008_b3
+(hypercube : Set (Fin 4 → ℝ) := {P : Fin 4 → ℝ | ∀ i : Fin 4, |P i| ≤ 1 / 2})
+(contains : ℝ → (Fin 4 → ℝ) → (Fin 4 → ℝ) → (Fin 4 → ℝ) → Prop := fun r O P Q ↦ ∀ s t : ℝ, s • P + t • Q ≠ 0 ∧ Euclidean.dist 0 (s • P + t • Q) = r → O + s • P + t • Q ∈ hypercube)
+: ((∃ O P Q, contains putnam_2008_b3_solution O P Q) ∧ (∀ r > putnam_2008_b3_solution, ¬∃ O P Q, contains r O P Q)) :=
 sorry
 
 theorem putnam_2008_b4

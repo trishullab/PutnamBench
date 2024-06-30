@@ -8,6 +8,14 @@ theorem putnam_1994_a1
 : ¬(∃ s : ℝ, Tendsto (fun N : ℕ => ∑ n : Set.Icc 1 N, a n) atTop (𝓝 s)) :=
 sorry
 
+theorem putnam_1994_a3
+(vec : ℝ → ℝ → (Fin 2 → ℝ))
+(T : Set (Fin 2 → ℝ) := convexHull ℝ {vec 0 0, vec 1 0, vec 0 1})
+(Tcolors : T → Fin 4)
+(hvec : ∀ x y : ℝ, (vec x y) 0 = x ∧ (vec x y) 1 = y)
+: ∃ p q : T, Tcolors p = Tcolors q ∧ Euclidean.dist p.1 q.1 ≥ 2 - Real.sqrt 2 :=
+sorry
+
 theorem putnam_1994_a4
 (A B : Matrix (Fin 2) (Fin 2) ℤ)
 (ABinv : Nonempty (Invertible A) ∧ Nonempty (Invertible (A + B)) ∧ Nonempty (Invertible (A + 2 * B)) ∧ Nonempty (Invertible (A + 3 * B)) ∧ Nonempty (Invertible (A + 4 * B)))
@@ -17,7 +25,7 @@ sorry
 theorem putnam_1994_a5
 (r : ℕ → ℝ)
 (S : Set ℝ)
-(rpos : r > 0)
+(rpos : ∀ n : ℕ, r n > 0)
 (rlim : Tendsto r atTop (𝓝 0))
 (hS : S = {x : ℝ | ∃ i : Fin 1994 → ℕ, (∀ j k : Fin 1994, j < k → i j < i k) ∧ (x = ∑ j : Fin 1994, r (i j))})
 : ∀ a b : ℝ, a < b → (∃ c d : ℝ, a ≤ c ∧ c < d ∧ d ≤ b ∧ (Set.Ioo c d) ∩ S = ∅) :=

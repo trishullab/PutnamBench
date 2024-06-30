@@ -40,6 +40,23 @@ theorem putnam_1987_a4
 : (‖C - A‖ = putnam_1987_a4_solution) :=
 sorry
 
+abbrev putnam_1987_a5_solution : Prop := sorry
+-- False
+theorem putnam_1987_a5
+(vec2 : ℝ → ℝ → (Fin 2 → ℝ))
+(vec3 : ℝ → ℝ → ℝ → (Fin 3 → ℝ))
+(G : (Fin 2 → ℝ) → (Fin 3 → ℝ) := (fun v : Fin 2 → ℝ => vec3 (-v 1 / ((v 0) ^ 2 + 4 * (v 1) ^ 2)) (v 0 / ((v 0) ^ 2 + 4 * (v 1) ^ 2)) 0))
+(vrepl : (Fin 3 → ℝ) → Fin 3 → ℝ → (Fin 3 → ℝ) := (fun (v : Fin 3 → ℝ) (i : Fin 3) (vi : ℝ) => (fun j : Fin 3 => if j = i then vi else v j)))
+(contdiffv : ((Fin 3 → ℝ) → ℝ) → Fin 3 → (Fin 3 → ℝ) → Prop := (fun (Fi : (Fin 3 → ℝ) → ℝ) (j : Fin 3) (v : Fin 3 → ℝ) => ContDiffAt ℝ 1 (fun vj : ℝ => Fi (vrepl v j vj)) (v j)))
+(partderiv : ((Fin 3 → ℝ) → ℝ) → Fin 3 → ((Fin 3 → ℝ) → ℝ) := (fun (Fi : (Fin 3 → ℝ) → ℝ) (j : Fin 3) => (fun v : Fin 3 → ℝ => deriv (fun vi : ℝ => Fi (vrepl v j vj)) (v j))))
+(Fprop1 : (Fin 3 → ((Fin 3 → ℝ) → ℝ)) → Prop := (fun F : Fin 3 → ((Fin 3 → ℝ) → ℝ) => ∀ i : Fin 3, ∀ j : Fin 3, ∀ v ≠ 0, contdiffv (F i) j v))
+(Fprop2 : (Fin 3 → ((Fin 3 → ℝ) → ℝ)) → Prop := (fun F : Fin 3 → ((Fin 3 → ℝ) → ℝ) => ∀ v ≠ 0, vec3 ((partderiv (F 2) 1 - partderiv (F 1) 2) v) ((partderiv (F 0) 2 - partderiv (F 2) 0) v) ((partderiv (F 1) 0 - partderiv (F 0) 1) v) = 0))
+(Fprop3 : (Fin 3 → ((Fin 3 → ℝ) → ℝ)) → Prop := (fun F : Fin 3 → ((Fin 3 → ℝ) → ℝ) => ∀ x y : ℝ, vec3 ((F 0) (vec3 x y 0)) ((F 1) (vec3 x y 0)) ((F 2) (vec3 x y 0)) = G (vec2 x y)))
+(hvec2 : ∀ x y : ℝ, (vec2 x y) 0 = x ∧ (vec2 x y) 1 = y)
+(hvec3 : ∀ x y z : ℝ, (vec3 x y z) 0 = x ∧ (vec3 x y z) 1 = y ∧ (vec3 x y z) 2 = z)
+: (∃ F : Fin 3 → ((Fin 3 → ℝ) → ℝ), Fprop1 F ∧ Fprop2 F ∧ Fprop3 F) ↔ putnam_1987_a5_solution :=
+sorry
+
 open Nat Real
 
 abbrev putnam_1987_a6_solution : Set ℝ := sorry
@@ -61,6 +78,12 @@ theorem putnam_1987_b2
 (r s t : ℕ)
 (hsum : r + s ≤ t)
 : (∑ i : Finset.range (s + 1), (choose s i : ℚ) / (choose t (r + i)) = ((t + 1) : ℚ) / ((t + 1 - s) * choose (t - s) r)) :=
+sorry
+
+theorem putnam_1987_b3
+(F : Type*) [Field F]
+(hF : (1 : F) + 1 ≠ 0)
+: {(x, y) : F × F | x ^ 2 + y ^ 2 = 1} = {(1, 0)} ∪ {((r ^ 2 - 1) / (r ^ 2 + 1), (2 * r) / (r ^ 2 + 1)) | r ∈ {r' : F | r' ^ 2 ≠ -1}} :=
 sorry
 
 open Filter Topology

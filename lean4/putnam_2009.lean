@@ -10,6 +10,20 @@ theorem putnam_2009_a1
 : ((∀ f : (ℝ × ℝ) → ℝ, (∀ O v : ℝ × ℝ, v ≠ (0, 0) → f (O.1, O.2) + f (O.1 + v.1, O.2 + v.2) + f (O.1 + v.1 - v.2, O.2 + v.2 + v.1) + f (O.1 - v.2, O.2 + v.1) = 0) → ∀ P : ℝ × ℝ, f P = 0) ↔ putnam_2009_a1_solution) :=
 sorry
 
+open Set
+noncomputable abbrev putnam_2009_a2_solution : ℝ → ℝ := sorry
+-- fun x ↦ 2 ^ (-(1 : ℝ) / 12) * (Real.sin (6 * x + Real.pi / 4) / (Real.cos (6 * x + Real.pi / 4)) ^ 2) ^ ((1 : ℝ) / 6)
+theorem putnam_2009_a2
+(f g h : ℝ → ℝ)
+(a b : ℝ)
+(hab : 0 ∈ Ioo a b)
+(hdiff : DifferentiableOn ℝ f (Ioo a b) ∧ DifferentiableOn ℝ g (Ioo a b) ∧ DifferentiableOn ℝ h (Ioo a b))
+(hf : (∀ x ∈ Ioo a b, deriv f x = 2 * (f x)^2 * (g x) * (h x) + 1 / ((g x) * (h x))) ∧ f 0 = 1)
+(hg : (∀ x ∈ Ioo a b, deriv g x = (f x) * (g x)^2 * (h x) + 4 / ((f x) * (h x))) ∧ g 0 = 1)
+(hh : (∀ x ∈ Ioo a b, deriv h x = 3 * (f x) * (g x) * (h x)^2 + 1 / ((f x) * (g x))) ∧ h 0 = 1)
+: (∃ c d : ℝ, 0 ∈ Ioo c d ∧ ∀ x ∈ Ioo c d, f x = putnam_2009_a2_solution x) :=
+sorry
+
 abbrev putnam_2009_a3_solution : ℝ := sorry
 -- 0
 theorem putnam_2009_a3
@@ -37,6 +51,12 @@ fun q => (∃ (k m : ℕ) (a : Fin k → ℕ) (b : Fin m → ℕ),
 ∧ (q = (∏ i : Fin k, Nat.factorial (a i))/(∏ j : Fin m, Nat.factorial (b j)))
 ))
 : ∀ q : ℚ, q > 0 → isquotprodprimefact q :=
+sorry
+
+abbrev putnam_2009_b2_solution : Set ℝ := sorry
+-- Ioc (1 / 3) 1
+theorem putnam_2009_b2
+: ({c : ℝ | ∃ s : ℕ → ℝ, s 0 = 0 ∧ StrictMono s ∧ ∃ n : ℕ, s n = 1 ∧ ((∑ i in Finset.range n, (s (i + 1)) ^ 3 - (s i) * (s (i + 1)) ^ 2) = c)} = putnam_2009_b2_solution) :=
 sorry
 
 open Set
