@@ -1,4 +1,5 @@
 import Mathlib
+
 open Topology Filter
 open BigOperators
 
@@ -11,10 +12,42 @@ theorem putnam_1963_a2
 : ∀ n > 0, f n = n :=
 sorry
 
+noncomputable abbrev putnam_1963_a3_solution : (ℝ → ℝ) → ℕ → ℝ → ℝ → ℝ := sorry
+-- fun (f : ℝ → ℝ) (n : ℕ) (x : ℝ) (t : ℝ) ↦ (x - t)^(n - 1) * (f t) / (Nat.factorial (n - 1) * t^n)
+theorem putnam_1963_a3
+(n : ℕ)
+(f : ℝ → ℝ)
+(P : ℕ → (ℝ → ℝ) → (ℝ → ℝ))
+(δ : (ℝ → ℝ) → (ℝ → ℝ) := fun g : ℝ → ℝ ↦ (fun x : ℝ ↦ x) * deriv g)
+(D : ℕ → (ℝ → ℝ) → (ℝ → ℝ) := fun (m : ℕ) (g : ℝ → ℝ) ↦ δ g - (fun x : ℝ ↦ (m : ℝ)) * g)
+(y : ℝ → ℝ := fun x : ℝ ↦ ∫ t in Set.Ioo 1 x, putnam_1963_a3_solution f n x t)
+(hn : n ≥ 1)
+(hf : Continuous f)
+(hP : P 0 y = y ∧ ∀ m ∈ Finset.range n, P (m + 1) y = D (n - 1 - m) (P m y))
+: (∀ x ≥ 1, P n y x = f x) ∧ (∀ i ∈ Finset.range n, iteratedDeriv i y 1 = 0) :=
+sorry
+
 theorem putnam_1963_a4
 (apos : (ℕ → ℝ) → Prop := fun a => ∀ n, a n > 0)
 (f : (ℕ → ℝ) → ℕ → ℝ := fun a n => n * (((1 + a (n+1)) / (a n)) - 1))
 : (∀ a, apos a → limsup (f a) ⊤ ≥ 1) ∧ (∃ a, apos a ∧ limsup (f a) ⊤ = 1) :=
+sorry
+
+theorem putnam_1963_a6
+(F G : EuclideanSpace ℝ (Fin 2))
+(r : ℝ)
+(E : Set (EuclideanSpace ℝ (Fin 2)) := {H : EuclideanSpace ℝ (Fin 2) | Euclidean.dist F H + Euclidean.dist G H = r})
+(U V A B C D P Q : EuclideanSpace ℝ (Fin 2))
+(M : EuclideanSpace ℝ (Fin 2) := midpoint ℝ U V)
+(hr : r > Euclidean.dist F G)
+(hUV : U ∈ E ∧ V ∈ E ∧ U ≠ V)
+(hAB : A ∈ E ∧ B ∈ E ∧ A ≠ B)
+(hCD : C ∈ E ∧ D ∈ E ∧ C ≠ D)
+(hdistinct : segment ℝ A B ≠ segment ℝ U V ∧ segment ℝ C D ≠ segment ℝ U V ∧ segment ℝ A B ≠ segment ℝ C D)
+(hM : M ∈ segment ℝ A B ∧ M ∈ segment ℝ C D)
+(hP : Collinear ℝ {P, A, C} ∧ Collinear ℝ {P, U, V})
+(hQ : Collinear ℝ {P, B, D} ∧ Collinear ℝ {Q, U, V})
+: M = midpoint ℝ P Q :=
 sorry
 
 open Polynomial
