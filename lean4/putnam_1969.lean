@@ -3,6 +3,12 @@ open BigOperators
 
 open Matrix Filter Topology Set Nat
 
+abbrev putnam_1969_a1_solution : Set (Set ℝ) := sorry
+-- {{x} | x : ℝ} ∪ {Set.Ici x | x : ℝ} ∪ {Set.Iic x | x : ℝ} ∪ {Set.Iio x | x : ℝ} ∪ {Set.Ioi x | x : ℝ} ∪ {Set.univ}
+theorem putnam_1969_a1
+: {{z : ℝ | ∃ x : Fin 2 → ℝ, MvPolynomial.eval x f = z} | f : MvPolynomial (Fin 2) ℝ} = putnam_1969_a1_solution :=
+sorry
+
 theorem putnam_1969_a2
 (D : (n : ℕ) → Matrix (Fin n) (Fin n) ℝ := fun n => λ i j => |i.1 - j.1| )
 : ∀ n, n ≥ 2 → (D n).det = (-1)^((n : ℤ)-1) * ((n : ℤ)-1) * 2^((n : ℤ)-2) :=
@@ -10,6 +16,12 @@ sorry
 
 theorem putnam_1969_a4
 : Tendsto (fun n => ∑ i in Finset.Icc (1 : ℤ) n, (-1)^(i+1)*(i : ℝ)^(-i)) atTop (𝓝 (∫ x in Ioo (0 : ℝ) 1, x^x)) :=
+sorry
+
+theorem putnam_1969_a5
+: ∀ x y : ℝ → ℝ, Differentiable ℝ x ∧ Differentiable ℝ y → ∀ t > 0,
+x 0 = y 0 ↔ ∃ u : ℝ → ℝ, Continuous u ∧ x t = 0 ∧ y t = 0 ∧
+deriv x = (fun t : ℝ ↦ -2) * y + u ∧ deriv y = (fun t : ℝ ↦ -2) * x + u :=
 sorry
 
 theorem putnam_1969_a6
