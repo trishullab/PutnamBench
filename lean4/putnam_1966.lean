@@ -7,6 +7,21 @@ theorem putnam_1966_a1
 : ∀ x y : ℤ, x > 0 ∧ y > 0 ∧ x > y → x * y = f (x + y) - f (x - y) :=
 sorry
 
+theorem putnam_1966_a2
+(r : ℝ)
+(A B C : EuclideanSpace ℝ (Fin 2))
+(a : ℝ := Euclidean.dist B C)
+(b : ℝ := Euclidean.dist C A)
+(c : ℝ := Euclidean.dist A B)
+(p : ℝ := (Euclidean.dist B C + Euclidean.dist C A + Euclidean.dist A B)/2)
+(hABC : ¬Collinear ℝ {A, B, C})
+(hr : ∃ I : EuclideanSpace ℝ (Fin 2),
+(∃! P : EuclideanSpace ℝ (Fin 2), Euclidean.dist I P = r ∧ Collinear ℝ {P, B, C}) ∧
+(∃! Q : EuclideanSpace ℝ (Fin 2), Euclidean.dist I Q = r ∧ Collinear ℝ {Q, C, A}) ∧
+(∃! R : EuclideanSpace ℝ (Fin 2), Euclidean.dist I R = r ∧ Collinear ℝ {R, A, B}))
+: 1/(p - a)^2 + 1/(p - b)^2 + 1/(p - c)^2 ≥ 1/r^2 :=
+sorry
+
 open Topology
 open Filter
 
@@ -39,6 +54,16 @@ theorem putnam_1966_a6
 : Tendsto (fun n => a n 1) ⊤ (𝓝 3) :=
 sorry
 
+theorem putnam_1966_b1
+(n : ℕ)
+(hN : n ≥ 3)
+(L : ZMod n → (Fin 2 → ℝ))
+(hsq : ∀ i : ZMod n, L i 0 ∈ Set.Icc 0 1 ∧ L i 1 ∈ Set.Icc 0 1)
+(hnoncol : ∀ i j k : ZMod n, i ≠ j ∧ j ≠ k ∧ k ≠ i → ¬Collinear ℝ {L i, L j, L k})
+(hconvex : ∀ i : ZMod n, segment ℝ (L i) (L (i + 1)) ∩ interior (convexHull ℝ {L j | j : ZMod n}) = ∅)
+: ∑ i : Fin n, (Euclidean.dist (L i) (L (i + 1)))^2 ≤ 4 :=
+sorry
+
 theorem putnam_1966_b2
 (S : ℤ → Set ℤ := fun n : ℤ => {n, n + 1, n + 2, n + 3, n + 4, n + 5, n + 6, n + 7, n + 8, n + 9})
 : ∀ n : ℤ, n > 0 → (∃ k ∈ S n, ∀ m ∈ S n, k ≠ m → IsCoprime m k) :=
@@ -56,6 +81,16 @@ theorem putnam_1966_b4
 (S : Finset ℕ)
 (hS : (∀ i ∈ S, i > 0) ∧ S.card = m * n + 1)
 : ∃ T ⊆ S, (T.card = m + 1 ∧ ∀ j ∈ T, ∀ i ∈ T, i ≠ j → ¬(j ∣ i)) ∨ (T.card = n + 1 ∧ ∀ i ∈ T, ∀ j ∈ T, j < i → j ∣ i) :=
+sorry
+
+theorem putnam_1966_b5
+(S : Finset (EuclideanSpace ℝ (Fin 2)))
+(hcard : S.card ≥ 3)
+(hS : ∀ s ⊆ S, s.card = 3 → ¬Collinear ℝ s.toSet)
+: ∃ L : ZMod S.card → (EuclideanSpace ℝ (Fin 2)), (∀ p ∈ S, ∃! i : ZMod S.card, p = L i) ∧
+∀ i j : ZMod S.card, i ≠ j → ∀ I : EuclideanSpace ℝ (Fin 2),
+I ∈ segment ℝ (L i) (L (i + 1)) ∧ I ∈ segment ℝ (L j) (L (j + 1)) →
+I = L i ∨ I = L (i + 1) ∨ I = L j ∨ I = L (j + 1) :=
 sorry
 
 theorem putnam_1966_b6
