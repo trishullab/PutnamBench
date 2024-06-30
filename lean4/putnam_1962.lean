@@ -10,7 +10,6 @@ theorem putnam_1962_a1
 : ∃ T ⊆ S, T.ncard = 4 ∧ ¬∃ t ∈ T, t ∈ convexHull ℝ (T \ {t}) :=
 sorry
 
-
 abbrev putnam_1962_a2_solution : Set (ℝ → ℝ) := sorry
 -- {f : ℝ → ℝ | ∃ a c : ℝ, a > 0 ∧ f = fun x => a / (1 - c * x)^2}
 theorem putnam_1962_a2
@@ -19,6 +18,20 @@ theorem putnam_1962_a2
 : (∀ f : ℝ → ℝ, (hfinf f → ∃ g ∈ putnam_1962_a2_solution, ∀ x ≥ 0, g x = f x) ∧
 ∀ e > 0, hf e f → ∃ g ∈ putnam_1962_a2_solution, ∀ x ∈ Set.Ico 0 e, g x = f x) ∧
 ∀ f ∈ putnam_1962_a2_solution, hfinf f ∨ (∃ e > 0, hf e f) :=
+sorry
+
+theorem putnam_1962_a3
+(A B C P Q R U V W : EuclideanSpace ℝ (Fin 2))
+(k : ℝ)
+(hk : k > 0)
+(hABC : ¬Collinear ℝ {A, B, C})
+(hP : P ∈ segment ℝ B C ∧ Euclidean.dist B P / Euclidean.dist P C = k)
+(hQ : Q ∈ segment ℝ C A ∧ Euclidean.dist C Q / Euclidean.dist Q A = k)
+(hR : R ∈ segment ℝ A B ∧ Euclidean.dist A R / Euclidean.dist R B = k)
+(hU : U ∈ segment ℝ B Q ∧ U ∈ segment ℝ C R)
+(hV : V ∈ segment ℝ C R ∧ V ∈ segment ℝ A P)
+(hW : W ∈ segment ℝ A P ∧ W ∈ segment ℝ B Q)
+: (volume (convexHull ℝ {U, V, W})).toReal / (volume (convexHull ℝ {A, B, C})).toReal = (k - 1)^2 / (k^2 + k + 1) :=
 sorry
 
 theorem putnam_1962_a4
@@ -54,6 +67,17 @@ theorem putnam_1962_b1
 : p n (x+y) = ∑ k in Finset.range (n+1), Nat.choose n k * (p k x) * (p (n - k) y) :=
 sorry
 
+theorem putnam_1962_b2
+: ∃ f : ℝ → Set ℕ, ∀ a b : ℝ, a < b → f a ⊂ f b :=
+sorry
+
+theorem putnam_1962_b3
+(S : Set (EuclideanSpace ℝ (Fin 2)))
+(hS : Convex ℝ S ∧ 0 ∈ S)
+(htopo : (0 ∈ interior S) ∨ IsClosed S)
+(hray : ∀ P : EuclideanSpace ℝ (Fin 2), P ≠ 0 → ∃ Q : EuclideanSpace ℝ (Fin 2), SameRay ℝ P Q ∧ Q ∉ S)
+: Bornology.IsBounded S :=
+sorry
 
 theorem putnam_1962_b5
 (n : ℤ)
@@ -62,6 +86,7 @@ theorem putnam_1962_b5
 sorry
 
 theorem putnam_1962_b6
+(π : ℝ := Real.pi)
 (n : ℕ)
 (a b : ℕ → ℝ)
 (xs : Set ℝ)
