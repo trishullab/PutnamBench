@@ -34,6 +34,22 @@ theorem putnam_1974_a6
 : sInf {d : ℕ | ∃ f : Polynomial ℤ, hdivnallx f ∧ d = f.natDegree} = putnam_1974_a6_solution :=
 sorry
 
+-- Note: This problem originally requires a solution, but it is unclear what the correct ways to specify it in closed-form are. So we only include a formalization with the solution written in.
+theorem putnam_1974_b1
+(on_unit_circle : (Fin 5 → (ℝ × ℝ)) -> Prop := fun points => ∀ i : Fin 5, Euclidean.dist (points i) (0,0) = 1)
+(distance_fun : (Fin 5 → (ℝ × ℝ)) -> ℝ := fun points => ∑ idx : Fin 5 × Fin 5, if idx.1 < idx.2 then Euclidean.dist (points idx.1) (points idx.2) else 0)
+: ∀ points : Fin 5 → (ℝ × ℝ), on_unit_circle points → (distance_fun points = sSup {R | ∃ pts, on_unit_circle pts ∧ R = distance_fun pts} ↔ (∃ (B : ℝ) (ordering : Equiv.Perm (Fin 5)), ∀ i : Fin 5, Euclidean.dist (points (ordering i)) (ordering (i+1)) = B)) :=
+sorry
+
+open Filter Topology
+
+theorem putnam_1974_b2
+(y : ℝ → ℝ)
+(ycontdiff : ContDiff ℝ 1 y)
+(limy : Tendsto (fun x : ℝ => (deriv y x)^2 + (y x)^3) atTop (𝓝 0))
+: Tendsto y atTop (𝓝 0) ∧ Tendsto (deriv y) atTop (𝓝 0) :=
+sorry
+
 theorem putnam_1974_b3
 (α : ℝ)
 (ha : Real.cos (Real.pi * α) = (1 : ℝ)/3)

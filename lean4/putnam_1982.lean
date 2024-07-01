@@ -8,13 +8,13 @@ abbrev putnam_1982_a2_solution : Prop := sorry
 theorem putnam_1982_a2
 (B : ℕ → ℝ → ℝ := fun n x ↦ ∑ k in Finset.Icc 1 n, k ^ x)
 (f : ℕ → ℝ := fun n ↦ B n (logb n 2) / (n * logb 2 n) ^ 2)
-: (∃ L : ℝ, Tendsto (fun N ↦ ∑ j in Finset.Icc 2 N, f j) ⊤ (𝓝 L)) ↔ putnam_1982_a2_solution :=
+: (∃ L : ℝ, Tendsto (fun N ↦ ∑ j in Finset.Icc 2 N, f j) atTop (𝓝 L)) ↔ putnam_1982_a2_solution :=
 sorry
 
 noncomputable abbrev putnam_1982_a3_solution : ℝ := sorry
 -- (Real.pi / 2) * log Real.pi
 theorem putnam_1982_a3
-: (Tendsto (fun t ↦ ∫ x in (0)..t, (arctan (Real.pi * x) - arctan x) / x) ⊤ (𝓝 putnam_1982_a3_solution)) :=
+: (Tendsto (fun t ↦ ∫ x in (0)..t, (arctan (Real.pi * x) - arctan x) / x) atTop (𝓝 putnam_1982_a3_solution)) :=
 sorry
 
 theorem putnam_1982_a5

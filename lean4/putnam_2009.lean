@@ -83,7 +83,7 @@ theorem putnam_2009_b5
 (f : ℝ → ℝ)
 (hfdiff : DifferentiableOn ℝ f (Ioi 1))
 (hf : ∀ x > 1, deriv f x = (x ^ 2 - (f x) ^ 2) / ((x ^ 2) * ((f x) ^ 2 + 1)))
-: (Tendsto f ⊤ ⊤) :=
+: (Tendsto f atTop atTop) :=
 sorry
 
 theorem putnam_2009_b6

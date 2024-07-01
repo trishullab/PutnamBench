@@ -63,7 +63,7 @@ theorem putnam_2000_b3
 (mult : (ℝ → ℝ) → ℝ → ℕ)
 (hmult : ∀ g : ℝ → ℝ, ∀ t : ℝ, (∃ c : ℕ, iteratedDeriv c g t ≠ 0) → (iteratedDeriv (mult g t) g t ≠ 0 ∧ ∀ k < (mult g t), iteratedDeriv k g t = 0))
 (M : ℕ → ℕ := fun k ↦ ∑' t : Ico (0 : ℝ) 1, mult (iteratedDeriv k f) t)
-: ((∀ i j : ℕ, i ≤ j → M i ≤ M j) ∧ Tendsto M ⊤ (𝓝 (2 * N))) :=
+: ((∀ i j : ℕ, i ≤ j → M i ≤ M j) ∧ Tendsto M atTop (𝓝 (2 * N))) :=
 sorry
 
 open Set

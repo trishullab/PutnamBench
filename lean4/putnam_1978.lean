@@ -73,7 +73,7 @@ theorem putnam_1978_b3
 (a : ℕ+ → ℝ)
 (haroot : ∀ n, (P n).eval (a n) = 0)
 (haub : ∀ n, ∀ x, (P n).eval x = 0 → x ≤ a n)
-: (StrictMono a ∧ Tendsto a ⊤ (𝓝 0)) :=
+: (StrictMono a ∧ Tendsto a atTop (𝓝 0)) :=
 sorry
 
 theorem putnam_1978_b4

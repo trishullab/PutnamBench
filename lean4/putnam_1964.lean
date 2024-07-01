@@ -38,7 +38,7 @@ sorry
 open Filter Topology
 
 theorem putnam_1964_a5
-(pa : (ℕ → ℝ) → Prop := fun a ↦ (∀ n : ℕ, a n > 0) ∧ ∃ L : ℝ, Tendsto (fun N ↦ ∑ n in Finset.range N, 1 / a n) ⊤ (𝓝 L))
+(pa : (ℕ → ℝ) → Prop := fun a ↦ (∀ n : ℕ, a n > 0) ∧ ∃ L : ℝ, Tendsto (fun N ↦ ∑ n in Finset.range N, 1 / a n) atTop (𝓝 L))
 : (∃ k : ℝ, ∀ a : ℕ → ℝ, pa a → ∑' n : ℕ, (n + 1) / (∑ i in Finset.range (n + 1), a i) ≤ k * ∑' n : ℕ, 1 / a n) :=
 sorry
 
@@ -53,9 +53,9 @@ sorry
 theorem putnam_1964_b1
 (a : ℕ → ℤ)
 (apos : a > 0)
-(ha : ∃ L : ℝ, Tendsto (fun N ↦ ∑ n in Finset.range N, (1 : ℝ) / a n) ⊤ (𝓝 L))
+(ha : ∃ L : ℝ, Tendsto (fun N ↦ ∑ n in Finset.range N, (1 : ℝ) / a n) atTop (𝓝 L))
 (b : ℕ → ENNReal := fun n ↦ {k : ℕ | a k ≤ n}.encard)
-: (Tendsto (fun n : ℕ ↦ b n / n) ⊤ (𝓝 0)) :=
+: (Tendsto (fun n : ℕ ↦ b n / n) atTop (𝓝 0)) :=
 sorry
 
 
@@ -69,8 +69,8 @@ sorry
 
 theorem putnam_1964_b3
 (f : ℝ → ℝ)
-(hf : Continuous f ∧ ∀ α > 0, Tendsto (fun n : ℕ ↦ f (n * α)) ⊤ (𝓝 0))
-: (Tendsto f ⊤ (𝓝 0)) :=
+(hf : Continuous f ∧ ∀ α > 0, Tendsto (fun n : ℕ ↦ f (n * α)) atTop (𝓝 0))
+: (Tendsto f atTop (𝓝 0)) :=
 sorry
 
 theorem putnam_1964_b5
@@ -78,7 +78,7 @@ theorem putnam_1964_b5
 (ha : StrictMono a ∧ ∀ n : ℕ, a n > 0)
 (b : ℕ → ℕ)
 (hb : b 0 = a 0 ∧ ∀ n : ℕ, b (n + 1) = lcm (b n) (a (n + 1)))
-: (∃ L : ℝ, Tendsto (fun N ↦ ∑ n in Finset.range N, (1 : ℝ) / b n) ⊤ (𝓝 L)) :=
+: (∃ L : ℝ, Tendsto (fun N ↦ ∑ n in Finset.range N, (1 : ℝ) / b n) atTop (𝓝 L)) :=
 sorry
 
 theorem putnam_1964_b6

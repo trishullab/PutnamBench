@@ -100,7 +100,7 @@ theorem putnam_2012_b4
 (a : ℕ → ℝ)
 (ha0 : a 0 = 1)
 (han : ∀ n : ℕ, a (n + 1) = a n + exp (-a n))
-: ((∃ L : ℝ, Tendsto (fun n ↦ a n - Real.log n) ⊤ (𝓝 L)) ↔ putnam_2012_b4_solution) :=
+: ((∃ L : ℝ, Tendsto (fun n ↦ a n - Real.log n) atTop (𝓝 L)) ↔ putnam_2012_b4_solution) :=
 sorry
 
 -- Comment for putnam_2012_b5: This formalization uses sSup instead of maximum for the right-hand side of the goal.

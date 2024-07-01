@@ -38,7 +38,7 @@ noncomputable abbrev putnam_1983_a6_solution : ℝ := sorry
 -- 2 / 9
 theorem putnam_1983_a6
 (F : ℝ → ℝ := fun a ↦ (a ^ 4 / exp (a ^ 3)) * ∫ x in (0)..a, ∫ y in (0)..(a - x), exp (x ^ 3 + y ^ 3))
-: (Tendsto F ⊤ (𝓝 putnam_1983_a6_solution)) :=
+: (Tendsto F atTop (𝓝 putnam_1983_a6_solution)) :=
 sorry
 
 abbrev putnam_1983_b2_solution : Prop := sorry
@@ -60,8 +60,8 @@ noncomputable abbrev putnam_1983_b5_solution : ℝ := sorry
 -- log (4 / Real.pi)
 theorem putnam_1983_b5
 (dist : ℝ → ℝ := fun x ↦ min (x - ⌊x⌋) (⌈x⌉ - x))
-(fact : Tendsto (fun N ↦ ∏ n in Finset.Icc 1 N, (2 * n / (2 * n - 1)) * (2 * n / (2 * n + 1)) : ℕ → ℝ) ⊤ (𝓝 (Real.pi / 2)))
-: (Tendsto (fun n ↦ (1 / n) * ∫ x in (1)..n, dist (n / x) : ℕ → ℝ) ⊤ (𝓝 putnam_1983_b5_solution)) :=
+(fact : Tendsto (fun N ↦ ∏ n in Finset.Icc 1 N, (2 * n / (2 * n - 1)) * (2 * n / (2 * n + 1)) : ℕ → ℝ) atTop (𝓝 (Real.pi / 2)))
+: (Tendsto (fun n ↦ (1 / n) * ∫ x in (1)..n, dist (n / x) : ℕ → ℝ) atTop (𝓝 putnam_1983_b5_solution)) :=
 sorry
 
 open Polynomial
