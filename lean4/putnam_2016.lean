@@ -16,7 +16,7 @@ theorem putnam_2016_a2
 (M : ℕ → ℕ)
 (hpM : ∀ n : ℕ, p n (M n))
 (hMub : ∀ n : ℕ, ∀ m : ℕ, p n m → m ≤ M n)
-: (Tendsto (fun n ↦ ((M n : ℝ) / (n : ℝ))) ⊤ (𝓝 putnam_2016_a2_solution)) :=
+: (Tendsto (fun n ↦ ((M n : ℝ) / (n : ℝ))) atTop (𝓝 putnam_2016_a2_solution)) :=
 sorry
 
 open Real
@@ -69,7 +69,7 @@ noncomputable abbrev putnam_2016_b2_solution : ℝ × ℝ := sorry
 theorem putnam_2016_b2
 (squarish : ℤ → Prop := fun n ↦ IsSquare n ∨ ∃ w : ℤ, IsSquare |n - w ^ 2| ∧ ∀ v : ℕ, |n - w ^ 2| ≤ |n - v ^ 2|)
 (S : ℤ → ℕ := fun n ↦ {i ∈ Finset.Icc 1 n | squarish i}.ncard)
-(p : ℝ → ℝ → Prop := fun α ↦ fun β ↦ α > 0 ∧ β > 0 ∧ Tendsto (fun N ↦ S N / (N : ℝ) ^ α) ⊤ (𝓝 β))
+(p : ℝ → ℝ → Prop := fun α ↦ fun β ↦ α > 0 ∧ β > 0 ∧ Tendsto (fun N ↦ S N / (N : ℝ) ^ α) atTop (𝓝 β))
 : ((∀ α β : ℝ, ((α, β) = putnam_2016_b2_solution ↔ p α β)) ∨ ¬∃ α β : ℝ, p α β) :=
 sorry
 

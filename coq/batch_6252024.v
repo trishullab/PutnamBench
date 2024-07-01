@@ -300,7 +300,6 @@ Theorem putnam_1995_b6
 Proof. Admitted.
 End putnam_1995_b6.
 
-(* 1996 A3 A4 *)
 Section putnam_1996_a3.
 Require Import Nat Ensembles Finite_sets. From mathcomp Require Import fintype.
 Definition putnam_1996_a3_solution : Prop := False.
@@ -363,8 +362,7 @@ Theorem putnam_1999_a3
 Proof. Admitted.
 End putnam_1999_a3.
 
-(* 2000 A5 A6 B3 b5*)
-(* Leaving A5 for others to find *)
+
 Section putnam_2000_a6.
 Require Import ZArith Reals Coquelicot.Coquelicot.
 Theorem putnam_2000_a6

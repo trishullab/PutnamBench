@@ -26,8 +26,8 @@ open Complex
 theorem putnam_1965_a3
 (a : ℕ → ℝ)
 (α : ℂ)
-: Tendsto (fun n : ℕ => (∑ k in Finset.Icc 1 n, exp (I * a k))/n) ⊤ (𝓝 α) ↔
-Tendsto (fun n : ℕ => (∑ k in Finset.Icc 1 (n^2), exp (I * a k))/n^2) ⊤ (𝓝 α) :=
+: Tendsto (fun n : ℕ => (∑ k in Finset.Icc 1 n, exp (I * a k))/n) atTop (𝓝 α) ↔
+Tendsto (fun n : ℕ => (∑ k in Finset.Icc 1 (n^2), exp (I * a k))/n^2) atTop (𝓝 α) :=
 sorry
 
 theorem putnam_1965_a4
@@ -54,7 +54,7 @@ sorry
 noncomputable abbrev putnam_1965_b1_solution : ℝ := sorry
 -- 1 / 2
 theorem putnam_1965_b1
-: Tendsto (fun n : ℕ ↦ ∫ x in {x : Fin n → ℝ | ∀ k : Fin n, x k ∈ Set.Icc 0 1}, (Real.cos (∑ k : Fin n, x k))^2) ⊤ (𝓝 putnam_1965_b1_solution) :=
+: Tendsto (fun n : ℕ ↦ ∫ x in {x : Fin n → ℝ | ∀ k : Fin n, x k ∈ Set.Icc 0 1}, (Real.cos (∑ k : Fin n, x k))^2) atTop (𝓝 putnam_1965_b1_solution) :=
 sorry
 
 theorem putnam_1965_b2
@@ -78,7 +78,7 @@ theorem putnam_1965_b4
 (f : ℕ → ℝ → ℝ)
 (hf : ∀ n > 0, f n = fun x : ℝ => (∑ i in Finset.Icc 0 (n/2), (Nat.choose n (2*i))*x^i) / (∑ i in Finset.Icc 0 ((n - 1)/2), (Nat.choose n (2*i + 1))*x^i))
 : let ⟨⟨p, q⟩, ⟨s, g⟩⟩ := putnam_1965_b4_solution; ∀ n > 0, f (n + 1) = p (f n) / q (f n) ∧
-s = {x : ℝ | ∃ l : ℝ, Tendsto (fun n : ℕ => f n x) ⊤ (𝓝 l)} ∧ ∀ x ∈ s, Tendsto (fun n : ℕ => f n x) ⊤ (𝓝 (g x)) :=
+s = {x : ℝ | ∃ l : ℝ, Tendsto (fun n : ℕ => f n x) atTop (𝓝 l)} ∧ ∀ x ∈ s, Tendsto (fun n : ℕ => f n x) atTop (𝓝 (g x)) :=
 sorry
 
 open SimpleGraph.Walk

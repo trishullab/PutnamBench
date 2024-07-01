@@ -96,7 +96,7 @@ theorem putnam_1987_b4
 (hx : ∀ n ≥ 1, x (n + 1) = (x n) * cos (y n) - (y n) * sin (y n))
 (hy : ∀ n ≥ 1, y (n + 1) = (x n) * sin (y n) + (y n) * cos (y n))
 : let (existsx, limx, existsy, limy) := putnam_1987_b4_solution
-(((∃ c : ℝ, Tendsto x ⊤ (𝓝 c)) → existsx) ∧ (existsx → Tendsto x ⊤ (𝓝 limx)) ∧ ((∃ c : ℝ, Tendsto y ⊤ (𝓝 c)) → existsy) ∧ (existsy → Tendsto y ⊤ (𝓝 limy))) :=
+(((∃ c : ℝ, Tendsto x atTop (𝓝 c)) → existsx) ∧ (existsx → Tendsto x atTop (𝓝 limx)) ∧ ((∃ c : ℝ, Tendsto y atTop (𝓝 c)) → existsy) ∧ (existsy → Tendsto y atTop (𝓝 limy))) :=
 sorry
 
 theorem putnam_1987_b5

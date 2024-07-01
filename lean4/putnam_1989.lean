@@ -63,7 +63,7 @@ theorem putnam_1989_b3
 (hfderiv : ∀ x > 0, deriv f x = -3 * f x + 6 * f (2 * x))
 (hdecay : ∀ x ≥ 0, |f x| ≤ Real.exp (-Real.sqrt x))
 (μ : ℕ → ℝ := fun n ↦ ∫ x in Set.Ioi 0, x ^ n * (f x))
-: ((∀ n : ℕ, μ n = putnam_1989_b3_solution n (μ 0)) ∧ (∃ L : ℝ, Tendsto (fun n ↦ (μ n) * 3 ^ n / factorial n) ⊤ (𝓝 L)) ∧ (Tendsto (fun n ↦ (μ n) * 3 ^ n / factorial n) ⊤ (𝓝 0) → μ 0 = 0)) :=
+: ((∀ n : ℕ, μ n = putnam_1989_b3_solution n (μ 0)) ∧ (∃ L : ℝ, Tendsto (fun n ↦ (μ n) * 3 ^ n / factorial n) atTop (𝓝 L)) ∧ (Tendsto (fun n ↦ (μ n) * 3 ^ n / factorial n) atTop (𝓝 0) → μ 0 = 0)) :=
 sorry
 
 open Set

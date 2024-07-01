@@ -18,7 +18,7 @@ theorem putnam_1985_a3
 (a : ℕ → ℕ → ℝ)
 (ha0 : ∀ m : ℕ, a m 0 = d / 2 ^ m)
 (ha : ∀ m : ℕ, ∀ j : ℕ, a m (j + 1) = (a m j) ^ 2 + 2 * a m j)
-: (Tendsto (fun n ↦ a n n) ⊤ (𝓝 (putnam_1985_a3_solution d))) :=
+: Tendsto (fun n ↦ a n n) atTop (𝓝 (putnam_1985_a3_solution d)) :=
 sorry
 
 abbrev putnam_1985_a4_solution : Set (Fin 100) := sorry
@@ -91,4 +91,3 @@ theorem putnam_1985_b6
 (hG : ∑ M in G, Matrix.trace M = 0)
 : (∑ M in G, M = 0) :=
 sorry
-
