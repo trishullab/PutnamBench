@@ -34,6 +34,12 @@ theorem putnam_1967_a4
 : ¬∃ u : ℝ → ℝ, ∀ x ∈ Set.Icc 0 1, u x = 1 + lambda * (∫ y in Set.Ioo x 1, u y * u (y - x)) :=
 sorry
 
+theorem putnam_1967_a5
+(R : Set (EuclideanSpace ℝ (Fin 2)))
+(hR : Convex ℝ R ∧ (MeasureTheory.volume R).toReal > Real.pi / 4)
+: ∃ P ∈ R, ∃ Q ∈ R, Euclidean.dist P Q = 1 :=
+sorry
+
 abbrev putnam_1967_a6_solution : ℕ := sorry
 -- 8
 theorem putnam_1967_a6
@@ -41,6 +47,19 @@ theorem putnam_1967_a6
 (numtuples : (Fin 4 → ℝ) → (Fin 4 → ℝ) → ℕ)
 (hnumtuples : ∀ a b : Fin 4 → ℝ, numtuples a b = {s : Fin 4 → ℝ | ∃ x : Fin 4 → ℝ, (∀ i : Fin 4, x i ≠ 0) ∧ (∑ i : Fin 4, a i * x i) = 0 ∧ (∑ i : Fin 4, b i * x i) = 0 ∧ (∀ i : Fin 4, s i = Real.sign (x i))}.encard)
 : (∃ a b : Fin 4 → ℝ, abneq0 a b ∧ numtuples a b = putnam_1967_a6_solution) ∧ (∀ a b : Fin 4 → ℝ, abneq0 a b → numtuples a b ≤ putnam_1967_a6_solution) :=
+sorry
+
+theorem putnam_1967_b1
+(r : ℝ)
+(L : ZMod 6 → EuclideanSpace ℝ (Fin 2))
+(P : EuclideanSpace ℝ (Fin 2) := midpoint ℝ (L 1) (L 2))
+(Q : EuclideanSpace ℝ (Fin 2) := midpoint ℝ (L 3) (L 4))
+(R : EuclideanSpace ℝ (Fin 2) := midpoint ℝ (L 5) (L 0))
+(hr : r > 0)
+(hcyclic : ∃ O : EuclideanSpace ℝ (Fin 2), ∀ i : ZMod 6, Euclidean.dist O (L i) = r)
+(horder : ∀ i : ZMod 6, segment ℝ (L i) (L (i + 1)) ∩ interior (convexHull ℝ {L j | j : ZMod 6}) = ∅)
+(hlens : Euclidean.dist (L 0) (L 1) = r ∧ Euclidean.dist (L 2) (L 3) = r ∧ Euclidean.dist (L 4) (L 5) = r)
+: Euclidean.dist P Q = Euclidean.dist R P ∧ Euclidean.dist Q R = Euclidean.dist P Q :=
 sorry
 
 theorem putnam_1967_b2
@@ -67,6 +86,12 @@ theorem putnam_1967_b4
 (hlockers0 : ∀ i : Set.Icc 1 n, lockers 0 i = false)
 (hlockersk : ∀ k ∈ Set.Icc 1 n, ∀ i : Set.Icc 1 n, lockers k i = if k ∣ i then !(lockers (k - 1) i) else (lockers (k - 1) i))
 : ∀ i : Set.Icc 1 n, lockers n i ↔ (∃ j : ℕ, j ^ 2 = i) :=
+sorry
+
+theorem putnam_1967_b5
+(n : ℕ)
+(hn : n > 0)
+: (1 : ℚ)/2 = ∑ i in Finset.range n, (Nat.choose (n + i - 1) i) * (2 : ℚ)^(-(n : ℤ) - i) :=
 sorry
 
 -- boosted domain of f to the 2D plane and made it partially differentiable everywhere

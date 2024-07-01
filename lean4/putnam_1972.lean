@@ -1,7 +1,6 @@
 import Mathlib
-open BigOperators
 
-open Filter Topology Set
+open BigOperators EuclideanGeometry Filter Topology Set
 
 theorem putnam_1972_a1
 (n : ℕ)
@@ -50,6 +49,18 @@ theorem putnam_1972_b1
 : ¬∃ n : ℕ, p n = 0 ∧ p (n + 1) = 0 ∧ p (n + 2) = 0 :=
 sorry
 
+noncomputable abbrev putnam_1972_b2_solution : ℝ → ℝ → ℝ := sorry
+-- fun s v : ℝ ↦ 2 * s / v
+theorem putnam_1972_b2
+(s v : ℝ)
+(hv : v > 0)
+(valid : ℝ → (ℝ → ℝ) → Prop := fun (t : ℝ) (x : ℝ → ℝ) ↦
+DifferentiableOn ℝ x (Set.Icc 0 t) ∧ DifferentiableOn ℝ (deriv x) (Set.Icc 0 t)
+ ∧ AntitoneOn (deriv (deriv x)) (Set.Icc 0 t) ∧ deriv x 0 = 0 ∧ deriv x t = v ∧ x t - x 0 = s)
+: (∃ x : ℝ → ℝ, valid (putnam_1972_b2_solution s v) x) ∧
+∀ t > putnam_1972_b2_solution s v, ∀ x : ℝ → ℝ, ¬valid t x :=
+sorry
+
 theorem putnam_1972_b3
 (G : Type*) [Group G]
 (A B : G)
@@ -62,6 +73,13 @@ theorem putnam_1972_b4
 (hn : n > 1)
 (vars : ℝ → ℝ → ℝ → (Fin 3 → ℝ) := fun a b c ↦ fun i ↦ ite (i = 0) a (ite (i = 1) b c))
 : ∃ P : MvPolynomial (Fin 3) ℝ, ∀ x : ℝ, x = MvPolynomial.eval (vars (x^n) (x^(n+1)) (x + x^(n+2))) P :=
+sorry
+
+theorem putnam_1972_b5
+(A B C D : EuclideanSpace ℝ (Fin 3))
+(hnonplanar : ¬Coplanar ℝ {A, B, C, D})
+(hangles : ∠ A B C = ∠ C D A ∧ ∠ B C D = ∠ D A B)
+: Euclidean.dist A B = Euclidean.dist C D ∧ Euclidean.dist B C = Euclidean.dist D A :=
 sorry
 
 open Metric

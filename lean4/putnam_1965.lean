@@ -1,6 +1,19 @@
 import Mathlib
 
+open EuclideanGeometry
 open BigOperators
+
+noncomputable abbrev putnam_1965_a1_solution : ℝ := sorry
+-- Real.pi / 15
+theorem putnam_1965_a1
+(π : ℝ := Real.pi)
+(A B C X Y : EuclideanSpace ℝ (Fin 2))
+(hABC : ¬Collinear ℝ {A, B, C})
+(hangles : ∠ C A B < ∠ B C A ∧ ∠ B C A < π/2 ∧ π/2 < ∠ A B C)
+(hX : Collinear ℝ {X, B, C} ∧ ∠ X A B = (π - ∠ C A B)/2 ∧ Euclidean.dist A X = Euclidean.dist A B)
+(hY : Collinear ℝ {Y, C, A} ∧ ∠ Y B C = (π - ∠ A B C)/2 ∧ Euclidean.dist B Y = Euclidean.dist A B)
+: ∠ C A B = putnam_1965_a1_solution :=
+sorry
 
 theorem putnam_1965_a2
 : ∀ n > 0, ∑ r in Finset.Icc 0 ((n - 1)/2), ((n - 2*r) * Nat.choose n r / (n : ℚ))^2 = (Nat.choose (2*n - 2) (n - 1))/(n : ℚ) :=
@@ -36,6 +49,12 @@ theorem putnam_1965_a6
 (hm : m > 1)
 (huv : u ≥ 0 ∧ v ≥ 0)
 : (∃! p : ℝ × ℝ, p.1 ≥ 0 ∧ p.2 ≥ 0 ∧ u*p.1 + v*p.2 = 1 ∧ (p.1)^m + (p.2)^m = 1) ↔ ∃ n : ℝ, u^n + v^n = 1 ∧ m^(-(1 : ℤ)) + n^(-(1 : ℤ)) = 1 :=
+sorry
+
+noncomputable abbrev putnam_1965_b1_solution : ℝ := sorry
+-- 1 / 2
+theorem putnam_1965_b1
+: Tendsto (fun n : ℕ ↦ ∫ x in {x : Fin n → ℝ | ∀ k : Fin n, x k ∈ Set.Icc 0 1}, (Real.cos (∑ k : Fin n, x k))^2) ⊤ (𝓝 putnam_1965_b1_solution) :=
 sorry
 
 theorem putnam_1965_b2
