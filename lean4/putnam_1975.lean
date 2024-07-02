@@ -60,8 +60,6 @@ theorem putnam_1975_a5
 : ∃ c : ℝ, c > 0 ∧ (let z : ℝ → ℝ := fun x => c * Real.sqrt ((y1 x) * (y2 x)); ∀ x ∈ I, iteratedDeriv 2 z x + 1/(z x)^3 = (f x) * (z x)) :=
 sorry
 
-#check EuclideanSpace
-
 abbrev putnam_1975_b1_solution : ℤ := sorry
 -- 7
 theorem putnam_1975_b1

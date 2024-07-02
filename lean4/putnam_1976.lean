@@ -67,8 +67,6 @@ theorem putnam_1976_b2
 : S.ncard = putnam_1976_b2_solution.1 ∧ S = {word w | w ∈ putnam_1976_b2_solution.2} :=
 sorry
 
-#check ENNReal
--- TODO: Not general enough
 open ProbabilityTheory MeasureTheory
 theorem putnam_1976_b3
 (Ω : Type*)
