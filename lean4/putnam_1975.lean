@@ -31,11 +31,51 @@ f (x, y, z) ≤ f (putnam_1975_a3_solution.1 (a, b, c))) ∧
 f (x, y, z) ≥ f (putnam_1975_a3_solution.2 (a, b, c))) :=
 sorry
 
+open Real Complex
+def rep {α : Type} (n : ℕ) (l : List α) : List α :=
+let rec loop
+  | 0, _ => ([] : List α)
+  | n+1, l => List.append l (rep n l)
+loop n []
+abbrev putnam_1975_a4_solution : ℕ → List ℤ := sorry
+-- fun m => 1 :: (rep ((m-3)/2) [(0 : ℤ), (1 : ℤ)])
+theorem putnam_1975_a4
+(m : ℕ)
+(hm : Odd m ∧ m > 1)
+(n := 2 * m)
+(θ : ℂ := (cexp 1)^(2 * pi * I / (n : ℂ)))
+: 1/(1 - θ) = ∑ i : Fin (List.length (putnam_1975_a4_solution m)), (List.get (putnam_1975_a4_solution m) i) * θ^(i : ℕ) :=
+sorry
+
+-- Note: Only the part showing a constant exists
+theorem putnam_1975_a5
+(I : Interval ℝ)
+(f y1 y2 : ℝ → ℝ)
+(hfcont : Continuous f)
+(hycdiff : ContDiff ℝ 2 y1 ∧ ContDiff ℝ 2 y2)
+(hy1sol : ∀ x : ℝ, iteratedDeriv 2 y1 x = (f x) * (y1 x))
+(hy2sol : ∀ x : ℝ, iteratedDeriv 2 y2 x = (f x) * (y2 x))
+(hylinindep : ∀ c1 c2 : ℝ, (∀ x : ℝ, c1 * y1 x + c2 * y2 x = 0) → (c1 = 0 ∧ c2 = 0))
+(hyI : ∀ x ∈ I, y1 x > 0 ∧ y2 x > 0)
+: ∃ c : ℝ, c > 0 ∧ (let z : ℝ → ℝ := fun x => c * Real.sqrt ((y1 x) * (y2 x)); ∀ x ∈ I, iteratedDeriv 2 z x + 1/(z x)^3 = (f x) * (z x)) :=
+sorry
+
 abbrev putnam_1975_b1_solution : ℤ := sorry
 -- 7
 theorem putnam_1975_b1
 (H : Set (ℤ × ℤ) := {(x, y) : (ℤ × ℤ) | ∃ u v w : ℤ, (x, y) = (u*3 + v*4 + w*5, u*8 + v*(-1) + w*4)})
 : (∃ b : ℤ, H = {(x, y) : (ℤ × ℤ) | ∃ u v : ℤ, (x, y) = (u, u*b + v*putnam_1975_b1_solution)}) ∧ putnam_1975_b1_solution > 0 :=
+sorry
+
+open Matrix Filter Topology
+theorem putnam_1975_b2
+(slab : (Fin 3 → ℝ) → ℝ → ℝ → Set (Fin 3 → ℝ) := fun normal offset thickness => {x : Fin 3 → ℝ | offset < normal ⬝ᵥ x ∧ normal ⬝ᵥ x < offset + thickness})
+(normals : ℕ → (Fin 3 → ℝ))
+(offsets : ℕ → ℝ)
+(thicknesses : ℕ → ℝ)
+(hthicknessespos : ∀ i : ℕ, thicknesses i > 0)
+(hthicknessesconv : ∃ C : ℝ, Tendsto (fun i : ℕ => ∑ j in Finset.range i, thicknesses j) atTop (𝓝 C))
+: Set.univ ≠ ⋃ i : ℕ, slab (normals i) (offsets i) (thicknesses i) :=
 sorry
 
 open Multiset
@@ -62,4 +102,9 @@ theorem putnam_1975_b5
 (h0 : ∀ x : ℝ, f 0 x = e^x)
 (hf : ∀ n : ℕ, ∀ x : ℝ, f (n + 1) x = x * (deriv (f n) x))
 : ∑' n : ℕ, (f n 1)/(Nat.factorial n) = e^e :=
+sorry
+
+theorem putnam_1975_b6
+(s : ℕ → ℝ := fun n => ∑ i in Finset.Icc 1 n, 1/(i : ℝ))
+: (∀ n : ℕ, n > 1 → n * (n+1 : ℝ)^(1/(n : ℝ)) < n + s n) ∧ (∀ n : ℕ, n > 2 → ((n : ℝ) - 1)*((n : ℝ)^(-1/(n-1 : ℝ))) < n - s n) :=
 sorry

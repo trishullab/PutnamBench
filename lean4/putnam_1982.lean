@@ -17,6 +17,14 @@ theorem putnam_1982_a3
 : (Tendsto (fun t ↦ ∫ x in (0)..t, (arctan (Real.pi * x) - arctan x) / x) atTop (𝓝 putnam_1982_a3_solution)) :=
 sorry
 
+theorem putnam_1982_a4
+(hdiffeq : (ℝ → ℝ) → (ℝ → ℝ) → Prop := fun y z => y 0 = 1 ∧ z 0 = 0 ∧ ContDiff ℝ 1 y ∧ ContDiff ℝ 1 z ∧ (∀ x : ℝ, deriv y x = -1 * (z x)^3 ∧ deriv z x = (y x)^3))
+(f g : ℝ → ℝ)
+(hfgsat : hdiffeq f g)
+(hfgonly : ¬(∃ f' g' : ℝ → ℝ, f ≠ f' ∧ g ≠ g' ∧ hdiffeq f' g'))
+: ∃ L : ℝ, L > 0 ∧ Function.Periodic f L ∧ Function.Periodic g L :=
+sorry
+
 theorem putnam_1982_a5
 (a b c d : ℤ)
 (hpos : a > 0 ∧ b > 0 ∧ c > 0 ∧ d > 0)
