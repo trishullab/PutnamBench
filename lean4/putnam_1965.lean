@@ -1,8 +1,9 @@
 import Mathlib
-
-open EuclideanGeometry
 open BigOperators
 
+open EuclideanGeometry
+
+--TODO: (George) Double check for errors here on Lean migration.
 noncomputable abbrev putnam_1965_a1_solution : ℝ := sorry
 -- Real.pi / 15
 theorem putnam_1965_a1
@@ -55,7 +56,7 @@ sorry
 noncomputable abbrev putnam_1965_b1_solution : ℝ := sorry
 -- 1 / 2
 theorem putnam_1965_b1
-: Tendsto (fun n : ℕ ↦ ∫ x in {x : Fin n → ℝ | ∀ k : Fin n, x k ∈ Set.Icc 0 1}, (Real.cos (∑ k : Fin n, x k))^2) atTop (𝓝 putnam_1965_b1_solution) :=
+: Tendsto (fun n : ℕ ↦ ∫ x in {x : Fin n → ℝ | ∀ k : Fin n, x k ∈ Set.Icc 0 1}, (Real.cos (Real.pi/(2 * n) * ∑ k : Fin n, x k))^2) atTop (𝓝 putnam_1965_b1_solution) :=
 sorry
 
 theorem putnam_1965_b2
