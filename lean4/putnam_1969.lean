@@ -19,9 +19,9 @@ theorem putnam_1969_a4
 sorry
 
 theorem putnam_1969_a5
-: ∀ x y : ℝ → ℝ, Differentiable ℝ x ∧ Differentiable ℝ y → ∀ t > 0,
-x 0 = y 0 ↔ ∃ u : ℝ → ℝ, Continuous u ∧ x t = 0 ∧ y t = 0 ∧
-deriv x = (fun t : ℝ ↦ -2) * y + u ∧ deriv y = (fun t : ℝ ↦ -2) * x + u :=
+: ∀ x y : ℝ → ℝ, (Differentiable ℝ x ∧ Differentiable ℝ y) → ∀ t > 0,
+(x 0 = y 0 ↔ ∃ u : ℝ → ℝ, Continuous u ∧ x t = 0 ∧ y t = 0 ∧
+deriv x = (fun _ : ℝ ↦ -2) * y + u ∧ deriv y = (fun _ : ℝ ↦ -2) * x + u) :=
 sorry
 
 theorem putnam_1969_a6

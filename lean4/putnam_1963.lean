@@ -24,7 +24,7 @@ theorem putnam_1963_a3
 (hn : n ≥ 1)
 (hf : Continuous f)
 (hP : P 0 y = y ∧ ∀ m ∈ Finset.range n, P (m + 1) y = D (n - 1 - m) (P m y))
-: (∀ x ≥ 1, P n y x = f x) ∧ (∀ i ∈ Finset.range n, iteratedDeriv i y 1 = 0) :=
+: (ContDiff ℝ n y) ∧ (∀ x ≥ 1, P n y x = f x) ∧ (∀ i ∈ Finset.range n, iteratedDeriv i y 1 = 0) :=
 sorry
 
 theorem putnam_1963_a4
@@ -33,13 +33,13 @@ theorem putnam_1963_a4
 : (∀ a, apos a → limsup (f a) ⊤ ≥ 1) ∧ (∃ a, apos a ∧ limsup (f a) ⊤ = 1) :=
 sorry
 
+-- TODO: (George) Euclidean.dist not properly compiling, check again when migrating to v4.9.0
 theorem putnam_1963_a6
-(F G : EuclideanSpace ℝ (Fin 2))
+(F1 F2 U V A B C D P Q : EuclideanSpace ℝ (Fin 2))
 (r : ℝ)
-(E : Set (EuclideanSpace ℝ (Fin 2)) := {H : EuclideanSpace ℝ (Fin 2) | Euclidean.dist F H + Euclidean.dist G H = r})
-(U V A B C D P Q : EuclideanSpace ℝ (Fin 2))
+(E : Set (EuclideanSpace ℝ (Fin 2)) := {H : EuclideanSpace ℝ (Fin 2) | Euclidean.dist F1 H + Euclidean.dist F2 H = r})
 (M : EuclideanSpace ℝ (Fin 2) := midpoint ℝ U V)
-(hr : r > Euclidean.dist F G)
+(hr : r > Euclidean.dist F1 F2)
 (hUV : U ∈ E ∧ V ∈ E ∧ U ≠ V)
 (hAB : A ∈ E ∧ B ∈ E ∧ A ≠ B)
 (hCD : C ∈ E ∧ D ∈ E ∧ C ≠ D)

@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
 
-open Polynomial Filter Topology Real Set Polynomial
+open Polynomial Filter Topology Real Set Polynomial Nat
 
 abbrev putnam_2016_a1_solution : ℕ := sorry
 -- 8

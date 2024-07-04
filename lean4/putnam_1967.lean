@@ -34,6 +34,7 @@ theorem putnam_1967_a4
 : ¬∃ u : ℝ → ℝ, ∀ x ∈ Set.Icc 0 1, u x = 1 + lambda * (∫ y in Set.Ioo x 1, u y * u (y - x)) :=
 sorry
 
+-- TODO: (George) Double-check on Euclidean.dist usage here
 theorem putnam_1967_a5
 (R : Set (EuclideanSpace ℝ (Fin 2)))
 (hR : Convex ℝ R ∧ (MeasureTheory.volume R).toReal > Real.pi / 4)
@@ -78,7 +79,7 @@ theorem putnam_1967_b3
 : Tendsto (fun n : ℤ => ∫ x in Set.Ioo 0 1, f x * g (n * x)) atTop (𝓝 ((∫ x in Set.Ioo 0 1, f x) * (∫ x in Set.Ioo 0 1, g x))) :=
 sorry
 
--- uses (ℕ → Set.Icc 1 n → Bool) instead of (Set.Icc 0 n → Set.Icc 1 n → Bool)
+-- Note: uses (ℕ → Set.Icc 1 n → Bool) instead of (Set.Icc 0 n → Set.Icc 1 n → Bool)
 theorem putnam_1967_b4
 (n : ℕ)
 (lockers : ℕ → Set.Icc 1 n → Bool)
@@ -94,7 +95,7 @@ theorem putnam_1967_b5
 : (1 : ℚ)/2 = ∑ i in Finset.range n, (Nat.choose (n + i - 1) i) * (2 : ℚ)^(-(n : ℤ) - i) :=
 sorry
 
--- boosted domain of f to the 2D plane and made it partially differentiable everywhere
+-- Note: boosted domain of f to the 2D plane and made it partially differentiable everywhere
 theorem putnam_1967_b6
 (f : ℝ → ℝ → ℝ)
 (fdiff : (∀ y : ℝ, Differentiable ℝ (fun x : ℝ => f x y)) ∧ (∀ x : ℝ, Differentiable ℝ (fun y : ℝ => f x y)))

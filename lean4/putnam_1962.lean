@@ -20,17 +20,18 @@ theorem putnam_1962_a2
 ∀ f ∈ putnam_1962_a2_solution, hfinf f ∨ (∃ e > 0, hf e f) :=
 sorry
 
+-- TODO: (George), does not compile properly on my version, double check when migrating to v4.9.0
 theorem putnam_1962_a3
-(A B C P Q R U V W : EuclideanSpace ℝ (Fin 2))
+(A B C A' B' C' P Q R : EuclideanSpace ℝ (Fin 2))
 (k : ℝ)
 (hk : k > 0)
 (hABC : ¬Collinear ℝ {A, B, C})
-(hP : P ∈ segment ℝ B C ∧ Euclidean.dist B P / Euclidean.dist P C = k)
-(hQ : Q ∈ segment ℝ C A ∧ Euclidean.dist C Q / Euclidean.dist Q A = k)
-(hR : R ∈ segment ℝ A B ∧ Euclidean.dist A R / Euclidean.dist R B = k)
-(hU : U ∈ segment ℝ B Q ∧ U ∈ segment ℝ C R)
-(hV : V ∈ segment ℝ C R ∧ V ∈ segment ℝ A P)
-(hW : W ∈ segment ℝ A P ∧ W ∈ segment ℝ B Q)
+(hP : A' ∈ segment ℝ B C ∧ Euclidean.dist B A' / Euclidean.dist A' C = k)
+(hQ : B' ∈ segment ℝ C A ∧ Euclidean.dist C B' / Euclidean.dist B' A = k)
+(hR : C' ∈ segment ℝ A B ∧ Euclidean.dist A C' / Euclidean.dist C' B = k)
+(hU : P ∈ segment ℝ B B' ∧ P ∈ segment ℝ C C')
+(hV : Q ∈ segment ℝ C C' ∧ Q ∈ segment ℝ A A')
+(hW : R ∈ segment ℝ A A' ∧ W ∈ segment ℝ B B')
 : (volume (convexHull ℝ {U, V, W})).toReal / (volume (convexHull ℝ {A, B, C})).toReal = (k - 1)^2 / (k^2 + k + 1) :=
 sorry
 
@@ -67,8 +68,9 @@ theorem putnam_1962_b1
 : p n (x+y) = ∑ k in Finset.range (n+1), Nat.choose n k * (p k x) * (p (n - k) y) :=
 sorry
 
+--Note: The original problem requires a function to be exhibited, but in the official archives the solution depends on an enumeration of the rationals, so we modify the problem to be an existential statement.
 theorem putnam_1962_b2
-: ∃ f : ℝ → Set ℕ, ∀ a b : ℝ, a < b → f a ⊂ f b :=
+: ∃ f : ℝ → Set ℕ+, ∀ a b : ℝ, a < b → f a ⊂ f b :=
 sorry
 
 theorem putnam_1962_b3
