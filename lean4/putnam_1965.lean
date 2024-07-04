@@ -1,8 +1,9 @@
 import Mathlib
-
-open EuclideanGeometry
 open BigOperators
 
+open EuclideanGeometry
+
+--TODO: (George) Double check for errors here on Lean migration.
 noncomputable abbrev putnam_1965_a1_solution : ℝ := sorry
 -- Real.pi / 15
 theorem putnam_1965_a1

@@ -15,7 +15,7 @@ The associated paper for PutnamBench is {TODO}. Please consider including the fo
 | Isabelle      | 567            |
 | Coq           | 354            |
 
-We also report the number of problems in a certain category. Note that some problems fall under multiple categories.
+We also report the number of problems in a certain category. Note that some problems fall under multiple categories. (TODO: Not up-to-date with new formalizations)
 
 | Category         | Total Quantity | 
 | ---------------- | -------------- | 
