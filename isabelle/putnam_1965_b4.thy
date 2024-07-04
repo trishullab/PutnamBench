@@ -2,7 +2,7 @@ theory putnam_1965_b4 imports
 Complex_Main
 begin
 
-definition putnam_1965_b4_solution :: "(((real \<Rightarrow> real) \<Rightarrow> (real \<Rightarrow> real)) \<times> ((real \<Rightarrow> real) \<Rightarrow> (real \<Rightarrow> real))) \<times> ((real set) \<times> (real \<Rightarrow> real))" where "putnam_1965_b4_solution \<equiv> undefined"
+definition putnam_1965_b4_solution :: "(((real \<Rightarrow> real) \<Rightarrow> real \<Rightarrow> real) \<times> ((real \<Rightarrow> real) \<Rightarrow> real \<Rightarrow> real)) \<times> ((real set) \<times> (real \<Rightarrow> real))" where "putnam_1965_b4_solution \<equiv> undefined"
 (* ((\<lambda> h :: real \<Rightarrow> real. \<lambda> x :: real. h x + x, \<lambda> h :: real \<Rightarrow> real. \<lambda> x :: real. h x + 1), ({x :: real. x \<ge> 0}, sqrt)) *)
 theorem putnam_1965_b4:
   fixes f :: "nat \<Rightarrow> real \<Rightarrow> real"
@@ -11,4 +11,3 @@ theorem putnam_1965_b4:
   sorry
 
 end
-  
