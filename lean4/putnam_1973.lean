@@ -3,6 +3,7 @@ open BigOperators
 
 open Nat Set MeasureTheory Topology Filter
 
+--TODO: (George) Check for Euclidean.dist issues when migrating to v4.9.0
 theorem putnam_1973_a1
 (A B C X Y Z : EuclideanSpace ℝ (Fin 2))
 (hnoncol : ¬Collinear ℝ {A, B, C})
