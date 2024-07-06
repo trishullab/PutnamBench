@@ -76,12 +76,13 @@ theorem putnam_1972_b4
 : ∃ P : MvPolynomial (Fin 3) ℝ, ∀ x : ℝ, x = MvPolynomial.eval (vars (x^n) (x^(n+1)) (x + x^(n+2))) P :=
 sorry
 
-theorem putnam_1972_b5
-(A B C D : EuclideanSpace ℝ (Fin 3))
-(hnonplanar : ¬Coplanar ℝ {A, B, C, D})
-(hangles : ∠ A B C = ∠ C D A ∧ ∠ B C D = ∠ D A B)
-: Euclidean.dist A B = Euclidean.dist C D ∧ Euclidean.dist B C = Euclidean.dist D A :=
-sorry
+-- This does not compile
+-- theorem putnam_1972_b5
+-- (A B C D : EuclideanSpace ℝ (Fin 3))
+-- (hnonplanar : ¬Coplanar ℝ {A, B, C, D})
+-- (hangles : ∠ A B C = ∠ C D A ∧ ∠ B C D = ∠ D A B)
+-- : Euclidean.dist A B = Euclidean.dist C D ∧ Euclidean.dist B C = Euclidean.dist D A :=
+-- sorry
 
 open Metric
 theorem putnam_1972_b6

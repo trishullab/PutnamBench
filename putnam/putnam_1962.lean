@@ -21,19 +21,19 @@ theorem putnam_1962_a2
 sorry
 
 -- TODO: (George), does not compile properly on my version, double check when migrating to v4.9.0
-theorem putnam_1962_a3
-(A B C A' B' C' P Q R : EuclideanSpace ℝ (Fin 2))
-(k : ℝ)
-(hk : k > 0)
-(hABC : ¬Collinear ℝ {A, B, C})
-(hP : A' ∈ segment ℝ B C ∧ Euclidean.dist B A' / Euclidean.dist A' C = k)
-(hQ : B' ∈ segment ℝ C A ∧ Euclidean.dist C B' / Euclidean.dist B' A = k)
-(hR : C' ∈ segment ℝ A B ∧ Euclidean.dist A C' / Euclidean.dist C' B = k)
-(hU : P ∈ segment ℝ B B' ∧ P ∈ segment ℝ C C')
-(hV : Q ∈ segment ℝ C C' ∧ Q ∈ segment ℝ A A')
-(hW : R ∈ segment ℝ A A' ∧ W ∈ segment ℝ B B')
-: (volume (convexHull ℝ {U, V, W})).toReal / (volume (convexHull ℝ {A, B, C})).toReal = (k - 1)^2 / (k^2 + k + 1) :=
-sorry
+-- theorem putnam_1962_a3
+-- (A B C A' B' C' P Q R : EuclideanSpace ℝ (Fin 2))
+-- (k : ℝ)
+-- (hk : k > 0)
+-- (hABC : ¬Collinear ℝ {A, B, C})
+-- (hP : A' ∈ segment ℝ B C ∧ Euclidean.dist B A' / Euclidean.dist A' C = k)
+-- (hQ : B' ∈ segment ℝ C A ∧ Euclidean.dist C B' / Euclidean.dist B' A = k)
+-- (hR : C' ∈ segment ℝ A B ∧ Euclidean.dist A C' / Euclidean.dist C' B = k)
+-- (hU : P ∈ segment ℝ B B' ∧ P ∈ segment ℝ C C')
+-- (hV : Q ∈ segment ℝ C C' ∧ Q ∈ segment ℝ A A')
+-- (hW : R ∈ segment ℝ A A' ∧ W ∈ segment ℝ B B')
+-- : (volume (convexHull ℝ {U, V, W})).toReal / (volume (convexHull ℝ {A, B, C})).toReal = (k - 1)^2 / (k^2 + k + 1) :=
+-- sorry
 
 theorem putnam_1962_a4
 (f : ℝ → ℝ)
