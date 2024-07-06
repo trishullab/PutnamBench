@@ -33,7 +33,7 @@ End putnam_2023_b5.
 Require Import Nat Finite_sets.
 From mathcomp Require Import matrix ssrbool ssralg fintype.
 Variable putnam_2023_b6_solution : nat -> nat.
-Local Open Scope ring_scope.
+Open Scope ring_scope.
 Theorem putnam_2023_b6: 
     forall (n: nat), 
         let s (i j: nat) := cardinal (nat*nat) (fun p => let (a, b) := p in 1 <= i <= n /\ 1 <= j <= n /\ eq (add (mul a i) (mul b j)) n) in
@@ -61,7 +61,7 @@ End putnam_2022_a6.
 
 Section putnam_2022_b1.
 Require Import Nat Factorial ZArith. From mathcomp Require Import fintype ssralg ssrnat ssrnum poly polydiv. 
-Local Open Scope ring_scope.
+Open Scope ring_scope.
 Theorem putnam_2022_b1 
     (R : numDomainType)
     (n : nat)
@@ -93,7 +93,7 @@ End putnam_2022_b2.
 Section putnam_2022_b4. 
 Require Import Reals. From mathcomp Require Import fintype seq ssrbool.
 Definition putnam_2022_b4_solution := fun x => (x > 9) /\ (x mod 3 = 0).
-Local Open Scope R.
+Open Scope R.
 Theorem putnam_2022_b4 
     (p : nat -> Prop := fun n => exists (s: 'I_n -> R),
         ge n 4 ->
@@ -107,7 +107,7 @@ End putnam_2022_b4.
 
 Section putnam_2022_b6. 
 Require Import Reals.
-Local Open Scope R.
+Open Scope R.
 Definition putnam_2022_b6_solution := fun (f : R -> R) =>
     exists (c : R), c >= 0 /\ forall (x : R), x >= 0 /\ f x >= 0 -> f x = 1 / (1 + c * x).
 Theorem putnam_2022_b6
@@ -119,7 +119,7 @@ End putnam_2022_b6.
 
 Section putnam_2021_a2.
 Require Import Reals. From Coquelicot Require Import Continuity Lim_seq Rbar. 
-Local Open Scope R.
+Open Scope R.
 Definition putnam_2021_a2_solution := exp 1.
 Theorem putnam_2021_a2
     (sequence_r_to_0 : nat -> R := fun n => 1 / INR n)
@@ -142,7 +142,7 @@ End putnam_2021_a5.
 
 Section putnam_2021_a6. 
 Require Import ZArith Znumtheory. From mathcomp Require Import seq ssrnat ssrnum ssralg poly prime. 
-Local Open Scope ring_scope.
+Open Scope ring_scope.
 Definition putnam_2021_a6_solution := True.
 Theorem putnam_2021_a6
     (R : numDomainType) 
@@ -166,7 +166,7 @@ End putnam_2021_b2.
 
 Section putnam_2020_b6.
 Require Import Reals. From Coquelicot Require Import Coquelicot Hierarchy Rcomplements. 
-Local Open Scope R.
+Open Scope R.
 Theorem putnam_2020_b6 
     (A : nat -> R := fun k => (-1)^(Z.to_nat (floor (INR k * (sqrt 2 - 1)))))
     (B : nat -> R := fun n => sum_n A n)
