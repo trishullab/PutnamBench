@@ -1,8 +1,0 @@
-[
-    {
-        "problem_name" : "putnam_1997_a1",
-        "informal_statement" : "ROMN is a rectangle with vertices in that order and RO = 11, OM = 5. The triangle ABC has circumcenter O and its altitudes intersect at R. M is the midpoint of BC, and AN is the altitude from A to BC. What is the length of BC?",
-        "informal_solution" : "The length of BC is 28.",
-        "tags" : ["geometry"]
-    }
-]
