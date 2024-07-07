@@ -233,7 +233,7 @@ From mathcomp.analysis Require Import reals ereal signed topology normedtype seq
 From mathcomp.analysis Require Import exp numfun lebesgue_measure lebesgue_integral kernel.
 Context d (T : measurableType d) (R : realType) (P : probability T R).
 Definition putnam_2014_a4_solution : R := 1 / 3.
-Local Open Scope ring_scope.
+Open Scope ring_scope.
 Theorem putnam_2014_a4
     (X : {RV P >-> R})
     (ed := @expectation _ _ _ P X = 1%:E)
