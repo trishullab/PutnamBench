@@ -50,6 +50,7 @@ theorem putnam_1967_a6
 : (∃ a b : Fin 4 → ℝ, abneq0 a b ∧ numtuples a b = putnam_1967_a6_solution) ∧ (∀ a b : Fin 4 → ℝ, abneq0 a b → numtuples a b ≤ putnam_1967_a6_solution) :=
 sorry
 
+-- TODO: (George) check Euclidean dist problems after migration
 theorem putnam_1967_b1
 (r : ℝ)
 (L : ZMod 6 → EuclideanSpace ℝ (Fin 2))
@@ -60,6 +61,7 @@ theorem putnam_1967_b1
 (hcyclic : ∃ O : EuclideanSpace ℝ (Fin 2), ∀ i : ZMod 6, Euclidean.dist O (L i) = r)
 (horder : ∀ i : ZMod 6, segment ℝ (L i) (L (i + 1)) ∩ interior (convexHull ℝ {L j | j : ZMod 6}) = ∅)
 (hlens : Euclidean.dist (L 0) (L 1) = r ∧ Euclidean.dist (L 2) (L 3) = r ∧ Euclidean.dist (L 4) (L 5) = r)
+(hdist : L 1 ≠ L 2 ∧ L 3 ≠ L 4 ∧ L 5 ≠ L 0)
 : Euclidean.dist P Q = Euclidean.dist R P ∧ Euclidean.dist Q R = Euclidean.dist P Q :=
 sorry
 
@@ -86,7 +88,7 @@ theorem putnam_1967_b4
 (npos : n ≥ 1)
 (hlockers0 : ∀ i : Set.Icc 1 n, lockers 0 i = false)
 (hlockersk : ∀ k ∈ Set.Icc 1 n, ∀ i : Set.Icc 1 n, lockers k i = if k ∣ i then !(lockers (k - 1) i) else (lockers (k - 1) i))
-: ∀ i : Set.Icc 1 n, lockers n i ↔ (∃ j : ℕ, j ^ 2 = i) :=
+: ∀ i : Set.Icc 1 n, lockers n i ↔ (∃ j : ℤ, j ^ 2 = i) :=
 sorry
 
 theorem putnam_1967_b5

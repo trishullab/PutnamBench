@@ -73,7 +73,7 @@ theorem putnam_1970_b4
 (hx : x 1 - x 0 = 1)
 (hv : deriv x 0 = 0 ∧ deriv x 1 = 0)
 (hs : ∀ t ∈ Set.Ioo 0 1, |deriv x t| ≤ 3/2)
-: ∃ t ∈ Set.Icc 0 1, |deriv (deriv x) t| ≥ 9/2 :=
+: ∃ t ∈ Set.Icc 0 1, |(deriv (deriv x)) t| ≥ 9/2 :=
 sorry
 
 theorem putnam_1970_b5
@@ -86,7 +86,7 @@ sorry
 theorem putnam_1970_b6
 (L : ZMod 4 → EuclideanSpace ℝ (Fin 2))
 (S : Set (EuclideanSpace ℝ (Fin 2)) := {L i | i : ZMod 4})
-(hSquad : ∀ s ⊆ S, s.card = 3 → ¬ Collinear ℝ s)
+(hSquad : S.card = 4 ∧ ∀ s ⊆ S, s.card = 3 → ¬ Collinear ℝ s)
 (hlens : Euclidean.dist (L 0) (L 1) > 0 ∧ Euclidean.dist (L 1) (L 2) > 0 ∧ Euclidean.dist (L 2) (L 3) > 0 ∧ Euclidean.dist (L 3) (L 0) > 0)
 (horder : ∀ i : ZMod 4, segment ℝ (L i) (L (i + 1)) ∩ interior (convexHull ℝ S) = ∅)
 (hcircum : ∃ (O : EuclideanSpace ℝ (Fin 2)) (r : ℝ), O ∈ convexHull ℝ S ∧ r > 0 ∧ ∀ i : ZMod 4,

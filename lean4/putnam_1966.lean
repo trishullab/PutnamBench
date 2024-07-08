@@ -19,7 +19,7 @@ theorem putnam_1966_a2
 (∃! P : EuclideanSpace ℝ (Fin 2), Euclidean.dist I P = r ∧ Collinear ℝ {P, B, C}) ∧
 (∃! Q : EuclideanSpace ℝ (Fin 2), Euclidean.dist I Q = r ∧ Collinear ℝ {Q, C, A}) ∧
 (∃! R : EuclideanSpace ℝ (Fin 2), Euclidean.dist I R = r ∧ Collinear ℝ {R, A, B}) ∧
-(∀ Z : EuclideanSpace ℝ (Fin 2), Euclidean.dist I Z = r → Z ∈ convexHull ℝ {A, B, C}))
+(∀ Z : EuclideanSpace ℝ (Fin 2), Euclidean.dist I Z ≤ r → Z ∈ convexHull ℝ {A, B, C}))
 : 1/(p - a)^2 + 1/(p - b)^2 + 1/(p - c)^2 ≥ 1/r^2 :=
 sorry
 
@@ -55,7 +55,7 @@ sorry
 
 theorem putnam_1966_b1
 (n : ℕ)
-(hN : n ≥ 3)
+(hn : n ≥ 3)
 (L : ZMod n → (Fin 2 → ℝ))
 (hsq : ∀ i : ZMod n, L i 0 ∈ Set.Icc 0 1 ∧ L i 1 ∈ Set.Icc 0 1)
 (hnoncol : ∀ i j k : ZMod n, i ≠ j ∧ j ≠ k ∧ k ≠ i → ¬Collinear ℝ {L i, L j, L k})
