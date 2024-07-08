@@ -26,13 +26,13 @@ theorem putnam_1962_a3
 (k : ℝ)
 (hk : k > 0)
 (hABC : ¬Collinear ℝ {A, B, C})
-(hP : A' ∈ segment ℝ B C ∧ Euclidean.dist B A' / Euclidean.dist A' C = k)
-(hQ : B' ∈ segment ℝ C A ∧ Euclidean.dist C B' / Euclidean.dist B' A = k)
-(hR : C' ∈ segment ℝ A B ∧ Euclidean.dist A C' / Euclidean.dist C' B = k)
-(hU : P ∈ segment ℝ B B' ∧ P ∈ segment ℝ C C')
-(hV : Q ∈ segment ℝ C C' ∧ Q ∈ segment ℝ A A')
-(hW : R ∈ segment ℝ A A' ∧ W ∈ segment ℝ B B')
-: (volume (convexHull ℝ {U, V, W})).toReal / (volume (convexHull ℝ {A, B, C})).toReal = (k - 1)^2 / (k^2 + k + 1) :=
+(hA' : A' ∈ segment ℝ B C ∧ Euclidean.dist C A' / Euclidean.dist A' B = k)
+(hB' : B' ∈ segment ℝ C A ∧ Euclidean.dist A B' / Euclidean.dist B' C = k)
+(hC' : C' ∈ segment ℝ A B ∧ Euclidean.dist B C' / Euclidean.dist C' A = k)
+(hP : P ∈ segment ℝ B B' ∧ P ∈ segment ℝ C C')
+(hQ : Q ∈ segment ℝ C C' ∧ Q ∈ segment ℝ A A')
+(hR : R ∈ segment ℝ A A' ∧ R ∈ segment ℝ B B')
+: (volume (convexHull ℝ {P, Q, R})).toReal / (volume (convexHull ℝ {A, B, C})).toReal = (k - 1)^2 / (k^2 + k + 1) :=
 sorry
 
 theorem putnam_1962_a4
