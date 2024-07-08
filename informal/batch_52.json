@@ -38,7 +38,7 @@
     {
         "problem_name" : "putnam_1964_b2",
         "informal_statement" : "Let $S$ be a finite set. A set $P$ of subsets of $S$ has the property that any two members of $P$ have at least one element in common and that $P$ cannot be extended (whilst keeping this property). Prove that $P$ contains exactly half of the subsets of $S$.",
-        "tags" : ["set-theory", "combinatorics"]
+        "tags" : ["set_theory", "combinatorics"]
     },
     {
         "problem_name" : "putnam_1964_b3",
@@ -48,7 +48,7 @@
     {
         "problem_name" : "putnam_1964_b5",
         "informal_statement" : "Let $a_n$ be a strictly monotonic increasing sequence of positive integers. Let $b_n$ be the least common multiple of $a_1, a_2, \\dots , a_n$. Prove that $\\sum_{n=1}^{\\infty} 1/b_n$ converges.",
-        "tags" : ["analysis", "number-theory"]
+        "tags" : ["analysis", "number_theory"]
     },
     {
         "problem_name" : "putnam_1964_b6",
