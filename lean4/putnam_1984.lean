@@ -36,6 +36,7 @@ theorem putnam_1984_a5
 sorry
 
 open Nat
+
 -- Note: uses (ℕ → ℕ) instead of (Fin k → ℕ)
 abbrev putnam_1984_a6_solution : Prop × ℕ := sorry
 -- (True, 4)

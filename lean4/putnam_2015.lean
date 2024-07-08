@@ -12,7 +12,7 @@ theorem putnam_2015_a1
 : ∫ x in Set.Ioo (A 0) (P 0), (PPline A P) x - 1 / x = ∫ x in Set.Ioo (P 0) (B 0), (PPline P B) x - 1 / x :=
 sorry
 
--- there are several possible correct solutions; this is the one shown on the solutions document
+-- Note: this problem admits several possible correct solutions; this is the one shown on the solutions document
 abbrev putnam_2015_a2_solution : ℕ := sorry
 -- 181
 theorem putnam_2015_a2

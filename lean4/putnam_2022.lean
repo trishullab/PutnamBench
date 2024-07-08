@@ -65,7 +65,7 @@ theorem putnam_2022_b2
 : (n > 0 ∧ ∃ S : Finset (Fin 3 → ℝ), S.card = n ∧ Scross S) ↔ n ∈ putnam_2022_b2_solution :=
 sorry
 
--- boosts domain of "isred" to all reals instead of just positive reals
+-- Note: boosts domain of "isred" to all reals instead of just positive reals
 abbrev putnam_2022_b3_solution : Prop := sorry
 -- True
 theorem putnam_2022_b3

@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
-open Nat
-open Topology Filter
+
+open Nat Topology Filter
 
 theorem putnam_1967_a1
 (n : ℕ)

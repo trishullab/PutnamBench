@@ -1,7 +1,7 @@
 import Mathlib
+open BigOperators
 
 open Topology Filter
-open BigOperators
 
 theorem putnam_1963_a2
 (f : ℕ → ℕ)

@@ -41,7 +41,7 @@ theorem putnam_2023_a5
 : {z : ℂ | ∑ k in Finset.Icc 0 (3^1010 - 1), (-2)^(num_ones (digits 3 k)) * (z + k)^2023 = 0} = putnam_2023_a5_solution :=
 sorry
 
--- uses (ℕ → ℕ → Bool) instead of (Fin m → Fin n → Bool)
+-- Note: uses (ℕ → ℕ → Bool) instead of (Fin m → Fin n → Bool)
 abbrev putnam_2023_b1_solution : ℕ → ℕ → ℕ := sorry
 -- (fun m n : ℕ => Nat.choose (m + n - 2) (m - 1))
 theorem putnam_2023_b1

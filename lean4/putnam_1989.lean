@@ -45,7 +45,7 @@ theorem putnam_1989_b1
 (MeasureTheory.volume Scloser).toReal / (MeasureTheory.volume square).toReal = (a * Real.sqrt b + c) / d :=
 sorry
 
--- This formalization uses "Type" rather than "Type*" as the underlying structure for a semigroup.
+-- Note: This formalization uses "Type" rather than "Type*" as the underlying structure for a semigroup.
 abbrev putnam_1989_b2_solution : Prop := sorry
 -- True
 theorem putnam_1989_b2
@@ -76,7 +76,7 @@ theorem putnam_1989_b4
 : ((∃ S : Type, Countable S ∧ Infinite S ∧ ∃ C : Set (Set S), ¬Countable C ∧ (∀ R ∈ C, R ≠ ∅) ∧ (∀ A ∈ C, ∀ B ∈ C, A ≠ B → (A ∩ B).Finite)) ↔ putnam_1989_b4_solution) :=
 sorry
 
--- uses (ℝ → ℝ) instead of (Set.Icc 0 1 → ℝ)
+-- Note: uses (ℝ → ℝ) instead of (Set.Icc 0 1 → ℝ)
 theorem putnam_1989_b6
 (n : ℕ)
 (Sx : Set (Fin n → ℝ) := {x : Fin n → ℝ | 0 < x ∧ StrictMono x ∧ x < 1})

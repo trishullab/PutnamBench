@@ -1,4 +1,5 @@
 import Mathlib
+open BigOperators
 
 theorem putnam_1964_a1
 (A : Finset (Fin 2 → ℝ))
@@ -17,7 +18,7 @@ theorem putnam_1964_a2
 : (putnam_1964_a2_solution α = {f : ℝ → ℝ | (∀ x ∈ Icc 0 1, f x > 0) ∧ ContinuousOn f (Icc 0 1) ∧ ∫ x in (0)..1, f x = 1 ∧ ∫ x in (0)..1, x * f x = α ∧ ∫ x in (0)..1, x^2 * f x = α^2}) :=
 sorry
 
-open BigOperators Function
+open Function
 
 theorem putnam_1964_a3
 (x a b : ℕ → ℝ)
