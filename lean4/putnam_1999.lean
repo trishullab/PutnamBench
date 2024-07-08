@@ -2,8 +2,7 @@ import Mathlib
 open BigOperators
 
 
--- Note: The actual problem asks to "find" such polynomials as well - but the solution does not give a set of all possible solutions
--- So we would need to do the analysis ourselves, the following formalization should work.
+-- Note: The actual problem asks to "find" such polynomials as well - but the solution does not give a set of all possible solutions. Hence, we would need to do the analysis ourselves, the following formalization should work.
 abbrev putnam_1999_a1_solution : Prop := sorry
 -- True
 theorem putnam_1999_a1
@@ -27,7 +26,7 @@ theorem putnam_1999_a3
 : ∀ n : ℕ, ∃ m : ℕ, (a n)^2 + (a (n + 1))^2 = a m :=
 sorry
 
--- Note: This is done assuming that the series converges, otherwise it is unclear in which order to sum. The problem statement assumes convergence
+-- Note: This is done assuming that the series converges, otherwise it is unclear in which order to sum. The problem statement assumes convergence.
 noncomputable abbrev putnam_1999_a4_solution : ℝ := sorry
 -- 9/32
 theorem putnam_1999_a4

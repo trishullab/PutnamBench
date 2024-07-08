@@ -1,7 +1,7 @@
 import Mathlib
+open BigOperators
 
 open MeasureTheory
-open BigOperators
 
 theorem putnam_1962_a1
 (S : Set (ℝ × ℝ))

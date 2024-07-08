@@ -3,7 +3,7 @@ open BigOperators
 
 open MvPolynomial
 
--- uses (ℕ → ℤ) instead of (Fin k → ℤ)
+-- Note: uses (ℕ → ℤ) instead of (Fin k → ℤ)
 abbrev putnam_2003_a1_solution : ℕ → ℕ := sorry
 -- fun n => n
 theorem putnam_2003_a1

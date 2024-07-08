@@ -68,7 +68,7 @@ theorem putnam_2014_b1
 : (S = putnam_2014_b1_solution) :=
 sorry
 
--- uses (ℝ → ℝ) instead of (Set.Icc (1 : ℝ) 3 → ℝ)
+-- Note: uses (ℝ → ℝ) instead of (Set.Icc (1 : ℝ) 3 → ℝ)
 noncomputable abbrev putnam_2014_b2_solution : ℝ := sorry
 -- Real.log (4 / 3)
 theorem putnam_2014_b2

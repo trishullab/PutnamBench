@@ -90,7 +90,7 @@ theorem putnam_2019_b3
 : (Q - 1).det ≠ 0 → (P * Q - 1).det = 0 :=
 sorry
 
--- boosts the domain of f to the entire 2D plane
+-- Note: boosts the domain of f to the entire 2D plane
 noncomputable abbrev putnam_2019_b4_solution : ℝ := sorry
 -- 2 * Real.log 2 - 1 / 2
 theorem putnam_2019_b4
