@@ -32,20 +32,17 @@ f (x, y, z) ≥ f (putnam_1975_a3_solution.2 (a, b, c))) :=
 sorry
 
 open Real Complex
-def rep {α : Type} (n : ℕ) (l : List α) : List α :=
-let rec loop
-  | 0, _ => ([] : List α)
-  | n+1, l => List.append l (rep n l)
-loop n []
-abbrev putnam_1975_a4_solution : ℕ → List ℤ := sorry
--- fun m => 1 :: (rep ((m-3)/2) [(0 : ℤ), (1 : ℤ)])
+
+noncomputable abbrev putnam_1975_a4_solution : ℕ → Polynomial ℤ := sorry
+-- fun m => ∑ j in Finset.range ((m - 1) / 2), Polynomial.X ^ (2 * j + 1)
 theorem putnam_1975_a4
 (m : ℕ)
 (hm : Odd m ∧ m > 1)
-(n := 2 * m)
-(θ : ℂ := (cexp 1)^(2 * pi * I / (n : ℂ)))
-: 1/(1 - θ) = ∑ i : Fin (List.length (putnam_1975_a4_solution m)), (List.get (putnam_1975_a4_solution m) i) * θ^(i : ℕ) :=
+(n : ℕ := 2 * m)
+(θ : ℂ := cexp (2 * Real.pi * I / n))
+: 1/(1 - θ) = Polynomial.aeval θ (putnam_1975_a4_solution m) :=
 sorry
+
 
 -- Note: Only the part showing a constant exists
 theorem putnam_1975_a5
@@ -73,6 +70,7 @@ theorem putnam_1975_b2
 (normals : ℕ → (Fin 3 → ℝ))
 (offsets : ℕ → ℝ)
 (thicknesses : ℕ → ℝ)
+(hnormalsunit : ∀ i : ℕ, ‖normals i‖ = 1)
 (hthicknessespos : ∀ i : ℕ, thicknesses i > 0)
 (hthicknessesconv : ∃ C : ℝ, Tendsto (fun i : ℕ => ∑ j in Finset.range i, thicknesses j) atTop (𝓝 C))
 : Set.univ ≠ ⋃ i : ℕ, slab (normals i) (offsets i) (thicknesses i) :=
