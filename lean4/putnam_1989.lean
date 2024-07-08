@@ -44,6 +44,7 @@ theorem putnam_1989_b1
 : let (a, b, c, d) := putnam_1989_b1_solution; b > 0 ∧ d > 0 ∧ (¬∃ n : ℤ, n^2 = b) ∧
 (MeasureTheory.volume Scloser).toReal / (MeasureTheory.volume square).toReal = (a * Real.sqrt b + c) / d :=
 sorry
+
 -- This formalization uses "Type" rather than "Type*" as the underlying structure for a semigroup.
 abbrev putnam_1989_b2_solution : Prop := sorry
 -- True
