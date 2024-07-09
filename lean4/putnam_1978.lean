@@ -37,7 +37,6 @@ theorem putnam_1978_a4
   ∧ (∃ (S : Type) (_ : Mul S) (_ : Fintype S), bypass S ∧ (∀ a : S, a * a = a) ∧ (∃ a b : S, a * b = a ∧ a ≠ b) ∧ (∃ a b : S, a * b ≠ a))) :=
 sorry
 
-
 open Real
 
 theorem putnam_1978_a5

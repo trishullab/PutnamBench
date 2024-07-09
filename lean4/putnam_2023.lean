@@ -24,7 +24,6 @@ theorem putnam_2023_a2
 : {x : ℝ | p.eval (1/x) = x^2} \ S = putnam_2023_a2_solution n :=
 sorry
 
-
 noncomputable abbrev putnam_2023_a3_solution : ℝ := sorry
 -- Real.pi / 2
 theorem putnam_2023_a3
@@ -85,8 +84,6 @@ theorem putnam_2023_b4
 (hTall : ∀ T : ℝ, Tall T = ((T ≥ 0) ∧ ∃ n : ℕ, ∃ ts : ℕ → ℝ, ∃ f : ℝ → ℝ, tinc n ts ∧ fall n ts f ∧ f (ts 0 + T) = 2023))
 : Tall putnam_2023_b4_solution ∧ ∀ T : ℝ, Tall T → T ≥ putnam_2023_b4_solution :=
 sorry
-
-
 
 abbrev putnam_2023_b5_solution : Set ℕ := sorry
 -- {n : ℕ | n = 1 ∨ n ≡ 2 [MOD 4]}

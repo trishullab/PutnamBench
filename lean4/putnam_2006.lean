@@ -27,7 +27,6 @@ theorem putnam_2006_a4
 : (∑ p : Equiv.Perm (Fin n), pcount p) / {p : Equiv.Perm (Fin n) | true}.ncard = putnam_2006_a4_solution n :=
 sorry
 
-
 abbrev putnam_2006_a5_solution : ℕ → ℤ := sorry
 -- (fun n : ℕ => if (n ≡ 1 [MOD 4]) then n else -n)
 theorem putnam_2006_a5

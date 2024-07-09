@@ -48,7 +48,6 @@ theorem putnam_1997_b1
 : ∀ n, n > 0 → F n = putnam_1997_b1_solution n :=
 sorry
 
-
 open Bornology Set
 theorem putnam_1997_b2
 (f g : ℝ → ℝ)

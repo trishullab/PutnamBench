@@ -91,7 +91,6 @@ theorem putnam_2011_b2
 : (t.Prime ∧ t7inS) ↔ t ∈ putnam_2011_b2_solution :=
 sorry
 
-
 abbrev putnam_2011_b3_solution : Prop := sorry
 -- True
 theorem putnam_2011_b3

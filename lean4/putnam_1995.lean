@@ -1,7 +1,6 @@
 import Mathlib
 open BigOperators
 
-
 theorem putnam_1995_a1
 (S : Set ℝ)
 (hS : ∀ a ∈ S, ∀ b ∈ S, a * b ∈ S)

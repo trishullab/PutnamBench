@@ -78,7 +78,6 @@ theorem putnam_2003_b3
 : ∀ n > 0, (n)! = ∏ i : Set.Icc 1 n, lcmicc (n / i.1) :=
 sorry
 
-
 theorem putnam_2003_b4
 (f : ℝ → ℝ)
 (a b c d e : ℤ)

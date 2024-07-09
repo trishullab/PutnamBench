@@ -1,6 +1,6 @@
 import Mathlib
-
 open BigOperators
+
 open Set
 
 theorem putnam_1971_a1

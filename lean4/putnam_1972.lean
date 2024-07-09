@@ -1,6 +1,7 @@
 import Mathlib
+open BigOperators
 
-open BigOperators EuclideanGeometry Filter Topology Set
+open EuclideanGeometry Filter Topology Set
 
 theorem putnam_1972_a1
 (n : ℕ)
