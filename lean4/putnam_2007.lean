@@ -1,7 +1,6 @@
 import Mathlib
 open BigOperators
 
-
 -- Note: Modified definition of tangent to handle this problem
 abbrev putnam_2007_a1_solution : Set ℝ := sorry
 -- {2/3, 3/2, (13 + Real.sqrt 601)/12, (13 - Real.sqrt 601)/12}

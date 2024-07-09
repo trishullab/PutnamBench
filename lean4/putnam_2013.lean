@@ -54,7 +54,6 @@ theorem putnam_2013_a5
 : ∀ a : Fin m → Fin m → Fin m → ℝ, areadef2 a → areadef3 a :=
 sorry
 
-
 theorem putnam_2013_a6
 (w : ℤ → ℤ → ℤ)
 (A : Finset (ℤ × ℤ) → ℤ)
@@ -109,7 +108,6 @@ theorem putnam_2013_b4
 (hM : ∀ f : Set.Icc (0 : ℝ) 1 → ℝ, (∃ x : Set.Icc (0 : ℝ) 1, |f x| = M f) ∧ (∀ x : Set.Icc (0 : ℝ) 1, |f x| ≤ M f))
 : ∀ f g : Set.Icc (0 : ℝ) 1 → ℝ, (Continuous f ∧ Continuous g) → Var (f * g) ≤ 2 * Var f * (M g) ^ 2 + 2 * Var g * (M f) ^ 2 :=
 sorry
-
 
 theorem putnam_2013_b5
 (n : ℕ)

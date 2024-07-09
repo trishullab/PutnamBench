@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
-open Topology Filter
 
+open Topology Filter
 
 abbrev putnam_2019_a1_solution : Set ℤ := sorry
 -- {n : ℤ | n ≥ 0 ∧ ¬Int.ModEq 9 n 3 ∧ ¬Int.ModEq 9 n 6}

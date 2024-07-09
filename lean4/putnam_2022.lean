@@ -1,7 +1,6 @@
 import Mathlib
 open BigOperators
 
-
 open Polynomial
 
 abbrev putnam_2022_a1_solution : Set (ℝ × ℝ) := sorry
@@ -54,7 +53,6 @@ theorem putnam_2022_b1
 (hB : ∀ x : ℝ, Real.exp (P.eval x) = B.eval x)
 : ∀ k : ℕ, B.coeff k ≠ 0 :=
 sorry
-
 
 abbrev putnam_2022_b2_solution : Set ℕ := sorry
 -- {1, 7}

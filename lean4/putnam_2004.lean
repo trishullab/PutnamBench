@@ -11,7 +11,6 @@ theorem putnam_2004_a1
 : (∀ (attempts : ℕ → Fin 2) (a b : ℕ), (1 ≤ a ∧ a < b ∧ S attempts a < 0.8 ∧ S attempts b > 0.8) → (∃ c : ℕ, a < c ∧ c < b ∧ S attempts c = 0.8)) ↔ putnam_2004_a1_solution :=
 sorry
 
-
 theorem putnam_2004_a3
 (u : ℕ → ℝ)
 (hubase : u 0 = 1 ∧ u 1 = 1 ∧ u 2 = 1)

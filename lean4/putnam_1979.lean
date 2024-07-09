@@ -49,9 +49,7 @@ theorem putnam_1979_a6
 : ∃ x ∈ Icc 0 1, (∀ i ∈ Finset.range n, x ≠ p i) ∧ ∑ i in Finset.range n, 1/|x - p i| ≤ 8*n*∑ i in Finset.range n, (1 : ℝ)/(2*i + 1) :=
 sorry
 
-
-open Topology
-open Filter
+open Topology Filter
 
 noncomputable abbrev putnam_1979_b2_solution : ℝ × ℝ → ℝ := sorry
 -- fun (a, b) => (Real.exp (-1))*(b^b/a^a)^(1/(b-a))

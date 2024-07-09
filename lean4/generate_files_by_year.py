@@ -1,4 +1,4 @@
-import os
+import os, re
 import argparse
 
 def all_to_years(min_year, max_year):
@@ -30,6 +30,62 @@ def years_to_all(min_year, max_year):
                         continue
                     f.write(line)
                 f.write(f"end putnam_{year}\n")
+
+def files_to_individual(min_year, max_year):
+    for year in range(min_year, max_year + 1):
+        filename = f"putnam_{year}.lean"
+        with open(filename, "r") as f:
+            lines = f.readlines()
+            is_in_section = False
+            section_content = []
+            running_scopes = []
+            scope_pattern = r'open ([^}]*)'
+            problem_pattern = fr'putnam_{year}_[ab][1-6]'
+
+            for idx, line in enumerate(lines):
+                if "Mathlib" in line or "BigOperators" in line:
+                    continue
+                elif line.strip() == "" or idx == len(lines) - 1:
+                    if idx == len(lines) - 1:
+                        section_content.append(line)
+                    is_in_section = False
+                    if section_content == []:
+                        continue
+                    else:
+                        # join all content, search for problem_name, and write to file
+                        try:
+                            search = re.search(problem_pattern, '\n'.join(section_content))
+                            problem_name = search.group(0)
+                        except:
+                            print(f"Section content is {section_content}")
+                            print(f"Problem pattern is {problem_pattern}")
+                            print(f"Search is {search}")
+                            assert False
+                        with open(f"src/{problem_name}.lean", "w") as g:
+                            g.write("import Mathlib\nopen BigOperators\n\n")
+                            if len(running_scopes) > 0:
+                                g.write(f"open {' '.join(running_scopes)}\n\n")
+                            for line in section_content:
+                                g.write(line)
+                            section_content = []
+                                
+                else:
+                    match = re.match(scope_pattern, line)
+                    if is_in_section:
+                        section_content.append(line)
+                    elif match:
+                        for namespace in match.group(1).split(" "):
+                            namespace_new_line_removed = namespace.replace('\n', '')
+                            if namespace_new_line_removed not in running_scopes:
+                                running_scopes.append(namespace_new_line_removed)
+                        assert not is_in_section
+                    else:
+                        is_in_section = True
+                        section_content.append(line)
+
+
+                        
+
 
 def all_to_individual(min_year, max_year):
     return
@@ -73,12 +129,14 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("min_year", type=int)
     parser.add_argument("max_year", type=int)
-    parser.add_argument("start_format", type=str, choices=["all", "years"])
-    parser.add_argument("end_format", type=str, choices=["all", "years"])
+    parser.add_argument("start_format", type=str, choices=["all", "years", "individual"])
+    parser.add_argument("end_format", type=str, choices=["all", "years", "individual"])
     args = parser.parse_args()
     if args.start_format == "all" and args.end_format == "years":
         all_to_years(args.min_year, args.max_year)
     elif args.start_format == "years" and args.end_format == "all":
         years_to_all(args.min_year, args.max_year)
+    elif args.start_format == "years" and args.end_format == "individual":
+        files_to_individual(args.min_year, args.max_year)
     else:
         raise ValueError("Invalid conversion format")

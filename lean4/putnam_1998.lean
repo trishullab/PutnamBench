@@ -79,7 +79,6 @@ theorem putnam_1998_b5
 : putnam_1998_b5_solution = (Nat.floor (10^1000 * Real.sqrt N)) % 10 :=
 sorry
 
-
 theorem putnam_1998_b6
 : ∀ a b c : ℤ, ∃ n : ℤ, n > 0 ∧ ¬(∃ k : ℤ, k = Real.sqrt (n^3 + a * n^2 + b * n + c)) :=
 sorry

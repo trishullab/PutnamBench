@@ -49,7 +49,6 @@ theorem putnam_2015_a5
 : Odd Nq ↔ ∃ p k : ℕ, q = p ^ k ∧ k > 0 ∧ p.Prime ∧ (p % 8 = 5 ∨ p % 8 = 7) :=
 sorry
 
-
 theorem putnam_2015_a6
 (n : ℕ)
 (A B M : Matrix (Fin n) (Fin n) ℝ)
@@ -100,7 +99,6 @@ theorem putnam_2015_b4
 : quotientof (∑' t : (Fin 3 → ℤ), if (∀ n : Fin 3, t n > 0) ∧ t 0 < t 1 + t 2 ∧ t 1 < t 2 + t 0 ∧ t 2 < t 0 + t 1
 then 2^(t 0)/(3^(t 1)*5^(t 2)) else 0) = putnam_2015_b4_solution :=
 sorry
-
 
 open Function
 

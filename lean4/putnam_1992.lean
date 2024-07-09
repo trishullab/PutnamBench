@@ -1,5 +1,6 @@
 import Mathlib
 open BigOperators
+
 open Topology Filter
 
 theorem putnam_1992_a1

@@ -54,8 +54,7 @@ theorem putnam_2002_b5
 : ∃ n : ℕ, {b : ℕ | (Nat.digits b n).length = 3 ∧ List.Palindrome (Nat.digits b n)}.ncard ≥ 2002 :=
 sorry
 
-open Matrix
-open MvPolynomial
+open Matrix MvPolynomial
 
 theorem putnam_2002_b6
 (p : ℕ)

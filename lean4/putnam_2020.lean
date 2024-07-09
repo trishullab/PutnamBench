@@ -60,7 +60,6 @@ theorem putnam_2020_b4
 : (M 2020 = putnam_2020_b4_solution) :=
 sorry
 
-
 theorem putnam_2020_b5
 (z : Fin 4 → ℂ)
 (hzle1 : ∀ n, ‖z n‖ < 1)

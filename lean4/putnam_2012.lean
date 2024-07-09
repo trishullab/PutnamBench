@@ -31,7 +31,6 @@ theorem putnam_2012_a3
 : hf putnam_2012_a3_solution ∧ ∀ f : ℝ → ℝ, hf f → ∀ x ∈ S, f x = putnam_2012_a3_solution x :=
 sorry
 
-
 theorem putnam_2012_a4
 (q r : ℤ)
 (A B : Fin 2 → ℝ)

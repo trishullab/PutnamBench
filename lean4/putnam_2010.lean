@@ -19,7 +19,6 @@ theorem putnam_2010_a2
 ∀ x : ℝ, ∀ n : ℤ, n > 0 → deriv f x = (f (x + n) - f x)/n} = putnam_2010_a2_solution :=
 sorry
 
-
 theorem putnam_2010_a4
 : ∀ n : ℕ, n > 0 → ¬Nat.Prime (10^10^10^n + 10^10^n + 10^n - 1) :=
 sorry

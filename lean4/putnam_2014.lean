@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
-open Topology Filter
 
+open Topology Filter
 
 theorem putnam_2014_a1
 (f : ℝ → ℝ)
