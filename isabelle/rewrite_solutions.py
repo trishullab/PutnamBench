@@ -8,6 +8,9 @@ def copy_files_in_directory(directory):
             print(f"The directory {directory} does not exist.")
             return
         
+        new_dir_path = os.path.join(directory, "filled")
+        os.mkdir(new_dir_path)
+
         # Iterate through each file in the directory
         for filename in os.listdir(directory):
             file_path = os.path.join(directory, filename)
@@ -19,8 +22,8 @@ def copy_files_in_directory(directory):
 
                 if not extension == '.thy':
                     continue
-                new_filename = f"{base}_filled{extension}"
-                new_file_path = os.path.join(directory, new_filename)
+                new_filename = f"{base}{extension}"
+                new_file_path = os.path.join(new_dir_path, new_filename)
                 
                 with open(file_path, 'r') as file:
                     conts = file.read()
