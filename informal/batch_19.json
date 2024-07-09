@@ -1,0 +1,38 @@
+[
+    {
+        "problem_name" : "putnam_2002_a5",
+        "informal_statement" : "Define a sequence by $a_0=1$, together with the rules\n$a_{2n+1} = a_n$ and $a_{2n+2} = a_n + a_{n+1}$ for each\ninteger $n \\geq 0$. Prove that every positive rational number\nappears in the set\n\\[\n\\left\\{ \\frac{a_{n-1}}{a_n}: n \\geq 1 \\right\\} =\n\\left\\{ \\frac{1}{1}, \\frac{1}{2}, \\frac{2}{1}, \\frac{1}{3},\n\\frac{3}{2}, \\dots \\right\\}.\n\\]",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_2002_a6",
+        "informal_statement" : "Fix an integer $b \\geq 2$. Let $f(1) = 1$, $f(2) = 2$, and for each\n$n \\geq 3$, define $f(n) = n f(d)$, where $d$ is the number of\nbase-$b$ digits of $n$. For which values of $b$ does\n\\[\n\\sum_{n=1}^\\infty \\frac{1}{f(n)}\n\\]\nconverge?",
+        "informal_solution" : "The sum converges for $b=2$ and diverges for $b \\geq 3$.",
+        "tags" : ["analysis", "number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2002_b3",
+        "informal_statement" : "Show that, for all integers $n > 1$,\n\\[\n\\frac{1}{2ne} < \\frac{1}{e} - \\left( 1 - \\frac{1}{n} \\right)^n\n< \\frac{1}{ne}.\n\\]",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2002_b5",
+        "informal_statement" : "A palindrome in base $b$ is a positive integer whose base-$b$\ndigits read the same backwards and forwards; for example,\n$2002$ is a 4-digit palindrome in base 10. Note that 200 is not\na palindrome in base 10, but it is the 3-digit palindrome\n242 in base 9, and 404 in base 7. Prove that there is an integer\nwhich is a 3-digit palindrome in base $b$ for at least 2002\ndifferent values of $b$.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2002_b6",
+        "informal_statement" : "Let $p$ be a prime number. Prove that the determinant of the matrix\n\\[\n\\begin{pmatrix}\nx & y & z \\\\\nx^p & y^p & z^p \\\\\nx^{p^2} & y^{p^2} & z^{p^2}\n\\end{pmatrix}\n\\]\nis congruent modulo $p$ to a product of polynomials of the form\n$ax+by+cz$, where $a,b,c$ are integers. (We say two integer\npolynomials are congruent modulo $p$ if corresponding coefficients\nare congruent modulo $p$.)",
+        "informal_solution" : "None.",
+        "tags" : ["linear_algebra", "number_theory", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_2001_a3",
+        "informal_statement" : "For each integer $m$, consider the polynomial\n\\[P_m(x)=x^4-(2m+4)x^2+(m-2)^2.\\] For what values of $m$ is $P_m(x)$\nthe product of two non-constant polynomials with integer coefficients?",
+        "informal_solution" : "$P_m(x)$ factors into two nonconstant polynomials over\nthe integers if and only if $m$ is either a square or twice a square.",
+        "tags" : ["algebra"]
+    }
+]

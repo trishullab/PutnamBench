@@ -39,7 +39,7 @@
         "tags" : ["algebra"]
     },
     {
-        "problem_name" : "putnam_1983_a2",
+        "problem_name" : "putnam_1982_a2",
         "informal_statement" : "Let $B_n(x) = 1^x + 2^x + \\dots + n^x$ and let $f(n) = \\frac{B_n(\\log_n 2)}{(n \\log_2 n)^2}$. Does $f(2) + f(3) + f(4) + \\dots$ converge?",
         "informal_solution" : "Prove that the series converges.",
         "tags" : ["algebra"]

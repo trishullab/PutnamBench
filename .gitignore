@@ -3,4 +3,10 @@
 *.olean
 *.olean.*
 
-putnam_*
+lean4/putnam_all*
+lean4/solutions_replaced/*
+
+informal/join_all_jsons*
+
+Isabelle2024
+Isabelle2024_linux*

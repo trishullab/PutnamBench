@@ -1,0 +1,56 @@
+[
+    {
+        "problem_name" : "putnam_1974_b1",
+        "informal_statement" : "Prove that the optimal configuration of 5 (not necessarily distinct) points $p_1, \\dots, p_5$ on the unit circle which maximizes the sum of the ten distances \\[\\Sigma_{i < j}, d(p_i, p_j) \\] is the one which evenly spaces the points like a regular pentagon.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra", "geometry"]
+    },
+    {
+        "problem_name" : "putnam_1974_b2",
+        "informal_statement" : "Let $y(x)$ be a continuously differentiable real-valued function of a real vairable $x$. Show that if $(y')^2 + y^3 \\to 0$ as $x \\to +\\infty$, then $y(x)$ and $y'(x) \\to 0$ as $x \\to +\\infty$.",
+        "informal_solution" : "None",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1975_a4",
+        "informal_statement" : "Let $n = 2m$, where $m$ is an odd integer greater than 1. Let $\\theta = e^{2\\pi i/n}$. Expression $(1 - \\theta)^{-1}$ explicitly as a polynomial in $\\theta$ \\[ a_k \\theta^k  + a_{k-1}\\theta^{k-1} + \\dots + a_1\\theta + a_0\\], with integer coefficients $a_i$.",
+        "informal_solution" : "Show that the solution is the polynomial $0 + \\theta + \\theta^3 + \\dots + \\theta^{m-2}$, alternating consecutive coefficients between 0 and 1.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1975_a5",
+        "informal_statement" : "On some interval $I$ of the real line, let $y_1(x), y_2(x)$ be linearly independent solutions of the differential equation \\[y'' = f(x)y\\], where $f(x)$ is a continuous real-valued function. Suppose that $y_1(x) > 0$ and $y_2(x) > 0$ on $I$. Show that there exists a positive constant $c$ such that, on $I$, the function \\[z(x) = c \\sqrt{y_1(x)y_2(x)}\\] satisfies the equation \\[z'' + 1/z^3 = f(x)z.\\]",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1975_b2",
+        "informal_statement" : "In three-dimensional Euclidean space, define a \\emph{slab} to be the open set of points lying between two parallel planes. The distance between the planes is called the \\emph{thickness} of the slab. Given an infinite sequence $S_1, S_2, \\dots$ of slabs of thicknesses $d_1, d_2, \\dots,$ respectively, such that $\\Sigma_{i=1}^{\\infty} d_i$ converges, prove that there is some point in the space which is not contained in any of the slabs. ",
+        "informal_solution" : "None.",
+        "tags" : ["analysis", "geometry"]
+    },
+    {
+        "problem_name" : "putnam_1975_b6",
+        "informal_statement" : "Show that if $s_n = 1 + \\frac{1}{2} + \\frac{1}{3} + \\dots + 1/n, then $n(n+1)^{1/n} < n + s_n$ whenever $n > 1$ and $(n-1)n^{-1/(n-1)} < n - s_n$ whenever $n > 2$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1976_b3",
+        "informal_statement" : "Suppose that we have $n$ events $A_1, \\dots, A_n$, each of which has probability at least $1 - a$ of occufring, where $a < 1/4$. Further suppose that $A_i$ and $A_j$ are mutually independent if $|i-j| > 1$, although $A_i$ and $A_{i+1}$ may be dependent. Assume as known that the recurrence $u_{k+1} = u_k - au_{k-1}$, $u_0 = 1, u_1 = 1-a$ defines positive real numbers $u_k$ for $k = 0,1,\\dots$. Show that the probability of all $A_1, \\dots, A_n$ occurring is at least $u_n$.",
+        "informal_solution" : "None.",
+        "tags" : ["probability"]
+    },
+    {
+        "problem_name" : "putnam_1979_b5",
+        "informal_statement" : "In the plane, let $C$ be a closed convex set that contains $(0,0) but no other point with integer coordinations. Suppose that $A(C)$, the area of $C$, is equally distributed among the four quadrants. Prove that $A(C) \\leq 4$.",
+        "informal_solution" : "",
+        "tags" : ["geometry", "analysis"]
+    },
+    {
+        "problem_name" : "putnam_1982_a4",
+        "informal_statement" : "Assume that the system of simultaneous differentiable equations \\[y' = -z^3, z' = y^3\\] with the initial conditions $y(0) = 1, z(0) = 0$ has a unique solution $y = f(x), z = g(x)$ defined for all real $x$. Prove that there exists a positive constant $L$ such that for all real $x$, \\[f(x) + L = f(x), g(x + L) = g(x).\\]",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    }
+]

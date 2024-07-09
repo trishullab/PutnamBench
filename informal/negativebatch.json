@@ -1,0 +1,139 @@
+[
+    {
+        "problem_name" : "putnam_2023_a2",
+        "informal_statement" : "Let $n$ be an even positive integer. Let $p$ be a monic, real polynomial of degree $2n$; that is to say, $p(x) = x^{2n} + a_{2n-1} x^{2n-1} + \\cdots + a_1 x + a_0$ for some real coefficients $a_0, \\dots, a_{2n-1}$. Suppose that $p(1/k) = k^2$ for all integers $k$ such that $1 \\leq |k| \\leq n$. Find all other real numbers $x$ for which $p(1/x) = x^2$.",
+        "informal_solution" : "Show that the other real numbers satisfying $p(1/x) = x^2$ are $\\pm \frac{1}{n!}.$",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2023_a3",
+        "informal_statement" : "Determine the smallest positive real number $r$ such that there exist differentiable functions $f\\colon \\mathbb{R} \\to \\mathbb{R}$ and $g\\colon \\mathbb{R} \\to \\mathbb{R}$ satisfying \n\\begin{enumerate}\n \\item[(a)] $f(0) > 0$, \n \\item[(b)] $g(0) = 0$, \n \\item[(c)] $|f'(x)| \\leq |g(x)|$ for all $x$, \n \\item[(d)] $|g'(x)| \\leq |f(x)|$ for all $x$, and \n \\item[(e)] $f(r) = 0$. \\end{enumerate}",
+        "informal_solution" : "Show that the solution is $r = \\pi/2$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2023_a5",
+        "informal_statement" : "For a nonnegative integer $k$, let $f(k)$ be the number of ones in the base 3 representation of $k$. Find all complex numbers $z$ such that \\[ \\sum_{k=0}^{3^{1010}-1} (-2)^{f(k)} (z+k)^{2023} = 0. \\]",
+        "informal_solution" : "Show that the solution is the set of complex numbers $\\{- \\frac{3^{1010} - 1}{2} \\pm \\frac{\\sqrt{9^{1010} - 1}}{4} * i \\}$",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2022_a1",
+        "informal_statement" : "Determine all ordered pairs of real numbers $(a,b)$ such that the line $y = ax+b$ intersects the curve $y = \\ln(1+x^2)$ in exactly one point.",
+        "informal_solution" : "Show that the solution is the set of ordered pairs $(a,b)$ which satisfy at least one of (1) $a = b = 0$, (2) $|a| \\geq 1$, and (3) $0 < |a| < 1$ and $b < \\log(1 - r_{-})^2 - |a|r_{-}$ or $b > \\log(1 + r_{+})^2 + |a|r_{+}$ where $r_{\\pm} = \\frac{1 \\pm \\sqrt{1 - a^2}}{a}$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2022_a2",
+        "informal_statement" : "Let $n$ be an integer with $n \\geq 2$. Over all real polynomials $p(x)$ of degree $n$, what is the largest possible number of negative coefficients of $p(x)^2$?",
+        "informal_solution" : "Show that the solution is $2n - 2$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2022_a3",
+        "informal_statement" : "Let $p$ be a prime number greater than 5. Let $f(p)$ denote the number of infinite sequences $a_1, a_2, a_3, \\dots$ such that $a_n \\in \\{1, 2, \\dots, p-1\\}$ and $a_n a_{n+2} \\equiv 1 + a_{n+1} \\pmod{p}$ for all $n \\geq 1$. Prove that $f(p)$ is congruent to 0 or 2 $\\pmod{5}$.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2019_b3",
+        "informal_statement" : "Let $Q$ be an $n$-by-$n$ real orthogonal matrix, and let $u \\in \\mathbb{R}^n$ be a unit column vector (that is, $u^T u = 1$). Let $P = I - 2uu^T$, where $I$ is the $n$-by-$n$ identity matrix. Show that if $1$ is not an eigenvalue of $Q$, then $1$ is an eigenvalue of $PQ$.",
+        "informal_solution" : "None.",
+        "tags" : ["linear_algebra"]
+    },
+    {
+        "problem_name" : "putnam_2016_a1",
+        "informal_statement" : "Find the smallest positive integer $j$ such that for every polynomial $p(x)$ with integer coefficients and for every integer $k$, the integer \\[ p^{(j)}(k) = \\left. \\frac{d^j}{dx^j} p(x) \\right|_{x=k} \\] (the $j$-th derivative of $p(x)$ at $k$) is divisible by 2016.",
+        "informal_solution" : "Show that the solution is $18$.",
+        "tags" : ["algebra", "number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2013_b3",
+        "informal_statement" : "Let $\\mathcal{P}$ be a nonempty collection of subsets of $\\{1,\\dots, n\\}$ such that: \\begin{enumerate} \\item[(i)] if $S, S' \\in \\mathcal{P}$, then $S \\cup S' \\in \\mathcal{P}$ and $S \\cap S' \\in \\mathcal{P}$, and \\item[(ii)] if $S \\in \\mathcal{P}$ and $S \\neq \\emptyset$, then there is a subset $T \\subset S$ such that $T \\in \\mathcal{P}$ and $T$ contains exactly one fewer element than $S$. \\end{enumerate} Suppose that $f: \\mathcal{P} \\to \\mathbb{R}$ is a function such that $f(\\emptyset) = 0$ and \\[f(S \\cup S') = f(S) + f(S') - f(S \\cap S') \\mbox{ for all $S,S' \\in \\mathcal{P}$.} \\] Must there exist real numbers $f_1,\\dots,f_n$ such that\\[f(S) = \\sum_{i \\in S} f_i\\] \\n for every $S \\in \\mathcal{P}$?",
+        "informal_solution" : "None.",
+        "tags" : ["set_theory"]
+    },
+    {
+        "problem_name" : "putnam_2012_a5",
+        "informal_statement" : "Let $\\FF_p$ denote the field of integers modulo a prime $p$, and let $n$ be a positive integer. Let $v$ be a fixed vector in $\\FF_p^n$, let $M$ be an $n \\times n$ matrix with entries of $\\FF_p$, and define $G: \\FF_p^n \\to \\FF_p^n$ by $G(x) = v + Mx$. Let $G^{(k)}$ denote the $k$-fold composition of $G$ with itself, that is, $G^{(1)}(x) = G(x)$ and $G^{(k+1)}(x) = G(G^{(k)}(x))$. Determine all pairs $p, n$ for which there exist $v$ and $M$ such that the $p^n$ vectors $G^{(k)}(0)$, $k=1,2,\\dots,p^n$ are distinct.",
+        "informal_solution" : "Show that the solution is the pairs $(p,n)$ with $n = 1$ as well as the single pair $(2,2)$.",
+        "tags" : ["linear_algebra"]
+    },
+    {
+        "problem_name" : "putnam_2012_b5",
+        "informal_statement" : "Prove that, for any two bounded functions $g_1, g_2: \\RR \\to [1, \\infty)$, there exist functions $h_1, h_2: \\RR \to \\RR$ such that, for every $x \\in \\RR$, \\[ \\sup_{s \\in \\RR} (g_1(s)^x g_2(s))  = \\max_{t \\in \\RR} (x h_1(t) + h_2(t)).\\]",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2012_b6",
+        "informal_statement" : "Let $p$ be an odd prime number such that $p \\equiv 2 \\pmod{3}$. Define a permutation $\\pi$ of the residue classes modulo $p$ by $\\pi(x) \\equiv x^3 \\pmod{p}$. Show that $\\pi$ is an even permutation if and only if $p \\equiv 3 \\pmod{4}$.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2011_a2",
+        "informal_statement" : "Let $a_1,a_2,\\dots$ and $b_1,b_2,\\dots$ be sequences of positive real numbers such that $a_1 = b_1 = 1$ and $b_n = b_{n-1} a_n - 2$ for$n=2,3,\\dots$. Assume that the sequence $(b_j)$ is bounded. Prove tha \\[ S = \\sum_{n=1}^\\infty \\frac{1}{a_1...a_n} \\] converges, and evaluate $S$.",
+        "informal_solution" : "Show that the solution is $S = 3/2$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2010_b1",
+        "informal_statement" : "Is there an infinite sequence of real numbers $a_1, a_2, a_3, \\dots$ such that \\[ a_1^m + a_2^m + a_3^m + \\cdots = m \\] for every positive integer $m$?",
+        "informal_solution" : "Show that the solution is no such infinite sequence exists.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2010_b5",
+        "informal_statement" : "Is there a strictly increasing function $f: \\mathbb{R} \\to \\mathbb{R}$ such that $f'(x) = f(f(x))$ for all $x$?",
+        "informal_solution" : "Show that the solution is no such function exists.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2009_a3",
+        "informal_statement" : "Let $d_n$ be the determinant of the $n \\times n$ matrix whose entries, from left to right and then from top to bottom, are $\\cos 1, \\cos 2, \\dots, \\cos n^2$. (For example,\\[ d_3 = \\left|\\begin{matrix} \\cos 1 & \\cos 2 & \\cos 3 \\\\ \\cos 4 & \\cos 5 & \\cos 6 \\\\  \\cos 7 & \\cos 8 & \\cos 9 \\end{matrix} \\right|. \\]The argument of $\\cos$ is always in radians, not degrees.) Evaluate $\\lim_{n\\to\\infty} d_n$.",
+        "informal_solution" : "Show that the limit is 0.",
+        "tags" : ["linear_algebra", "analysis"]
+    },    {
+        "problem_name" : "putnam_2008_b1",
+        "informal_statement" : "What is the maximum number of rational points that can lie on a circle in $\\mathbb{R}^2$ whose center is not a rational point? (A \\emph{rational point} is a point both of whose coordinates are rational numbers.)",
+        "informal_solution" : "Show that the maximum number is $2$.",
+        "tags" : ["geometry", "number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2006_b6",
+        "informal_statement" : "Let $k$ be an integer greater than 1. Suppose $a_0 > 0$, and define \\[ a_{n+1} = a_n + \\frac{1}{\\sqrt[k]{a_n}} \\] for $n > 0$. Evaluate \\[\\lim_{n \\to \\infty} \\frac{a_n^{k+1}}{n^k}.\\]",
+        "informal_solution" : "Show that the solution is $(\\frac{k+1}{k})^k$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2005_a1",
+        "informal_statement" : "Show that every positive integer is a sum of one or more numbers of the form $2^r 3^s$, where $r$ and $s$ are nonnegative integers and no summand divides another.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2005_a5",
+        "informal_statement" : "Evaluate $\\int_0^1 \\frac{\\ln(x+1)}{x^2+1}\\,dx$.",
+        "informal_solution" : "Show that the solution is $\\pi / 8 * \\log 2$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2003_b6",
+        "informal_statement" : "Let  $f(x)$  be  a continuous real-valued function defined on the interval $[0,1]$. Show that \\[ \\int_0^1 \\int_0^1 | f(x) + f(y) |\\,dx\\,dy \\geq \\int_0^1 |f(x)|\\,dx. \\]",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2002_a3",
+        "informal_statement" : "Let $n \\geq 2$ be an integer and $T_n$ be the number of non-empty subsets $S$ of $\\{1, 2, 3, \\dots, n\\}$ with the property that the average of the elements of $S$ is an integer. Prove that $T_n - n$ is always even.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2001_a5",
+        "informal_statement" : "Prove that there are unique positive integers $a$, $n$ such that $a^{n+1}-(a+1)^n=2001$.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    }
+]
