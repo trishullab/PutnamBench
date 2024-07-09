@@ -62,6 +62,7 @@ theorem putnam_2023_b2
 sorry
 
 open Topology Filter
+
 -- Note: uses (ℕ → ℝ) instead of (Fin (n + 1) → ℝ) and (ℝ → ℝ) instead of (tall ts → ℝ)
 abbrev putnam_2023_b4_solution : ℝ := sorry
 -- 29
