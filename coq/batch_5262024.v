@@ -125,13 +125,12 @@ End putnam_1986_b2.
 Section putnam_1987_a3.
 Require Import Reals Coquelicot.Coquelicot.
 Open Scope R.
-Definition putnam_1987_a3_solution1 := False.
-Definition putnam_1987_a3_solution2 := True.
+Definition putnam_1987_a3_solution := (False, True).
 Theorem putnam_1987_a3
     (f g: R -> R) 
     (x: R)
-    : (((Derive_n f 2) x - 2 * (Derive_n f 1) x + f x = 2 * exp x /\ forall (x: R), f x > 0 -> forall (x: R), Derive_n f 1 x > 0) <-> putnam_1987_a3_solution1) /\ 
-    ((((Derive_n g 2) x - 2 * (Derive_n g 1) x + g x = 2 * exp x /\ forall (x: R), Derive_n g 1 x > 0) -> forall (x: R), g x > 0) <-> putnam_1987_a3_solution2).
+    : (((Derive_n f 2) x - 2 * (Derive_n f 1) x + f x = 2 * exp x /\ forall (x: R), f x > 0 -> forall (x: R), Derive_n f 1 x > 0) <-> fst putnam_1987_a3_solution) /\ 
+    ((((Derive_n g 2) x - 2 * (Derive_n g 1) x + g x = 2 * exp x /\ forall (x: R), Derive_n g 1 x > 0) -> forall (x: R), g x > 0) <-> snd putnam_1987_a3_solution).
 Proof. Admitted.
 End putnam_1987_a3.
 
@@ -154,8 +153,7 @@ End putnam_1987_b2.
 Section putnam_1987_b4.
 Require Import Reals Coquelicot.Coquelicot.
 Open Scope R.
-Definition putnam_1987_b4_solution1 := -1.
-Definition putnam_1987_b4_solution2 := PI.
+Definition putnam_1987_b4_solution := (-1, PI).
 Theorem putnam_1987_b4
     (A := fix a (i j: nat) : (R * R):=
         match (i, j) with
@@ -166,8 +164,8 @@ Theorem putnam_1987_b4
             (xn * cos yn - yn * sin yn,xn * sin yn + yn * cos yn)
         | (_, _) => (0, 0)
     end)
-    : Lim_seq (fun n => fst (A n 0%nat)) = putnam_1987_b4_solution1 /\
-    Lim_seq (fun n => snd (A 0%nat n)) = putnam_1987_b4_solution2.
+    : Lim_seq (fun n => fst (A n 0%nat)) = fst putnam_1987_b4_solution /\
+    Lim_seq (fun n => snd (A 0%nat n)) = snd putnam_1987_b4_solution.
 Proof. Admitted.
 End putnam_1987_b4.
 
