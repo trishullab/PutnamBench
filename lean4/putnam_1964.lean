@@ -10,7 +10,7 @@ sorry
 
 open Set
 
--- uses (ℝ → ℝ) instead of (Icc 0 1 → ℝ)
+-- Note: uses (ℝ → ℝ) instead of (Icc 0 1 → ℝ)
 abbrev putnam_1964_a2_solution : ℝ → Set (ℝ → ℝ) := sorry
 -- fun _ ↦ ∅
 theorem putnam_1964_a2
