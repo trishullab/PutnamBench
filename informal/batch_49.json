@@ -1,0 +1,38 @@
+[
+    {
+        "problem_name" : "putnam_1967_a1",
+        "informal_statement" : "Let $f(x)=a_1\\sin x+a_2\\sin 2x+\\dots+a_n\\sin nx$, where $a_1,a_2,\\dots,a_n$ are real numbers and where $n$ is a positive integer. Given that $|f(x)| \\leq |\\sin x|$ for all real $x$, prove that $|a_1|+|2a_2|+\\dots+|na_n| \\leq 1$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1967_a2",
+        "informal_statement" : "Define $S_0$ to be $1$. For $n \\geq 1$, let $S_n$ be the number of $n \\times n$ matrices whose elements are nonnegative integers with the property that $a_{ij}=a_{ji}$, ($i,j=1,2,\\dots,n$) and where $\\sum_{i=1}^n a_{ij}=1$, ($j=1,2,\\dots,n$). Prove\n\\begin{enumerate}\n\\item[(a)] $S_{n+1}=S_n+nS_{n-1}$\n\\item[(b)] $\\sum_{n=0}^\\infty S_n\\frac{x^n}{n!} = \\exp(x+x^2/2)$, where $\\exp(x)=e^x$.\n\\end{enumerate}",
+        "informal_solution" : "None.",
+        "tags" : ["linear_algebra", "analysis"]
+    },
+    {
+        "problem_name" : "putnam_1967_a3",
+        "informal_statement" : "Consider polynomial forms $ax^2-bx+c$ with integer coefficients which have two distinct zeros in the open interval $0<x<1$. Exhibit with a proof the least positive integer value of $a$ for which such a polynomial exists.",
+        "informal_solution" : "Show that the minimum possible value for $a$ is $5$.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1967_a4",
+        "informal_statement" : "Show that if $\\lambda > \\frac{1}{2}$ there does not exist a real-valued function $u$ such that for all $x$ in the closed interval $0 \\leq x \\leq 1$, $u(x)=1+\\lambda\\int_x^1 u(y)u(y-x)\\,dy$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1967_b2",
+        "informal_statement" : "Let $0 \\leq p \\leq 1$ and $0 \\leq r \\leq 1$ and consider the identities\n\\begin{enumerate}\n\\item[(a)] $(px+(1-p)y)^2=Ax^2+Bxy+Cy^2$,\n\\item[(b)] $(px+(1-p)y)(rx+(1-r)y)=\\alpha x^2+\\beta xy+\\gamma y^2$.\n\\end{enumerate}\nShow that (with respect to $p$ and $r$)\n\\begin{enumerate}\n\\item[(a)] $\\max\\{A,B,C\\} \\geq 4/9$,\n\\item[(b)] $\\max\\{\\alpha,\\beta,\\gamma\\} \\geq 4/9$.\n\\end{enumerate}",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1967_b3",
+        "informal_statement" : "If $f$ and $g$ are continuous and periodic functions with period $1$ on the real line, then $\\lim_{n \\to \\infty} \\int_0^1 f(x)g(nx)\\,dx=(\\int_0^1 f(x)\\,dx)(\\int_0^1 g(x)\\,dx)$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    }
+]

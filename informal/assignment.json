@@ -1,0 +1,122 @@
+[
+    {
+        "problem_name" : "putnam_2023_a1",
+        "informal_statement" : "For a positive integer $n$, let $f_n(x) = \\cos(x) \\cos(2x) \\cos(3x) \\cdots \\cos(nx)$. Find the smallest $n$ such that $|f_n''(0)| > 2023$.",
+        "informal_solution" : "Show that the solution is $n = 18$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2020_b5",
+        "informal_statement" : "For $j \\in \\{1, 2, 3, 4\\}$, let $z_j$ be a complex number with $|z_j| = 1$ and $z_j \\neq 1$. Prove that \\[ 3 - z_1 - z_2 - z_3 - z_4 + z_1 z_2 z_3 z_4 \\neq 0. \\]",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2018_a5",
+        "informal_statement" : "Let $f: \\mathbb{R} \\to \\mathbb{R}$ be an infinitely differentiable function satisfying $f(0) = 0$, $f(1)= 1$, and $f(x) \\geq 0$ for all $x \\in \\mathbb{R}$. Show that there exist a positive integer $n$ and a real number $x$ such that $f^{(n)}(x) < 0$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_2018_b3",
+        "informal_statement" : "Find all positive integers $n < 10^{100}$ for which simultaneously $n$ divides $2^n$, $n-1$ divides $2^n-1$, and $n-2$ divides $2^n - 2$.",
+        "informal_solution" : "Show that the solution is the set $\\{2^2, 2^4, 2^8, 2^16\\}$.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2018_b4",
+        "informal_statement" : "Given a real number $a$, we define a sequence by $x_0 = 1$, $x_1 = x_2 = a$, and $x_{n+1} = 2x_n x_{n-1} - x_{n-2}$ for $n \\geq 2$. Prove that if $x_n = 0$ for some $n$, then the sequence is periodic.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2017_b3",
+        "informal_statement" : "Suppose that $f(x) = \\sum_{i=0}^\\infty c_i x^i$ is a power series for which each coefficient $c_i$ is $0$ or $1$. Show that if $f(2/3) = 3/2$, then $f(1/2)$ must be irrational.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2014_a1",
+        "informal_statement" : "Prove that every nonzero coefficient of the Taylor series of \\[(1 - x + x^2)e^x\\] about $x=0$ is a rational number whose numerator (in lowest terms) is either $1$ or a prime number.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis", "number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2014_a5",
+        "informal_statement" : "Let \\[ P_n(x) = 1 + 2 x  + 3 x^2 + \\cdots + n x^{n-1}.\\] Prove that the polynomials $P_j(x)$ and $P_k(x)$ are relatively prime for all positive integers $j$ and $k$ with $j \\neq k$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2010_a4",
+        "informal_statement" : "Prove that for each positive integer $n$, the number $10^{10^{10^n}} + 10^{10^n} + 10^n - 1$ is not prime.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2010_a5",
+        "informal_statement" : "Let $G$ be a group, with operation $*$. Suppose that \\begin{enumerate} \\item[(i)] $G$ is a subset of $\\mathbb{R}^3$ (but $*$ need not be related to addition of vectors); \\item[(ii)] For each $\\mathbf{a},\\mathbf{b} \\in G$, either $\\mathbf{a}\\times \\mathbf{b} = \\mathbf{a}*\\mathbf{b}$ or $\\mathbf{a}\\times \\mathbf{b} = 0$ (or both), where $\\times$ is the usual cross product in $\\mathbb{R}^3$. \\end{enumerate} Prove that $\\mathbf{a} \\times \\mathbf{b} = 0$ for all $\\mathbf{a}, \\mathbf{b} \\in G$.",
+        "informal_solution" : "None.",
+        "tags" : ["abstract_algebra", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_2001_a1",
+        "informal_statement" : "Consider a set $S$ and a binary operation $*$, i.e., for each $a,b\\in S$, $a*b\\in S$.  Assume $(a*b)*a=b$ for all $a,b\\in S$.  Prove that $a*(b*a)=b$ for all $a,b\\in S$.",
+        "informal_solution" : "None.",
+        "tags" : ["abstract_algebra"]
+    },
+    {
+        "problem_name" : "putnam_2001_b4",
+        "informal_statement" : "Let $S$ denote the set of rational numbers different from $\\{-1,0,1\\}$.  Define $f:S\\rightarrow S$ by $f(x)=x-1/x$. Prove or disprove that \\[\\bigcap_{n=1}^\\infty f^{(n)}(S) = \\emptyset,\\] where $f^{(n)}$ denotes $f$ composed with itself $n$ times.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_2000_a2",
+        "informal_statement" : "Prove that there exist infinitely many integers $n$ such that $n,n+1,n+2$ are each the sum of the squares of two integers.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_2000_b4",
+        "informal_statement" : "Let $f(x)$ be a continuous function such that $f(2x^2-1)=2xf(x)$ for all $x$.  Show that $f(x)=0$ for $-1\\leq x\\leq 1$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1999_a2",
+        "informal_statement" : "Let $p(x)$ be a polynomial that is nonnegative for all real $x$.  Prove that for some $k$, there are polynomials $f_1(x),\\dots,f_k(x$) such that \\[p(x) =  \\sum_{j=1}^k (f_j(x))^2.\\]",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1999_a5",
+        "informal_statement" : "Prove that there is a constant $C$ such that, if $p(x)$ is a polynomial of degree 1999, then \\[|p(0)|\\leq C \\int_{-1}^1 |p(x)|\\,dx.\\]",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1999_b4",
+        "informal_statement" : "Let $f$ be a real function with a continuous third derivative such that $f(x), f'(x), f''(x), f'''(x)$ are positive for all $x$.  Suppose that $f'''(x)\\leq f(x)$ for all $x$.  Show that $f'(x)<2f(x)$ for all $x$.",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1999_b6",
+        "informal_statement" : "Let $S$ be a finite set of integers, each greater than 1.  Suppose that for each integer $n$ there is some $s\\in S$ such that $\\gcd(s,n)=1$ or $\\gcd(s,n)=s$.  Show that there exist $s,t\\in S$ such that $\\gcd(s,t)$ is prime.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1998_a3",
+        "informal_statement" : "Let $f$ be a real function on the real line with continuous third derivative.  Prove that there exists a point $a$ such that \\[f(a)\\cdot f'(a) \\cdot f''(a) \\cdot f'''(a)\\geq 0 .\\]",
+        "informal_solution" : "None.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1998_b6",
+        "informal_statement" : "Prove that, for any integers $a, b, c$, there exists a positive integer $n$ such that $\\sqrt{n^3+an^2+bn+c}$ is not an integer.",
+        "informal_solution" : "None.",
+        "tags" : ["number_theory"]
+    }
+]

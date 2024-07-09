@@ -1,0 +1,80 @@
+[
+    {
+        "problem_name" : "putnam_1986_a5",
+        "informal_statement" : "Suppose $f_1(x),f_2(x),\\dots,f_n(x)$ are functions of $n$ real variables $x=(x_1,\\dots,x_n)$ with continuous second-order partial derivatives everywhere on $\\mathbb{R}^n$. Suppose further that there are constants $c_{ij}$ such that $\\frac{\\partial f_i}{\\partial x_j}-\\frac{\\partial f_j}{\\partial x_i}=c_{ij}$ for all $i$ and $j$, $1 \\leq i \\leq n$, $1 \\leq j \\leq n$. Prove that there is a function $g(x)$ on $\\mathbb{R}^n$ such that $f_i+\\partial g/\\partial x_i$ is linear for all $i$, $1 \\leq i \\leq n$. (A linear function is one of the form $a_0+a_1x_1+a_2x_2+\\dots+a_nx_n$.)",
+        "informal_solution" : "None.",
+        "tags" : ["analysis", "linear_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1986_b1",
+        "informal_statement" : "Inscribe a rectangle of base $b$ and height $h$ and an isosceles triangle of base $b$ (against a corresponding side of the rectangle and pointed in the other direction) in a circle of radius one. For what value of $h$ do the rectangle and triangle have the same area?",
+        "informal_solution" : "Show that the only such value of $h$ is $2/5$.",
+        "tags" : ["geometry", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_1987_a5",
+        "informal_statement" : "Let $\\vec{G}(x,y)=\\left(\\frac{-y}{x^2+4y^2},\\frac{x}{x^2+4y^2},0\\right)$. Prove or disprove that there is a vector-valued function $\\vec{F}(x,y,z)=(M(x,y,z),N(x,y,z),P(x,y,z))$ with the following properties:\n\\begin{enumerate}\n\\item[(i)] $M$, $N$, $P$ have continuous partial derivatives for all $(x,y,z) \\neq (0,0,0)$;\n\\item[(ii)] $\\text{Curl}\\,\\vec{F}=\\vec{0}$ for all $(x,y,z) \\neq (0,0,0)$;\n\\item[(iii)] $\\vec{F}(x,y,0)=\\vec{G}(x,y)$.\n\\end{enumerate}",
+        "informal_solution" : "Show that there is no such $\\vec{F}$.",
+        "tags" : ["analysis"]
+    },
+    {
+        "problem_name" : "putnam_1987_b3",
+        "informal_statement" : "Let $F$ be a field in which $1+1 \\neq 0$. Show that the set of solutions to the equation $x^2+y^2=1$ with $x$ and $y$ in $F$ is given by $(x,y)=(1,0)$ and $(x,y)=\\left(\\frac{r^2-1}{r^2+1},\\frac{2r}{r^2+1}\\right)$, where $r$ runs through the elements of $F$ such that $r^2 \\neq -1$.",
+        "informal_solution" : "None.",
+        "tags" : ["abstract_algebra"]
+    },
+    {
+        "problem_name" : "putnam_1988_a1",
+        "informal_statement" : "Let $R$ be the region consisting of the points $(x,y)$ of the cartesian plane satisfying both $|x|-|y| \\leq 1$ and $|y| \\leq 1$. Find the area of $R$.",
+        "informal_solution" : "Show that the area of $R$ is $6$.",
+        "tags" : ["geometry"]
+    },
+    {
+        "problem_name" : "putnam_1989_b1",
+        "informal_statement" : "A dart, thrown at random, hits a square target. Assuming that any two parts of the target of equal area are equally likely to be hit, find the probability that the point hit is nearer to the center than to any edge. Express your answer in the form $(a\\sqrt{b}+c)/d$, where $a$, $b$, $c$, $d$ are integers and $b$, $d$ are positive.",
+        "informal_solution" : "Show that the probability is $(4\\sqrt{2}-5)/3$.",
+        "tags" : ["probability", "geometry"]
+    },
+    {
+        "problem_name" : "putnam_1989_b6",
+        "informal_statement" : "Let $(x_1,x_2,\\dots,x_n)$ be a point chosen at random from the $n$-dimensional region defined by $0<x_1<x_2<\\dots<x_n<1$. Let $f$ be a continuous function on $[0,1]$ with $f(1)=0$. Set $x_0=0$ and $x_{n+1}=1$. Show that the expected value of the Riemann sum $\\sum_{i=0}^n (x_{i+1}-x_i)f(x_{i+1})$ is $\\int_0^1 f(t)P(t)\\,dt$, where $P$ is a polynomial of degree $n$, independent of $f$, with $0 \\leq P(t) \\leq 1$ for $0 \\leq t \\leq 1$.",
+        "informal_solution" : "None.",
+        "tags" : ["probability", "analysis", "algebra"]
+    },
+    {
+        "problem_name" : "putnam_1990_a4",
+        "informal_statement" : "Consider a paper punch that can be centered at any point of the plane and that, when operated, removes from the plane precisely those points whose distance from the center is irrational. How many punches are needed to remove every point?",
+        "informal_solution" : "Show that three punches are needed.",
+        "tags" : ["set_theory", "number_theory"]
+    },
+    {
+        "problem_name" : "putnam_1992_b3",
+        "informal_statement" : "For any pair $(x,y)$ of real numbers, a sequence $(a_n(x,y))_{n \\geq 0}$ is defined as follows:\n\\begin{align*}\na_0(x,y)&=x, \\\\\na_{n+1}(x,y)&=\\frac{(a_n(x,y))^2+y^2}{2},\\text{ for $n \\geq 0$.}\n\\end{align*}\nFind the area of the region $\\{(x,y) \\mid (a_n(x,y))_{n \\geq 0}\\text{ converges}\\}$.",
+        "informal_solution" : "Show that the area is $4+\\pi$.",
+        "tags" : ["geometry", "analysis"]
+    },
+    {
+        "problem_name" : "putnam_1993_b3",
+        "informal_statement" : "Two real numbers $x$ and $y$ are chosen at random in the interval $(0,1)$ with respect to the uniform distribution. What is the probability that the closest integer to $x/y$ is even? Express the answer in the form $r+s\\pi$, where $r$ and $s$ are rational numbers.",
+        "informal_solution" : "Show that the limit is $(5-\\pi)/4$. That is, $r=5/4$ and $s=-1/4$.",
+        "tags" : ["probability", "number_theory", "geometry"]
+    },
+    {
+        "problem_name" : "putnam_1994_a3",
+        "informal_statement" : "Show that if the points of an isosceles right triangle of side length $1$ are each colored with one of four colors, then there must be two points of the same color which are at least a distance $2-\\sqrt{2}$ apart.",
+        "informal_solution" : "None.",
+        "tags" : ["geometry"]
+    },
+    {
+        "problem_name" : "putnam_1995_a6",
+        "informal_statement" : "Suppose that each of $n$ people writes down the numbers $1,2,3$ in random order in one column of a $3 \\times n$ matrix, with all orders equally likely and with the orders for different columns independent of each other. Let the row sums $a,b,c$ of the resulting matrix be rearranged (if necessary) so that $a \\leq b \\leq c$. Show that for some $n \\geq 1995$, it is at least four times as likely that both $b=a+1$ and $c=a+2$ as that $a=b=c$.",
+        "informal_solution" : "None.",
+        "tags" : ["algebra"]
+    },
+    {
+        "problem_name" : "putnam_1996_a2",
+        "informal_statement" : "Let $C_1$ and $C_2$ be circles whose centers are $10$ units apart, and whose radii are $1$ and $3$. Find, with proof, the locus of all points $M$ for which there exist points $X$ on $C_1$ and $Y$ on $C_2$ such that $M$ is the midpoint of the line segment $XY$.",
+        "informal_solution" : "Let $O_1$ and $O_2$ be the centers of $C_1$ and $C_2$, respectively. Then show that the desired locus is an annulus centered at the midpoint $O$ of $O_1O_2$, with inner radius $1$ and outer radius $2$.",
+        "tags" : ["geometry"]
+    }
+]

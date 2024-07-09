@@ -42,7 +42,7 @@
     {
         "problem_name" : "putnam_1977_a5",
         "informal_statement" : "Let $p$ be a prime and $m \\geq n$ be non-negative integers. Show that $\\binom{pm}{pn} = \\binom{m}{n} \\pmod p$, where $\\binom{m}{n}$ is the binomial coefficient.",
-        "tags" : ["algebra", "number-theory"]
+        "tags" : ["algebra", "number_theory"]
     },
     {
         "problem_name" : "putnam_1977_a6",
