@@ -1,9 +1,10 @@
 import os
 import argparse
 
-def rewrite_solutions(year):
+def rewrite_solutions(file):
     # first read the entire file, and proceed line by line
-    with open(f"putnam_{year}.lean", "r") as f:
+    problem_name = file.split('.')[0]
+    with open("src/"+file, "r") as f:
         lines = f.readlines()
         # find all lines which contain the string "abbrev", and then take the line after that
         # and replace the line with the line after that
@@ -24,7 +25,7 @@ def rewrite_solutions(year):
                 solution_dictionary[solution_name] = {'solution' : solution.replace("\n", ""), 'type' : type}
         print(solution_dictionary)
 
-    with open(f"solutions_replaced/putnam_{year}_sol.lean", "w") as f:
+    with open(f"/home/gtsoukal/Projects/PUTNAM/lean4/solutions_replaced_new/{problem_name}_sol.lean", "w") as f:
         for line in lines:
             for solution_name, solution in solution_dictionary.items():
                 if solution_name in line and 'abbrev' not in line:
@@ -38,11 +39,6 @@ def rewrite_solutions(year):
 if __name__ == '__main__':
     # inputs a single year, and rewrites in the problem statement each instance of the solution
     # with the solution itself
-    parser = argparse.ArgumentParser(description='Rewrite solutions in the problem statement.')
-    parser.add_argument('year', type=int, help='The year of the Putnam exam.')
-    args = parser.parse_args()
-    if args.year == -1:
-        for year in range(1969, 2023 + 1):
-            rewrite_solutions(year)
-    else:
-        rewrite_solutions(args.year)
+    for file in os.listdir('/home/gtsoukal/Projects/PUTNAM/lean4/src'):
+        if file.endswith('.lean'):
+            rewrite_solutions(file)
