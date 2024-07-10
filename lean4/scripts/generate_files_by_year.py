@@ -1,6 +1,8 @@
 import os, re
 import argparse
 
+# TODO: Rewrite code here to support individual -> years, all
+
 def all_to_years(min_year, max_year):
     with open("putnam.lean", "r") as f:
         lines = f.readlines()
