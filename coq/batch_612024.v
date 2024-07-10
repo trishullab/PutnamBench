@@ -1,4 +1,4 @@
-(* NOTE -- Two external functions have been defined for usage in both solution and problem statement. *)
+(* Note: -- Two external functions have been defined for usage in both solution and problem statement. *)
 Section putnam_2014_b1.
 Require Import Nat Ensembles List. From mathcomp Require Import div fintype seq ssrbool.
 Fixpoint hd (n: nat) (l:list 'I_n) := match l with | nil => 0 | x :: _ => x end.

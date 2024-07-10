@@ -352,10 +352,10 @@ Theorem putnam_1997_a1
     (l1 : dist Hp Op = 11)
     (l2 : dist Op Mp = 5)
     (s : Rectangle Hp Op Mp Fp)
-    (hHp : Bet A Fp Hp)                 (* H as the intersection of the altitudes *)
-    (hOp : is_circumcenter Op A B C)    (* O the center of the circumscribed circle *)
-    (hMp : Midpoint B C Mp)             (* M the midpoint of BC *)
-    (hFp : Perp A C B Fp /\ Col A C Fp) (* foot of the altitude *)
+    (hHp : Bet A Fp Hp)
+    (hOp : is_circumcenter Op A B C)
+    (hMp : Midpoint B C Mp)
+    (hFp : Perp A C B Fp /\ Col A C Fp)
     : dist B C = putnam_1997_a1_solution.
 Proof. Admitted.
 End putnam_1997_a1.

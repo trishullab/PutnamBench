@@ -1,6 +1,3 @@
-(* Batch 51:
-Putnam 1965 A2 A3 A4 A5 A6 B2 B3 B4 B5 B6 *)
-
 Section putnam_1965_a2.
 Require Import Coquelicot.Hierarchy Reals.
 Theorem putnam_1965_a2
