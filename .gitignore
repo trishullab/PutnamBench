@@ -11,3 +11,5 @@ informal/join_all_jsons*
 
 isabelle_archive/
 lean4_archive/
+
+split_into_files.py
