@@ -23,12 +23,6 @@ Theorem putnam_2016_a3
 Proof. Admitted.
 End putnam_2016_a3. 
 
-(* Skipped due to inability to use groups in mathcomp *)
-(* Section putnam_2016_a5. 
-Theorem putnam_2016_a5: True.
-Proof. Admitted.
-End putnam_2016_a5.  *)
-
 Section putnam_2016_b2. 
 Require Import Bool Reals Coquelicot.Lim_seq Coquelicot.Rbar. 
 Definition putnam_2016_b2_solution (a b : R) := a = 3/4 /\ b = 4/3.
@@ -84,8 +78,7 @@ Theorem putnam_2012_a6
 Proof. Admitted.
 End putnam_2012_a6. 
 
-(* -- NOTE: this formalization differs from the original statement by assigning a value of zero to all values outside the specified domain/range. *)
-(* -- The problem is still solvable given this modification. *)
+(* Note: this formalization differs from the original statement by assigning a value of zero to all values outside the specified domain/range. The problem is still solvable given this modification. *)
 Section putnam_2012_b1. 
 Require Import Reals RIneq.
 Open Scope R.

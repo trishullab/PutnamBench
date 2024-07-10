@@ -1,9 +1,3 @@
-(* Skipped due to inability to use groups in mathcomp *)
-(* Section putnam_2018_a4. 
-Theorem putnam_2018_a4: True.
-Proof. Admitted.
-End putnam_2018_a4.  *)
-
 Section putnam_2018_b1. 
 Require Import Logic Ensembles Finite_sets Nat List.
 Open Scope nat_scope.
@@ -99,23 +93,6 @@ Theorem putnam_2013_a6
     : forall (l : list (Z * Z * (Z * Z))), length l <> Z.to_nat 0 -> A l > 0.
 Proof. Admitted.
 End putnam_2013_a6. 
-
-(* TODO: WIP *)
-(* NOTE -- Divide-and-conquer recursion is hard to formulate in Coq. A proof must be provided for termination *)
-(* Section putnam_2013_b1. 
-Require Import ZArith Nat List Lia Ensembles Finite_sets Reals Program Coquelicot.Hierarchy. 
-Open Scope Z.
-Program Fixpoint Aa (n : nat) {measure n} : Z :=
-  match n with
-  | O => 0
-  | S O => 1
-  | S (S m) => if even m then Aa (div2 (m+2)) else if even (div2 (m+2)) then Aa (div2 (m+2)) else (-1) * Aa (div2 (m+2))
-  end.
-Next Obligation. Proof. destruct m. simpl; auto. induction m. simpl; auto. simpl. Admitted.
-Theorem putnam_2013_b1: 
-    sum_n (fun n => (Aa n)*(Aa (n+2))) 2013 = 1.
-Proof. Admitted.
-End putnam_2013_b1.  *)
 
 Section putnam_2013_b4. 
 Require Import Reals. From Coquelicot Require Import Coquelicot Continuity RInt.
