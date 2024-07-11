@@ -169,7 +169,7 @@ Theorem putnam_1987_b4
 Proof. Admitted.
 End putnam_1987_b4.
 
-(* NOTE -- omitted the second part of the proof - an example of existence - due to lack of full solution description *)
+(* Note: omitted the second part of the proof - an example of existence - due to lack of full solution description *)
 Section putnam_1988_a2.
 Require Import Basics Reals Coquelicot.Coquelicot.
 Open Scope R.

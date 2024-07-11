@@ -120,16 +120,6 @@ Theorem putnam_1999_a2
 Proof. Admitted.
 End putnam_1999_a2.
 
-(* Section putnam_1999_a5.
-Require Import Reals NewtonInt. From mathcomp Require Import all_algebra all_ssreflect ssrnat ssrnum ssralg fintype poly seq.
-Open Scope ring_scope.
-Theorem putnam_1999_a5:
-    forall (R: numDomainType) (p: {poly R}),
-        (size p = 1999%nat) ->
-        exists (C: R), Num.norm p.[0] <= GRing.mul C (Num.norm p.[0]).
-Proof. Admitted.
-End putnam_1999_a5. *)
-
 Section putnam_1999_b4.
 Require Import Reals Coquelicot.Derive.
 Open Scope R_scope.
@@ -170,7 +160,7 @@ Require Import Ensembles RelationClasses.
 Theorem putnam_2001_a1
     (A : Type)
     (op: A->A->A)
-    : forall (a b: A), op (op a b) a = b -> forall (a b: A), op a (op b a) = b.
+    : (forall (a b: A), op (op a b) a = b) -> (forall (a b: A), op a (op b a) = b).
 Proof. Admitted.
 End putnam_2001_a1.
 
@@ -197,20 +187,6 @@ Theorem putnam_2010_a4
     : forall (n: Z), n > 0 -> ~ prime (10^(10^(10^n)) + 10^(10^n) + 10^n - 1). 
 Proof. Admitted.
 End putnam_2010_a4.
-
-(* Section putnam_2010_a5.
-Require Import Reals. From mathcomp Require Import fingroup ssreflect ssrbool eqtype seq choice fintype div path tuple bigop prime finset.
-Open Scope R.
-Variable R3: finGroupType.
-Definition cross_product (a b : R -> R -> R) : R -> R -> R := a. 
-Theorem putnam_2010_a5:
-    forall (G: {group R3}),
-        forall (a b: R -> R -> R),
-            cross_product a b = a \/ cross_product a b = a ->
-            forall (a b: R -> R -> R),
-                cross_product a b = a. 
-Proof. Admitted.
-End putnam_2010_a5. *)
 
 Section putnam_2023_a1.
 Require Import Reals List Rtrigo_def Coquelicot.Derive.

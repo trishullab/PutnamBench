@@ -28,20 +28,6 @@ Theorem putnam_2023_b5
 Proof. Admitted. 
 End putnam_2023_b5.
 
-(* TODO: missing determinant refinement in coqeal *) 
-(* Section putnam_2023_b6. 
-Require Import Nat Finite_sets.
-From mathcomp Require Import matrix ssrbool ssralg fintype.
-Variable putnam_2023_b6_solution : nat -> nat.
-Open Scope ring_scope.
-Theorem putnam_2023_b6: 
-    forall (n: nat), 
-        let s (i j: nat) := cardinal (nat*nat) (fun p => let (a, b) := p in 1 <= i <= n /\ 1 <= j <= n /\ eq (add (mul a i) (mul b j)) n) in
-        (\matrix_(i < n, j < n) s i j)
-        = (\matrix_(i < n, j < n) s i j).
-Proof. Admitted. 
-End putnam_2023_b6. *)
-
 Section putnam_2022_a6. 
 Require Import Nat Reals Coquelicot.Hierarchy. From mathcomp Require Import div fintype seq ssralg ssrbool ssrnat ssrnum .
 Definition putnam_2022_a6_solution := fun n : nat => n.

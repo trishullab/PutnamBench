@@ -18,18 +18,6 @@ Theorem putnam_1973_a4
 Proof. Admitted.
 End putnam_1973_a4.
 
-(* TODO: How to get the cardinality of a set with cardinal? Could not figure out a clean way*)
-(* Section putnam_1973_a6.
-Require Import Reals Finite_sets Ensembles Coquelicot.Coquelicot. From mathcomp Require Import fintype.
-Theorem putnam_1973_a6
-    (h_nint : nat -> ('I_7 -> (R * R)) -> nat := fun n lines => 
-        let intersection_set (p : R * R) : Prop := exists! S : Ensemble 'I_7, cardinal _ S n /\ (forall i : 'I_7, In _ S i -> (snd p = (snd (lines i)) * (fst p) + (fst (lines i)))) in
-            cardinal _ intersection_set
-    )
-    : ~ (exists lines: 'I_7 -> (R * R), (forall i j : 'I_7, i <> j -> (lines i <> lines j)) /\ h_nint 3 lines >= 6 /\ h_nint 2 lines >= 4).
-Proof. Admitted.
-End putnam_1973_a6. *)
-
 Section putnam_1973_b1.
 Require Import Basics Nat Reals Ensembles Finite_sets Coquelicot.Coquelicot. From mathcomp Require Import fintype.
 Theorem putnam_1973_b1
@@ -163,7 +151,6 @@ Theorem putnam_1971_b6
 Proof. Admitted.
 End putnam_1971_b6.
 
-
 Section putnam_1966_a1.
 Require Import Reals Nat ZArith Coquelicot.Coquelicot.
 Theorem putnam_1966_a1
@@ -181,7 +168,6 @@ Theorem putnam_1966_a3
     : filterlim (fun n : nat => (INR n) * (x n)) eventually (locally 1).
 Proof. Admitted.
 End putnam_1966_a3.
-
 
 Section putnam_1966_a4.
 Require Import Nat List ZArith Reals Coquelicot.Coquelicot.

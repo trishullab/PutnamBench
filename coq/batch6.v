@@ -1,15 +1,3 @@
-(* Skipped due to lack of surface integral function *)
-(* Section putnam_2019_a4. 
-Require Import PeanoNat. Require Import Reals Coquelicot.Derive.
-Definition putnam_2019_a4_solution := false. 
-Theorem putnam_2019_a4: 
-    forall (f: R -> R),
-    continuity f -> 
-    forall (x y z: R), x*x + y*y + z*z = 1 ->
-    True.
-Proof. Admitted. 
-End putnam_2019_a4. *)
-
 Section putnam_2016_b5. 
 Require Import Reals Rpower.
 Open Scope R.
@@ -75,12 +63,6 @@ Theorem putnam_2015_a5
 Proof. Admitted.
 End putnam_2015_a5.
 
-(* Skipped due to inability to use det in mathcomp *)
-(* Section putnam_2015_a6. 
-Theorem putnam_2015_a6: True.
-Proof. Admitted.
-End putnam_2015_a6. *)
-
 Section putnam_2015_b1. 
 Require Import Reals List Coquelicot.Derive.
 Open Scope R_scope.
@@ -92,10 +74,3 @@ Theorem putnam_2015_b1
     : exists (l': list R), length l = 2%nat /\ NoDup l' /\ forall x, In x l' -> g x = 0.
 Proof. Admitted.
 End putnam_2015_b1.
-
-(* Skipped due to inability to use det in mathcomp *)
-(* Section putnam_2014_a2. 
-From mathcomp Require Import div.
-    Theorem putnam_2014_a2: True.
-Proof. Admitted.
-End putnam_2014_a2. *)
