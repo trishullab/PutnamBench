@@ -10,5 +10,4 @@ theorem putnam_2021_b2:
   shows "(GREATEST Sa::real. (\<exists>a::nat\<Rightarrow>real. asum a \<and> S a = Sa)) = putnam_2021_b2_solution"
   sorry
 
-
 end
