@@ -8,5 +8,5 @@ theorem putnam_1964_b2
 (P : Finset (Set S))
 (hPP : ∀ T ∈ P, ∀ U ∈ P, T ∩ U ≠ ∅)
 (hPS : ¬∃ T : Set S, T ∉ P ∧ (∀ U ∈ P, T ∩ U ≠ ∅))
-: (P.card = 2 ^ (Fintype.card (Set S) - 1)) :=
+: (P.card = 2 ^ (Fintype.card S - 1)) :=
 sorry

@@ -59,13 +59,12 @@ theorem putnam_1964_b1
 : (Tendsto (fun n : ℕ ↦ b n / n) atTop (𝓝 0)) :=
 sorry
 
-
 theorem putnam_1964_b2
 (S : Type*) [Fintype S] [Nonempty S]
 (P : Finset (Set S))
 (hPP : ∀ T ∈ P, ∀ U ∈ P, T ∩ U ≠ ∅)
 (hPS : ¬∃ T : Set S, T ∉ P ∧ (∀ U ∈ P, T ∩ U ≠ ∅))
-: (P.card = 2 ^ (Fintype.card (Set S) - 1)) :=
+: (P.card = 2 ^ (Fintype.card S - 1)) :=
 sorry
 
 theorem putnam_1964_b3
