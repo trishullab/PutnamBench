@@ -3,6 +3,7 @@ open BigOperators
 
 open Nat Set
 
+-- uses (ℕ → ℤ × ℤ) instead of (Icc 1 (3 * n) → ℤ × ℤ)
 abbrev putnam_2005_a2_solution : ℕ → ℕ := sorry
 -- fun n ↦ if n = 1 then 0 else 2 ^ (n - 2)
 theorem putnam_2005_a2
