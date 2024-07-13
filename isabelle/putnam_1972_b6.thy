@@ -1,4 +1,5 @@
 theory putnam_1972_b6 imports Complex_Main
+"HOL-Analysis.Elementary_Metric_Spaces"
 begin
 
 (* uses (nat \<Rightarrow> nat) instead of (Fin k \<Rightarrow> nat) *)

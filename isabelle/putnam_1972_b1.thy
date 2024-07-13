@@ -1,4 +1,4 @@
-theory putnam_1972_b1 imports Complex_Main
+theory putnam_1972_b1 imports Complex_Main "HOL-Analysis.Elementary_Metric_Spaces"
 begin
 
 theorem putnam_1972_b1:
