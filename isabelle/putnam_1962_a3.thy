@@ -1,6 +1,5 @@
 theory putnam_1962_a3 imports Complex_Main
-"HOL-Analysis.Finite_Cartesian_Product"
-"HOL-Analysis.Linear_Algebra"
+"HOL-Analysis.Lebesgue_Measure"
 begin
 
 theorem putnam_1962_a3:
