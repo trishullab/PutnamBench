@@ -1,0 +1,12 @@
+theory putnam_2021_b3 imports
+Complex_Main
+"HOL-Analysis.Derivative"
+begin
+
+theorem putnam_2021_b3:
+  fixes C1diff :: "(real \<Rightarrow> real \<Rightarrow> real) \<Rightarrow> bool"
+  and C2diff :: "(real \<Rightarrow> real \<Rightarrow> real) \<Rightarrow> bool"
+  defines "C1diff \<equiv> \<lambda> f. "
+  and "C2diff \<equiv> \<lambda> f. C1diff f \<and> C1diff (\<lambda> x y. deriv f x) \<and> C1diff (\<lambda> x y. )"
+
+end
