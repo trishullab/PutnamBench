@@ -7,7 +7,7 @@ definition putnam_2016_b5_solution :: "(real \<Rightarrow> real) set" where "put
 theorem putnam_2016_b5:
   fixes f :: "real \<Rightarrow> real"
   and fle :: bool
-  assumes hfle: "fle = (\<forall>x::real>1. \<forall>y::real>1. (x^2 \<le> y \<and> y \<le> x^3) \<longrightarrow> ((f x)^2 \<le> f y \<and> f y \<le> (f x)^3))"
+  defines hfle: "fle \<equiv> f ` {1..} \<subseteq> {1..} \<and> (\<forall>x::real>1. \<forall>y::real>1. (x^2 \<le> y \<and> y \<le> x^3) \<longrightarrow> ((f x)^2 \<le> f y \<and> f y \<le> (f x)^3))"
   shows "fle \<longleftrightarrow> f \<in> putnam_2016_b5_solution"
   sorry
 

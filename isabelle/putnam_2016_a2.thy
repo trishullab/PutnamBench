@@ -7,7 +7,7 @@ definition putnam_2016_a2_solution :: real where "putnam_2016_a2_solution \<equi
 theorem putnam_2016_a2:
   fixes M :: "nat \<Rightarrow> nat"
   defines "M \<equiv> \<lambda> n. GREATEST m. m choose (n - 1) > (m - 1) choose n"
-  shows "(\<lambda> n. M n / n) \<longlonglongrightarrow> putnam_2016_a2_solution"
+  shows "(\<lambda> n. M n / (real n)) \<longlonglongrightarrow> putnam_2016_a2_solution"
   sorry
 
 end
