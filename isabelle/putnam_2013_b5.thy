@@ -10,5 +10,6 @@ theorem putnam_2013_b5:
     and kinX: "k \<in> {1..n}"
   defines "fiter \<equiv> \<lambda>f. (f ` {1..n} \<subseteq> {1..n} \<and> (\<forall>x::nat\<in>{1..n}. \<exists>j::nat. (f^^j) x \<le> k)) \<and> (\<forall>x::nat > n. f x = 0) \<and> f 0 = 0"
   shows "card {f::nat\<Rightarrow>nat. fiter f} = k * n^(n-1)"
+  sorry
 
 end
