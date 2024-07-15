@@ -7,4 +7,3 @@ Theorem putnam_2008_b6
     (E : Ensemble {perm 'I_n} := fun p =>  klimited p)
     : exists (sz: nat), cardinal {perm 'I_n} E sz /\ Nat.odd sz <-> n mod (2 * k + 1) = 0 \/ n mod (2 * k + 1) = 1.
 Proof. Admitted.
-End putnam_2008_b6.
