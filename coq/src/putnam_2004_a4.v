@@ -4,4 +4,3 @@ Theorem putnam_2004_a4
     forall (x: list R), length x = n ->
     fold_left Rmult x 1 = sum_n (fun i => c * (sum_n (fun j => a i j * nth j x 0) n) ^ (1 / n)) N.
 Proof. Admitted.
-End putnam_2004_a4.

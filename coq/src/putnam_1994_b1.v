@@ -6,4 +6,3 @@ Theorem putnam_1994_b1
     forall (m: Z), E m -> Z.abs (m * m - n) <= 250 ->
     putnam_1994_b1_solution n.
 Proof. Admitted.
-End putnam_1994_b1.

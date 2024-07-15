@@ -22,4 +22,3 @@ Theorem putnam_2003_b5
     Triangle A' B' C' /\ dist A' B' = a /\ dist B' C' = b /\ dist C' A' = c /\
     F_to_R (signed_area A' B' C' D A' B' C') = (putnam_2003_b5_solution pt_to_R dist P Op).
 Proof. Admitted.
-End putnam_2003_b5.
