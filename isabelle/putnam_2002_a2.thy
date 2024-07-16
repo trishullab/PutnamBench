@@ -1,6 +1,7 @@
 theory putnam_2002_a2 imports Complex_Main
 "HOL-Analysis.Finite_Cartesian_Product"
 "HOL-Analysis.Linear_Algebra"
+"HOL-Analysis.Elementary_Metric_Spaces"
 begin
 
 theorem putnam_2002_a2:
