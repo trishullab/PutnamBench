@@ -4,7 +4,7 @@ PutnamBench is a benchmark for evaluation of theorem-proving algorithms on compe
 
 PutnamBench aims to support research in automated mathematical reasoning by providing a multilingual benchmark for evaluating theorem-proving algorithms. It is released under permissive licenses (Apache 2.0 for Lean 4 and Isabelle, MIT for Coq). The informal statements are also available with permission from the MAA.
 
-We encourage community contributions through pull requests, though we kindly ask not to include proofs of any problems to reduce testing contamination. (TODO: After initial release, as of 7/8 this is expected to be in about 1 week.)
+We strongly encourage community feedback! Please let us know if you have any comments for improving PutnamBench. If you notice any mistakes, please raise an issue on the repository and we will address it. We kindly ask that you do not write formal proofs for any of the problems in an effort to reduce contamination.
 
 ## Citation
 The associated paper for PutnamBench is {TODO}. Please consider including the following citation if you find PutnamBench useful.
@@ -34,5 +34,5 @@ We also report the number of problems in a certain category. Note that some prob
 
 
 ## Versioning
-- Version: `v-1`
-- Not yet officially released. Please refrain from opening issues or making PRs until the initial release.
+- Version: `v0`
+- In preliminary release to allow for initial community feedback. We seek to release an official first version following several weeks of discussion with the community.
