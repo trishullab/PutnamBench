@@ -12,7 +12,7 @@ PutnamBench aims to support research in automated mathematical reasoning by prov
 
 PutnamBench includes factored solutions for problems which require exhibiting a numerical answer in addition to its proof of correctness. For these problems, one can attempt two tasks: proving the problem with the numerical answer written into the theorem statement, or additionally producing the answer along with the proof.
 
-We are hosting a [**leaderboard**](https://github.com/trishullab/PutnamBench) and will readily receive evaluation results which are accompanied by a preprint or publication. 
+We are hosting a [**leaderboard**](https://trishullab.github.io/PutnamBench/leaderboard.html) and will readily receive evaluation results which are accompanied by a preprint or publication. 
 
 **We strongly encourage community feedback!** Please let us know if you have any comments for improving PutnamBench. If you notice any mistakes, please raise an issue on the repository and we will address it. We kindly ask that you do not write formal proofs for any of the problems in an effort to reduce contamination.
 
