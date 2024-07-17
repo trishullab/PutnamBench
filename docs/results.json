@@ -2,7 +2,7 @@
     "DSP (GPT-4o)": {
       "link": "https://arxiv.org/abs/2210.12283",
       "open-data": "PARTIAL",
-      "pass@1": {
+      "num-solved": {
         "isabelle-wsolution": 4,
         "isabelle-nosolution": "NONE",
         "lean-wsolution": "NONE",
@@ -16,7 +16,7 @@
     "GPT-4o": {
       "link": "https://openai.com/index/hello-gpt-4o/",
       "open-data": "NONE",
-      "pass@1": {
+      "num-solved": {
         "isabelle-wsolution": 1,
         "isabelle-nosolution": "NONE",
         "lean-wsolution": 1,
@@ -30,7 +30,7 @@
     "COPRA (GPT-4o)": {
       "link": "https://arxiv.org/abs/2310.04353",
       "open-data": "PARTIAL",
-      "pass@1": {
+      "num-solved": {
         "isabelle-wsolution": "NONE",
         "isabelle-nosolution": "NONE",
         "lean-wsolution": 1,
@@ -44,7 +44,7 @@
     "CoqHammer": {
       "link": "https://coqhammer.github.io/",
       "open-data": "FULL",
-      "pass@1": {
+      "num-solved": {
         "isabelle-wsolution": "NONE",
         "isabelle-nosolution": "NONE",
         "lean-wsolution": "NONE",
@@ -58,7 +58,7 @@
     "Sledgehammer": {
       "link": "https://isabelle.in.tum.de/website-Isabelle2009-1/sledgehammer.html",
       "open-data": "FULL",
-      "pass@1": {
+      "num-solved": {
         "isabelle-wsolution": 3,
         "isabelle-nosolution": "NONE",
         "lean-wsolution": "NONE",
@@ -72,7 +72,7 @@
     "ReProver w/ retrieval": {
       "link": "https://arxiv.org/abs/2306.15626",
       "open-data": "FULL",
-      "pass@1": {
+      "num-solved": {
         "isabelle-wsolution": "NONE",
         "isabelle-nosolution": "NONE",
         "lean-wsolution": 0,
@@ -86,7 +86,7 @@
     "ReProver w/o retrieval": {
       "link": "https://arxiv.org/abs/2306.15626",
       "open-data": "FULL",
-      "pass@1": {
+      "num-solved": {
         "isabelle-wsolution": "NONE",
         "isabelle-nosolution": "NONE",
         "lean-wsolution": 0,
@@ -100,7 +100,7 @@
     "Tactician (LSH)": {
       "link": "https://coq-tactician.github.io/",
       "open-data": "FULL",
-      "pass@1": {
+      "num-solved": {
         "isabelle-wsolution": "NONE",
         "isabelle-nosolution": "NONE",
         "lean-wsolution": "NONE",
