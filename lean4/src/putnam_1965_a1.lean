@@ -3,7 +3,7 @@ open BigOperators
 
 open EuclideanGeometry
 
---TODO: (George) Double check for errors here on Lean migration.
+--TODO: (George) Double check for errors here on Lean migration to v4.9.0. Angles do not work with Fin 2 → ℝ, but dist does not work for EuclideanSpace ℝ (Fin 2).
 noncomputable abbrev putnam_1965_a1_solution : ℝ := sorry
 -- Real.pi / 15
 theorem putnam_1965_a1
