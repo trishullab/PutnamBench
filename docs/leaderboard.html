@@ -356,7 +356,7 @@
         // filter out Null
         data = globalData
           .filter((row) => {
-            return (row["num-solved"][score] != null) || (row["num-solved"][score] != "NONE");
+            return (row["num-solved"][score] != null);
           })
           .sort((a, b) => {
             return b["num-solved"][score] - a["num-solved"][score];

@@ -3,12 +3,7 @@
       "link": "https://arxiv.org/abs/2210.12283",
       "open-data": "PARTIAL",
       "num-solved": {
-        "isabelle-wsolution": 4,
-        "isabelle-nosolution": "NONE",
-        "lean-wsolution": "NONE",
-        "lean-nosolution": "NONE",
-        "coq-wsolution": "NONE",
-        "coq-nosolution": "NONE"
+        "isabelle-wsolution": 4
       },
       "size": 0,
       "note": "pass@10 w/ T=0.1"
@@ -18,11 +13,8 @@
       "open-data": "NONE",
       "num-solved": {
         "isabelle-wsolution": 1,
-        "isabelle-nosolution": "NONE",
         "lean-wsolution": 1,
-        "lean-nosolution": "NONE",
-        "coq-wsolution": 1,
-        "coq-nosolution": "NONE"
+        "coq-wsolution": 1
       },
       "size": 0,
       "note": "pass@10 w/ T=0.7"
@@ -31,12 +23,8 @@
       "link": "https://arxiv.org/abs/2310.04353",
       "open-data": "PARTIAL",
       "num-solved": {
-        "isabelle-wsolution": "NONE",
-        "isabelle-nosolution": "NONE",
         "lean-wsolution": 1,
-        "lean-nosolution": "NONE",
-        "coq-wsolution": 1,
-        "coq-nosolution": "NONE"
+        "coq-wsolution": 1
       },
       "size": 0,
       "note": "pass@1 w/ T=0.0"
@@ -45,12 +33,7 @@
       "link": "https://coqhammer.github.io/",
       "open-data": "FULL",
       "num-solved": {
-        "isabelle-wsolution": "NONE",
-        "isabelle-nosolution": "NONE",
-        "lean-wsolution": "NONE",
-        "lean-nosolution": "NONE",
-        "coq-wsolution": 0,
-        "coq-nosolution": "NONE"
+        "coq-wsolution": 0
       },
       "size": 0,
       "note": "pass@1 w/ t=120s"
@@ -59,12 +42,7 @@
       "link": "https://isabelle.in.tum.de/website-Isabelle2009-1/sledgehammer.html",
       "open-data": "FULL",
       "num-solved": {
-        "isabelle-wsolution": 3,
-        "isabelle-nosolution": "NONE",
-        "lean-wsolution": "NONE",
-        "lean-nosolution": "NONE",
-        "coq-wsolution": "NONE",
-        "coq-nosolution": "NONE"
+        "isabelle-wsolution": 3
       },
       "size": 0,
       "note": "pass@1 w/ t=120s"
@@ -73,12 +51,7 @@
       "link": "https://arxiv.org/abs/2306.15626",
       "open-data": "FULL",
       "num-solved": {
-        "isabelle-wsolution": "NONE",
-        "isabelle-nosolution": "NONE",
-        "lean-wsolution": 0,
-        "lean-nosolution": "NONE",
-        "coq-wsolution": "NONE",
-        "coq-nosolution": "NONE"
+        "lean-wsolution": 0
       },
       "size": 0,
       "note": "pass@1 w/ t=600s"
@@ -87,12 +60,7 @@
       "link": "https://arxiv.org/abs/2306.15626",
       "open-data": "FULL",
       "num-solved": {
-        "isabelle-wsolution": "NONE",
-        "isabelle-nosolution": "NONE",
-        "lean-wsolution": 0,
-        "lean-nosolution": "NONE",
-        "coq-wsolution": "NONE",
-        "coq-nosolution": "NONE"
+        "lean-wsolution": 0
       },
       "size": 0,
       "note": "pass@1 w/ t=600s"
@@ -101,12 +69,7 @@
       "link": "https://coq-tactician.github.io/",
       "open-data": "FULL",
       "num-solved": {
-        "isabelle-wsolution": "NONE",
-        "isabelle-nosolution": "NONE",
-        "lean-wsolution": "NONE",
-        "lean-nosolution": "NONE",
-        "coq-wsolution": 0,
-        "coq-nosolution": "NONE"
+        "coq-wsolution": 0
       },
       "size": 0,
       "note": "pass@1 w/ t=600s"
