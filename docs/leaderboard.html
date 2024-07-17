@@ -349,17 +349,17 @@
       //   ],
       // };
 
-      const theaders = ["Model", "pass@1"];
+      const theaders = ["Model", "num-solved"];
 
       // score: 'average', 'humaneval', 'mbpp', 'humaneval+', 'mbpp+'
       const displayTable = (table, score) => {
         // filter out Null
         data = globalData
           .filter((row) => {
-            return row["pass@1"][score] != null;
+            return (row["num-solved"][score] != null) || (row["num-solved"][score] != "NONE");
           })
           .sort((a, b) => {
-            return b["pass@1"][score] - a["pass@1"][score];
+            return b["num-solved"][score] - a["num-solved"][score];
           });
         var thead = document.createElement("thead");
         var headerRow = document.createElement("tr");
@@ -432,9 +432,9 @@
           //   passCell.textContent = "⚡";
           //   passCell.classList.add("text-success");
           // }
-          if (row["pass@1"][score] != "NONE") {
+          if (row["num-solved"][score] != "NONE") {
             passCell.classList.add("text-success");
-            passCell.textContent = ""+row["pass@1"][score];
+            passCell.textContent = ""+row["num-solved"][score];
           }
           dataRow.appendChild(passCell);
           tbody.appendChild(dataRow);
