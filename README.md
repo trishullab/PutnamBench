@@ -4,11 +4,11 @@ PutnamBench is a benchmark for evaluation of theorem-proving algorithms on compe
 
 PutnamBench aims to support research in automated mathematical reasoning by providing a multilingual benchmark for evaluating theorem-proving algorithms. It is released under permissive licenses (Apache 2.0 for Lean 4 and Isabelle, MIT for Coq). The informal statements are also available with permission from the MAA.
 
-We strongly encourage community feedback! Please let us know if you have any comments for improving PutnamBench. If you notice any mistakes, please raise an issue on the repository and we will address it. We kindly ask that you do not write formal proofs for any of the problems in an effort to reduce contamination.
+PutnamBench includes factored solutions for problems which require exhibiting a numerical answer in addition to its proof of correctness. For these problems, one can attempt two tasks: proving the problem with the numerical answer written into the theorem statement, or additionally producing the answer along with the proof.
 
-## Citation
-The associated paper for PutnamBench is {TODO}. Please consider including the following citation if you find PutnamBench useful.
-{TODO}
+We are hosting a [**leaderboard**](https://github.com/trishullab/PutnamBench) and will readily receive evaluation results which are accompanied by a preprint or publication. 
+
+**We strongly encourage community feedback!** Please let us know if you have any comments for improving PutnamBench. If you notice any mistakes, please raise an issue on the repository and we will address it. We kindly ask that you do not write formal proofs for any of the problems in an effort to reduce contamination.
 
 ## Statistics 
 | Language      | Count          |
@@ -17,7 +17,7 @@ The associated paper for PutnamBench is {TODO}. Please consider including the fo
 | Isabelle      | 640            |
 | Coq           | 417            |
 
-We also report the number of problems in a certain category. Note that some problems fall under multiple categories.
+We also report the number of problems in a certain category. Note that some problems fall under multiple categories. While the categories are intended to capture general features of the problems, we indicate that there is a high variance of problems inside an individual category.
 
 | Category         | Total Quantity | 
 | ---------------- | -------------- | 
@@ -31,8 +31,20 @@ We also report the number of problems in a certain category. Note that some prob
 | Probability      | 9              | 
 | Set Theory       | 8              | 
 
-
-
 ## Versioning
 - Version: `v0`
 - In preliminary release to allow for initial community feedback. We seek to release an official first version following several weeks of discussion with the community.
+
+## Citation
+The associated paper for PutnamBench is [available at this link](https://arxiv.org/abs/2407.11214). Please consider including the following citation if you find PutnamBench useful.
+```
+@misc{tsoukalas2024putnambenchevaluatingneuraltheoremprovers,
+      title={PutnamBench: Evaluating Neural Theorem-Provers on the Putnam Mathematical Competition}, 
+      author={George Tsoukalas and Jasper Lee and John Jennings and Jimmy Xin and Michelle Ding and Michael Jennings and Amitayush Thakur and Swarat Chaudhuri},
+      year={2024},
+      eprint={2407.11214},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2407.11214}, 
+}
+```
