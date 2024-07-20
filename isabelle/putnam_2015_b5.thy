@@ -2,7 +2,7 @@ theory putnam_2015_b5 imports Complex_Main
 "HOL-Combinatorics.Permutations"
 begin
 
-definition putnam_2015_b5_solution::nat where "putnam_2015_b5_solution \<equiv> undefined"
+definition putnam_2015_b5_solution :: nat where "putnam_2015_b5_solution \<equiv> undefined"
 (* 4 *)
 theorem putnam_2015_b5:
   fixes P::"nat\<Rightarrow>nat"

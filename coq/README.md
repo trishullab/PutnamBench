@@ -1,5 +1,6 @@
-Here lies the Coq formalizations, currently in the format of batches of formalizations.
+Note: We are continuing to make modifications to the Coq formalizations, in particular those which were recently added. We encourage feedback, but keep this in mind. The format of the formalizations will be standardized with the other languages upon completion.
 
+We also note that while the dependencies listed in each formalization are sufficient to *state* the problem, one may need further mathematical theory developed in Coq to write a proof.
 # Installation
 
 You need to install `opam` and then run `setup.sh` to install the necessary dependencies.

@@ -7,7 +7,7 @@ begin
 theorem putnam_1968_a4:
   fixes n :: nat
   and S :: "nat \<Rightarrow> real^3"
-  assumes hS: "\<forall> i \<in> {0..<n}. (S i $ 1)^2 + (S i $ 2)^2 + (S i $ 3)^2 = 1"
+  assumes hS: "\<forall> i \<in> {0..<n}. dist (S i) 0 = 1"
   shows "(\<Sum> i = 0..<n. \<Sum> j = 0..<n. if i < j then (dist (S i) (S j)) ^ 2 else 0) \<le> n ^ 2"
   sorry 
 

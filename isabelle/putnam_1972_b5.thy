@@ -8,6 +8,8 @@ definition vangle where
   "vangle u v = (if u = 0 \<or> v = 0 then pi / 2 else arccos (u \<bullet> v / (norm u * norm v)))"
 definition angle where
   "angle a b c = vangle (a - b) (c - b)"
+definition coplanar where
+  "coplanar S \<longleftrightarrow> (\<exists>u v. \<forall>x \<in> S. \<forall>y \<in> S. \<exists>c d. x - y = c *\<^sub>R u + d *\<^sub>R v)"
 theorem putnam_1972_b5:
   fixes A B C D :: "real^3"
   assumes hnonplanar : "\<not> coplanar {A,B,C,D}"
