@@ -25,12 +25,15 @@ jobs:
 
     - name: Configure
       run: |
+        cd lean4
         lake exe cache get
 
     - name: Build
       run: |
+        cd lean4
         lake build
 
     - name: Save olean cache
       run: |
+        cd lean4
         lake exe cache pack
