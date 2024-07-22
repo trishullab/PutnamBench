@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/icon.svg">
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
@@ -91,62 +92,68 @@
           <h1 class="title is-1 publication-title">PutnamBench: A Multilingual Competition-Mathematics Benchmark for Formal Theorem-Proving</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://georgetsoukalas.github.io">George Tsoukalas</a><sup>1</sup>,</span>
+              <a href="https://georgetsoukalas.github.io">George Tsoukalas</a>,</span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/jasper-w-lee">Jasper Lee</a><sup>1</sup>,</span>
+              <a href="https://www.linkedin.com/in/jasper-w-lee">Jasper Lee</a>,</span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/john-edward-jennings/">John Jennings</a><sup>1</sup>,
+              <a href="https://www.linkedin.com/in/john-edward-jennings/">John Jennings</a>,
             </span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/jimmyxin31415/">Jimmy Xin</a><sup>1</sup>,
+              <a href="https://www.linkedin.com/in/jimmyxin31415/">Jimmy Xin</a>,
             </span>
             <span class="author-block">
-              <a href="https://www.cs.utexas.edu/~mding01/">Michelle Ding</a><sup>1</sup>,
+              <a href="https://www.cs.utexas.edu/~mding01/">Michelle Ding</a>,
             </span>
             <span class="author-block">
-              <a href="www.linkedin.com/in/michael-henry-jennings">Michael Jennings</a><sup>1</sup>,
+              <a href="www.linkedin.com/in/michael-henry-jennings">Michael Jennings</a>,
             </span>
             <span class="author-block">
-            <a href="https://amit9oct.github.io/aboutme/">Amitayush Thakur</a><sup>1</sup>
+              <a href="https://amit9oct.github.io/aboutme/">Amitayush Thakur</a>,
             </span>
             <span class="author-block">
-            <a href="https://www.cs.utexas.edu/~swarat/">Swarat Chaudhuri</a><sup>1</sup>
+            <a href="https://www.cs.utexas.edu/~swarat/">Swarat Chaudhuri</a>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>UT Austin,</span>
+            <span class="author-block">The University of Texas at Austin</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://github.com/trishullab/putnambench"
+                <a href="https://arxiv.org/pdf/2407.11214"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper: TODO, points to github</span>
+                  <span>Paper</span>
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://github.com/trishullab/putnambench"
+                <a href="https://arxiv.org/abs/2407.11214"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv: TODO, points to github</span>
+                  <span>arXiv</span>
                 </a>
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/trishullab/putnambench"
+                <a href="https://github.com/trishullab/PutnamBench"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Dataset</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="https://trishullab.github.io/PutnamBench/leaderboard.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>🏆 Leaderboard</span>
                   </a>
               </span>
             </div>
@@ -166,13 +173,10 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            TODO: This website is still under construction.
-          </p>
-          <p>
             We present PutnamBench, a new multilingual benchmark for evaluating the ability of neural theorem-provers to solve competition mathematics problems.    
            </p> 
           <p>
-            PutnamBench consists of 1600+ hand-constructed formalizations of problems sourced from the William Lowell Putnam Mathematical Competition, the premier undergraduate-level mathematics competition in North America. 
+            PutnamBench consists of 1697 hand-constructed formalizations of problems sourced from the William Lowell Putnam Mathematical Competition, the premier undergraduate-level mathematics competition in North America. 
             All the theorems, of which there are 640, have formalizations in Lean 4 and Isabelle; a substantial subset also has Coq formalizations.
           </p>
           <p>
@@ -186,15 +190,158 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Formal Theorem-Proving</h2>
+        <div class="content has-text-justified">
+          <p>
+            Formal theorem-proving is the task of proving mathematical theorems specified inside an interactive theorem prover such as Lean, Isabelle, or Coq.
+            These systems allow one to specify theorems and proofs inside a programming language. The correctness of a proof is <em>automatically checked</em> by the compiler.
+           </p> 
+          <p>
+            Informal benchmarks such as MATH and GSM8K measure accuracy by exact match with the ground truth numerical answer. However, the reasoning path might be incorrect and <em>cannot be checked automatically</em> as the problem is specified in natural language. 
+            By contrast, benchmarking formal theorem-proving through PutnamBench allows one to measure a model's capacity to produce precise logical arguments in a mathematical context. Furthermore, since no formal proofs have been written for any of our problems, direct contamination is not possible. When training models for informal reasoning, one must take many more precautions to prevent test-set leakage. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">The William-Lowell Putnam Mathematical Competition</h2>
+        <div class="content has-text-justified">
+          <p>
+            The William Lowell Putnam Mathematical Competition, organized by the Mathematical Association of America (MAA), is the premier collegiate mathematics competition in North America. Thousands of undergraduate students from universities across the United States and Canada take the exam each year. The competition comprises two 3-hour-long sessions of six problems each, presented in approximately ascending order of difficulty within each session.           
+          </p> 
+          <p>
+            The Putnam Competition is known for its challenging problems that require a deep understanding of undergraduate-level mathematics and creative problem-solving ability. The competition includes problems involving concepts from a wide variety of topics in the undergraduate curriculum, including analysis, abstract algebra, and linear algebra.
+          </p>
+          <p>
+            The competition is scored out of 120 points, with the median score typically being zero. The top five individual scorers are named Putnam Fellows, and in recent years regularly include former International Mathematical Olympiad (IMO) medalists. Hence, we find that PutnamBench is a well-suited benchmark for measuring progress towards the <a href="https://aimoprize.com/">Artificial Intelligence Mathematical Olympiad</a> and the <a href="https://imo-grand-challenge.github.io/">IMO Grand Challenge</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">PutnamBench: Multilinguality & Factored Solutions</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>Multilinguality.</b> Most recent work on neural theorem-proving for competition mathematics has been focused in Lean and Isabelle. PutnamBench supports researchers using these tools by incorporating formalizations of all 640 problems in these languages. Previously without a benchmark for competition math, we also include formalizations in Coq, of which there are 417. Formalization obstacles specific to Coq, as mentioned in our paper, prevent us from formalizing all 640 problems. We actively support community feedback and contributions as we continue to iterate on PutnamBench-Coq.  
+          </p> 
+          <p>
+            We hope that the multilinguality of PutnamBench will allow the theorem-proving community to make progress towards general mathematical reasoning machines.
+          </p>
+          <p><b>Factored Solutions.</b>  Roughly 60% of Putnam problems, in their natural language form, require exhibiting a (closed-form) solution along with a proof of its correctness. Such problems do not assert propositions, and hence are not immediately formalizable as they are not directly the statement of a theorem. Prior benchmarks have included the explicit solution in the theorem statement, but this can drastically reduce the problem's overall difficulty, as finding the answer can be the most challenging part. For such problems, we factor out the solution from the theorem statement, allowing two tasks: proving the theorem with the solution provided, and additionally determining the solution.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Evaluations & Leaderboard</h2>
+        <div class="content has-text-justified">
+          <p>
+            We perform evaluations with some recent models, as described in the <a href="https://arxiv.org/pdf/2407.11214">paper</a>. 
+            We find that <b>PutnamBench is hard</b>, with an aggregration of all methodologies tried unable to successfully prove even 1% of theorems. 
+            In particular, few-shot GPT-4o solves <b>only a single problem</b> in each language when allotted 10 attempts. 
+            PutnamBench highlights several deficiencies of large language models (LLMs): weak ability to (1) perform precise logical reasoning, (2) operate in low-resource languages.
+          </p>
+          <p>
+            We are actively maintaining a <a href="https://trishullab.github.io/PutnamBench/leaderboard.html">leaderboard</a> to keep track of progress from upcoming approaches for neural-theorem proving. We will be incorporating results which are accompanied by a research publication (or arxiv preprint) detailing the general methodology.
+          </p> 
+        </div>  
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Sample Problem & Proof</h2>
+        <div class="content has-text-justified">
+          <p><b>Putnam 1988 B1.</b> A composite (positive integer) is a produce \(ab\) with \(a\) and \(b\) not necessarily distinct integers in \(\{2,3,4,\dots\}\). Show that every composite is expressible as \(xy + xz + yz + 1\), with \(x,y,z\) positive integers.</p>
+          <pre><code class="language-lean">
+            theorem putnam_1988_b1 :
+            ∀ a ≥ 2, ∀ b ≥ 2, ∃ x y z : ℤ, 
+              x > 0 ∧ y > 0 ∧ z > 0 ∧ a * b = x * y + x * z + y * z + 1
+            := by
+              intro a ha b hb
+              use a - 1, b - 1, 1
+              constructor
+              linarith
+              constructor
+              linarith
+              constructor
+              linarith
+              ring
+            </code></pre>
+          <p>Here we include a formalization of Putnam 1988 B1 in Lean. The proof is generated by GPT-4o, and crucially requires the choice of \(x,y,z = a-1,b-1,1\). Once this choice is specified, the proof is completed with automated tactics for linear arithmetic and ring manipulations.</p>
+          <p>Putnam 1988 B1 is among the easiest problems to ever appear on the Putnam Competition. We believe progress on PutnamBench will come, in part, as a result of advancements in (1) proof planning & intermediate lemma synthesis and (2) ability to reason about and utilize existing formalized mathematical theory.</p>
+        </div>  
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Licensing & Maintenance</h2>
+        <div class="content has-text-justified">
+          <p>
+            PutnamBench is available under an Apache 2.0 License for Isabelle & Lean, and an MIT License for Coq. With a big thanks to the MAA, we also include the informal problem statements as sourced from the official archives.
+          </p> 
+          <p>
+            PutnamBench will be actively maintained for the foreseeable future. We plan to incorporate problem formalizations from Putnam 2024 in December.</p>
+            <p><b>We are actively encouraging community feedback and discussion.</b> We are interested in hearing how you might plan to use PutnamBench! Your feedback may help us iterate on the structure of PutnamBench, such as incorporating a validation/training split. Please reach out to us if you have (1) suggestions to improve the benchmark, (2) comments on maintaining benchmark longevity and usefulness, (3) noticed issues in certain formalizations which require modification</p>
+          </p>
+        </div>  
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{TODO,
-  author    = {TODO},
-  title     = {TODO},
-  journal   = {TODO},
-  year      = {TODO},
+    <pre><code>@misc{tsoukalas2024putnambenchevaluatingneuraltheoremprovers,
+      title={PutnamBench: Evaluating Neural Theorem-Provers on the Putnam Mathematical Competition}, 
+      author={George Tsoukalas and Jasper Lee and John Jennings and Jimmy Xin and Michelle Ding and Michael Jennings and Amitayush Thakur and Swarat Chaudhuri},
+      year={2024},
+      eprint={2407.11214},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2407.11214}, 
 }</code></pre>
   </div>
 </section>
@@ -215,16 +362,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            we have borrowed this site template from <a href="https://nerfies.github.io/">the Nerfies webpage</a>.
           </p>
         </div>
       </div>

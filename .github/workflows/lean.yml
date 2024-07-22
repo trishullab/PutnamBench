@@ -1,0 +1,36 @@
+on:
+  push:
+  pull_request:
+
+name: build lean
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: install elan
+      run: |
+        set -o pipefail
+        curl -sSfL https://github.com/leanprover/elan/releases/download/v3.1.1/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+        ./elan-init -y --default-toolchain none
+        echo "$HOME/.elan/bin" >> $GITHUB_PATH
+
+    - uses: actions/checkout@v3
+    - name: Set up olean cache
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache
+        key: oleans
+
+    - name: Configure
+      run: |
+        lake exe cache get
+
+    - name: Build
+      run: |
+        lake build
+
+    - name: Save olean cache
+      run: |
+        lake exe cache pack

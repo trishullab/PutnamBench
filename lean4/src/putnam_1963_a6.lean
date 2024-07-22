@@ -3,12 +3,11 @@ open BigOperators
 
 open Topology Filter
 
--- TODO: (George) Euclidean.dist not properly compiling, check again when migrating to v4.9.0
 theorem putnam_1963_a6
-(F1 F2 U V A B C D P Q : EuclideanSpace ℝ (Fin 2))
+(F1 F2 U V A B C D P Q : Fin 2 → ℝ)
 (r : ℝ)
-(E : Set (EuclideanSpace ℝ (Fin 2)) := {H : EuclideanSpace ℝ (Fin 2) | Euclidean.dist F1 H + Euclidean.dist F2 H = r})
-(M : EuclideanSpace ℝ (Fin 2) := midpoint ℝ U V)
+(E : Set (Fin 2 → ℝ) := {H : Fin 2 → ℝ | Euclidean.dist F1 H + Euclidean.dist F2 H = r})
+(M : Fin 2 → ℝ := midpoint ℝ U V)
 (hr : r > Euclidean.dist F1 F2)
 (hUV : U ∈ E ∧ V ∈ E ∧ U ≠ V)
 (hAB : A ∈ E ∧ B ∈ E ∧ A ≠ B)

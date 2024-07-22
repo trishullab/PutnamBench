@@ -3,9 +3,8 @@ open BigOperators
 
 open MeasureTheory
 
--- TODO: (George), does not compile properly on my version, double check when migrating to v4.9.0
 theorem putnam_1962_a3
-(A B C A' B' C' P Q R : EuclideanSpace ℝ (Fin 2))
+(A B C A' B' C' P Q R : Fin 2 → ℝ)
 (k : ℝ)
 (hk : k > 0)
 (hABC : ¬Collinear ℝ {A, B, C})
