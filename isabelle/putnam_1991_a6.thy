@@ -13,7 +13,7 @@ theorem putnam_1991_a6:
   and bg2 :: "nat \<times> (nat \<Rightarrow> nat) \<Rightarrow> bool"
   and B :: "nat \<Rightarrow> nat"
   defines "nabsum \<equiv> \<lambda> (n :: nat) (ab :: nat \<times> (nat \<Rightarrow> nat)). (fst ab) \<ge> 1 \<and> (\<forall> i < fst ab. (snd ab) i > 0) \<and> (\<forall> i \<ge> fst ab. (snd ab) i = 0) \<and> (\<Sum> i = 0 .. fst ab - 1. (snd ab) i) = n"
-  and "agt \<equiv> \<lambda> a :: nat \<times> (nat \<Rightarrow> nat). \<forall> i \<in> {0 .. fst a - 2}. (snd a) i > (snd a) (i + 1) + (snd a) (i + 2)"
+  and "agt \<equiv> \<lambda> a :: nat \<times> (nat \<Rightarrow> nat). (\<forall> i \<in> {0 .. fst a - 3}. (snd a) i > (snd a) (i + 1) + (snd a) (i + 2)) \<and> (snd a) (fst a - 2) > (snd a) (fst a - 1)"
   and "A \<equiv> \<lambda> n :: nat. card {a :: nat \<times> (nat \<Rightarrow> nat). nabsum n a \<and> agt a}"
   and "bge \<equiv> \<lambda> b :: nat \<times> (nat \<Rightarrow> nat). \<forall> i \<in> {0 .. fst b - 2}. (snd b) i \<ge> (snd b) (i + 1)"
   and "bg1 \<equiv> \<lambda> b :: nat \<times> (nat \<Rightarrow> nat). \<forall> i \<in> {0 .. fst b - 1}. \<exists> j :: nat. (snd b) i = g j"
