@@ -2,7 +2,7 @@ theory putnam_2011_a2 imports Complex_Main
 begin
 
 definition putnam_2011_a2_solution :: real where "putnam_2011_a2_solution \<equiv> undefined"
-(* 2/pi *)
+(* 3/2 *)
 theorem putnam_2011_a2:
   fixes a b :: "nat \<Rightarrow> real"
   assumes habn: "\<forall>n::nat. a n > 0 \<and> b n > 0"
