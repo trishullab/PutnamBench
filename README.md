@@ -12,7 +12,7 @@ PutnamBench aims to support research in automated mathematical reasoning by prov
 
 PutnamBench includes factored solutions for problems which require exhibiting a numerical answer in addition to its proof of correctness. For these problems, one can attempt two tasks: proving the problem with the numerical answer written into the theorem statement, or additionally producing the answer along with the proof.
 
-We are hosting a [**leaderboard**](https://trishullab.github.io/PutnamBench/leaderboard.html) and will readily receive evaluation results which are accompanied by a preprint or publication. Do **not** include proofs as confirmation in any public setting. Please reach out to us privately for confirmation. 
+We are hosting a [**leaderboard**](https://trishullab.github.io/PutnamBench/leaderboard.html) and will readily receive evaluation results which are accompanied by a preprint or publication. **Do not** include proofs as confirmation in any public setting. Please reach out privately at `george.tsoukalas@utexas.edu` with any requests for additions to the leaderboard. 
 
 **We strongly encourage community feedback!** Please let us know if you have any comments for improving PutnamBench. If you notice any mistakes, please raise an issue on the repository and we will address it. We kindly ask that you do not write formal proofs for any of the problems in an effort to reduce contamination.
 
@@ -23,7 +23,7 @@ We are hosting a [**leaderboard**](https://trishullab.github.io/PutnamBench/lead
 | Isabelle      | 640            |
 | Coq           | 417            |
 
-We also report the number of problems in a certain category. Note that some problems fall under multiple categories. While the categories are intended to capture general features of the problems, we indicate that there is a high variance of problems inside an individual category.
+We also report the number of problems in a certain category. Note that some problems fall under multiple categories. While the categories are intended to capture general features of the problems, we also note that there is a high variance of problems inside an individual category.
 
 | Category         | Total Quantity | 
 | ---------------- | -------------- | 

@@ -349,7 +349,7 @@
       //   ],
       // };
 
-      const theaders = ["Model", "num-solved"];
+      const theaders = ["Model", "num-solved", "compute"];
 
       // score: 'average', 'humaneval', 'mbpp', 'humaneval+', 'mbpp+'
       const displayTable = (table, score) => {
@@ -425,7 +425,7 @@
             modelCell.appendChild(promptedSymbol);
           }
           dataRow.appendChild(modelCell);
-          var passCell = document.createElement("td");
+          var solvedCell = document.createElement("td");
           // if (table == originTable) {
           //   passCell.classList.add("text-danger");
           // } else if (table == plusedTable) {
@@ -433,10 +433,13 @@
           //   passCell.classList.add("text-success");
           // }
           if (row["num-solved"][score] != "NONE") {
-            passCell.classList.add("text-success");
-            passCell.textContent = ""+row["num-solved"][score];
+            solvedCell.classList.add("text-success");
+            solvedCell.textContent = ""+row["num-solved"][score];
           }
-          dataRow.appendChild(passCell);
+          var computeCell = document.createElement("td");
+          computeCell.textContent = row["condensed-compute-budget"];
+          dataRow.appendChild(solvedCell);
+          dataRow.appendChild(computeCell);
           tbody.appendChild(dataRow);
         });
         table.appendChild(tbody);
