@@ -8,7 +8,7 @@ Theorem putnam_2006_b6
     (A := fix a (n: nat) : R :=
         match n with
         | O => a0
-        | S n' => a n' + 1 / (a n') ^ (1 / k)
+        | S n' => a n' + Rpower (1 / (a n')) (1 / INR k)
     end)
     : Lim_seq (fun n => (A n) ^ (k + 1) / INR n ^ k) = putnam_2006_b6_solution k.
 Proof. Admitted.
