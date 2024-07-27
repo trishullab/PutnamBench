@@ -6,6 +6,7 @@
         "isabelle-wsolution": 4
       },
       "size": 0,
+      "condensed-compute-budget": "pass@10",
       "note": "pass@10 w/ T=0.1"
     },
     "GPT-4o": {
@@ -17,6 +18,7 @@
         "coq-wsolution": 1
       },
       "size": 0,
+      "condensed-compute-budget": "pass@10",
       "note": "pass@10 w/ T=0.7"
     },
     "COPRA (GPT-4o)": {
@@ -27,6 +29,7 @@
         "coq-wsolution": 1
       },
       "size": 0,
+      "condensed-compute-budget": "pass@1",
       "note": "pass@1 w/ T=0.0"
     },
     "CoqHammer": {
@@ -36,6 +39,7 @@
         "coq-wsolution": 0
       },
       "size": 0,
+      "condensed-compute-budget": "pass@1",
       "note": "pass@1 w/ t=120s"
     },
     "Sledgehammer": {
@@ -45,6 +49,7 @@
         "isabelle-wsolution": 3
       },
       "size": 0,
+      "condensed-compute-budget": "pass@1",
       "note": "pass@1 w/ t=120s"
     },
     "ReProver w/ retrieval": {
@@ -54,6 +59,7 @@
         "lean-wsolution": 0
       },
       "size": 0,
+      "condensed-compute-budget": "pass@1",
       "note": "pass@1 w/ t=600s"
     },
     "ReProver w/o retrieval": {
@@ -63,6 +69,7 @@
         "lean-wsolution": 0
       },
       "size": 0,
+      "condensed-compute-budget": "pass@1",
       "note": "pass@1 w/ t=600s"
     },
     "Tactician (LSH)": {
@@ -72,6 +79,17 @@
         "coq-wsolution": 0
       },
       "size": 0,
+      "condensed-compute-budget": "pass@1",
       "note": "pass@1 w/ t=600s"
+    },
+    "InternLM 7B": {
+      "link": "https://github.com/InternLM/InternLM-Math",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 4
+      },
+      "size": 7,
+      "condensed-compute-budget": "pass@4096",
+      "note": "pass@2048 w/ T = 1.0 + pass@2048 w/ T = 0.7"
     }
 }

@@ -4,7 +4,7 @@ open BigOperators
 open Topology Filter
 
 noncomputable abbrev putnam_2011_a2_solution : ℝ := sorry
--- 2/Real.pi
+-- 3/2
 theorem putnam_2011_a2
 (a b : ℕ → ℝ)
 (habn : ∀ n : ℕ, a n > 0 ∧ b n > 0)
