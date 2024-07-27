@@ -20,19 +20,17 @@ def rewrite_solutions(file):
                 solution = lines[i + 1].split('--')[1].strip()
                 # the type comes between the first and second colon in the ith line
                 # the solution comes after the second colon in the ith line
-                # TODO: actually get the thing between the first : and the last := or last :
                 type = lines[i].split(':')[1].strip()
                 solution_dictionary[solution_name] = {'solution' : solution.replace("\n", ""), 'type' : type}
-        print(solution_dictionary)
 
-    with open(f"/home/gtsoukal/Projects/PUTNAM/lean4/solutions_replaced_new/{problem_name}_sol.lean", "w") as f:
+    with open(f"/lean4/solutions_replaced_new/{problem_name}_sol.lean", "w") as f:
         for line in lines:
             for solution_name, solution in solution_dictionary.items():
                 if solution_name in line and 'abbrev' not in line:
                     if solution['solution'][0] == '(' and solution['solution'][-1] == ')':
                         solution['solution'] = solution['solution'][1:-1]
                     line = line.replace(solution_name, f"(({solution['solution']}) : {solution['type']})")
-            if 'abbrev' in line: # TODO: Modify this on release
+            if 'abbrev' in line:
                 continue
             f.write(line)
 

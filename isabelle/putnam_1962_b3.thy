@@ -1,7 +1,8 @@
 theory putnam_1962_b3 imports Complex_Main
 "HOL-Analysis.Finite_Cartesian_Product"
-"HOL-Analysis.Linear_Algebra"
+"HOL-Analysis.Convex"
 "HOL-Analysis.Elementary_Topology"
+"HOL-Analysis.Elementary_Metric_Spaces"
 begin
 
 theorem putnam_1962_b3:

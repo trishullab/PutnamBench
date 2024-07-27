@@ -1,8 +1,8 @@
-theory putnam_2022_b1 imports Complex_Main
+theory putnam_2022_b1 imports Complex_Main "HOL-Computational_Algebra.Polynomial"
 begin
 
 theorem putnam_2022_b1:
-  fixes n :: nat
+  fixes n ::nat
   and P :: "real poly"
   and B :: "real poly"
   assumes npos: "n \<ge> 1"

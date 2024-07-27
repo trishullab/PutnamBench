@@ -11,5 +11,5 @@ Theorem putnam_2014_a3
         | O => 5 / 2
         | S n' => (a n') ^ 2 - 2
     end)
-    : Lim_seq (fun n => prodn (fun k => 1 - 1 / A k) n) = putnam_2014_a3_solution.
+    : Lim_seq (fun n : nat => prodn (fun k => 1 - 1 / A k) n) = putnam_2014_a3_solution.
 Proof. Admitted.
