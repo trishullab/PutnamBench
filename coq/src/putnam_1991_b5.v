@@ -4,8 +4,8 @@ Definition putnam_1991_b5_solution (p: nat) : nat := p / 4 + 1.
 Theorem putnam_1991_b5 
     (p: nat)
     (hp : odd p = true /\ prime (Z.of_nat p))
-    (A: Ensemble Z := fun z => exists (m: 'I_p), z = Z.of_nat (pow (nat_of_ord m) 2))
-    (B: Ensemble Z := fun z => exists (m: 'I_p), z = Z.of_nat (pow (nat_of_ord m) 2 + 1))
+    (A: Ensemble Z := fun z => exists (m: 'I_p), z = Z.of_nat (pow (nat_of_ord m) 2) mod (Z.of_nat p))
+    (B: Ensemble Z := fun z => exists (m: 'I_p), z = Z.of_nat (pow (nat_of_ord m) 2 + 1) mod (Z.of_nat p))
     (C : Ensemble Z := Intersection Z A B)
     : cardinal Z C (putnam_1991_b5_solution p).
 Proof. Admitted.

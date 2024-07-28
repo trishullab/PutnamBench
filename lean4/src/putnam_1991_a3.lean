@@ -9,8 +9,7 @@ abbrev putnam_1991_a3_solution : Set (Polynomial ℝ) := sorry
 theorem putnam_1991_a3
 (p : Polynomial ℝ)
 (n : ℕ)
-(pr : Prop)
 (hn : n = p.degree)
-(hpr : pr = ∃ r : ℕ → ℝ, (∀ i : Fin (n - 1), r i < r (i + 1)) ∧ (∀ i : Fin n, p.eval (r i) = 0) ∧ (∀ i : Fin (n - 1), (Polynomial.derivative p).eval ((r i + r (i + 1)) / 2) = 0))
-: (n ≥ 2 ∧ pr) ↔ p ∈ putnam_1991_a3_solution :=
+(hge : n ≥ 2)
+: (∃ r : ℕ → ℝ, (∀ i : Fin (n - 1), r i < r (i + 1)) ∧ (∀ i : Fin n, p.eval (r i) = 0) ∧ (∀ i : Fin (n - 1), (Polynomial.derivative p).eval ((r i + r (i + 1)) / 2) = 0)) ↔ p ∈ putnam_1991_a3_solution :=
 sorry
