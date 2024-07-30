@@ -1,6 +1,6 @@
 import Mathlib
 open BigOperators
-#check dist
+
 open EuclideanGeometry Set Metric
 
 theorem putnam_1972_b5
