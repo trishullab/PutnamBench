@@ -24,13 +24,16 @@ jobs:
         key: oleans
 
     - name: Configure
+      working-directory: lean4
       run: |
         lake exe cache get
 
     - name: Build
+      working-directory: lean4
       run: |
         lake build
 
     - name: Save olean cache
+      working-directory: lean4
       run: |
         lake exe cache pack

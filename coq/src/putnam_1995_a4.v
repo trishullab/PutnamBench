@@ -1,9 +1,14 @@
-Require Import Reals ZArith Coquelicot.Coquelicot.
+Require Import Nat ZArith Coquelicot.Coquelicot.
+Open Scope Z_scope.
+Fixpoint Z_sum (a : nat -> Z) (k : nat) : Z := 
+    match k with
+    | O => a O
+    | S k' => a k + Z_sum a k'
+    end.
 Theorem putnam_1995_a4
     (n : nat)
     (hn : gt n 0)
-    (necklace : nat -> R)
-    (hnecklaceint : forall i : nat, exists k : Z, necklace i = IZR k)
-    (hnecklacesum : sum_n necklace n = INR n - 1)
-    : exists cut : nat, le cut (n-1) /\ (forall k : nat, le k (n-1) -> (sum_n (fun i => necklace ((cut + i) mod n)) k) <= INR k).
+    (necklace : nat -> Z)
+    (hnecklacesum : Z_sum necklace (n - 1) = (Z.of_nat n) - 1)
+    : exists cut : nat, le cut (n-1) /\ (forall k : nat, le k (n-1) -> (Z_sum (fun i => necklace (Nat.modulo (cut + i) n)) k) <= Z.of_nat k).
 Proof. Admitted.

@@ -1,11 +1,7 @@
 Require Import Reals Coquelicot.Coquelicot.
 Theorem putnam_2004_a3
-    (U := fix u (n: nat) : R:=
-        match n with
-        | O => 1
-        | S O => 1
-        | S (S O) => 1
-        | S ((S (S n''') as n'') as n') => (INR (fact n) + u n'' * u n') / u n'''
-    end) 
-    : forall (n: nat), U n = IZR (floor (U n)).
+    (u : nat -> R)
+    (hubase : u O = 1 /\ u (S O) = 1 /\ u (S (S O)) = 1)
+    (hudet : forall n : nat, u n * u (Nat.add n 3) - u (Nat.add n 1) * u (Nat.add n 2) = INR (fact n))
+    : forall n : nat, exists m : Z, u n = IZR m.
 Proof. Admitted.
