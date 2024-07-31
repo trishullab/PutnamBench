@@ -9,7 +9,7 @@ Theorem putnam_1994_b4
     end)
     (Mmultn := fix Mmult_n {T : Ring} {n : nat} (A : matrix n n) (p : nat) :=
         match p with
-        | O => A
+        | O => mk_matrix n n (fun i j : nat => if Nat.eqb i j then one else zero)
         | S p' => @Mmult T n n n A (Mmult_n A p')
     end)
     (A := mk_matrix 2 2 (fun i j => 
