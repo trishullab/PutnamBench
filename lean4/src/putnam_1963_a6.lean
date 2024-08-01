@@ -4,11 +4,11 @@ open BigOperators
 open Topology Filter
 
 theorem putnam_1963_a6
-(F1 F2 U V A B C D P Q : Fin 2 → ℝ)
+(F1 F2 U V A B C D P Q : EuclideanSpace ℝ (Fin 2))
 (r : ℝ)
-(E : Set (Fin 2 → ℝ) := {H : Fin 2 → ℝ | Euclidean.dist F1 H + Euclidean.dist F2 H = r})
-(M : Fin 2 → ℝ := midpoint ℝ U V)
-(hr : r > Euclidean.dist F1 F2)
+(E : Set (Fin 2 → ℝ) := {H : EuclideanSpace ℝ (Fin 2) | dist F1 H + dist F2 H = r})
+(M : EuclideanSpace ℝ (Fin 2) := midpoint ℝ U V)
+(hr : r > dist F1 F2)
 (hUV : U ∈ E ∧ V ∈ E ∧ U ≠ V)
 (hAB : A ∈ E ∧ B ∈ E ∧ A ≠ B)
 (hCD : C ∈ E ∧ D ∈ E ∧ C ≠ D)
