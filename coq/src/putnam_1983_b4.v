@@ -1,12 +1,13 @@
-Require Import Reals Coquelicot.Coquelicot.
-Open Scope R.
+Require Import ZArith Reals Coquelicot.Coquelicot.
+Open Scope Z_scope.
 Theorem putnam_1983_b4
-    (m: nat)
-    (f : R -> R := fun n => n + IZR (floor (sqrt n)))
+    (m : Z)
+    (hm : m > 0)
+    (f : Z -> Z := fun n => n + floor (sqrt (IZR n)))
     (A := fix a (n: nat) :=
         match n with
-        | O => INR m
+        | O => m
         | S n' => f (a n')
     end)
-    : exists (i: nat) (q: Z), A i = IZR (floor (A i)) /\ floor (A i) = Z.mul q q.
+    : exists (i : nat) (s : Z), A i = s^2.
 Proof. Admitted.
