@@ -6,7 +6,8 @@ open Set
 abbrev putnam_1980_b5_solution : ℝ → Prop := sorry
 -- fun t : ℝ => 1 ≥ t
 theorem putnam_1980_b5
-(T : Set ℝ := Icc 0 1)
+(T : Set ℝ)
+(hT : T = Icc 0 1)
 (P : ℝ → (ℝ → ℝ) → Prop)
 (Convex : (ℝ → ℝ) → Prop)
 (S : ℝ → Set (ℝ → ℝ))
