@@ -8,9 +8,9 @@ noncomputable abbrev putnam_1998_b2_solution : ℝ → ℝ → ℝ := sorry
 theorem putnam_1998_b2
 (a b : ℝ)
 (hab : 0 < b ∧ b < a)
-: sInf {d : ℝ | ∃ (c : ℝ) (x : ℝ), d = Euclidean.dist (a, b) (c, 0) + Euclidean.dist (c, 0) (x, x) + Euclidean.dist (a, b) (x, x) ∧
-  Euclidean.dist (a, b) (c, 0) + Euclidean.dist (c, 0) (x, x) > Euclidean.dist (a, b) (x, x) ∧
-  Euclidean.dist (a, b) (c, 0) + Euclidean.dist (a, b) (x, x) > Euclidean.dist (c, 0) (x, x) ∧
-  Euclidean.dist (c, 0) (x, x) + Euclidean.dist (a, b) (x, x) > Euclidean.dist (a, b) (c, 0)}
+: sInf {d : ℝ | ∃ (c : ℝ) (x : ℝ), d = Real.sqrt ((a - c)^2 + (b - 0)^2) +  Real.sqrt ((c - x)^2 + (0 - x)^2) + Real.sqrt ((a - x)^2 + (b - x)^2) ∧
+  Real.sqrt ((a - c)^2 + (b - 0)^2) + Real.sqrt ((c - x)^2 + (0 - x)^2) > Real.sqrt ((a - x)^2 + (b - x)^2) ∧
+  Real.sqrt ((a - c)^2 + (b - 0)^2) + Real.sqrt ((a - x)^2 + (b - x)^2) > Real.sqrt ((c - x)^2 + (0 - x)^2) ∧
+  Real.sqrt ((c - x)^2 + (0 - x)^2) + Real.sqrt ((a - x)^2 + (b - x)^2) > Real.sqrt ((a - c)^2 + (b - 0)^2)}
  = putnam_1998_b2_solution a b :=
 sorry

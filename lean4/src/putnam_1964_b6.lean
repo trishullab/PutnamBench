@@ -4,7 +4,7 @@ open BigOperators
 open Set Function Filter Topology
 
 theorem putnam_1964_b6
-(D : Set (Fin 2 → ℝ) := {v : Fin 2 → ℝ | Euclidean.dist 0 v ≤ 1})
-(cong : Set (Fin 2 → ℝ) → Set (Fin 2 → ℝ) → Prop := fun A B ↦ ∃ f : (Fin 2 → ℝ) → (Fin 2 → ℝ), B = f '' A ∧ ∀ v w : Fin 2 → ℝ, Euclidean.dist v w = Euclidean.dist (f v) (f w))
+(D : Set (EuclideanSpace ℝ (Fin 2)) := {v : EuclideanSpace ℝ (Fin 2) | dist 0 v ≤ 1})
+(cong : Set (EuclideanSpace ℝ (Fin 2)) → Set (EuclideanSpace ℝ (Fin 2)) → Prop := fun A B ↦ ∃ f : (EuclideanSpace ℝ (Fin 2)) → (EuclideanSpace ℝ (Fin 2)), B = f '' A ∧ ∀ v w : EuclideanSpace ℝ (Fin 2), dist v w = dist (f v) (f w))
 : (¬∃ A B : Set (Fin 2 → ℝ), cong A B ∧ A ∩ B = ∅ ∧ A ∪ B = D) :=
 sorry

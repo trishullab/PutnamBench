@@ -6,5 +6,5 @@ open Filter Topology Nat
 abbrev putnam_1990_a4_solution : ℕ := sorry
 -- 3
 theorem putnam_1990_a4
-: sInf {n : ℕ | ∃ S : Set (Fin 2 → ℝ), S.encard = n ∧ ∀ Q : Fin 2 → ℝ, ∃ P ∈ S, Irrational (Euclidean.dist P Q)} = putnam_1990_a4_solution :=
+: sInf {n : ℕ | ∃ S : Set (EuclideanSpace ℝ (Fin 2)), S.encard = n ∧ ∀ Q : EuclideanSpace ℝ (Fin 2), ∃ P ∈ S, Irrational (dist P Q)} = putnam_1990_a4_solution :=
 sorry
