@@ -12,7 +12,7 @@ theorem putnam_1996_b1:
   and n :: nat
   defines "selfish \<equiv> \<lambda> s. card s \<in> s"
   assumes npos: "n \<ge> 1"
-  shows "card {s :: nat set. s \<subseteq> {1..n} \<and> selfish s \<and> (\<forall> ss :: nat set. ss \<subseteq> s \<longrightarrow> \<not>selfish ss)} = putnam_1996_b1_solution n"
+  shows "card {s :: nat set. s \<subseteq> {1..n} \<and> selfish s \<and> (\<forall> ss :: nat set. ss \<subset> s \<longrightarrow> \<not>selfish ss)} = putnam_1996_b1_solution n"
   sorry
 
 end

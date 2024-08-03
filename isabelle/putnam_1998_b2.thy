@@ -6,7 +6,7 @@ definition putnam_1998_b2_solution::"real\<Rightarrow>real\<Rightarrow>real" whe
 theorem putnam_1998_b2:
   fixes a b::real
   assumes hab : "0 < b \<and> b < a"
-  shows "putnam_1998_b2_solution a b = (LEAST p. \<exists>c x::real. p = dist (a, b) (c, 0) + dist (c, 0) (x, x) + dist (a, b) (x, x) \<and> 
+  shows "putnam_1998_b2_solution a b = (LEAST p::real. \<exists>c x::real. p = dist (a, b) (c, 0) + dist (c, 0) (x, x) + dist (a, b) (x, x) \<and> 
     dist (a, b) (c, 0) + dist (c, 0) (x, x) > dist (a, b) (x, x) \<and>
     dist (a, b) (c, 0) + dist (a, b) (x, x) > dist (c, 0) (x, x) \<and>
     dist (c, 0) (x, x) + dist (a, b) (x, x) > dist (a, b) (c, 0))"
