@@ -8,7 +8,7 @@ theorem putnam_2012_b1
 (rngS : ∀ f ∈ S, ∀ x : Set.Ici (0 : ℝ), f x ∈ Set.Ici (0 : ℝ))
 (f1 : Set.Ici (0 : ℝ) → ℝ)
 (hf1 : f1 = fun (x : Set.Ici (0 : ℝ)) ↦ exp x - 1)
-(f2 : Set.Ici (0 : ℝ) → ℝ )
+(f2 : Set.Ici (0 : ℝ) → ℝ)
 (hf2 : f2 = fun (x : Set.Ici (0 : ℝ)) ↦ Real.log (x + 1))
 (hf1mem : f1 ∈ S)
 (hf2mem : f2 ∈ S)

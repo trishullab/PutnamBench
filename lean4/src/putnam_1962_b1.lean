@@ -1,8 +1,6 @@
 import Mathlib
 open BigOperators
 
-open MeasureTheory
-
 theorem putnam_1962_b1
 (p : ℕ → ℝ → ℝ)
 (x y : ℝ)
