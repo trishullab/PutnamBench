@@ -9,6 +9,7 @@ theorem putnam_2016_a5
 (g h : G)
 (ghgen : Group.closure {g, h} = G ∧ ¬Group.closure {g} = G ∧ ¬Group.closure {h} = G)
 (godd : Odd (orderOf g))
-(S : Set G := {g * h, g⁻¹ * h, g * h⁻¹, g⁻¹ * h⁻¹})
+(S : Set G)
+(hS : S = {g * h, g⁻¹ * h, g * h⁻¹, g⁻¹ * h⁻¹})
 : (∀ x : G, ∃ mn : List G, 1 ≤ mn.length ∧ mn.length ≤ Gfin.card ∧ ∀ i : Fin mn.length, mn.get i ∈ S ∧ x = List.prod mn) :=
 sorry

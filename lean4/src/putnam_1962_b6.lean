@@ -4,11 +4,13 @@ open BigOperators
 open MeasureTheory
 
 theorem putnam_1962_b6
-(π : ℝ := Real.pi)
+(π : ℝ)
+(hπ : π = Real.pi)
 (n : ℕ)
 (a b : ℕ → ℝ)
 (xs : Set ℝ)
-(f : ℝ → ℝ := fun x : ℝ => ∑ k in Finset.Icc 0 n, ((a k) * Real.sin (k * x) + (b k) * Real.cos (k * x)))
+(f : ℝ → ℝ)
+(hf : f = fun x : ℝ => ∑ k in Finset.Icc 0 n, ((a k) * Real.sin (k * x) + (b k) * Real.cos (k * x)))
 (hf1 : ∀ x ∈ Set.Icc 0 (2 * π), |f x| ≤ 1)
 (hxs : xs.ncard = 2 * n ∧ xs ⊆ Set.Ico 0 (2 * π))
 (hfxs : ∀ x ∈ xs, |f x| = 1)

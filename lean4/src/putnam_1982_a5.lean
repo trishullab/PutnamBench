@@ -1,8 +1,6 @@
 import Mathlib
 open BigOperators
 
-open Set Function Filter Topology Polynomial Real
-
 theorem putnam_1982_a5
 (a b c d : ℤ)
 (hpos : a > 0 ∧ b > 0 ∧ c > 0 ∧ d > 0)
