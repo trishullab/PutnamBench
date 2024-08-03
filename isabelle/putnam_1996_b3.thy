@@ -3,7 +3,7 @@ Complex_Main
 begin
 
 definition putnam_1996_b3_solution :: "nat \<Rightarrow> nat" where "putnam_1996_b3_solution \<equiv> undefined"
-(* \<lambda> n :: nat. (2 * n ^ 3 + 3 * n ^ 2 - 11 * n + 18) div 6 *) 
+(* \<lambda> n :: nat. (2 * n ^ 3 + 3 * n ^ 2 + 18 - 11 * n) div 6 *)
 theorem putnam_1996_b3:
   fixes n :: nat
   and xset :: "(nat \<Rightarrow> nat) \<Rightarrow> bool"

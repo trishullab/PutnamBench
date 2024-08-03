@@ -9,5 +9,5 @@ theorem putnam_1998_a4
 (hA1 : A 1 = 0)
 (hA2 : A 2 = 1)
 (hA : ∀ n : ℕ, n > 2 → A n = Nat.ofDigits 10 (Nat.digits 10 (A (n - 2)) ++ Nat.digits 10 (A (n - 1))))
-: putnam_1998_a4_solution = {n | 11 ∣ A n} :=
+: putnam_1998_a4_solution = {n | n ≥ 1 ∧ (11 ∣ A n)} :=
 sorry
