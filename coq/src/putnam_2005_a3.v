@@ -1,9 +1,11 @@
 Require Import Reals Coquelicot.Coquelicot. From Coqtail Require Import Cpow.
 Theorem putnam_2005_a3
-    (c : nat -> Z)
+    (csqrt : C -> C)
+    (c : nat -> C)
     (n : nat)
-    (p := fun z : C => sum_n (fun i => IZR (c i) * Cpow z i) (n + 1))
-    : forall (r: C), p r = 0 ->  r = RtoC (-1) /\ r = RtoC 1 ->
-    let g (z: C) := p z / Cpow z (n / 2) in
-    forall (r: C), g r = 0 ->  r = RtoC (-1) /\ r = RtoC 1.
+    (p : C -> C := fun z : C => sum_n (fun i => c i * z^i) n)
+    (g : C -> C := fun z : C => p z / csqrt (z^n))
+    (pzeros : forall z : C, p z = 0 -> norm z = 1%R)
+    (hcsqrt : forall z : C, (csqrt z)^2 = z /\ Re (csqrt z) >= 0 /\ (Re (csqrt z) = 0%R -> Im (csqrt z) >= 0%R)) 
+    : forall z : C, C_derive g z = 0 -> norm z = 1%R.
 Proof. Admitted.

@@ -1,4 +1,4 @@
-(* Note: This formalization is only a statement finite groups (due to mathcomp), but the idea ot the problem does not rely on the cardinal of the group, so we include it*)
+(* Note: This formalization is only a statement finite groups (due to mathcomp), but the idea of the problem does not rely on the cardinal of the group, so we include it*)
 Require Import Basics. From mathcomp Require Import fingroup.
 Open Scope group_scope.
 Variable T : finGroupType.

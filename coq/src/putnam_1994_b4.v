@@ -1,6 +1,5 @@
 Require Import Nat List Reals Coquelicot.Coquelicot. 
 Import ListNotations.
-Open Scope R.
 Theorem putnam_1994_b4 
     (gcdn := fix gcd_n (args : list nat) : nat :=
         match args with
@@ -9,7 +8,7 @@ Theorem putnam_1994_b4
     end)
     (Mmultn := fix Mmult_n {T : Ring} {n : nat} (A : matrix n n) (p : nat) :=
         match p with
-        | O => A
+        | O => mk_matrix n n (fun i j : nat => if Nat.eqb i j then one else zero)
         | S p' => @Mmult T n n n A (Mmult_n A p')
     end)
     (A := mk_matrix 2 2 (fun i j => 
@@ -29,5 +28,5 @@ Theorem putnam_1994_b4
                               Z.to_nat (floor (coeff_mat 0 (dn_mat n) 0 1)); 
                               Z.to_nat (floor (coeff_mat 0 (dn_mat n) 1 0)); 
                               Z.to_nat (floor (coeff_mat 0 (dn_mat n) 1 1))])
-    : ~ ex_lim_seq (fun n => INR (dn n)).
+    : forall k : nat, exists N : nat, forall n : nat, ge n N -> ge (dn n) k.
 Proof. Admitted.

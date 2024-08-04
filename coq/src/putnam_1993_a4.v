@@ -1,16 +1,13 @@
 Require Import List Bool Reals Peano_dec Coquelicot.Coquelicot.
 Open Scope nat_scope.
+Fixpoint s_sum (a : nat -> nat) (k : nat) (s : nat -> bool) : nat := 
+    match k with
+    | O => a 0
+    | S k' => (if s k then a k else 0) + s_sum a k' s
+    end.
 Theorem putnam_1993_a4 
-    (x y: list nat)
-    (hx : length x = 19)
-    (hy : length y = 93)
-    (hx2 : forall n : nat, In n x -> 1 < n <= 93)
-    (hy2 : forall n  : nat, In n y -> 1 < n <= 19)
-    : exists (presentx presenty : nat -> bool), 
-    sum_n (fun n => 
-        if ((existsb (fun i => if eq_nat_dec n i then true else false) x) && presentx n) 
-        then (INR n) else R0) 94 = 
-    sum_n (fun n => 
-        if ((existsb (fun i => if eq_nat_dec n i then true else false) y) && presenty n) 
-        then (INR n) else R0) 20. 
+    (x y : nat -> nat)
+    (hx : forall i : nat, i < 19 -> 1 <= x i <= 93)
+    (hy : forall j : nat, j < 93 -> 1 <= y j <= 19)
+    : exists (is js : nat -> bool), (exists i : nat, i < 19 /\ is i = true) /\ s_sum x 18 is = s_sum y 92 js.
 Proof. Admitted.

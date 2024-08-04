@@ -1,5 +1,6 @@
 theory putnam_2005_a3 imports Complex_Main
 "HOL-Computational_Algebra.Polynomial"
+"HOL-Analysis.Derivative"
 begin
 
 theorem putnam_2005_a3:
