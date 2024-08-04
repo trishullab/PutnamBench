@@ -1,13 +1,11 @@
 import Mathlib
 open BigOperators
 
-open EuclideanGeometry
+open EuclideanGeometry Real
 
 noncomputable abbrev putnam_1965_a1_solution : ℝ := sorry
 -- Real.pi / 15
 theorem putnam_1965_a1
-(π : ℝ)
-(hπ : π = Real.pi)
 (A B C X Y : EuclideanSpace ℝ (Fin 2))
 (hABC : ¬Collinear ℝ {A, B, C})
 (hangles : ∠ C A B < ∠ B C A ∧ ∠ B C A < π/2 ∧ π/2 < ∠ A B C)

@@ -1,11 +1,9 @@
 import Mathlib
 open BigOperators
 
-open MeasureTheory
+open MeasureTheory Real
 
 theorem putnam_1962_b6
-(π : ℝ)
-(hπ : π = Real.pi)
 (n : ℕ)
 (a b : ℕ → ℝ)
 (xs : Set ℝ)
