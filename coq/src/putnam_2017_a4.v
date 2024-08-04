@@ -8,7 +8,7 @@ Theorem putnam_2017_a4
     (E_bool : nat -> bool)
     : 
     exists (presS: nat -> Prop) (E: Ensemble nat), cardinal nat E N /\ 
-    forall (n: nat), E n <-> (presS n /\ and (le 0 n) (le n 10)) /\
+    (forall (n: nat), E n <-> (presS n /\ and (le 0 n) (le n 10))) /\
     (forall i, E_bool i = true <-> E i) /\
     (sum_n (fun i => if (E_bool i) then INR (nat_of_ord (score i)) else 0) N) / INR N = 7.4 /\
     (sum_n (fun i => if E_bool i then 0 else INR (nat_of_ord (score i))) N) / INR N = 7.4.

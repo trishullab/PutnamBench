@@ -1,0 +1,569 @@
+<!doctype html>
+<html>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400&display=swap"
+    rel="stylesheet"
+  />
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>PutnamBench Leaderboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+    <!-- favicon.svg -->
+    <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👍</text></svg>"> -->
+    <!-- <link rel="icon" href="/favicon.svg" /> -->
+    <link
+      rel="icon"
+      href="/static/images/icon.svg"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+    />
+
+    <style>
+      body {
+        font-family: "JetBrains Mono", monospace;
+        background-color: #ffffff;
+        color: #000000;
+      }
+
+      #content {
+        width: 75%;
+      }
+
+      th,
+      td {
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      #notes {
+        font-size: 1em;
+      }
+
+      #notes h3 {
+        margin-top: 1em;
+        font-size: 2em;
+        text-align: center;
+      }
+
+      #notes li {
+        font-size: 1.2em;
+        font-weight: 300;
+        margin: 1em;
+      }
+
+      .form-select {
+        font-size: 1em;
+      }
+
+      @media screen and (max-width: 1400px) {
+        body {
+          font-size: 1.6vw;
+        }
+
+        #content {
+          width: 100%;
+        }
+
+        h1 {
+          font-size: 2em;
+        }
+
+        h2 {
+          font-size: 1.6em;
+        }
+
+        h3 {
+          font-size: 1.2em;
+        }
+
+        table {
+          font-size: small;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      id="content"
+      class="container-fluid d-flex flex-column align-items-center gap-3"
+    >
+      <h1 class="text-nowrap mt-5">🏆 PutnamBench Leaderboard 🏆</h1>
+      <h3 class="fw-light text-nowrap">
+        <small id="warning"
+          >Benchmarking formal mathematical reasoning on the Putnam Mathematical Competition.<br
+        /></small>
+      </h3>
+      <div class="d-flex flex-row justify-content-center gap-3">
+        <a href="https://github.com/trishullab/PutnamBench"
+          ><img
+            src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"
+            alt="github"
+            class="img-fluid"
+        /></a>
+        <a href="https://arxiv.org/abs/2407.11214"
+          ><img
+            src="https://img.shields.io/badge/Paper-a55fed.svg?style=for-the-badge"
+            alt="paper"
+            class="img-fluid"
+        /></a>
+      </div>
+      <div class="btn-group" role="group" id="Benchmark">
+        <input
+          type="radio"
+          class="btn-check"
+          name="btnradio"
+          id="wsolution"
+          checked
+        />
+        <label class="btn btn-outline-primary" style="font-size: 12px;" for="wsolution">With answer</label>
+        <input type="radio" class="btn-check" name="btnradio" id="nosolution" />
+        <label class="btn btn-outline-primary" style="font-size: 12px;" for="nosolution">No answer</label>
+        <!-- <input type="radio" class="btn-check" name="btnradio" id="Average" /> -->
+        <!-- <label class="btn btn-outline-primary" for="Average">Average</label> -->
+      </div>
+      <!-- <div id="chart" style="width: 100%; height: 600px"></div> -->
+      <div class="container-fluid d-flex flex-row flex-nowrap">
+        <div class="container-fluid d-flex flex-column align-items-center">
+          <label for="lean" style="font-size: 14px;" class="text-success mb-3">Lean (out of 640)</label>
+          <table
+            id="lean"
+            class="table table-responsive table-striped table-bordered flex-shrink-1 border border-success border-3"
+          ></table>
+        </div>
+        <div class="container-fluid d-flex flex-column align-items-center">
+          <label for="isabelle" style="font-size: 14px;" class="text-success mb-3">Isabelle (out of 640)</label>
+          <table
+            id="isabelle"
+            class="table table-responsive table-striped table-bordered flex-shrink-1 border border-danger border-3"
+          ></table>
+        </div>
+                <div class="container-fluid d-flex flex-column align-items-center">
+          <label for="coq" style="font-size: 14px;" class="text-success mb-3">Coq (out of 417)</label>
+          <table
+            id="coq"
+            class="table table-responsive table-striped table-bordered flex-shrink-1 border border-danger border-3"
+          ></table>
+        </div>
+      </div>
+      <div id="notes">
+        <h3>📝 Notes</h3>
+        <div class="inline-block mt-3">
+          <ol>
+            <li>
+              As no existing methods have been benchmarked on PutnamBench <em>without numerical answers in the theorem statement</em>, the leaderboard for that variant contains no entries. Please share you results with us and we will promptly update the leaderboard!
+            </li>
+            <li>
+              We are open to suggestions for better indicating the differing compute budgets of approaches on the leaderboard. Please reach out to us with your ideas!
+            </li>
+            <li>
+              We thank the <a href="https://github.com/evalplus/evalplus">EvalPlus</a> team for providing the leaderboard template.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const LeanTable = document.getElementById("lean");
+      const IsabelleTable = document.getElementById("isabelle");
+      const CoqTable = document.getElementById("coq");
+      const benchmarkRadio = document.getElementById("Benchmark");
+      // const chartDom = document.getElementById("chart");
+      // var chart = echarts.init(chartDom);
+
+      const dataUrl = "results.json";
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "results.json", false); // false makes the request synchronous
+      xhr.send();
+
+      // const calcAverage = (a, b) => {
+      //   if (a == null || b == null) {
+      //     return null;
+      //   } else {
+      //     return parseFloat(((parseFloat(a) + parseFloat(b)) / 2).toFixed(1));
+      //   }
+      // };
+
+      var data;
+      /*
+      After calculating the average, the data should be like this:
+      data[Model]["pass@1"] = {
+        "humaneval": ...,
+        "mbpp": ...,
+        "humaneval+": ...,
+        "mbpp+": ...,
+        "average": ...,
+        "average+": ...,
+      }
+    */
+      if (xhr.status === 200) {
+        data = JSON.parse(xhr.responseText);
+        // Object.keys(data).forEach((key) => {
+        //   data[key]["pass@1"]["average"] = calcAverage(
+        //     data[key]["pass@1"]["humaneval"],
+        //     data[key]["pass@1"]["mbpp"],
+        //   );
+        //   data[key]["pass@1"]["average+"] = calcAverage(
+        //     data[key]["pass@1"]["humaneval+"],
+        //     data[key]["pass@1"]["mbpp+"],
+        //   );
+        // });
+        data = Object.keys(data).map((key) => {
+          return {
+            Model: key,
+            ...data[key],
+          };
+        });
+      } else {
+        // pop up error window
+        alert("Failed to load data from results.json");
+      }
+      const globalData = data;
+
+      const clearTable = () => {
+        LeanTable.innerHTML = "";
+        IsabelleTable.innerHTML = "";
+        CoqTable.innerHTML = "";
+        // originTable.innerHTML = "";
+        // plusedTable.innerHTML = "";
+      };
+
+      // const clearChart = () => {
+      //   chartOption.xAxis.data = [];
+      //   chartOption.series[0].data = [];
+      //   chartOption.series[1].data = [];
+      //   chartOption.series[0].markLine.data = [];
+      //   chartOption.series[1].markLine.data = [];
+      // };
+
+      // var chartOption = {
+      //   legend: {
+      //     data: ["pass@1*"],
+      //   },
+      //   grid: {
+      //     left: "1%",
+      //     right: "4%",
+      //     bottom: "3%",
+      //     containLabel: true,
+      //   },
+      //   xAxis: {
+      //     name: "Act. Size",
+      //     type: "category",
+      //     boundaryGap: false,
+      //     data: [],
+      //     axisLabel: {
+      //       formatter: function (value) {
+      //         return value + "B";
+      //       },
+      //     },
+      //   },
+      //   yAxis: {
+      //     name: "PASS@1 (greedy decoding)",
+      //     type: "value",
+      //     show: true,
+      //     nameTextStyle: {
+      //       align: "left",
+      //     },
+      //     splitLine: {
+      //       show: true,
+      //       lineStyle: {
+      //         type: "dashed",
+      //       },
+      //     },
+      //   },
+      //   legend: {
+      //     data: ["base", "instructed"],
+      //     itemStyle: {
+      //       opacity: 1.0,
+      //     },
+      //   },
+      //   tooltip: {
+      //     trigger: "item",
+      //     axisPointer: {
+      //       type: "cross",
+      //     },
+      //   },
+      //   series: [
+      //     {
+      //       name: "base",
+      //       type: "scatter",
+      //       data: [],
+      //       itemStyle: {
+      //         color: "#91cc75",
+      //         opacity: 0.2,
+      //       },
+      //       emphasis: {
+      //         focus: "series",
+      //       },
+      //       lineStyle: {
+      //         width: 2,
+      //       },
+      //       markLine: {
+      //         symbol: "none",
+      //         emphasis: {
+      //           label: {
+      //             position: "middle",
+      //             formatter: function (params) {
+      //               return params.data.name;
+      //             },
+      //           },
+      //         },
+      //         data: [],
+      //       },
+      //     },
+      //     {
+      //       name: "instructed",
+      //       type: "scatter",
+      //       data: [],
+      //       itemStyle: {
+      //         color: "#5470c6",
+      //         opacity: 0.2,
+      //       },
+      //       emphasis: {
+      //         focus: "series",
+      //       },
+      //       lineStyle: {
+      //         width: 2,
+      //       },
+      //       markLine: {
+      //         symbol: "none",
+      //         emphasis: {
+      //           label: {
+      //             position: "middle",
+      //             formatter: function (params) {
+      //               return params.data.name;
+      //             },
+      //           },
+      //         },
+      //         data: [],
+      //       },
+      //     },
+      //   ],
+      // };
+
+      const theaders = ["Model", "num-solved", "compute"];
+
+      // score: 'average', 'humaneval', 'mbpp', 'humaneval+', 'mbpp+'
+      const displayTable = (table, score) => {
+        // filter out Null
+        data = globalData
+          .filter((row) => {
+            return (row["num-solved"][score] != null);
+          })
+          .sort((a, b) => {
+            return b["num-solved"][score] - a["num-solved"][score];
+          });
+        var thead = document.createElement("thead");
+        var headerRow = document.createElement("tr");
+        // add rank
+        var th = document.createElement("th");
+        th.textContent = "#";
+        headerRow.appendChild(th);
+        // headers
+        theaders.forEach(function (header) {
+          var th = document.createElement("th");
+          th.textContent = header;
+          headerRow.appendChild(th);
+        });
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        var tbody = document.createElement("tbody");
+        // add rank
+        var rank = 1;
+        data.forEach((row) => {
+          var dataRow = document.createElement("tr");
+          var rankCell = document.createElement("td");
+          rankCell.textContent = rank;
+          dataRow.appendChild(rankCell);
+          var modelCell = document.createElement("td");
+          // TODO: When more models are added, include the emojis
+          // if (rank == 1) {
+          //   modelCell.textContent = "🥇 ";
+          // } else if (rank == 2) {
+          //   modelCell.textContent = "🥈 ";
+          // } else if (rank == 3) {
+          //   modelCell.textContent = "🥉 ";
+          // } else {
+          //   modelCell.textContent = "";
+          // }
+          rank++;
+          var modelLink = document.createElement("a");
+          modelLink.href = row["link"];
+          modelLink.textContent = row["Model"];
+          modelLink.classList.add("link-underline-primary");
+          modelLink.classList.add("text-nowrap");
+          modelCell.appendChild(modelLink);
+          modelCell.classList.add("d-flex");
+          modelCell.classList.add("flex-nowrap");
+          // var prompted = row["prompted"];
+          var opendata = row["open-data"];
+          // if (prompted) {
+          //   // add a symbol to indicate the model is prompted
+          //   var promptedSymbol = document.createElement("span");
+          //   promptedSymbol.textContent = "✨";
+          //   modelCell.appendChild(promptedSymbol);
+          // }
+          if (opendata.toUpperCase() == "FULL") {
+            // add a symbol to indicate the model is fully open-sourced
+            var promptedSymbol = document.createElement("span");
+            promptedSymbol.textContent = "💚";
+            modelCell.appendChild(promptedSymbol);
+          } else if (opendata.toUpperCase() == "PARTIAL") {
+            // add a symbol to indicate the model is partially open-sourced
+            // i.e., a subset of the model implementation is close-sourced
+            var promptedSymbol = document.createElement("span");
+            promptedSymbol.textContent = "💙";
+            modelCell.appendChild(promptedSymbol);
+          }
+          dataRow.appendChild(modelCell);
+          var solvedCell = document.createElement("td");
+          // if (table == originTable) {
+          //   passCell.classList.add("text-danger");
+          // } else if (table == plusedTable) {
+          //   passCell.textContent = "⚡";
+          //   passCell.classList.add("text-success");
+          // }
+          if (row["num-solved"][score] != "NONE") {
+            solvedCell.classList.add("text-success");
+            solvedCell.textContent = ""+row["num-solved"][score];
+          }
+          var computeCell = document.createElement("td");
+          computeCell.textContent = row["condensed-compute-budget"];
+          dataRow.appendChild(solvedCell);
+          dataRow.appendChild(computeCell);
+          tbody.appendChild(dataRow);
+        });
+        table.appendChild(tbody);
+      };
+
+      // const displayChart = (score) => {
+      //   // sort first
+      //   const data = globalData
+      //     .filter((model) => {
+      //       return model["pass@1"][score] != null;
+      //     })
+      //     .sort((a, b) => {
+      //       return b["pass@1"][score] - a["pass@1"][score];
+      //     });
+
+      //   const sizeList = [
+      //     ...new Set(
+      //       data
+      //         .filter((model) => model["size"] != null)
+      //         .map((model) => Math.round(model["size"])),
+      //     ),
+      //   ].sort((a, b) => {
+      //     return a - b;
+      //   });
+
+      //   chartOption.xAxis.data = sizeList;
+      //   chartOption.yAxis.max =
+      //     1 + Math.max(...data.map((model) => model["pass@1"][score]));
+
+      //   const nonPromptedModels = data.filter(
+      //     (model) => model["prompted"] == false,
+      //   );
+      //   const promptedModels = data.filter(
+      //     (model) => model["prompted"] == true,
+      //   );
+
+      //   [nonPromptedModels, promptedModels].forEach((series, idx) => {
+      //     series.forEach((model) => {
+      //       if (model["size"] == null) {
+      //         chartOption.series[idx].markLine.data.push({
+      //           name: model["Model"],
+      //           yAxis: model["pass@1"][score],
+      //         });
+      //       } else {
+      //         chartOption.series[idx].data.push({
+      //           name: model["Model"],
+      //           value: [`${Math.round(model["size"])}`, model["pass@1"][score]],
+      //         });
+      //       }
+      //     });
+      //   });
+
+      //   const offsets = [[50, 0]]
+      //     .concat(Array.from({ length: sizeList.length - 2 }, () => [0, 0]))
+      //     .concat([[-50, 0]]);
+      //   sizeList.forEach((size, idx) => {
+      //     const bestNonPromptedModel = nonPromptedModels
+      //       .filter((model) => Math.round(model["size"]) == size)
+      //       .sort((a, b) => {
+      //         return b["pass@1"][score] - a["pass@1"][score];
+      //       })[0];
+      //     const bestPromptedModel = promptedModels
+      //       .filter((model) => Math.round(model["size"]) == size)
+      //       .sort((a, b) => {
+      //         return b["pass@1"][score] - a["pass@1"][score];
+      //       })[0];
+      //     const hightLightBest = (series, model) => {
+      //       const point = chartOption.series[series].data.find(
+      //         (point) => point.name == model["Model"],
+      //       );
+      //       point.itemStyle = {
+      //         opacity: 1.0,
+      //       };
+      //       point.label = {
+      //         show: true,
+      //         position: "top",
+      //         offset: offsets[idx],
+      //         formatter: function (params) {
+      //           return params.data.name;
+      //         },
+      //         color: "inherit",
+      //       };
+      //     };
+      //     if (bestNonPromptedModel) {
+      //       hightLightBest(0, bestNonPromptedModel);
+      //     }
+      //     if (bestPromptedModel) {
+      //       hightLightBest(1, bestPromptedModel);
+      //     }
+      //   });
+
+      //   chart.setOption(chartOption);
+      // };
+
+      // const avergeRadio = document.getElementById("Average");
+      const wsolutionRadio = document.getElementById("wsolution");
+      const nosolutionRadio = document.getElementById("nosolution");
+
+      wsolutionRadio.addEventListener("click", function () {
+        clearTable();
+        displayTable(LeanTable, "lean-wsolution");
+        displayTable(IsabelleTable, "isabelle-wsolution");
+        displayTable(CoqTable, "coq-wsolution");
+        // clearChart();
+        // displayChart("humaneval+");
+      });
+
+      nosolutionRadio.addEventListener("click", function () {
+        clearTable();
+        displayTable(LeanTable, "lean-nosolution");
+        displayTable(IsabelleTable, "isabelle-nosolution");
+        displayTable(CoqTable, "coq-nosolution");
+        // clearChart();
+        // displayChart("mbpp+");
+      });
+
+      wsolutionRadio.click();
+
+      // window.addEventListener("resize", () => {
+      //   this.chart.resize();
+      // });
+    </script>
+  </body>
+</html>

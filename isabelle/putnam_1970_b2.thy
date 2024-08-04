@@ -8,7 +8,7 @@ theorem putnam_1970_b2:
     and H :: "real poly"
   assumes hT : "T > 0"
     and hH : "degree H \<le> 3"
-  shows "(poly H (-T/sqrt 3) + poly H (T/sqrt 3))/2 = 1/(2*T) * (interval_lebesgue_integral lebesgue (-T) T (poly p))"
+  shows "(poly H (-T/sqrt 3) + poly H (T/sqrt 3))/2 = 1/(2*T) * (interval_lebesgue_integral lebesgue (-T) T (poly H))"
   sorry
 
 end

@@ -8,4 +8,3 @@ Theorem putnam_1985_a5
     : forall (n: nat), and (le 1 n) (le n 10) ->
     RInt (F n) 0 2*PI <> 0 <-> putnam_1985_a5_solution n.
 Proof. Admitted.
-End putnam_1985_a5.

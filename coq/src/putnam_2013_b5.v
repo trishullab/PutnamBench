@@ -7,6 +7,7 @@ Theorem putnam_2013_b5
         | S n' => compose f (compose_n f n')
     end)
     (k : 'I_n)
+    (npos: ge n 1)
     (E : Ensemble ('I_n -> 'I_n) := fun f => forall (x : 'I_n), exists (j : nat), (composen f j) x <= k)
     : cardinal ('I_n -> 'I_n) E (k * n^(n-1)).
 Proof. Admitted.

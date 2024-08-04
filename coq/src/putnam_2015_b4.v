@@ -15,4 +15,3 @@ Theorem putnam_2015_b4
     : forall (E: list (list nat)) (l: list nat), (In l E <-> (length l = 3 /\ let a := nth 0 l 0 in let b := nth 1 l 0 in let c := nth 2 l 0 in a > 0 /\ b > 0 /\ c > 0 /\ a < c + b /\ b < a + c /\ c < a + b)) ->
     exists (p q: nat), coprime p q = true /\ fold_left Rplus (Exprl E) R0  = Rdiv (INR p) (INR q) /\  (p, q) = putnam_2015_b4_solution.
 Proof. Admitted.
-End putnam_2015_b4.
