@@ -2,13 +2,13 @@ theory putnam_1997_a6 imports Complex_Main
 
 begin
 
-definition putnam_1997_a6_solution :: "int \<Rightarrow> int \<Rightarrow> real" where
+definition putnam_1997_a6_solution :: "nat \<Rightarrow> nat \<Rightarrow> real" where
 "putnam_1997_a6_solution \<equiv> undefined"
-(* \<lambda> n k. (nat n-1) choose (nat k-1) *)
+(* \<lambda> n k. (n-1) choose (k-1) *)
 theorem putnam_1997_a6:
-  fixes n :: "int"
+  fixes n :: "nat"
     and C :: "real"
-    and x :: "real \<Rightarrow> (int \<Rightarrow> real)"
+    and x :: "real \<Rightarrow> (nat \<Rightarrow> real)"
     and S :: "real set"
   defines "S \<equiv> {c :: real. x c (n + 1) = 0}"
   assumes hx0 : "\<forall> c :: real. x c 0 = 0"
