@@ -1,5 +1,5 @@
 theory putnam_1996_a5 imports Complex_Main
-
+"HOL-Computational_Algebra.Primes"
 begin
 
 theorem putnam_1996_a5:
@@ -7,7 +7,7 @@ theorem putnam_1996_a5:
   defines "k \<equiv> nat \<lfloor>2 * p / 3\<rfloor>"
   assumes hpprime : "prime p"
     and hpge3 : "p > 3"
-  shows "p^2 dvd (\<Sum> i \<in> {1 :: nat..k}. p choose i)"
+  shows "(p^2) dvd (\<Sum> i \<in> {1 :: nat..k}. p choose i)"
   sorry
 
 end

@@ -3,7 +3,7 @@ open BigOperators
 
 def tetration : ℕ → ℕ → ℕ
   | _, 0 => 1
-  | m, (n + 1) => m^(tetration m n)
+  | b, (m + 1) => b^(tetration b m)
 theorem putnam_1997_b5
 (n : ℕ)
 (hn : n ≥ 2)
