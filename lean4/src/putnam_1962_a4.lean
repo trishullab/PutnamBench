@@ -1,8 +1,6 @@
 import Mathlib
 open BigOperators
 
-open MeasureTheory
-
 theorem putnam_1962_a4
 (f : ℝ → ℝ)
 (a b : ℝ)

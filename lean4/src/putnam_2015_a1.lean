@@ -2,7 +2,8 @@ import Mathlib
 open BigOperators
 
 theorem putnam_2015_a1
-(hyperbola : Set (Fin 2 → ℝ) := {p : Fin 2 → ℝ | p 1 = 1 / p 0 ∧ p 0 > 0})
+(hyperbola : Set (Fin 2 → ℝ))
+(hhyperbola : hyperbola = {p : Fin 2 → ℝ | p 1 = 1 / p 0 ∧ p 0 > 0})
 (A B : Fin 2 → ℝ)
 (P : Fin 2 → ℝ)
 (PPline : (Fin 2 → ℝ) → (Fin 2 → ℝ) → (ℝ → ℝ))

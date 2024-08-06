@@ -12,6 +12,7 @@ theorem putnam_1987_b6
 (Snz : ∀ x ∈ S, x ≠ 0)
 (Scard : S.ncard = ((p : ℤ) ^ 2 - 1) / 2)
 (hS : ∀ a : F, a ≠ 0 → Xor' (a ∈ S) (-a ∈ S))
-(N : ℕ := (S ∩ {x | ∃ a ∈ S, x = 2 * a}).ncard)
+(N : ℕ)
+(hN : N = (S ∩ {x | ∃ a ∈ S, x = 2 * a}).ncard)
 : (Even N) :=
 sorry

@@ -11,7 +11,7 @@ theorem putnam_2012_a5
 (hp : Nat.Prime p)
 {F : Type*} [Field F] [Fintype F]
 (hK : Fintype.card F = p)
-(G : Matrix (Fin n) (Fin n) F →  (Fin n → F) → (Fin n → F) → (Fin n → F))
+(G : Matrix (Fin n) (Fin n) F → (Fin n → F) → (Fin n → F) → (Fin n → F))
 (hG : ∀ M : Matrix (Fin n) (Fin n) F, ∀ v x : (Fin n → F), G M v x = v + mulVec M x)
 : (n, p) ∈ putnam_2012_a5_solution ↔
 ∃ M : Matrix (Fin n) (Fin n) F,
