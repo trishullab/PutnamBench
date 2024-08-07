@@ -10,4 +10,5 @@ theorem putnam_2022_b6
 (f : Set.Ioi (0 : ℝ) → Set.Ioi (0 : ℝ))
 (eq : Prop)
 (heq : eq = ∃ fr : ℝ → ℝ, (∀ x : Set.Ioi (0 : ℝ), fr x = f x) ∧ (∀ x y : Set.Ioi (0 : ℝ), fr (x * fr y) + fr (y * fr x) = 1 + fr (x + y)))
-: (Continuous f ∧ eq) ↔ f ∈ putnam_2022_b6_solution := sorry
+: (Continuous f ∧ eq) ↔ f ∈ putnam_2022_b6_solution :=
+sorry

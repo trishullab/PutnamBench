@@ -8,11 +8,7 @@ abbrev putnam_2023_b4_solution : ℝ := sorry
 -- 29
 theorem putnam_2023_b4
 (tne : ℕ → (ℕ → ℝ) → Set ℝ)
-(fdiff : ℕ → (ℕ → ℝ) → (ℝ → ℝ) → Prop)
-(flim : ℕ → (ℕ → ℝ) → (ℝ → ℝ) → Prop)
-(fderiv1 : ℕ → (ℕ → ℝ) → (ℝ → ℝ) → Prop)
-(fderiv2 : ℕ → (ℕ → ℝ) → (ℝ → ℝ) → Prop)
-(fall : ℕ → (ℕ → ℝ) → (ℝ → ℝ) → Prop)
+(fdiff flim fderiv1 fderiv2 fall : ℕ → (ℕ → ℝ) → (ℝ → ℝ) → Prop)
 (tinc : ℕ → (ℕ → ℝ) → Prop)
 (Tall : ℝ → Prop)
 (htne : ∀ n : ℕ, ∀ ts : ℕ → ℝ, tne n ts = {t : ℝ | t > ts 0 ∧ ∀ i : Fin n, t ≠ ts (i.1 + 1)})

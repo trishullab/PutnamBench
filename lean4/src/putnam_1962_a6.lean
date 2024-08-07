@@ -1,8 +1,6 @@
 import Mathlib
 open BigOperators
 
-open MeasureTheory
-
 theorem putnam_1962_a6
 (S : Set ℚ)
 (hSadd : ∀ a ∈ S, ∀ b ∈ S, a + b ∈ S)

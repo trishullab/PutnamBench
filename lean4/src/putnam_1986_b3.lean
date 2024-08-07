@@ -4,7 +4,8 @@ open BigOperators
 open  Real Equiv Polynomial
 
 theorem putnam_1986_b3
-(cong : Polynomial ℤ → Polynomial ℤ → ℤ → Prop := fun f g m ↦ ∀ i : ℕ, m ∣ (f - g).coeff i)
+(cong : Polynomial ℤ → Polynomial ℤ → ℤ → Prop)
+(hcong : cong = fun f g m ↦ ∀ i : ℕ, m ∣ (f - g).coeff i)
 (n p : ℕ)
 (nppos : n > 0 ∧ p > 0)
 (pprime : Nat.Prime p)
