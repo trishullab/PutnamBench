@@ -12,9 +12,7 @@ theorem putnam_1984_a3
 (polyabn : Fin 3 → ℝ)
 (npos : n > 0)
 (aneb : a ≠ b)
-(hMnx : ∀ x : ℝ, ∀ i : Fin (2 * n), (Mn x) i i = x)
-(hMna : ∀ x : ℝ, ∀ i j : Fin (2 * n), (i ≠ j ∧ Even ((i : ℕ) + j)) → (Mn x) i j = a)
-(hMnb : ∀ x : ℝ, ∀ i j : Fin (2 * n), (i ≠ j ∧ Odd ((i : ℕ) + j)) → (Mn x) i j = b)
+(hMn : Mn = fun x : ℝ => fun i j : Fin (2 * n) => if i = j then x else if Even (i.1 + j.1) then a else b)
 (hpolyabn : polyabn 0 = a ∧ polyabn 1 = b ∧ polyabn 2 = n)
 : Tendsto (fun x : ℝ => (Mn x).det / (x - a) ^ (2 * n - 2)) (𝓝[≠] a) (𝓝 (MvPolynomial.eval polyabn putnam_1984_a3_solution)) :=
 sorry
