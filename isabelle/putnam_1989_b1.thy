@@ -14,7 +14,7 @@ theorem putnam_1989_b1:
     and "edges \<equiv> {p \<in> square. p$1 = 0 \<or> p$1 = 1 \<or> p$2 = 0 \<or> p$2 = 1}"
     and "center \<equiv> \<chi> i :: 2. (1 :: real) / 2"
     and "Scloser \<equiv> {p \<in> square. \<forall> q \<in> edges. dist p center < dist p q}"
-  shows "let (a, b, c, d) = putnam_1989_b1_solution in b > 0 \<and> d > 0 \<and> (\<not>(\<exists> n :: int. n^2 = b)) \<and>
+  shows "let (a, b, c, d) = putnam_1989_b1_solution in b > 0 \<and> d > 0 \<and> (\<not>(\<exists> n :: int. (n^2) dvd b)) \<and> (Gcd {a, c, d} = 1) \<and>
   measure lebesgue Scloser / measure lebesgue square = (a * sqrt (real_of_int b) + c) / d"
   sorry
 
