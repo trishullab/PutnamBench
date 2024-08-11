@@ -1,8 +1,12 @@
-theory putnam_1986_b6 imports Complex_Main "HOL-Algebra.Ring" "HOL-Analysis.Finite_Cartesian_Product"
+theory putnam_1986_b6 imports Complex_Main 
+"HOL-Algebra.Ring" 
+"HOL-Analysis.Finite_Cartesian_Product"
 begin
 
 theorem putnam_1986_b6:
-  fixes n::nat and F::"('a::{semiring_1, minus}, 'm) ring_scheme" (structure) and A B C D::"'a^'b^'b"
+  fixes n :: nat 
+    and F :: "('a::{semiring_1, minus}, 'm) ring_scheme" (structure) 
+    and A B C D :: "'a^'b^'b"
   assumes npos : "n > 0"
     and Ffield : "field F"
     and matdim : "CARD('b) = n"
