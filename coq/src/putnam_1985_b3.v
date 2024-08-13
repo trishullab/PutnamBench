@@ -1,9 +1,7 @@
-Require Import Nat List.
+Require Import Nat Ensembles Finite_sets.
 Theorem putnam_1985_b3
-    (exactly_equal : ((nat*nat) -> nat) -> (nat*nat) -> Prop := fun a ij => 
-        (exists  (l8: list (nat*nat)), length l8 = 8 /\ NoDup l8 /\ (forall (n: (nat*nat)), In n l8 -> a n = a ij)) /\
-        (~exists (l9: list (nat*nat)), length l9 = 9 /\ NoDup l9 /\ (forall (n: (nat*nat)), In n l9 -> a n = a ij)))   
-    : forall (a: (nat*nat) -> nat),
-    (forall (ij: (nat*nat)), exactly_equal a ij) /\ 
-    (exists (ij: (nat*nat)), a ij > fst ij*snd ij).
+    (a : nat -> nat -> nat)
+    (apos : forall m n : nat, a m n > 0)
+    (ha : forall k : nat, k > 0 -> cardinal (nat * nat) (fun t => let (m, n) := t in m > 0 /\ n > 0 /\ a m n = k) 8)
+    : exists m n : nat, m > 0 /\ n > 0 /\ a m n > m * n.
 Proof. Admitted.

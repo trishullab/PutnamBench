@@ -1,5 +1,5 @@
-Require Import Nat Reals Coquelicot.Coquelicot.
-Definition putnam_1983_a5_solution := true.
+Require Import Nat ZArith Reals Coquelicot.Coquelicot.
+Definition putnam_1983_a5_solution := True.
 Theorem putnam_1983_a5
-    : exists (a: R), forall (n: nat), gt n 0 -> even (Z.to_nat (floor (Rpower a (INR n))) - n) = putnam_1983_a5_solution.
+    : (exists a : R, a > 0 /\ forall n : nat, gt n 0 -> Z.Even (floor (a^n) - Z.of_nat n)) <-> putnam_1983_a5_solution.
 Proof. Admitted.

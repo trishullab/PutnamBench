@@ -1,7 +1,9 @@
-Require Import Binomial Reals Znumtheory Coquelicot.Coquelicot.
+Require Import Binomial Reals Coquelicot.Coquelicot.
 Open Scope nat_scope.
 Theorem putnam_1983_a4
-    (m: nat)
-    (hm : m mod 6 = 5)
-    : sum_n (fun n => (if (eq_nat_dec (n mod 3) 2) then Binomial.C m n else R0)) (m-2) <> R0.
+    (k : nat)
+    (kpos : k > 0)
+    (m : nat := 6 * k - 1)
+    (s : R := sum_n_m (fun j => Rmult ((-1) ^ (j + 1)) (Binomial.C m (3 * j - 1))) 1 (2*k - 1))
+    : s <> R0.
 Proof. Admitted.

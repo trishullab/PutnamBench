@@ -1,8 +1,12 @@
-theory putnam_1986_b3 imports Complex_Main "HOL-Computational_Algebra.Polynomial" "HOL-Computational_Algebra.Primes"
+theory putnam_1986_b3 imports Complex_Main 
+"HOL-Computational_Algebra.Polynomial" 
+"HOL-Computational_Algebra.Primes"
 begin
 
 theorem putnam_1986_b3:
-  fixes cong::"(int poly) \<Rightarrow> (int poly) \<Rightarrow> int \<Rightarrow> bool" and n p::nat and f g h r s::"int poly"
+  fixes cong :: "(int poly) \<Rightarrow> (int poly) \<Rightarrow> int \<Rightarrow> bool"
+    and n p :: nat 
+    and f g h r s :: "int poly"
   defines "cong \<equiv> \<lambda>f. \<lambda>g. \<lambda>m. \<forall>i::nat. m dvd (coeff (f - g) i)"
   assumes nppos : "n > 0 \<and> p > 0"
     and pprime : "prime p"

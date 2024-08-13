@@ -11,13 +11,11 @@ theorem putnam_1984_a3:
     and a b :: "real"
     and Mn :: "real \<Rightarrow> (real^'i^'i)"
     and ni :: "'i \<Rightarrow> nat"
+  defines "Mn \<equiv> \<lambda> x :: real. \<chi> i j :: 'i. if i = j then x else if even (ni i + ni j) then a else b"
   assumes hij : "CARD('i) = 2*n"
     and hn : "bij_betw ni (UNIV :: 'i set) {1..2*n}"
     and npos : "n > 0"
     and aneb : "a \<noteq> b"
-    and hMnx : "\<forall> x :: real. \<forall> i :: 'i. (Mn x)$i$i = x"
-    and hMna : "\<forall> x :: real. \<forall> i j :: 'i. (ni i \<noteq> nj j \<and> even (ni i + nj j)) \<longrightarrow> (Mn x)$i$j = a"
-    and hMnb : "\<forall> x :: real. \<forall> i j :: 'i. (ni i \<noteq> nj j \<and> odd (ni i + nj j)) \<longrightarrow> (Mn x)$i$j = b"
   shows "filterlim (\<lambda> x :: real. det (Mn x) / (x - a) ^ (2 * n - 2)) (nhds (poly (poly (poly putnam_1984_a3_solution [:[:(n::real):]:]) [:b:]) a)) (at a)"
   sorry
 
