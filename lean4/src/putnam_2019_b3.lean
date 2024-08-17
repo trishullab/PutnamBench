@@ -12,6 +12,6 @@ theorem putnam_2019_b3
 (u : Matrix (Fin n) (Fin 1) ℝ)
 (hu : uᵀ*u = 1)
 (P : Matrix (Fin n) (Fin n) ℝ)
-(hP : P = 1 - (u * uᵀ))
+(hP : P = 1 - 2 * (u * uᵀ))
 : (Q - 1).det ≠ 0 → (P * Q - 1).det = 0 :=
 sorry

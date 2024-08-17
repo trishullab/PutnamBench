@@ -1,6 +1,13 @@
-Require Import Nat Reals ZArith Znumtheory Coquelicot.Coquelicot.
-Open Scope R.
+Require Import Nat ZArith Znumtheory.
+Open Scope nat_scope.
+Fixpoint nat_sum (a : nat -> nat) (k : nat) : nat := 
+    match k with
+    | O => a O
+    | S k' => a k + nat_sum a k'
+    end.
 Theorem putnam_1983_a3
-    (f : nat -> nat -> R := fun n p => sum_n (fun i => INR ((i+1) * n^i)) (p-1))
-    : forall (p m n: nat), odd p = true /\ prime (Z.of_nat p) /\ (floor (f m p)) mod Z.of_nat p = (floor (f n p)) mod Z.of_nat p -> Z.of_nat m mod Z.of_nat p = Z.of_nat n mod Z.of_nat p.
+    (p : nat)
+    (hp : odd p = true /\ prime (Z.of_nat p))
+    (f : nat -> nat := fun n => nat_sum (fun i => (i+1) * n^i) (p-2))
+    : forall (a b : nat), a < p /\ b < p /\ a <> b -> (f a) mod p <> (f b) mod p.
 Proof. Admitted.

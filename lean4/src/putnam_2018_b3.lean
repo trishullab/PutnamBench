@@ -2,7 +2,7 @@ import Mathlib
 open BigOperators
 
 abbrev putnam_2018_b3_solution : Set ℕ := sorry
--- {2^2, 2^4, 2^8, 2^16}
+-- {2^2, 2^4, 2^16, 2^256}
 theorem putnam_2018_b3
 (n : ℕ)
 (hn : n > 0)
