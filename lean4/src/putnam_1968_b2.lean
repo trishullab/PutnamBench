@@ -4,6 +4,7 @@ open BigOperators
 open Finset Polynomial
 
 theorem putnam_1968_b2
+{G : Type*}
 [Group G]
 (hG : Finite G)
 (A : Set G)

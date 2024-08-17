@@ -15,6 +15,6 @@ theorem putnam_2011_a5
 (prop2 : ∀ x : ℝ, g x > 0 ∧ x ^ 2 * g x ≤ 1)
 (hvec : ∀ x y : ℝ, (vec x y) 0 = x ∧ (vec x y) 1 = y)
 (hFgrad : ∀ uv : Fin 2 → ℝ, Fgrad uv 0 = deriv (fun x : ℝ => F (vec x (uv 1))) (uv 0) ∧ Fgrad uv 1 = deriv (fun y : ℝ => F (vec (uv 0) y)) (uv 1))
-(prop3 : ∀ uv : Fin 2 → ℝ, Fgrad uv = 0 ∨ parallel (Fgrad uv) (vec (g u) (-g v)))
+(prop3 : ∀ uv : Fin 2 → ℝ, Fgrad uv = 0 ∨ parallel (Fgrad uv) (vec (g (uv 0)) (-g (uv 1))))
 : ∃ C : ℝ, ∀ n ≥ 2, ∀ x : Fin (n + 1) → ℝ, sInf {Fxx : ℝ | ∃ i j : Fin (n + 1), i ≠ j ∧ Fxx = |F (vec (x i) (x j))|} ≤ C / n :=
 sorry

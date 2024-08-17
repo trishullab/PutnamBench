@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
 
-open Set
+open Set Polynomial
 
 abbrev putnam_1978_a3_solution : ℕ := sorry
 -- 2
