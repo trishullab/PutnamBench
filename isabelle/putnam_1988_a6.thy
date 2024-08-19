@@ -16,7 +16,7 @@ theorem putnam_1988_a6:
           scale a (x \<oplus>\<^bsub>V\<^esub> y) = scale a x \<oplus>\<^bsub>V\<^esub> scale a y \<and> scale (a \<oplus>\<^bsub>F\<^esub> b) x = scale a x \<oplus>\<^bsub>V\<^esub> scale b x \<and> 
           scale a (scale b x) = scale (a \<otimes>\<^bsub>F\<^esub> b) x \<and> scale \<one>\<^bsub>F\<^esub> x = x \<and> 
           A (scale a x \<oplus>\<^bsub>V\<^esub> scale b y) = scale a (A x) \<oplus>\<^bsub>V\<^esub> scale b (A y)) \<and>
-          n = (GREATEST k :: nat. \<exists> s :: 'b list. set s \<subseteq> carrier V \<and> length s = k \<and> card (set s) = k \<longrightarrow>
+          n = (GREATEST k :: nat. \<exists> s :: 'b list. set s \<subseteq> carrier V \<and> length s = k \<and> card (set s) = k \<and>
           (\<forall> coeffs :: 'a list. set coeffs \<subseteq> carrier F \<and> length coeffs = n \<and> 
           (\<Oplus>\<^bsub>V\<^esub> i \<in> {0..<n}. scale (coeffs!i) (s!i)) = \<zero>\<^bsub>V\<^esub> \<longrightarrow> (\<forall> i \<in> {0..<n}. coeffs!i = \<zero>\<^bsub>F\<^esub>))) \<and>
           (\<exists> evecs \<subseteq> ((carrier V) - {\<zero>\<^bsub>V\<^esub>}). card evecs = n + 1 \<and> (\<forall> evec \<in> evecs. \<exists> a \<in> carrier F. A evec = scale a evec) \<and>

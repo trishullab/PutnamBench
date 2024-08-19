@@ -6,7 +6,7 @@ theorem putnam_1990_b2:
   defines "P \<equiv> \<lambda>j. (\<Prod>i=0..<j. (1 - z * x^i)) / (\<Prod>i=1..j. (z - x^i))"
   assumes xlt1 : "abs(x) < 1"
     and zgt1 : "abs(z) > 1"
-  shows "1 + (\<Sum>j::nat. (1 + x^(j+1)) * P j) = 0"
+  shows "1 + (\<Sum>j::nat. (1 + x^(j+1)) * P (j+1)) = 0"
   sorry
 
 end

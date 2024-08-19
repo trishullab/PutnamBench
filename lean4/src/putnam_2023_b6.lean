@@ -4,7 +4,7 @@ open BigOperators
 open Nat Topology Filter
 
 abbrev putnam_2023_b6_solution : ℕ → ℤ := sorry
--- (fun n : ℕ => (-1) ^ (Nat.ceil (n / 2) - 1) * 2 * Nat.ceil (n / 2))
+-- (fun n : ℕ => (-1) ^ (⌈(n / 2 : ℚ)⌉₊ + 1) * 2 * ⌈(n / 2 : ℚ)⌉₊)
 theorem putnam_2023_b6
 (n : ℕ)
 (S : Matrix (Fin n) (Fin n) ℤ)

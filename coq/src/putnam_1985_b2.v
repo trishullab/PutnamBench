@@ -1,13 +1,11 @@
-Require Import Nat List ZArith Znumtheory.
-Open Scope nat_scope.
-Definition putnam_1985_b2_solution := repeat 101 99.
+Require Import Nat List Reals Coquelicot.Coquelicot ZArith Znumtheory.
+Open Scope R.
+Definition putnam_1985_b2_solution := repeat 101%nat 99.
 Theorem putnam_1985_b2
-    (P := fix p (n x: nat) : nat :=
-        match (n,x) with
-        | (O, x) => 1
-        | (S n', x) => (n' + 1) * p n' (x + 1)
-    end) 
-    (val := P 100 1)
-    : exists (l: list nat), forall (x: nat), (In x l -> prime (Z.of_nat x)) ->
-    fold_left mul l 1 = val <-> l = putnam_1985_b2_solution.
+    (f : nat -> R -> R)
+    (polyf : forall n : nat, exists p : nat -> R, exists deg : nat, f n = fun x : R => sum_n (fun m : nat => (p m) * x ^ m) deg)
+    (hf0x : f O = fun x => 1)
+    (hfn0 : forall n : nat, ge n 1 -> f n 0 = 0)
+    (hfderiv : forall n : nat, forall x : R, Derive (f (S n)) x = (INR n + 1) * f n (x + 1))
+    : (forall n : nat, In n putnam_1985_b2_solution -> prime (Z.of_nat n)) /\ exists a : nat, INR a = f 100%nat 1 /\ fold_left mul putnam_1985_b2_solution 1%nat = a.
 Proof. Admitted.
