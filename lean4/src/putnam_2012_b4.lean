@@ -3,7 +3,7 @@ open BigOperators
 
 open Matrix Function Real Topology Filter
 
-noncomputable abbrev putnam_2012_b4_solution : Prop := True
+noncomputable abbrev putnam_2012_b4_solution : Prop := sorry
 -- True
 theorem putnam_2012_b4
 (a : ℕ → ℝ)
