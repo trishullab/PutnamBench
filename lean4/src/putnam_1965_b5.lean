@@ -4,6 +4,7 @@ open BigOperators
 open EuclideanGeometry Topology Filter Complex SimpleGraph.Walk
 
 theorem putnam_1965_b5
+{K : Type*}
 [Fintype K]
 (V E : ℕ)
 (hV : V = Nat.card K)
