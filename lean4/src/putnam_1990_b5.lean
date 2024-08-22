@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
 
-open Filter Topology Nat
+open Filter Polynomial Topology Nat
 
 abbrev putnam_1990_b5_solution : Prop := sorry
 -- True
