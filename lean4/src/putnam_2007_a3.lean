@@ -2,6 +2,7 @@ import Mathlib
 open BigOperators
 
 open Set
+open scoped Nat
 
 abbrev putnam_2007_a3_solution : ℕ → ℚ := sorry
 -- fun k ↦ (k)! * (k + 1)! / ((3 * k + 1) * (2 * k)!)
