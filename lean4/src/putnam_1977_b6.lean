@@ -4,6 +4,7 @@ open BigOperators
 open RingHom Set Nat Filter Topology
 
 theorem putnam_1977_b6
+{G : Type*}
 [Group G]
 (H : Subgroup G)
 (h : ℕ)
