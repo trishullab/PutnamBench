@@ -4,6 +4,7 @@ open BigOperators
 open EuclideanGeometry Topology Filter Complex
 
 theorem putnam_1965_a4
+{G B : Type*}
 [Fintype G] [Nonempty G]
 [Fintype B] [Nonempty B]
 (dances : G → B → Prop)

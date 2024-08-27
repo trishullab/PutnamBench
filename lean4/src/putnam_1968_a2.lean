@@ -6,7 +6,5 @@ theorem putnam_1968_a2
 (ε : ℝ)
 (hne : a * d ≠ b * c)
 (hε : ε > 0)
-(q1 : ℚ := |r * a + s * b - e|)
-(q2 : ℚ := |r * c + s * d - f|)
-: ∃ r s : ℚ, 0 < q1 ∧ q1 < ε ∧ 0 < q2 ∧ q2 < ε :=
+: ∃ r s : ℚ, (|r * a + s * b - e| : ℝ) ∈ Set.Ioo 0 ε ∧ (|r * c + s * d - f| : ℝ) ∈ Set.Ioo 0 ε :=
 sorry

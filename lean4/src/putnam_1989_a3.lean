@@ -1,5 +1,5 @@
 import Mathlib
-open BigOperators
+open BigOperators Complex
 
 theorem putnam_1989_a3
 (z : ℂ)

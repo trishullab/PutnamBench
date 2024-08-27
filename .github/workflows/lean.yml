@@ -37,3 +37,18 @@ jobs:
       working-directory: lean4
       run: |
         lake exe cache pack
+
+    - name: Insert solutions
+      working-directory: lean4
+      run: |
+        python scripts/rewrite_solutions.py
+
+    - name: Build
+      working-directory: lean4
+      run: |
+        lake build putnam_with_solutions
+
+    - name: Save olean cache
+      working-directory: lean4
+      run: |
+        lake exe cache pack
