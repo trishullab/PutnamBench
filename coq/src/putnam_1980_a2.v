@@ -1,8 +1,18 @@
-Require Import Nat Ensembles Finite_sets.
-Definition putnam_1980_a2_solution (m n: nat) := (6*m*m + 3*m + 1) * (6*n*n + 3*n + 1).
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import classical_sets cardinality.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope classical_set_scope.
+Local Open Scope card_scope.
+
+Definition putnam_1980_a2_solution : nat -> nat -> nat := fun r s : nat => (1 + 4 * r + 6 * r ^2) * (1 + 4 * s + 6 * s ^ 2).
 Theorem putnam_1980_a2
-    (gcd3 : nat -> nat -> nat -> nat := fun a b c => gcd (gcd a b) c)
-    (f: Ensemble (nat*nat))
-    : forall (m n: nat) (a b c d: nat), 
-    (f (m, n) <-> gcd3 a b c = 3 ^ m * 7 ^ n \/ gcd3 a b d = 3 ^ m * 7 ^ n \/ gcd3 a c d = 3 ^ m * 7 ^ n \/ gcd3 b c d = 3 ^ m * 7 ^ n) -> cardinal (nat*nat) f (putnam_1980_a2_solution m n).
+    (r s : nat)
+    (abcdlcm : nat -> nat -> nat -> nat -> Prop)
+    (rpos : r > 0 /\ s > 0) 
+    (habcdlcm : forall a b c d, abcdlcm a b c d <-> (a > 0 /\ b > 0 /\ c > 0 /\ d > 0 /\ (3 ^ r * 7 ^ s = lcmn (lcmn a b) c) /\ (3 ^ r * 7 ^ s = lcmn (lcmn a b) d) /\ (3 ^ r * 7 ^ s = lcmn (lcmn a c) d) /\ (3 ^ r * 7 ^ s = lcmn (lcmn b c) d)))
+    : [set t : 4.-tuple nat | abcdlcm (tnth t (inord 0)) (tnth t (inord 1)) (tnth t (inord 2)) (tnth t (inord 3))] #= `I_(putnam_1980_a2_solution r s).
 Proof. Admitted.
