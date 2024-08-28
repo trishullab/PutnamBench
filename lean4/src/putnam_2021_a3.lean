@@ -12,7 +12,7 @@ theorem putnam_2021_a3
 (intcoords : (EuclideanSpace ℝ (Fin 3)) → Prop)
 (hintcoords : intcoords = fun p : EuclideanSpace ℝ (Fin 3) => ∀ i : Fin 3, p i = round (p i))
 (Ntetra : Prop)
-(hNtetra : Ntetra = ∃ A B C D : EuclideanSpace ℝ (Fin 3), A ∈ Nsphere ∧ B ∈ Nsphere ∧ C ∈ Nsphere ∧ D ∈ Nsphere ∧ intcoords A ∧ intcoords B ∧ intcoords C ∧ intcoords D ∧
+(hNtetra : Ntetra ↔ ∃ A B C D : EuclideanSpace ℝ (Fin 3), A ∈ Nsphere ∧ B ∈ Nsphere ∧ C ∈ Nsphere ∧ D ∈ Nsphere ∧ intcoords A ∧ intcoords B ∧ intcoords C ∧ intcoords D ∧
   (∃ s > 0, dist A B = s ∧ dist A C = s ∧ dist A D = s ∧ dist B C = s ∧ dist B D = s ∧ dist C D = s))
 : (N > 0 ∧ Ntetra) ↔ N ∈ putnam_2021_a3_solution :=
 sorry
