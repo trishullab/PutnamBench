@@ -6,8 +6,8 @@ open Set Function Filter Topology Polynomial Real
 abbrev putnam_1982_b4_solution : Prop × Prop := sorry
 -- (True, True)
 theorem putnam_1982_b4
-(hn : Finset ℤ → Prop)
-(hn_def : hn = fun n : Finset ℤ => ∀ k : ℤ, ∏ i in n, i ∣ ∏ i in n, (i + k))
-: ((∀ n : Finset ℤ, hn n → (∃ i ∈ n, |i| = 1)) ↔ putnam_1982_b4_solution.1) ∧
-((∀ n : Finset ℤ, (hn n ∧ ∀ i ∈ n, i > 0) → n = Finset.Icc (1 : ℤ) (n.card)) ↔ putnam_1982_b4_solution.2) :=
-sorry
+    (P : Finset ℤ → Prop)
+    (P_def : ∀ n, P n ↔ n.Nonempty ∧ ∀ k, ∏ i in n, i ∣ ∏ i in n, (i + k)) :
+    ((∀ n, P n → 1 ∈ n ∨ -1 ∈ n) ↔ putnam_1982_b4_solution.1) ∧
+    ((∀ n, P n → (∀ i ∈ n, 0 < i) → n = Finset.Icc (1 : ℤ) n.card) ↔ putnam_1982_b4_solution.2) :=
+  sorry
