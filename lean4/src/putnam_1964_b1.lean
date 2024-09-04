@@ -4,10 +4,9 @@ open BigOperators
 open Set Function Filter Topology
 
 theorem putnam_1964_b1
-(a : ℕ → ℤ)
-(apos : a > 0)
-(ha : ∃ L : ℝ, Tendsto (fun N ↦ ∑ n in Finset.range N, (1 : ℝ) / a n) atTop (𝓝 L))
-(b : ℕ → ENNReal)
-(hb : b = fun (n : ℕ) ↦ ({k : ℕ | a k ≤ n}.encard : ENNReal))
-: (Tendsto (fun n : ℕ ↦ b n / n) atTop (𝓝 0)) :=
-sorry
+    (a b : ℕ → ℕ)
+    (h₁ : ∀ n, 0 < a n)
+    (h₂ : Summable fun n ↦ (1 : ℝ) / a n)
+    (h₃ : ∀ n, b n = {k | a k ≤ n}.ncard) :
+    Tendsto (fun n ↦ (b n : ℝ) / n) atTop (𝓝 0) :=
+  sorry
