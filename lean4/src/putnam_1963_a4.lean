@@ -1,12 +1,12 @@
 import Mathlib
 open BigOperators
 
-open Topology Filter
+open Filter Set
 
 theorem putnam_1963_a4
-(apos : (ℕ → ℝ) → Prop)
-(hapos : apos = fun a => ∀ n, a n > 0)
-(f : (ℕ → ℝ) → ℕ → ℝ)
-(hf : f = fun (a : ℕ → ℝ) n => n * (((1 + a (n+1)) / (a n)) - 1))
-: (∀ a, apos a → limsup (f a) atTop ≥ 1) ∧ (¬∃ c > 1, ∀ a, apos a → limsup (f a) atTop ≥ c) :=
-sorry
+    (T : (ℕ → ℝ) → (ℕ → ℝ))
+    (T_def : ∀ a n, T a n = n * ((1 + a (n + 1)) / a n - 1))
+    (P : (ℕ → ℝ) → ℝ → Prop)
+    (P_def : ∀ a C, P a C ↔ C ≤ limsup (T a) atTop ∨ ¬ BddAbove (range (T a))) :
+    (∀ a, (∀ n, 0 < a n) → P a 1) ∧ (∀ C > 1, ∃ a, (∀ n, 0 < a n) ∧ ¬ P a C) := by
+  sorry
