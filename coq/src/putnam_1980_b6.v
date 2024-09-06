@@ -1,9 +1,14 @@
-Require Import Reals Nat Znumtheory QArith Coquelicot.Coquelicot. From mathcomp Require Import div.
+From mathcomp Require Import all_algebra all_ssreflect.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
 Theorem putnam_1980_b6
-    (A := fix f (n i: nat) :=
-        match (n,i) with
-        | (O,i') => 1/INR i'
-        | (S n', i') => (INR n' + 1)/(INR i') * sum_n (fun x => f n' (Nat.add n' x)) (Nat.sub i' n')
-    end)
-    : forall (n p: nat), and (gt p n) (gt n 1) /\ prime (Z.of_nat p) -> exists (a b: nat), A n p = INR a/INR b /\ p %| b/(gcd a b) = false.
+(G : (int * int)%type -> rat)
+(hG : forall d n : nat, leq d n -> ((d = 1%nat -> G (d%:Z, n%:Z) = (1%:Q)/(n%:Q)) /\ (gtn d (1%nat) -> G (d%:Z, n%:Z) = ((d%:Z%:Q)/(n%:Z%:Q)) * \sum_(d <= i < n.+1) (G (d%:Z - 1, i%:Z - 1)))))
+: forall (d p : nat), (ltn (1%nat) d /\ leq d p /\ prime p) -> ~ (p%:Z %| (denq (G (d%:Z, p%:Z))))%Z.
 Proof. Admitted.
+

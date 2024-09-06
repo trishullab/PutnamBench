@@ -10,6 +10,7 @@ opam install -y coq-stdpp
 opam install -y coq-coqtail
 opam install coq-mathcomp-analysis
 opam install coq-mathcomp-classical
+opam install coq-mathcomp-real-closed
 opam install coq-geocoq-coinc --yes
 opam install coq-geocoq-axioms --yes
 opam install coq-geocoq-elements --yes
