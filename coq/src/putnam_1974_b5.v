@@ -1,6 +1,16 @@
-Require Import Factorial Reals Coquelicot.Coquelicot.
-Definition putnam_1974_b5_solution := 1.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals sequences exp normedtype signed.
+Import Order.TTheory GRing.Theory Num.Def Num.Theory.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
 Theorem putnam_1974_b5
-    (f : nat -> R -> R := fun n x => sum_n (fun i => x ^ i / INR (fact i)) (n + 1))
-    : forall (n : nat), f n (INR n) > exp PI / 2.
+    (f : nat -> R := fun n => (\sum_(0 <= i < n.+1) (n%:R) ^ i / ((i`!)%:R)))
+    : forall n : nat, f n > (expR n%:R) / 2%R.
 Proof. Admitted.

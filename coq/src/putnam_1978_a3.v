@@ -1,10 +1,19 @@
-Require Import Reals Coquelicot.Coquelicot.
-Definition putnam_1978_a3_solution (a b c d: R) := b.
-Theorem putnam_1978_a3
-    (p : R -> R := fun x => 2 * (x ^ 6 + 1) + 4 * (x ^ 5 + x) + 3 * (x ^ 4 + x ^ 2) + 5 * x ^ 3)
-    (a : R := Lim_seq (fun nInc => RInt (fun x => x / p x) 0 (INR nInc)))
-    (b : R := Lim_seq (fun nInc => RInt (fun x => x ^ 2 / p x) 0 (INR nInc)))
-    (c : R := Lim_seq (fun nInc => RInt (fun x => x ^ 3 / p x) 0 (INR nInc)))
-    (d : R := Lim_seq (fun nInc => RInt (fun x => x ^ 4 / p x) 0 (INR nInc)))
-    : Rmin a (Rmin b (Rmin c d)) = putnam_1978_a3_solution a b c d.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals measure lebesgue_integral lebesgue_measure topology normedtype exp sequences.
+From mathcomp Require Import classical_sets.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition mu := [the measure _ _ of @lebesgue_measure R].
+Definition putnam_1978_a3_solution : nat := 2.
+Theorem putnam_1978
+    (p : {poly R} := 2 *: ('X^6 + 1%:P) + 4 *: ('X^5 + 'X) + 3 *: ('X^4 + 'X^2) + 5 *: 'X^3)
+    (I : nat -> R := fun k => \int[mu]_(x in [set t : R | 0 <= t]) (fun x => x ^ k / p.[x]) x)
+    : putnam_1978_a3_solution \in index_iota 1 5 /\ (forall k : nat, k \in index_iota 1 5 -> I putnam_1978_a3_solution <= I k).
 Proof. Admitted.

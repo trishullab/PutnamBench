@@ -1,8 +1,17 @@
-Require Import Reals Coquelicot.Coquelicot.
-Open Scope R.
-Theorem putnam_1978_b6 
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
+Theorem putnam_1978_b6
     (a : nat -> nat -> R)
-    (n m: nat)
-    : forall i j: nat, 0 <= a i j <= 1 ->
-    pow (sum_n (fun i => sum_n (fun j => (a i j)/INR i) m * INR i) n) 2 <= 2 * INR m * sum_n (fun i => sum_n (fun j => a i j) m*INR i) n.
+    (ha : forall i j : nat, 0 <= a i j <= 1)
+    (m n : nat)
+    (mnpos : ge m 0 /\ ge n 0)
+    : (\sum_(1 <= i < m.+1) (\sum_(1 <= j < (m * i).+1) ((a i j) / i%:R))) ^+ 2 <= 2 * (m%:R) * (\sum_(1 <= i < n.+1) (\sum_(1 <= j < (m*i).+1) a i j)).
 Proof. Admitted.

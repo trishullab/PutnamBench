@@ -1,18 +1,20 @@
-Require Import Ensembles Finite_sets Reals Coquelicot.Coquelicot. From mathcomp Require Import div seq ssrnat ssrbool.
-Definition putnam_1974_b6_solution : seq nat := [:: (21000/3)%nat; (21000/3)%nat; (21000/3 + 1)%nat; (21001/3 + 1)%nat; (21001/3)%nat; (21001/3 + 1)%nat].
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import classical_sets cardinality.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope nat_scope.
+Local Open Scope classical_set_scope.
+Local Open Scope card_scope.
+
+Definition putnam_1974_b6_solution : (nat * nat * nat) := ((2^1000 - 1) %/ 3, (2^1000 - 1) %/ 3, (2^1000 - 1) %/ 3 + 1).
 Theorem putnam_1974_b6
-    (E : Ensemble R)
-    (E' : Ensemble R)
-    (pres : R -> Prop)
-    (hE : cardinal R E 1000)
-    (hE' : cardinal R E 1001)
-    (habc : nat -> Ensemble (Ensemble R) := fun val => fun (subE : Ensemble R) => exists (subEsz: nat), (forall x: R, subE x -> E x /\ pres x) /\ cardinal R subE subEsz /\ subEsz mod 3 = val)
-    (habc' : nat -> Ensemble (Ensemble R) := fun val => fun (subE' : Ensemble R) => exists (subEsz': nat), (forall x: R, subE' x -> E' x /\ pres x) /\ cardinal R subE' subEsz' /\ subEsz' mod 3 = val)
-    : cardinal (Ensemble R) (habc 0%nat) (nth 0%nat putnam_1974_b6_solution 0) /\
-    cardinal (Ensemble R) (habc 1%nat) (nth 0%nat putnam_1974_b6_solution 1) /\
-    cardinal (Ensemble R) (habc 2%nat) (nth 0%nat putnam_1974_b6_solution 2) /\
-    cardinal (Ensemble R) (habc' 0%nat) (nth 0%nat putnam_1974_b6_solution 3) /\
-    cardinal (Ensemble R) (habc' 1%nat) (nth 0%nat putnam_1974_b6_solution 4) /\
-    cardinal (Ensemble R) (habc' 2%nat) (nth 0%nat putnam_1974_b6_solution 5).
+    (n : nat := 1000)
+    (count0 count1 count2 : nat)
+    (hcount0 : [set : 'I_(count0)] #= [set A : set nat | A `<=` [set x : nat | 1 <= x <= n] /\ exists j : nat, A #= [set : 'I_(3*j)]])
+    (hcount1 : [set : 'I_(count1)] #= [set A : set nat | A `<=` [set x : nat | 1 <= x <= n] /\ exists j : nat, A #= [set : 'I_(3*j+1)]])
+    (hcount2 : [set : 'I_(count2)] #= [set A : set nat | A `<=` [set x : nat | 1 <= x <= n] /\ exists j : nat, A #= [set : 'I_(3*j+2)]])
+    : (count0, count1, count2) = putnam_1974_b6_solution.
 Proof. Admitted.
-End putnam_1974_b6.

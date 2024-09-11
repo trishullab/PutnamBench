@@ -1,12 +1,17 @@
-Require Import Reals Coquelicot.Coquelicot.
-Definition putnam_1978_b5_solution := fun n => match n with | O => 1 | S (S O) => -4 | S (S (S (S O))) => 4 | _ => 0 end.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals.
+From mathcomp Require Import classical_sets.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition putnam_1978_b5_solution : {poly R} := (4%:P) * 'X^4 - 4%:P * 'X^2 + 1%:P.
 Theorem putnam_1978_b5
-    (valid : (nat -> R) -> Prop := fun coeff => 
-        let p := fun x => sum_n (fun i => coeff i * x ^ i) 5 in
-        forall (x: R), -1 <= x <= 1 -> 0 <= p x <= 1
-    )
-    (maxcoeff : nat -> R)
-    (hm : valid maxcoeff)
-    (hubm : forall (coeff: nat -> R), valid coeff -> coeff 4%nat <= maxcoeff 4%nat)
-    : maxcoeff = putnam_1978_b5_solution.
+    (S : set {poly R} := [set p : {poly R} | size p = 5%nat /\ (forall x : R, -1 <= x <= 1 -> 0 <= p.[x] <= 1)])
+    : putnam_1978_b5_solution \in S /\ (forall p : {poly R}, p \in S -> (p`_4) <= (putnam_1978_b5_solution`_4)).
 Proof. Admitted.

@@ -1,9 +1,14 @@
-Require Import Factorial Reals Coquelicot.Coquelicot. 
-Definition putnam_1974_a6_solution (n N : nat) := (fact N mod n = 0%nat /\ forall (N': nat), fact N' mod n = 0%nat -> ge N' N, 25%nat).
+From mathcomp Require Import all_algebra all_ssreflect.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Definition putnam_1974_a6_solution : nat := 25%nat.
 Theorem putnam_1974_a6
-    (f : nat -> nat)
-    (cond : nat -> (nat -> Z) -> Prop := fun n coeff => coeff n = Z.of_nat 1 /\ let p : nat -> R := fun x => sum_n (fun i => IZR (coeff i) * INR x ^ i) (n + 1) in (forall (m: Z), Z.to_nat (floor (p (Z.to_nat m))) mod n = 0%nat))
-    (hf : forall (n: nat), exists (coeff: nat -> Z), cond (f n) coeff)
-    (hflb : forall (n: nat) (coeff: nat -> Z), cond n coeff -> ge n (f n))
-    : forall (n: nat), exists N, f n = N /\ fst (putnam_1974_a6_solution n N) /\ f 1000000%nat = snd (putnam_1974_a6_solution n N).
+    (hdivnallx : {poly int} -> Prop := fun f => (f \is monic) /\ (forall x : int, ((10^6) %| f.[x])%Z))
+    : (exists f : {poly int}, hdivnallx f /\ size f = putnam_1974_a6_solution.+1) /\
+      (forall d : nat, lt d putnam_1974_a6_solution -> ~ (exists f : {poly int}, hdivnallx f /\ size f = d.+1)).
 Proof. Admitted.

@@ -1,5 +1,12 @@
-Require Import List Nat.
+From mathcomp Require Import all_algebra all_ssreflect.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope nat_scope.
+
 Theorem putnam_1976_b6
-    (sigma : nat -> nat := fun n => fold_right plus 0 (filter (fun m => Nat.eqb (n mod m) 0) (seq 1 (S n))))
-    : forall (n: nat), sigma n = 2*n + 1 -> exists (m: nat), (odd m = true )/\ n = m*m. 
+(sigma : nat -> int := fun N => \sum_(d <- divisors N) d)
+: forall N : nat, sigma N = (N.*2 + 1) -> (exists m : nat, odd m = true /\ N = m ^ 2).
 Proof. Admitted.
