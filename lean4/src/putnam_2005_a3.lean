@@ -12,6 +12,6 @@ theorem putnam_2005_a3
     (pzeros : ∀ z : ℂ, p.eval z = 0 → Complex.abs z = 1)
     (hg : ∀ z : ℂ, g z = (p.eval z) / z ^ ((n : ℂ) / 2))
     (z : ℂ)
-    (hz : deriv g z = 0) :
+    (hz : z ≠ 0 ∧ deriv g z = 0) :
     Complex.abs z = 1 :=
   sorry
