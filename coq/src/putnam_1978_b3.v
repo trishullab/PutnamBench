@@ -11,7 +11,7 @@ Local Open Scope ring_scope.
 Local Open Scope classical_set_scope.
 
 Variable R : realType.
-Theorem putnam_1978_b4
+Theorem putnam_1978_b3
     (P : nat -> {poly R})
     (hP1 : P 1%nat = 1%:P + 'X)
     (hP2 : P 2%nat = 1%:P + 2 * 'X)
