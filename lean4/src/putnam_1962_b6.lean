@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
 
-open MeasureTheory Real
+open Real
 
 theorem putnam_1962_b6
 (n : ℕ)
