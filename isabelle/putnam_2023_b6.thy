@@ -3,8 +3,8 @@ theory putnam_2023_b6 imports Complex_Main
 begin
 
 (* uses (nat \<Rightarrow> 'n) instead of (Fin n \<Rightarrow> 'n) *)
-definition putnam_2023_b6_solution :: "int \<Rightarrow> int" where "putnam_2023_b6_solution \<equiv> undefined"
-(* (\<lambda>n::int. (-1)^(nat (\<lceil>n/2\<rceil>-1)) * 2 * \<lceil>n/2\<rceil>) *)
+definition putnam_2023_b6_solution :: "int \<Rightarrow> int" where "putnam_2023_b6_solution \<equiv> undefined "
+(*  (\<lambda>n::int. (-1)^(nat (\<lceil>(rat_of_int n)/2\<rceil>+1)) * 2 * \<lceil>(rat_of_int n)/2\<rceil>) *)
 theorem putnam_2023_b6:
   fixes n :: int
   and S :: "int^'n^'n"

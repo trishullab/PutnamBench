@@ -1,5 +1,13 @@
-Require Import Reals.
-Open Scope R.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
 Theorem putnam_1978_b4 
-    : forall (n: R), exists (a b c d: Z), IZR a > n /\ IZR b > n /\ IZR c > n /\ IZR d > n /\ IZR a * IZR a + IZR b * IZR b + IZR c * IZR c + IZR d * IZR d = IZR a * IZR b * IZR c + IZR a * IZR b * IZR d + IZR a * IZR c * IZR d + IZR b * IZR c * IZR d.
+    : forall N : R, exists a b c d : int, (a%:~R) > N /\ (b%:~R) > N /\ (c%:~R) > N /\ (d%:~R) > N /\ a ^+ 2 + b ^+ 2 + c ^+ 2 + d ^+ 2 = a * b * c + a * b * d + a * c * d + b * c * d.
 Proof. Admitted.
