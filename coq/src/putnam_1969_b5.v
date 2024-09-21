@@ -1,6 +1,10 @@
 Section putnam_1969_b5.
 Require Import Reals Finite_sets. From Coquelicot Require Import Coquelicot.
 Open Scope R.
+
+(* Note: Not moving this problem to a mathcomp-dependent formalization as mathcomp-analysis 
+   does not yet include an easy definition for eventually, which currently only supports nats.
+   See line 657 of mathcomp-analysis/topology.v which has yet to extend eventually to arbitrary lattices.*)
 Theorem putnam_1969_b5
     (a : nat -> R)
     (ha : forall n : nat, 0 < a n < a (Nat.add n 1))

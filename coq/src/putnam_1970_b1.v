@@ -1,12 +1,18 @@
-Section putnam_1970_b1.
-Require Import Reals. From Coquelicot Require Import Hierarchy.
-Open Scope R.
-Definition putnam_1970_b1_solution := exp (2 * ln 5 - 4 + 2 * atan 2).
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals exp sequences topology trigo normedtype.
+From mathcomp Require Import classical_sets.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition putnam_1970_b1_solution : R := expR (2 * ln 5 - 4 + 2 * atan 2).
 Theorem putnam_1970_b1
-    (f : nat -> nat -> R)
-    (hbc : forall n : nat, f n O = 1)
-    (hi : forall n i : nat, f n (Nat.add i 1) = (f n i) * Rpower ((INR n)^2 + (INR (i + 1))^2) (1/(INR n)))
-    (g : nat -> R := fun n : nat => 1/((INR n)^4) * f (Nat.mul 2 n) (Nat.mul 2 n))
-    : filterlim g eventually (locally putnam_1970_b1_solution).
+    (f : nat -> R := fun n => 1/(n%:R ^+ 4) * \prod_(1 <= i < n.*2.+1) expR (1/(n%:R) * ln ((n%:R ^+ 2) + (i%:R ^+ 2))))
+    : f @ \oo --> putnam_1970_b1_solution.
 Proof. Admitted.
-End putnam_1970_b1.

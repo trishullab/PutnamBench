@@ -1,11 +1,21 @@
-Section putnam_1970_b2.
-Require Import Reals. From Coquelicot Require Import Coquelicot.
-Open Scope R.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals sequences measure lebesgue_measure lebesgue_integral normedtype.
+From mathcomp Require Import classical_sets.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition mu := [the measure _ _ of @lebesgue_measure R].
 Theorem putnam_1970_b2
-    (a b c d : R)
     (T : R)
-    (H : R -> R := fun t => a*t^3 + b*t^2 + c*t + d)
+    (H : {poly R})
     (hT : T > 0)
-    : (H (-T/sqrt 3) + H (T/sqrt 3))/2 = 1/(2*T) * RInt H (-T) T.
+    (hH : le (size H) 4%nat)
+    : (H.[(-T/(@Num.sqrt R 3))] + H.[(T/(@Num.sqrt R 3))])/2 = 1/(2*T) * \int[mu]_(t in [set x : R | -T <= x <= T]) H.[t].
 Proof. Admitted.
-End putnam_1970_b2.
