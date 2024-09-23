@@ -3,6 +3,9 @@ open BigOperators
 
 open Topology Filter
 
+/--
+Prove that any solution $y(x)$ to the differential equation $y'' + e^{x}y = 0$ remains bounded as $x$ goes to $+\infty$.
+-/
 theorem putnam_1966_b6
 (y : ℝ → ℝ)
 (hy : Differentiable ℝ y ∧ Differentiable ℝ (deriv y))

@@ -5,6 +5,9 @@ open Topology Filter
 
 abbrev putnam_2019_b1_solution : ℕ → ℕ := sorry
 -- (fun n : ℕ => 5 * n + 1)
+/--
+Denote by $\mathbb{Z}^2$ the set of all points $(x,y)$ in the plane with integer coordinates. For each integer $n \geq 0$, let $P_n$ be the subset of $\mathbb{Z}^2$ consisting of the point $(0,0)$ together with all points $(x,y)$ such that $x^2+y^2=2^k$ for some integer $k \leq n$. Determine, as a function of $n$, the number of four-point subsets of $P_n$ whose elements are the vertices of a square.
+-/
 theorem putnam_2019_b1
 (n : ℕ)
 (Pn : Set (Fin 2 → ℤ))

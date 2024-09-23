@@ -5,6 +5,14 @@ open MvPolynomial Real
 
 abbrev putnam_1987_a5_solution : Prop := sorry
 -- False
+/--
+Let $\vec{G}(x,y)=\left(\frac{-y}{x^2+4y^2},\frac{x}{x^2+4y^2},0\right)$. Prove or disprove that there is a vector-valued function $\vec{F}(x,y,z)=(M(x,y,z),N(x,y,z),P(x,y,z))$ with the following properties:
+\begin{enumerate}
+\item[(i)] $M$, $N$, $P$ have continuous partial derivatives for all $(x,y,z) \neq (0,0,0)$;
+\item[(ii)] $\text{Curl}\,\vec{F}=\vec{0}$ for all $(x,y,z) \neq (0,0,0)$;
+\item[(iii)] $\vec{F}(x,y,0)=\vec{G}(x,y)$.
+\end{enumerate}
+-/
 theorem putnam_1987_a5
 (vec2 : ℝ → ℝ → (Fin 2 → ℝ))
 (vec3 : ℝ → ℝ → ℝ → (Fin 3 → ℝ))

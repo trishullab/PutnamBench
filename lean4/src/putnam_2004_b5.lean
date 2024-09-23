@@ -5,6 +5,9 @@ open Nat Topology Filter
 
 abbrev putnam_2004_b5_solution : ℝ := sorry
 -- 2 / Real.exp 1
+/--
+Evaluate $\lim_{x \to 1^-} \prod_{n=0}^\infty \left(\frac{1+x^{n+1}}{1+x^n}\right)^{x^n}$.
+-/
 theorem putnam_2004_b5
     (xprod : ℝ → ℝ)
     (hxprod : ∀ x ∈ Set.Ioo 0 1,

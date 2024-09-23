@@ -3,6 +3,9 @@ open BigOperators
 
 open Function Set
 
+/--
+A finite collection of digits $0$ and $1$ is written around a circle. An \emph{arc} of length $L \geq 0$ consists of $L$ consecutive digits around the circle. For each arc $w$, let $Z(w)$ and $N(w)$ denote the number of $0$'s in $w$ and the number of $1$'s in $w$, respectively. Assume that $|Z(w)-Z(w')| \leq 1$ for any two arcs $w,w'$ of the same length. Suppose that some arcs $w_1,\dots,w_k$ have the property that $Z=\frac{1}{k}\sum_{j=1}^k Z(w_j)$ and $N=\frac{1}{k}\sum_{j=1}^k N(w_j)$ are both integers. Prove that there exists an arc $w$ with $Z(w)=Z$ and $N(w)=N$.
+-/
 theorem putnam_2013_a4
 (n : ℕ)
 (circle : Fin n → Fin 2)

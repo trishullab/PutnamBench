@@ -5,6 +5,9 @@ open Filter Topology Real
 
 abbrev putnam_1995_a5_solution : Prop := sorry
 -- True
+/--
+Let $x_{1},x_{2},\dots,x_{n}$ be differentiable (real-valued) functions of a single variable $f$ which satisfy \begin{align*} \frac{dx_{1}}{dt} &= a_{11}x_{1} + a_{12}x_{2} + \cdots + a_{1n}x_{n} \ \frac{dx_{2}}{dt} &= a_{21}x_{1} + a_{22}x_{2} + \cdots + a_{2n}x_{n} \ \vdots && \vdots \ \frac{dx_{n}}{dt} &= a_{n1}x_{1} + a_{n2}x_{2} + \cdots + a_{nn}x_{n} \end{align*} for some constants $a_{ij}>0$. Suppose that for all $i$, $x_{i}(t) \to 0$ as $t \to \infty$. Are the functions $x_{1},x_{2},\dots,x_{n}$ necessarily linearly dependent?
+-/
 theorem putnam_1995_a5
 (hdiffx : (n : ℕ) → (Fin n → (ℝ → ℝ)) → Prop)
 (ha : (n : ℕ) → (Fin n → Fin n → ℝ) → Prop)

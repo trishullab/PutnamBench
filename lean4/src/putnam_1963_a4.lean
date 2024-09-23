@@ -3,6 +3,9 @@ open BigOperators
 
 open Filter Set
 
+/--
+Let $\{a_n\}$ be a sequence of positive real numbers. Show that $\limsup_{n \to \infty} n\left(\frac{1+a_{n+1}}{a_n}-1\right) \geq 1$. Show that the number $1$ on the right-hand side of this inequality cannot be replaced by any larger number. (The symbol $\limsup$ is sometimes written $\overline{\lim}$.)
+-/
 theorem putnam_1963_a4
     (T : (ℕ → ℝ) → (ℕ → ℝ))
     (T_def : ∀ a n, T a n = n * ((1 + a (n + 1)) / a n - 1))

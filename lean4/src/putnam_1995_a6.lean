@@ -3,6 +3,9 @@ open BigOperators
 
 open Filter Topology Real
 
+/--
+Suppose that each of $n$ people writes down the numbers $1,2,3$ in random order in one column of a $3 \times n$ matrix, with all orders equally likely and with the orders for different columns independent of each other. Let the row sums $a,b,c$ of the resulting matrix be rearranged (if necessary) so that $a \leq b \leq c$. Show that for some $n \geq 1995$, it is at least four times as likely that both $b=a+1$ and $c=a+2$ as that $a=b=c$.
+-/
 theorem putnam_1995_a6
 (SM : (n : ℕ) → Set (Matrix (Fin 3) (Fin n) ℤ))
 (hSM : SM = (fun n : ℕ => {M : Matrix (Fin 3) (Fin n) ℤ | ∀ j : Fin n, {M i j | i : Fin 3} = {1, 2, 3}}))

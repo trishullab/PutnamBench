@@ -3,6 +3,9 @@ open BigOperators
 
 open Nat Set
 
+/--
+Let $p(z)$ be a polynomial of degree $n$ all of whose zeros have absolute value $1$ in the complex plane. Put $g(z)=p(z)/z^{n/2}$. Show that all zeros of $g'(z)=0$ have absolute value $1$.
+-/
 theorem putnam_2005_a3
     (p : Polynomial ℂ)
     (n : ℕ)

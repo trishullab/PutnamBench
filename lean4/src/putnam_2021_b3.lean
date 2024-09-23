@@ -5,6 +5,9 @@ open Filter Topology Metric
 
 abbrev putnam_2021_b3_solution : Prop := sorry
 -- True
+/--
+Let $h(x,y)$ be a real-valued function that is twice continuously differentiable throughout $\mathbb{R}^2$, and define $\rho(x,y)=yh_x-xh_y$. Prove or disprove: For any positive constants $d$ and $r$ with $d>r$, there is a circle $\mathcal{S}$ of radius $r$ whose center is a distance $d$ away from the origin such that the integral of $\rho$ over the interior of $\mathcal{S}$ is zero.
+-/
 theorem putnam_2021_b3
 (rho : ((EuclideanSpace ℝ (Fin 2)) → ℝ) → (EuclideanSpace ℝ (Fin 2)) → ℝ)
 (circint : (EuclideanSpace ℝ (Fin 2)) → ℝ → Set (EuclideanSpace ℝ (Fin 2)))

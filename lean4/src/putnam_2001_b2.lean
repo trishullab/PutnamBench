@@ -5,6 +5,13 @@ open Topology Filter Polynomial Set
 
 abbrev putnam_2001_b2_solution : Set (ℝ × ℝ) := sorry
 -- {((3 ^ ((1 : ℝ) / 5) + 1) / 2, (3 ^ ((1 : ℝ) / 5) - 1) / 2)}
+/--
+Find all pairs of real numbers $(x,y)$ satisfying the system of equations
+\begin{align*}
+\frac{1}{x}+\frac{1}{2y}&=(x^2+3y^2)(3x^2+y^2) \\
+\frac{1}{x}-\frac{1}{2y}&=2(y^4-x^4).
+\end{align*}
+-/
 theorem putnam_2001_b2
     (x y : ℝ)
     (hx : x ≠ 0)

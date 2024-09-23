@@ -3,6 +3,9 @@ open BigOperators
 
 open EuclideanGeometry Set Metric
 
+/--
+Let $ABCD$ be a skew (non-planar) quadrilateral. Prove that if $\angle ABC = \angle CDA$ and $\angle BCD = \angle DAB$, then $AB = CD$ and $AD = BC$.
+-/
 theorem putnam_1972_b5
 (A B C D : EuclideanSpace ℝ (Fin 3))
 (hnonplanar : ¬Coplanar ℝ {A, B, C, D})

@@ -14,3 +14,7 @@ lean_lib «putnam» where
 
 lean_lib «putnam_with_solutions» where
   globs := #[.submodules `solutions_replaced_new]
+
+lean_exe «check_docstrings» where
+  root := `check_docstrings
+  supportInterpreter := true

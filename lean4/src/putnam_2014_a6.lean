@@ -5,6 +5,9 @@ open Topology Filter Nat
 
 abbrev putnam_2014_a6_solution : ℕ → ℕ := sorry
 -- (fun n : ℕ => n ^ n)
+/--
+Let \( n \) be a positive integer. What is the largest \( k \) for which there exist \( n \times n \) matrices \( M_1, \ldots, M_k \) and \( N_1, \ldots, N_k \) with real entries such that for all \( i \) and \( j \), the matrix product \( M_i N_j \) has a zero entry somewhere on its diagonal if and only if \( i \neq j \)?
+-/
 theorem putnam_2014_a6
 (n : ℕ)
 (kex : ℕ → Prop)

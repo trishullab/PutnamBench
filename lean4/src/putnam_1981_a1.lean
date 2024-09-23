@@ -5,6 +5,9 @@ open Topology Filter Set Polynomial Function
 
 noncomputable abbrev putnam_1981_a1_solution : ℝ := sorry
 -- 1/8
+/--
+Let $E(n)$ be the greatest integer $k$ such that $5^k$ divides $1^1 2^2 3^3 \cdots n^n$. Find $\lim_{n \rightarrow \infty} \frac{E(n)}{n^2}$.
+-/
 theorem putnam_1981_a1
 (P : ℕ → ℕ → Prop)
 (hP : P = fun n k : ℕ => 5^k ∣ ∏ m in Finset.Icc 1 n, (m^m : ℤ))

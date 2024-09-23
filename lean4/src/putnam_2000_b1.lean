@@ -3,6 +3,9 @@ open BigOperators
 
 open Topology Filter
 
+/--
+Let $a_j,b_j,c_j$ be integers for $1\leq j\leq N$. Assume for each $j$, at least one of $a_j,b_j,c_j$ is odd. Show that there exist integers $r$, $s$, $t$ such that $ra_j+sb_j+tc_j$ is odd for at least $4N/7$ values of $j$, $1\leq j\leq N$.
+-/
 theorem putnam_2000_b1
 (N : ℕ)
 (a b c : Fin N → ℤ)
