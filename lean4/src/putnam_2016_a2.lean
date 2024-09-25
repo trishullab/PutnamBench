@@ -8,7 +8,7 @@ noncomputable abbrev putnam_2016_a2_solution : ℝ := sorry
 /--
 Given a positive integer $n$, let $M(n)$ be the largest integer $m$ such that
 \[
-inom{m}{n-1} > \binom{m-1}{n}.
+\binom{m}{n-1} > \binom{m-1}{n}.
 \]
 Evaluate
 \[
