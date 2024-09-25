@@ -203,7 +203,7 @@
     },
     {
         "problem_name": "putnam_1964_a6",
-        "informal_statement": "Let $S$ be a finite set of collinear points. Let $k$ be the maximum distance between any two points of $S$. Given a pair of points of $S$ a distance $d < k$ apart, we can find another pair of points of $S$ also a distance $d$ apart. Prove that if two pairs of points of $S$ are distances $a$ and $b$ apart, then $\frac{a}{b}$ is rational.",
+        "informal_statement": "Let $S$ be a finite set of collinear points. Let $k$ be the maximum distance between any two points of $S$. Given a pair of points of $S$ a distance $d < k$ apart, we can find another pair of points of $S$ also a distance $d$ apart. Prove that if two pairs of points of $S$ are distances $a$ and $b$ apart, then $\\frac{a}{b}$ is rational.",
         "tags": [
             "geometry"
         ]
@@ -296,7 +296,7 @@
     {
         "problem_name": "putnam_1965_b1",
         "informal_statement": "Find $$\\lim_{n \\to \\infty} \\int_{0}^{1} \\int_{0}^{1} \\cdots \\int_{0}^{1} \\cos^2\\left(\\frac{\\pi}{2n}(x_1 + x_2 + \\cdots + x_n)\\right) dx_1 dx_2 \\cdots dx_n.$$",
-        "informal_solution": "Show that the limit is $\frac{1}{2}$.",
+        "informal_solution": "Show that the limit is $\\frac{1}{2}$.",
         "tags": [
             "analysis"
         ]
@@ -916,7 +916,7 @@
     {
         "problem_name": "putnam_1972_b2",
         "informal_statement": "Let $x : \\mathbb{R} \\to \\mathbb{R}$ be a twice differentiable function whose second derivative is nonstrictly decreasing. If $x(t) - x(0) = s$, $x'(0) = 0$, and $x'(t) = v$ for some $t > 0$, find the maximum possible value of $t$ in terms of $s$ and $v$.",
-        "informal_solution": "Show that the maximum possible time is $t = \frac{2s}{v}$.",
+        "informal_solution": "Show that the maximum possible time is $t = \\frac{2s}{v}$.",
         "tags": [
             "analysis"
         ]
@@ -1169,7 +1169,7 @@
     {
         "problem_name": "putnam_1975_b3",
         "informal_statement": "Let $s_k (a_1, a_2, \\dots, a_n)$ denote the $k$-th elementary symmetric function; that is, the sum of all $k$-fold products of the $a_i$. For example, $s_1 (a_1, \\dots, a_n) = \\sum_{i=1}^{n} a_i$, and $s_2 (a_1, a_2, a_3) = a_1a_2 + a_2a_3 + a_1a_3$. Find the supremum $M_k$ (which is never attained) of $$\\frac{s_k (a_1, a_2, \\dots, a_n)}{(s_1 (a_1, a_2, \\dots, a_n))^k}$$ across all $n$-tuples $(a_1, a_2, \\dots, a_n)$ of positive real numbers with $n \\ge k$.",
-        "informal_solution": "The supremum $M_k$ is $\frac{1}{k!}$.",
+        "informal_solution": "The supremum $M_k$ is $\\frac{1}{k!}$.",
         "tags": [
             "analysis",
             "algebra"
@@ -2951,7 +2951,7 @@
     },
     {
         "problem_name": "putnam_1997_a6",
-        "informal_statement": "For a positive integer $n$ and any real number $c$, define $x_k$ recursively by $x_0=0$, $x_1=1$, and for $k\\geq 0$, \\[x_{k+2}=\frac{cx_{k+1}-(n-k)x_k}{k+1}.\\] Fix $n$ and then take $c$ to be the largest value for which $x_{n+1}=0$. Find $x_k$ in terms of $n$ and $k$, $1\\leq k\\leq n$.",
+        "informal_statement": "For a positive integer $n$ and any real number $c$, define $x_k$ recursively by $x_0=0$, $x_1=1$, and for $k\\geq 0$, \\[x_{k+2}=\\frac{cx_{k+1}-(n-k)x_k}{k+1}.\\] Fix $n$ and then take $c$ to be the largest value for which $x_{n+1}=0$. Find $x_k$ in terms of $n$ and $k$, $1\\leq k\\leq n$.",
         "informal_solution": "Show that the solution is that $x_k = {n - 1 \\choose k - 1}$.",
         "tags": [
             "algebra"
@@ -4249,7 +4249,7 @@
     },
     {
         "problem_name": "putnam_2012_b5",
-        "informal_statement": "Prove that, for any two bounded functions $g_1, g_2: \\RR \\to [1, \\infty)$, there exist functions $h_1, h_2: \\RR \to \\RR$ such that, for every $x \\in \\RR$, \\[ \\sup_{s \\in \\RR} (g_1(s)^x g_2(s))  = \\max_{t \\in \\RR} (x h_1(t) + h_2(t)).\\]",
+        "informal_statement": "Prove that, for any two bounded functions $g_1, g_2: \\RR \\to [1, \\infty)$, there exist functions $h_1, h_2: \\RR \\to \\RR$ such that, for every $x \\in \\RR$, \\[ \\sup_{s \\in \\RR} (g_1(s)^x g_2(s))  = \\max_{t \\in \\RR} (x h_1(t) + h_2(t)).\\]",
         "informal_solution": "None.",
         "tags": [
             "analysis"
@@ -4546,7 +4546,7 @@
     },
     {
         "problem_name": "putnam_2016_a2",
-        "informal_statement": "Given a positive integer $n$, let $M(n)$ be the largest integer $m$ such that\n\\[\n\binom{m}{n-1} > \\binom{m-1}{n}.\n\\]\nEvaluate\n\\[\n\\lim_{n \to \\infty} \\frac{M(n)}{n}.\n\\]",
+        "informal_statement": "Given a positive integer $n$, let $M(n)$ be the largest integer $m$ such that\n\\[\n\\binom{m}{n-1} > \\binom{m-1}{n}.\n\\]\nEvaluate\n\\[\n\\lim_{n \\to \\infty} \\frac{M(n)}{n}.\n\\]",
         "informal_solution": "Show that the answer is $\\frac{3 + \\sqrt{5}}{2}$.",
         "tags": [
             "analysis"
@@ -4681,7 +4681,7 @@
     },
     {
         "problem_name": "putnam_2017_b4",
-        "informal_statement": "Evaluate the sum \\begin{gather*} \\sum_{k=0}^\\infty \\left( 3 \\cdot \\frac{\\ln(4k+2)}{4k+2} - \\frac{\\ln(4k+3)}{4k+3} - \\frac{\\ln(4k+4)}{4k+4} - \\frac{\\ln(4k+5)}{4k+5} \right) \\ = 3 \\cdot \\frac{\\ln 2}{2} - \\frac{\\ln 3}{3} - \\frac{\\ln 4}{4} - \\frac{\\ln 5}{5} + 3 \\cdot \\frac{\\ln 6}{6} - \\frac{\\ln 7}{7} \\ - \\frac{\\ln 8}{8} - \\frac{\\ln 9}{9} + 3 \\cdot \\frac{\\ln 10}{10} - \\cdots . \\end{gather*} (As usual, $\\ln x$ denotes the natural logarithm of $x$.)",
+        "informal_statement": "Evaluate the sum \\begin{gather*} \\sum_{k=0}^\\infty \\left( 3 \\cdot \\frac{\\ln(4k+2)}{4k+2} - \\frac{\\ln(4k+3)}{4k+3} - \\frac{\\ln(4k+4)}{4k+4} - \\frac{\\ln(4k+5)}{4k+5} \\right) \\ = 3 \\cdot \\frac{\\ln 2}{2} - \\frac{\\ln 3}{3} - \\frac{\\ln 4}{4} - \\frac{\\ln 5}{5} + 3 \\cdot \\frac{\\ln 6}{6} - \\frac{\\ln 7}{7} \\ - \\frac{\\ln 8}{8} - \\frac{\\ln 9}{9} + 3 \\cdot \\frac{\\ln 10}{10} - \\cdots . \\end{gather*} (As usual, $\\ln x$ denotes the natural logarithm of $x$.)",
         "informal_solution": "Prove that the sum equals $(\\ln 2)^2$.",
         "tags": [
             "algebra"
@@ -5084,7 +5084,7 @@
     },
     {
         "problem_name": "putnam_2022_b2",
-        "informal_statement": "Let $\\times$ represent the cross product in $\\mathbb{R}^3$. For what positive integers $n$ does there exist a set $S \\subset \\mathbb{R}^3$ with exactly $n$ elements such that $S=\\{v \times w:v,w \\in S\\}$?",
+        "informal_statement": "Let $\\times$ represent the cross product in $\\mathbb{R}^3$. For what positive integers $n$ does there exist a set $S \\subset \\mathbb{R}^3$ with exactly $n$ elements such that $S=\\{v \\times w:v,w \\in S\\}$?",
         "informal_solution": "Show that the possible values of $n$ are $1$ and $7$.",
         "tags": [
             "algebra"
@@ -5134,7 +5134,7 @@
     {
         "problem_name": "putnam_2023_a2",
         "informal_statement": "Let $n$ be an even positive integer. Let $p$ be a monic, real polynomial of degree $2n$; that is to say, $p(x) = x^{2n} + a_{2n-1} x^{2n-1} + \\cdots + a_1 x + a_0$ for some real coefficients $a_0, \\dots, a_{2n-1}$. Suppose that $p(1/k) = k^2$ for all integers $k$ such that $1 \\leq |k| \\leq n$. Find all other real numbers $x$ for which $p(1/x) = x^2$.",
-        "informal_solution": "Show that the other real numbers satisfying $p(1/x) = x^2$ are $\\pm \frac{1}{n!}.$",
+        "informal_solution": "Show that the other real numbers satisfying $p(1/x) = x^2$ are $\\pm \\frac{1}{n!}.$",
         "tags": [
             "algebra"
         ]
@@ -5150,7 +5150,7 @@
     {
         "problem_name": "putnam_2023_a5",
         "informal_statement": "For a nonnegative integer $k$, let $f(k)$ be the number of ones in the base 3 representation of $k$. Find all complex numbers $z$ such that \\[ \\sum_{k=0}^{3^{1010}-1} (-2)^{f(k)} (z+k)^{2023} = 0. \\]",
-        "informal_solution": "Show that the solution is the set of complex numbers $\\{- \\frac{3^{1010} - 1}{2} \\pm \\frac{\\sqrt{9^{1010} - 1}}{4} * i \\}$",
+        "informal_solution": "Show that the solution is the set of complex numbers $\\{- \\frac{3^{1010} - 1}{2}, - \\frac{3^{1010} - 1}{2} \\pm \\frac{\\sqrt{9^{1010} - 1}}{4}i \\}$",
         "tags": [
             "algebra"
         ]
