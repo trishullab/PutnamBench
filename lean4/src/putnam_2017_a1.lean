@@ -8,7 +8,7 @@ theorem putnam_2017_a1
     (IsQualifying_def : ∀ S, IsQualifying S ↔
       (∀ n ∈ S, 0 < n) ∧
       2 ∈ S ∧
-      (∀ n, n ^ 2 ∈ S → n ∈ S) ∧
+      (∀ n > 0, n ^ 2 ∈ S → n ∈ S) ∧
       (∀ n ∈ S, (n + 5) ^ 2 ∈ S))
     (S : Set ℤ)
     (hS : IsLeast IsQualifying S) :
