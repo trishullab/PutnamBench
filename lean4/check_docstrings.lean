@@ -39,7 +39,7 @@ def checkEntry (entry : InformalJsonEntry) : CoreM EntryResult := do
       f!"Doc for {entry.problem_name}:\
       \n{doc}\
       \ndoesn't match the content of `informal/putnam.json`:\
-      \n{entry.informal_statement.trim}"
+      \n{entry.informal_statement.trim}\n"
     return .docMismatching
   else
     try

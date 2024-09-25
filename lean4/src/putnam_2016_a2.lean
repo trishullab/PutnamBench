@@ -12,7 +12,7 @@ Given a positive integer $n$, let $M(n)$ be the largest integer $m$ such that
 \]
 Evaluate
 \[
-\lim_{n 	o \infty} \frac{M(n)}{n}.
+\lim_{n \to \infty} \frac{M(n)}{n}.
 \]
 -/
 theorem putnam_2016_a2

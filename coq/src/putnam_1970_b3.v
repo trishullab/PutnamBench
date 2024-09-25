@@ -1,11 +1,21 @@
-Section putnam_1970_b3.
-Require Import Reals Ensembles. From Coquelicot Require Import Hierarchy.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals exp sequences topology normedtype.
+From mathcomp Require Import classical_sets.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
 Theorem putnam_1970_b3
-    (T : Ensemble (R * R))
+    (S : set (R * R))
     (a b : R)
     (hab : a < b)
-    (hT : forall s : R * R, In (R * R) T s -> a < fst s < b)
-    (hSclosed : closed T)
-    : closed (fun y : R => exists x : R, In (R * R) T (x, y)).
+    (hS : forall s : R * R, s \in S -> a < s.1 < b)
+    (hSclosed : closed S)
+    : closed [set y : R | exists x : R, (x, y) \in S].
 Proof. Admitted.
-End putnam_1970_b3.
