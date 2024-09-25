@@ -29,17 +29,43 @@ inductive EntryResult
   | docMissing
   | missing
 
+def emitGithubError (msg : String) (file : Option System.FilePath) (pos : Option Position) :
+    IO Unit := do
+  let mut parts := #[]
+  if let .some file := file then
+    parts := parts.push s!"file={file}"
+  if let .some pos := pos then
+    parts := parts.push s!"line={pos.line}"
+    parts := parts.push s!"col={pos.column}"
+  IO.eprintln s!"::error {" ".intercalate parts.toList}::{encodeMsg msg}"
+where
+  encodeMsg (msg : String) : String :=
+    msg.replace "%" "%25" |>.replace "\r" "%0D" |>.replace "\n" "%0A"
+
+def getSource (n : Name) : CoreM <| Option (Name × DeclarationRange) := do
+  let .some ranges ← Lean.findDeclarationRanges? n | return none
+  let .some mod ← Lean.findModuleOf? n | return none
+  return some (mod, ranges.range)
+
 /-- Return true if the entry is ok -/
 def checkEntry (entry : InformalJsonEntry) : CoreM EntryResult := do
   let doc? := (← Lean.findDocString? (← getEnv) entry.problem_name).map String.trim
   if doc? = some entry.informal_statement.trim then
     return .docMatching
   else if let .some doc := doc? then
-    IO.eprintln <|
-      f!"Doc for {entry.problem_name}:\
+    let srcInfo ← getSource entry.problem_name
+    emitGithubError
+      s!"Doc for {entry.problem_name}:\
+      \n\
       \n{doc}\
       \ndoesn't match the content of `informal/putnam.json`:\
-      \n{entry.informal_statement.trim}\n"
+      \n\
+      \n{entry.informal_statement.trim}\
+      \n\
+      If you change one, you must change both."
+      (some <| "src" / s!"{entry.problem_name}.lean")
+      (srcInfo.map (·.2.pos))
+
     return .docMismatching
   else
     try
