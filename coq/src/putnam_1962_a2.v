@@ -1,9 +1,23 @@
-Require Import Reals Coquelicot.Coquelicot Ensembles.
-Definition putnam_1962_a2_solution : Ensemble (R -> R) := (fun f : R -> R => exists a c : R, a > 0 /\ f = (fun x : R => a / (1 - c * x) ^ 2)).
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals normedtype sequences topology derive measure lebesgue_measure lebesgue_integral.
+From mathcomp Require Import classical_sets.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition mu := [the measure _ _ of @lebesgue_measure R].
+Definition putnam_1962_a2_solution : set (R -> R) := [set f | exists a c : R, a >= 0 /\ f = (fun x : R => a / (1 - c * x) ^ 2)].
 Theorem putnam_1962_a2
-    (hf : R -> (R -> R) -> Prop := (fun (e : R) (f : R -> R) => forall x : R, (0 < x /\ x < e) -> (RInt f 0 x) / x = sqrt (f 0 * f x)))
-    (hfinf : (R -> R) -> Prop := (fun f : R -> R => forall x : R, x > 0 -> (RInt f 0 x) / x = sqrt (f 0 * f x)))
-    : (forall f : R -> R, (hfinf f -> (exists g : R -> R, putnam_1962_a2_solution g /\ (forall x : R, x >= 0 -> g x = f x))) /\
-    (forall e : R, (e > 0 /\ hf e f) -> (exists g : R -> R, putnam_1962_a2_solution g /\ (forall x : R, (0 <= x /\ x < e) -> g x = f x)))) /\
-    (forall f : R -> R, putnam_1962_a2_solution f -> hfinf f \/ (exists e : R, e > 0 /\ hf e f)).
+    (P : (set R) -> (R -> R) -> Prop)
+    (P_def : forall s f, P s f <-> ((forall x, f x >= 0) /\ forall x, x \in s -> 
+                1/x * \int[mu]_(t in [set t | 0 <= t <= x]) f t = Num.sqrt (f 0 * f x)))
+    : (forall f,
+        (P [set t | 0 < t] f -> exists g, g \in putnam_1962_a2_solution /\ (forall x : R, x > 0 -> f x = g x)) /\
+        (forall e, 0 < e -> P [set t | 0 < t < e] f -> exists g, g \in putnam_1962_a2_solution /\ (forall x : R, 0 <= x < e -> f x = g x))) /\
+        forall f, f \in putnam_1962_a2_solution -> P [set t | 0 < t] f \/ exists e, 0 < e /\ P [set t | 0 < t < e] f.
 Proof. Admitted.

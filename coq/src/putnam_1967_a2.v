@@ -1,7 +1,21 @@
-Require Import Finite_sets Reals Factorial. From mathcomp Require Import fintype seq ssrbool. From Coquelicot Require Import Hierarchy Series.
+From mathcomp Require Import all_ssreflect all_algebra fintype.
+From mathcomp Require Import reals normedtype topology sequences.
+From mathcomp Require Import classical_sets cardinality.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+Local Open Scope card_scope.
+
+Variable R : realType.
 Theorem putnam_1967_a2
-    (T : nat -> nat)
-    (hT0 : (T 0 = 1)%nat)
-    (hTn : forall n : nat, (n >= 1)%nat -> exists i0 : 'I_n, cardinal ('I_n -> 'I_n -> nat) (fun A : 'I_n -> 'I_n -> nat => (forall i j : 'I_n, A i j = A j i) /\ (forall j : 'I_n, sum_n (fun i => INR (A (nth i0 (enum 'I_n) i) j)) (n - 1) = 1)) (T n))
-    : ((forall n : nat, (n >= 1 -> T (n + 1) = T n + n * T (n - 1))%nat) /\ (forall x : R, Series (fun n => INR (T n) * x ^ n / INR (fact n)) = exp (x + x ^ 2 / 2))).
+    (S : nat -> nat)
+    (hS0 : S 0%nat = 1%nat)
+    (hSn : forall n : nat, ge n 1 -> [set : 'I_(S n)] #= [set A : 'M[int]_n |  A = A^T /\ (forall j, \sum_(i < n) (A i j) = 1) /\ (forall i j, A i j >= 0)])
+    : (forall n : nat, ge n 1 -> S (n.+1) = Nat.add (S n) (n * S (n.-1))) /\
+      (forall x : R, series (fun n : nat => (S n)%:~R * (x ^+ n) / (n`!)%:~R) @ \oo --> expR (x + (x ^+ 2) / 2)).
 Proof. Admitted.

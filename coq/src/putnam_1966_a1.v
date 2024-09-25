@@ -1,5 +1,12 @@
-Require Import Reals Nat ZArith Coquelicot.Coquelicot.
+From mathcomp Require Import all_ssreflect ssrnum ssralg ssrint.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
 Theorem putnam_1966_a1
-    (f : nat -> R := fun n => (sum_n (fun m => (if (even m) then INR m else INR (m-1)) : R) n) / 2)
-    : forall x y : nat, ge x y -> INR x * INR y = f (add x y) - f (sub x y).
+    (f : nat -> int := fun n => \sum_(0 <= m < n + 1) (if (~~odd m) then (m%:Z)/2 else (m%:Z-1)/2))
+    : forall x y : nat, (gt x 0) -> (gt y 0) -> gt x y -> (x * y)%:Z = f (Nat.add x y) - f (Nat.sub x y).
 Proof. Admitted.

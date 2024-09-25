@@ -1,10 +1,18 @@
-Section putnam_1964_b6.
-Require Import Reals Ensembles. From mathcomp Require Import morphism.
-Open Scope R.
+From mathcomp Require Import all_algebra all_ssreflect morphism.
+From mathcomp Require Import reals sequences exp.
+From mathcomp Require Import classical_sets.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
 Theorem putnam_1964_b6
-    (image : ((R * R) -> (R * R)) -> Ensemble (R * R) -> Ensemble (R * R) := fun f A => (fun p => exists a : R * R, In (R * R) A a /\ f a = p))
-    (D : Ensemble (R * R) := fun v => dist_euc 0 0 (fst v) (snd v) <= 1)
-    (cong : Ensemble (R * R) -> Ensemble (R * R) -> Prop := fun A B => exists f : (R * R) -> (R * R), B = image f A /\ forall v w : R * R, dist_euc (fst v) (snd v) (fst w) (snd w) = dist_euc (fst (f v)) (snd (f v)) (fst (f w)) (snd (f w)))
-    : ~exists A B : Ensemble (R * R), cong A B /\ Intersection (R * R) A B = Empty_set (R * R) /\ Union (R * R) A B = D.
+    (D : set (R * R) := [set xy | xy.1 ^+ 2 + xy.2 ^+ 2 <= 1])
+    (cong : (set (R * R)) -> (set (R * R)) -> Prop :=
+        fun A B => exists f : R * R -> R * R, B = image A f /\ forall v w : R * R, (v.1 - w.1) ^+ 2 + (v.2 - w.2) ^+ 2 = ((f v).1 - (f w).1) ^+ 2 + ((f v).2 - (f w).2) ^+ 2)
+    : ~exists A B : set (R * R), cong A B /\ A `&` B = set0 /\ A `|` B = D.
 Proof. Admitted.
-End putnam_1964_b6.

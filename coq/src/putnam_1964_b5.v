@@ -1,11 +1,20 @@
-Section putnam_1964_b5.
-Require Import Reals. From Coquelicot Require Import Lim_seq Hierarchy.
-Open Scope nat_scope.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals sequences normedtype topology.
+From mathcomp Require Import classical_sets.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
 Theorem putnam_1964_b5
-    (a : nat -> nat)
-    (ha : (forall n : nat, gt (a (n + 1)) (a n)) /\ (forall n : nat, gt (a n) 0))
-    (b : nat -> nat)
-    (hb : b 0 = a 0 /\ forall n : nat, b (n + 1) = Nat.lcm (b n) (a (n + 1)))
-    : ex_lim_seq (fun N => sum_n (fun n => Rdiv (INR 1) (INR (b n))) N).
+    (a b : nat -> nat)
+    (ha : increasing_seq a /\ (forall n : nat, lt 0 (a n)))
+    (hb : b 0%nat = a 0%nat /\ forall n : nat, b n.+1 = lcmn (b n) (a (n.+1)))
+    (f : nat -> R := fun N => \sum_(0 <= n < N) 1/((b n)%:R))
+    : exists L : R, f @ \oo --> L.
 Proof. Admitted.
-End putnam_1964_b5.

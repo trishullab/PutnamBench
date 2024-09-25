@@ -1,7 +1,18 @@
-Require Import ZArith Ensembles Reals. From Coquelicot Require Import Hierarchy.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals topology normedtype.
+From mathcomp Require Import classical_sets.
+Import numFieldTopology.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
 Definition putnam_1963_b2_solution : Prop := True.
 Theorem putnam_1963_b2
-    (T : Ensemble R := fun x => exists m n : Z, x = (Rpower 2 (IZR m)) * (Rpower 3 (IZR n)))
-    (P : Ensemble R := fun x => x > 0)
-    : ((forall A : Ensemble R, Included R A P -> open A -> A <> Empty_set R -> Intersection R A T <> Empty_set R) <-> putnam_1963_b2_solution).
+    (S : set R := [set x | exists m n : int, x = 2 ^ m * 3 ^ n])
+    : [set x : R | 0 < x] `<=` closure S.
 Proof. Admitted.

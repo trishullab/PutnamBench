@@ -1,6 +1,19 @@
-Require Import Reals. From Coquelicot Require Import Rbar Lim_seq.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals sequences topology normedtype.
+From mathcomp Require Import classical_sets.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
 Theorem putnam_1963_a4
-    (apos : (nat -> R) -> Prop := fun a : nat -> R => forall n : nat, a n > 0)
-    (f : (nat -> R) -> nat -> R := fun a : nat -> R => fun n : nat => (INR n) * (((1 + a (S n)) / (a n)) - 1))
-    : ((forall a : nat -> R, apos a -> LimSup_seq (f a) >= 1) /\ ~(exists c : R, c > 1 /\ forall a : nat -> R, apos a -> LimSup_seq (f a) >= c)).
+    (T : (nat -> R) -> (nat -> R))
+    (T_def : forall a n, T a n = n%:R * ((1 + a (n.+1)) / a n - 1))
+    (P : (nat -> R) -> R -> Prop)
+    (P_def : forall a C, (P a C <-> C <= limn_sup (T a) \/ ~ (exists B, forall n, T a n <= B)))
+    : (forall a, (forall n, a n > 0) -> P a 1) /\ (forall C : R, C > 1 -> exists a, (forall n, a n > 0) /\ ~ P a C).
 Proof. Admitted.
