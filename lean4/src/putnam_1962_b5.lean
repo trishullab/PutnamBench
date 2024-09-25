@@ -1,8 +1,6 @@
 import Mathlib
 open BigOperators
 
-open MeasureTheory
-
 theorem putnam_1962_b5
 (n : ℤ)
 (ng1 : n > 1)

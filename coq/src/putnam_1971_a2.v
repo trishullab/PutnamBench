@@ -1,6 +1,16 @@
-Require Import Reals Ensembles Finite_sets Coquelicot.Coquelicot. From mathcomp Require Import fintype ssralg ssrnat ssrnum poly.
-Definition putnam_1971_a2_solution : Ensemble (R -> R) := fun f : R -> R => forall x : R, f x = x.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals normedtype.
+From mathcomp Require Import classical_sets.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition putnam_1971_a2_solution : set ({poly R}) := [set ('X : {poly R})]. 
 Theorem putnam_1971_a2
-    (is_poly : (R -> R) -> Prop := fun f => exists (k : nat) (coeff : nat -> R), forall x : R, sum_n (fun i => (coeff i) * (x^i)) k = f x) 
-    : forall P : R -> R, (is_poly P /\ (P (INR 0) = (INR 0) /\ (forall x : R, P (Rpower x 2 + (INR 1)) = Rpower (P x) 2 + (INR 1))) <-> (exists f : R -> R, In _ putnam_1971_a2_solution f /\ (forall x : R, P x = f x))).
+    : forall P : {poly R}, (P.[0] = 0 /\ (forall x : R, P.[x ^+ 2 + 1] = (P.[x]) ^+ 2 + 1)) <-> P \in putnam_1971_a2_solution.
 Proof. Admitted.

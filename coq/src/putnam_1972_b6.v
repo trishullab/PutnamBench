@@ -1,4 +1,3 @@
-
 Require Import Nat Reals. From Coquelicot Require Import Complex Hierarchy.
 (* uses (nat -> nat) instead of ('I_k -> nat) *)
 Theorem putnam_1972_b6
