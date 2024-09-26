@@ -58,12 +58,14 @@ def checkEntry (entry : InformalJsonEntry) : CoreM EntryResult := do
       s!"Doc for {entry.problem_name}:\
       \n\
       \n{doc}\
+      \n\
       \ndoesn't match the content of `informal/putnam.json`:\
       \n\
       \n{entry.informal_statement.trim}\
       \n\
       If you change one, you must change both."
-      (some <| "src" / s!"{entry.problem_name}.lean")
+      -- github paths have to be absolute, so include the lean4
+      (some <| "lean4" / "src" / s!"{entry.problem_name}.lean")
       (srcInfo.map (·.2.pos))
 
     return .docMismatching
