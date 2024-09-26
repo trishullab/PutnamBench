@@ -4,7 +4,7 @@ The formalizations in this folder are of the form
 ```lean
 import Mathlib
 
-def putnam_easy_solution : ℕ := sorry
+abbrev putnam_easy_solution : ℕ := sorry
 -- 2
 
 /-- What is 1 + 1 -/
