@@ -58,15 +58,15 @@ def checkEntry (entry : InformalJsonEntry) : CoreM EntryResult := do
   else if let .some doc := doc? then
     let srcInfo ← getSource entry.problem_name
     emitGithubError
-      s!"Doc for {entry.problem_name}:\
-      \n\
-      \n{doc}\
-      \n\
-      \ndoesn't match the content of `informal/putnam.json`:\
+      s!"The docstring for {entry.problem_name} is not in sync with the version in `informal/putnam.json`.\
+      \nPlease either change this docstring or modify the JSON file. Be careful to escape LaTeX when writing JSON.\
+      \nThe JSON file currently contains:\
       \n\
       \n{entry.informal_statement.trim}\
       \n\
-      If you change one, you must change both."
+      \nWhile the docstring contains:
+      \n\
+      \n{doc}\n"
       -- github paths have to be absolute, so include the lean4
       (some <| "lean4" / "src" / s!"{entry.problem_name}.lean")
       (srcInfo.map (·.2.pos))
