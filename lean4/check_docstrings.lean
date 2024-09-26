@@ -29,6 +29,9 @@ inductive EntryResult
   | docMissing
   | missing
 
+/-- Emit a github error that will appear as an annotation in the diff view.
+
+This is adapted from `mathlib3/scripts/detect_errors.py`. -/
 def emitGithubError (msg : String) (file : Option System.FilePath) (pos : Option Position) :
     IO Unit := do
   let mut parts := #[]
@@ -37,7 +40,7 @@ def emitGithubError (msg : String) (file : Option System.FilePath) (pos : Option
   if let .some pos := pos then
     parts := parts.push s!"line={pos.line}"
     parts := parts.push s!"col={pos.column}"
-  IO.eprintln s!"::error {" ".intercalate parts.toList}::{encodeMsg msg}"
+  IO.eprintln s!"::error {",".intercalate parts.toList}::{encodeMsg msg}"
 where
   encodeMsg (msg : String) : String :=
     msg.replace "%" "%25" |>.replace "\r" "%0D" |>.replace "\n" "%0A"
