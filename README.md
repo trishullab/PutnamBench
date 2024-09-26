@@ -8,7 +8,7 @@
 
 PutnamBench is a benchmark for evaluation of theorem-proving algorithms on competition mathematics problems sourced from the William Lowell Putnam Mathematical Competition years 1962 - 2023. Our formalizations currently support three formal languages : Lean 4 $\land$ Isabelle $\land$ Coq. PutnamBench comprises of 1697 manually-crafted formalizations, aggregated over all languages.
 
-PutnamBench aims to support research in automated mathematical reasoning by providing a multilingual benchmark for evaluating theorem-proving algorithms. It is released under permissive licenses (Apache 2.0 for Lean 4 and Isabelle, MIT for Coq). The informal statements are also available with permission from the MAA.
+PutnamBench aims to support research in automated mathematical reasoning by providing a multilingual benchmark for evaluating theorem-proving algorithms. It is released under permissive licenses (Apache 2.0 for Lean 4 and Isabelle, MIT for Coq). The [informal statements](informal/README.md) are also available with permission from the MAA.
 
 PutnamBench includes factored solutions for problems which require exhibiting a numerical answer in addition to its proof of correctness. For these problems, one can attempt two tasks: proving the problem with the numerical answer written into the theorem statement, or additionally producing the answer along with the proof.
 
