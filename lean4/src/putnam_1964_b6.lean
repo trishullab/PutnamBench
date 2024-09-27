@@ -3,6 +3,9 @@ open BigOperators
 
 open Set Function Filter Topology
 
+/--
+Let $D$ be the unit disk in the plane. Show that we cannot find congruent sets $A, B$ with $A \cap B = \emptyset$ and $A \cup B = D$.
+-/
 theorem putnam_1964_b6
 (D : Set (EuclideanSpace ℝ (Fin 2)))
 (hD : D = {v : EuclideanSpace ℝ (Fin 2) | dist 0 v ≤ 1})

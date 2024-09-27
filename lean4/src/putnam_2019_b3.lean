@@ -3,6 +3,9 @@ open BigOperators
 
 open Topology Filter Set Matrix
 
+/--
+Let $Q$ be an $n$-by-$n$ real orthogonal matrix, and let $u \in \mathbb{R}^n$ be a unit column vector (that is, $u^T u = 1$). Let $P = I - 2uu^T$, where $I$ is the $n$-by-$n$ identity matrix. Show that if $1$ is not an eigenvalue of $Q$, then $1$ is an eigenvalue of $PQ$.
+-/
 theorem putnam_2019_b3
 (n : ℕ)
 (hn : n > 0)

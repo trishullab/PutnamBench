@@ -1,6 +1,9 @@
 import Mathlib
 open BigOperators
 
+/--
+Given a real number $a$, we define a sequence by $x_0 = 1$, $x_1 = x_2 = a$, and $x_{n+1} = 2x_n x_{n-1} - x_{n-2}$ for $n \geq 2$. Prove that if $x_n = 0$ for some $n$, then the sequence is periodic.
+-/
 theorem putnam_2018_b4
 (a : ℝ)
 (x : ℕ → ℝ)

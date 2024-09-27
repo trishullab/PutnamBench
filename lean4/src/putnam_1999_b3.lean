@@ -5,6 +5,9 @@ open Filter Topology Metric
 
 abbrev putnam_1999_b3_solution : ℝ := sorry
 -- 3
+/--
+Let $A=\{(x,y):0\leq x,y<1\}$.  For $(x,y)\in A$, let \[S(x,y) = \sum_{\frac{1}{2}\leq \frac{m}{n}\leq 2} x^m y^n,\] where the sum ranges over all pairs $(m,n)$ of positive integers satisfying the indicated inequalities.  Evaluate \[\lim_{(x,y)\rightarrow (1,1), (x,y)\in A} (1-xy^2)(1-x^2y)S(x,y).\]
+-/
 theorem putnam_1999_b3
 (A : Set (ℝ × ℝ))
 (hA : A = {xy : ℝ × ℝ | 0 ≤ xy.1 ∧ xy.1 < 1 ∧ 0 ≤ xy.2 ∧ xy.2 < 1})

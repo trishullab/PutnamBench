@@ -3,6 +3,9 @@ open BigOperators
 
 open Function
 
+/--
+If $p$ is a prime number greater than 3 and $k = \lfloor 2p/3 \rfloor$, prove that the sum \[\binom p1 + \binom p2 + \cdots + \binom pk \] of binomial coefficients is divisible by $p^2$.
+-/
 theorem putnam_1996_a5
 (p : ℕ)
 (hpprime : Prime p)

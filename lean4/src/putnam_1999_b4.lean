@@ -3,6 +3,9 @@ open BigOperators
 
 open Filter Topology Metric
 
+/--
+Let $f$ be a real function with a continuous third derivative such that $f(x), f'(x), f''(x), f'''(x)$ are positive for all $x$.  Suppose that $f'''(x)\leq f(x)$ for all $x$.  Show that $f'(x)<2f(x)$ for all $x$.
+-/
 theorem putnam_1999_b4
 (f : ℝ → ℝ)
 (hf : ContDiff ℝ 3 f)

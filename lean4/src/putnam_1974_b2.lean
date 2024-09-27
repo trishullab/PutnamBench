@@ -3,6 +3,9 @@ open BigOperators
 
 open Set Nat Polynomial Filter Topology
 
+/--
+Let $y(x)$ be a continuously differentiable real-valued function of a real vairable $x$. Show that if $(y')^2 + y^3 \to 0$ as $x \to +\infty$, then $y(x)$ and $y'(x) \to 0$ as $x \to +\infty$.
+-/
 theorem putnam_1974_b2
 (y : ℝ → ℝ)
 (ycontdiff : ContDiff ℝ 1 y)

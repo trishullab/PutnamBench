@@ -5,6 +5,13 @@ open  Real Equiv Polynomial Filter Topology MvPolynomial
 
 abbrev putnam_1986_b5_solution : Prop := sorry
 -- False
+/--
+Let $f(x,y,z) = x^2+y^2+z^2+xyz$. Let $p(x,y,z), q(x,y,z)$, $r(x,y,z)$ be polynomials with real coefficients satisfying
+\[
+f(p(x,y,z), q(x,y,z), r(x,y,z)) = f(x,y,z).
+\]
+Prove or disprove the assertion that the sequence $p,q,r$ consists of some permutation of $\pm x, \pm y, \pm z$, where the number of minus signs is $0$ or $2$.
+-/
 theorem putnam_1986_b5
 (f : MvPolynomial (Fin 3) ℝ)
 (hf : f = (X 0) ^ 2 + (X 1) ^ 2 + (X 2) ^ 2 + (X 0) * (X 1) * (X 2))

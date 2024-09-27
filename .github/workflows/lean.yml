@@ -38,6 +38,11 @@ jobs:
       run: |
         lake exe cache pack
 
+    - name: Validate docstrings
+      working-directory: lean4
+      run: |
+        lake exe check_docstrings
+
     - name: Insert solutions
       working-directory: lean4
       run: |

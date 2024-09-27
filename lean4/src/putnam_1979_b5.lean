@@ -3,6 +3,9 @@ open BigOperators
 
 open Set Topology Filter Polynomial MeasureTheory
 
+/--
+In the plane, let $C$ be a closed convex set that contains $(0,0) but no other point with integer coordinations. Suppose that $A(C)$, the area of $C$, is equally distributed among the four quadrants. Prove that $A(C) \leq 4$.
+-/
 theorem putnam_1979_b5
 (C : Set (ℝ × ℝ))
 (hC : IsClosed C ∧ Convex ℝ C ∧ (0,0) ∈ C)
