@@ -3,6 +3,9 @@ open BigOperators
 
 abbrev putnam_2015_b2_solution : Prop := sorry
 -- True
+/--
+Given a list of the positive integers $1,2,3,4,\dots$, take the first three numbers $1,2,3$ and their sum $6$ and cross all four numbers off the list. Repeat with the three smallest remaining numbers $4,5,7$ and their sum $16$. Continue in this way, crossing off the three smallest remaining numbers and their sum, and consider the sequence of sums produced: $6,16,27,36,\dots$. Prove or disprove that there is some number in the sequence whose base $10$ representation ends with $2015$.
+-/
 theorem putnam_2015_b2
 (sets : ℕ → Set ℕ)
 (Smin3 : Set ℕ → (Fin 3 → ℕ))

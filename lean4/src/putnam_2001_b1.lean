@@ -3,6 +3,9 @@ open BigOperators
 
 open Topology Filter Polynomial Set
 
+/--
+Let $n$ be an even positive integer. Write the numbers $1,2,\ldots,n^2$ in the squares of an $n \times n$ grid so that the $k$-th row, from left to right, is $(k-1)n+1,(k-1)n+2,\ldots,(k-1)n+n$. Color the squares of the grid so that half of the squares in each row and in each column are red and the other half are black (a checkerboard coloring is one possibility). Prove that for each coloring, the sum of the numbers on the red squares is equal to the sum of the numbers on the black squares.
+-/
 theorem putnam_2001_b1
 (n : ℕ)
 (nums : Fin n → Fin n → ℤ)

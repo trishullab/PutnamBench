@@ -5,6 +5,9 @@ open Metric Set EuclideanGeometry
 
 abbrev putnam_1970_a3_solution : ℕ × ℕ := sorry
 -- (3, 1444)
+/--
+Find the length of the longest possible sequence of equal nonzero digits (in base 10) in which a perfect square can terminate. Also, find the smallest square that attains this length.
+-/
 theorem putnam_1970_a3
 (L : ℕ → ℕ)
 (hL : ∀ n : ℕ, L n ≤ (Nat.digits 10 n).length ∧

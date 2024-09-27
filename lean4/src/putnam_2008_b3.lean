@@ -5,6 +5,9 @@ open FiniteDimensional Metric Filter Topology Set Nat
 
 noncomputable abbrev putnam_2008_b3_solution : ℝ := sorry
 -- Real.sqrt 2 / 2
+/--
+What is the largest possible radius of a circle contained in a $4$-dimensional hypercube of side length $1$?
+-/
 theorem putnam_2008_b3
     (H : Set (EuclideanSpace ℝ (Fin 4)))
     (H_def : H = {P : Fin 4 → ℝ | ∀ i : Fin 4, |P i| ≤ 1 / 2})

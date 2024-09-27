@@ -3,6 +3,9 @@ open BigOperators
 
 open Filter Topology
 
+/--
+For $n \geq 1$, let $d_n$ be the greatest common divisor of the entries of $A^n-I$, where $A=\begin{pmatrix} 3 & 2 \\ 4 & 3 \end{pmatrix}$ and $I=\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$. Show that $\lim_{n \to \infty} d_n=\infty$.
+-/
 theorem putnam_1994_b4
 (matgcd : Matrix (Fin 2) (Fin 2) ℤ → ℤ)
 (A : Matrix (Fin 2) (Fin 2) ℤ)

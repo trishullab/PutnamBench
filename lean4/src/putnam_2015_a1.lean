@@ -1,6 +1,9 @@
 import Mathlib
 open BigOperators
 
+/--
+Let $A$ and $B$ be points on the same branch of the hyperbola $xy=1$. Suppose that $P$ is a point lying between $A$ and $B$ on this hyperbola, such that the area of the triangle $APB$ is as large as possible. Show that the region bounded by the hyperbola and the chord $AP$ has the same area as the region bounded by the hyperbola and the chord $PB$.
+-/
 theorem putnam_2015_a1
 (hyperbola : Set (Fin 2 → ℝ))
 (hhyperbola : hyperbola = {p : Fin 2 → ℝ | p 1 = 1 / p 0 ∧ p 0 > 0})

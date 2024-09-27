@@ -4,6 +4,9 @@ open BigOperators
 open Filter Topology
 
 -- Note: uses (ℕ → Fin 10) instead of (Fin m → Fin 10)
+/--
+Let $f_1,\dots,f_{10}$ be bijections of the set of integers such that for each integer $n$, there is some composition $f_{i_1} \circ f_{i_2} \circ \cdots \circ f_{i_m}$ of these functions (allowing repetitions) which maps 0 to $n$. Consider the set of $1024$ functions $\mathcal{F}=\{f_1^{e_1} \circ f_2^{e_2} \circ \cdots \circ f_{10}^{e_{10}}\}$, $e_i=0$ or $1$ for $1 \leq i \leq 10$. ($f_i^0$ is the identity function and $f_i^1=f_i$.) Show that if $A$ is any nonempty finite set of integers, then at most $512$ of the functions in $\mathcal{F}$ map $A$ to itself.
+-/
 theorem putnam_1994_a6
 (f : Fin 10 → Equiv.Perm ℤ)
 (mijcomp : ℕ → (ℕ → Fin 10) → ℕ → (ℤ → ℤ))

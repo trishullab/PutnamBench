@@ -5,6 +5,9 @@ open Topology Filter Matrix
 
 abbrev putnam_2011_a4_solution : Set ℕ := sorry
 -- {n : ℕ | Odd n}
+/--
+For which positive integers $n$ is there an $n \times n$ matrix with integer entries such that every dot product of a row with itself is even, while every dot product of two different rows is odd?
+-/
 theorem putnam_2011_a4
     (nmat : ℕ → Prop)
     (hnmat : ∀ n, nmat n ↔

@@ -3,6 +3,9 @@ open BigOperators
 
 open Nat Metric
 
+/--
+Given any five points on a sphere, show that some four of them must lie on a closed hemisphere.
+-/
 theorem putnam_2002_a2
 (unit_sphere : Set (EuclideanSpace ℝ (Fin 3)))
 (hsphere : unit_sphere = sphere 0 1)

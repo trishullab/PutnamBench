@@ -4,6 +4,9 @@ open BigOperators
 open Function Set MeasureTheory
 
 -- Note: uses (Fin m → Fin m → Fin m → ℝ) instead of ensuring inputs are strictly increasing
+/--
+For $m \geq 3$, a list of $\binom{m}{3}$ real numbers $a_{ijk}$ ($1 \leq i<j<k \leq m$) is said to be \emph{area definite} for $\mathbb{R}^n$ if the inequality $\sum_{1 \leq i<j<k \leq m} a_{ijk} \cdot \text{Area}(\Delta A_iA_jA_k) \geq 0$ holds for every choice of $m$ points $A_1,\dots,A_m$ in $\mathbb{R}^n$. For example, the list of four numbers $a_{123}=a_{124}=a_{134}=1$, $a_{234}=-1$ is area definite for $\mathbb{R}^2$. Prove that if a list of $\binom{m}{3}$ numbers is area definite for $\mathbb{R}^2$, then it is area definite for $\mathbb{R}^3$.
+-/
 theorem putnam_2013_a5
 (m : ℕ)
 (area2 : (Fin 2 → ℝ) → (Fin 2 → ℝ) → (Fin 2 → ℝ) → ℝ)

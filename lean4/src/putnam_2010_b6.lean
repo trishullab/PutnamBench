@@ -3,6 +3,9 @@ open BigOperators
 
 open Filter Topology Set
 
+/--
+Let $A$ be an $n \times n$ matrix of real numbers for some $n \geq 1$. For each positive integer $k$, let $A^{[k]}$ be the matrix obtained by raising each entry to the $k$th power. Show that if $A^k=A^{[k]}$ for $k=1,2,\dots,n+1$, then $A^k=A^{[k]}$ for all $k \geq 1$.
+-/
 theorem putnam_2010_b6
 (n : ℕ)
 (npos : n ≥ 1)

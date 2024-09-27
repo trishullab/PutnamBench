@@ -3,6 +3,20 @@ open BigOperators
 
 open Nat Set Topology Filter Matrix MvPolynomial
 
+/--
+Let $p$ be a prime number. Prove that the determinant of the matrix
+\[
+\begin{pmatrix}
+x & y & z \\
+x^p & y^p & z^p \\
+x^{p^2} & y^{p^2} & z^{p^2}
+\end{pmatrix}
+\]
+is congruent modulo $p$ to a product of polynomials of the form
+$ax+by+cz$, where $a,b,c$ are integers. (We say two integer
+polynomials are congruent modulo $p$ if corresponding coefficients
+are congruent modulo $p$.)
+-/
 theorem putnam_2002_b6
 (p : ℕ)
 (hp : Nat.Prime p)
