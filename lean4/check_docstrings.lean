@@ -1,6 +1,5 @@
 import Mathlib.Lean.CoreM
 import Mathlib.Util.GetAllModules
-import Batteries.Lean.Util.Path
 import Lean.Elab.Frontend
 import Batteries.Data.String.Matcher
 
