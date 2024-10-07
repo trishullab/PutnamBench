@@ -1,7 +1,17 @@
-Require Import Nat List ZArith Reals Coquelicot.Coquelicot.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals sequences.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
 Theorem putnam_1966_a4
-    (a : nat -> Z)
-    (ha1 : a (S 0) = 2%Z)
-    (ha2 : forall n : nat, ge n 1 -> a (S n) = (if (existsb (fun m => Z.eqb (a n + 1) (m * m)) (map Z.of_nat (seq 0 (Z.to_nat (Z.abs (a n) + 1))))) then (Z.add (a n) 2) else Z.add (a n) 1))
-    : forall n : nat, ge n 1 -> a n = Z.add (Z.of_nat n) (floor (sqrt (INR n) + 0.5)).
+    (a : nat -> int)
+    (ha1 : a 1%nat = 2)
+    (hai : forall n : nat, ge n 1 -> ((exists m : int, a n + 1 = m ^+ 2)  /\ a (n.+1) = a n + 2) \/ ((~ exists m : int, a n + 1 = m^+ 2) /\ a (n.+1) = a n + 1))
+    (f : nat -> R := fun n => n%:R + (floor (@Num.sqrt R n%:R + 1/2))%:~R)
+    : forall n : nat, ge n 1 -> (a n)%:~R = f n.
 Proof. Admitted.

@@ -1,4 +1,6 @@
 Require Import ZArith BinInt.
+
+(* Note : Leaving this one as is because I do not see a compelling reason to modify to depend on mathcomp here. *)
 Theorem putnam_1967_b4
     (n : nat)
     (lockers : nat -> nat -> bool)

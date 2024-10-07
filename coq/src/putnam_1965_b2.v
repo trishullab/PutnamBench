@@ -1,13 +1,19 @@
-Require Import Coquelicot.Hierarchy Reals. From mathcomp Require Import fintype.
+From mathcomp Require Import all_algebra all_ssreflect fintype.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
 Theorem putnam_1965_b2
     (n : nat)
-    (won : 'I_n -> 'I_n -> bool)
-    (ordofnat : nat -> 'I_n)
-    (w : 'I_n -> R := (fun r : 'I_n => sum_n (fun j : nat => if (won r (ordofnat j)) then 1 else 0) (n - 1)))
-    (l : 'I_n -> R := (fun r : 'I_n => INR n - 1 - w r))
     (hn : gt n 1)
+    (won : 'I_n -> 'I_n -> bool)
     (hirrefl : forall i : 'I_n, won i i = false)
     (hantisymm : forall i j : 'I_n, i <> j -> won i j = negb (won j i))
-    (hordofnat : forall i : 'I_n, ordofnat (nat_of_ord i) = i)
-    : sum_n (fun r : nat => (w (ordofnat r)) ^ 2) (n - 1) = sum_n (fun r : nat => (l (ordofnat r)) ^ 2) (n - 1).
+    (w l : 'I_n -> int)
+    (hw : w = fun r => \sum_(j : 'I_n) (if won r j then 1 else 0))
+    (hl : l = fun r => (n%:Z - 1 - w r))
+    : \sum_(r : 'I_n) (w r ^ 2) = \sum_(r : 'I_n) (l r ^ 2).
 Proof. Admitted.

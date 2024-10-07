@@ -1,9 +1,19 @@
-Require Import Nat Ensembles Finite_sets ZArith. From mathcomp Require Import fintype.
+From mathcomp Require Import all_ssreflect all_algebra fintype.
+From mathcomp Require Import classical_sets cardinality.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope nat_scope.
+Local Open Scope classical_set_scope.
+Local Open Scope card_scope.
+
 Theorem putnam_1966_b4
-    (m n : nat)
-    (S : Ensemble nat)
-    (hScard : cardinal _ S (m * n + 1))
-    (hSpos : forall i : nat, In _ S i -> i > 0)
-    : (exists T : 'I_(m+1) -> nat, (forall i : 'I_(m+1), In _ S (T i)) /\ (forall i j : 'I_(m+1), i <> j -> T i <> T j) /\ (forall i j : 'I_(m+1), i <> j -> ~(Nat.divide (T i) (T j))))
-      \/ (exists T : 'I_(n+1) -> nat,  (forall i : 'I_(n+1), In _ S (T i)) /\ (forall i j : 'I_(n+1), i <> j -> T i <> T j) /\ (forall i j : 'I_(n+1), i < j -> (Nat.divide (T i) (T j)))).
+  (m n : nat)
+  (S : set nat)
+  (hS : S #= [set : 'I_(m*n+1)] /\ forall i : nat, S i -> i > 0)
+  : exists T : set nat, T `<=` S /\
+    ((T #= [set : 'I_(m+1)] /\ (forall i j : nat, T i -> T j -> i <> j -> ~(j%|i))) \/
+    (T #= [set : 'I_(n+1)] /\ (forall i j : nat, T i -> T j -> i <> j -> j < i -> (j%|i)))).
 Proof. Admitted.

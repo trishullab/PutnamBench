@@ -1,4 +1,4 @@
-Require Import Bool ssreflect ssrfun. From mathcomp Require Import fintype.
+From mathcomp Require Import ssrbool ssreflect ssrfun fintype.
 Variables G B : finType.
 Theorem putnam_1965_a4
     (dances : G -> B -> Prop)

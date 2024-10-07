@@ -1,11 +1,17 @@
-Section putnam_1964_a4.
-Require Import ZArith. From mathcomp.analysis Require Import trigo.
-Open Scope Z.
-(* changed type of u from (nat -> Z) to (Z -> Z) *)
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals sequences.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
 Theorem putnam_1964_a4
-    (u : Z -> Z)
-    (boundedu : exists B T : Z, forall n : Z, Z.ge n 0 -> Z.le B (u n) /\ Z.le (u n) T)
-    (hu : forall n : Z, Z.ge n 4 -> u n = (u (n - 1) + u (n - 2) + u (n - 3) * u (n - 4)) / (u (n - 1) * u (n - 2) + u (n - 3) + u (n - 4)) /\ u (n - 1) * u (n - 2) + u (n - 3) + u (n - 4) <> 0)
-    : exists N c : Z, Z.gt c 0 /\ Z.ge N 0 /\ forall n : Z, Z.ge n N -> u (n + c) = u n.
-Proof. Admitted.
-End putnam_1964_a4.
+    (u : nat -> R)
+    (boundedu : exists B T : R, forall n : nat, B <= u n <= T)
+    (hu : forall n : nat, ge n 4 -> u n = (u (n.-1) + u (n.-2) + u (Nat.sub n 3) * u (Nat.sub n 4)) / (u (n.-1) * u (n.-2) + u (Nat.sub n 3) + u (Nat.sub n 4)) /\ (u (n.-1) * u (n.-2) + u (Nat.sub n 3) + u (Nat.sub n 4)) != 0)
+    (hu' : forall n : nat, exists k : int, u n = k%:~R)
+    : exists N c : nat, gt c 0 /\ forall n : nat, ge n N -> u (Nat.add n c) = u n.
+Proof. Admitted. 

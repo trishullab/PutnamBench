@@ -1,10 +1,18 @@
-Require Import Reals Rtrigo_def Coquelicot.Hierarchy.
-(* uses (nat -> R) instead of ('I_n -> R) *)
+From mathcomp Require Import all_ssreflect all_algebra.
+From mathcomp Require Import reals normedtype trigo.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
 Theorem putnam_1967_a1
     (n : nat)
-    (a : nat -> R)
-    (f : R -> R := fun x : R => sum_n_m (fun i => a i * sin (INR i * x)) 1 n)
-    (npos : (n > 0)%nat)
-    (flesin : (forall x : R, Rabs (f x) <= Rabs (sin x)))
-    : (Rabs (sum_n_m (fun i => INR i * a i) 1 n) <= 1).
+    (hn : gt n 0)
+    (a : 'I_n -> R)
+    (f : R -> R := fun x : R => \sum_(i : 'I_n) (a i) * sin (i%:R * x))
+    (flesin : forall x : R, `|f x| <= `|sin x|)
+    : `|\sum_(i : 'I_n) (i%:R * (a i))| <= 1.
 Proof. Admitted.

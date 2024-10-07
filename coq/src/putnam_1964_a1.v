@@ -1,12 +1,19 @@
-Section putnam_1964_a1.
-Require Import Reals Ensembles Finite_sets Coquelicot.Coquelicot.
+From mathcomp Require Import all_algebra all_ssreflect fintype.
+From mathcomp Require Import reals.
+From mathcomp Require Import classical_sets cardinality.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+Local Open Scope card_scope.
+
+Variable R : realType.
 Theorem putnam_1964_a1
-    (A : Ensemble (R * R))
-    (hAcard : cardinal (R * R) A 6)
-    (dists : Ensemble R := fun d => exists a b : R * R, In (R * R) A a /\ In (R * R) A b /\ a <> b /\ d = dist_euc (fst a) (snd a) (fst b) (snd b))
-    (max min : R)
-    (hmax : In R dists max /\ forall d : R, d > max -> ~In R dists d)
-    (hmin : In R dists min /\ forall d : R, d < min -> ~In R dists d)
-    : max / min >= sqrt 3.
+    (A : set (R*R))
+    (hAcard : A #= [set: 'I_6])
+    (dists : set R := [set d : R | exists a b : R*R, a \in A /\ b \in A /\ a != b /\ d = @Num.sqrt R ((fst a - fst b) ^+ 2 + (snd a - snd b) ^+ 2)])
+    : supremum 1 dists / infimum 1 dists >= @Num.sqrt R 3.
 Proof. Admitted.
-End putnam_1964_a1.

@@ -1,9 +1,19 @@
-Require Import Reals ZArith.
-Open Scope R.
-Definition putnam_1967_a3_solution : Z := 5.
+From mathcomp Require Import all_ssreflect all_algebra.
+From mathcomp Require Import reals normedtype.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
+Definition putnam_1967_a3_solution : nat := 5.
 Theorem putnam_1967_a3
-    (pform : (R -> R) -> Z -> Prop := fun p a => exists b c : Z, p = fun x => IZR a * x ^ 2 - IZR b * x + IZR c)
-    (pzeros : (R -> R) -> Prop := fun p => exists z1 z2 : R, 0 < z1 /\ z1 < z2 /\ z2 < 1 /\ p z1 = 0 /\ p z2 = 0)
-    (pall : (R -> R) -> Z -> Prop := fun p a => pform p a /\ pzeros p)
-    : ((exists p : R -> R, pall p (putnam_1967_a3_solution)) /\ (forall a : Z, (0 < a < putnam_1967_a3_solution)%Z -> ~exists p : R -> R, pall p a)).
+    (pform pzeros pall : {poly R} -> Prop)
+    (hpform : forall p, pform p <-> size p = 3%nat /\ forall i : nat, lt i 3 -> p`_i = (floor p`_i)%:~R)
+    (hpzeros : forall p, pzeros p <-> exists z1 z2 : R, 0 < z1 < 1 /\ 0 < z2 < 1 /\ z1 <> z2 /\ p.[z1] = 0 /\ p.[z2] = 0)
+    (hpall : forall p, pall p <-> pform p /\ pzeros p /\ (p`_2 > 0)%R)
+    : (exists p, pall p /\ p`_2 = putnam_1967_a3_solution%:R) /\
+      (forall p, pall p -> p`_2 >= putnam_1967_a3_solution%:R).
 Proof. Admitted.
