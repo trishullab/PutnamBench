@@ -12,5 +12,5 @@ Let $p$ be an odd prime. Show that for at least $(p+1)/2$ values of $n$ in $\{0,
 theorem putnam_2011_b6
 (p : ℕ)
 (hp : Odd p ∧ Nat.Prime p)
-: {n ∈ Finset.range p | ¬ p ∣ ∑ k : Finset.range p, Nat.factorial k * n^(k : ℕ)}.ncard ≥ (p + 1)/2 :=
+: {n ∈ Finset.range p | ¬ p ∣ ∑ k : Finset.range p, Nat.factorial k * n^(k : ℕ)}.card ≥ (p + 1)/2 :=
 sorry
