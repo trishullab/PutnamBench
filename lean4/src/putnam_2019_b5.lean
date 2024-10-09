@@ -11,7 +11,7 @@ Let $F_m$ be the $m$th Fibonacci number, defined by $F_1 = F_2 = 1$ and $F_m = F
 theorem putnam_2019_b5
 (F : ℕ → ℤ)
 (P : Polynomial ℝ)
-(hF : ∀ x, x ≥ 3 → F x = F (x - 1) + F (x - 2))
+(hF : ∀ x, x ≥ 1 → F (x + 2) = F (x + 1) + F x)
 (F12 : F 1 = 1 ∧ F 2 = 1)
 (Pdeg: Polynomial.degree P = 1008)
 (hp: ∀ n : ℕ, (n ≤ 1008) → P.eval (2 * n + 1 : ℝ) = F (2 * n + 1))

@@ -1,16 +1,23 @@
-(* Note: this formalization differs from the original statement by assigning a value of zero to all values outside the specified domain/range. The problem is still solvable given this modification. *)
-Require Import Reals RIneq.
-Open Scope R.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals sequences exp topology.
+From mathcomp Require Import classical_sets.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
 Theorem putnam_2012_b1
-    (A: list (R -> R)) 
-    (fPlus : (R -> R) -> (R -> R) -> (R -> R) := fun f g => fun x => f x + g x)
-    (fMinus : (R -> R) -> (R -> R) -> (R -> R) := fun f g => fun x => f x - g x)
-    (fMult : (R -> R) -> (R -> R) -> (R -> R) := fun f g => fun x => f x * g x)
-    (to_Rplus : ((R -> R) -> R -> R) := fun f => fun x => if Rle_dec x 0 then 0 else if Rle_dec (f x) 0 then 0 else f x)
-    (f1 := to_Rplus (fun x => (Rpower (exp 1) x) - 1))
-    (f2 := to_Rplus (fun x => ln (x+1)))
-    : (In f1 A /\ In f2 A) /\ 
-    (forall (f g: R -> R), In f A /\ In g A -> In (fPlus f g) A) /\
-    (forall (f g: R -> R), In f A /\ In g A /\ forall (x: R), f x >= g x -> In (fMinus f g) A)
-    <-> (forall (f g: R -> R), In f A /\ In g A -> In (fMult f g) A).
+    (S : set (R -> R))
+    (hS : forall f : R -> R, f \in S -> forall x : R, 0 <= x -> 0 <= f x)
+    (f1 : R -> R := fun x => expR x - 1)
+    (f2 : R -> R := fun x => ln (x + 1))
+    (hf1 : f1 \in S)
+    (hf2 : f2 \in S)
+    (hsum : forall f g : R -> R, f \in S -> g \in S -> (fun x => f x + g x) \in S)
+    (hcomp : forall f g : R -> R, f \in S -> g \in S -> (fun x => f (g x)) \in S)
+    (hdiff : forall f g : R -> R, f \in S -> g \in S -> (forall x : R, f x >= g x) -> (fun x => f x - g x) \in S)
+    : forall f g : R -> R, f \in S -> g \in S -> (fun x => f x * g x) \in S.
 Proof. Admitted.

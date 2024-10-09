@@ -1,17 +1,20 @@
-Require Import Nat PeanoNat Reals NewtonInt. From mathcomp Require Import bigop fintype ssrnat ssrnum ssralg fintype poly seq.
-Open Scope ring_scope.
-Definition putnam_2019_b5_solution (j k : nat) := j = 2019%nat /\ k = 1010%nat.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
+Definition putnam_2019_b5_solution : nat * nat := (2019%nat, 1010%nat).
 Theorem putnam_2019_b5
-    (F := fix f (n: nat) : nat :=
-        match n with
-        | O => O
-        | S O => 1%nat
-        | S ((S n'') as n') => add (f n') (f n'')
-    end)
-    (R: numDomainType) 
-    (p: {poly R}) 
-    (hp: forall (n: nat), and (le 0%nat n) (le n 1008%nat) -> size p = 1008%nat /\ (p.[2*n%:R+1]) = (F (add (mul 2 n) 1%nat))%:R)
-    (j k: nat)
-    (hjk := p.[2019] = (F j)%:R - (F k)%:R)
-    : putnam_2019_b5_solution j k.
-Proof. Admitted. 
+    (F : nat -> int)
+    (P : {poly R})
+    (hF : forall x : nat, ge x 1 -> F (x.+2) = F (x.+1) + F x)
+    (F12 : F 1%nat = 1 /\ F 2%nat = 1)
+    (Pdeg : size P = 1009%nat)
+    (hp : forall n : nat, (le n 1008) -> P.[2 * (n%:R) + 1] = (F ((n.*2).+1))%:~R)
+    : forall j k : nat, (P.[2019] = (F j - F k)%:~R) <-> (j, k) = putnam_2019_b5_solution.
+Proof. Admitted.

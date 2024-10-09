@@ -1,8 +1,16 @@
-Require Import Reals List Rtrigo_def Coquelicot.Derive.
-Open Scope R.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals trigo.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
 Definition putnam_2018_a3_solution : R := 480/49.
 Theorem putnam_2018_a3
-    (val : list R -> R := fun X => fold_right Rmult 1 (map (fun x => cos (INR 3 * x)) X))
-    : (exists (X : list R), length X = 10%nat /\ putnam_2018_a3_solution = val X) /\
-    (forall (X : list R), length X = 10%nat /\ putnam_2018_a3_solution >= val X).
+    (cos_sum : R -> seq R -> R := fun k s => \prod_(x <- s) cos (k * x))
+    : (exists (s : seq R), size s = 10%nat /\ cos_sum 1 s = 0 /\ putnam_2018_a3_solution = cos_sum 3 s) /\
+    (forall (s : seq R), size s = 10%nat -> cos_sum 1 s = 0 -> putnam_2018_a3_solution >= cos_sum 3 s).
 Proof. Admitted.
