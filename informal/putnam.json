@@ -5068,7 +5068,7 @@
     {
         "problem_name": "putnam_2022_a5",
         "informal_statement": "Alice and Bob play a game on a board consisting of one row of 2022 consecutive squares. They take turns placing tiles that cover two adjacent squares, with Alice going first. By rule, a tile must not cover a square that is already covered by another tile. The game ends when no tile can be placed according to this rule. Alice's goal is to maximize the number of uncovered squares when the game ends; Bob's goal is to minimize it. What is the greatest number of uncovered squares that Alice can ensure at the end of the game, no matter how Bob plays?",
-        "informal_solution": "290",
+        "informal_solution": "Show that the solution is 290.",
         "tags": [
             "combinatorics"
         ]
@@ -5175,7 +5175,7 @@
     {
         "problem_name": "putnam_2023_a6",
         "informal_statement": "Alice and Bob play a game in which they take turns choosing integers from $1$ to $n$. Before any integers are chosen, Bob selects a goal of 'odd' or 'even'. On the first turn, Alice chooses one of the $n$ integers. On the second turn, Bob chooses one of the remaining integers. They continue alternately choosing one of the integers that has not yet been chosen, until the $n$th turn, which is forced and ends the game. Bob wins if the parity of $\\{k : \\mbox{the number $k$ was chosen on the $k$th turn}\\}$ matches his goal. For which values of $n$ does Bob have a winning strategy?",
-        "informal_solution": "Bob has a winning strategy for all $n$.",
+        "informal_solution": "Show that Bob has a winning strategy for all $n$.",
         "tags": [
             "combinatorics"
         ]
@@ -5199,7 +5199,7 @@
     {
         "problem_name": "putnam_2023_b3",
         "informal_statement": "A sequence $y_1, y_2, \\ldots, y_k$ of real numbers is called zigzag if $k = 1$, or if $y_2 - y_1, y_3 - y_2, \\ldots, y_k - y_{k-1}$ are nonzero and alternate in sign. Let $X_1, X_2,\\ldots, X_n$ be chosen independently from the uniform distribution on $[0,1]$. Let $a(X_1, X_2, \\ldots, X_n)$ be the largest value of $k$ for which there exists an increasing sequence of integers $i_1, i_2, \\ldots, i_k$ such that $X_{i_1}, X_{i_2}, \\ldots, X_{i_k}$ is zigzag. Find the expected value of $a(X_1, X_2, \\ldots, X_n)$ for $n \\ge 2$.",
-        "informal_solution": "The expected value is \\frac{2n + 2}{3}.",
+        "informal_solution": "Show that the expected value is \\frac{2n + 2}{3}.",
         "tags": [
             "probability",
             "combinatorics"
