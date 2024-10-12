@@ -1,9 +1,15 @@
-From mathcomp Require Import ssrnat ssrnum ssralg fintype poly polydiv.
-Open Scope ring_scope.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals.
+From mathcomp Require Import complex.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
 Theorem putnam_2014_a5
-    (R: numDomainType)
-    (j k : nat)
-    (pj : {poly R}:= \sum_(i < j.+1) ((i%:R + 1) *: 'X^i))
-    (pk : {poly R} := \sum_(i < k.+1) ((i%:R + 1) *: 'X^i))
-    : j <> k -> gcdp_rec pj pk = 1.
+    (P : nat -> {poly R[i]} := fun n => \sum_(1 <= i < n.+1) i%:R *: 'X^(i.-1))
+    : forall j k : nat, (gt j 0 /\ gt k 0) -> j <> k -> gcdp_rec (P j) (P k) = 1.
 Proof. Admitted.

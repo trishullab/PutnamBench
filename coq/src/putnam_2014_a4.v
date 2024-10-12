@@ -15,7 +15,6 @@ Theorem putnam_2014_a4
     (ed := @expectation _ _ _ P X = 1%:E)
     (ed2 := @expectation _ _ _ P (X * X) = 2%:E)
     (ed3 := @expectation _ _ _ P (X * X * X) = 5%:E)
-    (minval : R)
-    (de := distribution P X)
-    : forall (P : probability T R), (minval <= (pmf X 0) /\ exists (P : probability T R), minval = (pmf X 0)) <-> minval = putnam_2014_a4_solution.
+    : (forall (P : probability T R), putnam_2014_a4_solution <= (pmf X 0)) /\ 
+      (exists (P : probability T R), putnam_2014_a4_solution = (pmf X 0)).
 Proof. Admitted.

@@ -1,13 +1,23 @@
-Require Import Basics Nat Reals Coquelicot.Coquelicot.
-Definition putnam_2022_a2_solution : nat -> nat := fun n => sub (mul 2 n) 2.
-Theorem putnam_2022_a2 
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals.
+From mathcomp Require Import classical_sets.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition putnam_2022_a2_solution : nat -> nat := fun n => (n.*2 - 2)%nat.
+Theorem putnam_2022_a2
     (n : nat)
     (hn : ge n 2)
-    (num_neg_coeff : nat -> (nat -> R) -> nat := fun n coeff => Z.to_nat (floor (sum_n (fun i => if Rlt_dec (coeff i) 0 then 1 else 0) (n + 1))))
-    : forall (P : R -> R) (coeff1 coeff2: nat -> R) (n: nat), 
-    (((coeff1 n <> 0 /\ P = (fun x => sum_n (fun i => coeff1 i * x ^ i) (n + 1))) /\ compose P P = (fun x => sum_n (fun i => coeff2 i * x ^ i) (n + 1))) -> 
-    ge (num_neg_coeff n coeff2) (putnam_2022_a2_solution n)) /\
-    (exists (P : R -> R) (coeff1 coeff2: nat -> R) (n: nat), 
-    ((coeff1 n <> 0 /\ P = (fun x => sum_n (fun i => coeff1 i * x ^ i) (n + 1))) /\ compose P P = (fun x => sum_n (fun i => coeff2 i * x ^ i) (n + 1))) -> 
-    num_neg_coeff n coeff2 = putnam_2022_a2_solution n).
+    (S : set {poly R} := [set P | size P = n.+1])
+    (negs : {poly R} -> nat)
+    (hnegs : forall P, negs P = count (fun cf => cf < 0) (P : seq R))
+    : (forall P, P \in S -> le (negs (P ^ 2)) (putnam_2022_a2_solution n)) /\
+      (exists P, P \in S /\ negs (P ^ 2) = putnam_2022_a2_solution n).
 Proof. Admitted.
+

@@ -1,10 +1,15 @@
-Require Import ZArith Znumtheory. From mathcomp Require Import seq ssrnat ssrnum ssralg poly prime. 
-Open Scope ring_scope.
-Definition putnam_2021_a6_solution := True.
+From mathcomp Require Import all_algebra all_ssreflect.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Definition putnam_2021_a6_solution : Prop := True.
 Theorem putnam_2021_a6
-    (R : numDomainType) 
-    (p : {poly R}) 
-    (a := forall i : nat, p`_i = 0 /\ p`_i = 1)
-    (ha : exists (q r: {poly R}), size p <> 0%nat /\ size q <> 0%nat -> p = q * r)
-    : exists q r, q <> 1 /\ r <> 1 /\ (horner p 2) = q * r <-> putnam_2021_a6_solution.
-Proof. Admitted. 
+    (Pcoeff Pprod : {poly int} -> Prop)
+    (hPcoeff : forall P, Pcoeff P <-> forall n : nat, (P`_n = 0) \/ (P`_n = 1))
+    (hPprod : forall P, Pprod P <-> (exists Q R : {poly int}, (gt (size Q) 1) /\ (gt (size R) 1) /\ P = Q * R))
+    : (forall P, (Pcoeff P /\ Pprod P) -> (P.[2] <> 0 /\ P.[2] <> 1 /\ (~ exists k : int, 2 <= k < P.[2] /\ (k%|P.[2])%Z))).
+Proof. Admitted.

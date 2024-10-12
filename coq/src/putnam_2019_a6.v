@@ -1,13 +1,23 @@
-Require Import Reals Coquelicot.Coquelicot.
-Definition putnam_2019_a6_solution := 1.
-Theorem putnam_2019_a6 
+From mathcomp Require Import all_ssreflect ssrnum ssralg.
+From mathcomp Require Import reals derive normedtype sequences topology exp.
+From mathcomp Require Import classical_sets.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition at_right := fun (x : R) => within (fun y => y > x) (nbhs x).
+Theorem putnam_2019_a6
     (g : R -> R)
-    (contg : forall (x: R), 0 <= x <= 1 -> continuity_pt g x)
-    (diff2g : forall (x: R), 0 < x < 1 -> ex_derive_n g 2 x)
     (r : R)
-    (posr : r > 1)
-    (p : filterlim (fun x => (g x / Rpower x r)) (at_right 0) (locally 0))
-    : 
-    (filterlim (Derive g) (at_right 0) (locally 0)) \/
-    ~ exists (c: R), is_LimSup_seq (fun x => if Rlt_dec (INR x) 0 then 0 else Rpower (INR x) r * Rabs (Derive_n g 2 (INR x))) c.
+    (hcont : {within [set x | 0 <= x <= 1], continuous g})
+    (hdiff : (forall x : R, 0 < x < 1 -> differentiable g x /\ differentiable g^`() x) /\ {within [set x | 0 <= x <= 1], continuous g^`()})
+    (hr : r > 1)
+    (hlim : (fun x : R => g x / (expR (r * ln x))) @ (at_right 0) --> 0)
+    : g^`() @ (at_right 0) --> 0 \/ (fun x : R => sup [set y : R | exists x' : R, 0 < x' <= x /\ y = expR (r * ln x') * `|g^`(2) x'|]) @ (at_right 0) --> +oo.
 Proof. Admitted.
