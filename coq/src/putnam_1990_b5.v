@@ -1,8 +1,18 @@
-Require Import Reals Ensembles Finite_sets Coquelicot.Coquelicot.
-Definition putnam_1990_b5_solution := True.
-Open Scope R.
-Theorem putnam_1990_b5 
-    (pn : (nat -> R) -> nat -> R -> R := fun a n x => sum_n (fun i => a i * pow x i) n)
-    : (exists (a : nat -> R), forall (n: nat), gt n 0 -> exists (roots: Ensemble R), cardinal R roots n /\ forall (r: R), roots r <-> pn a n r = 0) <->
-    putnam_1990_b5_solution.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals sequences topology normedtype.
+From mathcomp Require Import classical_sets cardinality.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+Local Open Scope card_scope.
+
+Variable R : realType.
+Definition putnam_1990_b5_solution : Prop := True.
+Theorem putnam_1990_b5 :
+    (exists a : nat -> R, (forall i : nat, a i != 0) /\
+        (forall n : nat, ge n 1 -> (exists roots : seq R, uniq roots /\ size roots = n /\ all (fun x => 0 == \sum_(0 <= i < n.+1) (a i) * (x) ^ i) roots))).
 Proof. Admitted.

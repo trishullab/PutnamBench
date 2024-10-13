@@ -1,13 +1,22 @@
-Require Import Reals Coquelicot.Coquelicot.
-Open Scope R.
-Theorem putnam_1990_b2 
-    (prod_n : (nat -> R) -> nat -> R := fix P (a: nat -> R) (n : nat) : R := 
-        match n with 
-        | O => 1
-        | S n' => a n' * P a n'
-    end)
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals exp sequences normedtype topology.
+From mathcomp Require Import classical_sets.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+
+Theorem putnam_1990_b2
     (x z : R)
-    (hxz : Rabs x < 1 /\ Rabs z > 1)
-    (P : nat -> R := fun j => (prod_n (fun i => 1 - z * x ^ i) j) / (prod_n (fun i => z - x ^ (i + 1)) j))
-    : 1 + Series (fun j => (1 + x ^ (j+1)) * P (j+1)%nat) = 0.
+    (P : nat -> R)
+    (xlt1 : `| x | < 1)
+    (zgt1 : `| z | > 1)
+    (hP : forall j : nat, ge j 1 -> P j = (\prod_(0 <= i < j) (1 - z * x ^ i)) / (\prod_(1 <= i < j.+1) (z - x ^ i)))
+    : (fun n : nat => 1 + \sum_(1 <= j < n) ((1 + x ^ j) * P j)) @ \oo --> 0.
 Proof. Admitted.

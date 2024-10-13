@@ -1,20 +1,24 @@
-Require Import Reals Coquelicot.Coquelicot.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals normedtype topology sequences measure lebesgue_measure lebesgue_integral.
+From mathcomp Require Import classical_sets.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition mu := [the measure _ _ of @lebesgue_measure R].
 Definition putnam_2016_a6_solution : R := 5 / 6.
 Theorem putnam_2016_a6
     (C : R)
-    (max : (R -> R) -> R)
-    (hmax : forall (P : R -> R) (coeff: nat -> R) (n: nat), 
-        (coeff n <> 0 /\ P = (fun x => sum_n (fun i => coeff i * x ^ i) n)) -> 
-        exists (x: R), 0 <= x <= 1 /\ Rabs (P x) = max P)
-    (hmaxub : forall (P : R -> R) (coeff: nat -> R) (n: nat), 
-        (coeff n <> 0 /\ P = (fun x => sum_n (fun i => coeff i * x ^ i) n)) -> 
-        (forall (x: R), 0 <= x <= 1 -> Rabs (P x) <= max P))
-    (p : R -> Prop := 
-        fun c => 
-        forall (P : R -> R) (coeff: nat -> R),
-        (coeff 3%nat <> R0 /\ P = (fun x => sum_n (fun i => coeff i * x ^ i) 3)) -> 
-        (exists (x: R), 0 <= x <= 1 /\ P x = 0) -> RInt P 0 1 <= c * max P)
-    (hpC : p C)
-    (hClb : forall c : R, p c -> C <= c)
-    : (C = putnam_2016_a6_solution).
+    (p : R -> Prop)
+    (max : {poly R} -> R)
+    (hmax : forall P, exists x : R, 0 <= x <= 1 /\ P.[x] = max P)
+    (hmaxub : forall P, forall x, 0 <= x <= 1 -> P.[x] <= max P)
+    (hp : forall c, p c <-> forall P : {poly R}, (size P = 4%nat) -> (exists x : R, 0 <= x <= 1 /\ P.[x] = 0) -> \int[mu]_(x in [set x | 0 <= x <= 1]) P.[x] <= c * max P)
+    : p putnam_2016_a6_solution /\ forall C, p C -> C <= putnam_2016_a6_solution.
 Proof. Admitted.

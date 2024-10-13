@@ -1,8 +1,18 @@
-Require Import List Reals Coquelicot.Hierarchy Coquelicot.Series. 
-Definition putnam_2021_b2_solution := 2/3.
-Theorem putnam_2021_b2
-    (A : (nat -> R) -> nat -> R := fun a n => fold_left Rmult (map a (seq 0 n)) 1)
-    (B : (nat -> R) -> R := fun a => Series (fun n => INR n * (Rpower (A a n) 1/(INR n))))
-    : (forall (a : nat -> R), (forall (i: nat), a i >= 0) /\ Series a = 1 -> putnam_2021_b2_solution >= B a) /\ 
-    (exists (a : nat -> R), (forall (i: nat), a i >= 0) /\ Series a = 1 -> putnam_2021_b2_solution =  B a).
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals sequences topology normedtype.
+From mathcomp Require Import classical_sets.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition putnam_2021_b2_solution : R := 2/3.
+Theorem putnam_2021_b2 :
+    putnam_2021_b2_solution \in supremums [set S : R | exists a : R ^nat, series a @ \oo --> 1 /\ (forall k, a k >= 0) /\
+                series (fun n : nat => n%:R / (2 ^+ n) * (\prod_(1 <= k < n.+1) a k) ^ (1 / n%:R)) @ \oo --> S].
 Proof. Admitted. 

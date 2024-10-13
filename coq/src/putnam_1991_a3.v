@@ -1,14 +1,24 @@
-Require Import Reals Coquelicot.Coquelicot.
-Open Scope R.
-Definition poly (coeff : nat -> R) (deg : nat) : R -> R := fun x : R => sum_n (fun i => coeff i * x ^ i) deg.
-Definition putnam_1991_a3_solution (coeff: nat -> R) : Prop := (forall n : nat, gt n 2 -> coeff n = 0) /\ exists (r1 r2 : R), r1 <> r2 /\ poly coeff 2 r1 = 0 /\ poly coeff 2 r2 = 0.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals normedtype sequences topology derive.
+From mathcomp Require Import classical_sets.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition putnam_1991_a3_solution : set {poly R} := [set P : {poly R} | size P = 3%nat /\ (exists r1 r2 : R, r1 <> r2 /\ P.[r1] = 0 /\ P.[r2] = 0)].
 Theorem putnam_1991_a3
-    (coeff : nat -> R)
+    (P : {poly R})
     (n : nat)
-    (hn : coeff n <> 0 /\ forall m : nat, gt m n -> coeff m = 0)
+    (hn : n = (size P).-1)
     (hge : ge n 2)
-    : (exists (r: nat -> R), (forall i : nat, lt i (n - 1) -> r i < r (S i)) /\
-    (forall i : nat, lt i n -> poly coeff n (r i) = 0) /\ 
-    (forall i : nat, lt i (n - 1) -> (Derive (poly coeff n)) ((r i + r (S i)) / 2) = 0)) <->
-    putnam_1991_a3_solution coeff.
+    : P \in putnam_1991_a3_solution <->
+        (exists (r: nat -> R), (forall i : nat, lt i (n - 1) -> r i < r (i.+1)) /\
+            (forall i : nat, lt i n -> P.[r i] = 0) /\
+            (forall i : nat, lt i (n.-1) -> (P^`()).[(r i + r i.+1) / 2] = 0)).
 Proof. Admitted.

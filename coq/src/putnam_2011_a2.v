@@ -1,18 +1,22 @@
-Require Import Reals Coquelicot.Coquelicot.
-Definition putnam_2011_a2_solution := 3 / 2.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals sequences topology normedtype.
+From mathcomp Require Import classical_sets.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition putnam_2011_a2_solution : R := 3/2.
 Theorem putnam_2011_a2
-    (prodn := fix prod_n (m: nat -> R) (n : nat) : R :=
-        match n with
-        | O => m 0%nat
-        | S n' => m n * prod_n m n'
-    end)
-    (a: nat -> R)
-    (ha1 : a 0%nat = 1)
-    (B := fix b (n: nat) :=
-        match n with
-        | O => 1
-        | S n' => b n' * a n - 2
-    end)
-    (M: R)
-    : (forall (n: nat), a n > 0 /\ B n > 0 /\ -1 * M <= B n <= M) -> Series (fun n => 1 / prodn a n) = putnam_2011_a2_solution.
+    (a b : R ^nat)
+    (habn : forall n : nat, a n > 0 /\ b n > 0)
+    (hab1 : a 0%nat = 1 /\ b 0%nat = 1)
+    (hb : forall n : nat, ge n 1 -> b n = b (n.-1) * a n - 2)
+    (hbnd : exists B : R, forall n : nat, `|b n| <= B)
+    : (fun n : nat => \sum_(1 <= i < n.+1) 1/(\prod_(1 <= j < i.+1) (a j))) @ \oo --> putnam_2011_a2_solution.
 Proof. Admitted.
