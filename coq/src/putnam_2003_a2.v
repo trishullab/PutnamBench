@@ -1,16 +1,20 @@
-Require Import List Reals Coquelicot.Coquelicot.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals exp sequences normedtype.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
+
 Theorem putnam_2003_a2
-    (Suml := fix suml (l1 l2 : list R) : list R :=
-        match l1, l2 with
-        | nil, _ => nil
-        | _, nil => nil
-        | h1 :: t1, h2 :: t2 => (h1 + h2) :: suml t1 t2
-    end)
     (n : nat)
-    (a b : list R)
-    (npos : ge n 1)
-    (ablen : length a = n /\ length b = n)
-    (abnneg : forall i : nat, lt i n -> nth i a 0 >= 0 /\ nth i b 0 >= 0)
-    : (fold_left Rmult a 1) ^ (1 / n) + (fold_left Rmult b 1) ^ (1 / n) <=
-    (fold_left Rmult (Suml a b) 1) ^ (1 / n).
+    (hn : gt n 0)
+    (a b : 'I_n -> R)
+    (abnneg : forall i : 'I_n, (a i) >= 0 /\ (b i) >= 0)
+    : expR (ln (\prod_(i < n) (a i)) * (1 / n%:R)) +
+      expR (ln (\prod_(i < n) (b i)) * (1 / n%:R)) <=
+      expR (ln (\prod_(i < n) (a i + b i)) * (1 / n%:R)).
 Proof. Admitted.

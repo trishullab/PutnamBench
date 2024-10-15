@@ -1,16 +1,12 @@
-Require Import Nat List Reals Coquelicot.Coquelicot.
+From mathcomp Require Import all_algebra all_ssreflect.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope nat_scope.
+
 Theorem putnam_2003_b3
-    (lcmn := fix lcm_n (args : list nat) : nat :=
-        match args with
-        | nil => 1%nat
-        | h :: args' => div (h * (lcm_n args')) (gcd h (lcm_n args'))
-    end)
-    (prodn := fix prod_n (m: nat -> R) (n : nat) : R :=
-        match n with
-        | O => m 0%nat
-        | S n' => m n * prod_n m n'
-    end)
     (n : nat)
-    (npos : gt n 0)
-    : INR (fact n) = prodn (fun i => INR (lcmn (seq 1 (div n (i + 1))))) (sub n 1).
+    : n `! = \prod_(1 <= i < n.+1) (foldl (fun x y => lcmn x y) 1%nat (iota 1 (n%/i))).
 Proof. Admitted.

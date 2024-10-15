@@ -11,8 +11,17 @@ Local Open Scope ring_scope.
 Local Open Scope classical_set_scope.
 
 Variable R : realType.
-Theorem putnam_1969_a5 :
-    forall x y : R -> R, (forall t : R, differentiable x t /\ differentiable y t) -> 
-    (forall t : R, t > 0 -> x 0 = y 0 <-> exists u : R -> R, continuous u /\
-    (x t = 0 /\ y t = 0 /\ forall p : R, x^`() p = -2 * y p + u p /\ y^`() p = -2 * x p + u p)).
+Theorem putnam_1969_a5
+    (x0 y0 t : R)
+    (ht : 0 < t) :
+    x0 = y0 <-> exists x y u : R -> R,
+        (forall x' : R, differentiable x x') /\
+        (forall y' : R, differentiable y y') /\
+        continuous u /\
+        (forall x' : R, x^`() x' = -2 * (y x') + u x') /\
+        (forall y' : R, y^`() y' = -2 * (x y') + u y') /\
+        x 0 = x0 /\
+        y 0 = y0 /\
+        x t = 0 /\
+        y t = 0.
 Proof. Admitted.

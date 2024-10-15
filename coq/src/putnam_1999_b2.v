@@ -1,10 +1,18 @@
-Require Import List Reals Coquelicot.Coquelicot.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals complex derive topology normedtype.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
+Variable R : realType.
+
 Theorem putnam_1999_b2
-    (a1 a2: nat -> R)
-    (n: nat)
-    (p : R -> R := fun x => sum_n (fun i => a1 i * x ^ i) n)
-    (q : R -> R := fun x => sum_n (fun i => a2 i * x ^ i) 2)
-    (hP : forall (x: R), p x = q x * (Derive_n p 2) x)
-    : (exists (r1 r2: R), r1 <> r2 /\ p r1 = 0 /\ p r2 = 0) ->
-    (exists (roots: list R), length roots = n /\ NoDup roots /\ (forall (r: R), In r roots -> p r = 0)).
+    (P Q : {poly R[i]})
+    (hQ : size Q = 3%nat)
+    (hP : forall x : R[i], P.[x] = Q.[x] * (P^`(2)).[x])
+    : (exists x1 x2 : R[i], x1 <> x2 /\ P.[x1] = 0 /\ P.[x2] = 0) ->
+        (exists f : seq R[i], size f = (size P).-1 /\ uniq f /\ all (fun x => P.[x] == 0) f).
 Proof. Admitted.

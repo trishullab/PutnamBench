@@ -1,9 +1,15 @@
-Require Import ZArith Reals Coquelicot.Coquelicot.
+From mathcomp Require Import all_algebra all_ssreflect.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+
 Theorem putnam_2000_a6
-    (n : nat)
-    (coeff : nat -> Z)
-    (f : R -> R := fun x => sum_n (fun i => (IZR (coeff i)) * (x^i)) n)
-    (a : nat -> R)
-    (ha : a O = 0 /\ forall i : nat, a (S i) = f (a i))
-    : (exists m : nat, gt m 0 /\ a m = 0) -> (a (S O) = 0 \/ a (S (S O)) = 0).
+    (f : {poly int})
+    (a : nat -> int)
+    (ha0 : a 0%nat = 0)
+    (ha : forall n : nat, a (n.+1) = f.[a n])
+    : (exists m : nat, gt m 0 /\ a m = 0) -> (a 1%nat = 0 \/ a 2%nat = 0).
 Proof. Admitted.

@@ -1,29 +1,24 @@
-Require Import Logic Ensembles Finite_sets Nat List.
-Open Scope nat_scope.
-Definition putnam_2018_b1_solution : Ensemble (nat * nat) := fun v : nat * nat =>  exists (b : nat), 0 <= b <= 100 /\ even b = true /\ fst v = 1 /\ snd v = b.
-Definition is_in_ensemble_fst (E : Ensemble (nat * nat)) (x : nat) : bool :=
-    match E (x, _) with
-    | True => true
-end.
-Definition is_in_ensemble_snd (E : Ensemble (nat * nat)) (y : nat) : bool :=
-    match E (_, y) with
-    | True => true
-end.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals trigo.
+From mathcomp Require Import classical_sets cardinality.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+Local Open Scope card_scope.
+
+Variable R : realType.
+Definition putnam_2018_b4_solution : set (int * int) := [set v | exists b : int, 0 <= b <= 100 /\ (exists k : int, b = 2 * k) /\ v = (1,b)].
 Theorem putnam_2018_b1
-  (P : Ensemble (nat * nat))
-  (v : nat * nat)
-  (vinP : Prop)
-  (Pvdiff : Ensemble (nat * nat))
-  (Pvpart : Prop)
-  (hP : P = fun v': nat * nat => 0 <= fst v' <= 2 /\ 0 <= snd v' <= 100)
-  (hvinP : vinP = P v)
-  (hPvdiff : Pvdiff = fun v' => P v' /\ v' <> v)
-  (hPvpart : Pvpart = 
-      (exists Q R : Ensemble (nat * nat), 
-          (Union (nat * nat) Q R = Pvdiff) /\ 
-          (Intersection (nat * nat) Q R = Empty_set (nat * nat)) /\ 
-          (exists (n: nat), cardinal (nat * nat) Q n = cardinal (nat * nat) R n /\ 
-              (fold_right plus 0%nat (filter (fun x: nat => is_in_ensemble_fst Q x) (seq 0 3)) = fold_right plus 0%nat (filter (fun x: nat => is_in_ensemble_fst R x) (seq 0 3))) /\
-              (fold_right plus 0%nat (filter (fun y: nat => is_in_ensemble_snd Q y) (seq 0 101)) = fold_right plus 0%nat (filter (fun y: nat => is_in_ensemble_snd R y) (seq 0 101))))))
-  : (vinP /\ Pvpart) <-> putnam_2018_b1_solution v.
+    (P : set (int * int) := [set v' | 0 <= v'.1 <= 2 /\ 0 <= v'.2 <= 100])
+    (v : int * int)
+    (Pvdiff : set (int * int) := [set v' | v' \in P /\ v' != v])
+    : (v \in P /\ (exists Q R : set (int * int), 
+        Q `|` R = Pvdiff /\ Q `&` R = set0 /\ Q #= R /\
+        \sum_(i <- iota 0 3) (\sum_(j <- iota 0 101) (if (i%:Z, j%:Z) \in Q then i%:Z else 0)) = \sum_(i <- iota 0 3) (\sum_(j <- iota 0 101) (if (i%:Z, j%:Z) \in R then i%:Z else 0)) /\
+        \sum_(i <- iota 0 3) (\sum_(j <- iota 0 101) (if (i%:Z, j%:Z) \in Q then j%:Z else 0)) = \sum_(i <- iota 0 3) (\sum_(j <- iota 0 101) (if (i%:Z, j%:Z) \in R then j%:Z else 0))))
+    <-> v \in putnam_2018_b4_solution.
 Proof. Admitted.
