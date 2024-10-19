@@ -1,13 +1,18 @@
-Require Import List Ensembles Finite_sets ZArith.
-Theorem putnam_2005_b4 
-    (Absl := fix absl (l : list Z) : list Z :=
-        match l with
-        | nil => nil
-        | h :: t => Z.abs h :: absl t
-    end)
-    (m n : nat)
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import classical_sets cardinality.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+Local Open Scope card_scope.
+
+Theorem putnam_2005_b4
+    (m n : int)
     (mnpos : m > 0 /\ n > 0)
-    (f : nat -> nat -> nat)
-    (hf : forall m' n' : nat, (m' > 0 /\ n' > 0) -> cardinal (list Z) (fun x => length x = n' /\ Z.le (fold_left Z.add (Absl x) 0%Z) (Z.of_nat m')) (f m' n'))
+    (f : int -> int -> nat)
+    (hf : forall m' n' : int, (m' > 0 /\ n' > 0) -> [set: 'I_(f m' n')] #= [set x : seq int | (size x)%:Z = n' /\ \sum_(i <- x) `|i| <= m'])
     : f m n = f n m.
 Proof. Admitted.

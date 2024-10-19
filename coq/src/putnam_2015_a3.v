@@ -1,5 +1,7 @@
 Require Import Reals ROrderedType Coquelicot.Coquelicot. 
 Open Scope C.
+
+(* Note: While this formalization is quite unwieldy, to my knowledge there is no definition of complex log in real-closed.complex.v *)
 Definition putnam_2015_a3_solution : C := RtoC 13725.
 Theorem putnam_2015_a3
     (Carg : C -> R := fun z => if Reqb (Im z) 0 then (if Rlt_dec (Re z) 0 then PI else R0) else atan ((Im z)/(Re z)))
