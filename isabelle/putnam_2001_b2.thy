@@ -8,7 +8,9 @@ theorem putnam_2001_b2:
   fixes x y :: real
   and eq1 eq2 :: bool
   defines "eq1 \<equiv> 1 / x + 1 / (2 * y) = (x ^ 2 + 3 * y ^ 2) * (3 * x ^ 2 + y ^ 2)"
-  and "eq2 \<equiv> 1 / x - 1 / (2 * y) = 2 * (y ^ 4 - x ^ 4)"
+    and "eq2 \<equiv> 1 / x - 1 / (2 * y) = 2 * (y ^ 4 - x ^ 4)"
+  assumes hx : "x \<noteq> 0"
+    and hy : "y \<noteq> 0"
   shows "(eq1 \<and> eq2) \<longleftrightarrow> (x, y) \<in> putnam_2001_b2_solution"
   sorry
 

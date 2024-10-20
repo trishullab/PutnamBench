@@ -9,10 +9,10 @@ theorem putnam_2017_a1:
   assumes IsQualifying_def : "\<forall> S. IsQualifying S \<longleftrightarrow>
     (\<forall> n \<in> S. 0 < n) \<and>
     2 \<in> S \<and>
-    (\<forall> n. n^2 \<in> S \<longrightarrow> n \<in> S) \<and>
+    (\<forall> n > 0. n^2 \<in> S \<longrightarrow> n \<in> S) \<and>
     (\<forall> n \<in> S. (n + 5)^2 \<in> S)"
     and hS : "S = (LEAST A. IsQualifying S)"
   shows "putnam_2017_a1_solution = {x :: int. x > 0} - s"
-  sorry  
+  sorry
 
 end

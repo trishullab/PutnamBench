@@ -5,7 +5,7 @@ Complex_Main
 begin
 
 definition putnam_1974_b1_solution :: "(real^2) list \<Rightarrow> bool" where "putnam_1974_b1_solution \<equiv> undefined"
-(* \<lambda> points. \<exists> (B :: real) (ordering :: nat \<Rightarrow> nat). ordering permutes {0..<5} \<and> (\<forall> i < 5. dist (points!(ordering i)) (points!(ordering ((i + 1) mod 5))) = B) *)
+(* \<lambda> points. \<exists> (B :: real) (ordering :: nat \<Rightarrow> nat). B > 0 \<and> ordering permutes {0..<5} \<and> (\<forall> i < 5. dist (points!(ordering i)) (points!(ordering ((i + 1) mod 5))) = B) *)
 theorem putnam_1974_b1:
   fixes on_unit_circle :: "(real^2) list \<Rightarrow> bool"
   and distance_fun :: "(real^2) list \<Rightarrow> real"
