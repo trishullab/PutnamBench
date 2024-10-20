@@ -3,6 +3,12 @@ open BigOperators
 
 open Set Real Filter Topology Polynomial
 
+/--
+Let $a_{ij}$ be real numbers in $[0, 1]$. Show that
+\[
+\left( \sum_{i=1}^n  \sum_{j=1}^{mi} \frac{a_{ij}}{i} \right) ^2 \leq 2m \sum_{i=1}^n \sum_{j=1}^{mi} a_{ij}.
+\]
+-/
 theorem putnam_1978_b6
 (a : ℕ → ℕ → ℝ)
 (ha : ∀ i j, a i j ∈ Icc 0 1)

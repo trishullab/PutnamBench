@@ -3,6 +3,9 @@ open BigOperators
 
 open Nat Topology Filter
 
+/--
+An $m \times n$ checkerboard is colored randomly: each square is independently assigned red or black with probability $1/2$. We say that two squares, $p$ and $q$, are in the same connected monochromatic region if there is a sequence of squares, all of the same color, starting at $p$ and ending at $q$, in which successive squares in the sequence share a common side. Show that the expected number of connected monochromatic regions is greater than $m n / 8$.
+-/
 theorem putnam_2004_a5
 (m n : ℕ)
 (mnpos : Inhabited (Fin m × Fin n))

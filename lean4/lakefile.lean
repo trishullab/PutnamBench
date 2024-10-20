@@ -6,7 +6,7 @@ package «putnam» where
   leanOptions := #[
     ⟨`autoImplicit, false⟩
   ]
-require mathlib from git "https://github.com/leanprover-community/mathlib4" @ "v4.10.0"
+require mathlib from git "https://github.com/leanprover-community/mathlib4" @ "v4.12.0"
 
 @[default_target]
 lean_lib «putnam» where
@@ -14,3 +14,7 @@ lean_lib «putnam» where
 
 lean_lib «putnam_with_solutions» where
   globs := #[.submodules `solutions_replaced_new]
+
+lean_exe «check_docstrings» where
+  root := `check_docstrings
+  supportInterpreter := true

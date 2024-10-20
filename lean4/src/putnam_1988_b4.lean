@@ -3,6 +3,9 @@ open BigOperators
 
 open Set Filter Topology
 
+/--
+Prove that if $\sum_{n=1}^\infty a_n$ is a convergent series of positive real numbers, then so is $\sum_{n=1}^\infty (a_n)^{n/(n+1)}$.
+-/
 theorem putnam_1988_b4
 (a : ℕ → ℝ)
 (appos : (ℕ → ℝ) → Prop)

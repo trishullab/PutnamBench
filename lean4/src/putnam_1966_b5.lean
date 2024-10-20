@@ -3,6 +3,9 @@ open BigOperators
 
 open Topology Filter
 
+/--
+Prove that any set of $n \ge 3$ distinct points in the Euclidean plane, no three of which are collinear, forms the vertex set of some simple (non-self-intersecting) closed polygon.
+-/
 theorem putnam_1966_b5
 (S : Finset (EuclideanSpace ℝ (Fin 2)))
 (hcard : S.card ≥ 3)

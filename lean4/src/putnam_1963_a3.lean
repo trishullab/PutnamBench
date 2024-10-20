@@ -1,21 +1,20 @@
 import Mathlib
 open BigOperators
 
-open Topology Filter
+open Nat Set Topology Filter
 
 noncomputable abbrev putnam_1963_a3_solution : (ℝ → ℝ) → ℕ → ℝ → ℝ → ℝ := sorry
--- fun (f : ℝ → ℝ) (n : ℕ) (x : ℝ) (t : ℝ) ↦ (x - t)^(n - 1) * (f t) / (Nat.factorial (n - 1) * t^n)
+-- fun (f : ℝ → ℝ) (n : ℕ) (x : ℝ) (t : ℝ) ↦ (x - t) ^ (n - 1) * (f t) / ((n - 1)! * t ^ n)
+/--
+Find an integral formula (i.e., a function $z$ such that $y(x) = \int_{1}^{x} z(t) dt$) for the solution of the differential equation $$\delta (\delta - 1) (\delta - 2) \cdots (\delta - n + 1) y = f(x)$$ with the initial conditions $y(1) = y'(1) = \cdots = y^{(n-1)}(1) = 0$, where $n \in \mathbb{N}$, $f$ is continuous for all $x \ge 1$, and $\delta$ denotes $x\frac{d}{dx}$.
+-/
 theorem putnam_1963_a3
-(n : ℕ)
-(f : ℝ → ℝ)
-(P D : ℕ → (ℝ → ℝ) → (ℝ → ℝ))
-(δ : (ℝ → ℝ) → (ℝ → ℝ))
-(hδ : δ = fun g : ℝ → ℝ ↦ (fun x : ℝ ↦ x) * deriv g)
-(hD : D = fun (m : ℕ) (g : ℝ → ℝ) ↦ δ g - (fun x : ℝ ↦ (m : ℝ)) * g)
-(y : ℝ → ℝ)
-(hy : y = fun x : ℝ ↦ ∫ t in Set.Ioo 1 x, putnam_1963_a3_solution f n x t)
-(hn : n ≥ 1)
-(hf : Continuous f)
-(hP : P 0 y = y ∧ ∀ m ∈ Finset.range n, P (m + 1) y = D (n - 1 - m) (P m y))
-: (ContDiff ℝ n y) ∧ (∀ x ≥ 1, P n y x = f x) ∧ (∀ i ∈ Finset.range n, iteratedDeriv i y 1 = 0) :=
-sorry
+    (P : ℕ → (ℝ → ℝ) → (ℝ → ℝ))
+    (hP : P 0 = id ∧ ∀ i y, P (i + 1) y = P i (fun x ↦ x * deriv y x - i * y x))
+    (n : ℕ)
+    (hn : 0 < n)
+    (f y : ℝ → ℝ)
+    (hf : ContinuousOn f (Ici 1)) :
+    ContDiffOn ℝ n y (Ici 1) ∧ (∀ i < n, deriv^[i] y 1 = 0) ∧ (Ici 1).EqOn (P n y) f ↔
+    ∀ x ≥ 1, y x = ∫ t in (1 : ℝ)..x, putnam_1963_a3_solution f n x t := by
+  sorry

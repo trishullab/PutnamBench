@@ -1,18 +1,25 @@
 import Mathlib
 open BigOperators
 
-open Topology Filter Nat
+open Topology Filter Function Nat
 
--- Note: uses (ℕ → ℕ) instead of (Fin k → ℕ)
-abbrev putnam_1984_a6_solution : Prop × ℕ := sorry
--- (True, 4)
+-- Note: uses `0` to indicate not periodic.
+abbrev putnam_1984_a6_solution : ℕ := sorry
+-- 4
+/--
+Let $n$ be a positive integer, and let $f(n)$ denote the last nonzero digit in the decimal expansion of $n!$. For instance, $f(5)=2$.
+\begin{enumerate}
+\item[(a)] Show that if $a_1,a_2,\dots,a_k$ are \emph{distinct} nonnegative integers, then $f(5^{a_1}+5^{a_2}+\dots+5^{a_k})$ depends only on the sum $a_1+a_2+\dots+a_k$.
+\item[(b)] Assuming part (a), we can define $g(s)=f(5^{a_1}+5^{a_2}+\dots+5^{a_k})$, where $s=a_1+a_2+\dots+a_k$. Find the least positive integer $p$ for which $g(s)=g(s + p)$, for all $s \geq 1$, or else show that no such $p$ exists.
+\end{enumerate}
+-/
 theorem putnam_1984_a6
-(f : ℕ → ℕ)
-(kadistinct : ℕ → (ℕ → ℕ) → Prop)
-(hkadistinct : kadistinct = fun k : ℕ => fun a : ℕ → ℕ => (k ≥ 1 ∧ ∀ i j : Fin k, i ≠ j → a i ≠ a j))
-(gpeq : (ℕ → ℕ) → ℕ → Prop)
-(hgpeq : gpeq = fun g : ℕ → ℕ => fun p : ℕ => (p > 0 ∧ ∀ s ≥ 1, g s = g (s + p)))
-(hf : ∀ n > 0, f n = if (n % 10) ≠ 0 then n % 10 else f (n / 10))
-: ∃ g : ℕ → ℕ, (∀ (k : ℕ) (a : ℕ → ℕ), kadistinct k a → g (∑ i : Fin k, a i) = f (∑ i : Fin k, 5 ^ (a i))) ∧
-(if putnam_1984_a6_solution.1 = True then (gpeq g putnam_1984_a6_solution.2 ∧ ∀ p : ℕ, gpeq g p → p ≥ putnam_1984_a6_solution.2) else (¬∃ p : ℕ, gpeq g p)) :=
-sorry
+    (f : ℕ → ℕ)
+    (hf : ∀ n, some (f n) = (Nat.digits 10 (n !)).find? (fun d ↦ d ≠ 0))
+    (P : (ℕ → ℕ) → ℕ → Prop)
+    (P_def : ∀ g p, P g p ↔
+      if p = 0 then (∀ q > 0, ¬ Periodic g q) else IsLeast {q | 0 < q ∧ Periodic g q} p) :
+    ∃ g : ℕ → ℕ,
+      (∀ᵉ (k > 0) (a : Fin k → ℕ) (ha : Injective a), f (∑ i, 5 ^ (a i)) = g (∑ i, a i)) ∧
+      P g putnam_1984_a6_solution :=
+  sorry

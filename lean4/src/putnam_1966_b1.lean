@@ -3,6 +3,9 @@ open BigOperators
 
 open Topology
 
+/--
+If a convex polygon $L$ is contained entirely within a square of side length $1$, prove that the sum of the squares of the side lengths of $L$ is no greater than $4$.
+-/
 theorem putnam_1966_b1
 (n : ℕ)
 (hn : n ≥ 3)

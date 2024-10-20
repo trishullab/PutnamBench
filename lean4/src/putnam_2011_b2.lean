@@ -5,6 +5,9 @@ open Topology Filter Matrix
 
 abbrev putnam_2011_b2_solution : Set ℕ := sorry
 -- {2, 5}
+/--
+Let $S$ be the set of all ordered triples $(p,q,r)$ of prime numbers for which at least one rational number $x$ satisfies $px^2+qx+r=0$. Which primes appear in seven or more elements of $S$?
+-/
 theorem putnam_2011_b2
 (S : Set (Fin 3 → ℕ))
 (t : ℕ)

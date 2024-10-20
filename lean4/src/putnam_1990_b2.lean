@@ -3,6 +3,9 @@ open BigOperators
 
 open Filter Topology Nat
 
+/--
+Prove that for $|x|<1$, $|z|>1$, $1+\sum_{j=1}^\infty (1+x^j)P_j=0$, where $P_j$ is $\frac{(1-z)(1-zx)(1-zx^2) \cdots (1-zx^{j-1})}{(z-x)(z-x^2)(z-x^3) \cdots (z-x^j)}$.
+-/
 theorem putnam_1990_b2
 (x z : ℝ)
 (P : ℕ → ℝ)

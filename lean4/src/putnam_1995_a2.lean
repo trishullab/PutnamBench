@@ -5,6 +5,9 @@ open Filter Topology Real
 
 abbrev putnam_1995_a2_solution : Set (ℝ × ℝ) := sorry
 -- {x | let ⟨a,b⟩ := x; a = b}
+/--
+For what pairs $(a,b)$ of positive real numbers does the improper integral \[ \int_{b}^{\infty} \left( \sqrt{\sqrt{x+a}-\sqrt{x}} - \sqrt{\sqrt{x}-\sqrt{x-b}} \right)\,dx \] converge?
+-/
 theorem putnam_1995_a2
 (habconv : (ℝ × ℝ) → Prop)
 (habconv_def : habconv = fun ⟨a,b⟩ =>

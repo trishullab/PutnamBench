@@ -3,6 +3,9 @@ open BigOperators
 
 open Filter Topology Bornology Set
 
+/--
+Let $f$ be a twice-differentiable real-valued function satisfying \[f(x)+f''(x)=-xg(x)f'(x),\] where $g(x)\geq 0$ for all real $x$.  Prove that $|f(x)|$ is bounded.
+-/
 theorem putnam_1997_b2
 (f g : ℝ → ℝ)
 (hg : ∀ x : ℝ, g x ≥ 0)

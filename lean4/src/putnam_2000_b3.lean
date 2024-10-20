@@ -3,6 +3,12 @@ open BigOperators
 
 open Topology Filter Nat Set Function
 
+/--
+Let $f(t)=\sum_{j=1}^N a_j \sin(2\pi jt)$, where each $a_j$ is real and $a_N$ is not equal to $0$. Let $N_k$ denote the number of zeroes (including multiplicities) of $\frac{d^k f}{dt^k}$. Prove that
+\[
+N_0\leq N_1\leq N_2\leq \cdots \mbox{ and } \lim_{k\to\infty} N_k = 2N.
+\]
+-/
 theorem putnam_2000_b3
 (N : ℕ)
 (Npos : N > 0)

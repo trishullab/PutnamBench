@@ -3,6 +3,9 @@ open BigOperators
 
 open Set
 
+/--
+For all $i \in \{0, 1, \dots, n - 1\}$, let $p_i \in [0, 1]$. Prove that there exists some $x \in [0, 1]$ such that $$\sum_{i = 0}^{n - 1} \frac{1}{|x - p_i|} \le 8n\left(\sum_{i = 0}^{n-1} \frac{1}{2i + 1}\right).$$
+-/
 theorem putnam_1979_a6
 (n : ℕ)
 (p : ℕ → ℝ)

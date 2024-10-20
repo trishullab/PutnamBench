@@ -5,6 +5,12 @@ open Topology Filter Nat
 
 abbrev putnam_1992_a3_solution : ℕ → Set (ℕ × ℕ × ℕ) := sorry
 -- fun m ↦ ite (Odd m) ∅ {(m + 1, 2 ^ (m / 2), 2 ^ (m / 2))}
+/--
+For a given positive integer $m$, find all triples $(n, x, y)$ of positive integers, with $n$ relatively prime to $m$, which satisfy
+\[
+(x^2 + y^2)^m = (xy)^n.
+\]
+-/
 theorem putnam_1992_a3
 (m : ℕ)
 (mpos : m > 0)

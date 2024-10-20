@@ -3,6 +3,9 @@ open BigOperators
 
 open Filter Topology
 
+/--
+Let $(r_n)_{n \geq 0}$ be a sequence of positive real numbers such that $\lim_{n \to \infty} r_n=0$. Let $S$ be the set of numbers representable as a sum $r_{i_1}+r_{i_2}+\cdots+r_{i_{1994}}$, with $i_1<i_2<\cdots<i_{1994}$. Show that every nonempty interval $(a,b)$ contains a nonempty subinterval $(c,d)$ that does not intersect $S$.
+-/
 theorem putnam_1994_a5
 (r : ℕ → ℝ)
 (S : Set ℝ)

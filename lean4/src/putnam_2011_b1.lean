@@ -3,6 +3,9 @@ open BigOperators
 
 open Topology Filter Matrix
 
+/--
+Let $h$ and $k$ be positive integers. Prove that for every $\epsilon>0$, there are positive integers $m$ and $n$ such that $\epsilon<|h\sqrt{m}-k\sqrt{n}|<2\epsilon$.
+-/
 theorem putnam_2011_b1
 (h k : ℤ)
 (hkpos : h > 0 ∧ k > 0)

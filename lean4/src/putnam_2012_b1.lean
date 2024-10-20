@@ -3,6 +3,19 @@ open BigOperators
 
 open Matrix Function Real
 
+/--
+Let $S$ be a class of functions from $[0, \infty)$ to $[0, \infty)$ that satisfies:
+\begin{itemize}
+\item[(i)]
+The functions $f_1(x) = e^x - 1$ and $f_2(x) = \ln(x+1)$ are in $S$;
+\item[(ii)]
+If $f(x)$ and $g(x)$ are in $S$, the functions $f(x) + g(x)$ and $f(g(x))$ are in $S$;
+\item[(iii)]
+If $f(x)$ and $g(x)$ are in $S$ and $f(x) \geq g(x)$ for all $x \geq 0$, then the function
+$f(x) - g(x)$ is in $S$.
+\end{itemize}
+Prove that if $f(x)$ and $g(x)$ are in $S$, then the function $f(x) g(x)$ is also in $S$.
+-/
 theorem putnam_2012_b1
 (S : Set (Set.Ici (0 : ℝ) → ℝ))
 (rngS : ∀ f ∈ S, ∀ x : Set.Ici (0 : ℝ), f x ∈ Set.Ici (0 : ℝ))

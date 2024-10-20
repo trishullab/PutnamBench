@@ -2,6 +2,9 @@ import Mathlib
 open BigOperators
 
 -- Note: uses (ℕ → ℕ) instead of (Set.Icc 1 n → ℕ)
+/--
+Let $m$ and $n$ be positive integers with $\gcd(m,n)=1$, and let $a_k=\left\lfloor \frac{mk}{n} \right\rfloor - \left\lfloor \frac{m(k-1)}{n} \right\rfloor$ for $k=1,2,\dots,n$. Suppose that $g$ and $h$ are elements in a group $G$ and that $gh^{a_1}gh^{a_2} \cdots gh^{a_n}=e$, where $e$ is the identity element. Show that $gh=hg$. (As usual, $\lfloor x \rfloor$ denotes the greatest integer less than or equal to $x$.)
+-/
 theorem putnam_2018_a4
 (m n : ℕ)
 (a : ℕ → ℤ)
