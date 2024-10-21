@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 /--
 Start with a finite sequence $a_1, a_2, \dots, a_n$ of positive integers. If possible, choose two indices $j < k$ such that $a_j$ does not divide $a_k$, and replace $a_j$ and $a_k$ by $\mathrm{gcd}(a_j, a_k)$ and $\mathrm{lcm}(a_j, a_k)$, respectively. Prove that if this process is repeated, it must eventually stop and the final sequence does not depend on the choices made.

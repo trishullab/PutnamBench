@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_1989_a1_solution : ℕ∞ := sorry
 -- 1

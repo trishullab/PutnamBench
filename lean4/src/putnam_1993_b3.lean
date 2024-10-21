@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_1993_b3_solution : ℚ × ℚ := sorry
 -- (5 / 4, -1 / 4)

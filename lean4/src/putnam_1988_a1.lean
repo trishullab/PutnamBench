@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_1988_a1_solution : ℝ := sorry
 -- 6

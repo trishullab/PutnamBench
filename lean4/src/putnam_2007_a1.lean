@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_2007_a1_solution : Set ℝ := sorry
 -- {2 / 3, 3 / 2, (13 + √601) / 12, (13 - √601) / 12}

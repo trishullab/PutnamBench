@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 noncomputable abbrev putnam_1989_a2_solution : ℝ → ℝ → ℝ := sorry
 -- (fun a b : ℝ => (Real.exp (a ^ 2 * b ^ 2) - 1) / (a * b))

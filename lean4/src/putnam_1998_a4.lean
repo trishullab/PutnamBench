@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 -- Note: Since 11 divides `x` iff it divides its base-10 reverse, the `reverse` below is optional.
 abbrev putnam_1998_a4_solution : Set ℕ := sorry

@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_2018_b1_solution : Set (Mathlib.Vector ℤ 2) := sorry
 -- {v : Mathlib.Vector ℤ 2 | ∃ b : ℤ, 0 ≤ b ∧ b ≤ 100 ∧ Even b ∧ v.toList = [1, b]}

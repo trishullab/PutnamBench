@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_1962_a5_solution : ℕ → ℕ := sorry
 -- fun n : ℕ => n * (n + 1) * 2^(n - 2)
