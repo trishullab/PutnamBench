@@ -7,7 +7,7 @@ open Set
 abbrev putnam_1964_a2_solution : ℝ → Set (ℝ → ℝ) := sorry
 -- fun _ ↦ ∅
 /--
-Let $\alpha$ be a real number. Find all continuous real-valued functions $f : [0, 1] \to (0, \infty)$ such that 
+Let $\alpha$ be a real number. Find all continuous real-valued functions $f : [0, 1] \to (0, \infty)$ such that
 \begin{align*}
 \int_0^1 f(x) dx &= 1, \\
 \int_0^1 x f(x) dx &= \alpha, \\
