@@ -1,6 +1,5 @@
-Note: We are continuing to make modifications to the Coq formalizations, in particular those which were recently added. We encourage feedback, but keep this in mind. The format of the formalizations will be standardized with the other languages upon completion.
+Note that roughly half of the Coq formalizations rely on Mathcomp, while the other half rely on a combination of the Coq Standard Library, Coquelicot, and other various Coq repositories. We also note that while the dependencies listed in each formalization are sufficient to *state* the problem, one may need further mathematical theory developed in Coq to write a proof.
 
-We also note that while the dependencies listed in each formalization are sufficient to *state* the problem, one may need further mathematical theory developed in Coq to write a proof.
 # Installation
 
 You need to install `opam` and then run `setup.sh` to install the necessary dependencies.
