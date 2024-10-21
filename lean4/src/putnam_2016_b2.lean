@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 open Classical Polynomial Filter Topology Real Set Nat List
 

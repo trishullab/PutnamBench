@@ -1,12 +1,11 @@
 import Mathlib
-open BigOperators
 
 open Filter Topology Set
 
 noncomputable abbrev putnam_2020_a6_solution : ℝ := sorry
 -- Real.pi / 4
 /--
-For a positive integer $N$, let $f_N$ be the function defined by 
+For a positive integer $N$, let $f_N$ be the function defined by
 \[
 f_N(x) = \sum_{n=0}^N \frac{N+1/2-n}{(N+1)(2n+1)} \sin((2n+1)x).
 \]

@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 noncomputable abbrev putnam_2010_a1_solution : ℕ → ℕ := sorry
 -- (fun n : ℕ => Nat.ceil ((n : ℝ) / 2))

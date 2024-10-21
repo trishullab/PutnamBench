@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_2011_a1_solution : ℕ := sorry
 -- 10053

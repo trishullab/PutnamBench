@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 noncomputable abbrev putnam_2006_b4_solution : ℕ → ℕ := sorry
 -- fun k ↦ 2 ^ k

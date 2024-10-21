@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 open Set Topology Filter Polynomial MeasureTheory
 

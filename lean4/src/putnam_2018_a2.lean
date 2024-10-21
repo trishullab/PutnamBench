@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_2018_a2_solution : ℕ → ℝ := sorry
 -- (fun n : ℕ => if n = 1 then 1 else -1)

@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 open Polynomial Real Complex Matrix Filter Topology
 

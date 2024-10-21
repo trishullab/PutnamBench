@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 open Topology Filter Polynomial Set
 

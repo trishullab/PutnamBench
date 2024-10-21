@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 -- Note: The actual problem asks to "find" such polynomials as well - but the solution does not give a set of all possible solutions. Hence, we would need to do the analysis ourselves, the following formalization should work.
 abbrev putnam_1999_a1_solution : Prop := sorry

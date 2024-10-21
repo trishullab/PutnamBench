@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_1980_b3_solution : Set ℝ := sorry
 -- {a : ℝ | a ≥ 3}
