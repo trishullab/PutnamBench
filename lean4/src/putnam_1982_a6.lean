@@ -18,7 +18,8 @@ $\lim_{n \rightarrow \infty}\sum_{k = 1}^{n} x_k = 1$.
 Prove or disprove: these conditions imply that $$\lim_{n \rightarrow \infty} \sum_{k = 1}^{n} x_{b(k)} = 1.$$
 -/
 theorem putnam_1982_a6
-(S : Set ℕ := Ici 1)
+(S : Set ℕ)
+(S_def : S = Ici 1)
 (hb : (ℕ → ℕ) → Prop)
 (hb_def : hb = fun b : ℕ → ℕ => BijOn b S S)
 (hx : (ℕ → ℝ) → Prop)
