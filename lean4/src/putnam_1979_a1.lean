@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_1979_a1_solution : Multiset ℕ := sorry
 -- Multiset.replicate 659 3 + {2}

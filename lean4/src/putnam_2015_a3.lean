@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_2015_a3_solution : ℂ := sorry
 -- 13725

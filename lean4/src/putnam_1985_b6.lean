@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 open Set Filter Topology Real Polynomial Function
 

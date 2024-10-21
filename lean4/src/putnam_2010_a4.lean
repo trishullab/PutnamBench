@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 /--
 Prove that for each positive integer $n$, the number $10^{10^{10^n}} + 10^{10^n} + 10^n - 1$ is not prime.

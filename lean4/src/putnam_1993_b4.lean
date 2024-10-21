@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 /--
 The function $K(x,y)$ is positive and continuous for $0 \leq x \leq 1,0 \leq y \leq 1$, and the functions $f(x)$ and $g(x)$ are positive and continuous for $0 \leq x \leq 1$. Suppose that for all $x$, $0 \leq x \leq 1$, $\int_0^1 f(y)K(x,y)\,dy=g(x)$ and $\int_0^1 g(y)K(x,y)\,dy=f(x)$. Show that $f(x)=g(x)$ for $0 \leq x \leq 1$.

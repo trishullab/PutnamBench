@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_1977_a2_solution : ℝ → ℝ → ℝ → ℝ → Prop := sorry
 -- fun a b c d ↦ d = a ∧ b = -c ∨ d = b ∧ a = -c ∨ d = c ∧ a = -b

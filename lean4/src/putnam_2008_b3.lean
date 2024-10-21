@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 open FiniteDimensional Metric Filter Topology Set Nat
 

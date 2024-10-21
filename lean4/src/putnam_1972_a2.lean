@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 open EuclideanGeometry Filter Topology Set
 

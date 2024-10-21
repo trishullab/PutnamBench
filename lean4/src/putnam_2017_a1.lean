@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_2017_a1_solution : Set ℤ := sorry
 -- {x : ℤ | x > 0 ∧ (x = 1 ∨ 5 ∣ x)}

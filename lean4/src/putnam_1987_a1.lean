@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 /--
 Curves $A$, $B$, $C$, and $D$ are defined in the plane as follows:

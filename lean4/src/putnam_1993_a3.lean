@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 /--
 Let $\mathcal{P}_n$ be the set of subsets of $\{1,2,\dots,n\}$. Let $c(n,m)$ be the number of functions $f:\mathcal{P}_n \to \{1,2,\dots,m\}$ such that $f(A \cap B)=\min\{f(A),f(B)\}$. Prove that $c(n,m)=\sum_{j=1}^m j^n$.

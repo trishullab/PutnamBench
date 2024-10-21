@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_2018_b3_solution : Set ℕ := sorry
 -- {2^2, 2^4, 2^16, 2^256}
