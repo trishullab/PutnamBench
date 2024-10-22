@@ -9,7 +9,7 @@ def all_to_years(min_year, max_year):
         for year in range(max_year, min_year - 1, -1):
             filename = f"putnam_{year}.lean"
             with open(filename, "w") as g:
-                g.write("import Mathlib\nopen BigOperators\n\n")
+                g.write("import Mathlib\n\n")
                 is_in_section = False
                 for line in lines:
                     if is_in_section:
@@ -21,14 +21,14 @@ def all_to_years(min_year, max_year):
 
 def years_to_all(min_year, max_year):
     with open("putnam_all.lean", "w") as f:
-        f.write("import Mathlib\nopen BigOperators\n\n")
+        f.write("import Mathlib\n\n")
         for year in range(min_year, max_year + 1):
             filename = f"putnam_{year}.lean"
             with open(filename, "r") as g:
                 lines = g.readlines()
                 f.write(f"section putnam_{year}\n")
                 for line in lines:
-                    if line.strip() == "import Mathlib" or line.strip() == "open BigOperators":
+                    if line.strip() == "import Mathlib":
                         continue
                     f.write(line)
                 f.write(f"end putnam_{year}\n")
@@ -45,7 +45,7 @@ def files_to_individual(min_year, max_year):
             problem_pattern = fr'putnam_{year}_[ab][1-6]'
 
             for idx, line in enumerate(lines):
-                if "Mathlib" in line or "BigOperators" in line:
+                if "Mathlib" in line:
                     continue
                 elif line.strip() == "" or idx == len(lines) - 1:
                     if idx == len(lines) - 1:
@@ -64,7 +64,7 @@ def files_to_individual(min_year, max_year):
                             print(f"Search is {search}")
                             assert False
                         with open(f"src/{problem_name}.lean", "w") as g:
-                            g.write("import Mathlib\nopen BigOperators\n\n")
+                            g.write("import Mathlib\n\n")
                             if len(running_scopes) > 0:
                                 g.write(f"open {' '.join(running_scopes)}\n\n")
                             for line in section_content:
@@ -106,7 +106,7 @@ def all_to_individual(min_year, max_year):
 
                     filename = f"putnam_{section_name}.lean"
                     with open(filename, "w") as g:
-                        g.write("import Mathlib\nopen BigOperators\n")
+                        g.write("import Mathlib\n")
                         for namespace in namespaces:
                             g.write(f"open {namespace}\n")
                         g.write("\n")

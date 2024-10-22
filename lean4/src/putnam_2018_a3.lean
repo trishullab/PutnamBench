@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 noncomputable abbrev putnam_2018_a3_solution : ℝ := sorry
 -- 480/49

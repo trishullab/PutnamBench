@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 -- Note: uses (ℝ → ℝ) instead of (Set.Icc (0 : ℝ) 1 → ℝ)
 noncomputable abbrev putnam_1980_a6_solution : ℝ := sorry

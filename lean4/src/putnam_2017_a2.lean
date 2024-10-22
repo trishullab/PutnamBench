@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 /--
 Let $Q_0(x)=1$, $Q_1(x)=x$, and $Q_n(x)=\frac{(Q_{n-1}(x))^2-1}{Q_{n-2}(x)}$ for all $n \geq 2$. Show that, whenever $n$ is a positive integer, $Q_n(x)$ is equal to a polynomial with integer coefficients.

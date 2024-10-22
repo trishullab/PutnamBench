@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 noncomputable abbrev putnam_2015_a4_solution : ℝ := sorry
 -- 4 / 7

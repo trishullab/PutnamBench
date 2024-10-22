@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 noncomputable abbrev putnam_1980_a3_solution : ℝ := sorry
 -- Real.pi / 4

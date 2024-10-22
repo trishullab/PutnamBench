@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 open Set Function Metric
 open scoped InnerProductSpace

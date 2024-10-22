@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_2006_a5_solution : ℕ → ℤ := sorry
 -- (fun n : ℕ => if (n ≡ 1 [MOD 4]) then n else -n)

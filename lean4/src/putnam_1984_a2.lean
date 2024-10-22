@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_1984_a2_solution : ℚ := sorry
 -- 2

@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_2015_b4_solution : ℤ × ℕ := sorry
 -- (17, 21)

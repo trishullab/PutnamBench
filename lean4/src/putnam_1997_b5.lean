@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 def tetration : ℕ → ℕ → ℕ
   | _, 0 => 1

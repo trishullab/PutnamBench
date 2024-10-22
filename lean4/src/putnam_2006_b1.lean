@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 noncomputable abbrev putnam_2006_b1_solution : ℝ := sorry
 -- 3 * Real.sqrt 3 / 2
