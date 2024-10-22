@@ -172,7 +172,7 @@
     },
     {
         "problem_name": "putnam_1964_a2",
-        "informal_statement": "Let $\\alpha$ be a real number. Find all continuous real-valued functions $f : [0, 1] \\to (0, \\infty)$ such that \n\\begin{align*}\n\\int_0^1 f(x) dx &= 1, \\\\\n\\int_0^1 x f(x) dx &= \\alpha, \\\\\n\\int_0^1 x^2 f(x) dx &= \\alpha^2. \\\\\n\\end{align*}",
+        "informal_statement": "Let $\\alpha$ be a real number. Find all continuous real-valued functions $f : [0, 1] \\to (0, \\infty)$ such that\n\\begin{align*}\n\\int_0^1 f(x) dx &= 1, \\\\\n\\int_0^1 x f(x) dx &= \\alpha, \\\\\n\\int_0^1 x^2 f(x) dx &= \\alpha^2. \\\\\n\\end{align*}",
         "informal_solution": "Prove that there are no such functions.",
         "tags": [
             "analysis",
@@ -189,14 +189,14 @@
     },
     {
         "problem_name": "putnam_1964_a4",
-        "informal_statement": "The sequence of integers $u_n$ is bounded and satisfies \n\\[\nu_n = \\frac{u_{n-1} + u_{n-2} + u_{n-3}u_{n-4}}{u_{n-1}u_{n-2} + u_{n-3} + u_{n-4}}.\n\\] \nShow that it is periodic for sufficiently large $n$.",
+        "informal_statement": "The sequence of integers $u_n$ is bounded and satisfies\n\\[\nu_n = \\frac{u_{n-1} + u_{n-2} + u_{n-3}u_{n-4}}{u_{n-1}u_{n-2} + u_{n-3} + u_{n-4}}.\n\\]\nShow that it is periodic for sufficiently large $n$.",
         "tags": [
             "analysis"
         ]
     },
     {
         "problem_name": "putnam_1964_a5",
-        "informal_statement": "Prove that there exists a constant $k$ such that for any sequence $a_i$ of positive numbers, \n\\[\n\\sum_{n=1}^{\\infty} \\frac{n}{a_1 + a_2 + \\dots + a_n} \\leq k \\sum_{n=1}^{\\infty}\\frac{1}{a_n}.\n\\]",
+        "informal_statement": "Prove that there exists a constant $k$ such that for any sequence $a_i$ of positive numbers,\n\\[\n\\sum_{n=1}^{\\infty} \\frac{n}{a_1 + a_2 + \\dots + a_n} \\leq k \\sum_{n=1}^{\\infty}\\frac{1}{a_n}.\n\\]",
         "tags": [
             "analysis"
         ]
@@ -696,7 +696,7 @@
     },
     {
         "problem_name": "putnam_1969_b6",
-        "informal_statement": "Let $A$ be a $3 \\times 2$ matrix and $B$ be a $2 \\times 3$ matrix such that $$AB = \n\\begin{pmatrix}\n8 & 2 & -2 \\\\\n2 & 5 & 4 \\\\\n-2 & 4 & 5\n\\end{pmatrix}.\n$$ Prove that $$BA = \n\\begin{pmatrix}\n9 & 0 \\\\\n0 & 9\n\\end{pmatrix}.$$",
+        "informal_statement": "Let $A$ be a $3 \\times 2$ matrix and $B$ be a $2 \\times 3$ matrix such that $$AB =\n\\begin{pmatrix}\n8 & 2 & -2 \\\\\n2 & 5 & 4 \\\\\n-2 & 4 & 5\n\\end{pmatrix}.\n$$ Prove that $$BA =\n\\begin{pmatrix}\n9 & 0 \\\\\n0 & 9\n\\end{pmatrix}.$$",
         "informal_solution": "None.",
         "tags": [
             "linear_algebra"
@@ -1316,7 +1316,7 @@
     },
     {
         "problem_name": "putnam_1977_a6",
-        "informal_statement": "Let $X$ be the square $[0, 1] \\times [0, 1]$, and let $f : X \\to \\mathbb{R}$ be continuous. If $\\int_Y f(x, y) \\, dx \\, dy = 0$ for all squares $Y$ such that\n\\begin{itemize}\n\\item[(1)] $Y \\subseteq X$, \n\\item[(2)] $Y$ has sides parallel to those of $X$, \n\\item[(3)] at least one of $Y$'s sides is contained in the boundary of $X$, \n\\end{itemize}\nis it true that $f(x, y) = 0$ for all $x, y$?",
+        "informal_statement": "Let $X$ be the square $[0, 1] \\times [0, 1]$, and let $f : X \\to \\mathbb{R}$ be continuous. If $\\int_Y f(x, y) \\, dx \\, dy = 0$ for all squares $Y$ such that\n\\begin{itemize}\n\\item[(1)] $Y \\subseteq X$,\n\\item[(2)] $Y$ has sides parallel to those of $X$,\n\\item[(3)] at least one of $Y$'s sides is contained in the boundary of $X$,\n\\end{itemize}\nis it true that $f(x, y) = 0$ for all $x, y$?",
         "informal_solution": "Prove that $f(x,y)$ must be identically zero.",
         "tags": [
             "analysis"
@@ -1380,14 +1380,14 @@
     },
     {
         "problem_name": "putnam_1978_a4",
-        "informal_statement": "A binary operation (represented by multiplication) on $S$ has the property that $(ab)(cd) = ad$ for all $a, b, c, d$. Show that: \n\\begin{itemize}\n\\item[(1)] if $ab = c$, then $cc = c$; \n\\item[(2)] if $ab = c$, then $ad = cd$ for all $d$. \n\\end{itemize}\nFind a set $S$, and such a binary operation, which also satisfies:\n\\begin{itemize}\n\\item[(A)] $a a = a$ for all $a$; \n\\item[(B)] $ab = a \\neq b$ for some $a, b$; \n\\item[(C)] $ab \\neq a$ for some $a, b$.\n\\end{itemize}",
+        "informal_statement": "A binary operation (represented by multiplication) on $S$ has the property that $(ab)(cd) = ad$ for all $a, b, c, d$. Show that:\n\\begin{itemize}\n\\item[(1)] if $ab = c$, then $cc = c$;\n\\item[(2)] if $ab = c$, then $ad = cd$ for all $d$.\n\\end{itemize}\nFind a set $S$, and such a binary operation, which also satisfies:\n\\begin{itemize}\n\\item[(A)] $a a = a$ for all $a$;\n\\item[(B)] $ab = a \\neq b$ for some $a, b$;\n\\item[(C)] $ab \\neq a$ for some $a, b$.\n\\end{itemize}",
         "tags": [
             "abstract_algebra"
         ]
     },
     {
         "problem_name": "putnam_1978_a5",
-        "informal_statement": "Let $a_1, a_2, \\dots , a_n$ be reals in the interval $(0, \\pi)$ with arithmetic mean $\\mu$. Show that \n\\[\n\\prod_{i=1}^n \\left( \\frac{\\sin a_i}{a_i} \\right) \\leq \\left( \\frac{\\sin \\mu}{\\mu} \\right)^n.\n\\]",
+        "informal_statement": "Let $a_1, a_2, \\dots , a_n$ be reals in the interval $(0, \\pi)$ with arithmetic mean $\\mu$. Show that\n\\[\n\\prod_{i=1}^n \\left( \\frac{\\sin a_i}{a_i} \\right) \\leq \\left( \\frac{\\sin \\mu}{\\mu} \\right)^n.\n\\]",
         "tags": [
             "analysis"
         ]
@@ -1411,7 +1411,7 @@
     },
     {
         "problem_name": "putnam_1978_b3",
-        "informal_statement": "The polynomials $P_n(x)$ are defined by \n\\begin{align*}\nP_1(x) &= 1 + x, \\\\\nP_2(x) &= 1 + 2x, \\\\\nP_{2n+1}(x) &= P_{2n}(x) + (n + 1) x P_{2n-1}(x), \\\\\nP_{2n+2}(x) &= P_{2n+1}(x) + (n + 1) x P_{2n}(x). \n\\end{align*}\nLet $a_n$ be the largest real root of $P_n(x)$. Prove that $a_n$ is strictly monotonically increasing and tends to zero.",
+        "informal_statement": "The polynomials $P_n(x)$ are defined by\n\\begin{align*}\nP_1(x) &= 1 + x, \\\\\nP_2(x) &= 1 + 2x, \\\\\nP_{2n+1}(x) &= P_{2n}(x) + (n + 1) x P_{2n-1}(x), \\\\\nP_{2n+2}(x) &= P_{2n+1}(x) + (n + 1) x P_{2n}(x).\n\\end{align*}\nLet $a_n$ be the largest real root of $P_n(x)$. Prove that $a_n$ is strictly monotonically increasing and tends to zero.",
         "tags": [
             "algebra",
             "analysis"
@@ -1516,7 +1516,7 @@
     },
     {
         "problem_name": "putnam_1979_b6",
-        "informal_statement": "Let $z_i$ be complex numbers for $i = 1, 2, \\dots, n$. Show that \n\\[\n\\left \\lvert \\mathrm{Re} \\, [(z_1^2 + z_2^2 + \\dots + z_n^2)^{1/2} ] \\right \\rvert \\leq \\lvert \\mathrm{Re} \\, z_1 \\rvert + \\lvert \\mathrm{Re} \\, z_2 \\rvert + \\dots + \\lvert \\mathrm{Re} \\, z_n \\rvert.\n\\]",
+        "informal_statement": "Let $z_i$ be complex numbers for $i = 1, 2, \\dots, n$. Show that\n\\[\n\\left \\lvert \\mathrm{Re} \\, [(z_1^2 + z_2^2 + \\dots + z_n^2)^{1/2} ] \\right \\rvert \\leq \\lvert \\mathrm{Re} \\, z_1 \\rvert + \\lvert \\mathrm{Re} \\, z_2 \\rvert + \\dots + \\lvert \\mathrm{Re} \\, z_n \\rvert.\n\\]",
         "tags": [
             "analysis"
         ]
@@ -1762,7 +1762,7 @@
     },
     {
         "problem_name": "putnam_1983_a4",
-        "informal_statement": "Prove that for $m = 5 \\pmod 6$, \n\\[\n\\binom{m}{2} - \\binom{m}{5} + \\binom{m}{8} - \\binom{m}{11} + ... - \\binom{m}{m-6} + \\binom{m}{m-3} \\neq 0.\n\\]",
+        "informal_statement": "Prove that for $m = 5 \\pmod 6$,\n\\[\n\\binom{m}{2} - \\binom{m}{5} + \\binom{m}{8} - \\binom{m}{11} + ... - \\binom{m}{m-6} + \\binom{m}{m-3} \\neq 0.\n\\]",
         "tags": [
             "algebra"
         ]
@@ -2510,7 +2510,7 @@
     {
         "problem_name": "putnam_1992_a4",
         "informal_statement": "Let $f$ be an infinitely differentiable real-valued function defined on the real numbers. If\n\\[\nf\\left( \\frac{1}{n} \\right) = \\frac{n^2}{n^2 + 1}, \\qquad n = 1, 2, 3, \\dots,\n\\]\ncompute the values of the derivatives $f^{(k)}(0), k = 1, 2, 3, \\dots$.",
-        "informal_solution": "Prove that \n\\[\nf^{(k)}(0) = \n\\begin{cases} \n(-1)^{k/2}k! & \\text{if $k$ is even;} \\\\\n0 & \\text{if $k$ is odd.} \\\\\n\\end{cases}\n\\]",
+        "informal_solution": "Prove that\n\\[\nf^{(k)}(0) =\n\\begin{cases}\n(-1)^{k/2}k! & \\text{if $k$ is even;} \\\\\n0 & \\text{if $k$ is odd.} \\\\\n\\end{cases}\n\\]",
         "tags": [
             "analysis"
         ]
@@ -3910,7 +3910,7 @@
     {
         "problem_name": "putnam_2009_a2",
         "informal_statement": "Functions $f,g,h$ are differentiable on some open interval around $0$\nand satisfy the equations and initial conditions\n\\begin{gather*}\nf' = 2f^2gh+\\frac{1}{gh},\\quad f(0)=1, \\\\\ng'=fg^2h+\\frac{4}{fh}, \\quad g(0)=1, \\\\\nh'=3fgh^2+\\frac{1}{fg}, \\quad h(0)=1.\n\\end{gather*}\nFind an explicit formula for $f(x)$, valid in some open interval around $0$.",
-        "informal_solution": "Prove that the formula is \n\\[\nf(x) = 2^{-1/12} \\left(\\frac{\\sin(6x+\\pi/4)}{\\cos^2(6x+\\pi/4)}\\right)^{1/6}.\n\\]",
+        "informal_solution": "Prove that the formula is\n\\[\nf(x) = 2^{-1/12} \\left(\\frac{\\sin(6x+\\pi/4)}{\\cos^2(6x+\\pi/4)}\\right)^{1/6}.\n\\]",
         "tags": [
             "analysis"
         ]
@@ -4265,7 +4265,7 @@
     },
     {
         "problem_name": "putnam_2013_a2",
-        "informal_statement": "Let $S$ be the set of all positive integers that are \\emph{not} perfect squares. For $n$ in $S$, consider choices of integers\n$a_1, a_2, \\dots, a_r$ such that $n < a_1<  a_2 < \\cdots < a_r$\nand $n \\cdot a_1 \\cdot a_2 \\cdots a_r$ is a perfect square, and\nlet $f(n)$ be the minumum of $a_r$ over all such choices. For example,\n$2 \\cdot 3 \\cdot 6$ is a perfect square, while $2 \\cdot 3$, $2 \\cdot 4$, \n$2 \\cdot 5$, $2 \\cdot 3 \\cdot 4$, $2 \\cdot 3 \\cdot 5$, $2 \\cdot 4 \\cdot 5$, and $2 \\cdot 3 \\cdot 4 \\cdot 5$ are not, and so $f(2) = 6$.\nShow that the function $f$ from $S$ to the integers is one-to-one.",
+        "informal_statement": "Let $S$ be the set of all positive integers that are \\emph{not} perfect squares. For $n$ in $S$, consider choices of integers\n$a_1, a_2, \\dots, a_r$ such that $n < a_1<  a_2 < \\cdots < a_r$\nand $n \\cdot a_1 \\cdot a_2 \\cdots a_r$ is a perfect square, and\nlet $f(n)$ be the minumum of $a_r$ over all such choices. For example,\n$2 \\cdot 3 \\cdot 6$ is a perfect square, while $2 \\cdot 3$, $2 \\cdot 4$,\n$2 \\cdot 5$, $2 \\cdot 3 \\cdot 4$, $2 \\cdot 3 \\cdot 5$, $2 \\cdot 4 \\cdot 5$, and $2 \\cdot 3 \\cdot 4 \\cdot 5$ are not, and so $f(2) = 6$.\nShow that the function $f$ from $S$ to the integers is one-to-one.",
         "informal_solution": "None.",
         "tags": [
             "number_theory",
@@ -4315,7 +4315,7 @@
     },
     {
         "problem_name": "putnam_2013_b2",
-        "informal_statement": "Let $C = \\bigcup_{N=1}^\\infty C_N$, where $C_N$ denotes the set of those `cosine polynomials' of the form\n\\[\nf(x) = 1 + \\sum_{n=1}^N a_n \\cos(2 \\pi n x)\n\\]\nfor which:\n\\begin{enumerate}\n\\item[(i)]\n$f(x) \\geq 0$ for all real $x$, and\n\\item[(ii)]\n$a_n = 0$ whenever $n$ is a multiple of $3$.\n\\end{enumerate}\nDetermine the maximum value of $f(0)$ as $f$ ranges through $C$, and \nprove that this maximum is attained.",
+        "informal_statement": "Let $C = \\bigcup_{N=1}^\\infty C_N$, where $C_N$ denotes the set of those `cosine polynomials' of the form\n\\[\nf(x) = 1 + \\sum_{n=1}^N a_n \\cos(2 \\pi n x)\n\\]\nfor which:\n\\begin{enumerate}\n\\item[(i)]\n$f(x) \\geq 0$ for all real $x$, and\n\\item[(ii)]\n$a_n = 0$ whenever $n$ is a multiple of $3$.\n\\end{enumerate}\nDetermine the maximum value of $f(0)$ as $f$ ranges through $C$, and\nprove that this maximum is attained.",
         "informal_solution": "The maximum value of $f(0)$ is $3$.",
         "tags": [
             "algebra"
@@ -4512,7 +4512,7 @@
     },
     {
         "problem_name": "putnam_2015_b4",
-        "informal_statement": "Let $T$ be the set of all triples $(a,b,c)$ of positive integers for which there exist triangles with side lengths $a,b,c$. Express\n\\[\n\\sum_{(a,b,c) \\in T} \\frac{2^a}{3^b 5^c} \n\\]\nas a rational number in lowest terms.",
+        "informal_statement": "Let $T$ be the set of all triples $(a,b,c)$ of positive integers for which there exist triangles with side lengths $a,b,c$. Express\n\\[\n\\sum_{(a,b,c) \\in T} \\frac{2^a}{3^b 5^c}\n\\]\nas a rational number in lowest terms.",
         "informal_solution": "The answer is $17/21$.",
         "tags": [
             "algebra"
@@ -4554,7 +4554,7 @@
     },
     {
         "problem_name": "putnam_2016_a3",
-        "informal_statement": "Suppose that $f$ is a function from $\\mathbb{R}$ to $\\mathbb{R}$ such that\n\\[\nf(x) + f\\left( 1 - \\frac{1}{x} \\right) = \\arctan x\n\\]\nfor all real $x \\neq 0$. (As usual, $y = \\arctan x$ means $-\\pi/2 < y < \\pi/2$ and $\\tan y = x$.) Find \n\\[\n\\int_0^1 f(x)\\,dx.\n\\]",
+        "informal_statement": "Suppose that $f$ is a function from $\\mathbb{R}$ to $\\mathbb{R}$ such that\n\\[\nf(x) + f\\left( 1 - \\frac{1}{x} \\right) = \\arctan x\n\\]\nfor all real $x \\neq 0$. (As usual, $y = \\arctan x$ means $-\\pi/2 < y < \\pi/2$ and $\\tan y = x$.) Find\n\\[\n\\int_0^1 f(x)\\,dx.\n\\]",
         "informal_solution": "Prove that the answer is $\\frac{3\\pi}{8}$.",
         "tags": [
             "analysis"
@@ -4562,7 +4562,7 @@
     },
     {
         "problem_name": "putnam_2016_a5",
-        "informal_statement": "Suppose that $G$ is a finite group generated by the two elements $g$ and $h$, where the order of $g$ is odd. Show that every element of $G$ can be written in the form\n\\[\ng^{m_1} h^{n_1} g^{m_2} h^{n_2} \\cdots g^{m_r} h^{n_r}\n\\]\nwith $1 \\leq r \\leq |G|$ and $m_1, n_1, m_2, n_2, \\ldots, m_r, n_r \\in \\{-1, 1\\}$. \n(Here $|G|$ is the number of elements of $G$.)",
+        "informal_statement": "Suppose that $G$ is a finite group generated by the two elements $g$ and $h$, where the order of $g$ is odd. Show that every element of $G$ can be written in the form\n\\[\ng^{m_1} h^{n_1} g^{m_2} h^{n_2} \\cdots g^{m_r} h^{n_r}\n\\]\nwith $1 \\leq r \\leq |G|$ and $m_1, n_1, m_2, n_2, \\ldots, m_r, n_r \\in \\{-1, 1\\}$.\n(Here $|G|$ is the number of elements of $G$.)",
         "tags": [
             "abstract_algebra"
         ]
@@ -4689,7 +4689,7 @@
     },
     {
         "problem_name": "putnam_2017_b6",
-        "informal_statement": "Find the number of ordered $64$-tuples $(x_0,x_1,\\dots,x_{63})$ such that $x_0,x_1,\\dots,x_{63}$ are distinct elements of $\\{1,2,\\dots,2017\\}$ and \n\\[\nx_0 + x_1 + 2x_2 + 3x_3 + \\cdots + 63 x_{63}\n\\]\nis divisible by 2017.",
+        "informal_statement": "Find the number of ordered $64$-tuples $(x_0,x_1,\\dots,x_{63})$ such that $x_0,x_1,\\dots,x_{63}$ are distinct elements of $\\{1,2,\\dots,2017\\}$ and\n\\[\nx_0 + x_1 + 2x_2 + 3x_3 + \\cdots + 63 x_{63}\n\\]\nis divisible by 2017.",
         "informal_solution": "Prove that the answer is $\\frac{2016!}{1953!} - 63! \\cdot 2016$",
         "tags": [
             "algebra",
@@ -4804,7 +4804,7 @@
     },
     {
         "problem_name": "putnam_2019_a3",
-        "informal_statement": "Given real numbers $b_0, b_1, \\dots, b_{2019}$ with $b_{2019} \\neq 0$, let $z_1,z_2,\\dots,z_{2019}$ be \nthe roots in the complex plane of the polynomial \n\\[\nP(z) = \\sum_{k=0}^{2019} b_k z^k.\n\\]\nLet $\\mu = (|z_1| + \\cdots + |z_{2019}|)/2019$ be the average of the distances from $z_1,z_2,\\dots,z_{2019}$ to the origin. Determine the largest constant $M$ such that $\\mu \\geq M$ for all choices of $b_0,b_1,\\dots, b_{2019}$ that satisfy\n\\[\n1 \\leq b_0 < b_1 < b_2 < \\cdots < b_{2019} \\leq 2019.\n\\]",
+        "informal_statement": "Given real numbers $b_0, b_1, \\dots, b_{2019}$ with $b_{2019} \\neq 0$, let $z_1,z_2,\\dots,z_{2019}$ be\nthe roots in the complex plane of the polynomial\n\\[\nP(z) = \\sum_{k=0}^{2019} b_k z^k.\n\\]\nLet $\\mu = (|z_1| + \\cdots + |z_{2019}|)/2019$ be the average of the distances from $z_1,z_2,\\dots,z_{2019}$ to the origin. Determine the largest constant $M$ such that $\\mu \\geq M$ for all choices of $b_0,b_1,\\dots, b_{2019}$ that satisfy\n\\[\n1 \\leq b_0 < b_1 < b_2 < \\cdots < b_{2019} \\leq 2019.\n\\]",
         "informal_solution": "The answer is $M = 2019^{-1/2019}$.",
         "tags": [
             "algebra"
@@ -4921,7 +4921,7 @@
     },
     {
         "problem_name": "putnam_2020_a6",
-        "informal_statement": "For a positive integer $N$, let $f_N$ be the function defined by \n\\[\nf_N(x) = \\sum_{n=0}^N \\frac{N+1/2-n}{(N+1)(2n+1)} \\sin((2n+1)x).\n\\]\nDetermine the smallest constant $M$ such that $f_N(x) \\leq M$ for all $N$ and all real $x$.",
+        "informal_statement": "For a positive integer $N$, let $f_N$ be the function defined by\n\\[\nf_N(x) = \\sum_{n=0}^N \\frac{N+1/2-n}{(N+1)(2n+1)} \\sin((2n+1)x).\n\\]\nDetermine the smallest constant $M$ such that $f_N(x) \\leq M$ for all $N$ and all real $x$.",
         "informal_solution": "The smallest constant $M$ is $\\pi/4$.",
         "tags": [
             "algebra"
@@ -5149,7 +5149,7 @@
     },
     {
         "problem_name": "putnam_2023_a3",
-        "informal_statement": "Determine the smallest positive real number $r$ such that there exist differentiable functions $f\\colon \\mathbb{R} \\to \\mathbb{R}$ and $g\\colon \\mathbb{R} \\to \\mathbb{R}$ satisfying \n\\begin{enumerate}\n \\item[(a)] $f(0) > 0$, \n \\item[(b)] $g(0) = 0$, \n \\item[(c)] $|f'(x)| \\leq |g(x)|$ for all $x$, \n \\item[(d)] $|g'(x)| \\leq |f(x)|$ for all $x$, and \n \\item[(e)] $f(r) = 0$. \\end{enumerate}",
+        "informal_statement": "Determine the smallest positive real number $r$ such that there exist differentiable functions $f\\colon \\mathbb{R} \\to \\mathbb{R}$ and $g\\colon \\mathbb{R} \\to \\mathbb{R}$ satisfying\n\\begin{enumerate}\n \\item[(a)] $f(0) > 0$,\n \\item[(b)] $g(0) = 0$,\n \\item[(c)] $|f'(x)| \\leq |g(x)|$ for all $x$,\n \\item[(d)] $|g'(x)| \\leq |f(x)|$ for all $x$, and\n \\item[(e)] $f(r) = 0$. \\end{enumerate}",
         "informal_solution": "Show that the solution is $r = \\pi/2$.",
         "tags": [
             "analysis"

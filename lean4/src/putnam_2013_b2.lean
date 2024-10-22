@@ -16,7 +16,7 @@ $f(x) \geq 0$ for all real $x$, and
 \item[(ii)]
 $a_n = 0$ whenever $n$ is a multiple of $3$.
 \end{enumerate}
-Determine the maximum value of $f(0)$ as $f$ ranges through $C$, and 
+Determine the maximum value of $f(0)$ as $f$ ranges through $C$, and
 prove that this maximum is attained.
 -/
 theorem putnam_2013_b2

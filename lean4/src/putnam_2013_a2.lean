@@ -7,7 +7,7 @@ Let $S$ be the set of all positive integers that are \emph{not} perfect squares.
 $a_1, a_2, \dots, a_r$ such that $n < a_1<  a_2 < \cdots < a_r$
 and $n \cdot a_1 \cdot a_2 \cdots a_r$ is a perfect square, and
 let $f(n)$ be the minumum of $a_r$ over all such choices. For example,
-$2 \cdot 3 \cdot 6$ is a perfect square, while $2 \cdot 3$, $2 \cdot 4$, 
+$2 \cdot 3 \cdot 6$ is a perfect square, while $2 \cdot 3$, $2 \cdot 4$,
 $2 \cdot 5$, $2 \cdot 3 \cdot 4$, $2 \cdot 3 \cdot 5$, $2 \cdot 4 \cdot 5$, and $2 \cdot 3 \cdot 4 \cdot 5$ are not, and so $f(2) = 6$.
 Show that the function $f$ from $S$ to the integers is one-to-one.
 -/
