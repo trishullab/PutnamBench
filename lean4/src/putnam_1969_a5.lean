@@ -17,5 +17,5 @@ theorem putnam_1969_a5
       x 0 = x0 ∧
       y 0 = y0 ∧
       x t = 0 ∧
-      y t = 0 := by
+      y t = 0 :=
   sorry
