@@ -16,5 +16,5 @@ theorem putnam_2023_b3
     (hn : 2 ≤ n)
     (a : (Fin n → Icc (0 : ℝ) 1) → ℕ)
     (ha : ∀ x, IsGreatest {k | ∃ i : Fin k ↪o Fin n, IsZigZag ((↑) ∘ x ∘ i)} (a x)) :
-    𝔼[(↑) ∘ a] = putnam_2023_b3_solution n := by
+    𝔼[(↑) ∘ a] = putnam_2023_b3_solution n :=
   sorry

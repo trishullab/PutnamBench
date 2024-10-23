@@ -28,5 +28,5 @@ theorem putnam_1989_b3
     (μ_def : ∀ n, μ n = ∫ x in Set.Ioi 0, x ^ n * f x) :
     (∀ n, μ n = putnam_1989_b3_solution n (μ 0)) ∧
     (∃ L, Tendsto (fun n ↦ (μ n) * 3 ^ n / n !) atTop (𝓝 L)) ∧
-    (Tendsto (fun n ↦ (μ n) * 3 ^ n / n !) atTop (𝓝 0) → μ 0 = 0) := by
+    (Tendsto (fun n ↦ (μ n) * 3 ^ n / n !) atTop (𝓝 0) → μ 0 = 0) :=
   sorry
