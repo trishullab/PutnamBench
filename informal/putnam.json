@@ -5044,7 +5044,7 @@
     {
         "problem_name": "putnam_2022_a1",
         "informal_statement": "Determine all ordered pairs of real numbers $(a,b)$ such that the line $y = ax+b$ intersects the curve $y = \\ln(1+x^2)$ in exactly one point.",
-        "informal_solution": "Show that the solution is the set of ordered pairs $(a,b)$ which satisfy at least one of (1) $a = b = 0$, (2) $|a| \\geq 1$, and (3) $0 < |a| < 1$ and $b < \\log(1 - r_{-})^2 - |a|r_{-}$ or $b > \\log(1 + r_{+})^2 + |a|r_{+}$ where $r_{\\pm} = \\frac{1 \\pm \\sqrt{1 - a^2}}{a}$.",
+        "informal_solution": "Show that the solution is the set of ordered pairs $(a,b)$ which satisfy at least one of (1) $a = b = 0$, (2) $|a| \\geq 1$, and (3) $0 < |a| < 1$ and $b < \\log(1 + r_{-}^2) - ar_{-}$ or $b > \\log(1 + r_{+}^2) - ar_{+}$ where $r_{\\pm} = \\frac{1 \\pm \\sqrt{1 - a^2}}{a}$.",
         "tags": [
             "algebra"
         ]

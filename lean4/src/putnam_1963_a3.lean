@@ -13,7 +13,8 @@ theorem putnam_1963_a3
     (n : ℕ)
     (hn : 0 < n)
     (f y : ℝ → ℝ)
-    (hf : ContinuousOn f (Ici 1)) :
-    ContDiffOn ℝ n y (Ici 1) ∧ (∀ i < n, deriv^[i] y 1 = 0) ∧ (Ici 1).EqOn (P n y) f ↔
+    (hf : ContinuousOn f (Ici 1))
+    (hy : ContDiffOn ℝ n y (Ici 1)) :
+    (∀ i < n, deriv^[i] y 1 = 0) ∧ (Ici 1).EqOn (P n y) f ↔
     ∀ x ≥ 1, y x = ∫ t in (1 : ℝ)..x, putnam_1963_a3_solution f n x t :=
   sorry
