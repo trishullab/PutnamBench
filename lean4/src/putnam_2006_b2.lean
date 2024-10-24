@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 /--
 Prove that, for every set $X = \{x_1, x_2, \dots, x_n\}$ of $n$ real numbers, there exists a non-empty subset $S$ of $X$ and an integer $m$ such that

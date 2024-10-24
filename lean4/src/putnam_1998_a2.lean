@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 /--
 Let $s$ be any arc of the unit circle lying entirely in the first quadrant. Let $A$ be the area of the region lying below $s$ and above the $x$-axis and let $B$ be the area of the region lying to the right of the $y$-axis and to the left of $s$. Prove that $A+B$ depends only on the arc length, and not on the position, of $s$.

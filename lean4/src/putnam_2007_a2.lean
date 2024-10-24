@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 noncomputable abbrev putnam_2007_a2_solution : ENNReal := sorry
 -- 4

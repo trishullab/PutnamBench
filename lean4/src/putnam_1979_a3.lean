@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_1979_a3_solution : (ℝ × ℝ) → Prop := sorry
 -- fun (a, b) => ∃ m : ℤ, a = m ∧ b = m

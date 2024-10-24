@@ -1,12 +1,11 @@
 import Mathlib
-open BigOperators
 
 abbrev putnam_2015_b4_solution : ℤ × ℕ := sorry
 -- (17, 21)
 /--
 Let $T$ be the set of all triples $(a,b,c)$ of positive integers for which there exist triangles with side lengths $a,b,c$. Express
 \[
-\sum_{(a,b,c) \in T} \frac{2^a}{3^b 5^c} 
+\sum_{(a,b,c) \in T} \frac{2^a}{3^b 5^c}
 \]
 as a rational number in lowest terms.
 -/

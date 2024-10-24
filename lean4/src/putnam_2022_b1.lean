@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 open Polynomial
 
@@ -12,5 +11,5 @@ theorem putnam_2022_b1
     (Pconst : P.coeff 0 = 0)
     (Podd : Odd (P.coeff 1))
     (hB : ∀ x : ℝ, HasSum (fun i => b i * x ^ i) (Real.exp (aeval x P))) :
-    ∀ k : ℕ, b k ≠ 0 := by
+    ∀ k : ℕ, b k ≠ 0 :=
   sorry

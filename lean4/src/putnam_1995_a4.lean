@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 open Filter Topology Real
 

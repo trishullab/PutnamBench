@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 open Filter Topology Set
 abbrev putnam_2010_b2_solution : ℕ := sorry

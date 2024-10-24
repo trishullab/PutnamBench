@@ -1,8 +1,22 @@
-From mathcomp Require Import div.
-Definition putnam_2017_a1_solution (x: nat) := x > 0 /\ (x = 1 \/ 5 %| x = true).
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import classical_sets.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Definition putnam_2017_a1_solution : set int := [set x : int | x > 0 /\ (x = 1 \/ (5 %| x)%Z)].
 Theorem putnam_2017_a1
-    (A: nat -> Prop)
-    (valid_set : (nat -> Prop) -> Prop := fun E => forall (n: nat), E 2 /\ E (n*n) -> E n /\ E n -> E ((n+5)*(n+5)))
-    (hA : valid_set A /\ (forall (B: nat -> Prop), valid_set B -> (forall (n: nat), A n -> B n)))
-    : forall n, ~ A n <-> putnam_2017_a1_solution n.
+    (IsQualifying : (set int) -> Prop)
+    (IsQualifying_def : forall S, IsQualifying S <-> 
+        (forall n : int, n \in S -> n > 0) /\
+        2 \in S /\
+        (forall n : int, n > 0 /\ (n ^ 2) \in S -> n \in S) /\
+        (forall n : int, n \in S -> (n + 5) ^ 2 \in S))
+    (S : set int)
+    (hS : IsQualifying S /\ forall T : set int, T `<=` S -> ~ IsQualifying T)
+    : ~` S `&` [set n : int | n > 0] = putnam_2017_a1_solution.
 Proof. Admitted.

@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 open MeasureTheory Metric Topology Filter
 

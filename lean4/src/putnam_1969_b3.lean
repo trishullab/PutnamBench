@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 open Matrix Filter Topology Set Nat
 

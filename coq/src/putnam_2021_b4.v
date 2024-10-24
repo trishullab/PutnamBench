@@ -1,11 +1,15 @@
-Require Import PeanoNat. From mathcomp Require Import bigop fintype ssrnat. 
+From mathcomp Require Import all_algebra all_ssreflect.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope nat_scope.
+
 Theorem putnam_2021_b4
-    (F := fix f (n: nat) : nat :=
-        match n with
-        | O => O
-        | S O => 1
-        | S ((S n'') as n') => f n' + f n''
-    end)
-    : forall (m: nat), m > 2 = true -> 
-    exists (p: nat), (\prod_(k < (F m)) k^k) mod (F m) = F p.
-Proof. Admitted. 
+    (F : nat -> nat)
+    (hF01 : F 0 = 0 /\ F 1 = 1)
+    (hF : forall n : nat, F (n.+2) = F (n.+1) + F n)
+    : forall m : nat, m > 2 -> 
+        exists p : nat, (\prod_(1 <= k < F m) k ^ k) = F p %[mod (F m)].
+Proof. Admitted.

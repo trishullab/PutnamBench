@@ -91,5 +91,15 @@
       "size": 7,
       "condensed-compute-budget": "pass@4096",
       "note": "pass@2048 w/ T = 1.0 + pass@2048 w/ T = 0.7"
+    },
+    "ABEL": {
+      "link": "https://openreview.net/forum?id=kk3mSjVCUO",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 7
+      },
+      "size": 7,
+      "condensed-compute-budget": "pass@596",
+      "note": "7 hour cumulative online proof search on 256 GPUs"
     }
 }

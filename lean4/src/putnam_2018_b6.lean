@@ -1,5 +1,4 @@
 import Mathlib
-open BigOperators
 
 /--
 Let $S$ be the set of sequences of length $2018$ whose terms are in the set $\{1,2,3,4,5,6,10\}$ and sum to $3860$. Prove that the cardinality of $S$ is at most $2^{3860} \cdot \left(\frac{2018}{2048}\right)^{2018}$.

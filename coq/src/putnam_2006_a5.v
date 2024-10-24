@@ -1,16 +1,22 @@
-Require Import Nat Reals Coquelicot.Coquelicot.
-Definition putnam_2006_a5_solution (n: nat) := if eqb (n mod 4) (1%nat) then (Z.of_nat n) else (-1 * Z.of_nat n)%Z.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals trigo.
+From mathcomp Require Import classical_sets.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition putnam_2006_a5_solution : nat -> int := fun n : nat => if n == 1 %[mod 4] then n%:Z else - n%:Z.
 Theorem putnam_2006_a5
-    (prodn := fix prod_n (m: nat -> R) (n : nat) : R :=
-        match n with
-        | O => 1
-        | S n' => m (S n') * prod_n m n'
-    end)
     (n : nat)
-    (th : R)
+    (theta : R)
     (a : nat -> R)
-    (nodd : odd n = true)
-    (thetairr : ~ exists (p q: Z), th / PI = IZR (p / q))
-    (ha : forall k, a k = tan (th + (INR k * PI) / INR n))
-    : sum_n_m a 1 n / prodn a n = IZR (putnam_2006_a5_solution n).
+    (nodd : odd n)
+    (thetairr : ~ exists a b : int, b <> 0 /\ theta / pi = (a%:~R / b%:~R))
+    (ha : forall k : nat, ge k 1 /\ ge n k -> a k = tan (theta + (k%:R * pi) / n%:R))
+    : \sum_(1 <= k < n.+1) a k / \prod_(1 <= k < n.+1) a k = (putnam_2006_a5_solution n)%:~R.
 Proof. Admitted.

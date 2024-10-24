@@ -1,13 +1,15 @@
-Require Import Nat ZArith Znumtheory.
-Open Scope nat_scope.
-Fixpoint nat_sum (a : nat -> nat) (k : nat) : nat := 
-    match k with
-    | O => a O
-    | S k' => a k + nat_sum a k'
-    end.
+From mathcomp Require Import all_algebra all_ssreflect.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope nat_scope.
+
 Theorem putnam_1983_a3
     (p : nat)
-    (hp : odd p = true /\ prime (Z.of_nat p))
-    (f : nat -> nat := fun n => nat_sum (fun i => (i+1) * n^i) (p-2))
-    : forall (a b : nat), a < p /\ b < p /\ a <> b -> (f a) mod p <> (f b) mod p.
+    (F : nat -> nat)
+    (poddprime : odd p = true /\ prime p)
+    (hF : forall n : nat, F n = \sum_(0 <= i < p-1) ((i.+1) * n ^ i))
+    : forall a b : nat, 1 <= a <= p /\ 1 <= b <= p /\ a <> b -> ~ (F a = F b %[mod p]).
 Proof. Admitted.

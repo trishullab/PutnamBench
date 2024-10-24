@@ -1,13 +1,12 @@
 import Mathlib
-open BigOperators
 
 open Topology Filter
 
 noncomputable abbrev putnam_2019_a3_solution : ℝ := sorry
 -- 2019^(-(1:ℝ)/2019)
 /--
-Given real numbers $b_0, b_1, \dots, b_{2019}$ with $b_{2019} \neq 0$, let $z_1,z_2,\dots,z_{2019}$ be 
-the roots in the complex plane of the polynomial 
+Given real numbers $b_0, b_1, \dots, b_{2019}$ with $b_{2019} \neq 0$, let $z_1,z_2,\dots,z_{2019}$ be
+the roots in the complex plane of the polynomial
 \[
 P(z) = \sum_{k=0}^{2019} b_k z^k.
 \]
