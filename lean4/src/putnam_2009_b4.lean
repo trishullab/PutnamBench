@@ -12,5 +12,5 @@ theorem putnam_2009_b4
 (hbalanced : balanced = fun P ↦ ∀ r > 0, (∫ x in Metric.sphere (0 : EuclideanSpace ℝ (Fin 2)) r, MvPolynomial.eval x P) / (2 * Real.pi * r) = 0)
 (V : Set (MvPolynomial (Fin 2) ℝ)) [AddCommGroup V] [Module ℝ V]
 (hV : ∀ P : MvPolynomial (Fin 2) ℝ, P ∈ V ↔ balanced P ∧ P.totalDegree ≤ 2009)
-: (Module.rank V = putnam_2009_b4_solution) :=
+: (Module.rank ℝ V = putnam_2009_b4_solution) :=
 sorry
