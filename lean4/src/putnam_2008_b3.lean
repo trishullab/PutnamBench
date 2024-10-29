@@ -13,7 +13,7 @@ theorem putnam_2008_b3
     (contains : ℝ → Prop)
     (contains_def : ∀ r, contains r ↔
       ∃ᵉ (A : AffineSubspace ℝ (EuclideanSpace ℝ (Fin 4))) (C ∈ A),
-        finrank A.direction = 2 ∧
+        finrank ℝ A.direction = 2 ∧
         sphere C r ∩ A ⊆ H) :
     IsGreatest contains putnam_2008_b3_solution :=
   sorry
