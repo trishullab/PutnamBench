@@ -1,10 +1,19 @@
-Require Import List Reals Coquelicot.Coquelicot.
+From mathcomp Require Import all_algebra all_ssreflect.
+From mathcomp Require Import reals.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Open Scope ring_scope.
+
+Variable R : realType.
 Theorem putnam_2006_b2
     (n : nat)
-    (npos : gt n 0)
-    (X : list R)
-    (hXcard : length X = n)
-    : exists (presS: R -> Prop) (m: Z) (S: list R), 
-    (neq (length S) 0) /\ NoDup S /\ (forall (x: R), In x S <-> (In x X /\ presS x)) /\
-    (Rabs (IZR m + (fold_left Rplus S 0)) <= 1 / INR (n + 1)).
+    (hn : gt n 0)
+    (X : seq R)
+    (hX : uniq X /\ size X = n)
+    : exists S : seq R, subseq S X /\
+        size S <> 0%nat /\
+        (exists m : int, `|m%:~R + \sum_(s <- S) s| <= 1 / (n%:R + 1)).
 Proof. Admitted.
