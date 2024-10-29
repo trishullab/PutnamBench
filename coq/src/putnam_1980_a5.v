@@ -14,5 +14,5 @@ Definition mu := [the measure _ _ of @lebesgue_measure R].
 Theorem putnam_1980_a5
     (P : {poly R})
     (Pnonconst : gtn (size P) (1%nat))
-    : finite_set [set x : R | \int[mu]_(t in [set t : R | 0 <= t <= x]) (fun x => P.[x] * (sin x)) t = 0 /\ \int[mu]_(t in [set t : R | 0 <= t <= x]) (fun x => P.[x] * (cos x)) t = 0].
+    : finite_set [set x : R | \int[mu]_(t in [set t : R | 0 <= t <= x]) (fun y => P.[y] * (sin y)) t = 0 /\ \int[mu]_(t in [set t : R | 0 <= t <= x]) (fun y => P.[y] * (cos y)) t = 0].
 Proof. Admitted.
