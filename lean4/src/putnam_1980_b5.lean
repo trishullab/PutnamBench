@@ -10,13 +10,14 @@ Let $S_t$ denote the set of all nonnegative increasing convex continuous functio
 For which real numbers $t \ge 0$ is $S_t$ closed under multiplication?
 -/
 theorem putnam_1980_b5
-(T : Set ℝ)
-(hT : T = Icc 0 1)
-(P : ℝ → (ℝ → ℝ) → Prop)
-(Convex : (ℝ → ℝ) → Prop)
-(S : ℝ → Set (ℝ → ℝ))
-(hP : P = fun t : ℝ => fun f : ℝ → ℝ => f 1 - 2*f (2/3) + f (1/3) ≥ t*(f (2/3) - 2*f (1/3) + f 0))
-(hConvex : Convex = fun f : ℝ → ℝ => ∀ u ∈ T, ∀ v ∈ T, ∀ s ∈ T, f (s*u + (1 - s)*v) ≤ s*(f u) + (1 - s)*(f v))
-(hS : S = fun t : ℝ => {f : ℝ → ℝ | (∀ x ∈ T, f x ≥ 0) ∧ StrictMonoOn f T ∧ Convex f ∧ ContinuousOn f T ∧ P t f})
-: ∀ t : ℝ, t ≥ 0 → ((∀ f ∈ S t, ∀ g ∈ S t, f * g ∈ S t) ↔ putnam_1980_b5_solution t) :=
-sorry
+    (T : Set ℝ)
+    (hT : T = Icc 0 1)
+    (P : ℝ → (ℝ → ℝ) → Prop)
+    (IsConvex : (ℝ → ℝ) → Prop)
+    (S : ℝ → Set (ℝ → ℝ))
+    (P_def : ∀ t f, P t f ↔ f 1 - 2*f (2/3) + f (1/3) ≥ t*(f (2/3) - 2*f (1/3) + f 0))
+    (IsConvex_def : ∀ f, IsConvex f ↔ ∀ u ∈ T, ∀ v ∈ T, ∀ s ∈ T, f (s*u + (1 - s)*v) ≤ s*(f u) + (1 - s)*(f v))
+    (hS : S = fun t : ℝ => {f : ℝ → ℝ | (∀ x ∈ T, f x ≥ 0) ∧ StrictMonoOn f T ∧ IsConvex f ∧ ContinuousOn f T ∧ P t f})
+    (t : ℝ) (ht : t ≥ 0) :
+    putnam_1980_b5_solution t ↔ (∀ f ∈ S t, ∀ g ∈ S t, f * g ∈ S t) :=
+  sorry

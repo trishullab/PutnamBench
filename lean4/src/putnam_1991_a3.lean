@@ -14,9 +14,12 @@ Find all real polynomials $p(x)$ of degree $n \geq 2$ for which there exist real
 where $p'(x)$ denotes the derivative of $p(x)$.
 -/
 theorem putnam_1991_a3
-(p : Polynomial ℝ)
-(n : ℕ)
-(hn : n = p.degree)
-(hge : n ≥ 2)
-: (∃ r : ℕ → ℝ, (∀ i : Fin (n - 1), r i < r (i + 1)) ∧ (∀ i : Fin n, p.eval (r i) = 0) ∧ (∀ i : Fin (n - 1), (Polynomial.derivative p).eval ((r i + r (i + 1)) / 2) = 0)) ↔ p ∈ putnam_1991_a3_solution :=
+  (p : Polynomial ℝ)
+  (n : ℕ)
+  (hn : n = p.degree)
+  (hge : n ≥ 2) :
+  p ∈ putnam_1991_a3_solution ↔
+    (∃ r : ℕ → ℝ, (∀ i : Fin (n - 1), r i < r (i + 1)) ∧
+    (∀ i : Fin n, p.eval (r i) = 0) ∧
+    (∀ i : Fin (n - 1), (Polynomial.derivative p).eval ((r i + r (i + 1)) / 2) = 0)) :=
 sorry
