@@ -10,5 +10,5 @@ Find the minimum value of $|\sin x+\cos x+\tan x+\cot x+\sec x+\csc x|$ for real
 theorem putnam_2003_a3
     (f : ℝ → ℝ)
     (hf : ∀ x : ℝ, f x = |Real.sin x + Real.cos x + Real.tan x + 1 / Real.tan x + 1 / Real.cos x + 1 / Real.sin x|) :
-    IsLeast (f '' univ) putnam_2003_a3_solution :=
+    IsLeast (Set.range f) putnam_2003_a3_solution :=
   sorry
