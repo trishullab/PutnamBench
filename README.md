@@ -1,4 +1,4 @@
-# PutnamBench
+# [PutnamBench](https://arxiv.org/abs/2407.11214)
 
 <p align="center">
     <a href="https://trishullab.github.io/PutnamBench/leaderboard.html"><img src="https://img.shields.io/badge/%F0%9F%8F%86-leaderboard-%23ff8811"></a>
@@ -32,9 +32,9 @@ We also report the number of problems in a certain category. Note that some prob
 | Number Theory    | 108            | 
 | Geometry         | 69             |
 | Linear Algebra   | 51             | 
-| Abstract Algebra | 28             |  
 | Combinatorics    | 29             | 
-| Probability      | 10              | 
+| Abstract Algebra | 28             |  
+| Probability      | 10             | 
 | Set Theory       | 8              | 
 
 ## Citation
