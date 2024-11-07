@@ -7,7 +7,7 @@
       },
       "size": 0,
       "condensed-compute-budget": "pass@10",
-      "note": "pass@10 w/ T=0.1"
+      "note": "pass@10 w/ T=0.1; 1971 B1, 1986 B1, 1995 B1, 2001 A1."
     },
     "GPT-4o": {
       "link": "https://openai.com/index/hello-gpt-4o/",
@@ -19,7 +19,7 @@
       },
       "size": 0,
       "condensed-compute-budget": "pass@10",
-      "note": "pass@10 w/ T=0.7"
+      "note": "pass@10 w/ T=0.7; 1988 B1."
     },
     "COPRA (GPT-4o)": {
       "link": "https://arxiv.org/abs/2310.04353",
@@ -30,7 +30,7 @@
       },
       "size": 0,
       "condensed-compute-budget": "pass@1",
-      "note": "pass@1 w/ T=0.0"
+      "note": "pass@1 w/ T=0.0; 1988 B1."
     },
     "CoqHammer": {
       "link": "https://coqhammer.github.io/",
@@ -50,7 +50,7 @@
       },
       "size": 0,
       "condensed-compute-budget": "pass@1",
-      "note": "pass@1 w/ t=120s"
+      "note": "pass@1 w/ t=120s; 1971 B1, 2001 A1, 2012 A2."
     },
     "ReProver w/ retrieval": {
       "link": "https://arxiv.org/abs/2306.15626",
@@ -100,6 +100,16 @@
       },
       "size": 7,
       "condensed-compute-budget": "pass@596",
-      "note": "7 hour cumulative online proof search on 256 GPUs"
+      "note": "7 hour cumulative online proof search on 256 GPUs; 1977 A3, 1986 A1, 1986 A2, 1986 B1, 1988 B1, 1988 B2, 2001 A1. Commit: 8aaccf8"
+    },
+    "InternLM2.5-StepProver": {
+      "link": "https://arxiv.org/pdf/2410.15700",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 6
+      },
+      "size": 8.8,
+      "condensed-compute-budget": "pass@2x32x600",
+      "note": "pass @ 2 x 32 states x 600 state expansions proof search; 1977 A3, 1986 A1, 1986 B1, 1988 B1, 1988 B2, 2001 A1. Commit: b377431"
     }
 }
