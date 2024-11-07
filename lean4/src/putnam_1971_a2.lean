@@ -8,5 +8,6 @@ abbrev putnam_1971_a2_solution : Set (Polynomial ℝ) := sorry
 Determine all polynomials $P(x)$ such that $P(x^2 + 1) = (P(x))^2 + 1$ and $P(0) = 0$.
 -/
 theorem putnam_1971_a2
-: ∀ P : Polynomial ℝ, (P.eval 0 = 0 ∧ (∀ x : ℝ, P.eval (x^2 + 1) = (P.eval x)^2 + 1)) ↔ P ∈ putnam_1971_a2_solution :=
-sorry
+    (P : Polynomial ℝ) :
+    (P.eval 0 = 0 ∧ (∀ x : ℝ, P.eval (x^2 + 1) = (P.eval x)^2 + 1)) ↔ P ∈ putnam_1971_a2_solution :=
+  sorry

@@ -8,6 +8,6 @@ Let $f(x)$ be a continuous function such that $f(2x^2-1)=2xf(x)$ for all $x$.  S
 theorem putnam_2000_b4
 (f : ℝ → ℝ)
 (hfcont : Continuous f)
-(hf : ∀ x : ℝ, f (2 * x ^ 2 - 1) = 2 * x * f x)
-: ∀ x : ℝ, x ∈ Icc (-1) 1 → f x = 0 :=
+(hf : ∀ x, f (2 * x ^ 2 - 1) = 2 * x * f x)
+: ∀ x, x ∈ Icc (-1) 1 → f x = 0 :=
 sorry

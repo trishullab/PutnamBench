@@ -1,6 +1,18 @@
-Require Import Reals Coquelicot.Coquelicot.
-Open Scope R.
-Definition putnam_1994_b3_solution (k: R) := k < 1.
-Theorem putnam_1994_b3
-    : forall k : R, (forall f : R -> R, (forall x : R, f x > 0 /\ ex_derive f x /\ (Derive f) x > f x) -> exists N : R, forall x : R, x > N -> f x > exp (k * x)) <-> putnam_1994_b3_solution k.
+From mathcomp Require Import all_ssreflect ssralg ssrnum.
+From mathcomp Require Import reals normedtype derive topology sequences.
+From mathcomp Require Import classical_sets.
+Import numFieldNormedType.Exports.
+
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Local Open Scope ring_scope.
+Local Open Scope classical_set_scope.
+
+Variable R : realType.
+Definition putnam_1993_b3_solution : set R := [set k | k < 1].
+Theorem putnam_1993_b3
+    : [set k | forall f (hf : forall x, differentiable f x /\ 0 < f x < f^`() x),
+        exists N : R, forall x, N < x -> expR (k * x) < f x] = putnam_1993_b3_solution.
 Proof. Admitted.

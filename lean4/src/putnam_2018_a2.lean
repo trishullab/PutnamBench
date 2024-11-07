@@ -11,6 +11,6 @@ theorem putnam_2018_a2
 (M : Matrix (Fin (2 ^ n - 1)) (Fin (2 ^ n - 1)) ℝ)
 (npos : n ≥ 1)
 (hS : Set.range S = (Set.Icc 1 n).powerset \ {∅})
-(hM : ∀ i j : Fin (2 ^ n - 1), M i j = if (S i ∩ S j = ∅) = True then 0 else 1)
-: M.det = putnam_2018_a2_solution n :=
+(hM : ∀ i j, M i j = if (S i ∩ S j = ∅) = True then 0 else 1) :
+M.det = putnam_2018_a2_solution n :=
 sorry

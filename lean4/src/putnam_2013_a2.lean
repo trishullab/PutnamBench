@@ -12,14 +12,16 @@ $2 \cdot 5$, $2 \cdot 3 \cdot 4$, $2 \cdot 3 \cdot 5$, $2 \cdot 4 \cdot 5$, and 
 Show that the function $f$ from $S$ to the integers is one-to-one.
 -/
 theorem putnam_2013_a2
-(S : Set ℤ)
-(hS : S = {n : ℤ | n > 0 ∧ ¬∃ m : ℤ, m ^ 2 = n})
-(P : ℤ → List ℤ → Prop)
-(hP : P = fun n : ℤ => fun a : List ℤ => a.length > 0 ∧ n < a[0]! ∧
-(∃ m : ℤ, m ^ 2 = n * a.prod) ∧ (∀ i : Fin (a.length - 1), a[i] < a[i+(1:ℕ)]))
-(T : ℤ → Set ℤ)
-(hT : T = fun n : ℤ => {m : ℤ | ∃ a : List ℤ, P n a ∧ a[a.length - 1]! = m})
-(f : ℤ → ℤ)
-(hf : ∀ n ∈ S, ((∃ r ∈ T n, f n = r) ∧ ∀ r ∈ T n, f n ≤ r))
-: InjOn f S :=
+  (S : Set ℤ)
+  (hS : S = {n : ℤ | n > 0 ∧ ¬∃ m : ℤ, m ^ 2 = n})
+  (P : ℤ → List ℤ → Prop)
+  (hP : ∀ n a, P n a ↔
+    a.length > 0 ∧ n < a[0]! ∧
+    (∃ m : ℤ, m ^ 2 = n * a.prod) ∧
+    (∀ i : Fin (a.length - 1), a[i] < a[i+(1:ℕ)]))
+  (T : ℤ → Set ℤ)
+  (hT : T = fun n : ℤ => {m : ℤ | ∃ a : List ℤ, P n a ∧ a[a.length - 1]! = m})
+  (f : ℤ → ℤ)
+  (hf : ∀ n ∈ S, ((∃ r ∈ T n, f n = r) ∧ ∀ r ∈ T n, f n ≤ r)) :
+  InjOn f S :=
 sorry

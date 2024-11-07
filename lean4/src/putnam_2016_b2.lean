@@ -16,10 +16,10 @@ or show that no such constants exist.
 -/
 theorem putnam_2016_b2
 (squarish : ℤ → Prop)
-(hsquarish : squarish = fun n ↦ IsSquare n ∨ ∃ w : ℤ, IsSquare |n - w ^ 2| ∧ ∀ v : ℕ, |n - w ^ 2| ≤ |n - v ^ 2|)
+(hsquarish : ∀ n, squarish n ↔ IsSquare n ∨ ∃ w : ℤ, IsSquare |n - w ^ 2| ∧ ∀ v : ℕ, |n - w ^ 2| ≤ |n - v ^ 2|)
 (S : ℤ → ℕ)
 (hS : S = fun n ↦ {i ∈ Finset.Icc 1 n | squarish i}.card)
 (p : ℝ → ℝ → Prop)
-(hp : p = fun α ↦ fun β ↦ α > 0 ∧ β > 0 ∧ Tendsto (fun N ↦ S N / (N : ℝ) ^ α) atTop (𝓝 β))
+(hp : ∀ α β, p α β ↔ α > 0 ∧ β > 0 ∧ Tendsto (fun N ↦ S N / (N : ℝ) ^ α) atTop (𝓝 β))
 : ((∀ α β : ℝ, ((α, β) = putnam_2016_b2_solution ↔ p α β)) ∨ ¬∃ α β : ℝ, p α β) :=
 sorry

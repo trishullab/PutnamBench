@@ -24,8 +24,11 @@ f(n) = a_1 b_1^n + a_2 b_2^n + a_3 b_3^n + a_4,
 where the $a_i$'s and $b_i$'s are rational numbers.
 -/
 theorem putnam_1986_a4
-(f : ℕ → ℕ)
-(hf : f = fun n ↦ {A : Matrix (Fin n) (Fin n) ℤ | (∀ i j : Fin n, A i j ∈ ({-1, 0, 1} : Set ℤ)) ∧ ∃ S : ℤ, ∀ ϕ : Perm (Fin n), ∑ i : Fin n, A i (ϕ i) = S}.ncard)
-: let (a1, b1, a2, b2, a3, b3, a4) := putnam_1986_a4_solution;
-(∀ n > 0, f n = a1 * b1 ^ n + a2 * b2 ^ n + a3 * b3 ^ n + a4) :=
+  (f : ℕ → ℕ)
+  (hf : f = fun n ↦
+    Set.ncard {A : Matrix (Fin n) (Fin n) ℤ |
+    (∀ i j : Fin n, A i j ∈ ({-1, 0, 1} : Set ℤ)) ∧
+    ∃ S : ℤ, ∀ ϕ : Perm (Fin n), ∑ i : Fin n, A i (ϕ i) = S}) :
+  let (a1, b1, a2, b2, a3, b3, a4) := putnam_1986_a4_solution;
+  (∀ n > 0, f n = a1 * b1 ^ n + a2 * b2 ^ n + a3 * b3 ^ n + a4) :=
 sorry

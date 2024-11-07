@@ -5,7 +5,7 @@ The infinite sequence of $2$'s and $3$'s $2,3,3,2,3,3,3,2,3,3,3,2,3,3,2,3,3,3,2,
 -/
 theorem putnam_1993_a6
 (seq : ℕ → ℤ)
-(hseq23 : ∀ n : ℕ, seq n = 2 ∨ seq n = 3)
-(hseq2inds : ∀ n : ℕ, seq n = 2 ↔ (∃ N : ℕ, n = ∑ i : Fin N, (seq i + 1)))
-: ∃ r : ℝ, ∀ n : ℕ, seq n = 2 ↔ (∃ m : ℤ, n + 1 = 1 + Int.floor (r * m)) :=
+(hseq23 : ∀ n, seq n = 2 ∨ seq n = 3)
+(hseq2inds : ∀ n, seq n = 2 ↔ (∃ N : ℕ, n = ∑ i : Fin N, (seq i + 1)))
+: ∃ r : ℝ, ∀ n, seq n = 2 ↔ (∃ m : ℤ, n + 1 = 1 + Int.floor (r * m)) :=
 sorry

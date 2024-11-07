@@ -12,7 +12,6 @@ Let $n$ be a positive integer. Find the number of pairs $P, Q$ of polynomials wi
 and $\deg P > \deg Q$.
 -/
 theorem putnam_2007_b4
-(n : ℕ)
-(npos : n > 0)
-: ({(P, Q) : (Polynomial ℝ) × (Polynomial ℝ) | P ^ 2 + Q ^ 2 = Polynomial.X ^ (2 * n) + 1 ∧ P.degree > Q.degree}.ncard = putnam_2007_b4_solution n) :=
+(n : ℕ) (npos : n > 0) :
+({(P, Q) : (Polynomial ℝ) × (Polynomial ℝ) | P ^ 2 + Q ^ 2 = Polynomial.X ^ (2 * n) + 1 ∧ P.degree > Q.degree}.ncard = putnam_2007_b4_solution n) :=
 sorry

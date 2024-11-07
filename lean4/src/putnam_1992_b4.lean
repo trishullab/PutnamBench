@@ -12,12 +12,9 @@ Let $p(x)$ be a nonzero polynomial of degree less than $1992$ having no nonconst
 for polynomials $f(x)$ and $g(x)$. Find the smallest possible degree of $f(x)$.
 -/
 theorem putnam_1992_b4
-(valid : Polynomial ℝ → Prop)
-(hvalid : valid = fun p ↦ p ≠ 0 ∧ p.degree < 1992 ∧ IsCoprime p (X ^ 3 - X))
-(pair : Polynomial ℝ → Polynomial ℝ → Prop)
-(hpair : pair = fun p f ↦ ∃ g : Polynomial ℝ, iteratedDeriv 1992 (fun x ↦ p.eval x / (x ^ 3 - x)) = fun x ↦ f.eval x / g.eval x)
-(min : ℕ)
-(hmineq : ∃ p f : Polynomial ℝ, (valid p ∧ pair p f) ∧ min = f.degree)
-(hminlb : ∀ p f : Polynomial ℝ, (valid p ∧ pair p f) → min ≤ f.degree)
-: (min = putnam_1992_b4_solution) :=
+  (IsValid : Polynomial ℝ → Prop)
+  (pair : Polynomial ℝ → Polynomial ℝ → Prop)
+  (IsValid_def : ∀ p, IsValid p ↔ p ≠ 0 ∧ p.degree < 1992 ∧ IsCoprime p (X ^ 3 - X))
+  (hpair : ∀ p f, pair p f ↔ ∃ g : Polynomial ℝ, iteratedDeriv 1992 (fun x ↦ p.eval x / (x ^ 3 - x)) = fun x ↦ f.eval x / g.eval x) :
+  IsLeast {k : ℕ | ∃ p f, IsValid p ∧ pair p f ∧ k = f.degree} putnam_1992_b4_solution :=
 sorry

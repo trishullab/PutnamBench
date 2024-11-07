@@ -10,7 +10,7 @@ A \emph{repunit} is a positive integer whose digits in base 10 are all ones. Fin
 theorem putnam_2007_a4
 (S : Set (Polynomial ℝ))
 (repunit : ℝ → Prop)
-(hrepunit : repunit = fun (x : ℝ) ↦ x > 0 ∧ x = floor x ∧ ∀ d ∈ (digits 10 (floor x)), d = 1)
-(hS : ∀ f : Polynomial ℝ, f ∈ S ↔ (∀ n : ℝ, repunit n → repunit (f.eval n)))
+(hrepunit : ∀ x, repunit x ↔ x > 0 ∧ x = floor x ∧ ∀ d ∈ (digits 10 (floor x)), d = 1)
+(hS : ∀ f, f ∈ S ↔ (∀ n : ℝ, repunit n → repunit (f.eval n)))
 : (S = putnam_2007_a4_solution) :=
 sorry
