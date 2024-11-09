@@ -5,9 +5,8 @@ definition putnam_2021_a1_solution :: nat where "putnam_2021_a1_solution \<equiv
 (* 578 *)
 theorem putnam_2021_a1:
   fixes P :: "((int \<times> int) list) \<Rightarrow> bool"
-  assumes "P \<equiv> (\<lambda>l::(int\<times>int) list. length l \<ge> 1 \<and> l!0 = (0,0) \<and> last l = (2021,2021) \<and>
-  (\<forall>n::nat\<in>{0..((length l)-2)}. sqrt ((fst (l!n) - fst (l!(n + 1)))^2 + (snd (l!n) - snd (l!(n + 1)))^2) = 5))"
-  shows "(LEAST llen::nat. (\<exists>l::(int\<times>int) list. P l \<and> llen = length l)) = putnam_2021_a1_solution"
+  assumes P_def : "\<forall> l. (P l \<longleftrightarrow> successively (\<lambda> p q. (fst p - fst q) ^ 2 + (snd p - snd q) ^ 2 = 25) l)"
+  shows "(LEAST k :: nat. \<exists> l. P ((0, 0) # l) \<and> last l = (2021, 2021) \<and> length l = k) = putnam_2021_a1_solution"
   sorry
 
 end
