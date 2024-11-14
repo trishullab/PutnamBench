@@ -13,5 +13,5 @@ theorem putnam_1996_a2
 (hC1 : C1 = sphere O1 1)
 (hC2 : C2 = sphere O2 3)
 (hO1O2 : dist O1 O2 = 10)
-: {M : EuclideanSpace ℝ (Fin 2) | ∃ X Y : Fin 2 → ℝ, X ∈ C1 ∧ Y ∈ C2 ∧ M = midpoint ℝ X Y} = putnam_1996_a2_solution O1 O2 :=
+: {M : EuclideanSpace ℝ (Fin 2) | ∃ X Y, X ∈ C1 ∧ Y ∈ C2 ∧ M = midpoint ℝ X Y} = putnam_1996_a2_solution O1 O2 :=
 sorry
