@@ -10,7 +10,7 @@ Let $S$ be a non-empty set with an associative operation that is left and right 
 -/
 theorem putnam_1989_b2 :
     (∀ (S : Type) [Nonempty S] [Semigroup S] [IsCancelMul S]
-      (h_fin : ∀ x : S, {(x * ·)^[n] x | n : ℕ}.Finite),
+      (h_fin : ∀ a : S, {(a * ·)^[n] a | n : ℕ}.Finite),
       ∃ e : S, ∀ x, e * x = x ∧ x * e = x ∧ ∃ y, x * y = e ∧ y * x = e) ↔
     putnam_1989_b2_solution :=
   sorry
