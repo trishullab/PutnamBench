@@ -15,5 +15,5 @@ theorem putnam_1989_b6
     (∀ t ∈ Icc 0 1, P.eval t ∈ Icc 0 1) ∧
     (∀ f : ℝ → ℝ,
       f 1 = 0 ∧ ContinuousOn f (Icc 0 1) →
-      𝔼[(↑) ∘ (S f)] = ∫ t in (0)..1, (f t) * (P.eval t)) :=
+      𝔼[fun x => S f x] = ∫ t in (0)..1, f t * P.eval t) :=
   sorry
