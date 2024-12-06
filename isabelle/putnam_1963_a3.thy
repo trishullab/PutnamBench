@@ -13,9 +13,8 @@ theorem putnam_1963_a3:
   assumes hP : "(\<forall> x. P 0 x = x) \<and> (\<forall> (i :: nat) (y :: real \<Rightarrow> real). P (i + 1) y = P i (\<lambda> x. x * deriv y x - (real_of_nat i) * y x))"
     and hn : "0 < n"
     and hf : "continuous_on {1..} f"
-  shows "((\<forall> k :: nat < n. 
-           ((deriv^^k) y) C1_differentiable_on {1..} ∧
-           ((deriv^^k) y) 1 = 0) \<and>
+    and hy : "\<forall> k :: nat < n. ((deriv^^k) y) C1_differentiable_on {1..}"
+  shows "((\<forall> k :: nat < n. ((deriv^^k) y) 1 = 0) \<and>
         (\<forall> x :: real. x \<ge> 0 \<longrightarrow> (P n y) x = f x)) \<longleftrightarrow>
         (\<forall> x :: real \<ge> 1. y x = interval_lebesgue_integral lebesgue 1 (ereal x) (putnam_1963_a3_solution f n x))"
   sorry
