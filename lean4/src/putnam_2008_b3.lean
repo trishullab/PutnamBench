@@ -1,6 +1,6 @@
 import Mathlib
 
-open FiniteDimensional Metric Filter Topology Set Nat
+open FiniteDimensional Metric Filter Topology Set Nat Module
 
 noncomputable abbrev putnam_2008_b3_solution : ℝ := sorry
 -- Real.sqrt 2 / 2
