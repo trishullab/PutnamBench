@@ -1,6 +1,6 @@
 import Mathlib
 
-open FiniteDimensional Metric Filter Topology Set Nat
+open Metric Filter Topology Set Nat
 
 noncomputable abbrev putnam_2008_b3_solution : ℝ := sorry
 -- Real.sqrt 2 / 2
@@ -13,7 +13,7 @@ theorem putnam_2008_b3
     (contains : ℝ → Prop)
     (contains_def : ∀ r, contains r ↔
       ∃ᵉ (A : AffineSubspace ℝ (EuclideanSpace ℝ (Fin 4))) (C ∈ A),
-        finrank ℝ A.direction = 2 ∧
+        Module.finrank ℝ A.direction = 2 ∧
         sphere C r ∩ A ⊆ H) :
     IsGreatest contains putnam_2008_b3_solution :=
   sorry

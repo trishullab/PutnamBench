@@ -2,6 +2,7 @@ import Mathlib.Lean.CoreM
 import Mathlib.Util.GetAllModules
 import Lean.Elab.Frontend
 import Batteries.Data.String.Matcher
+import Lean.Util.SearchPath
 
 
 open Lean Elab Command Frontend
