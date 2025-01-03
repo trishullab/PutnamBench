@@ -1,6 +1,6 @@
 import Mathlib
 
-open Filter FiniteDimensional Metric Topology
+open Filter FiniteDimensional Metric Topology Module
 
 abbrev putnam_1991_a4_solution : Prop := sorry
 -- True
