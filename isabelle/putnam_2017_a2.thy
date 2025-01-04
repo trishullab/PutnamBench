@@ -3,10 +3,10 @@ theory putnam_2017_a2 imports Complex_Main
 begin
 
 theorem putnam_2017_a2:
-  fixes Q :: "nat \<Rightarrow> real \<Rightarrow> real"
-  assumes hQbase: "\<forall>x::real. Q 0 x = 1 \<and> Q 1 x = x"
-  and hQn: "\<forall>n::nat>2. \<forall>x::real. Q n x = ((Q (n-1) x)^2 - 1) / Q (n-2) x"
-  shows "\<forall>n::nat>0. \<exists>P::real poly. (\<forall>i::nat. coeff P i = round (coeff P i)) \<and> Q n = poly P"
+  fixes Q :: "nat \<Rightarrow> real poly"
+  assumes hQbase: "\<forall>x::real. Q 0 = monom 1 0 \<and> Q 1 = monom 1 1"
+  and hQn: "\<forall>n::nat. Q (n + 2) * Q n = (Q (n-1))^2 - 1"
+  shows "\<forall>n::nat>0. \<exists>P::int poly. Q n = map_poly real_of_int P"
   sorry
 
 end
