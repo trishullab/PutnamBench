@@ -2,6 +2,10 @@ import Mathlib
 
 open Nat
 
+-- Needed to make the `ite` below work; one *less* than the default!
+-- https://leanprover.zulipchat.com/#narrow/channel/270676-lean4/topic/Success.20is.20not.20monotone.20in.20.60synthInstance.2EmaxSize.60/near/491823649
+set_option synthInstance.maxSize 127
+
 /--
 Let $\alpha=1+a_1x+a_2x^2+\cdots$ be a formal power series with coefficients in the field of two elements. Let
 \[
