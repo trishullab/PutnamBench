@@ -166,6 +166,7 @@
     {
         "problem_name": "putnam_1964_a1",
         "informal_statement": "Let $A_1, A_2, A_3, A_4, A_5, A_6$ be distinct points in the plane. Let $D$ be the longest distance between any pair, and let $d$ the shortest distance. Show that $\\frac{D}{d} \\geq \\sqrt 3$.",
+        "informal_solution": "None.",
         "tags": [
             "geometry"
         ]
@@ -182,6 +183,7 @@
     {
         "problem_name": "putnam_1964_a3",
         "informal_statement": "The distinct points $x_n$ are dense in the interval $(0, 1)$. For all $n \\geq 1$, $x_1, x_2, \\dots , x_{n-1}$ divide $(0, 1)$ into $n$ sub-intervals, one of which must contain $x_n$. This part is divided by $x_n$ into two sub-intervals, lengths $a_n$ and $b_n$. Prove that $\\sum_{n=1}^{\\infty} a_nb_n(a_n + b_n) = \\frac{1}{3}$.",
+        "informal_solution": "None.",
         "tags": [
             "analysis",
             "algebra"
@@ -190,6 +192,7 @@
     {
         "problem_name": "putnam_1964_a4",
         "informal_statement": "The sequence of integers $u_n$ is bounded and satisfies\n\\[\nu_n = \\frac{u_{n-1} + u_{n-2} + u_{n-3}u_{n-4}}{u_{n-1}u_{n-2} + u_{n-3} + u_{n-4}}.\n\\]\nShow that it is periodic for sufficiently large $n$.",
+        "informal_solution": "None.",
         "tags": [
             "analysis"
         ]
@@ -197,6 +200,7 @@
     {
         "problem_name": "putnam_1964_a5",
         "informal_statement": "Prove that there exists a constant $k$ such that for any sequence $a_i$ of positive numbers,\n\\[\n\\sum_{n=1}^{\\infty} \\frac{n}{a_1 + a_2 + \\dots + a_n} \\leq k \\sum_{n=1}^{\\infty}\\frac{1}{a_n}.\n\\]",
+        "informal_solution": "None.",
         "tags": [
             "analysis"
         ]
@@ -204,6 +208,7 @@
     {
         "problem_name": "putnam_1964_a6",
         "informal_statement": "Let $S$ be a finite set of collinear points. Let $k$ be the maximum distance between any two points of $S$. Given a pair of points of $S$ a distance $d < k$ apart, we can find another pair of points of $S$ also a distance $d$ apart. Prove that if two pairs of points of $S$ are distances $a$ and $b$ apart, then $\\frac{a}{b}$ is rational.",
+        "informal_solution": "None.",
         "tags": [
             "geometry"
         ]
@@ -211,6 +216,7 @@
     {
         "problem_name": "putnam_1964_b1",
         "informal_statement": "Let $a_n$ be a sequence of positive integers such that $\\sum_{n=1}^{\\infty} 1/a_n$ converges. For all $n$, let $b_n$ be the number of $a_n$ which are at most $n$. Prove that $\\lim_{n \\to \\infty} b_n/n = 0$.",
+        "informal_solution": "None.",
         "tags": [
             "analysis"
         ]
@@ -218,6 +224,7 @@
     {
         "problem_name": "putnam_1964_b2",
         "informal_statement": "Let $S$ be a finite set. A set $P$ of subsets of $S$ has the property that any two members of $P$ have at least one element in common and that $P$ cannot be extended (whilst keeping this property). Prove that $P$ contains exactly half of the subsets of $S$.",
+        "informal_solution": "None.",
         "tags": [
             "set_theory",
             "combinatorics"
@@ -226,6 +233,7 @@
     {
         "problem_name": "putnam_1964_b3",
         "informal_statement": "Suppose $f : \\mathbb{R} \\to \\mathbb{R}$ is continuous and for every $\\alpha > 0$, $\\lim_{n \\to \\infty} f(n\\alpha) = 0$. Prove that $\\lim_{x \\to \\infty} f(x) = 0$.",
+        "informal_solution": "None.",
         "tags": [
             "analysis"
         ]
@@ -233,6 +241,7 @@
     {
         "problem_name": "putnam_1964_b5",
         "informal_statement": "Let $a_n$ be a strictly monotonic increasing sequence of positive integers. Let $b_n$ be the least common multiple of $a_1, a_2, \\dots , a_n$. Prove that $\\sum_{n=1}^{\\infty} 1/b_n$ converges.",
+        "informal_solution": "None.",
         "tags": [
             "analysis",
             "number_theory"
@@ -241,6 +250,7 @@
     {
         "problem_name": "putnam_1964_b6",
         "informal_statement": "Let $D$ be the unit disk in the plane. Show that we cannot find congruent sets $A, B$ with $A \\cap B = \\emptyset$ and $A \\cup B = D$.",
+        "informal_solution": "None.",
         "tags": [
             "geometry"
         ]
@@ -1309,6 +1319,7 @@
     {
         "problem_name": "putnam_1977_a5",
         "informal_statement": "Let $p$ be a prime and $m \\geq n$ be non-negative integers. Show that $\\binom{pm}{pn} = \\binom{m}{n} \\pmod p$, where $\\binom{m}{n}$ is the binomial coefficient.",
+        "informal_solution": "None.",
         "tags": [
             "algebra",
             "number_theory"
@@ -1358,6 +1369,7 @@
     {
         "problem_name": "putnam_1978_a1",
         "informal_statement": "Let $S = \\{1, 4, 7, 10, 13, 16, \\dots , 100\\}$. Let $T$ be a subset of $20$ elements of $S$. Show that we can find two distinct elements of $T$ with sum $104$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -1365,6 +1377,7 @@
     {
         "problem_name": "putnam_1978_a2",
         "informal_statement": "Let $A$ be the real $n \\times n$ matrix $(a_{ij})$ where $a_{ij} = a$ for $i < j$, $b \\; (\\neq a)$ for $i > j$, and $c_i$ for $i = j$. Show that $\\det A = \\frac{b p(a) - a p(b)}{b - a}$, where $p(x) = \\prod_{i=1}^n (c_i - x)$.",
+        "informal_solution": "None.",
         "tags": [
             "linear_algebra"
         ]
@@ -1381,6 +1394,7 @@
     {
         "problem_name": "putnam_1978_a4",
         "informal_statement": "A binary operation (represented by multiplication) on $S$ has the property that $(ab)(cd) = ad$ for all $a, b, c, d$. Show that:\n\\begin{itemize}\n\\item[(1)] if $ab = c$, then $cc = c$;\n\\item[(2)] if $ab = c$, then $ad = cd$ for all $d$.\n\\end{itemize}\nFind a set $S$, and such a binary operation, which also satisfies:\n\\begin{itemize}\n\\item[(A)] $a a = a$ for all $a$;\n\\item[(B)] $ab = a \\neq b$ for some $a, b$;\n\\item[(C)] $ab \\neq a$ for some $a, b$.\n\\end{itemize}",
+        "informal_solution": "None.",
         "tags": [
             "abstract_algebra"
         ]
@@ -1388,6 +1402,7 @@
     {
         "problem_name": "putnam_1978_a5",
         "informal_statement": "Let $a_1, a_2, \\dots , a_n$ be reals in the interval $(0, \\pi)$ with arithmetic mean $\\mu$. Show that\n\\[\n\\prod_{i=1}^n \\left( \\frac{\\sin a_i}{a_i} \\right) \\leq \\left( \\frac{\\sin \\mu}{\\mu} \\right)^n.\n\\]",
+        "informal_solution": "None.",
         "tags": [
             "analysis"
         ]
@@ -1395,6 +1410,7 @@
     {
         "problem_name": "putnam_1978_a6",
         "informal_statement": "Given $n$ distinct points in the plane, prove that fewer than $2n^{3/2}$ pairs of these points are a distance of $1$ apart.",
+        "informal_solution": "None.",
         "tags": [
             "geometry",
             "combinatorics"
@@ -1412,6 +1428,7 @@
     {
         "problem_name": "putnam_1978_b3",
         "informal_statement": "The polynomials $P_n(x)$ are defined by\n\\begin{align*}\nP_1(x) &= 1 + x, \\\\\nP_2(x) &= 1 + 2x, \\\\\nP_{2n+1}(x) &= P_{2n}(x) + (n + 1) x P_{2n-1}(x), \\\\\nP_{2n+2}(x) &= P_{2n+1}(x) + (n + 1) x P_{2n}(x).\n\\end{align*}\nLet $a_n$ be the largest real root of $P_n(x)$. Prove that $a_n$ is strictly monotonically increasing and tends to zero.",
+        "informal_solution": "None.",
         "tags": [
             "algebra",
             "analysis"
@@ -1420,6 +1437,7 @@
     {
         "problem_name": "putnam_1978_b4",
         "informal_statement": "Show that we can find integers $a, b, c, d$ such that $a^2 + b^2 + c^2 + d^2 = abc + abd + acd + bcd$, and the smallest of $a, b, c, d$ is arbitrarily large.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -1435,6 +1453,7 @@
     {
         "problem_name": "putnam_1978_b6",
         "informal_statement": "Let $a_{ij}$ be real numbers in $[0, 1]$. Show that\n\\[\n\\left( \\sum_{i=1}^n  \\sum_{j=1}^{mi} \\frac{a_{ij}}{i} \\right) ^2 \\leq 2m \\sum_{i=1}^n \\sum_{j=1}^{mi} a_{ij}.\n\\]",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -1517,6 +1536,7 @@
     {
         "problem_name": "putnam_1979_b6",
         "informal_statement": "Let $z_i$ be complex numbers for $i = 1, 2, \\dots, n$. Show that\n\\[\n\\left \\lvert \\mathrm{Re} \\, [(z_1^2 + z_2^2 + \\dots + z_n^2)^{1/2} ] \\right \\rvert \\leq \\lvert \\mathrm{Re} \\, z_1 \\rvert + \\lvert \\mathrm{Re} \\, z_2 \\rvert + \\dots + \\lvert \\mathrm{Re} \\, z_n \\rvert.\n\\]",
+        "informal_solution": "None.",
         "tags": [
             "analysis"
         ]
@@ -1697,6 +1717,7 @@
     {
         "problem_name": "putnam_1982_a5",
         "informal_statement": "Let $a, b, c, d$ be positive integers satisfying $a + c \\leq 1982$ and $\\frac{a}{b} + \\frac{c}{d} < 1$. Prove that $1 - \\frac{a}{b} - \\frac{c}{d} > \\frac{1}{1983^3}$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -1763,6 +1784,7 @@
     {
         "problem_name": "putnam_1983_a4",
         "informal_statement": "Prove that for $m = 5 \\pmod 6$,\n\\[\n\\binom{m}{2} - \\binom{m}{5} + \\binom{m}{8} - \\binom{m}{11} + ... - \\binom{m}{m-6} + \\binom{m}{m-3} \\neq 0.\n\\]",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -1794,6 +1816,7 @@
     {
         "problem_name": "putnam_1983_b4",
         "informal_statement": "Let $f(n) = n + [\\sqrt n]$, where $[x]$ denotes the greatest integer less than or equal to $x$. Define the sequence $a_i$ by $a_0 = m$, $a_{n+1} = f(a_n)$. Prove that it contains at least one square.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -1809,6 +1832,7 @@
     {
         "problem_name": "putnam_1983_b6",
         "informal_statement": "Let $n$ be a positive integer and let $\\alpha \\neq 1$ be a complex $(2n + 1)\\textsuperscript{th}$ root of unity. Prove that there always exist polynomials $p(x)$, $q(x)$ with integer coefficients such that $p(\\alpha)^2 + q(\\alpha)^2 = -1$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -1940,6 +1964,7 @@
     {
         "problem_name": "putnam_1985_b3",
         "informal_statement": "Let\n\\[\n\\begin{array}{cccc} a_{1,1} & a_{1,2} & a_{1,3} & \\dots \\\\\na_{2,1} & a_{2,2} & a_{2,3} & \\dots \\\\\na_{3,1} & a_{3,2} & a_{3,3} & \\dots \\\\\n\\vdots & \\vdots & \\vdots & \\ddots\n\\end{array}\n\\]\nbe a doubly infinite array of positive integers, and suppose each positive integer appears exactly eight times in the array. Prove that $a_{m,n} > mn$ for some pair of positive integers $(m,n)$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -1955,6 +1980,7 @@
     {
         "problem_name": "putnam_1985_b6",
         "informal_statement": "Let $G$ be a finite set of real $n\\times n$ matrices $\\{M_i\\}$, $1 \\leq i \\leq r$, which form a group under matrix\nmultiplication. Suppose that $\\sum_{i=1}^r \\mathrm{tr}(M_i)=0$, where $\\mathrm{tr}(A)$ denotes the trace of the matrix $A$. Prove that $\\sum_{i=1}^r M_i$ is the $n \\times n$ zero matrix.",
+        "informal_solution": "None.",
         "tags": [
             "abstract_algebra",
             "linear_algebra"
@@ -2030,6 +2056,7 @@
     {
         "problem_name": "putnam_1986_b3",
         "informal_statement": "Let $\\Gamma$ consist of all polynomials in $x$ with integer coefficients. For $f$ and $g$ in $\\Gamma$ and $m$ a positive integer, let $f \\equiv g \\pmod{m}$ mean that every coefficient of $f-g$ is an integral multiple of $m$. Let $n$ and $p$ be positive integers with $p$ prime. Given that $f,g,h,r$ and $s$ are in $\\Gamma$ with $rf+sg\\equiv 1 \\pmod{p}$ and $fg \\equiv h \\pmod{p}$, prove that there exist $F$ and $G$ in $\\Gamma$ with $F \\equiv f \\pmod{p}$, $G \\equiv g \\pmod{p}$, and $FG \\equiv h \\pmod{p^n}$.",
+        "informal_solution": "None.",
         "tags": [
             "number_theory",
             "algebra"
@@ -2054,6 +2081,7 @@
     {
         "problem_name": "putnam_1986_b6",
         "informal_statement": "Suppose $A,B,C,D$ are $n \\times n$ matrices with entries in a field $F$, satisfying the conditions that $AB^T$ and $CD^T$ are symmetric and $AD^T - BC^T = I$. Here $I$ is the $n \\times n$ identity matrix, and if $M$ is an $n \\times n$ matrix, $M^T$ is its transpose. Prove that $A^T D - C^T B = I$.",
+        "informal_solution": "None.",
         "tags": [
             "linear_algebra"
         ]
@@ -2110,6 +2138,7 @@
     {
         "problem_name": "putnam_1987_b2",
         "informal_statement": "Let $r, s$ and $t$ be integers with $0 \\leq r$, $0 \\leq s$ and $r+s \\leq t$. Prove that\n\\[\n\\frac{\\binom s0}{\\binom tr}\n+ \\frac{\\binom s1}{\\binom{t}{r+1}} + \\cdots\n+ \\frac{\\binom ss}{\\binom{t}{r+s}}\n= \\frac{t+1}{(t+1-s)\\binom{t-s}{r}}.\n\\]",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -2133,6 +2162,7 @@
     {
         "problem_name": "putnam_1987_b5",
         "informal_statement": "Let $O_n$ be the $n$-dimensional vector $(0,0,\\cdots, 0)$. Let $M$ be a $2n \\times n$ matrix of complex numbers such that whenever $(z_1, z_2, \\dots, z_{2n})M = O_n$, with complex $z_i$, not all zero, then at least one of the $z_i$ is not real. Prove that for arbitrary real numbers $r_1, r_2, \\dots, r_{2n}$, there are complex numbers $w_1, w_2, \\dots, w_n$ such that\n\\[\n\\mathrm{re}\\left[ M \\left( \\begin{array}{c} w_1 \\\\ \\vdots \\\\ w_n \\end{array} \\right) \\right] = \\left( \\begin{array}{c} r_1 \\\\ \\vdots \\\\ r_{2n} \\end{array} \\right).\n\\]\n(Note: if $C$ is a matrix of complex numbers, $\\mathrm{re}(C)$ is the matrix whose entries are the real parts of the entries of $C$.)",
+        "informal_solution": "None.",
         "tags": [
             "linear_algebra"
         ]
@@ -2140,6 +2170,7 @@
     {
         "problem_name": "putnam_1987_b6",
         "informal_statement": "Let $F$ be the field of $p^2$ elements, where $p$ is an odd prime. Suppose $S$ is a set of $(p^2-1)/2$ distinct nonzero elements of $F$ with the property that for each $a\\neq 0$ in $F$, exactly one of $a$ and $-a$ is in $S$. Let $N$ be the number of elements in the intersection $S \\cap \\{2a: a \\in S\\}$. Prove that $N$ is even.",
+        "informal_solution": "None.",
         "tags": [
             "abstract_algebra"
         ]
@@ -2180,6 +2211,7 @@
     {
         "problem_name": "putnam_1988_a5",
         "informal_statement": "Prove that there exists a \\emph{unique} function $f$ from the set $\\mathrm{R}^+$ of positive real numbers to $\\mathrm{R}^+$ such that\n\\[\nf(f(x)) = 6x-f(x)\n\\]\nand\n\\[\nf(x)>0\n\\]\nfor all $x>0$.",
+        "informal_solution": "None.",
         "tags": [
             "analysis"
         ]
@@ -2262,6 +2294,7 @@
     {
         "problem_name": "putnam_1989_a3",
         "informal_statement": "Prove that if\n\\[\n11z^{10}+10iz^9+10iz-11=0,\n\\]\nthen $|z|=1.$ (Here $z$ is a complex number and $i^2=-1$.)",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -2269,6 +2302,7 @@
     {
         "problem_name": "putnam_1989_a6",
         "informal_statement": "Let $\\alpha=1+a_1x+a_2x^2+\\cdots$ be a formal power series with coefficients in the field of two elements. Let\n\\[\na_n =\n\\begin{cases}\n1 & \\parbox{2in}{if every block of zeros in the binary expansion of $n$ has an even number of zeros in the block} \\\\[.3in]\n0 & \\text{otherwise.}\n\\end{cases}\n\\]\n(For example, $a_{36}=1$ because $36=100100_2$ and $a_{20}=0$ because $20=10100_2.$) Prove that $\\alpha^3+x\\alpha+1=0.$",
+        "informal_solution": "None.",
         "tags": [
             "algebra",
             "abstract_algebra"
@@ -2485,6 +2519,7 @@
     {
         "problem_name": "putnam_1992_a1",
         "informal_statement": "Prove that $f(n) = 1-n$ is the only integer-valued function defined on the integers that satisfies the following conditions.\n\\begin{itemize}\n\\item[(i)] $f(f(n)) = n$, for all integers $n$;\n\\item[(ii)] $f(f(n+2)+2) = n$ for all integers $n$;\n\\item[(iii)] $f(0) = 1$.\n\\end{itemize}",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -2518,6 +2553,7 @@
     {
         "problem_name": "putnam_1992_a5",
         "informal_statement": "For each positive integer $n$, let $a_n = 0$ (or $1$) if the number of $1$'s in the binary representation of $n$ is even (or odd), respectively. Show that there do not exist positive integers $k$ and $m$ such that\n\\[\na_{k+j} = a_{k+m+j} = a_{k+2m+j},\n\\]\nfor $0 \\leq j \\leq m-1$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -2533,6 +2569,7 @@
     {
         "problem_name": "putnam_1992_b2",
         "informal_statement": "For nonnegative integers $n$ and $k$, define $Q(n, k)$ to be the coefficient of $x^k$ in the expansion of $(1 + x + x^2 + x^3)^n$. Prove that\n\\[\nQ(n, k) = \\sum_{j=0}^k \\binom{n}{j} \\binom{n}{k-2j},\n\\]\nwhere $\\binom{a}{b}$ is the standard binomial coefficient. (Reminder: For integers $a$ and $b$ with $a \\geq 0$, $\\binom{a}{b} = \\frac{a!}{b!(a-b)!}$ for $0 \\leq b \\leq a$, with $\\binom{a}{b} = 0$ otherwise.)",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -2566,6 +2603,7 @@
     {
         "problem_name": "putnam_1992_b6",
         "informal_statement": "Let $M$ be a set of real $n \\times n$ matrices such that\n\\begin{itemize}\n\\item[(i)] $I \\in M$, where $I$ is the $n \\times n$ identity matrix;\n\\item[(ii)] if $A \\in M$ and $B \\in M$, then either $AB \\in M$ or $-AB \\in M$, but not both;\n\\item[(iii)] if $A \\in M$ and $B \\in M$, then either $AB = BA$ or $AB = -BA$;\n\\item[(iv)] if $A \\in M$ and $A \\neq I$, there is at least one $B \\in M$ such that $AB = -BA$.\n\\end{itemize}\nProve that $M$ contains at most $n^2$ matrices.",
+        "informal_solution": "None.",
         "tags": [
             "linear_algebra"
         ]
@@ -3000,6 +3038,7 @@
     {
         "problem_name": "putnam_1998_a2",
         "informal_statement": "Let $s$ be any arc of the unit circle lying entirely in the first quadrant. Let $A$ be the area of the region lying below $s$ and above the $x$-axis and let $B$ be the area of the region lying to the right of the $y$-axis and to the left of $s$. Prove that $A+B$ depends only on the arc length, and not on the position, of $s$.",
+        "informal_solution": "None.",
         "tags": [
             "geometry"
         ]
@@ -3031,6 +3070,7 @@
     {
         "problem_name": "putnam_1998_a6",
         "informal_statement": "Let $A, B, C$ denote distinct points with integer coordinates in $\\mathbb R^2$. Prove that if\n\\[(|AB|+|BC|)^2<8\\cdot [ABC]+1\\]\nthen $A, B, C$ are three vertices of a square. Here $|XY|$ is the length of segment $XY$ and $[ABC]$ is the area of triangle $ABC$.",
+        "informal_solution": "None.",
         "tags": [
             "geometry"
         ]
@@ -3199,6 +3239,7 @@
     {
         "problem_name": "putnam_2000_a6",
         "informal_statement": "Let $f(x)$ be a polynomial with integer coefficients. Define a sequence $a_0,a_1,\\ldots$ of integers such that $a_0=0$ and $a_{n+1}=f(a_n)$ for all $n\\geq 0$. Prove that if there exists a positive integer $m$ for which $a_m=0$ then either $a_1=0$ or $a_2=0$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -3206,6 +3247,7 @@
     {
         "problem_name": "putnam_2000_b1",
         "informal_statement": "Let $a_j,b_j,c_j$ be integers for $1\\leq j\\leq N$. Assume for each $j$, at least one of $a_j,b_j,c_j$ is odd. Show that there exist integers $r$, $s$, $t$ such that $ra_j+sb_j+tc_j$ is odd for at least $4N/7$ values of $j$, $1\\leq j\\leq N$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -3213,6 +3255,7 @@
     {
         "problem_name": "putnam_2000_b2",
         "informal_statement": "Prove that the expression\n\\[\n\\frac{gcd(m,n)}{n}\\binom{n}{m}\n\\]\nis an integer for all pairs of integers $n\\geq m\\geq 1$.",
+        "informal_solution": "None.",
         "tags": [
             "number_theory",
             "algebra"
@@ -3221,6 +3264,7 @@
     {
         "problem_name": "putnam_2000_b3",
         "informal_statement": "Let $f(t)=\\sum_{j=1}^N a_j \\sin(2\\pi jt)$, where each $a_j$ is real and $a_N$ is not equal to $0$. Let $N_k$ denote the number of zeroes (including multiplicities) of $\\frac{d^k f}{dt^k}$. Prove that\n\\[\nN_0\\leq N_1\\leq N_2\\leq \\cdots \\mbox{ and } \\lim_{k\\to\\infty} N_k = 2N.\n\\]",
+        "informal_solution": "None.",
         "tags": [
             "analysis"
         ]
@@ -3236,6 +3280,7 @@
     {
         "problem_name": "putnam_2000_b5",
         "informal_statement": "Let $S_0$ be a finite set of positive integers. We define finite sets $S_1,S_2,\\ldots$ of positive integers as follows: the integer $a$ is in $S_{n+1}$ if and only if exactly one of $a-1$ or $a$ is in $S_n$. Show that there exist infinitely many integers $N$ for which $S_N=S_0\\cup\\{N+a: a\\in S_0\\}$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -3324,6 +3369,7 @@
     {
         "problem_name": "putnam_2002_a2",
         "informal_statement": "Given any five points on a sphere, show that some four of them must lie on a closed hemisphere.",
+        "informal_solution": "None.",
         "tags": [
             "geometry"
         ]
@@ -3415,6 +3461,7 @@
     {
         "problem_name": "putnam_2003_a5",
         "informal_statement": "A Dyck $n$-path is a lattice path of $n$ upsteps $(1,1)$ and $n$ downsteps $(1,-1)$ that starts at the origin $O$ and never dips below the $x$-axis. A return is a maximal sequence of contiguous downsteps that terminates on the $x$-axis. Show that there is a one-to-one correspondence between the Dyck $n$-paths with no return of even length and the Dyck $(n-1)$-paths.",
+        "informal_solution": "None.",
         "tags": [
             "combinatorics"
         ]
@@ -3439,6 +3486,7 @@
     {
         "problem_name": "putnam_2003_b2",
         "informal_statement": "Let $n$ be a positive integer. Starting with the sequence $$1, \\frac{1}{2}, \\frac{1}{3}, \\dots, \\frac{1}{n},$$ form a new sequence of $n-1$ entries $$\\frac{3}{4}, \\frac{5}{12}, \\dots, \\frac{2n-1}{2n(n-1)}$$ by taking the averages of two consecutive entries in the first sequence. Repeat the averaging of neighbors on the second sequence to obtain a third sequence of $n-2$ entries, and continue until the final sequence produced consists of a single number $x_n$. Show that $x_n < 2/n$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -3463,6 +3511,7 @@
     {
         "problem_name": "putnam_2003_b5",
         "informal_statement": "Let $A,B$, and $C$ be equidistant points on the circumference of a circle of unit radius centered at $O$, and let $P$ be any point in the circle's interior. Let $a, b, c$ be the distance from $P$ to $A, B, C$, respectively. Show that there is a triangle with side lengths $a, b, c$, and that the area of this triangle depends only on the distance from $P$ to $O$.",
+        "informal_solution": "None.",
         "tags": [
             "geometry"
         ]
@@ -3502,6 +3551,7 @@
     {
         "problem_name": "putnam_2004_a5",
         "informal_statement": "An $m \\times n$ checkerboard is colored randomly: each square is independently assigned red or black with probability $1/2$. We say that two squares, $p$ and $q$, are in the same connected monochromatic region if there is a sequence of squares, all of the same color, starting at $p$ and ending at $q$, in which successive squares in the sequence share a common side. Show that the expected number of connected monochromatic regions is greater than $m n / 8$.",
+        "informal_solution": "None.",
         "tags": [
             "combinatorics"
         ]
@@ -3630,6 +3680,7 @@
     {
         "problem_name": "putnam_2005_b5",
         "informal_statement": "Let $P(x_1,\\dots,x_n)$ denote a polynomial with real coefficients in the variables $x_1, \\dots, x_n$, and suppose that\n\\[\n\\left( \\frac{\\partial^2}{\\partial x_1^2} + \\cdots + \\frac{\\partial^2}{\\partial x_n^2}\\right) P(x_1, \\dots,x_n) = 0 \\quad \\mbox{(identically)}\n\\]\nand that\n\\[\nx_1^2 + \\cdots + x_n^2 \\mbox{ divides } P(x_1, \\dots, x_n).\n\\]\nShow that $P=0$ identically.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -3654,6 +3705,7 @@
     {
         "problem_name": "putnam_2006_a3",
         "informal_statement": "Let $1, 2, 3, \\dots, 2005, 2006, 2007, 2009, 2012, 2016, \\dots$ be a sequence defined by $x_k = k$ for $k=1, 2, \\dots, 2006$ and $x_{k+1} = x_k + x_{k-2005}$ for $k \\geq 2006$. Show that the sequence has $2005$ consecutive terms each divisible by $2006$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -3685,6 +3737,7 @@
     {
         "problem_name": "putnam_2006_b2",
         "informal_statement": "Prove that, for every set $X = \\{x_1, x_2, \\dots, x_n\\}$ of $n$ real numbers, there exists a non-empty subset $S$ of $X$ and an integer $m$ such that\n\\[\n\\left| m + \\sum_{s \\in S} s \\right| \\leq \\frac{1}{n+1}.\n\\]",
+        "informal_solution": "None.",
         "tags": [
             "analysis"
         ]
@@ -3776,6 +3829,7 @@
     {
         "problem_name": "putnam_2007_b2",
         "informal_statement": "Suppose that $f: [0,1] \\to \\mathbb{R}$ has a continuous derivative and that $\\int_0^1 f(x)\\,dx = 0$. Prove that for every $\\alpha \\in (0,1)$,\n\\[\n\\left| \\int_0^\\alpha f(x)\\,dx \\right| \\leq \\frac{1}{8} \\max_{0 \\leq x\n\\leq 1} |f'(x)|.\n\\]",
+        "informal_solution": "None.",
         "tags": [
             "analysis"
         ]
@@ -3799,6 +3853,7 @@
     {
         "problem_name": "putnam_2007_b5",
         "informal_statement": "Let $k$ be a positive integer. Prove that there exist polynomials $P_0(n), P_1(n), \\dots, P_{k-1}(n)$ (which may depend on $k$) such that for any integer $n$,\n\\[\n\\left\\lfloor \\frac{n}{k} \\right\\rfloor^k = P_0(n) + P_1(n) \\left\\lfloor\n\\frac{n}{k} \\right\\rfloor + \\cdots + P_{k-1}(n) \\left\\lfloor \\frac{n}{k}\n\\right\\rfloor^{k-1}.\n\\]\n($\\lfloor a \\rfloor$ means the largest integer $\\leq a$.)",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -3806,6 +3861,7 @@
     {
         "problem_name": "putnam_2007_b6",
         "informal_statement": "For each positive integer $n$, let $f(n)$ be the number of ways to make $n!$ cents using an unordered collection of coins, each worth $k!$ cents for some $k$, $1 \\leq k \\leq n$. Prove that for some constant $C$, independent of $n$,\n\\[\nn^{n^2/2 - Cn} e^{-n^2/4} \\leq f(n) \\leq n^{n^2/2 + Cn}e^{-n^2/4}.\n\\]",
+        "informal_solution": "None.",
         "tags": [
             "combinatorics",
             "analysis"
@@ -3822,6 +3878,7 @@
     {
         "problem_name": "putnam_2008_a3",
         "informal_statement": "Start with a finite sequence $a_1, a_2, \\dots, a_n$ of positive integers. If possible, choose two indices $j < k$ such that $a_j$ does not divide $a_k$, and replace $a_j$ and $a_k$ by $\\mathrm{gcd}(a_j, a_k)$ and $\\mathrm{lcm}(a_j, a_k)$, respectively. Prove that if this process is repeated, it must eventually stop and the final sequence does not depend on the choices made.",
+        "informal_solution": "None.",
         "tags": [
             "number_theory"
         ]
@@ -3837,6 +3894,7 @@
     {
         "problem_name": "putnam_2008_a5",
         "informal_statement": "Let $n \\geq 3$ be an integer. Let $f(x)$ and $g(x)$ be polynomials with real coefficients such that the points $(f(1), g(1)), (f(2), g(2)), \\dots, (f(n), g(n))$ in $\\mathbb{R}^2$ are the vertices of a regular $n$-gon in counterclockwise order. Prove that at least one of $f(x)$ and $g(x)$ has degree greater than or equal to $n-1$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra",
             "geometry"
@@ -3845,6 +3903,7 @@
     {
         "problem_name": "putnam_2008_a6",
         "informal_statement": "Prove that there exists a constant $c>0$ such that in every nontrivial finite group $G$ there exists a sequence of length at most $c \\log |G|$ with the property that each element of $G$ equals the product of some subsequence. (The elements of $G$ in the sequence are not required to be distinct. A \\emph{subsequence} of a sequence is obtained by selecting some of the terms, not necessarily consecutive, without reordering them; for example, $4, 4, 2$ is a subsequence of $2, 4, 6, 4, 2$, but $2, 2, 4$ is not.)",
+        "informal_solution": "None.",
         "tags": [
             "abstract_algebra"
         ]
@@ -3877,6 +3936,7 @@
     {
         "problem_name": "putnam_2008_b4",
         "informal_statement": "Let $p$ be a prime number. Let $h(x)$ be a polynomial with integer coefficients such that $h(0), h(1), \\dots, h(p^2-1)$ are distinct modulo $p^2$. Show that $h(0), h(1), \\dots, h(p^3-1)$ are distinct modulo $p^3$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra",
             "number_theory"
@@ -3977,6 +4037,7 @@
     {
         "problem_name": "putnam_2009_b5",
         "informal_statement": "Let $f: (1, \\infty) \\to \\mathbb{R}$ be a differentiable function such that\n\\[\n f'(x) = \\frac{x^2 - f(x)^2}{x^2 (f(x)^2 + 1)}\n\\qquad \\mbox{for all $x>1$.}\n\\]\nProve that $\\lim_{x \\to \\infty} f(x) = \\infty$.",
+        "informal_solution": "None.",
         "tags": [
             "analysis"
         ]
@@ -3984,6 +4045,7 @@
     {
         "problem_name": "putnam_2009_b6",
         "informal_statement": "Prove that for every positive integer $n$, there is a sequence of integers $a_0, a_1, \\dots, a_{2009}$ with $a_0 = 0$ and $a_{2009} = n$ such that each term after $a_0$ is either an earlier term plus $2^k$ for some nonnegative integer $k$, or of the form $b\\,\\mathrm{mod}\\,c$ for some earlier positive terms $b$ and $c$. [Here $b\\,\\mathrm{mod}\\,c$ denotes the remainder when $b$ is divided by $c$, so $0 \\leq (b\\,\\mathrm{mod}\\,c) < c$.]",
+        "informal_solution": "None.",
         "tags": [
             "number_theory"
         ]
@@ -4162,6 +4224,7 @@
     {
         "problem_name": "putnam_2011_b5",
         "informal_statement": "Let $a_1, a_2, \\dots$ be real numbers. Suppose that there is a constant $A$ such that for all $n$,\n\\[\n\\int_{-\\infty}^\\infty \\left( \\sum_{i=1}^n \\frac{1}{1 + (x-a_i)^2} \\right)^2\\,dx \\leq An.\n\\]\nProve there is a constant $B>0$ such that for all $n$,\n\\[\n\\sum_{i,j=1}^n (1 + (a_i - a_j)^2) \\geq Bn^3.\n\\]",
+        "informal_solution": "None.",
         "tags": [
             "analysis"
         ]
@@ -4227,6 +4290,7 @@
     {
         "problem_name": "putnam_2012_b1",
         "informal_statement": "Let $S$ be a class of functions from $[0, \\infty)$ to $[0, \\infty)$ that satisfies:\n\\begin{itemize}\n\\item[(i)]\nThe functions $f_1(x) = e^x - 1$ and $f_2(x) = \\ln(x+1)$ are in $S$;\n\\item[(ii)]\nIf $f(x)$ and $g(x)$ are in $S$, the functions $f(x) + g(x)$ and $f(g(x))$ are in $S$;\n\\item[(iii)]\nIf $f(x)$ and $g(x)$ are in $S$ and $f(x) \\geq g(x)$ for all $x \\geq 0$, then the function\n$f(x) - g(x)$ is in $S$.\n\\end{itemize}\nProve that if $f(x)$ and $g(x)$ are in $S$, then the function $f(x) g(x)$ is also in $S$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
@@ -4431,6 +4495,7 @@
     {
         "problem_name": "putnam_2014_b6",
         "informal_statement": "Let $f: [0,1] \\to \\mathbb{R}$ be a function for which there exists a constant $K>0$ such that $\\left| f(x) - f(y) \\right| \\leq K \\left| x - y \\right|$ for all $x,y \\in [0,1]$. Suppose also that for each rational number $r \\in [0,1]$, there exist integers $a$ and $b$ such that $f(r) = a + br$. Prove that there exist finitely many intervals $I_1, \\dots, I_n$ such that $f$ is a linear function on each $I_i$ and $[0,1] = \\bigcup_{i=1}^n I_i$.",
+        "informal_solution": "None.",
         "tags": [
             "analysis",
             "number_theory"
@@ -4563,6 +4628,7 @@
     {
         "problem_name": "putnam_2016_a5",
         "informal_statement": "Suppose that $G$ is a finite group generated by the two elements $g$ and $h$, where the order of $g$ is odd. Show that every element of $G$ can be written in the form\n\\[\ng^{m_1} h^{n_1} g^{m_2} h^{n_2} \\cdots g^{m_r} h^{n_r}\n\\]\nwith $1 \\leq r \\leq |G|$ and $m_1, n_1, m_2, n_2, \\ldots, m_r, n_r \\in \\{-1, 1\\}$.\n(Here $|G|$ is the number of elements of $G$.)",
+        "informal_solution": "None.",
         "tags": [
             "abstract_algebra"
         ]
@@ -4651,6 +4717,7 @@
     {
         "problem_name": "putnam_2017_a4",
         "informal_statement": "A class with $2N$ students took a quiz, on which the possible scores were $0,1,\\dots,10$. Each of these scores occurred at least once, and the average score was exactly $7.4$. Show that the class can be divided into two groups of $N$ students in such a way that the average score for each group was exactly $7.4$.",
+        "informal_solution": "None.",
         "tags": [
             "algebra"
         ]
