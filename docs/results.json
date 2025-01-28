@@ -92,6 +92,16 @@
       "condensed-compute-budget": "pass@4096",
       "note": "pass@2048 w/ T = 1.0 + pass@2048 w/ T = 0.7"
     },
+    "Goedel-Prover-SFT": {
+      "link": "to be released",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 7
+      },
+      "size": 7,
+      "condensed-compute-budget": "pass@512",
+      "note": "pass@512, T = 1.0, top_p = 0.95; 1977 A3, 1986 A1, 1986 B1, 1988 B1, 2001 A1, 2008 A1, commit: 06a1de1"
+    },
     "ABEL": {
       "link": "https://openreview.net/forum?id=kk3mSjVCUO",
       "open-data": "NONE",
