@@ -93,7 +93,7 @@
       "note": "pass@2048 w/ T = 1.0 + pass@2048 w/ T = 0.7"
     },
     "Goedel-Prover-SFT": {
-      "link": "to be released",
+      "link": "https://goedel-lm.github.io/",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 7
