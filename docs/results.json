@@ -121,5 +121,15 @@
       "size": 8.8,
       "condensed-compute-budget": "pass@2x32x600",
       "note": "pass @ 2 x 32 states x 600 state expansions proof search; 1977 A3, 1986 A1, 1986 B1, 1988 B1, 1988 B2, 2001 A1. Commit: b377431"
+    },
+    "Self-Play Theorem Prover": {
+      "link": "https://arxiv.org/pdf/2502.00212",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 8
+      },
+      "size": 7.0,
+      "condensed-compute-budget": "pass@3200",
+      "note": "pass@3200 w/ T = 0.7, w/ miniF2F-valid, ProofNet-valid; 1986 B1, 1988 B2, 2008 A1, 1988 B1, 1977 A3, 2001 A1, 1986 A1, 1990 A1. Commit: b377431; pass@64 yields 7/644"
     }
 }
