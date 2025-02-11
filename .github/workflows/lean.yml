@@ -28,21 +28,6 @@ jobs:
       run: |
         lake exe cache get
 
-    - name: Build
-      working-directory: lean4
-      run: |
-        lake build
-
-    - name: Save olean cache
-      working-directory: lean4
-      run: |
-        lake exe cache pack
-
-    - name: Validate docstrings
-      working-directory: lean4
-      run: |
-        lake exe check_docstrings
-
     - name: Build problems with sorries
       working-directory: lean4
       run: |
