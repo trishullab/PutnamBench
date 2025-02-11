@@ -43,17 +43,27 @@ jobs:
       run: |
         lake exe check_docstrings
 
-    - name: Insert solutions
+    - name: Build problems with sorries
       working-directory: lean4
       run: |
-        python scripts/rewrite_solutions.py
-
-    - name: Build
-      working-directory: lean4
-      run: |
-        lake build putnam_with_solutions
+        lake build putnam_competition_sorries > original_build.log
 
     - name: Save olean cache
       working-directory: lean4
       run: |
         lake exe cache pack
+
+    - name: Insert solutions
+      run: |
+        python lean4/scripts/insert_solutions.py
+
+    - name: Build User submitted problems
+      working-directory: lean4
+      # Ignore the return code because we want to score the solutions even if the build fails
+      # Assuming someone submitted a solution which is not correct
+      run: |
+        lake build putnam_competition_solution > solution_build.log || true
+      
+    - name: Score User submitted problems
+      run: |
+        python lean4/scripts/score_solutions.py

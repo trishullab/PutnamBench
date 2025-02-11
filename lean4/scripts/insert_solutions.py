@@ -35,6 +35,18 @@ def main():
     args = args.parse_args()
     assert os.path.exists(args.problem_with_sorries_folder)
     assert os.path.exists(args.json_solution_file)
+    # Make sure that the dump folder exists in lean4 folder
+    lean4_folder = os.path.abspath("lean4")
+    # lean_solution_dump_folder should be a subfolder of lean4
+    abs_lean_solution_dump_folder = os.path.abspath(args.lean_solution_dump_folder)
+    assert abs_lean_solution_dump_folder.startswith(lean4_folder), f"lean_solution_dump_folder should be a subfolder of lean4 folder."
+    # lean_solution_dump_folder should not be a subfolder of problem_with_sorries_folder
+    abs_problem_with_sorries_folder = os.path.abspath(args.problem_with_sorries_folder)
+    assert not (abs_lean_solution_dump_folder.strip('/') + '/').startswith(abs_problem_with_sorries_folder.strip('/') + '/'), f"lean_solution_dump_folder should not be a subfolder of problem_with_sorries_folder. {abs_lean_solution_dump_folder} {abs_problem_with_sorries_folder}"
+    # lean_solution_dump_folder should be only one level below lean4
+    assert abs_lean_solution_dump_folder.count(os.sep) == lean4_folder.count(os.sep) + 1, f"lean_solution_dump_folder should be only one level below lean4."
+    lean_soln_dump_folder_name = os.path.basename(abs_lean_solution_dump_folder)
+    problem_with_sorries_folder_name = os.path.basename(abs_problem_with_sorries_folder)
     if os.path.exists(args.lean_solution_dump_folder):
         os.system(f"rm -rf {args.lean_solution_dump_folder}")
     # Copy the problems folder to the dump folder
@@ -79,6 +91,8 @@ def main():
         "total_problems": problems_count,
         "problems_attempted_count": len(problem_id_attempted_set),
         "problems_not_attempted_count": problems_count - len(problem_id_attempted_set),
+        "lean_solution_dump_folder_name": lean_soln_dump_folder_name,
+        "problem_with_sorries_folder_name": problem_with_sorries_folder_name,
         "problems_attempted_list": sorted(list(problem_id_attempted_set))
     }
     with open(args.summary_file, "w") as f:
