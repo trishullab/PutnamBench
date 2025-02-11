@@ -13,3 +13,6 @@ isabelle_archive/
 lean4_archive/
 
 split_into_files.py
+
+lean4/src_with_sorries_replaced/*
+*.log
