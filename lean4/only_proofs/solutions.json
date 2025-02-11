@@ -1,0 +1,27 @@
+[
+    {
+        "id": "problem_1",
+        "solution": "0",
+        "proof": "-- subtract the two equations\r\n-- (x + \u03C0) - (y - \u03C0\/2) = 2y - 5x  \u27F9  x + \u03C0 - y + \u03C0\/2 = 2y - 5x\r\nhave h_y : y = (x + \u03C0) \/ 2 := by\r\n  rw [h\u2081]\r\n  ring\r\n-- substitute y in the second equation\r\nrw [h_y] at h\u2082\r\nclear h_y\r\nring_nf at h\u2082\r\nsimp at h\u2082\r\ncases h\u2082\r\nrename_i impossible\r\nlinarith\r\nrename_i x_eq_0\r\nsimp [x_eq_0]"
+    },
+    {
+        "id": "problem_2",
+        "solution": null,
+        "proof": "induction n with\r\n| zero =>\r\n  simp\r\n| succ d ih =>\r\n  calc\r\n    (\u2211 k in Finset.range (d + 1), (2 * k + 1))\r\n        = (\u2211 k in Finset.range d, (2 * k + 1)) + (2 * d + 1) := by\r\n          simp [Finset.sum_range_succ]\r\n    _ = d * d + (2 * d + 1) := by rw [ih]\r\n    _ = (d + 1) * (d + 1) := by ring"
+    },
+    {
+        "id": "problem_3",
+        "solution": "{p | \u2203 (a : \u211D), p = (a, a) \u2227 0 < a}",
+        "proof": "-- Subtract the two equations:\r\n-- (x\u00B2 + 1) - (y\u00B2 + 1) = 2y - 2x  \u27F9  x\u00B2 - y\u00B2 = 2 (y - x)\r\nhave h1' : x^2 = 2*y - 1 := by linarith\r\nhave h2' : y^2 = 2*x - 1 := by linarith\r\nclear h\u2081 h\u2082\r\n-- subtract the two equations\r\nhave h_diff : x^2 - y^2 = 2 * (y - x) := by\r\n  rw [h1', h2']\r\n  ring\r\n-- factorize the left hand side\r\nhave h_fact : (x - y) * (x + y) = 2 * (y - x) := by rw [\u2190 h_diff]; ring\r\n-- rewrite (y - x) as -(x - y)\r\nhave h_fact' : (x - y) * (x + y) = -2 * (x - y) := by rw [h_fact]; ring\r\nclear h_diff h_fact\r\nset x_minus_y := x - y\r\n-- two cases: x - y = 0 or x - y \u2260 0\r\nhave h_cases : x_minus_y = 0 \u2228 x_minus_y \u2260 0 := by apply Classical.em\r\ncases h_cases\r\nrename_i x_eq_y\r\n-- x - y = 0 \u27F9 x = y\r\nhave h_eq : x = y := by exact sub_eq_zero.mp x_eq_y\r\n-- divide the two equations by (x - y)\r\nrw [h_eq]\r\nuse (y, y)\r\nsimp [h\u2080]\r\nrename_i x_neq_y\r\n-- x - y \u2260 0 \u27F9 x \u2260 y\r\n-- divide h_fact' by (x - y)\r\nhave h_div : x + y = -2 := by\r\n  rw [mul_comm] at h_fact'\r\n  exact (mul_left_inj' x_neq_y).mp h_fact'\r\nclear h_fact'\r\n-- prove that x + y = -2 is impossible for positive x and y\r\nhave h_contra' : 0 < x + y := by\r\n  rw [h_div]\r\n  linarith\r\nlinarith"
+    },
+    {
+        "id": "problem_4",
+        "solution": null,
+        "proof": "by\r\nintros D E h_triangle\r\nhave h\u2081 : D = (1\/2) \u2022 A + (1\/2) \u2022 B := by simp [D]\r\nhave h\u2082 : E = (1\/2) \u2022 A + (1\/2) \u2022 C := by simp [E]\r\nrw [h\u2081, h\u2082]\r\nsimp"
+    },
+    {
+        "id": "problem_5",
+        "solution": null,
+        "proof": "by\r\nhave h' : x % 4 < 4 := Nat.mod_lt x (by decide)\r\nhave h'' : \u2200 y : \u2115, y < 4 \u2192 y = 0 \u2228 y = 1 \u2228 y = 2 \u2228 y = 3 := by\r\n  intro y yh\r\n  induction y\r\n  simp\r\n  rename_i y' y_ih\r\n  have y'_lt_4 : y' < 3 := by linarith\r\n  cases y'\r\n  simp\r\n  rename_i y''\r\n  simp\r\n  cases y''\r\n  simp\r\n  rename_i y'''\r\n  simp\r\n  cases y'''\r\n  simp\r\n  linarith\r\nhave h''' : x % 4 = 0 \u2228 x % 4 = 1 \u2228 x % 4 = 2 \u2228 x % 4 = 3 := by\r\n  apply h'' (x % 4) h'\r\ncases h'''\r\nrename_i x_mod_4_eq_0\r\nexact Or.inr x_mod_4_eq_0\r\nrename_i x_mod_4_eq_1\r\nrw [Nat.mul_mod] at h\r\nhave h_contra : x % 4 !=2 \u2192 x * x % 4 \u2260 0 := by\r\n  cases x_mod_4_eq_1\r\n  rename_i x_mod_4_eq_1'\r\n  rw [x_mod_4_eq_1'] at h\r\n  simp at h\r\n  rename_i x_mod_4_eq_2_3\r\n  cases x_mod_4_eq_2_3\r\n  rename_i x_mod_4_eq_2\r\n  intro x_mod_4_neq_2\r\n  rw [x_mod_4_eq_2] at x_mod_4_neq_2\r\n  contradiction\r\n  rename_i x_mod_4_eq_3\r\n  intro x_mod_4_neq_2\r\n  rw [x_mod_4_eq_3] at h\r\n  simp at h\r\ncases x_mod_4_eq_1\r\nrename_i x_mod_4_eq_1'\r\nrw [x_mod_4_eq_1'] at h_contra\r\nsimp at h_contra\r\nrw [x_mod_4_eq_1'] at h\r\nsimp at h\r\nrename_i x_mod_4_eq_2_3\r\ncases x_mod_4_eq_2_3\r\nrename_i x_mod_4_eq_2\r\napply Or.inl\r\nexact x_mod_4_eq_2\r\nrename_i x_mod_4_eq_3\r\nrw [x_mod_4_eq_3] at h_contra\r\nsimp at h_contra\r\nrw [x_mod_4_eq_3] at h\r\nsimp at h"
+    }
+]

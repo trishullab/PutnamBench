@@ -1,7 +1,7 @@
 import Lake
 open Lake DSL
 
-package «putnam» where
+package «putnam_competition» where
   -- add package configuration options here
   leanOptions := #[
     ⟨`autoImplicit, false⟩
@@ -9,11 +9,11 @@ package «putnam» where
 require mathlib from git "https://github.com/leanprover-community/mathlib4" @ "v4.15.0"
 
 @[default_target]
-lean_lib «putnam» where
-  globs := #[.submodules `src]
+lean_lib «putnam_competition» where
+  globs := #[.submodules `src_with_solns, .submodules `src_with_sorries]
 
-lean_lib «putnam_with_solutions» where
-  globs := #[.submodules `solutions_replaced_new]
+lean_lib «putnam_competition_solution» where
+  globs := #[.submodules `src_with_sorries_replaced]
 
 lean_exe «check_docstrings» where
   root := `check_docstrings
