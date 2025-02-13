@@ -15,5 +15,5 @@ theorem putnam_2023_a2
 (S : Set ℝ)
 (hS : S = {x : ℝ | ∃ k : ℤ, x = k ∧ 1 ≤ |k| ∧ |k| ≤ n})
 (hpinv : ∀ k ∈ S, p.eval (1/k) = k^2)
-: {x : ℝ | p.eval (1/x) = x^2} \ S = putnam_2023_a2_solution n :=
+: {x : ℝ | x ≠ 0 ∧ p.eval (1/x) = x^2} \ S = putnam_2023_a2_solution n :=
 sorry
