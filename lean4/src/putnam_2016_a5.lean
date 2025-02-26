@@ -14,7 +14,7 @@ theorem putnam_2016_a5
 (G : Type*) [Group G]
 (Gfin : Fintype G)
 (g h : G)
-(ghgen : Group.closure {g, h} = G ∧ ¬Group.closure {g} = G ∧ ¬Group.closure {h} = G)
+(ghgen : Subgroup.closure {g, h} = ⊤ ∧ ¬Subgroup.closure {g} = ⊤ ∧ ¬Subgroup.closure {h} = ⊤)
 (godd : Odd (orderOf g))
 (S : Set G)
 (hS : S = {g * h, g⁻¹ * h, g * h⁻¹, g⁻¹ * h⁻¹})
