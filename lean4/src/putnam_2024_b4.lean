@@ -24,7 +24,7 @@ theorem putnam_2024_b4
     [IsProbabilityMeasure (ℙ : Measure Ω)]
     (m a : ℕ → ℕ → Ω → ℤ)
     (h₀ : ∀ n > 0, a n 0 = 1)
-    (h₁ : ∀ n k, 0 < n → pdf.IsUniform (m n k) (Set.Icc 1 n) ℙ (ProbabilityTheory.uniformOn <| Set.Icc 1 n))
+    (h₁ : ∀ n k, 0 < n → pdf.IsUniform (m n k) (Set.Icc 1 n) ℙ (ProbabilityTheory.condCount <| Set.Icc 1 n))
     (h₂ : ∀ n k ω, 0 < n →
       a n (k + 1) ω =
         if m n k ω > a n k ω then
