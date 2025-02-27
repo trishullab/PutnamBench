@@ -22,6 +22,6 @@ theorem putnam_2023_b1
         → coins1 i' j' = coins2 i' j'))
 (IsLegalSeq : List (ℕ → ℕ → Bool) → Prop)
 (IsLegalSeq_def : ∀ seq, IsLegalSeq seq ↔ seq.length ≥ 1 ∧ seq[0]! = initcoins ∧ (∀ i < seq.length - 1, IsLegalMove seq[i]! seq[i + 1]!))
-(mnpos : m ≥ 1 ∧ n ≥ 1)
+(mnpos : 1 < m ∧ 1 < n)
 : {config : ℕ → ℕ → Bool | ∃ seq : List (ℕ → ℕ → Bool), IsLegalSeq seq ∧ config = seq.getLast!}.encard = putnam_2023_b1_solution m n :=
 sorry
