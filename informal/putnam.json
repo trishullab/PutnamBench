@@ -590,19 +590,19 @@
         ]
     },
     {
-        "problem_name": "putnam_1968_b1",
-        "informal_statement": "The random variables $X, Y$ can each take a finite number of integer values. They are not necessarily independent. Express $\\mathrm{prob}(\\min(X, Y) = k)$ in terms of $p_1 = \\mathrm{prob}(X = k)$, $p_2 = \\mathrm{prob}(Y = k)$ and $p_3 = \\mathrm{prob(max(X, Y) = k)$.",
-        "informal_solution": "$\\mathrm{prob}(\\min(X, Y) = k) = p_1 + p_2 - p_3.$",
-        "tags": [
-            "probability"
-        ]
-    },
-    {
         "problem_name": "putnam_1968_a6",
         "informal_statement": "Find all polynomials of the form $\\sum_{0}^{n} a_{i} x^{n-i}$ with $n \\ge 1$ and $a_i = \\pm 1$ for all $0 \\le i \\le n$ whose roots are all real.",
         "informal_solution": "The set of such polynomials is $$\\{\\pm (x - 1), \\pm (x + 1), \\pm (x^2 + x - 1), \\pm (x^2 - x - 1), \\pm (x^3 + x^2 - x - 1), \\pm (x^3 - x^2 - x + 1)\\}.$$",
         "tags": [
             "algebra"
+        ]
+    },
+    {
+        "problem_name": "putnam_1968_b1",
+        "informal_statement": "The random variables $X, Y$ can each take a finite number of integer values. They are not necessarily independent. Express $\\mathrm{prob}(\\min(X, Y) = k)$ in terms of $p_1 = \\mathrm{prob}(X = k)$, $p_2 = \\mathrm{prob}(Y = k)$ and $p_3 = \\mathrm{prob(max(X, Y) = k)$.",
+        "informal_solution": "$\\mathrm{prob}(\\min(X, Y) = k) = p_1 + p_2 - p_3.$",
+        "tags": [
+            "probability"
         ]
     },
     {
