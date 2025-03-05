@@ -6,10 +6,7 @@ open scoped ProbabilityTheory
 def putnam_1968_b1_solution : ℝ → ℝ → ℝ → ℝ := sorry
 
 /--
-The random variables `X, Y` can each take a finite number of
-integer values. They are not necessarily independent.
-Express `prob( min(X, Y) = k)` in terms of `p1 = prob( X = k)`,
-`p2 = prob(Y = k)` and `p3 = prob(max(X, Y) = k)`.
+The random variables $X, Y$ can each take a finite number of integer values. They are not necessarily independent. Express $\\mathrm{prob}(\\min(X, Y) = k)$ in terms of $p_1 = \\mathrm{prob}(X = k)$, $p_2 = \\mathrm{prob}(Y = k)$ and $p_3 = \\mathrm{prob(max(X, Y) = k)$.
 -/
 theorem putnam_1968_b1
     {Ω : Type*}
