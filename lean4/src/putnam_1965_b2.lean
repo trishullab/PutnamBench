@@ -9,7 +9,7 @@ theorem putnam_1965_b2
 (n : ℕ)
 (hn : n > 1)
 (won : Fin n → Fin n → Bool)
-(hirrefl : ∀ i : Fin n, won i i = False)
+(hirrefl : ∀ i : Fin n, won i i = false)
 (hantisymm : ∀ i j : Fin n, i ≠ j → won i j = ¬won j i)
 (w l : Fin n → ℤ)
 (hw : w = fun r : Fin n => ∑ j : Fin n, (if won r j then 1 else 0))
