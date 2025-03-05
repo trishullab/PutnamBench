@@ -590,6 +590,14 @@
         ]
     },
     {
+        "problem_name": "putnam_1968_b1",
+        "informal_statement": "The random variables $X, Y$ can each take a finite number of integer values. They are not necessarily independent. Express $\\mathrm{prob}(\\min(X, Y) = k)$ in terms of $p_1 = \\mathrm{prob}(X = k)$, $p_2 = \\mathrm{prob}(Y = k)$ and $p_3 = \\mathrm{prob(max(X, Y) = k)$.",
+        "informal_solution": "$\\mathrm{prob}(\\min(X, Y) = k) = p_1 + p_2 - p_3.$",
+        "tags": [
+            "probability"
+        ]
+    },
+    {
         "problem_name": "putnam_1968_a6",
         "informal_statement": "Find all polynomials of the form $\\sum_{0}^{n} a_{i} x^{n-i}$ with $n \\ge 1$ and $a_i = \\pm 1$ for all $0 \\le i \\le n$ whose roots are all real.",
         "informal_solution": "The set of such polynomials is $$\\{\\pm (x - 1), \\pm (x + 1), \\pm (x^2 + x - 1), \\pm (x^2 - x - 1), \\pm (x^3 + x^2 - x - 1), \\pm (x^3 - x^2 - x + 1)\\}.$$",
@@ -4062,14 +4070,6 @@
         "problem_name": "putnam_2010_a2",
         "informal_statement": "Find all differentiable functions $f:\\mathbb{R} \\to \\mathbb{R}$ such that\n\\[\nf'(x) = \\frac{f(x+n)-f(x)}{n}\n\\]\nfor all real numbers $x$ and all positive integers $n$.",
         "informal_solution": "The solution consists of all functions of the form $f(x) = cx+d$ for some real numbers $c,d$.",
-        "tags": [
-            "analysis"
-        ]
-    },
-    {
-        "problem_name": "putnam_2010_a3",
-        "informal_statement": "Suppose that the function `h : \\mathbb{R}^2 → \\mathbb{R}` has continuous partial derivatives and satisfies the equation $h(x, y) = a \frac{\\partial h}{\\partial x}(x, y) +b \frac{\\partial h}{\\partial y}(x, y)$ for some constants $a, b$. Prove that if there is a constant $M$ such that $|h(x, y)| ≤ M$ for all $(x, y) ∈ \\mathbb{R}^2$, then $h$ is identically zero.",
-        "informal_solution": "None",
         "tags": [
             "analysis"
         ]
