@@ -598,6 +598,14 @@
         ]
     },
     {
+        "problem_name": "putnam_1968_b1",
+        "informal_statement": "The random variables $X, Y$ can each take a finite number of integer values. They are not necessarily independent. Express $\\mathrm{prob}(\\min(X, Y) = k)$ in terms of $p_1 = \\mathrm{prob}(X = k)$, $p_2 = \\mathrm{prob}(Y = k)$ and $p_3 = \\mathrm{prob(max(X, Y) = k)$.",
+        "informal_solution": "$\\mathrm{prob}(\\min(X, Y) = k) = p_1 + p_2 - p_3.$",
+        "tags": [
+            "probability"
+        ]
+    },
+    {
         "problem_name": "putnam_1968_b2",
         "informal_statement": "Let $G$ be a finite group (with a multiplicative operation), and $A$ be a subset of $G$ that contains more than half of $G$'s elements. Prove that every element of $G$ can be expressed as the product of two elements of $A$.",
         "informal_solution": "None.",
