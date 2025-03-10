@@ -20,5 +20,5 @@ theorem putnam_1968_b1
     (k : ℤ) :
     (ℙ {ω : Ω | min (X ω) (Y ω) = k}).toReal =
       putnam_1968_b1_solution (ℙ (X⁻¹' {k})).toReal (ℙ (Y⁻¹' {k})).toReal
-      (ℙ {ω : Ω | max (X ω) (Y ω) = k}).toReal := by
+      (ℙ {ω : Ω | max (X ω) (Y ω) = k}).toReal :=
   sorry
