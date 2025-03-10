@@ -1,7 +1,7 @@
 import Mathlib
 
 /--
-Suppose that the function $h : \\mathbb{R}^2 → \\mathbb{R}$ has continuous partial derivatives and satisfies the equation $h(x, y) = a \frac{\\partial h}{\\partial x}(x, y) +b \frac{\\partial h}{\\partial y}(x, y)$ for some constants $a, b$. Prove that if there is a constant $M$ such that $|h(x, y)| ≤ M$ for all $(x, y) ∈ \\mathbb{R}^2$, then $h$ is identically zero.
+Suppose that the function $h : \mathbb{R}^2 → \mathbb{R}$ has continuous partial derivatives and satisfies the equation $h(x, y) = a \frac{\partial h}{\partial x}(x, y) +b \frac{\partial h}{\partial y}(x, y)$ for some constants $a, b$. Prove that if there is a constant $M$ such that $|h(x, y)| ≤ M$ for all $(x, y) ∈ \mathbb{R}^2$, then $h$ is identically zero.
 -/
 theorem putnam_2010_a3
     (h : ℝ × ℝ → ℝ)
