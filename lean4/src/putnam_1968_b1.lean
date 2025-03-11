@@ -4,7 +4,7 @@ open MeasureTheory
 open scoped ProbabilityTheory
 
 def putnam_1968_b1_solution : ℝ → ℝ → ℝ → ℝ := sorry
-
+-- fun a b c => a + b - c
 /--
 The random variables $X, Y$ can each take a finite number of integer values. They are not necessarily independent. Express $\mathrm{prob}(\min(X, Y) = k)$ in terms of $p_1 = \mathrm{prob}(X = k)$, $p_2 = \mathrm{prob}(Y = k)$ and $p_3 = \mathrm{prob(max(X, Y) = k)$.
 -/
