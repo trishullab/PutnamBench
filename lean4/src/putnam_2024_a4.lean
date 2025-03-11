@@ -11,5 +11,5 @@ theorem putnam_2024_a4 :
       ∃ e : ℕ → ℕ, Set.BijOn e (Set.Icc 0 (p - 5 : ℕ)) (Set.Icc 0 (p - 5 : ℕ)) ∧
         ∀ n, 1 ≤ n ∧ n ≤ (p - 5 : ℕ) →
           (p : ℤ) ∣ a ^ (e n : ℕ) - a ^ (e (n - 1) : ℕ) - r} =
-    putnam_2024_a4_solution := by
+    putnam_2024_a4_solution :=
   sorry

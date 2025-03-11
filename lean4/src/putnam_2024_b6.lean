@@ -15,5 +15,5 @@ theorem putnam_2024_b6
       HasSum (fun (n : ℕ) => (n+1)^a * rexp (2*(n+1)) * x^(n+1)^2) (F a x)) :
     ((∀ a < c, Filter.Tendsto (fun x => F a x * rexp (- 1 / (1-x))) (𝓝[<] 1) (𝓝 0)) ∧
     (∀ a > c, Filter.Tendsto (fun x => F a x * rexp (- 1 / (1-x))) (𝓝[<] 1) Filter.atTop))
-    ↔ c = putnam_2024_b6_solution := by
+    ↔ c = putnam_2024_b6_solution :=
   sorry

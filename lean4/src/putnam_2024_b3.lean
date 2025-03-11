@@ -16,5 +16,5 @@ theorem putnam_2024_b3
         Real.tan (r n) = r n ∧
         ∀ x, x ∈ Set.Ioo (r n) (r (n + 1)) → Real.tan x ≠ x)
     (n : ℕ+) :
-    r (n + 1) - r n - Real.pi ∈ Set.Ioo (0 : ℝ) (1 / ((n ^ 2 + n) * Real.pi)) := by
+    r (n + 1) - r n - Real.pi ∈ Set.Ioo (0 : ℝ) (1 / ((n ^ 2 + n) * Real.pi)) :=
   sorry
