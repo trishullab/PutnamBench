@@ -52,6 +52,16 @@
       "condensed-compute-budget": "pass@1",
       "note": "pass@1 w/ t=120s; 1971 B1, 2001 A1, 2012 A2."
     },
+    "Deepseek R1": {
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 0
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note: pass@1 evaluated using FTPEvals, commit 0da3032, cost: ~$5"
+    },
     "ReProver w/ retrieval": {
       "link": "https://arxiv.org/abs/2306.15626",
       "open-data": "FULL",
@@ -131,5 +141,45 @@
       "size": 7.0,
       "condensed-compute-budget": "pass@3200",
       "note": "pass@3200 w/ T = 0.7, w/ miniF2F-valid, ProofNet-valid; 1986 B1, 1988 B2, 2008 A1, 1988 B1, 1977 A3, 2001 A1, 1986 A1, 1990 A1. Commit: b377431; pass@64 yields 7/644"
+    },
+    "o3-mini" : {
+      "link": "https://openai.com/index/openai-o3-mini/",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 0
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note" : "pass@1 using FTPEvals, commit 0da3032, cost: $20"
+    },
+    "claude-3.7-sonnet" : {
+      "link": "https://www.anthropic.com/claude/sonnet",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 0
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note" : "pass@1 using FTPEvals, commit 0da3032, cost: $21"
+    },
+    "gemini-2.0-flash-thinking-121" : {
+      "link": "https://deepmind.google/technologies/gemini/flash-thinking/",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 0
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note" : "pass@1 using FTPEvals, commit 0da3032, cost: free"
+    },
+    "GPT-4o-mini": {
+      "link": "https://openai.com/index/hello-gpt-4o/",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 0
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note": "pass@1 w/ T=0.7; evaluated using FTPEvals"
     }
 }
