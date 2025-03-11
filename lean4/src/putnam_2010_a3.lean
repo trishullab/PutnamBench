@@ -6,7 +6,7 @@ Suppose that the function $h : \mathbb{R}^2 → \mathbb{R}$ has continuous parti
 theorem putnam_2010_a3
     (h : ℝ × ℝ → ℝ)
     (a b M : ℝ)
-    (H : Differentiable ℝ h)
+    (H : ContDiff ℝ 1 h)
     (H' : ∀ x, h x = a * (fderiv ℝ h (1, 0) x) + (fderiv ℝ h (0, 1) x))
     (H'' : ∀ x, |h x| ≤ M) : h = 0 :=
   sorry
