@@ -17,5 +17,5 @@ theorem putnam_2024_b5
         IsQualifyingSeq x z ∧ IsQualifyingSeq y z ∧ z ≤ n}.ncard) :
     ∃ P : ℚ[X],
       (∀ n > 0, f n = P.eval (n : ℚ)) ∧
-      (∀ i, 0 ≤ P.coeff i) := by
+      (∀ i, 0 ≤ P.coeff i) :=
   sorry

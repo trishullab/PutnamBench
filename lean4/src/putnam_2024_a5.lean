@@ -22,5 +22,5 @@ theorem putnam_2024_a5
           ((WithLp.equiv _ _).symm ![9 * Real.cos (2 * Real.pi * s), 9 * Real.sin (2 * Real.pi * s)])
           ((WithLp.equiv _ _).symm ![9 * Real.cos (2 * Real.pi * t), 9 * Real.sin (2 * Real.pi * t)]) }) :
     {r | r ∈ Set.Icc 0 8 ∧ ProbIntersect r = ⨅ x ∈ Set.Icc 0 8, ProbIntersect x} =
-      putnam_2024_a5_solution := by
+      putnam_2024_a5_solution :=
   sorry
