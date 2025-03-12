@@ -60,7 +60,7 @@
       },
       "size": 0,
       "condensed-compute-budget": "pass@1",
-      "note: pass@1 evaluated using FTPEvals, commit 0da3032, cost: ~$5"
+      "note": "pass@1 evaluated using FTPEvals, commit 0da3032, cost: ~$3"
     },
     "ReProver w/ retrieval": {
       "link": "https://arxiv.org/abs/2306.15626",
