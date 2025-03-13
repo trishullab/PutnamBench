@@ -3,8 +3,7 @@ import Mathlib
 noncomputable abbrev putnam_2024_a3_solution : Prop := sorry
 --True
 /--
-Let $S$ be the set of bijections
-$$T : \{1, 2, 3\} \times \{1, 2, ..., 2024\} \to \{1, 2, ..., 6072\}$$
+Let $S$ be the set of bijections $$T : \{1, 2, 3\} \times \{1, 2, ..., 2024\} \to \{1, 2, ..., 6072\}$$
 such that $T(1, j) < T(2, j) < T(3, j)$ for all $j \in \{1, 2, ..., 2024\}$ and
 $T(i, j) < T(i, j + 1)$ for all $i \in \{1, 2, 3\}$ and $j \in \{1, 2, ..., 2023\}$.
 Do there exist $a, c$ in $\{1, 2, 3\}$ and $b$ and $d$ in $\{1, 2, ..., 2024\}$ such that

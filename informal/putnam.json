@@ -5378,7 +5378,7 @@
     },
     {
         "problem_name": "putnam_2024_b4",
-        "informal_statement": "Let $n$ be a positive integer. Set $a_{n, 0} = 1$. For $k \\geq 0$\nchoose an integer $m_{n, k}$ uniformly at random from the set\n$\\{1, 2, \\ldots, n\\}$, and let\n$$a_{n, k+1} = \\begin{cases} a_{n, k} + 1 & \\text{if } m_{n, k} > a_{n, k} \\\\\na_{n, k} & \\text{ if } m_{n, k} = a_{n, k} \\\\\na_{n, k} -1 & \\text{if } m_{n, k} < a_{n, k} \\end{cases}$$.\nLet $E(n)$ be the expected value of $a_{n, n}$. Determine\n$\\lim_{n \\to \\infty} E(n)/n$.",
+        "informal_statement": "Let $n$ be a positive integer. Set $a_{n, 0} = 1$. For $k \\geq 0$\nchoose an integer $m_{n, k}$ uniformly at random from the set\n$\\{1, 2, \\ldots, n\\}$, and let\n$$a_{n, k+1} = \\begin{cases}\na_{n, k} + 1 & \\text{if } m_{n, k} > a_{n, k} \\\\\na_{n, k} & \\text{ if } m_{n, k} = a_{n, k} \\\\\na_{n, k} -1 & \\text{if } m_{n, k} < a_{n, k} \\end{cases}$$.\nLet $E(n)$ be the expected value of $a_{n, n}$. Determine\n$\\lim_{n \\to \\infty} E(n)/n$.",
         "informal_solution": "Show that the limit is $\\frac{1 - e^{-2}}{2}$.",
         "tags": [
             "probability"
