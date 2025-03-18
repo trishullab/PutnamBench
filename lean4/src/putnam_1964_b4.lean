@@ -3,8 +3,8 @@ import Mathlib
 open Classical
 open scoped InnerProductSpace
 
-abbrev putnam_1964_b4_solution (n : ℕ) : ℕ := sorry
---n^2 - n + 2
+abbrev putnam_1964_b4_solution : ℕ → ℕ := sorry
+--fun n => n^2 - n + 2
 
 /--
 $n$ great circles on the sphere are in general position (in other words at most two circles pass through any two points on the sphere). How many regions do they divide the sphere into?
