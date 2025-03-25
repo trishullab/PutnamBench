@@ -30,5 +30,5 @@ theorem putnam_1964_b4
       R ⊆ Metric.sphere 0 1 ∧ R.Nonempty ∧ ∃ sign : Fin n → SignType,
       (∀ i, sign i ≠ 0) ∧
       R = {x : EuclideanSpace ℝ (Fin 3) | ∀ i, signHom ⟪v i, x⟫_ℝ = sign i}) :
-    {R | IsRegion R}.ncard = putnam_1964_b4_solution (n+1) :=
+    {R | IsRegion R}.ncard = putnam_1964_b4_solution n :=
   sorry
