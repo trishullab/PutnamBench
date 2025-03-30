@@ -172,17 +172,15 @@
       "condensed-compute-budget": "pass@1",
       "note" : "pass@1 using FTPEvals, commit 0da3032, cost: free, 1977 A3"
     },
-    {
-      "gemini-2.5-pro-exp-0325": {
-        "link": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/",
-        "open-data": "NONE",
-        "num-solved": {
-          "lean-wsolution": 3
-        },
-        "size": 0,
-        "condensed-compute-budget": "pass@1",
-        "note": "pass@1 using FTPEvals, commit 0da3032, cost: free; 2001 A1, 2012 A2, 1977 A3."
-      }
+    "gemini-2.5-pro-exp-0325": {
+      "link": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 3
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note": "pass@1 using FTPEvals, commit 0da3032, cost: free; 2001 A1, 2012 A2, 1977 A3."
     },
     "GPT-4o-mini": {
       "link": "https://openai.com/index/hello-gpt-4o/",
