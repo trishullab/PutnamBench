@@ -56,11 +56,11 @@
       "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
       "open-data": "FULL",
       "num-solved": {
-        "lean-wsolution": 0
+        "lean-wsolution": 1
       },
-      "size": 0,
+      "size": 37,
       "condensed-compute-budget": "pass@1",
-      "note": "pass@1 evaluated using FTPEvals, commit 0da3032, cost: ~$3"
+      "note": "MoE model, 671B param -> 37B active. pass@1 evaluated using FTPEvals, commit 0da3032, cost: ~$3, 1977 A3."
     },
     "ReProver w/ retrieval": {
       "link": "https://arxiv.org/abs/2306.15626",
@@ -166,11 +166,23 @@
       "link": "https://deepmind.google/technologies/gemini/flash-thinking/",
       "open-data": "NONE",
       "num-solved": {
-        "lean-wsolution": 0
+        "lean-wsolution": 1
       },
       "size": 0,
       "condensed-compute-budget": "pass@1",
-      "note" : "pass@1 using FTPEvals, commit 0da3032, cost: free"
+      "note" : "pass@1 using FTPEvals, commit 0da3032, cost: free, 1977 A3"
+    },
+    {
+      "gemini-2.5-pro-exp-0325": {
+        "link": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/",
+        "open-data": "NONE",
+        "num-solved": {
+          "lean-wsolution": 3
+        },
+        "size": 0,
+        "condensed-compute-budget": "pass@1",
+        "note": "pass@1 using FTPEvals, commit 0da3032, cost: free; 2001 A1, 2012 A2, 1977 A3."
+      }
     },
     "GPT-4o-mini": {
       "link": "https://openai.com/index/hello-gpt-4o/",
