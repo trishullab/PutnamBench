@@ -239,6 +239,14 @@
         ]
     },
     {
+        "problem_name": "putnam_1964_b4", 
+        "informal_statement": "$n$ great circles on the sphere are in general position (in other words at most two circles pass through any two points on the sphere). How many regions do they divide the sphere into?",
+        "informal_solution": "n^2 - n + 2", 
+        "tags": [
+            "geometry"
+        ]
+    },
+    {
         "problem_name": "putnam_1964_b5",
         "informal_statement": "Let $a_n$ be a strictly monotonic increasing sequence of positive integers. Let $b_n$ be the least common multiple of $a_1, a_2, \\dots , a_n$. Prove that $\\sum_{n=1}^{\\infty} 1/b_n$ converges.",
         "informal_solution": "None.",
