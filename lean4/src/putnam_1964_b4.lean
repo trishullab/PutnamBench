@@ -26,9 +26,7 @@ theorem putnam_1964_b4
     (IsRegion : Set (EuclideanSpace ℝ (Fin 3)) → Prop)
     -- We can determine the points `x` in such a region by looking at the sign of their dot product
     -- with `n i` for `i : Fin n`
-    (IsRegion_def : ∀ R, IsRegion R ↔
-      R ⊆ Metric.sphere 0 1 ∧ R.Nonempty ∧ ∃ sign : Fin n → SignType,
-      (∀ i, sign i ≠ 0) ∧
-      R = {x : EuclideanSpace ℝ (Fin 3) | ∀ i, signHom ⟪v i, x⟫_ℝ = sign i}) :
+    (IsRegion_def : ∀ R, IsRegion R ↔ R.Nonempty ∧ ∃ sign : Fin n → SignType, (∀ i, sign i ≠ 0) ∧
+      R = Metric.sphere 0 1 ∩ {x : EuclideanSpace ℝ (Fin 3) | ∀ i, signHom ⟪v i, x⟫_ℝ = sign i}) :
     {R | IsRegion R}.ncard = putnam_1964_b4_solution n :=
   sorry
