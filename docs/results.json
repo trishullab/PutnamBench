@@ -134,7 +134,7 @@
     },
     "Self-play Theorem Prover": {
       "link": "https://github.com/kfdong/STP",
-      "open-data": "NONE",
+      "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 8
       },
@@ -191,5 +191,15 @@
       "size": 0,
       "condensed-compute-budget": "pass@1",
       "note": "pass@1 w/ T=0.7; evaluated using FTPEvals"
+    },
+    "DeepSeek-V3-0324": {
+      "link": "https://api-docs.deepseek.com/news/news250325",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 0
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note": "pass@1 using FTPEvals, commit 0da3032, cost: $2"
     }
 }
