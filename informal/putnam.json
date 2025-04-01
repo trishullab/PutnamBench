@@ -713,6 +713,14 @@
         ]
     },
     {
+        "problem_name": "putnam_1969_b4", 
+        "informal_statement": "$Γ$ is a plane curve of length 1. Show that we can find a closed rectangle of area 1/4 which covers $Γ$.", 
+        "informal_solution": "None.", 
+        "tags": [
+            "geometry"
+        ]
+    },
+    {
         "problem_name": "putnam_1969_b5",
         "informal_statement": "Let $a_1 < a_2 < a_3 < \\dots$ be an increasing sequence of positive integers. Assume that the sequences $\\sum_{i = 1}^{\\infty} 1/(a n)$ is convergent. For any number $x$, let $k(x)$ be the number of $a_n$'s which do not exceed $x$. Show that $\\lim_{x \\to \\infty} k(x)/x = 0$.",
         "informal_solution": "None.",
