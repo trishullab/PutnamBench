@@ -211,5 +211,15 @@
       "size": 0,
       "condensed-compute-budget": "pass@1",
       "note": "pass@1 using FTPEvals, commit 0da3032, cost: <$1"
+    },
+    "Kimina-Prover-7B-Distill": {
+      "link": "https://huggingface.co/AI-MO/Kimina-Prover-Preview-Distill-7B",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 10
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@192",
+      "note": "pass@192, T = 1.0, commit beb8de9, problems: 1977 A3, 1986 A1, 1986 A2, 1986 B1, 1988 B1, 1988 B2, 1990 A6, 2001 A1, 2008 A1, 2020 B1"
     }
 }
