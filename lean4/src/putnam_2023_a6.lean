@@ -20,6 +20,6 @@ theorem putnam_2023_a6
       ∀ (g : List ℕ), g.length > 0 → s g ∈ g)
     (IsWinningFor : ℕ → (List ℕ → ℕ) → Prop)
     (IsWinningFor_def : ∀ n s, IsWinningFor n s ↔
-      ∃ p, ∀ g, g.length = n → IsValidGame g → IsValidStrategy s → ConformsToStrategy g s → parityOf g = p) :
+      IsValidStrategy s ∧ ∃ p, ∀ g, g.length = n → IsValidGame g → ConformsToStrategy g s → parityOf g = p) :
     {n : ℕ | 0 < n ∧ ∃ s, IsWinningFor n s} = putnam_2023_a6_solution :=
   sorry
