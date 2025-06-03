@@ -231,5 +231,15 @@
       "size": 0,
       "condensed-compute-budget": "pass@1",
       "note": "pass@1 using FTPEvals, commit 0da3032, cost: $19; 2001 A1, 2012 A2."
-    }
+    },
+    "DeepSeek-Prover-V2": {
+      "link": "https://arxiv.org/abs/2504.21801",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 47
+      },
+      "size": 671,
+      "condensed-compute-budget": "pass@1024",
+      "note": "pass@1024 by authors, commit 0a59dcd, problems: 1962_a6, 1962_b2, 1963_b1, 1965_a6, 1965_b3, 1966_a5, 1968_a1, 1968_a2, 1970_b3, 1971_b1, 1975_a1, 1975_b1, 1977_a3, 1980_b3, 1984_b2, 1985_a3, 1985_a4, 1986_a2, 1986_b1,1988_b1, 1988_b2, 1989_a3, 1990_a1, 1990_a5, 1991_a2, 1992_a1, 1993_a2, 1993_b1, 1995_a1, 1995_b4, 1997_b2, 1998_b1, 1999_a1, 2000_a2, 2000_b2, 2001_a1, 2003_b1, 2005_b1, 2008_a1, 2009_a1, 2010_a3, 2011_b1, 2012_a2, 2012_b1, 2015_a2"
+    } 
 }
