@@ -5157,6 +5157,14 @@
         ]
     },
     {
+        "problem_name": "putnam_2022_a4", 
+        "informal_statement": "Suppose $X_1, X_2, ...$ real numbers between 0 and 1 that are chosen independently and uniformly at random. Let $S = \\sum_{i=1}^k X_i / 2^i $ where $k$ is the least positive integer such that $X_k < X_{k+1}$ or $k = \\infty$ if there is no such integer. Find the expected value of $S$",
+        "informal_solution": "2*e^{-1/2} - 3", 
+        "tags": [
+            "probability"
+        ]
+    },
+    {
         "problem_name": "putnam_2022_a5",
         "informal_statement": "Alice and Bob play a game on a board consisting of one row of 2022 consecutive squares. They take turns placing tiles that cover two adjacent squares, with Alice going first. By rule, a tile must not cover a square that is already covered by another tile. The game ends when no tile can be placed according to this rule. Alice's goal is to maximize the number of uncovered squares when the game ends; Bob's goal is to minimize it. What is the greatest number of uncovered squares that Alice can ensure at the end of the game, no matter how Bob plays?",
         "informal_solution": "Show that the solution is 290.",
