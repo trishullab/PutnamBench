@@ -7,6 +7,6 @@ Let \[ P_n(x) = 1 + 2 x  + 3 x^2 + \cdots + n x^{n-1}.\] Prove that the polynomi
 -/
 theorem putnam_2014_a5
 (P : ℕ → Polynomial ℂ)
-(hP : ∀ n, P n = ∑ i in Finset.Icc 1 n, i * Polynomial.X ^ (i - 1))
+(hP : ∀ n, P n = ∑ i ∈ Finset.Icc 1 n, i * Polynomial.X ^ (i - 1))
 : ∀ (j k : ℕ), (j > 0 ∧ k > 0) → j ≠ k → IsCoprime (P j) (P k) :=
 sorry

@@ -13,6 +13,6 @@ theorem putnam_1975_b2
 (thicknesses : ℕ → ℝ)
 (hnormalsunit : ∀ i : ℕ, ‖normals i‖ = 1)
 (hthicknessespos : ∀ i : ℕ, thicknesses i > 0)
-(hthicknessesconv : ∃ C : ℝ, Tendsto (fun i : ℕ => ∑ j in Finset.range i, thicknesses j) atTop (𝓝 C))
+(hthicknessesconv : ∃ C : ℝ, Tendsto (fun i : ℕ => ∑ j ∈ Finset.range i, thicknesses j) atTop (𝓝 C))
 : Set.univ ≠ ⋃ i : ℕ, slab (normals i) (offsets i) (thicknesses i) :=
 sorry

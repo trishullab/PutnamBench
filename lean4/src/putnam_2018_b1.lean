@@ -13,6 +13,6 @@ theorem putnam_2018_b1
 (hPvdiff : Pvdiff = P \ ({v} : Finset (Fin 2 → ℤ)))
 : (v ∈ P ∧ (∃ Q R : Finset (Fin 2 → ℤ),
     (Q ∪ R = Pvdiff) ∧ (Q ∩ R = ∅) ∧ (Q.card = R.card) ∧
-    (∑ q in Q, q 0 = ∑ r in R, r 0) ∧ (∑ q in Q, q 1 = ∑ r in R, r 1)))
+    (∑ q ∈ Q, q 0 = ∑ r ∈ R, r 0) ∧ (∑ q ∈ Q, q 1 = ∑ r ∈ R, r 1)))
   ↔ v ∈ putnam_2018_b1_solution :=
 sorry

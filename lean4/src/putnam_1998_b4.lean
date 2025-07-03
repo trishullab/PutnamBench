@@ -9,7 +9,7 @@ Find necessary and sufficient conditions on positive integers $m$ and $n$ so tha
 -/
 theorem putnam_1998_b4
   (quantity : ℕ → ℕ → ℤ)
-  (hquantity : quantity = fun n m => ∑ i in Finset.range (m * n), (-1)^(i/m + i/n))
+  (hquantity : quantity = fun n m => ∑ i ∈ Finset.range (m * n), (-1)^(i/m + i/n))
   (n m : ℕ)
   (hnm : n > 0 ∧ m > 0) :
   quantity n m = 0 ↔ ⟨n, m⟩ ∈ putnam_1998_b4_solution :=

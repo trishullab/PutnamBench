@@ -8,5 +8,5 @@ For any positive integer $n$, prove that the sum of the first $n$ terms of the b
 theorem putnam_1967_b5
 (n : ℕ)
 (hn : n > 0)
-: (1 : ℚ)/2 = ∑ i in Finset.range n, (Nat.choose (n + i - 1) i) * (2 : ℚ)^(-(n : ℤ) - i) :=
+: (1 : ℚ)/2 = ∑ i ∈ Finset.range n, (Nat.choose (n + i - 1) i) * (2 : ℚ)^(-(n : ℤ) - i) :=
 sorry
