@@ -10,5 +10,5 @@ For each positive integer $n$, write the sum $\sum_{m=1}^n 1/m$ in the form $p_n
 theorem putnam_1997_b3
 (n : ℕ)
 (hn : n > 0)
-: n ∈ putnam_1997_b3_solution ↔ ¬5 ∣ (∑ m in Finset.Icc 1 n, 1/m : ℚ).den :=
+: n ∈ putnam_1997_b3_solution ↔ ¬5 ∣ (∑ m ∈ Finset.Icc 1 n, 1/m : ℚ).den :=
 sorry

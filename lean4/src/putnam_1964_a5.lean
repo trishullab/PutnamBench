@@ -10,7 +10,7 @@ Prove that there exists a constant $k$ such that for any sequence $a_i$ of posit
 -/
 theorem putnam_1964_a5
     (pa : (ℕ → ℝ) → Prop)
-    (hpa : ∀ a, pa a ↔ (∀ n : ℕ, a n > 0) ∧ ∃ L : ℝ, Tendsto (fun N ↦ ∑ n in Finset.range N, 1 / a n) atTop (𝓝 L)) :
+    (hpa : ∀ a, pa a ↔ (∀ n : ℕ, a n > 0) ∧ ∃ L : ℝ, Tendsto (fun N ↦ ∑ n ∈ Finset.range N, 1 / a n) atTop (𝓝 L)) :
     ∃ k : ℝ, ∀ a : ℕ → ℝ, pa a →
-      ∑' n : ℕ, (n + 1) / (∑ i in Finset.range (n + 1), a i) ≤ k * ∑' n : ℕ, 1 / a n :=
+      ∑' n : ℕ, (n + 1) / (∑ i ∈ Finset.range (n + 1), a i) ≤ k * ∑' n : ℕ, 1 / a n :=
   sorry

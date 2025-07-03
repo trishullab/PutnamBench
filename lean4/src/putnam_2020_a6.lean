@@ -14,6 +14,6 @@ Determine the smallest constant $M$ such that $f_N(x) \leq M$ for all $N$ and al
 theorem putnam_2020_a6
   (f : ℤ → (ℝ → ℝ))
   (hf : f = fun N : ℤ => fun x : ℝ =>
-    ∑ n in Finset.Icc 0 N, (N + 1/2 - n)/((N + 1)*(2*n + 1)) * Real.sin ((2*n + 1)*x))
+    ∑ n ∈ Finset.Icc 0 N, (N + 1/2 - n)/((N + 1)*(2*n + 1)) * Real.sin ((2*n + 1)*x))
   : putnam_2020_a6_solution = sSup {y | ∃ᵉ (N > 0) (x : ℝ), y = f N x} :=
 sorry

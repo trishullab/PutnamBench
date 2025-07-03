@@ -9,8 +9,8 @@ Let $$f(x, n) = \frac{{n \choose 0} + {n \choose 2}x + {n \choose 4}x^2 + \cdots
 -/
 theorem putnam_1965_b4
     (f u v : ℕ → ℝ → ℝ)
-    (hu : ∀ n > 0, ∀ x, u n x = ∑ i in Finset.Icc 0 (n / 2), (n.choose (2 * i)) * x ^ i)
-    (hv : ∀ n > 0, ∀ x, v n x = ∑ i in Finset.Icc 0 ((n - 1) / 2), (n.choose (2 * i + 1)) * x ^ i)
+    (hu : ∀ n > 0, ∀ x, u n x = ∑ i ∈ Finset.Icc 0 (n / 2), (n.choose (2 * i)) * x ^ i)
+    (hv : ∀ n > 0, ∀ x, v n x = ∑ i ∈ Finset.Icc 0 ((n - 1) / 2), (n.choose (2 * i + 1)) * x ^ i)
     (hf : ∀ n > 0, ∀ x, f n x = u n x / v n x)
     (n : ℕ)
     (hn : 0 < n) :
