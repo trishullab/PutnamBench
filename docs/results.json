@@ -251,5 +251,15 @@
       "size": 671,
       "condensed-compute-budget": "pass@128",
       "note": "pass@128 by authors, commit 5e5e59a backported to 4.17.0 rc1, problems: 1967 B2, 1968 A1, 1970 B3, 1971 B1, 1977 A3, 1985 A4, 1986 A1, 1986 B1, 1987 A1, 1988 B1, 1988 B2, 1990 A1, 1990 A5, 1993 A2, 1993 B1, 1995 A1, 1998 B1, 1999 A1, 2000 A2, 2001 A1, 2005 B1, 2008 A1, 2012 A2"
+    },
+    "Bourbaki": {
+      "link": "bourbaki-prover.github.io",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 14
+      },
+      "size": 7,
+      "condensed-compute-budget": "pass@512",
+      "note": "pass@512, base model = DeepSeekProver7B, commit 0a59dcd, problems: 1967 B2, 1971 B1, 1977 A3, 1986 A1, 1986 A2, 1986 B1, 1988 B1, 1988 B2, 1990 A1, 1990 A6, 1993 B1, 2001 A1, 2008 A1, 2020 B1"
     }
 }
