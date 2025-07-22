@@ -262,8 +262,8 @@
       "condensed-compute-budget": "pass@512",
       "note": "pass@512, base model = DeepSeekProver7B, commit 0a59dcd, problems: 1967 B2, 1971 B1, 1977 A3, 1986 A1, 1986 A2, 1986 B1, 1988 B1, 1988 B2, 1990 A1, 1990 A6, 1993 B1, 2001 A1, 2008 A1, 2020 B1"
     },
-    "Goedel-Prover (V2)": {
-      "link": "https://goedel-lm.github.io/",
+    "Goedel-Prover-V2": {
+      "link": "https://blog.goedel-prover.com/",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 86
