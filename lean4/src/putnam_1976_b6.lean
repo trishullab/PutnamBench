@@ -7,7 +7,7 @@ Let $\sigma(N)$ denote the sum of all positive integer divisors of $N$, includin
 -/
 theorem putnam_1976_b6
 (σ : ℕ → ℤ)
-(hσ : σ = fun N : ℕ => ∑ d in Nat.divisors N, (d : ℤ))
+(hσ : σ = fun N : ℕ => ∑ d ∈ Nat.divisors N, (d : ℤ))
 (quasiperfect : ℕ → Prop)
 (quasiperfect_def : ∀ N, quasiperfect N ↔ σ N = 2*N + 1)
 : ∀ N : ℕ, quasiperfect N → ∃ m : ℤ, Odd m ∧ m^2 = N :=

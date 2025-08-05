@@ -30,6 +30,6 @@ theorem putnam_2013_a6
   (hwn4 : w 0 (-1) = -4 ∧ w (-1) 0 = -4 ∧ w 1 0 = -4 ∧ w 0 1 = -4)
   (hw12 : w 0 0 = 12)
   (hw0 : ∀ a b : ℤ, (|a| > 2 ∨ |b| > 2) → w a b = 0)
-  (hA : ∀ S, A S = ∑ s in S, ∑ s' in S, w (s - s').1 (s - s').2) :
+  (hA : ∀ S, A S = ∑ s ∈ S, ∑ s' ∈ S, w (s - s').1 (s - s').2) :
   ∀ S : Finset (ℤ × ℤ), Nonempty S → A S > 0 :=
 sorry

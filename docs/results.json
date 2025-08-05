@@ -52,6 +52,16 @@
       "condensed-compute-budget": "pass@1",
       "note": "pass@1 w/ t=120s; 1971 B1, 2001 A1, 2012 A2."
     },
+    "Deepseek R1": {
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 1
+      },
+      "size": 37,
+      "condensed-compute-budget": "pass@1",
+      "note": "MoE model, 671B param -> 37B active. pass@1 evaluated using FTPEvals, commit 0da3032, cost: ~$3, 1977 A3."
+    },
     "ReProver w/ retrieval": {
       "link": "https://arxiv.org/abs/2306.15626",
       "open-data": "FULL",
@@ -92,6 +102,16 @@
       "condensed-compute-budget": "pass@4096",
       "note": "pass@2048 w/ T = 1.0 + pass@2048 w/ T = 0.7"
     },
+    "Goedel-Prover-SFT": {
+      "link": "https://goedel-lm.github.io/",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 7
+      },
+      "size": 7,
+      "condensed-compute-budget": "pass@512",
+      "note": "pass@512, T = 1.0, top_p = 0.95; 1977 A3, 1986 A1, 1986 B1, 1988 B1, 2001 A1, 2008 A1, commit: 06a1de1"
+    },
     "ABEL": {
       "link": "https://openreview.net/forum?id=kk3mSjVCUO",
       "open-data": "NONE",
@@ -111,5 +131,145 @@
       "size": 8.8,
       "condensed-compute-budget": "pass@2x32x600",
       "note": "pass @ 2 x 32 states x 600 state expansions proof search; 1977 A3, 1986 A1, 1986 B1, 1988 B1, 1988 B2, 2001 A1. Commit: b377431"
+    },
+    "Self-play Theorem Prover": {
+      "link": "https://github.com/kfdong/STP",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 8
+      },
+      "size": 7.0,
+      "condensed-compute-budget": "pass@3200",
+      "note": "pass@3200 w/ T = 0.7, w/ miniF2F-valid, ProofNet-valid; 1986 B1, 1988 B2, 2008 A1, 1988 B1, 1977 A3, 2001 A1, 1986 A1, 1990 A1. Commit: b377431; pass@64 yields 7/644"
+    },
+    "o3-mini" : {
+      "link": "https://openai.com/index/openai-o3-mini/",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 0
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note" : "pass@1 using FTPEvals, commit 0da3032, cost: $20"
+    },
+    "claude-3.7-sonnet" : {
+      "link": "https://www.anthropic.com/claude/sonnet",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 0
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note" : "pass@1 using FTPEvals, commit 0da3032, cost: $21"
+    },
+    "gemini-2.0-flash-thinking-121" : {
+      "link": "https://deepmind.google/technologies/gemini/flash-thinking/",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 1
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note" : "pass@1 using FTPEvals, commit 0da3032, cost: free, 1977 A3"
+    },
+    "gemini-2.5-pro-exp-0325": {
+      "link": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 3
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note": "pass@1 using FTPEvals, commit 0da3032, cost: free; 2001 A1, 2012 A2, 1977 A3."
+    },
+    "GPT-4o-mini": {
+      "link": "https://openai.com/index/hello-gpt-4o/",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 0
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note": "pass@1 w/ T=0.7; evaluated using FTPEvals"
+    },
+    "DeepSeek-V3-0324": {
+      "link": "https://api-docs.deepseek.com/news/news250325",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 0
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note": "pass@1 using FTPEvals, commit 0da3032, cost: $2"
+    },
+    "Grok-3-mini": {
+      "link": "https://www.x.ai/grok",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 0
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note": "pass@1 using FTPEvals, commit 0da3032, cost: <$1"
+    },
+    "Kimina-Prover-7B-Distill": {
+      "link": "https://huggingface.co/AI-MO/Kimina-Prover-Preview-Distill-7B",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 10
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@192",
+      "note": "pass@192, T = 1.0, commit beb8de9, problems: 1977 A3, 1986 A1, 1986 A2, 1986 B1, 1988 B1, 1988 B2, 1990 A6, 2001 A1, 2008 A1, 2020 B1"
+    },
+    "o4-mini-high": {
+      "link": "https://openai.com/index/introducing-o3-and-o4-mini/",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 2
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1",
+      "note": "pass@1 using FTPEvals, commit 0da3032, cost: $19; 2001 A1, 2012 A2."
+    },
+    "DeepSeek-Prover-V2": {
+      "link": "https://arxiv.org/abs/2504.21801",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 47
+      },
+      "size": 671,
+      "condensed-compute-budget": "pass@1024",
+      "note": "pass@1024 by authors, commit 0a59dcd, problems: 1962_a6, 1962_b2, 1963_b1, 1965_a6, 1965_b3, 1966_a5, 1968_a1, 1968_a2, 1970_b3, 1971_b1, 1975_a1, 1975_b1, 1977_a3, 1980_b3, 1984_b2, 1985_a3, 1985_a4, 1986_a2, 1986_b1,1988_b1, 1988_b2, 1989_a3, 1990_a1, 1990_a5, 1991_a2, 1992_a1, 1993_a2, 1993_b1, 1995_a1, 1995_b4, 1997_b2, 1998_b1, 1999_a1, 2000_a2, 2000_b2, 2001_a1, 2003_b1, 2005_b1, 2008_a1, 2009_a1, 2010_a3, 2011_b1, 2012_a2, 2012_b1, 2015_a2"
+    },
+    "DSP+": {
+      "link": "https://arxiv.org/abs/2506.11487",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 23
+      },
+      "size": 671,
+      "condensed-compute-budget": "pass@128",
+      "note": "pass@128 by authors, commit 5e5e59a backported to 4.17.0 rc1, problems: 1967 B2, 1968 A1, 1970 B3, 1971 B1, 1977 A3, 1985 A4, 1986 A1, 1986 B1, 1987 A1, 1988 B1, 1988 B2, 1990 A1, 1990 A5, 1993 A2, 1993 B1, 1995 A1, 1998 B1, 1999 A1, 2000 A2, 2001 A1, 2005 B1, 2008 A1, 2012 A2"
+    },
+    "Bourbaki": {
+      "link": "bourbaki-prover.github.io",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 14
+      },
+      "size": 7,
+      "condensed-compute-budget": "pass@512",
+      "note": "pass@512, base model = DeepSeekProver7B, commit 0a59dcd, problems: 1967 B2, 1971 B1, 1977 A3, 1986 A1, 1986 A2, 1986 B1, 1988 B1, 1988 B2, 1990 A1, 1990 A6, 1993 B1, 2001 A1, 2008 A1, 2020 B1"
+    },
+    "Goedel-Prover-V2": {
+      "link": "https://blog.goedel-prover.com/",
+      "open-data": "FULL",
+      "num-solved": {
+        "lean-wsolution": 86
+      },
+      "size": 32,
+      "condensed-compute-budget": "pass@184",
+      "note": "pass@184, version 4.9.0, commit 0a59dcd, problems: 1962 A5, 1962 A6, 1962 B2, 1963 B1, 1964 A4, 1964 B2, 1965 A6, 1965 B2, 1965 B3, 1966 A1, 1966 A5, 1966 B6, 1967 B2, 1968 A1, 1968 A2, 1968 B2, 1969 A5, 1970 B5, 1971 A2, 1971 B1, 1971 B2, 1972 A5, 1973 B2, 1975 A1, 1975 B1, 1977 A3, 1977 A5, 1979 A3, 1979 B6, 1980 B3, 1981 B2, 1982 A5, 1984 B2, 1985 A3, 1985 A4, 1986 A1, 1986 A2, 1986 B1, 1986 B2, 1987 A1, 1987 B3, 1988 A2, 1988 B1, 1988 B2, 1990 A1, 1990 A5, 1990 A6, 1991 A2, 1991 B1, 1991 B2, 1992 A1, 1993 A2, 1993 B1, 1994 B5, 1995 A1, 1995 A3, 1995 B4, 1997 B2, 1998 B1, 1999 A1, 2000 A2, 2000 B2, 2001 A1, 2001 B1, 2001 B2, 2003 B4, 2004 A3, 2004 B2, 2004 B4, 2005 A4, 2005 B1, 2006 B5, 2007 A1, 2007 B1, 2008 A1, 2009 A1, 2010 A3, 2010 B1, 2011 B1, 2012 A2, 2012 B1, 2013 B1, 2015 A2, 2018 A1, 2019 A1"
     }
 }

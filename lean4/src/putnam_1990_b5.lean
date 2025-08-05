@@ -9,6 +9,6 @@ Is there an infinite sequence $a_0,a_1,a_2,\dots$ of nonzero real numbers such t
 -/
 theorem putnam_1990_b5 :
     (∃ a : ℕ → ℝ, (∀ i, a i ≠ 0) ∧
-      (∀ n ≥ 1, (∑ i in Finset.Iic n, a i • X ^ i : Polynomial ℝ).roots.toFinset.card = n)) ↔
+      (∀ n ≥ 1, (∑ i ∈ Finset.Iic n, a i • X ^ i : Polynomial ℝ).roots.toFinset.card = n)) ↔
     putnam_1990_b5_solution :=
   sorry

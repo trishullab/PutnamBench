@@ -9,7 +9,7 @@ Let $E(n)$ be the greatest integer $k$ such that $5^k$ divides $1^1 2^2 3^3 \cdo
 -/
 theorem putnam_1981_a1
     (P : ℕ → ℕ → Prop)
-    (hP : ∀ n k, P n k ↔ 5^k ∣ ∏ m in Finset.Icc 1 n, (m^m : ℤ))
+    (hP : ∀ n k, P n k ↔ 5^k ∣ ∏ m ∈ Finset.Icc 1 n, (m^m : ℤ))
     (E : ℕ → ℕ)
     (hE : ∀ n ∈ Ici 1, P n (E n) ∧ ∀ k : ℕ, P n k → k ≤ E n) :
     Tendsto (fun n : ℕ => ((E n) : ℝ)/n^2) atTop (𝓝 putnam_1981_a1_solution) :=

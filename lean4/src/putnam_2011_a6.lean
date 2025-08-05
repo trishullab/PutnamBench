@@ -16,6 +16,6 @@ theorem putnam_2011_a6
 (hk : gset.encard = k)
 (hgsetprop : k < n)
 (hgset1 : 1 ∈ gset)
-(hgsetgen : Group.closure gset = G)
+(hgsetgen : Subgroup.closure gset = ⊤)
 : ∃ b ∈ Set.Ioo (0 : ℝ) 1, ∃ C > 0, Tendsto (fun m : ℕ => (1 / b ^ (2 * m)) * (∑ x : G, (mgprob m x - 1 / n) ^ 2)) atTop (𝓝 C) :=
 sorry
