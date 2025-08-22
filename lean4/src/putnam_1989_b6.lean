@@ -1,6 +1,7 @@
 import Mathlib
 
 open Nat Filter Topology Set ProbabilityTheory
+open scoped Fin.CommRing
 
 -- Note: uses (ℝ → ℝ) instead of (Set.Icc 0 1 → ℝ)
 /--
