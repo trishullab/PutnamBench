@@ -1,7 +1,7 @@
 import Mathlib
 
 open Nat Filter Topology Set ProbabilityTheory
-
+open scoped Fin.CommRing
 
 -- Note: uses (ℝ → ℝ) instead of (Set.Icc 0 1 → ℝ)
 /--
@@ -10,19 +10,7 @@ Let $(x_1,x_2,\dots,x_n)$ be a point chosen at random from the $n$-dimensional r
 theorem putnam_1989_b6
     (n : ℕ) [NeZero n]
     (I : (Fin n → ℝ) → Fin (n + 2) → ℝ)
-    (I_def : ∀ x i, I x i = by
-      by_cases h0 : i = 0
-      · exact 0
-      · by_cases hn : i = n + 1
-        · exact  1
-        · exact  x ⟨(i : ℕ).pred, by
-            have : i < n + 1 := by omega
-            have : (i : ℕ) ≠ 0 := by
-              convert h0
-              exact Fin.val_eq_zero_iff
-            have := pred_lt this
-            omega
-            ⟩)
+    (I_def : ∀ x i, I x i = if i = 0 then 0 else if i = - 1 then 1 else x (i : ℕ).pred)
     (X : Set (Fin n → ℝ))
     (X_def : ∀ x, x ∈ X ↔ 0 < x 0 ∧ x (-1) < 1 ∧ ∀ (i : Fin n), i + 1 < n → x i < x (i + 1))
     (S : (ℝ → ℝ) → (Fin (n + 2) → ℝ) → ℝ)
