@@ -1,6 +1,7 @@
 import Mathlib
 
 open Nat Filter Topology Set ProbabilityTheory
+open scoped Fin.CommRing
 
 -- Note: uses (ℝ → ℝ) instead of (Set.Icc 0 1 → ℝ)
 /--
@@ -11,9 +12,9 @@ theorem putnam_1989_b6
     (I : (Fin n → ℝ) → Fin (n + 2) → ℝ)
     (I_def : ∀ x i, I x i = if i = 0 then 0 else if i = - 1 then 1 else x (i : ℕ).pred)
     (X : Set (Fin n → ℝ))
-    (X_def : ∀ x, x ∈ X ↔ 0 < x 0 ∧ x (-1) < 1 ∧ ∀ i, i + 1 < n → x i < x (i + 1))
+    (X_def : ∀ x, x ∈ X ↔ 0 < x 0 ∧ x (-1) < 1 ∧ ∀ (i : Fin n), i + 1 < n → x i < x (i + 1))
     (S : (ℝ → ℝ) → (Fin (n + 2) → ℝ) → ℝ)
-    (S_def : ∀ f x, S f x = ∑ i ∈ Finset.Iic n, (x (i + 1) - x i) * f (i + 1)) :
+    (S_def : ∀ f x, S f x = ∑ i ∈ Finset.Iic (α := Fin (n + 2)) ⟨n, by omega⟩, (x (i + 1) - x i) * f (i + 1)) :
     ∃ P : Polynomial ℝ,
       P.degree = n ∧
       (∀ t ∈ Icc 0 1, P.eval t ∈ Icc 0 1) ∧
