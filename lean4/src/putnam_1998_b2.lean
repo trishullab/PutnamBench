@@ -5,7 +5,7 @@ open Set Function Metric
 noncomputable abbrev putnam_1998_b2_solution : ℝ → ℝ → ℝ := sorry
 -- fun a b => if a > b then Real.sqrt (2*a^2 + 2*b^2) else 0
 /--
-Given a point $(a,b)$ with $0<b<a$, determine the minimum perimeter of a triangle with one vertex at $(a,b)$, one on the $x$-axis, and one on the line $y=x$.  You may assume that a triangle of minimum perimeter exists.
+Given a point $(a,b)$ with $0< b< a$, determine the minimum perimeter of a triangle with one vertex at $(a,b)$, one on the $x$-axis, and one on the line $y=x$.  You may assume that a triangle of minimum perimeter exists.
 -/
 theorem putnam_1998_b2
 (a b : ℝ)
