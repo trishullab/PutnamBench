@@ -50,10 +50,18 @@ def getSource (n : Name) : CoreM <| Option (Name × DeclarationRange) := do
   let .some mod ← Lean.findModuleOf? n | return none
   return some (mod, ranges.range)
 
+def escapeDocstring (s : String) : String := Id.run do
+  -- Add a space after `<` to ensure it isn't treated as HTML by VSCode's syntax highlighting.
+  match s.splitOn "<" with
+  | [] => s
+  | x :: parts =>
+    return x ++ (String.join <| parts.map fun p =>
+      if (p.get? 0 |>.map Char.isAlpha).getD false then s!"< {p}" else s!"<{p}")
+
 /-- Return true if the entry is ok -/
 def checkEntry (entry : InformalJsonEntry) : CoreM EntryResult := do
   let doc? := (← Lean.findDocString? (← getEnv) entry.problem_name).map String.trim
-  if doc? = some entry.informal_statement.trim then
+  if doc? = some (escapeDocstring entry.informal_statement.trim) then
     return .docMatching
   else if let .some doc := doc? then
     let srcInfo ← getSource entry.problem_name
@@ -62,7 +70,7 @@ def checkEntry (entry : InformalJsonEntry) : CoreM EntryResult := do
       \nPlease either change this docstring or modify the JSON file. Be careful to escape LaTeX when writing JSON.\
       \nThe JSON file currently contains:\
       \n\
-      \n{entry.informal_statement.trim}\
+      \n{escapeDocstring entry.informal_statement.trim}\
       \n\
       \nWhile the docstring contains:
       \n\
