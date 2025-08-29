@@ -14,7 +14,7 @@ theorem putnam_2022_a4
     (X : ℕ → Ω → ℝ)
     (hX : ∀ i, Measurable (X i))
     (hX' : ∀ i, MeasureTheory.pdf.IsUniform (X i) (Set.Icc 0 1) ℙ)
-    (hX'' : iIndepFun (fun i => inferInstance) X)
+    (hX'' : iIndepFun X)
     (k : Ω → Set ℕ)
     /-
     If there is an `l` such that `X_l < X_{l+1}` then this is `Set.Iic l` for the smallest such `l`

@@ -33,6 +33,6 @@ theorem putnam_2024_b4
           a n k ω
         else
           a n k ω - 1)
-    (h₃ : ProbabilityTheory.iIndepFun inferInstance m.uncurry ℙ) :
+    (h₃ : ProbabilityTheory.iIndepFun m.uncurry ℙ) :
     Filter.Tendsto (fun n => (∫ ω, a n n ω : ℝ) / n) Filter.atTop (𝓝 putnam_2024_b4_solution) :=
   sorry
