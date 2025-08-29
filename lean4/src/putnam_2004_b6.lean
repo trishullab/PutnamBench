@@ -3,7 +3,7 @@ import Mathlib
 open Nat Topology Filter
 
 /--
-Let $\mathcal{A}$ be a non-empty set of positive integers, and let $N(x)$ denote the number of elements of $\mathcal{A}$ not exceeding $x$. Let $\mathcal{B}$ denote the set of positive integers $b$ that can be written in the form $b=a-a'$ with $a \in \mathcal{A}$ and $a' \in \mathcal{A}$. Let $b_1<b_2<\cdots$ be the members of $\mathcal{B}$, listed in increasing order. Show that if the sequence $b_{i+1}-b_i$ is unbounded, then $\lim_{x \to\infty} N(x)/x=0$.
+Let $\mathcal{A}$ be a non-empty set of positive integers, and let $N(x)$ denote the number of elements of $\mathcal{A}$ not exceeding $x$. Let $\mathcal{B}$ denote the set of positive integers $b$ that can be written in the form $b=a-a'$ with $a \in \mathcal{A}$ and $a' \in \mathcal{A}$. Let $b_1< b_2<\cdots$ be the members of $\mathcal{B}$, listed in increasing order. Show that if the sequence $b_{i+1}-b_i$ is unbounded, then $\lim_{x \to\infty} N(x)/x=0$.
 -/
 theorem putnam_2004_b6
   (A B : Set ℕ)
