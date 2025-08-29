@@ -10,7 +10,7 @@ theorem putnam_1969_b4
     --Note: the problem doesn't say what regularity conditions we should impose on `Γ` - hopefully continuity is enough.
     (Γ_cts : ContinuousOn Γ (Set.Icc 0 1))
     (hΓ : eVariationOn Γ (Set.Icc 0 1) = 1) :
-    letI : Module.Oriented ℝ (EuclideanSpace ℝ (Fin 2)) (Fin 2) := ⟨Basis.orientation <| Pi.basisFun _ _⟩
+    letI : Module.Oriented ℝ (EuclideanSpace ℝ (Fin 2)) (Fin 2) := ⟨Module.Basis.orientation <| Pi.basisFun _ _⟩
     letI : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 2)) = 2) := ⟨finrank_euclideanSpace_fin⟩
     ∃ (a b c d : EuclideanSpace ℝ (Fin 2)), Γ '' (Set.Icc 0 1) ⊆
       convexHull ℝ {a, b, c, d} ∧ dist a b * dist b c = 1/4 ∧
