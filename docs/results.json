@@ -301,5 +301,15 @@
       "size": 0,
       "condensed-compute-budget": "pass@1, avg. 100 tool calls",
       "note": "commit: 1aaaa9, budget: $4000, versions: 4.16.0 problems: 1962 A5, 1962 A6, 1962 B2, 1964 A4, 1964 B1, 1964 B2, 1965 A6, 1965 B2, 1965 B3, 1966 A1, 1966 A3, 1966 A5, 1967 A1, 1968 A1, 1968 A2, 1968 B1, 1968 B2, 1969 A5, 1969 B2, 1970 B2, 1970 B3, 1970 B5, 1971 A1, 1971 B1, 1971 B2, 1971 B3, 1972 A2, 1973 B2, 1974 B3, 1975 A1, 1975 A4, 1975 B1, 1977 A3, 1977 A5, 1978 A1, 1978 A4, 1979 A3, 1980 B1, 1980 B3, 1981 B1, 1981 B2, 1983 A1, 1984 B1, 1984 B3, 1985 A3, 1985 A4, 1986 A1, 1986 A2, 1986 A3, 1986 B1, 1986 B2, 1986 B3, 1986 B6, 1987 B1, 1987 B3, 1988 A2, 1988 B1, 1988 B2, 1990 A1, 1990 A5, 1990 B1, 1991 A2, 1991 B2, 1992 A1, 1992 B2, 1993 A2, 1993 B1, 1994 A1, 1994 A4, 1994 B3, 1995 B4, 1997 B2, 1998 B1, 1999 B5, 2000 B1, 2001 A1, 2001 B1, 2004 A1, 2004 B2, 2006 B2, 2006 B5, 2008 A1, 2010 A3, 2010 A3, 2010 B1, 2013 B1, 2013 B2, 2016 A1, 2016 B1, 2018 A1, 2020 B1"
+    },
+    "GPT-5 (ReAct, 10 turns)" {
+      "link": "https://www.microsoft.com/en-us/research/publication/indimathbench-autoformalization-mathematical-reasoning-problems-with-a-human-touch/",
+      "open-data": "NONE",
+      "num-solved": {
+        "lean-wsolution": 28
+      },
+      "size": 0,
+      "condensed-compute-budget": "pass@1, 10 tool calls",
+      "note": "commit: f858fc, version: 4.22, problems: 1962 B2, 1965 A4, 1967 B2, 1971 A2, 1971 B1, 1975 B1, 1977 A3, 1978 B4, 1984 B3, 1985 A4, 1986 A1, 1986 B1, 1986 B2, 1988 B1, 1988 B2, 1991 A2, 1993 A2, 1993 B1, 1995 A1, 1997 A4, 1999 A1, 2000 A2, 2001 A1, 2008 A1, 2012 A2, 2012 B1, 2022 B4, 2023 A6"
     }
 }
