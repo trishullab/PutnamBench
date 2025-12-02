@@ -3,7 +3,7 @@ Complex_Main
 begin
 
 definition putnam_2007_b3_solution :: real where "putnam_2007_b3_solution \<equiv> undefined"
-(* (2 ^ 2006 / sqrt 5) * ((((1 + sqrt 5) / 2) powr 3997) - (((1 + sqrt 5) / 2) powr -3997)) *)
+(* (2 ^ 2006 / sqrt 5) * ((((1 + sqrt 5) / 2) powr 4017) + (((1 + sqrt 5) / 2) powr -4017)) *)
 theorem putnam_2007_b3:
   fixes x :: "nat \<Rightarrow> real"
   assumes hx0: "x 0 = 1"
