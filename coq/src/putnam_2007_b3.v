@@ -1,5 +1,5 @@
 Require Import Reals Coquelicot.Coquelicot.
-Definition putnam_2007_b3_solution := let a := (1 + sqrt 5) / 2 in (2 ^ 2006 / sqrt 5) * (a ^ 3997 - Rpower a (-3997)).
+Definition putnam_2007_b3_solution := let a := (1 + sqrt 5) / 2 in (2 ^ 2006 / sqrt 5) * (a ^ 4017 + Rpower a (-4017)).
 Theorem putnam_2007_b3
     (X := fix x (n: nat) :=
         match n with
