@@ -6,7 +6,7 @@
     <a href="https://arxiv.org/abs/2407.11214"><img src="https://img.shields.io/badge/arXiv-2407.11214-b31b1b.svg"></a>
 </p>
 
-PutnamBench is a benchmark for evaluation of theorem-proving algorithms on competition mathematics problems sourced from the William Lowell Putnam Mathematical Competition years 1962 - 2024. Our formalizations currently support three formal languages : Lean 4 $\land$ Isabelle $\land$ Coq. PutnamBench comprises of 1712 manually-crafted formalizations, aggregated over all languages.
+PutnamBench is a benchmark for evaluation of theorem-proving algorithms on competition mathematics problems sourced from the William Lowell Putnam Mathematical Competition years 1962 - 2024. Our formalizations currently support three formal languages : Lean 4 $\land$ Isabelle $\land$ Coq. PutnamBench comprises of 1724 manually-crafted formalizations, aggregated over all languages.
 
 PutnamBench aims to support research in automated mathematical reasoning by providing a multilingual benchmark for evaluating theorem-proving algorithms. It is released under permissive licenses (Apache 2.0 for Lean 4 and Isabelle, MIT for Coq). The [informal statements](informal/README.md) are also available with permission from the MAA.
 
@@ -19,7 +19,7 @@ We are hosting a [**leaderboard**](https://trishullab.github.io/PutnamBench/lead
 ## Statistics 
 | Language      | Count          |
 | ------------- | -------------- |
-| Lean 4        | 660            |
+| Lean 4        | 672            |
 | Isabelle      | 640            |
 | Coq           | 412            |
 
@@ -28,11 +28,11 @@ We also report the number of problems in a certain category. Note that some prob
 | Category         | Total Quantity | 
 | ---------------- | -------------- | 
 | Algebra          | 253            | 
-| Analysis         | 226            |
-| Number Theory    | 108            | 
-| Geometry         | 69             |
-| Linear Algebra   | 51             | 
-| Combinatorics    | 29             | 
+| Analysis         | 229            |
+| Number Theory    | 113            | 
+| Geometry         | 71             |
+| Linear Algebra   | 53             | 
+| Combinatorics    | 33             | 
 | Abstract Algebra | 28             |  
 | Probability      | 10             | 
 | Set Theory       | 8              | 
