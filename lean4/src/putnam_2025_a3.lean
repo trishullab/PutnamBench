@@ -2,16 +2,19 @@ import Mathlib
 
 open Finset Function
 
-abbrev GameString (n : ℕ) := Fin n → Fin 3
+abbrev putnam_2025_a3_solution : ℕ → Prop := sorry
+-- fun _ => False
 
-abbrev initialState (n : ℕ) : GameString n := fun _ => 0
+def GameString (n : ℕ) := Fin n → Fin 3
 
-abbrev isValidMove {n : ℕ} (s1 s2 : GameString n) : Prop :=
+def initialState (n : ℕ) : GameString n := fun _ => 0
+
+def isValidMove {n : ℕ} (s1 s2 : GameString n) : Prop :=
   (∃! i : Fin n, s1 i ≠ s2 i) ∧
   ∀ i : Fin n, s1 i ≠ s2 i →
     ((s1 i).val + 1 = (s2 i).val ∨ (s2 i).val + 1 = (s1 i).val)
 
-abbrev IsValidGamePlay {n : ℕ} (play : List (GameString n)) : Prop :=
+def IsValidGamePlay {n : ℕ} (play : List (GameString n)) : Prop :=
   play.Chain isValidMove (initialState n) ∧
   (initialState n :: play).Nodup
 
@@ -21,10 +24,7 @@ inductive HasWinningStrategy (n : ℕ) : List (GameString n) → Prop where
       (∀ s', IsValidGamePlay (play ++ [s, s']) → HasWinningStrategy n (play ++ [s, s'])) →
       HasWinningStrategy n play
 
-abbrev AliceHasWinningStrategy (n : ℕ) : Prop := HasWinningStrategy n []
-
-abbrev putnam_2025_a3_solution : ℕ → Prop := sorry
--- fun _ => False
+def AliceHasWinningStrategy (n : ℕ) : Prop := HasWinningStrategy n []
 
 /--
 Alice and Bob play a game with a string of $n$ digits, each of which is restricted

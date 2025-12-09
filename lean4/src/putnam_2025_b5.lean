@@ -2,9 +2,9 @@ import Mathlib
 
 open Finset BigOperators
 
-abbrev modInv (p : ℕ) (k : ℕ) : ℕ := ZMod.val ((k : ZMod p)⁻¹)
+def modInv (p : ℕ) (k : ℕ) : ℕ := ZMod.val ((k : ZMod p)⁻¹)
 
-abbrev descentCount (p : ℕ) : ℕ :=
+def descentCount (p : ℕ) : ℕ :=
   #{k ∈ Finset.Icc 1 (p - 2) | modInv p (k + 1) < modInv p k}
 
 /--

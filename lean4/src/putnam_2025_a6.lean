@@ -1,6 +1,6 @@
 import Mathlib
 
-abbrev b : ℕ → ℤ
+def b : ℕ → ℤ
 | 0 => 0
 | n + 1 => 2 * (b n) ^ 2 + b n + 1
 
