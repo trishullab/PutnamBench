@@ -19,7 +19,7 @@ We are hosting a [**leaderboard**](https://trishullab.github.io/PutnamBench/lead
 ## Statistics 
 | Language      | Count          |
 | ------------- | -------------- |
-| Lean 4        | 660            |
+| Lean 4        | 672            |
 | Isabelle      | 640            |
 | Coq           | 412            |
 
