@@ -10,12 +10,6 @@ For $n \geq 2$, let $A = [a_{i,j}]_{i,j=1}^n$ be an $n$-by-$n$ matrix of nonnega
 
 Let $S$ be the sum of the entries of $A$, and let $N$ be the number of nonzero entries of $A$.
 Prove that $S \leq \frac{(n+2)N}{3}$.
-
-Note: We parameterize by $m$ where $n = m + 2$, so $m \geq 0$ and the matrix is $(m+2) \times (m+2)$.
-With 0-indexing (indices $0, \ldots, m+1$), the conditions become:
-(a) $a_{i,j} = 0$ when $i + j \leq m$ (since original $i + j \leq n$ with 1-indexing becomes $(i'+1) + (j'+1) \leq m+2$)
-(b) $a_{i+1,j} \in \{a_{i,j}, a_{i,j}+1\}$ when $i \leq m$
-(c) $a_{i,j+1} \in \{a_{i,j}, a_{i,j}+1\}$ when $j \leq m$
 -/
 theorem putnam_2025_b4
     (m : ℕ)
