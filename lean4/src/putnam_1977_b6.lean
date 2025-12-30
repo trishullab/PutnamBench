@@ -9,6 +9,7 @@ theorem putnam_1977_b6
 {G : Type*}
 [Group G]
 (H : Subgroup G)
+[Finite H]
 (h : ℕ)
 (h_def : h = Nat.card H)
 (a : G)

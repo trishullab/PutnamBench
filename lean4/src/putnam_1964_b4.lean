@@ -19,6 +19,7 @@ theorem putnam_1964_b4
     (hv : ∀ i, C i = Metric.sphere 0 1 ∩ {x : EuclideanSpace ℝ (Fin 3) | ⟪v i, x⟫_ℝ = 0 })
     --all the `v_i`'s are non-zero
     (hv' : ∀ i, v i ≠ 0)
+    (hCinj : Function.Injective C)
     -- The circles in `C` are in general position
     (hT₂ : ∀ᵉ (x ∈ Metric.sphere 0 1) (y ∈ Metric.sphere 0 1),
       (Finset.univ.filter (fun i => {x, y} ⊆ (C i))).card ≤ 2)

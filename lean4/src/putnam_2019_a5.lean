@@ -17,6 +17,6 @@ theorem putnam_2019_a5
   (hq : ∀ k : ℕ, q.coeff k = a k)
   (ha0 : a 0 = 0 ∧ ∀ k > p - 1, a k = 0)
   (haother : ∀ k : Set.Icc 1 (p - 1), a k = ((k : ℕ) ^ ((p - 1) / 2)) % p)
-  (hnpoly : ∀ n x, (npoly n).eval x = (x - 1) ^ n) :
+  (hnpoly : ∀ n : ℕ, npoly n = (Polynomial.X - 1) ^ n) :
   IsGreatest {n | npoly n ∣ q} (putnam_2019_a5_solution p) :=
 sorry

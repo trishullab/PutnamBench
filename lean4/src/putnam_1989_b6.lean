@@ -13,7 +13,7 @@ theorem putnam_1989_b6
     (X : Set (Fin n → ℝ))
     (X_def : ∀ x, x ∈ X ↔ 0 < x 0 ∧ x (-1) < 1 ∧ StrictMono x)
     (S : (ℝ → ℝ) → (Fin (n + 2) → ℝ) → ℝ)
-    (S_def : ∀ f x, S f x = ∑ i : Fin n.succ, (x i.succ - x i.castSucc) * f (i + 1)) :
+    (S_def : ∀ f x, S f x = ∑ i : Fin n.succ, (x i.succ - x i.castSucc) * f (x i.succ)) :
     ∃ P : Polynomial ℝ,
       P.degree = n ∧
       (∀ t ∈ Icc 0 1, P.eval t ∈ Icc 0 1) ∧
