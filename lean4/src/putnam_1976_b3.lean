@@ -21,6 +21,8 @@ theorem putnam_1976_b3
 (events : Fin n → Set Ω)
 (heventsmeas : ∀ i : Fin n, MeasurableSet (events i))
 (heventsprob : ∀ i : Fin n, μ (events i) ≥ ENNReal.ofReal (1 - a))
-(heventsindep : ∀ i j : Fin n, |(i : ℤ) - (j : ℤ)| > 1 → IndepSet (events i) (events j) μ)
+(heventsindep : ∀ i : Fin n,
+  ProbabilityTheory.Indep (MeasurableSpace.generateFrom {events i})
+    (MeasurableSpace.generateFrom (Set.image events {j : Fin n | (j : ℤ) < (i : ℤ) - 1})) μ)
 : μ (⋂ i : Fin n, events i) ≥ ENNReal.ofReal (u n) :=
 sorry

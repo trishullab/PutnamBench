@@ -14,6 +14,6 @@ theorem putnam_2005_a3
     (pzeros : ∀ z : ℂ, p.eval z = 0 → ‖z‖ = 1)
     (hg : ∀ z : ℂ, g z = (p.eval z) / z ^ ((n : ℂ) / 2))
     (z : ℂ)
-    (hz : z ≠ 0 ∧ deriv g z = 0) :
+    (hz : z ≠ 0 ∧ DifferentiableAt ℂ g z ∧ deriv g z = 0) :
     ‖z‖ = 1 :=
   sorry

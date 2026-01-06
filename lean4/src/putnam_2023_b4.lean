@@ -20,7 +20,7 @@ theorem putnam_2023_b4
     (htne : ∀ n ts, tne n ts = {t | t > ts 0 ∧ ∀ i : Fin n, t ≠ ts (i.1 + 1)}) :
     IsLeast
     {(T : ℝ) | 0 ≤ T ∧ ∃ (n : ℕ) (ts : ℕ → ℝ) (f : ℝ → ℝ),
-      ∀ k : Fin n, ts (k.1 + 1) ≥ ts k.1 + 1 ∧
+      (∀ k : Fin n, ts (k.1 + 1) ≥ ts k.1 + 1) ∧
       ContinuousOn f (Set.Ici (ts 0)) ∧
       ContDiffOn ℝ 1 f (tne n ts) ∧
       DifferentiableOn ℝ (derivWithin f (tne n ts)) (tne n ts) ∧
