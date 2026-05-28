@@ -366,7 +366,7 @@
         "link": "https://github.com/mykhailynab/formal-conjecturer",
         "open-data": "FULL",
         "num-solved": {
-            "lean-nosolution": 14
+            "lean-nosolution": 15
         },
         "size": 7,
         "condensed-compute-budget": "pass@4",
