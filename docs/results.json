@@ -404,7 +404,7 @@
     },
     "Leanstral 1.5" : {
         "link": "https://mistral.ai/news/leanstral-1-5/",
-        "open-data": "FULL"
+        "open-data": "FULL",
         "num-solved": {
             "lean-wsolution": 588
         },
