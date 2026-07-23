@@ -406,7 +406,7 @@
         "link": "https://github.com/humanfia/putnambench-solver",
         "open-data": "PARTIAL",
         "num-solved": {
-            "lean-nosolution": 670
+            "lean-wsolution": 670
         },
         "size": 0,
         "condensed-compute-budget": "Avg $44.6 total cost/problem",
