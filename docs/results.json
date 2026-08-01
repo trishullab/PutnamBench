@@ -426,7 +426,7 @@
         "link": "https://arxiv.org/pdf/2604.18587",
         "open-data": "FULL",
         "num-solved": {
-            "lean-wsolution": 110,
+            "lean-wsolution": 110
         },
         "size": 32,
         "condensed-compute-budget": "pass@256",
@@ -436,7 +436,7 @@
         "link": "https://arxiv.org/pdf/2604.18587",
         "open-data": "FULL",
         "num-solved": {
-            "lean-wsolution": 25,
+            "lean-wsolution": 25
         },
         "size": 8,
         "condensed-compute-budget": "pass@256",
@@ -446,7 +446,7 @@
         "link": "https://varto.ai/blog/putnambench",
         "open-data": "NONE",
         "num-solved": {
-            "isabelle-wsolution": 640,
+            "isabelle-wsolution": 640
         },
         "size": 0,
         "condensed-compute-budget": "avg $8/problem",
