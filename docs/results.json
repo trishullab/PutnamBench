@@ -441,5 +441,15 @@
         "size": 8,
         "condensed-compute-budget": "pass@256",
         "note": "derived from Kimina-8B, Lean version v4.15"
+    },
+    "Varto" : {
+        "link": "https://varto.ai/blog/putnambench",
+        "open-data": "NONE",
+        "num-solved": {
+            "isabelle-wsolution": 640,
+        }
+        "size": 0,
+        "condensed-compute-budget": "avg $8/problem",
+        "note": "Using GPT-5.5. All problems solved. 130 requires formalization fixes."
     }
 }
