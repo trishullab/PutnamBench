@@ -451,5 +451,15 @@
         "size": 0,
         "condensed-compute-budget": "avg $8/problem",
         "note": "Using GPT-5.5. All problems solved. 130 requires formalization fixes."
+    },
+    "Aleph Prover (Logical Intelligence)   ": {
+        "link": "https://logicalintelligence.com/aleph-prover-final.html",
+        "open-data": "NONE",
+        "num-solved": {
+            "lean-wsolution": 672
+        },
+        "size": 0,
+        "condensed-compute-budget": "Avg $74, Max $1468 per problem",
+        "note": "avg commit: b9e18f6, version: 4.27, problems: all"
     }
 }
