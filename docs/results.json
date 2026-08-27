@@ -410,7 +410,7 @@
         },
         "size": 0,
         "condensed-compute-budget": "Avg $44.5 total cost/problem",
-        "note" : "Lean v4.27, GPT-5.sol with xhigh reasoning in harness, commit: 2b3a9c4. Aced all problems."
+        "note" : "Lean v4.27, GPT-5.6 sol with xhigh reasoning in harness, commit: 2b3a9c4. Aced all problems."
     },
     "Leanstral 1.5" : {
         "link": "https://mistral.ai/news/leanstral-1-5/",
