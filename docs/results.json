@@ -1,6 +1,7 @@
 {
     "DSP (GPT-4o)": {
       "link": "https://arxiv.org/abs/2210.12283",
+      "date-added": "2024-07-17",
       "open-data": "PARTIAL",
       "num-solved": {
         "isabelle-wsolution": 4
@@ -11,6 +12,7 @@
     },
     "GPT-4o": {
       "link": "https://openai.com/index/hello-gpt-4o/",
+      "date-added": "2024-07-17",
       "open-data": "NONE",
       "num-solved": {
         "isabelle-wsolution": 1,
@@ -23,6 +25,7 @@
     },
     "COPRA (GPT-4o)": {
       "link": "https://arxiv.org/abs/2310.04353",
+      "date-added": "2024-07-17",
       "open-data": "PARTIAL",
       "num-solved": {
         "lean-wsolution": 1,
@@ -34,6 +37,7 @@
     },
     "CoqHammer": {
       "link": "https://coqhammer.github.io/",
+      "date-added": "2024-07-17",
       "open-data": "FULL",
       "num-solved": {
         "coq-wsolution": 0
@@ -44,6 +48,7 @@
     },
     "Sledgehammer": {
       "link": "https://isabelle.in.tum.de/website-Isabelle2009-1/sledgehammer.html",
+      "date-added": "2024-07-17",
       "open-data": "FULL",
       "num-solved": {
         "isabelle-wsolution": 3
@@ -54,6 +59,7 @@
     },
     "Deepseek R1": {
       "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
+      "date-added": "2025-03-11",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 1
@@ -64,6 +70,7 @@
     },
     "ReProver w/ retrieval": {
       "link": "https://arxiv.org/abs/2306.15626",
+      "date-added": "2024-07-17",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 0
@@ -74,6 +81,7 @@
     },
     "ReProver w/o retrieval": {
       "link": "https://arxiv.org/abs/2306.15626",
+      "date-added": "2024-07-17",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 0
@@ -84,6 +92,7 @@
     },
     "Tactician (LSH)": {
       "link": "https://coq-tactician.github.io/",
+      "date-added": "2024-07-17",
       "open-data": "FULL",
       "num-solved": {
         "coq-wsolution": 0
@@ -94,6 +103,7 @@
     },
     "InternLM 7B": {
       "link": "https://github.com/InternLM/InternLM-Math",
+      "date-added": "2024-07-24",
       "open-data": "NONE",
       "num-solved": {
         "lean-wsolution": 4
@@ -104,6 +114,7 @@
     },
     "Goedel-Prover-SFT": {
       "link": "https://goedel-lm.github.io/",
+      "date-added": "2025-01-28",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 7
@@ -114,6 +125,7 @@
     },
     "ABEL": {
       "link": "https://openreview.net/forum?id=kk3mSjVCUO",
+      "date-added": "2024-10-21",
       "open-data": "NONE",
       "num-solved": {
         "lean-wsolution": 7
@@ -124,6 +136,7 @@
     },
     "InternLM2.5-StepProver": {
       "link": "https://arxiv.org/pdf/2410.15700",
+      "date-added": "2024-11-07",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 6
@@ -134,6 +147,7 @@
     },
     "Self-play Theorem Prover": {
       "link": "https://github.com/kfdong/STP",
+      "date-added": "2025-02-12",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 8
@@ -144,6 +158,7 @@
     },
     "o3-mini" : {
       "link": "https://openai.com/index/openai-o3-mini/",
+      "date-added": "2025-03-11",
       "open-data": "NONE",
       "num-solved": {
         "lean-wsolution": 0
@@ -154,6 +169,7 @@
     },
     "claude-3.7-sonnet" : {
       "link": "https://www.anthropic.com/claude/sonnet",
+      "date-added": "2025-03-11",
       "open-data": "NONE",
       "num-solved": {
         "lean-wsolution": 0
@@ -164,6 +180,7 @@
     },
     "gemini-2.0-flash-thinking-121" : {
       "link": "https://deepmind.google/technologies/gemini/flash-thinking/",
+      "date-added": "2025-03-11",
       "open-data": "NONE",
       "num-solved": {
         "lean-wsolution": 1
@@ -174,6 +191,7 @@
     },
     "gemini-2.5-pro-exp-0325": {
       "link": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/",
+      "date-added": "2025-03-30",
       "open-data": "NONE",
       "num-solved": {
         "lean-wsolution": 3
@@ -184,6 +202,7 @@
     },
     "GPT-4o-mini": {
       "link": "https://openai.com/index/hello-gpt-4o/",
+      "date-added": "2025-03-11",
       "open-data": "NONE",
       "num-solved": {
         "lean-wsolution": 0
@@ -194,6 +213,7 @@
     },
     "DeepSeek-V3-0324": {
       "link": "https://api-docs.deepseek.com/news/news250325",
+      "date-added": "2025-03-31",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 0
@@ -204,6 +224,7 @@
     },
     "Grok-3-mini": {
       "link": "https://www.x.ai/grok",
+      "date-added": "2025-04-12",
       "open-data": "NONE",
       "num-solved": {
         "lean-wsolution": 0
@@ -214,6 +235,7 @@
     },
     "Kimina-Prover-7B-Distill": {
       "link": "https://huggingface.co/AI-MO/Kimina-Prover-Preview-Distill-7B",
+      "date-added": "2025-04-14",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 10
@@ -224,6 +246,7 @@
     },
     "o4-mini-high": {
       "link": "https://openai.com/index/introducing-o3-and-o4-mini/",
+      "date-added": "2025-04-16",
       "open-data": "NONE",
       "num-solved": {
         "lean-wsolution": 2
@@ -234,6 +257,7 @@
     },
     "DeepSeek-Prover-V2": {
       "link": "https://arxiv.org/abs/2504.21801",
+      "date-added": "2025-06-03",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 47
@@ -244,6 +268,7 @@
     },
     "DSP+": {
       "link": "https://arxiv.org/abs/2506.11487",
+      "date-added": "2025-06-28",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 23
@@ -254,6 +279,7 @@
     },
     "Bourbaki": {
       "link": "bourbaki-prover.github.io",
+      "date-added": "2025-07-16",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 14
@@ -264,6 +290,7 @@
     },
     "Goedel-Prover-V2": {
       "link": "https://blog.goedel-prover.com/",
+      "date-added": "2025-07-22",
       "open-data": "FULL",
       "num-solved": {
         "lean-wsolution": 86
@@ -274,6 +301,7 @@
     },
     "Seed-Prover (ByteDance)": {
       "link": "https://github.com/ByteDance-Seed/Seed-Prover",
+      "date-added": "2025-12-23",
       "open-data": "NONE",
       "num-solved": {
         "lean-wsolution": 329
@@ -284,6 +312,7 @@
     },
     "Hilbert": {
       "link": "https://arxiv.org/pdf/2509.22819",
+      "date-added": "2025-10-06",
       "open-data": "PARTIAL",
       "num-solved": {
         "lean-wsolution": 462
@@ -294,6 +323,7 @@
     },
     "Ax-Prover (Axiomatic AI)": {
       "link": "https://arxiv.org/pdf/2510.12787",
+      "date-added": "2025-12-23",
       "open-data": "PARTIAL",
       "num-solved": {
         "lean-wsolution": 91
@@ -304,6 +334,7 @@
     },
     "GPT-5 (ReAct, 10 turns)": {
       "link": "https://arxiv.org/abs/2512.00997",
+      "date-added": "2025-11-20",
       "open-data": "NONE",
       "num-solved": {
         "lean-wsolution": 28
@@ -314,6 +345,7 @@
     },
     "Aleph Prover (Logical Intelligence)": {
         "link": "https://www.logicalintelligence.com/aleph-prover.html",
+        "date-added": "2025-12-23",
         "open-data": "NONE",
         "num-solved": {
             "lean-wsolution": 500
@@ -324,6 +356,7 @@
     },
     "Aleph Prover (Logical Intelligence) ": {
         "link": "https://www.logicalintelligence.com/aleph-prover_300.html",
+        "date-added": "2025-12-26",
         "open-data": "NONE",
         "num-solved": {
             "lean-wsolution": 637
@@ -334,6 +367,7 @@
     },
     "Seed-Prover 1.5 (ByteDance)": {
         "link": "https://arxiv.org/abs/2512.17260",
+        "date-added": "2025-12-27",
         "open-data": "NONE",
         "num-solved": {
             "lean-wsolution": 581
@@ -344,6 +378,7 @@
     },
     "Aleph Prover (Logical Intelligence)  ": {
         "link": "https://www.logicalintelligence.com/aleph-prover_1000.html",
+        "date-added": "2026-01-11",
         "open-data": "NONE",
         "num-solved": {
             "lean-wsolution": 668
@@ -354,6 +389,7 @@
     },
     "AxProverBase (Axiomatic AI)": {
         "link": "https://prover.axiomatic-ai.com",
+        "date-added": "2026-04-14",
         "open-data": "PARTIAL",
         "num-solved": {
             "lean-wsolution": 365
@@ -364,6 +400,7 @@
     },
     "TIR Conjecturor": {
         "link": "https://github.com/mykhailynab/formal-conjecturer",
+        "date-added": "2026-05-26",
         "open-data": "FULL",
         "num-solved": {
             "lean-nosolution": 15
@@ -374,6 +411,7 @@
     },
     "Goedel-Architect": {
         "link": "https://arxiv.org/abs/2606.06468",
+        "date-added": "2026-06-06",
         "open-data": "PARTIAL",
         "num-solved": {
             "lean-wsolution": 597
@@ -384,6 +422,7 @@
     },
     "Enumerate-Conjecture-Prove": {
         "link": "https://arxiv.org/abs/2505.18492",
+        "date-added": "2026-06-06",
         "open-data": "PARTIAL",
         "num-solved": {
             "lean-nosolution": 17
@@ -394,6 +433,7 @@
     },
     "Goedel-Architect ": {
         "link": "https://arxiv.org/abs/2606.06468",
+        "date-added": "2026-07-02",
         "open-data": "PARTIAL",
         "num-solved": {
             "lean-wsolution": 642
@@ -404,6 +444,7 @@
     },
     "Humanfia": {
         "link": "https://github.com/humanfia/putnambench",
+        "date-added": "2026-08-27",
         "open-data": "PARTIAL",
         "num-solved": {
             "lean-wsolution": 672
@@ -414,6 +455,7 @@
     },
     "Leanstral 1.5" : {
         "link": "https://mistral.ai/news/leanstral-1-5/",
+        "date-added": "2026-07-19",
         "open-data": "FULL",
         "num-solved": {
             "lean-wsolution": 588
@@ -424,6 +466,7 @@
     },
     "C2C-Goedel" : {
         "link": "https://arxiv.org/pdf/2604.18587",
+        "date-added": "2026-08-01",
         "open-data": "FULL",
         "num-solved": {
             "lean-wsolution": 110
@@ -434,6 +477,7 @@
     },
     "C2C-Kimina" : {
         "link": "https://arxiv.org/pdf/2604.18587",
+        "date-added": "2026-08-01",
         "open-data": "FULL",
         "num-solved": {
             "lean-wsolution": 25
@@ -444,6 +488,7 @@
     },
     "Varto" : {
         "link": "https://varto.ai/blog/putnambench",
+        "date-added": "2026-08-01",
         "open-data": "NONE",
         "num-solved": {
             "isabelle-wsolution": 640
@@ -454,6 +499,7 @@
     },
     "Aleph Prover (Logical Intelligence)   ": {
         "link": "https://logicalintelligence.com/aleph-prover-final.html",
+        "date-added": "2026-08-26",
         "open-data": "NONE",
         "num-solved": {
             "lean-wsolution": 672
@@ -461,5 +507,16 @@
         "size": 0,
         "condensed-compute-budget": "Avg $74, Max $1468 per problem",
         "note": "avg commit: b9e18f6, version: 4.27, problems: all"
+    },
+    "Ensemble Prover (Graviterra)": {
+        "link": "https://github.com/graviterra/ensemble-prover",
+        "date-added": "2026-09-04",
+        "open-data": "PARTIAL",
+        "num-solved": {
+            "lean-wsolution": 65
+        },
+        "size": 0,
+        "condensed-compute-budget": "Not reported",
+        "note": "65 cumulative Putnam problems with Lean-checked solutions claimed by the project. The proof bundle was submitted privately for independent PutnamBench verification; the public repository documents the method and problem identifiers but does not publish the proof files."
     }
 }
