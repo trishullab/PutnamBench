@@ -533,12 +533,12 @@
     "NEAR AI (w/ DeepSeek V4)": {
         "link": "https://github.com/SkidanovAlex/putnambench-deepseek",
         "date-added": "2026-09-04",
-        "open-data": "PARTIAL",
+        "open-data": "FULL",
         "num-solved": {
             "lean-wsolution": 672
         },
         "size": 0,
         "condensed-compute-budget": "Mean $0.17, median $0.04, max $11.18 per problem",
-        "note": "672/672 Lean solutions reported. Two problems were submitted against fixed formalizations; agent code is public, while the solution bundle was shared privately for independent verification."
+        "note": "672/672 Lean solutions reported. Two problems were submitted against fixed formalizations; the agent code is public and the run used open-weight DeepSeek V4 models, while the solution bundle was shared privately for independent verification."
     }
 }
