@@ -529,5 +529,16 @@
         "size": 0,
         "condensed-compute-budget": "Avg 5.38M tokens per solved problem",
         "note": "Reported internal manager-worker scaffold using DeepSeek V4 Pro-Preview and Leanstral; ground-truth informal proofs were supplied as context. Additional Lean proof files were submitted for independent PutnamBench verification; result is not yet independently verified or endorsed."
+    },
+    "NEAR AI (w/ DeepSeek V4)": {
+        "link": "https://github.com/SkidanovAlex/putnambench-deepseek",
+        "date-added": "2026-09-04",
+        "open-data": "PARTIAL",
+        "num-solved": {
+            "lean-wsolution": 672
+        },
+        "size": 0,
+        "condensed-compute-budget": "Mean $0.17, median $0.04, max $11.18 per problem",
+        "note": "672/672 Lean solutions reported. Two problems were submitted against fixed formalizations; agent code is public, while the solution bundle was shared privately for independent verification."
     }
 }

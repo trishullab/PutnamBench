@@ -371,10 +371,17 @@
 
       const reportedCost = (row) => {
         const budget = row["condensed-compute-budget"] || "";
-        const costs = [...budget.matchAll(/\$\s*([\d,.]+)/g)]
-          .map((match) => Number(match[1].replaceAll(",", "")))
-          .filter((cost) => Number.isFinite(cost));
-        return costs.length ? Math.min(...costs) : Number.POSITIVE_INFINITY;
+        const mean = budget.match(/\b(?:avg|average|mean)\s*\$\s*([\d,.]+)/i);
+        if (mean) {
+          const cost = Number(mean[1].replaceAll(",", ""));
+          if (Number.isFinite(cost)) return cost;
+        }
+        const firstReported = budget.match(/\$\s*([\d,.]+)/);
+        if (firstReported) {
+          const cost = Number(firstReported[1].replaceAll(",", ""));
+          if (Number.isFinite(cost)) return cost;
+        }
+        return Number.POSITIVE_INFINITY;
       };
 
       // score: 'average', 'humaneval', 'mbpp', 'humaneval+', 'mbpp+'
