@@ -522,7 +522,7 @@
     "Mistral Prover (DeepSeek V4 Pro + Leanstral)": {
         "link": "https://www.alphaxiv.org/pdf/2608.leanstralv1",
         "date-added": "2026-09-04",
-        "open-data": "PARTIAL",
+        "open-data": "FULL",
         "num-solved": {
             "lean-wsolution": 658
         },
