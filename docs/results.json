@@ -522,13 +522,13 @@
     "Mistral Prover (DeepSeek V4 Pro + Leanstral)": {
         "link": "https://www.alphaxiv.org/pdf/2608.leanstralv1",
         "date-added": "2026-09-04",
-        "open-data": "NONE",
+        "open-data": "PARTIAL",
         "num-solved": {
             "lean-wsolution": 658
         },
         "size": 0,
         "condensed-compute-budget": "Avg 5.38M tokens per solved problem",
-        "note": "Reported internal manager-worker scaffold using DeepSeek V4 Pro-Preview and Leanstral; ground-truth informal proofs were supplied as context. Additional Lean proof files were submitted for independent PutnamBench verification; result is not yet independently verified or endorsed."
+        "note": "Reported internal manager-worker scaffold using open-weight DeepSeek V4 Pro-Preview and Leanstral; the submission-specific scaffold code was not provided. Ground-truth informal proofs were supplied as context. Additional Lean proof files were submitted for independent PutnamBench verification; result is not yet independently verified or endorsed."
     },
     "NEAR AI (w/ DeepSeek V4)": {
         "link": "https://github.com/SkidanovAlex/putnambench-deepseek",
