@@ -64,6 +64,43 @@
         font-size: 1em;
       }
 
+      .featured-leaderboard {
+        position: relative;
+        background: linear-gradient(145deg, #fffaf0 0%, #fff3cd 100%);
+        border: 3px solid #f0b429;
+        border-radius: 0.8rem;
+        padding: 0.9rem 0.7rem 0.7rem;
+        box-shadow: 0 0.45rem 1.25rem rgba(141, 96, 0, 0.2);
+      }
+
+      .featured-leaderboard .featured-badge {
+        display: inline-block;
+        margin-bottom: 0.45rem;
+        padding: 0.2rem 0.65rem;
+        border-radius: 999px;
+        background-color: #f0b429;
+        color: #3d2a00;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .featured-leaderboard > label {
+        color: #684d00 !important;
+        font-size: 1.05rem !important;
+        font-weight: 700;
+      }
+
+      .featured-leaderboard table {
+        background-color: #ffffff;
+      }
+
+      .featured-leaderboard th {
+        background-color: #ffecb5;
+        color: #4d3900;
+      }
+
       @media screen and (max-width: 1400px) {
         body {
           font-size: 1.6vw;
@@ -133,6 +170,14 @@
       </div>
       <!-- <div id="chart" style="width: 100%; height: 600px"></div> -->
       <div class="container-fluid d-flex flex-row flex-nowrap">
+        <div class="container-fluid d-flex flex-column align-items-center featured-leaderboard">
+          <span class="featured-badge">★ Featured ranking</span>
+          <label for="leanAllSolved" class="mb-3">Lean — all 672 solved (cheapest first)</label>
+          <table
+            id="leanAllSolved"
+            class="table table-responsive table-striped table-bordered flex-shrink-1 border border-success border-3"
+          ></table>
+        </div>
         <div class="container-fluid d-flex flex-column align-items-center">
           <label for="lean" style="font-size: 14px;" class="text-success mb-3">Lean (out of 672)</label>
           <table
@@ -181,6 +226,7 @@
 
     <script>
       const LeanTable = document.getElementById("lean");
+      const LeanAllSolvedTable = document.getElementById("leanAllSolved");
       const IsabelleTable = document.getElementById("isabelle");
       const CoqTable = document.getElementById("coq");
       const benchmarkRadio = document.getElementById("Benchmark");
@@ -239,6 +285,7 @@
 
       const clearTable = () => {
         LeanTable.innerHTML = "";
+        LeanAllSolvedTable.innerHTML = "";
         IsabelleTable.innerHTML = "";
         CoqTable.innerHTML = "";
         // originTable.innerHTML = "";
@@ -358,16 +405,42 @@
       //   ],
       // };
 
-      const theaders = ["Model", "num-solved", "compute"];
+      const theaders = ["Model", "num-solved", "compute", "date added"];
+
+      const reportedCost = (row) => {
+        const budget = row["condensed-compute-budget"] || "";
+        const mean = budget.match(/\b(?:avg|average|mean)\s*\$\s*([\d,.]+)/i);
+        if (mean) {
+          const cost = Number(mean[1].replaceAll(",", ""));
+          if (Number.isFinite(cost)) return cost;
+        }
+        const firstReported = budget.match(/\$\s*([\d,.]+)/);
+        if (firstReported) {
+          const cost = Number(firstReported[1].replaceAll(",", ""));
+          if (Number.isFinite(cost)) return cost;
+        }
+        return Number.POSITIVE_INFINITY;
+      };
 
       // score: 'average', 'humaneval', 'mbpp', 'humaneval+', 'mbpp+'
-      const displayTable = (table, score) => {
+      const displayTable = (table, score, options = {}) => {
         // filter out Null
         data = globalData
           .filter((row) => {
             return (row["num-solved"][score] != null);
           })
+          .filter((row) => {
+            return !options.allLeanSolved ||
+              (score == "lean-wsolution" && row["num-solved"][score] == 672);
+          })
           .sort((a, b) => {
+            if (options.cheap) {
+              const costA = reportedCost(a);
+              const costB = reportedCost(b);
+              if (Number.isFinite(costA) && !Number.isFinite(costB)) return -1;
+              if (!Number.isFinite(costA) && Number.isFinite(costB)) return 1;
+              if (Number.isFinite(costA) && costA != costB) return costA - costB;
+            }
             return b["num-solved"][score] - a["num-solved"][score];
           });
         var thead = document.createElement("thead");
@@ -447,8 +520,11 @@
           }
           var computeCell = document.createElement("td");
           computeCell.textContent = row["condensed-compute-budget"];
+          var dateCell = document.createElement("td");
+          dateCell.textContent = row["date-added"] || "";
           dataRow.appendChild(solvedCell);
           dataRow.appendChild(computeCell);
+          dataRow.appendChild(dateCell);
           tbody.appendChild(dataRow);
         });
         table.appendChild(tbody);
@@ -549,6 +625,7 @@
 
       wsolutionRadio.addEventListener("click", function () {
         clearTable();
+        displayTable(LeanAllSolvedTable, "lean-wsolution", { allLeanSolved: true, cheap: true });
         displayTable(LeanTable, "lean-wsolution");
         displayTable(IsabelleTable, "isabelle-wsolution");
         displayTable(CoqTable, "coq-wsolution");
@@ -558,6 +635,7 @@
 
       nosolutionRadio.addEventListener("click", function () {
         clearTable();
+        displayTable(LeanAllSolvedTable, "lean-nosolution", { allLeanSolved: true, cheap: true });
         displayTable(LeanTable, "lean-nosolution");
         displayTable(IsabelleTable, "isabelle-nosolution");
         displayTable(CoqTable, "coq-nosolution");
