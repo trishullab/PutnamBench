@@ -441,7 +441,13 @@
               if (!Number.isFinite(costA) && Number.isFinite(costB)) return 1;
               if (Number.isFinite(costA) && costA != costB) return costA - costB;
             }
-            return b["num-solved"][score] - a["num-solved"][score];
+            const solvedDifference = b["num-solved"][score] - a["num-solved"][score];
+            if (solvedDifference !== 0) return solvedDifference;
+
+            // For equal scores, show the earliest submission first.
+            const dateA = a["date-added"] || "9999-12-31";
+            const dateB = b["date-added"] || "9999-12-31";
+            return dateA.localeCompare(dateB);
           });
         var thead = document.createElement("thead");
         var headerRow = document.createElement("tr");
