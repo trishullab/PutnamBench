@@ -537,8 +537,8 @@
         "num-solved": {
             "lean-wsolution": 672
         },
-        "size": 0,
+        "size": 49,
         "condensed-compute-budget": "Mean $0.17, median $0.04, max $11.18 per problem",
-        "note": "672/672 Lean solutions reported. Two problems were submitted against fixed formalizations; the agent code is public and the run used open-weight DeepSeek V4 models, while the solution bundle was shared privately for independent verification."
+        "note": "672/672 Lean solutions reported. Two problems were submitted against fixed formalizations; the run used DeepSeek V4 Flash (284B total / 13B active) and V4 Pro (1.6T total / 49B active). The agent code is public, while the solution bundle was shared privately for independent verification."
     }
 }
