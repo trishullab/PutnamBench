@@ -390,7 +390,7 @@
     "AxProverBase (Axiomatic AI)": {
         "link": "https://prover.axiomatic-ai.com",
         "date-added": "2026-04-14",
-        "open-data": "PARTIAL",
+        "open-data": "NONE",
         "num-solved": {
             "lean-wsolution": 365
         },
@@ -540,5 +540,16 @@
         "size": 49,
         "condensed-compute-budget": "Mean $0.17, median $0.04, max $11.18 per problem",
         "note": "672/672 Lean solutions reported. Two problems were submitted against fixed formalizations; the run used DeepSeek V4 Flash (284B total / 13B active) and V4 Pro (1.6T total / 49B active). The agent code is public, while the solution bundle was shared privately for independent verification."
+    },
+    "Midas Prover": {
+        "link": "https://mi.inc/blog/midas-prover-solves-putnambench",
+        "date-added": "2026-09-12",
+        "open-data": "PARTIAL",
+        "num-solved": {
+            "lean-nosolution": 672
+        },
+        "size": 0,
+        "condensed-compute-budget": "Avg $6.17 and 31 min/problem",
+        "note": "672/672 Lean problems reported in no-answer mode: 346 answer-placeholder problems and 326 proof-only problems. Total reported cost: $4,144.29. Evaluated against PutnamBench commit b3e08943b1728842194fe2df693f02c763da4294 using Lean v4.31.0 and Mathlib commit fabf563a7c95a166b8d7b6efca11c8b4dc9d911f. Answer-clue comments were removed before prover input. The proof-generation model was not reported; GPT-5.6 was used for placeholder-faithfulness review, followed by manual checking. Compatibility corrections were made to 1966 B5 and 1976 B1; 1974 B1 uses a stronger regular-pentagon predicate because the reference answer comment admits repeated-point counterexamples. The Lean proof bundle was shared privately for independent PutnamBench verification."
     }
 }
