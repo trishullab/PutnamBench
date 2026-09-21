@@ -8,7 +8,7 @@ Prove that any set of $n \ge 3$ distinct points in the Euclidean plane, no three
 theorem putnam_1966_b5
 (S : Finset (EuclideanSpace ℝ (Fin 2)))
 (hcard : S.card ≥ 3)
-(hS : ∀ s ⊆ S, s.card = 3 → ¬Collinear ℝ s.toSet)
+(hS : ∀ s ⊆ S, s.card = 3 → ¬Collinear ℝ (s : Set (EuclideanSpace ℝ (Fin 2))))
 : ∃ L : ZMod S.card → (EuclideanSpace ℝ (Fin 2)), (∀ p ∈ S, ∃! i : ZMod S.card, p = L i) ∧
 ∀ i j : ZMod S.card, i ≠ j → (∀ I : EuclideanSpace ℝ (Fin 2),
 (I ∈ segment ℝ (L i) (L (i + 1)) ∧ I ∈ segment ℝ (L j) (L (j + 1))) →
