@@ -571,7 +571,7 @@
             "coq-wsolution": 8
         },
         "size": 0,
-        "condensed-compute-budget": "Estimated $45/task; 1-2 hours/proof",
+        "condensed-compute-budget": "$45/task",
         "note": "Eight Rocq proofs reported by Yaqub Ali using Fable 5.1 Max: 1962 A2, A4, A5, A6, B2, B5, B6, and 1963 A2. Five use existing statements; 1962 A2, A6, and B5 use corrected formalizations documented in issue #358. Rocq 9.1.0, MathComp 2.5, MathComp-Analysis 1.16.0, Coquelicot 3.4.4; benchmark baseline 4dbe26ef21563af851eedaeb82d936fe1f94fc52; reviewed proof commit f82e7770f18883b05d26eba33089c9d39844ca02. Public proof files and verification workflow."
     }
 }
