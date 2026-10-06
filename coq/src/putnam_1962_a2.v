@@ -11,7 +11,12 @@ Local Open Scope classical_set_scope.
 
 Variable R : realType.
 Definition mu := [the measure _ _ of @lebesgue_measure R].
-Definition putnam_1962_a2_solution : set (R -> R) := [set f | exists a c : R, a >= 0 /\ f = (fun x : R => a / (1 - c * x) ^ 2)].
+Definition putnam_1962_a2_solution : set (R -> R) := [set f |
+     (exists a c : R, a >= 0 /\ f = (fun x : R => a / (1 - c * x) ^ 2))
+  \/ (exists a c : R, a >= 0 /\ 0 < c /\ f = (fun x : R => if x < 1 / c then a / (1 - c * x) ^ 2 else 0))
+  \/ ((forall x, f x >= 0) /\ forall x : R, 0 < x -> f x = 0)
+  \/ (exists e : R, 0 < e /\ f 0 = 0 /\ (forall x, f x >= 0) /\
+        forall x : R, 0 < x < e -> \int[mu]_(t in [set t | 0 <= t <= x]) f t = 0)].
 Theorem putnam_1962_a2
     (P : (set R) -> (R -> R) -> Prop)
     (P_def : forall s f, P s f <-> ((forall x, f x >= 0) /\ forall x, x \in s -> 
