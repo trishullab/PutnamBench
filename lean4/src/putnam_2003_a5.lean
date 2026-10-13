@@ -15,5 +15,6 @@ theorem putnam_2003_a5
       ¬∃ i j, i < j ∧ p i = 1 ∧ (∀ k ∈ Ioc i j, p k = -1) ∧
             Even (j.1 - i.1) ∧ ∑ k, ite (k ≤ j) (p k) 0 = 0})
       : ∃ f : ((Fin (2 * n)) → ℤ) → (Fin (2 * (n - 1)) → ℤ),
+            (∀ x ∈ dyckpath n ∩ noevenreturn n, f x ∈ dyckpath (n - 1)) ∧
             ∀ y ∈ dyckpath (n - 1), ∃! x, x ∈ dyckpath n ∩ noevenreturn n ∧ f x = y :=
 sorry
