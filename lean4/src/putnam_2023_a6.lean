@@ -15,11 +15,12 @@ theorem putnam_2023_a6
     (ConformsToStrategy : List ℕ → (List ℕ → ℕ) → Prop)
     (ConformsToStrategy_def : ∀ g s, ConformsToStrategy g s ↔
       ∀ (i) (h : i < g.length), Odd i → g[i] = s (g.take i))
-    (IsValidStrategy : (List ℕ → ℕ) → Prop)
-    (IsValidStrategy_def : ∀ s, IsValidStrategy s ↔
-      ∀ (g : List ℕ), g.length > 0 → s g ∈ g)
+    (IsValidStrategy : ℕ → (List ℕ → ℕ) → Prop)
+    (IsValidStrategy_def : ∀ n s, IsValidStrategy n s ↔
+      ∀ g : List ℕ, g.Nodup → (∀ i ∈ g, i ∈ Icc 1 n) → g.length < n →
+        s g ∈ Icc 1 n ∧ s g ∉ g)
     (IsWinningFor : ℕ → (List ℕ → ℕ) → Prop)
     (IsWinningFor_def : ∀ n s, IsWinningFor n s ↔
-      IsValidStrategy s ∧ ∃ p, ∀ g, g.length = n → IsValidGame g → ConformsToStrategy g s → parityOf g = p) :
+      IsValidStrategy n s ∧ ∃ p, ∀ g, g.length = n → IsValidGame g → ConformsToStrategy g s → parityOf g = p) :
     {n : ℕ | 0 < n ∧ ∃ s, IsWinningFor n s} = putnam_2023_a6_solution :=
   sorry

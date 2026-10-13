@@ -9,7 +9,7 @@ theorem putnam_2023_a6:
     and parityOf :: "nat list \<Rightarrow> nat"
     and ConformsToStrategy :: "nat list \<Rightarrow> (nat list \<Rightarrow> nat) \<Rightarrow> bool"
     and IsWinningFor :: "nat \<Rightarrow> (nat list \<Rightarrow> nat) \<Rightarrow> bool"
-  assumes IsValidGame_def : "\<forall> g. (IsValidGame G \<longleftrightarrow> 
+  assumes IsValidGame_def : "\<forall> g. (IsValidGame g \<longleftrightarrow> 
        distinct g \<and> (\<forall> i \<in> set g. i \<in> {1..length g}))"
     and parityOf_def : "\<forall> g. parityOf g = card {n :: nat. n ∈ {0..<length g} \<and> nth g n = n+1} mod 2"
     and ConformsToStrategy_def : "\<forall> g s. (ConformsToStrategy g s \<longleftrightarrow> 
