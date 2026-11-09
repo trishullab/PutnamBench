@@ -519,6 +519,17 @@
         "condensed-compute-budget": "Not reported",
         "note": "65 cumulative Putnam problems with Lean-checked solutions claimed by the project. The proof bundle was submitted privately for independent PutnamBench verification; the public repository documents the method and problem identifiers but does not publish the proof files."
     },
+    "Ensemble Prover (Claude Code, Codex, APIs)": {
+        "link": "https://github.com/graviterra/ensemble-prover",
+        "date-added": "2026-11-09",
+        "open-data": "PARTIAL",
+        "num-solved": {
+            "lean-wsolution": 672
+        },
+        "size": 0,
+        "condensed-compute-budget": "Mean 43.3 min/problem",
+        "note": "Cumulative result across model backends: 328 proofs attributed to Claude Code, 264 to Codex, and 80 to direct APIs. For the selected proof-producing runs, median time was 23.30 min/problem and summed wall time was 485.13 hours. Recorded usage was 582.08M input and 89.74M output tokens, including linked answer preparation. These measurements exclude earlier unsuccessful attempts and prior production of reused helpers; they do not represent the full campaign budget."
+    },
     "Mistral Prover (DeepSeek V4 Pro + Leanstral)": {
         "link": "https://www.alphaxiv.org/pdf/2608.leanstralv1",
         "date-added": "2026-09-04",
