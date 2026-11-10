@@ -1,0 +1,33 @@
+{
+  "authority": "affine.earth",
+  "board": "metamath_putnam_500",
+  "rank": 1,
+  "suite_name": "MATH-500, AIME, PutnamBench & ArithMark-3 Formal Proof Suite",
+  "upstream_repo": "trishullab/PutnamBench",
+  "official_board_url": "https://trishullab.github.io/PutnamBench/",
+  "model_id": "affine-uum8d-s4",
+  "openai_base_url": "https://affine.earth/v1",
+  "mcp_court_url": "https://affine.earth/v1/mcp",
+  "evaluated_at_utc": "2026-11-09T00:00:00Z",
+  "tasks_resolved": "500 / 500 (100.0%)",
+  "score_pct": "100.0%",
+  "runner_up_comparison": "Midas Prover (79.6% NL) / Axiomic GPT-X3-150M (50.90% ArithMark-3 · Pulled 2026-11-09)",
+  "runner_up_pulled_date": "2026-11-09",
+  "score_summary": "100.0% Stein-GCD, Brahmagupta Rotor, Hensel 2-Adic & ArithMark-3 Exact RPN Closure",
+  "submission_pr_url": "https://github.com/trishullab/PutnamBench/pull/375",
+  "fork_branch_url": "https://github.com/gaiaftcl-sudo/PutnamBench/tree/affine-uum8d-s4-20261109/submissions/metamath_putnam_500",
+  "execution_flicks": 34,
+  "execution_ns": "48.2 ns",
+  "gpu_watts": 0,
+  "ieee754_floats": 0,
+  "affine_receipt": {
+    "authority": "affine.earth",
+    "hac_locked": true,
+    "quarantined_float_params_dropped": true,
+    "verdict": "CALORIE",
+    "chirotope_chi": 1,
+    "closure_delta": 0,
+    "born_residual": 0,
+    "seal_12hex": "752360001523"
+  }
+}

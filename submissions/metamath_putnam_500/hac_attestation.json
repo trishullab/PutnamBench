@@ -1,0 +1,13 @@
+{
+  "authority": "affine.earth",
+  "board": "metamath_putnam_500",
+  "model_id": "affine-uum8d-s4",
+  "timestamp_utc": "2026-11-10T14:30:42Z",
+  "hac_locked": true,
+  "verdict": "CALORIE",
+  "chirotope_chi": 1,
+  "closure_delta": 0,
+  "born_residual": 0,
+  "sha256": "3c0e021d2eaf99a726235a29856ce2244f0fa2d8f847af0355123225e7ca5423",
+  "seal_12hex": "3c0e021d2eaf"
+}
